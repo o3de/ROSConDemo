@@ -1,0 +1,156 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "OakTree",
+        "Components": {
+            "Component_[12949486167256891560]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 12949486167256891560
+            },
+            "Component_[1316925373338608118]": {
+                "$type": "SelectionComponent",
+                "Id": 1316925373338608118
+            },
+            "Component_[14488354225555543471]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 14488354225555543471,
+                "Child Entity Order": [
+                    "Entity_[2990713085782]"
+                ]
+            },
+            "Component_[16107126787641017261]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 16107126787641017261
+            },
+            "Component_[17478803486732630354]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 17478803486732630354,
+                "Parent Entity": ""
+            },
+            "Component_[18417561163529904681]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 18417561163529904681
+            },
+            "Component_[2702449227262081558]": {
+                "$type": "EditorLockComponent",
+                "Id": 2702449227262081558
+            },
+            "Component_[4246813957722879293]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 4246813957722879293
+            },
+            "Component_[4280817479504385494]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 4280817479504385494
+            },
+            "Component_[4905570791718599265]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 4905570791718599265
+            },
+            "Component_[9747198547906025282]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 9747198547906025282
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[2990713085782]": {
+            "Id": "Entity_[2990713085782]",
+            "Name": "OakTree",
+            "Components": {
+                "Component_[11661503052505698670]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11661503052505698670,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[1569395306394681504]": {
+                    "$type": "SelectionComponent",
+                    "Id": 1569395306394681504
+                },
+                "Component_[15894921980041735849]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15894921980041735849
+                },
+                "Component_[17070926976730007970]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 17070926976730007970,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 564513831
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{39AB5510-3A60-53EA-B54F-17652AB3FF81}"
+                                            },
+                                            "assetHint": "assets/oak_tree/oak_tree_tree.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[17430586325677686051]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 17430586325677686051
+                },
+                "Component_[2534229029405813211]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2534229029405813211
+                },
+                "Component_[4535630725499507152]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4535630725499507152
+                },
+                "Component_[4609122678563970239]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4609122678563970239,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 11661503052505698670
+                        },
+                        {
+                            "ComponentId": 6871851737756404067,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 17070926976730007970,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[5303680093845097646]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5303680093845097646
+                },
+                "Component_[5351442156982820438]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5351442156982820438
+                },
+                "Component_[6871851737756404067]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 6871851737756404067,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{A588C03C-ECB5-5EDB-977D-59E1DC418150}",
+                                    "subId": 270666860
+                                },
+                                "assetHint": "assets/oak_tree/oak_tree.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[7032494458284418975]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 7032494458284418975
+                }
+            }
+        }
+    }
+}

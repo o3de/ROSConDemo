@@ -1,0 +1,171 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "FenceTile",
+        "Components": {
+            "Component_[10245897363973200994]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 10245897363973200994
+            },
+            "Component_[10499981923576161753]": {
+                "$type": "SelectionComponent",
+                "Id": 10499981923576161753
+            },
+            "Component_[13732373068159500468]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 13732373068159500468
+            },
+            "Component_[15235962785981168940]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 15235962785981168940
+            },
+            "Component_[16718619917196264407]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 16718619917196264407,
+                "Child Entity Order": [
+                    "Entity_[14406736158550]"
+                ]
+            },
+            "Component_[18203190992286583521]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 18203190992286583521
+            },
+            "Component_[3116443862299650906]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 3116443862299650906
+            },
+            "Component_[353124936474393104]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 353124936474393104
+            },
+            "Component_[4968815478519136831]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 4968815478519136831,
+                "Parent Entity": ""
+            },
+            "Component_[8807555830982645442]": {
+                "$type": "EditorLockComponent",
+                "Id": 8807555830982645442
+            },
+            "Component_[9983526891350301502]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 9983526891350301502
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[14406736158550]": {
+            "Id": "Entity_[14406736158550]",
+            "Name": "FenceTile",
+            "Components": {
+                "Component_[10242356993845119966]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10242356993845119966
+                },
+                "Component_[11090026631651406265]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 11090026631651406265
+                },
+                "Component_[12286244568811695221]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12286244568811695221
+                },
+                "Component_[12787906065949442511]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12787906065949442511
+                },
+                "Component_[14962491432846453043]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14962491432846453043,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{13234E8B-3BC1-517A-9446-D72D47ABB341}",
+                                    "subId": 283403668
+                                },
+                                "assetHint": "assets/fence_tile/fencingtile.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[15485164950880008933]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15485164950880008933
+                },
+                "Component_[16234290601527288703]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 16234290601527288703,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1941944140
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{52DF7953-1EF9-54C9-A49A-192D8E287BD4}"
+                                            },
+                                            "assetHint": "assets/fence_tile/fence_tile_mat.azmaterial"
+                                        },
+                                        "PropertyOverrides": {
+                                            "baseColor.color": {
+                                                "$type": "Color",
+                                                "Value": [
+                                                    0.8367284536361694,
+                                                    0.8367284536361694,
+                                                    0.8367284536361694,
+                                                    1.0
+                                                ]
+                                            },
+                                            "roughness.factor": {
+                                                "$type": "float",
+                                                "Value": 0.8600000143051147
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[17873863281161733613]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17873863281161733613,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[2111882604764735968]": {
+                    "$type": "SelectionComponent",
+                    "Id": 2111882604764735968
+                },
+                "Component_[262310791187474740]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 262310791187474740
+                },
+                "Component_[7024332437162162609]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7024332437162162609,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 17873863281161733613
+                        },
+                        {
+                            "ComponentId": 14962491432846453043,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 16234290601527288703,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[7905310978378046840]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7905310978378046840
+                }
+            }
+        }
+    }
+}

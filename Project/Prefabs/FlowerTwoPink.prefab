@@ -1,0 +1,156 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "FlowerTwoPink",
+        "Components": {
+            "Component_[10842569837668663958]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 10842569837668663958
+            },
+            "Component_[10955354628331032817]": {
+                "$type": "SelectionComponent",
+                "Id": 10955354628331032817
+            },
+            "Component_[13353090157834269241]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 13353090157834269241
+            },
+            "Component_[17316992227959151458]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 17316992227959151458
+            },
+            "Component_[17719805428173982579]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 17719805428173982579
+            },
+            "Component_[18012312618588709534]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 18012312618588709534
+            },
+            "Component_[4455745495519714598]": {
+                "$type": "EditorLockComponent",
+                "Id": 4455745495519714598
+            },
+            "Component_[4874750259374371747]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 4874750259374371747
+            },
+            "Component_[9209738635737176590]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 9209738635737176590,
+                "Parent Entity": ""
+            },
+            "Component_[9280149840666623925]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 9280149840666623925,
+                "Child Entity Order": [
+                    "Entity_[499632054102]"
+                ]
+            },
+            "Component_[9863997112937639427]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 9863997112937639427
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[499632054102]": {
+            "Id": "Entity_[499632054102]",
+            "Name": "FlowerTwoPink",
+            "Components": {
+                "Component_[10898767463460565720]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10898767463460565720
+                },
+                "Component_[1099239623095694324]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 1099239623095694324,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 39181763
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{04CC36D0-F639-5C74-AB62-EEAEA25AB7A0}"
+                                            },
+                                            "assetHint": "assets/flower_tile_two_pink/flower_tile_two_pink_flower.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[11187828833135446688]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11187828833135446688,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 8303047191939878610
+                        },
+                        {
+                            "ComponentId": 1873172598034325764,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 1099239623095694324,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[12732580912720018144]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12732580912720018144
+                },
+                "Component_[13084749260627988745]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13084749260627988745
+                },
+                "Component_[13602896793874003565]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13602896793874003565
+                },
+                "Component_[1581894914425564814]": {
+                    "$type": "SelectionComponent",
+                    "Id": 1581894914425564814
+                },
+                "Component_[1676576875366609442]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1676576875366609442
+                },
+                "Component_[1873172598034325764]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 1873172598034325764,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{691E0E72-4080-543B-A933-0B51EF92662E}",
+                                    "subId": 272030126
+                                },
+                                "assetHint": "assets/flower_tile_two_pink/flower_tile_two_pink.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[3831448743886356639]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 3831448743886356639
+                },
+                "Component_[6539853947413103494]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6539853947413103494
+                },
+                "Component_[8303047191939878610]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 8303047191939878610,
+                    "Parent Entity": "ContainerEntity"
+                }
+            }
+        }
+    }
+}

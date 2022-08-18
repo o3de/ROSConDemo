@@ -1,0 +1,182 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "Barn",
+        "Components": {
+            "Component_[11076007438823732156]": {
+                "$type": "EditorLockComponent",
+                "Id": 11076007438823732156
+            },
+            "Component_[11478546312530263754]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 11478546312530263754
+            },
+            "Component_[13580890543322652754]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 13580890543322652754
+            },
+            "Component_[14622716457040850824]": {
+                "$type": "SelectionComponent",
+                "Id": 14622716457040850824
+            },
+            "Component_[1568938860737394222]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 1568938860737394222
+            },
+            "Component_[4462607919704441168]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 4462607919704441168
+            },
+            "Component_[4644912997109492425]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 4644912997109492425
+            },
+            "Component_[4730454564156489511]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 4730454564156489511
+            },
+            "Component_[5491120222970983746]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 5491120222970983746,
+                "Child Entity Order": [
+                    "Entity_[945674658144]"
+                ]
+            },
+            "Component_[6958903478055170698]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 6958903478055170698,
+                "Parent Entity": ""
+            },
+            "Component_[9653255264342913186]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 9653255264342913186
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[945674658144]": {
+            "Id": "Entity_[945674658144]",
+            "Name": "Barn",
+            "Components": {
+                "Component_[11573456644863117681]": {
+                    "$type": "SelectionComponent",
+                    "Id": 11573456644863117681
+                },
+                "Component_[12525977908982875780]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 12525977908982875780,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[14274406287625550546]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14274406287625550546,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
+                                    "subId": 276633256
+                                },
+                                "assetHint": "assets/barn/barn.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[15552214180054837448]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 15552214180054837448
+                },
+                "Component_[15710930892613769566]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 15710930892613769566
+                },
+                "Component_[16070606561682979869]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16070606561682979869
+                },
+                "Component_[18387285645002164676]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18387285645002164676
+                },
+                "Component_[2438110664045258066]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2438110664045258066
+                },
+                "Component_[263663990536790585]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 263663990536790585,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 12525977908982875780
+                        },
+                        {
+                            "ComponentId": 14274406287625550546,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 8837312003140921855,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[428393277371854780]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 428393277371854780
+                },
+                "Component_[8837312003140921855]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8837312003140921855,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 692020415
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{6CD9B37F-61E9-51AE-9398-F375026A6BA3}"
+                                            },
+                                            "assetHint": "assets/barn/barn_tinroofmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2588975871
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{00C5A2FC-71F3-58BA-8F8B-C0E55F8C0E10}"
+                                            },
+                                            "assetHint": "assets/barn/barn_barnmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2653744528
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{8FA04BC9-96F0-5948-A52D-A33B4168737B}"
+                                            },
+                                            "assetHint": "assets/barn/barn_windowglassmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[9457026120511350292]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 9457026120511350292
+                }
+            }
+        }
+    }
+}

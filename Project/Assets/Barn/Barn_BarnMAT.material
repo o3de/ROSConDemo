@@ -9,18 +9,15 @@
             1.0
         ],
         "baseColor.textureBlendMode": "Lerp",
-        "baseColor.textureMap": "Assets/grass_tile_large/textures/grass_base_color.png",
-        "baseColor.textureMapUv": "Unwrapped",
+        "baseColor.textureMap": "Assets/Barn/textures/BarnMAT_BaseColor.png",
         "emissive.color": [
             0.0,
             0.0,
             0.0,
             1.0
         ],
-        "general.doubleSided": true,
-        "normal.textureMap": "Assets/grass_tile_large/textures/grass_normal.png",
-        "normal.textureMapUv": "Unwrapped",
-        "opacity.factor": 1.0,
-        "roughness.textureMap": "Assets/grass_tile_large/textures/grass_roughness.png"
+        "irradiance.irradianceColorSource": "BaseColor",
+        "normal.textureMap": "Assets/Barn/textures/BarnMAT_Normal.png",
+        "opacity.factor": 1.0
     }
 }
