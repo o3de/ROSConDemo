@@ -1,0 +1,35 @@
+{
+    "description": "",
+    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "parentMaterial": "",
+    "propertyLayoutVersion": 3,
+    "properties": {
+        "baseColor": {
+            "color": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+            ],
+            "textureBlendMode": "Lerp",
+            "textureMap": "flower_tile_two_pink/textures/flower_pink_base_color.png",
+            "textureMapUv": "Unwrapped"
+        },
+        "emissive": {
+            "color": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "normal": {
+            "textureMap": "flower_tile_two_pink/textures/flower_pink_normal.png",
+            "textureMapUv": "Unwrapped"
+        },
+        "opacity": {
+            "doubleSided": true,
+            "factor": 1.0
+        }
+    }
+}
