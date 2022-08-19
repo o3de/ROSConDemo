@@ -1,0 +1,156 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "GrassTileSmall",
+        "Components": {
+            "Component_[11409948330029890290]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 11409948330029890290,
+                "Child Entity Order": [
+                    "Entity_[1010733162326]"
+                ]
+            },
+            "Component_[13094752354636424414]": {
+                "$type": "EditorLockComponent",
+                "Id": 13094752354636424414
+            },
+            "Component_[139475911102124878]": {
+                "$type": "SelectionComponent",
+                "Id": 139475911102124878
+            },
+            "Component_[15596486434279668796]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 15596486434279668796
+            },
+            "Component_[1634202183819429073]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 1634202183819429073
+            },
+            "Component_[17192734242731575247]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 17192734242731575247
+            },
+            "Component_[17940838845985870077]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 17940838845985870077
+            },
+            "Component_[3263438552675595453]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 3263438552675595453
+            },
+            "Component_[4419398003494064297]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 4419398003494064297,
+                "Parent Entity": ""
+            },
+            "Component_[7423504417085978597]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 7423504417085978597
+            },
+            "Component_[7535077763604179110]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 7535077763604179110
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1010733162326]": {
+            "Id": "Entity_[1010733162326]",
+            "Name": "GrassTileSmall",
+            "Components": {
+                "Component_[117044032404197725]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 117044032404197725
+                },
+                "Component_[13076560916483773270]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13076560916483773270
+                },
+                "Component_[14237031305401999596]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14237031305401999596,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{5C5B8FB2-30BD-56F0-B5B4-107694A24C43}",
+                                    "subId": 279982830
+                                },
+                                "assetHint": "assets/grass_tile_small/grass_tile_small.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[15109299829112859767]": {
+                    "$type": "SelectionComponent",
+                    "Id": 15109299829112859767
+                },
+                "Component_[16009721215956323727]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 16009721215956323727
+                },
+                "Component_[3069136512105912085]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 3069136512105912085,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3977523045
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{E17DEB1C-0AEF-5733-9251-6825DB6B9654}"
+                                            },
+                                            "assetHint": "assets/grass_tile_small/grass_tile_small_grass.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[4871254724315978556]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4871254724315978556,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 9282597657560194982
+                        },
+                        {
+                            "ComponentId": 14237031305401999596,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 3069136512105912085,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[4920882954719294227]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4920882954719294227
+                },
+                "Component_[7881558374999740243]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 7881558374999740243
+                },
+                "Component_[8036688030561739376]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 8036688030561739376
+                },
+                "Component_[9282597657560194982]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 9282597657560194982,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[9968360157031577499]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 9968360157031577499
+                }
+            }
+        }
+    }
+}

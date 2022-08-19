@@ -1,0 +1,156 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "FlowerTwo",
+        "Components": {
+            "Component_[10071003805122254685]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 10071003805122254685
+            },
+            "Component_[11548100828033145076]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 11548100828033145076,
+                "Child Entity Order": [
+                    "Entity_[1229378859596]"
+                ]
+            },
+            "Component_[13089895868622800351]": {
+                "$type": "EditorLockComponent",
+                "Id": 13089895868622800351
+            },
+            "Component_[17047625587281420958]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 17047625587281420958,
+                "Parent Entity": ""
+            },
+            "Component_[17615261800198488492]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 17615261800198488492
+            },
+            "Component_[4338630558760606871]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 4338630558760606871
+            },
+            "Component_[5509442293589726892]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 5509442293589726892
+            },
+            "Component_[6697034546592676924]": {
+                "$type": "SelectionComponent",
+                "Id": 6697034546592676924
+            },
+            "Component_[6768094324489884592]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 6768094324489884592
+            },
+            "Component_[7239227823332778397]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 7239227823332778397
+            },
+            "Component_[7515282867760919363]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 7515282867760919363
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1229378859596]": {
+            "Id": "Entity_[1229378859596]",
+            "Name": "FlowerTwo",
+            "Components": {
+                "Component_[11250090456856070478]": {
+                    "$type": "SelectionComponent",
+                    "Id": 11250090456856070478
+                },
+                "Component_[12161600831647235908]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12161600831647235908
+                },
+                "Component_[13855193435101216830]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13855193435101216830
+                },
+                "Component_[16994407691057314613]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16994407691057314613,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[17043264228855497082]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17043264228855497082
+                },
+                "Component_[4187505578324502800]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4187505578324502800
+                },
+                "Component_[530399723451104334]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 530399723451104334,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 39181763
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{CBEAEB06-3C11-59BB-8420-B216B71B8B6C}"
+                                            },
+                                            "assetHint": "assets/flower_tile_two/flower_tile_two_flower.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[5794655907743374623]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5794655907743374623,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 16994407691057314613
+                        },
+                        {
+                            "ComponentId": 6934698302589500427,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 530399723451104334,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[6845125015728775319]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6845125015728775319
+                },
+                "Component_[6934698302589500427]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 6934698302589500427,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{930ECAD4-7530-5943-84A6-D49B7D903797}",
+                                    "subId": 277866330
+                                },
+                                "assetHint": "assets/flower_tile_two/flower_tile_two.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[7548231920782425233]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7548231920782425233
+                },
+                "Component_[9098257280839840433]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9098257280839840433
+                }
+            }
+        }
+    }
+}

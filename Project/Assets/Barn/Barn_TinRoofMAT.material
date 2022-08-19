@@ -1,0 +1,25 @@
+{
+    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.033103398978710175,
+            0.033103398978710175,
+            0.033103398978710175,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "Assets/Barn/textures/TinRoofMAT_BaseColor.png",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "irradiance.irradianceColorSource": "BaseColor",
+        "metallic.textureMap": "Assets/Barn/textures/TinRoofMAT_Metallic.png",
+        "normal.textureMap": "Assets/Barn/textures/TinRoofMAT_Normal.png",
+        "opacity.factor": 1.0,
+        "specularF0.textureMap": "Assets/Barn/textures/TinRoofMAT_SpecularReflectance.png"
+    }
+}

@@ -17,7 +17,24 @@
             },
             "Component_[14126657869720434043]": {
                 "$type": "EditorEntitySortComponent",
-                "Id": 14126657869720434043
+                "Id": 14126657869720434043,
+                "Child Entity Order": [
+                    "Entity_[1176639161715]",
+                    "Instance_[645263307340]/ContainerEntity",
+                    "Instance_[1220788925004]/ContainerEntity",
+                    "Instance_[491042119510]/ContainerEntity",
+                    "Instance_[649955909462]/ContainerEntity",
+                    "Instance_[834639503190]/ContainerEntity",
+                    "Instance_[1002143227734]/ContainerEntity",
+                    "Instance_[2982123151190]/ContainerEntity",
+                    "Instance_[4712994971478]/ContainerEntity",
+                    "Instance_[4863318826838]/ContainerEntity",
+                    "Instance_[7161126330198]/ContainerEntity",
+                    "Instance_[14398146223958]/ContainerEntity",
+                    "Instance_[937084723552]/ContainerEntity",
+                    "Instance_[1074523677024]/ContainerEntity",
+                    "Instance_[1061638775136]/ContainerEntity"
+                ]
             },
             "Component_[15230859088967841193]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -27,6 +44,10 @@
             "Component_[16239496886950819870]": {
                 "$type": "EditorDisabledCompositionComponent",
                 "Id": 16239496886950819870
+            },
+            "Component_[5531487760979229325]": {
+                "$type": "AZ::Render::EditorDiffuseGlobalIlluminationComponent",
+                "Id": 5531487760979229325
             },
             "Component_[5688118765544765547]": {
                 "$type": "EditorEntityIconComponent",
@@ -93,8 +114,10 @@
                     "Id": 7378860763541895402,
                     "Controller": {
                         "Configuration": {
-                            "Intensity": 1.0,
+                            "IntensityMode": 2,
+                            "Intensity": 12.0,
                             "CameraEntityId": "",
+                            "IsCascadeCorrectionEnabled": true,
                             "ShadowFilterMethod": 1
                         }
                     }
@@ -102,17 +125,12 @@
                 "Component_[7892834440890947578]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 7892834440890947578,
-                    "Parent Entity": "Entity_[1176639161715]",
+                    "Parent Entity": "Entity_[1180934129011]",
                     "Transform Data": {
                         "Translate": [
                             0.0,
                             0.0,
-                            13.487043380737305
-                        ],
-                        "Rotate": [
-                            -76.13099670410156,
-                            -0.847000002861023,
-                            -15.8100004196167
+                            7.8187360763549805
                         ]
                     }
                 },
@@ -138,6 +156,10 @@
                     "$type": "EditorEntityIconComponent",
                     "Id": 12260880513256986252
                 },
+                "Component_[12661663775710159795]": {
+                    "$type": "EditorSurfaceDataMeshComponent",
+                    "Id": 12661663775710159795
+                },
                 "Component_[13711420870643673468]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 13711420870643673468
@@ -149,7 +171,10 @@
                 "Component_[16578565737331764849]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 16578565737331764849,
-                    "Parent Entity": "Entity_[1176639161715]"
+                    "Parent Entity": "Entity_[1176639161715]",
+                    "Transform Data": {
+                        "UniformScale": 4.943045139312744
+                    }
                 },
                 "Component_[16919232076966545697]": {
                     "$type": "EditorInspectorComponent",
@@ -157,7 +182,26 @@
                 },
                 "Component_[5182430712893438093]": {
                     "$type": "EditorMaterialComponent",
-                    "Id": 5182430712893438093
+                    "Id": 5182430712893438093,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 803645540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{239B710F-FD9F-5EB3-8D64-8AA6789B7F09}"
+                                            },
+                                            "assetHint": "objects/groudplane/groundplane_512x512m_groundplane.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[5245524694917323904]": {
                     "$type": "EditorColliderComponent",
@@ -179,6 +223,11 @@
                     "ShapeConfiguration": {
                         "ShapeType": 1,
                         "Box": {
+                            "Scale": [
+                                4.943045139312744,
+                                4.943045139312744,
+                                4.943045139312744
+                            ],
                             "Configuration": [
                                 512.0,
                                 512.0,
@@ -237,7 +286,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 8929576024571800510
+                            "EditorEntityId": 6324165593556868672
                         }
                     }
                 },
@@ -255,14 +304,14 @@
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
                         "Translate": [
-                            -2.3000001907348633,
-                            -3.9368600845336914,
-                            1.0
+                            0.12340641021728516,
+                            -2.621185302734375,
+                            2.1534299850463867
                         ],
                         "Rotate": [
-                            -2.050307512283325,
-                            1.9552897214889526,
-                            -43.623355865478516
+                            21.185026168823242,
+                            15.82729434967041,
+                            -144.86566162109375
                         ]
                     }
                 },
@@ -274,9 +323,32 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 2654521436129313160
                 },
+                "Component_[4270857261190589273]": {
+                    "$type": "AZ::Render::EditorExposureControlComponent",
+                    "Id": 4270857261190589273,
+                    "Controller": {
+                        "Configuration": {
+                            "ExposureControlType": 1,
+                            "ManualCompensation": 0.6000000238418579
+                        }
+                    }
+                },
                 "Component_[5265045084611556958]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 5265045084611556958
+                },
+                "Component_[6360183481254267636]": {
+                    "$type": "AZ::Render::EditorSsaoComponent",
+                    "Id": 6360183481254267636,
+                    "Controller": {
+                        "Configuration": {
+                            "Strength": 0.6000000238418579
+                        }
+                    }
+                },
+                "Component_[6999556615761759864]": {
+                    "$type": "AZ::Render::EditorPostFxLayerComponent",
+                    "Id": 6999556615761759864
                 },
                 "Component_[7169798125182238623]": {
                     "$type": "EditorPendingCompositionComponent",
@@ -293,145 +365,20 @@
                     "$type": "EditorInspectorComponent",
                     "Id": 8866210352157164042
                 },
+                "Component_[8967653191103446244]": {
+                    "$type": "AZ::Render::EditorBloomComponent",
+                    "Id": 8967653191103446244,
+                    "Controller": {
+                        "Configuration": {
+                            "Enabled": true,
+                            "Knee": 0.5799999833106995,
+                            "Intensity": 0.05000000074505806
+                        }
+                    }
+                },
                 "Component_[9129253381063760879]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 9129253381063760879
-                }
-            }
-        },
-        "Entity_[1168049227123]": {
-            "Id": "Entity_[1168049227123]",
-            "Name": "Grid",
-            "Components": {
-                "Component_[11443347433215807130]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 11443347433215807130
-                },
-                "Component_[11779275529534764488]": {
-                    "$type": "SelectionComponent",
-                    "Id": 11779275529534764488
-                },
-                "Component_[14249419413039427459]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 14249419413039427459
-                },
-                "Component_[15448581635946161318]": {
-                    "$type": "AZ::Render::EditorGridComponent",
-                    "Id": 15448581635946161318,
-                    "Controller": {
-                        "Configuration": {
-                            "primarySpacing": 4.0,
-                            "primaryColor": [
-                                0.501960813999176,
-                                0.501960813999176,
-                                0.501960813999176
-                            ],
-                            "secondarySpacing": 0.5,
-                            "secondaryColor": [
-                                0.250980406999588,
-                                0.250980406999588,
-                                0.250980406999588
-                            ]
-                        }
-                    }
-                },
-                "Component_[1843303322527297409]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 1843303322527297409
-                },
-                "Component_[380249072065273654]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 380249072065273654,
-                    "Parent Entity": "Entity_[1176639161715]"
-                },
-                "Component_[7476660583684339787]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 7476660583684339787
-                },
-                "Component_[7557626501215118375]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 7557626501215118375
-                },
-                "Component_[7984048488947365511]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 7984048488947365511
-                },
-                "Component_[8118181039276487398]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 8118181039276487398
-                },
-                "Component_[9189909764215270515]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 9189909764215270515
-                }
-            }
-        },
-        "Entity_[1172344194419]": {
-            "Id": "Entity_[1172344194419]",
-            "Name": "Shader Ball",
-            "Components": {
-                "Component_[10789351944715265527]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 10789351944715265527
-                },
-                "Component_[12037033284781049225]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 12037033284781049225
-                },
-                "Component_[13759153306105970079]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 13759153306105970079
-                },
-                "Component_[14135560884830586279]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 14135560884830586279
-                },
-                "Component_[16247165675903986673]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 16247165675903986673
-                },
-                "Component_[18082433625958885247]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 18082433625958885247
-                },
-                "Component_[6472623349872972660]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 6472623349872972660,
-                    "Parent Entity": "Entity_[1176639161715]",
-                    "Transform Data": {
-                        "Rotate": [
-                            0.0,
-                            0.10000000149011612,
-                            180.0
-                        ]
-                    }
-                },
-                "Component_[6495255223970673916]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 6495255223970673916,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{FD340C30-755C-5911-92A3-19A3F7A77931}",
-                                    "subId": 281415304
-                                },
-                                "assetHint": "objects/shaderball/shaderball_default_1m.azmodel"
-                            }
-                        }
-                    }
-                },
-                "Component_[8056625192494070973]": {
-                    "$type": "SelectionComponent",
-                    "Id": 8056625192494070973
-                },
-                "Component_[8550141614185782969]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 8550141614185782969
-                },
-                "Component_[9439770997198325425]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 9439770997198325425
                 }
             }
         },
@@ -481,10 +428,7 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 5855590796136709437,
                     "Child Entity Order": [
-                        "Entity_[1155164325235]",
                         "Entity_[1180934129011]",
-                        "Entity_[1172344194419]",
-                        "Entity_[1168049227123]",
                         "Entity_[1163754259827]",
                         "Entity_[1159459292531]"
                     ]
@@ -499,24 +443,25 @@
             "Id": "Entity_[1180934129011]",
             "Name": "Global Sky",
             "Components": {
-                "Component_[11231930600558681245]": {
-                    "$type": "AZ::Render::EditorHDRiSkyboxComponent",
-                    "Id": 11231930600558681245,
-                    "Controller": {
-                        "Configuration": {
-                            "CubemapAsset": {
-                                "assetId": {
-                                    "guid": "{215E47FD-D181-5832-B1AB-91673ABF6399}",
-                                    "subId": 1000
-                                },
-                                "assetHint": "lightingpresets/highcontrast/goegap_4k_skyboxcm.exr.streamingimage"
-                            }
-                        }
-                    }
-                },
                 "Component_[11980494120202836095]": {
                     "$type": "SelectionComponent",
                     "Id": 11980494120202836095
+                },
+                "Component_[13126383555450060198]": {
+                    "$type": "AZ::Render::EditorPhysicalSkyComponent",
+                    "Id": 13126383555450060198,
+                    "Controller": {
+                        "Configuration": {
+                            "FogSettings": {
+                                "Enable": true,
+                                "Color": [
+                                    0.6054474711418152,
+                                    0.6054474711418152,
+                                    0.6054474711418152
+                                ]
+                            }
+                        }
+                    }
                 },
                 "Component_[1428633914413949476]": {
                     "$type": "EditorLockComponent",
@@ -540,7 +485,8 @@
                                     "subId": 2000
                                 },
                                 "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_iblspecular.exr.streamingimage"
-                            }
+                            },
+                            "exposure": 1.7000000476837158
                         }
                     }
                 },
@@ -554,7 +500,10 @@
                 },
                 "Component_[15826613364991382688]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 15826613364991382688
+                    "Id": 15826613364991382688,
+                    "Child Entity Order": [
+                        "Entity_[1155164325235]"
+                    ]
                 },
                 "Component_[1665003113283562343]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -571,13 +520,347 @@
                 "Component_[6644513399057217122]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 6644513399057217122,
-                    "Parent Entity": "Entity_[1176639161715]"
+                    "Parent Entity": "Entity_[1176639161715]",
+                    "Transform Data": {
+                        "Rotate": [
+                            -48.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
                 },
                 "Component_[931091830724002070]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 931091830724002070
                 }
             }
+        }
+    },
+    "Instances": {
+        "Instance_[1002143227734]": {
+            "Source": "Prefabs/GrassTileSmall.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4419398003494064297]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4419398003494064297]/Transform Data/Translate/0",
+                    "value": -6.168787002563477
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4419398003494064297]/Transform Data/Translate/1",
+                    "value": 1.242198467254639
+                }
+            ]
+        },
+        "Instance_[1061638775136]": {
+            "Source": "Prefabs/FenceTile.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/0",
+                    "value": 9.156956672668455
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/1",
+                    "value": 5.6900553703308105
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/2",
+                    "value": 0.6685491800308228
+                }
+            ]
+        },
+        "Instance_[1074523677024]": {
+            "Source": "Prefabs/FenceTile.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/0",
+                    "value": 9.156956672668455
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/1",
+                    "value": -0.7025494575500488
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/2",
+                    "value": 0.6685491800308228
+                }
+            ]
+        },
+        "Instance_[1220788925004]": {
+            "Source": "Prefabs/FlowerTwo.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17047625587281420958]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17047625587281420958]/Transform Data/Translate/0",
+                    "value": -6.2064361572265625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17047625587281420958]/Transform Data/Translate/1",
+                    "value": 1.7762393951416016
+                }
+            ]
+        },
+        "Instance_[14398146223958]": {
+            "Source": "Prefabs/FenceTile.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/0",
+                    "value": 9.156956672668455
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/1",
+                    "value": 12.074914932250977
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[4968815478519136831]/Transform Data/Translate/2",
+                    "value": 0.6685491800308228
+                }
+            ]
+        },
+        "Instance_[2982123151190]": {
+            "Source": "Prefabs/OakTree.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
+                    "value": 1.1819875240325928
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
+                    "value": 0.490490198135376
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/2",
+                    "value": -0.0006074905395507813
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
+                    "value": -65.98102569580078
+                }
+            ]
+        },
+        "Instance_[4712994971478]": {
+            "Source": "Prefabs/GrassTileLageDry.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[7584086410230644694]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[7584086410230644694]/Transform Data/Translate/0",
+                    "value": -2.8462419509887695
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[7584086410230644694]/Transform Data/Translate/1",
+                    "value": -2.4257726669311523
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[7584086410230644694]/Transform Data/Translate/2",
+                    "value": -0.0040471553802490234
+                }
+            ]
+        },
+        "Instance_[4863318826838]": {
+            "Source": "Prefabs/GrassTileMedDry.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12894623640026920636]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12894623640026920636]/Transform Data/Translate/0",
+                    "value": -4.160410404205322
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12894623640026920636]/Transform Data/Translate/1",
+                    "value": -2.5668554306030273
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12894623640026920636]/Transform Data/Translate/2",
+                    "value": 0.41172075271606445
+                }
+            ]
+        },
+        "Instance_[491042119510]": {
+            "Source": "Prefabs/FlowerTwoPink.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[9209738635737176590]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[9209738635737176590]/Transform Data/Translate/0",
+                    "value": -3.4054269790649414
+                }
+            ]
+        },
+        "Instance_[645263307340]": {
+            "Source": "Prefabs/FlowerOne.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12869331830394677534]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12869331830394677534]/Transform Data/Translate/0",
+                    "value": -4.501592636108398
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12869331830394677534]/Transform Data/Translate/1",
+                    "value": 2.520571231842041
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[12869331830394677534]/Transform Data/Translate/2",
+                    "value": -9.5367431640625e-7
+                }
+            ]
+        },
+        "Instance_[649955909462]": {
+            "Source": "Prefabs/GrassTileLarge.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[1379184627130582189]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[1379184627130582189]/Transform Data/Translate/0",
+                    "value": -5.268374919891357
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[1379184627130582189]/Transform Data/Translate/1",
+                    "value": -0.2801041603088379
+                }
+            ]
+        },
+        "Instance_[7161126330198]": {
+            "Source": "Prefabs/GrassTileSmallDry.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[10702301566620511954]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[10702301566620511954]/Transform Data/Translate/0",
+                    "value": -4.162643909454346
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[10702301566620511954]/Transform Data/Translate/1",
+                    "value": -3.6347579956054688
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[10702301566620511954]/Transform Data/Translate/2",
+                    "value": -0.027348488569259644
+                }
+            ]
+        },
+        "Instance_[834639503190]": {
+            "Source": "Prefabs/GrassTileMed.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[2832389859834261345]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[2832389859834261345]/Transform Data/Translate/0",
+                    "value": -6.503201007843018
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[2832389859834261345]/Transform Data/Translate/1",
+                    "value": -1.040045976638794
+                }
+            ]
+        },
+        "Instance_[937084723552]": {
+            "Source": "Prefabs/Barn.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Transform Data/Translate/0",
+                    "value": -1.7336175441741943
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Transform Data/Translate/1",
+                    "value": 10.026026725769045
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Transform Data/Rotate/2",
+                    "value": -89.99994659423828
+                }
+            ]
         }
     }
 }
