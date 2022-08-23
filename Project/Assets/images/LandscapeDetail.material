@@ -1,0 +1,11 @@
+{
+    "materialType": "Materials/Terrain/TerrainDetailMaterial.materialtype",
+    "materialTypeVersion": 1,
+    "propertyValues": {
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "Assets/images/env_grass_base_color.png",
+        "normal.textureMap": "Assets/images/env_grass_normal.png",
+        "uv.tileU": 10.0,
+        "uv.tileV": 10.0
+    }
+}

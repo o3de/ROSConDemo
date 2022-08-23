@@ -96,7 +96,12 @@
                                     "subId": 277161338
                                 },
                                 "assetHint": "assets/grass_tile_med_dry/default_grass_tile_med_dry_5014d9cb_4115_513c_b660_040ad1cc3cf6_.azmodel"
-                            }
+                            },
+                            "ExcludeFromReflectionCubeMaps": true,
+                            "UseForwardPassIBLSpecular": true,
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.0
                         }
                     }
                 },
@@ -132,7 +137,19 @@
                 "Component_[4637467576026194680]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 4637467576026194680,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            -4.76837158203125e-7,
+                            0.0
+                        ],
+                        "Rotate": [
+                            89.99994659423828,
+                            0.0,
+                            0.0
+                        ]
+                    }
                 },
                 "Component_[513274801314985611]": {
                     "$type": "EditorEntityIconComponent",

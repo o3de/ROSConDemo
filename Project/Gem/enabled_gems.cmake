@@ -22,4 +22,6 @@ set(ENABLED_GEMS
     TextureAtlas
     WhiteBox
     DiffuseProbeGrid
+    Terrain
+    Vegetation
 )

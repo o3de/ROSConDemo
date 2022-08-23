@@ -1,0 +1,155 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "Backhground_Mountains",
+        "Components": {
+            "Component_[13039629271894709664]": {
+                "$type": "EditorLockComponent",
+                "Id": 13039629271894709664
+            },
+            "Component_[14289091303488411213]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 14289091303488411213,
+                "Child Entity Order": [
+                    "Entity_[1457064073640302]"
+                ]
+            },
+            "Component_[14614141106446084016]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 14614141106446084016
+            },
+            "Component_[14642875700494463688]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 14642875700494463688,
+                "Parent Entity": ""
+            },
+            "Component_[16205334719254503100]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 16205334719254503100
+            },
+            "Component_[16380760805966413320]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 16380760805966413320
+            },
+            "Component_[2631504953587998975]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 2631504953587998975
+            },
+            "Component_[3075839007428736802]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 3075839007428736802
+            },
+            "Component_[3367646957211784545]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 3367646957211784545
+            },
+            "Component_[5076043253456585137]": {
+                "$type": "SelectionComponent",
+                "Id": 5076043253456585137
+            },
+            "Component_[861291001460839263]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 861291001460839263
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1457064073640302]": {
+            "Id": "Entity_[1457064073640302]",
+            "Name": "Backhground_Mountains",
+            "Components": {
+                "Component_[10635178642265270643]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10635178642265270643,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[12091298713673526982]": {
+                    "$type": "SelectionComponent",
+                    "Id": 12091298713673526982
+                },
+                "Component_[1224995342309174991]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1224995342309174991
+                },
+                "Component_[14455044364994458145]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14455044364994458145
+                },
+                "Component_[14551523288250895909]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 14551523288250895909,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 10635178642265270643
+                        },
+                        {
+                            "ComponentId": 5474751843988948219,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 9265204977531564004,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[15860324470992813084]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 15860324470992813084
+                },
+                "Component_[1884222985092069724]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1884222985092069724
+                },
+                "Component_[2658360023147052904]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 2658360023147052904
+                },
+                "Component_[3008034862683361953]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 3008034862683361953
+                },
+                "Component_[5474751843988948219]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5474751843988948219,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{E2A69D44-C555-55A5-B4BB-7733A7B12132}",
+                                    "subId": 279054652
+                                },
+                                "assetHint": "assets/background_mountains/mountain.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[6854768302576633982]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 6854768302576633982
+                },
+                "Component_[9265204977531564004]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 9265204977531564004,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2856455071
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{6DCE14B3-8659-520D-B21F-34EAB9674D92}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

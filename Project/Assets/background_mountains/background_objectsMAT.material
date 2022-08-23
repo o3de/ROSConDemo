@@ -1,0 +1,25 @@
+{
+    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.8231326937675476,
+            0.8231326937675476,
+            0.8231326937675476,
+            1.0
+        ],
+        "baseColor.factor": 0.8500000238418579,
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "Assets/background_mountains/textures/MountainsMAT_BaseColor.png",
+        "emissive.color": [
+            0.37415120005607605,
+            0.37415120005607605,
+            0.37415120005607605,
+            1.0
+        ],
+        "general.enableShadows": false,
+        "normal.textureMap": "Assets/background_mountains/textures/MountainsMAT_Normal.png",
+        "occlusion.diffuseTextureMap": "Assets/background_mountains/textures/MountainsMAT_AO.png",
+        "opacity.factor": 1.0
+    }
+}

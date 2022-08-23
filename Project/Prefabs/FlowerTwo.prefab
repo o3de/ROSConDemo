@@ -138,7 +138,9 @@
                                     "subId": 277866330
                                 },
                                 "assetHint": "assets/flower_tile_two/flower_tile_two.azmodel"
-                            }
+                            },
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.0
                         }
                     }
                 },

@@ -1,0 +1,195 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "PowerLines",
+        "Components": {
+            "Component_[10269691875602760547]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 10269691875602760547,
+                "Child Entity Order": [
+                    "Entity_[284719578280686]"
+                ]
+            },
+            "Component_[13869497392781807951]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 13869497392781807951
+            },
+            "Component_[14050985849153794761]": {
+                "$type": "EditorLockComponent",
+                "Id": 14050985849153794761
+            },
+            "Component_[15873819806349806008]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 15873819806349806008
+            },
+            "Component_[16648190657914015536]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 16648190657914015536
+            },
+            "Component_[16996463711069489617]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 16996463711069489617
+            },
+            "Component_[17585909823672982713]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 17585909823672982713
+            },
+            "Component_[208546707155328569]": {
+                "$type": "SelectionComponent",
+                "Id": 208546707155328569
+            },
+            "Component_[3594365854298885964]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 3594365854298885964
+            },
+            "Component_[5080787506210700056]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 5080787506210700056
+            },
+            "Component_[8438272199993139164]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 8438272199993139164,
+                "Parent Entity": ""
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[284719578280686]": {
+            "Id": "Entity_[284719578280686]",
+            "Name": "PowerLines",
+            "Components": {
+                "Component_[10371668118997807458]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10371668118997807458,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 9795729877304178118
+                        },
+                        {
+                            "ComponentId": 15807841459987738426,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 13849888713269326866,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[11250813086528649098]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11250813086528649098
+                },
+                "Component_[11611995415368478694]": {
+                    "$type": "SelectionComponent",
+                    "Id": 11611995415368478694
+                },
+                "Component_[13801841138191914348]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13801841138191914348
+                },
+                "Component_[13849888713269326866]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 13849888713269326866,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1845255422
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{7570A367-F6F4-5D53-A1DE-B04AE20E1DF9}"
+                                            },
+                                            "assetHint": "assets/barn/powerlines_telephonepollwire.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2282103665
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{990A04F6-853A-5435-AB31-500CB12F5A89}"
+                                            },
+                                            "assetHint": "assets/barn/powerlines_telephonepollmetalmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3111831516
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{CC1A92BD-5ECA-5D43-B4E6-0C5038BABE4E}"
+                                            },
+                                            "assetHint": "assets/barn/powerlines_telephoneresitormat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 4031315814
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{35E05B26-F9F6-5C12-890E-92CA767C5D2C}"
+                                            },
+                                            "assetHint": "assets/barn/powerlines_telephonepollmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[14492791259046653277]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 14492791259046653277
+                },
+                "Component_[14816113019107887213]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14816113019107887213
+                },
+                "Component_[15012442114732716892]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15012442114732716892
+                },
+                "Component_[15807841459987738426]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 15807841459987738426,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{0DF0B3FC-E644-5A79-9D6E-C839D784A948}",
+                                    "subId": 281775889
+                                },
+                                "assetHint": "assets/barn/powerlines.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[2226258484663457196]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2226258484663457196
+                },
+                "Component_[3531677801452294199]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3531677801452294199
+                },
+                "Component_[9795729877304178118]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 9795729877304178118,
+                    "Parent Entity": "ContainerEntity"
+                }
+            }
+        }
+    }
+}

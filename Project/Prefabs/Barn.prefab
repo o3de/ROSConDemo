@@ -123,6 +123,17 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 428393277371854780
                 },
+                "Component_[630570144579562799]": {
+                    "$type": "EditorSurfaceDataMeshComponent",
+                    "Id": 630570144579562799,
+                    "Configuration": {
+                        "SurfaceTags": [
+                            {
+                                "SurfaceTagCrc": 2943272426
+                            }
+                        ]
+                    }
+                },
                 "Component_[8837312003140921855]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 8837312003140921855,

@@ -109,7 +109,13 @@
                                     "subId": 278851907
                                 },
                                 "assetHint": "assets/grass_tile_large/grass_tile_large.azmodel"
-                            }
+                            },
+                            "ExcludeFromReflectionCubeMaps": true,
+                            "UseForwardPassIBLSpecular": true,
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "LodOverride": 4,
+                            "MinimumScreenCoverage": 0.00009999999747378752
                         }
                     }
                 },
