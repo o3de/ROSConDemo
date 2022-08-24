@@ -142,7 +142,10 @@
                                     "subId": 270666860
                                 },
                                 "assetHint": "assets/oak_tree/oak_tree.azmodel"
-                            }
+                            },
+                            "ExcludeFromReflectionCubeMaps": true,
+                            "UseForwardPassIBLSpecular": true,
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },

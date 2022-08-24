@@ -77,7 +77,13 @@
                                     "subId": 273018156
                                 },
                                 "assetHint": "assets/grass_tile_med/grass_tile_med.azmodel"
-                            }
+                            },
+                            "ExcludeFromReflectionCubeMaps": true,
+                            "UseForwardPassIBLSpecular": true,
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "LodOverride": 4,
+                            "MinimumScreenCoverage": 0.0
                         }
                     }
                 },

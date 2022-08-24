@@ -77,7 +77,10 @@
                                     "subId": 279982830
                                 },
                                 "assetHint": "assets/grass_tile_small/grass_tile_small.azmodel"
-                            }
+                            },
+                            "LodType": 1,
+                            "LodOverride": 4,
+                            "MinimumScreenCoverage": 0.0
                         }
                     }
                 },
