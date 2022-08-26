@@ -1,0 +1,22 @@
+{
+    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "Assets/apple_tree/textures/AppleTreeLeaf_BaseColor_lod0.png",
+        "emissive.color": [
+            0.03810179978609085,
+            0.0476233996450901,
+            0.03810179978609085,
+            1.0
+        ],
+        "emissive.intensity": -5.78000020980835,
+        "general.doubleSided": true,
+        "irradiance.irradianceColorSource": "BaseColor",
+        "opacity.alphaSource": "Split",
+        "opacity.factor": 0.5199999809265137,
+        "opacity.mode": "Cutout",
+        "opacity.textureMap": "Assets/apple_tree/textures/AppleTreeLeaf_Opacity_lod0.png",
+        "specularF0.factor": 0.4099999964237213
+    }
+}
