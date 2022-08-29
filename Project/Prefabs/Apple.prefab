@@ -102,6 +102,9 @@
                         "Sphere": {
                             "Radius": 0.03999999910593033
                         }
+                    },
+                    "DebugDrawSettings": {
+                        "LocallyEnabled": false
                     }
                 },
                 "Component_[17515715958005323940]": {
