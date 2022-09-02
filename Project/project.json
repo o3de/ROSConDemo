@@ -16,5 +16,8 @@
     "external_subdirectories": [
         "Gem"
     ],
-    "restricted": "ROSConDemo"
+    "restricted": "ROSConDemo",
+    "gem_names": [
+        "ROS2"
+    ]
 }

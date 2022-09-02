@@ -24,4 +24,5 @@ set(ENABLED_GEMS
     DiffuseProbeGrid
     Terrain
     Vegetation
+    ROS2
 )
