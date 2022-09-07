@@ -3,9 +3,9 @@
     "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.textureBlendMode": "Lerp",
-        "baseColor.textureMap": "Assets/images/env_grass_base_color.png",
-        "normal.textureMap": "Assets/images/env_grass_normal.png",
-        "uv.tileU": 10.0,
-        "uv.tileV": 10.0
+        "baseColor.textureMap": "landscape_textures/landscape_BaseColor.png",
+        "normal.textureMap": "landscape_textures/landscape_Normal.png",
+        "terrain.overrideParallaxSettings": true,
+        "uv.scale": 0.009999999776482582
     }
 }

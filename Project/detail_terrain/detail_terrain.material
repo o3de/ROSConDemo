@@ -1,0 +1,17 @@
+{
+    "materialType": "Materials/Types/EnhancedPBR.materialtype",
+    "materialTypeVersion": 6,
+    "propertyValues": {
+        "anisotropy.enableAnisotropy": true,
+        "anisotropy.factor": -0.949999988079071,
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "landscape_textures/landscape_BaseColor.png",
+        "detailLayerGroup.detailUV.scale": 100.0,
+        "detailLayerGroup.enableDetailLayer": true,
+        "detailLayerGroup.enableNormals": true,
+        "detailLayerGroup.normalDetailMap": "Assets/images/env_dirt_normal.png",
+        "detailLayerGroup.normalDetailStrength": 2.0,
+        "normal.textureMap": "landscape_textures/landscape_Normal.png",
+        "uv.scale": 0.4000000059604645
+    }
+}
