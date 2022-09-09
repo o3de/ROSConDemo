@@ -5,6 +5,10 @@
 			<Class name="AZStd::string" field="element" value="Field" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 			<Class name="AZStd::string" field="element" value="Prop" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 			<Class name="AZStd::string" field="element" value="Path" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+			<Class name="AZStd::string" field="element" value="Grass" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+			<Class name="AZStd::string" field="element" value="Dirt" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+			<Class name="AZStd::string" field="element" value="DirtRoad" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+			<Class name="AZStd::string" field="element" value="GrassTwo" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 		</Class>
 	</Class>
 </ObjectStream>

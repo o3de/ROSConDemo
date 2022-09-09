@@ -1,0 +1,13 @@
+{
+    "materialType": "Materials/Terrain/TerrainDetailMaterial.materialtype",
+    "materialTypeVersion": 1,
+    "propertyValues": {
+        "baseColor.textureBlendMode": "Overlay",
+        "baseColor.textureMap": "Assets/detail_terrain/textures/env_grass_two_base_color.png",
+        "irradiance.irradianceColorSource": "BaseColor",
+        "normal.textureMap": "Assets/detail_terrain/textures/env_grass_two_normal.png",
+        "parallax.textureMap": "Assets/detail_terrain/textures/env_grass_two_height.png",
+        "terrain.blendFactor": 0.38999998569488525,
+        "uv.scale": 0.25
+    }
+}
