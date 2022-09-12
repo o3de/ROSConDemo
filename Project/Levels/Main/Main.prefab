@@ -193,26 +193,6 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 10262602722491785653
                 },
-                "Component_[10355004448114386999]": {
-                    "$type": "EditorTerrainMacroMaterialComponent",
-                    "Id": 10355004448114386999,
-                    "Configuration": {
-                        "MacroColor": {
-                            "assetId": {
-                                "guid": "{85228D5B-136B-55D5-99E7-ACB09632C981}",
-                                "subId": 1000
-                            },
-                            "assetHint": "landscape_textures/landscape_basecolor.png.streamingimage"
-                        },
-                        "MacroNormal": {
-                            "assetId": {
-                                "guid": "{5A13847B-01FD-5677-8593-8239AB8079FA}",
-                                "subId": 1000
-                            },
-                            "assetHint": "landscape_textures/landscape_normal.png.streamingimage"
-                        }
-                    }
-                },
                 "Component_[11529192963084762801]": {
                     "$type": "EditorLockComponent",
                     "Id": 11529192963084762801
@@ -223,7 +203,10 @@
                 },
                 "Component_[13348510952877798055]": {
                     "$type": "EditorTerrainLayerSpawnerComponent",
-                    "Id": 13348510952877798055
+                    "Id": 13348510952877798055,
+                    "Configuration": {
+                        "Priority": 100
+                    }
                 },
                 "Component_[15173114522630197050]": {
                     "$type": "EditorAxisAlignedBoxShapeComponent",
@@ -258,7 +241,28 @@
                     "Configuration": {
                         "Mappings": [
                             {
-                                "Gradient Entity": "Entity_[1244673426961263]"
+                                "Gradient Entity": "Entity_[357799673674485]",
+                                "Surface Tag": {
+                                    "SurfaceTagCrc": 2556944822
+                                }
+                            },
+                            {
+                                "Gradient Entity": "Entity_[357812558576373]",
+                                "Surface Tag": {
+                                    "SurfaceTagCrc": 2819465203
+                                }
+                            },
+                            {
+                                "Gradient Entity": "Entity_[382784004585584]",
+                                "Surface Tag": {
+                                    "SurfaceTagCrc": 3515976054
+                                }
+                            },
+                            {
+                                "Gradient Entity": "Entity_[382814069356656]",
+                                "Surface Tag": {
+                                    "SurfaceTagCrc": 773893423
+                                }
                             }
                         ]
                     }
@@ -269,33 +273,6 @@
                     "Configuration": {
                         "GradientEntities": [
                             "Entity_[296994751178328]"
-                        ]
-                    }
-                },
-                "Component_[5376063889635883984]": {
-                    "$type": "EditorTerrainSurfaceMaterialsListComponent",
-                    "Id": 5376063889635883984,
-                    "Configuration": {
-                        "DefaultMaterial": {
-                            "MaterialAsset": {
-                                "assetId": {
-                                    "guid": "{08245B8A-8450-5D76-96BA-199A5490E3AD}"
-                                },
-                                "assetHint": "assets/images/landscapedetail.azmaterial"
-                            }
-                        },
-                        "Mappings": [
-                            {
-                                "Surface": {
-                                    "SurfaceTagCrc": 1477890117
-                                },
-                                "MaterialAsset": {
-                                    "assetId": {
-                                        "guid": "{08245B8A-8450-5D76-96BA-199A5490E3AD}"
-                                    },
-                                    "assetHint": "assets/images/landscapedetail.azmaterial"
-                                }
-                            }
                         ]
                     }
                 },
@@ -336,8 +313,12 @@
                     "Id": 8853362596021998758,
                     "Child Entity Order": [
                         "Entity_[296994751178328]",
-                        "Entity_[1244673426961263]",
-                        "Entity_[319733644574005]"
+                        "Entity_[357799673674485]",
+                        "Entity_[382784004585584]",
+                        "Entity_[382814069356656]",
+                        "Entity_[357812558576373]",
+                        "Entity_[379201495710453]",
+                        "Entity_[379115596364533]"
                     ]
                 }
             }
@@ -672,14 +653,14 @@
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
                         "Translate": [
-                            8.336098670959473,
-                            -11.60138988494873,
-                            3.919137954711914
+                            12.406982421875,
+                            -5.335803031921387,
+                            3.500011682510376
                         ],
                         "Rotate": [
-                            -6.677178382873535,
-                            -7.863347053527832,
-                            49.44628143310547
+                            -7.182011127471924,
+                            -8.542667388916016,
+                            49.6920280456543
                         ]
                     }
                 },
@@ -3630,64 +3611,6 @@
                 "Component_[9783394721408264499]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9783394721408264499
-                }
-            }
-        },
-        "Entity_[1244673426961263]": {
-            "Id": "Entity_[1244673426961263]",
-            "Name": "Surface",
-            "Components": {
-                "Component_[11471086060395531795]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 11471086060395531795
-                },
-                "Component_[12338735917913720724]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 12338735917913720724
-                },
-                "Component_[14056359588908419370]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 14056359588908419370
-                },
-                "Component_[15077794239467689791]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 15077794239467689791,
-                    "Parent Entity": "Entity_[1078906895689]"
-                },
-                "Component_[17779431302587822701]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 17779431302587822701
-                },
-                "Component_[1921530071761198695]": {
-                    "$type": "EditorSurfaceSlopeGradientComponent",
-                    "Id": 1921530071761198695,
-                    "Configuration": {
-                        "SurfaceTagsToSample": [
-                            {
-                                "SurfaceTagCrc": 3363197873
-                            }
-                        ],
-                        "SlopeMax": 40.5
-                    },
-                    "Previewer": {
-                        "BoundsEntity": ""
-                    }
-                },
-                "Component_[2602439050869567731]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 2602439050869567731
-                },
-                "Component_[6328113618297923150]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 6328113618297923150
-                },
-                "Component_[6661252242910143566]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 6661252242910143566
-                },
-                "Component_[7538463582568340183]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7538463582568340183
                 }
             }
         },
@@ -14049,137 +13972,524 @@
                 }
             }
         },
-        "Entity_[319733644574005]": {
-            "Id": "Entity_[319733644574005]",
-            "Name": "Terrian_Detail",
+        "Entity_[357799673674485]": {
+            "Id": "Entity_[357799673674485]",
+            "Name": "DirtGradient",
             "Components": {
-                "Component_[12092552574792341320]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 12092552574792341320
-                },
-                "Component_[12755337469201524818]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 12755337469201524818,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 2084814471
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{0C85A396-900F-55E5-8786-2D0DD99DDA1C}"
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                },
-                "Component_[13194314423527508314]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 13194314423527508314
-                },
-                "Component_[14436246391837128667]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 14436246391837128667,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{C1D935B6-2DAC-5CA4-A71E-22F88E0270E4}",
-                                    "subId": 273058927
-                                },
-                                "assetHint": "detail_terrain/terrain_plane.azmodel"
-                            }
-                        }
-                    }
-                },
-                "Component_[15196624187990906072]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 15196624187990906072
-                },
-                "Component_[1599111028247694408]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 1599111028247694408
-                },
-                "Component_[16967265772333266802]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 16967265772333266802,
-                    "ColliderConfiguration": {
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "DefaultMaterial"
-                                }
-                            ]
-                        }
+                "Component_[10707924659521035089]": {
+                    "$type": "EditorImageGradientComponent",
+                    "Id": 10707924659521035089,
+                    "Previewer": {
+                        "BoundsEntity": "Entity_[357799673674485]"
                     },
-                    "ShapeConfiguration": {
-                        "PhysicsAsset": {
-                            "Asset": {
-                                "assetId": {
-                                    "guid": "{DFB4A4BB-121C-5379-893D-89042A95A202}",
-                                    "subId": 1892764397
-                                },
-                                "assetHint": "assets/detail_terrain/terrain_plane.pxmesh"
+                    "Configuration": {
+                        "StreamingImageAsset": {
+                            "assetId": {
+                                "guid": "{9D4767A7-4E4B-57D9-AD1D-FDBBAF397905}",
+                                "subId": 1000
                             },
-                            "Configuration": {
-                                "Scale": [
-                                    200.0,
-                                    200.0,
-                                    200.0
-                                ],
-                                "PhysicsAsset": {
-                                    "assetId": {
-                                        "guid": "{DFB4A4BB-121C-5379-893D-89042A95A202}",
-                                        "subId": 1892764397
-                                    },
-                                    "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/detail_terrain/terrain_plane.pxmesh"
-                                }
-                            }
+                            "assetHint": "assets/landscape_textures/dirt_gsi.png.streamingimage"
                         }
-                    },
-                    "DebugDrawSettings": {
-                        "LocallyEnabled": false
                     }
                 },
-                "Component_[3456243390089739337]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 3456243390089739337
-                },
-                "Component_[3858060388381457401]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 3858060388381457401
-                },
-                "Component_[4833987997878229418]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 4833987997878229418
-                },
-                "Component_[568351180651872809]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 568351180651872809
-                },
-                "Component_[6680096025061575468]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 6680096025061575468,
-                    "Parent Entity": "Entity_[1078906895689]",
-                    "Transform Data": {
+                "Component_[10960632897421163006]": {
+                    "$type": "EditorGradientTransformComponent",
+                    "Id": 10960632897421163006,
+                    "Configuration": {
+                        "ShapeReference": "",
+                        "Bounds": [
+                            512.0,
+                            512.0,
+                            30.0
+                        ],
                         "Translate": [
-                            0.42488861083984375,
-                            -1.2970352172851563,
-                            -14.985523223876953
-                        ],
-                        "Rotate": [
                             0.0,
                             0.0,
-                            180.0
+                            15.0
+                        ]
+                    }
+                },
+                "Component_[14708569048268578784]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14708569048268578784
+                },
+                "Component_[15073569237843637118]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15073569237843637118
+                },
+                "Component_[17715313969582334495]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17715313969582334495,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[2808670723362504799]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2808670723362504799
+                },
+                "Component_[2990251911541311224]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2990251911541311224
+                },
+                "Component_[3179131456472003536]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3179131456472003536
+                },
+                "Component_[3670323448284271861]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3670323448284271861
+                },
+                "Component_[6292619247638265173]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6292619247638265173
+                },
+                "Component_[6846134581821263440]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6846134581821263440
+                },
+                "Component_[7920488526460036641]": {
+                    "$type": "EditorReferenceShapeComponent",
+                    "Id": 7920488526460036641,
+                    "Configuration": {
+                        "ShapeEntityId": "Entity_[1078906895689]"
+                    }
+                }
+            }
+        },
+        "Entity_[357812558576373]": {
+            "Id": "Entity_[357812558576373]",
+            "Name": "GrassGradient",
+            "Components": {
+                "Component_[10707924659521035089]": {
+                    "$type": "EditorImageGradientComponent",
+                    "Id": 10707924659521035089,
+                    "Previewer": {
+                        "BoundsEntity": "Entity_[357812558576373]"
+                    },
+                    "Configuration": {
+                        "StreamingImageAsset": {
+                            "assetId": {
+                                "guid": "{9FED255D-B9E1-56FF-AF7B-8ECFA634DC40}",
+                                "subId": 1000
+                            },
+                            "assetHint": "assets/landscape_textures/grass_gsi.png.streamingimage"
+                        }
+                    }
+                },
+                "Component_[10960632897421163006]": {
+                    "$type": "EditorGradientTransformComponent",
+                    "Id": 10960632897421163006,
+                    "Configuration": {
+                        "ShapeReference": "",
+                        "Bounds": [
+                            512.0,
+                            512.0,
+                            30.0
                         ],
-                        "UniformScale": 200.0
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            15.0
+                        ]
+                    }
+                },
+                "Component_[14708569048268578784]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14708569048268578784
+                },
+                "Component_[15073569237843637118]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15073569237843637118
+                },
+                "Component_[17715313969582334495]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17715313969582334495,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[2808670723362504799]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2808670723362504799
+                },
+                "Component_[2990251911541311224]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2990251911541311224
+                },
+                "Component_[3179131456472003536]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3179131456472003536
+                },
+                "Component_[3670323448284271861]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3670323448284271861
+                },
+                "Component_[6292619247638265173]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6292619247638265173
+                },
+                "Component_[6846134581821263440]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6846134581821263440
+                },
+                "Component_[7920488526460036641]": {
+                    "$type": "EditorReferenceShapeComponent",
+                    "Id": 7920488526460036641,
+                    "Configuration": {
+                        "ShapeEntityId": "Entity_[1078906895689]"
+                    }
+                }
+            }
+        },
+        "Entity_[379115596364533]": {
+            "Id": "Entity_[379115596364533]",
+            "Name": "SurfaceMacroMaterials",
+            "Components": {
+                "Component_[11126453402267562315]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11126453402267562315
+                },
+                "Component_[11402566096079482843]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 11402566096079482843
+                },
+                "Component_[11674467642952078999]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11674467642952078999
+                },
+                "Component_[12509279469568449501]": {
+                    "$type": "EditorTerrainMacroMaterialComponent",
+                    "Id": 12509279469568449501,
+                    "Configuration": {
+                        "MacroColor": {
+                            "assetId": {
+                                "guid": "{EE3ADADA-64DA-5665-B23A-8C8748F3EAAA}",
+                                "subId": 1000
+                            },
+                            "assetHint": "assets/landscape_textures/landscape_basecolor.png.streamingimage"
+                        },
+                        "MacroNormal": {
+                            "assetId": {
+                                "guid": "{F340AB35-8583-55B8-8A6F-00A53ED457CC}",
+                                "subId": 1000
+                            },
+                            "assetHint": "assets/landscape_textures/landscape_normal.png.streamingimage"
+                        },
+                        "NormalFactor": 0.2199999988079071,
+                        "Priority": 100
+                    }
+                },
+                "Component_[14392159109237909348]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14392159109237909348
+                },
+                "Component_[14486160826423808552]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 14486160826423808552
+                },
+                "Component_[1629302061433106333]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1629302061433106333
+                },
+                "Component_[17246077114262490397]": {
+                    "$type": "EditorAxisAlignedBoxShapeComponent",
+                    "Id": 17246077114262490397,
+                    "DisplayFilled": false,
+                    "AxisAlignedBoxShape": {
+                        "Configuration": {
+                            "IsFilled": false,
+                            "Dimensions": [
+                                512.0,
+                                512.0,
+                                512.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[17944598235812719686]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17944598235812719686,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[3667457818736680788]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3667457818736680788
+                },
+                "Component_[5577383559810007377]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5577383559810007377
+                }
+            }
+        },
+        "Entity_[379201495710453]": {
+            "Id": "Entity_[379201495710453]",
+            "Name": "SurfaceMaterials",
+            "Components": {
+                "Component_[10437799940240683642]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10437799940240683642
+                },
+                "Component_[11647063055652419905]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11647063055652419905
+                },
+                "Component_[13491419163123234735]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 13491419163123234735
+                },
+                "Component_[15781149014710730902]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15781149014710730902,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[16937938645180032713]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16937938645180032713
+                },
+                "Component_[5298406361239475393]": {
+                    "$type": "EditorAxisAlignedBoxShapeComponent",
+                    "Id": 5298406361239475393,
+                    "DisplayFilled": false,
+                    "AxisAlignedBoxShape": {
+                        "Configuration": {
+                            "IsFilled": false,
+                            "Dimensions": [
+                                512.0,
+                                512.0,
+                                512.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[5753978998295366425]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 5753978998295366425
+                },
+                "Component_[6411440879012874253]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6411440879012874253
+                },
+                "Component_[7065646953284273568]": {
+                    "$type": "EditorTerrainSurfaceMaterialsListComponent",
+                    "Id": 7065646953284273568,
+                    "Configuration": {
+                        "Mappings": [
+                            {
+                                "Surface": {
+                                    "SurfaceTagCrc": 2556944822
+                                },
+                                "MaterialAsset": {
+                                    "assetId": {
+                                        "guid": "{AB76F705-BF6D-5F73-A911-F3D43827F31F}"
+                                    },
+                                    "assetHint": "assets/detail_terrain/dirt.azmaterial"
+                                }
+                            },
+                            {
+                                "Surface": {
+                                    "SurfaceTagCrc": 2819465203
+                                },
+                                "MaterialAsset": {
+                                    "assetId": {
+                                        "guid": "{785F19DD-9A36-5ECE-810F-A043E2FE4B98}"
+                                    },
+                                    "assetHint": "assets/detail_terrain/grass.azmaterial"
+                                }
+                            },
+                            {
+                                "Surface": {
+                                    "SurfaceTagCrc": 3515976054
+                                },
+                                "MaterialAsset": {
+                                    "assetId": {
+                                        "guid": "{FC672516-BD7B-52B5-BC99-19775B571B66}"
+                                    },
+                                    "assetHint": "assets/detail_terrain/dirtroad.azmaterial"
+                                }
+                            },
+                            {
+                                "Surface": {
+                                    "SurfaceTagCrc": 773893423
+                                },
+                                "MaterialAsset": {
+                                    "assetId": {
+                                        "guid": "{EB77405C-02F1-58D3-AD61-42C7945543BF}"
+                                    },
+                                    "assetHint": "assets/detail_terrain/grasstwo.azmaterial"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "Component_[8022153896100680604]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 8022153896100680604
+                },
+                "Component_[8781960548446770255]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 8781960548446770255
+                }
+            }
+        },
+        "Entity_[382784004585584]": {
+            "Id": "Entity_[382784004585584]",
+            "Name": "DirtRoadGradient",
+            "Components": {
+                "Component_[10707924659521035089]": {
+                    "$type": "EditorImageGradientComponent",
+                    "Id": 10707924659521035089,
+                    "Previewer": {
+                        "BoundsEntity": "Entity_[382784004585584]"
+                    },
+                    "Configuration": {
+                        "StreamingImageAsset": {
+                            "assetId": {
+                                "guid": "{DA53A693-2794-5D5F-97AC-EF61DCB1FA0E}",
+                                "subId": 1000
+                            },
+                            "assetHint": "assets/landscape_textures/dirtroad_gsi.png.streamingimage"
+                        }
+                    }
+                },
+                "Component_[10960632897421163006]": {
+                    "$type": "EditorGradientTransformComponent",
+                    "Id": 10960632897421163006,
+                    "Configuration": {
+                        "ShapeReference": "",
+                        "Bounds": [
+                            512.0,
+                            512.0,
+                            30.0
+                        ],
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            15.0
+                        ]
+                    }
+                },
+                "Component_[14708569048268578784]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14708569048268578784
+                },
+                "Component_[15073569237843637118]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15073569237843637118
+                },
+                "Component_[17715313969582334495]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17715313969582334495,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[2808670723362504799]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2808670723362504799
+                },
+                "Component_[2990251911541311224]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2990251911541311224
+                },
+                "Component_[3179131456472003536]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3179131456472003536
+                },
+                "Component_[3670323448284271861]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3670323448284271861
+                },
+                "Component_[6292619247638265173]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6292619247638265173
+                },
+                "Component_[6846134581821263440]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6846134581821263440
+                },
+                "Component_[7920488526460036641]": {
+                    "$type": "EditorReferenceShapeComponent",
+                    "Id": 7920488526460036641,
+                    "Configuration": {
+                        "ShapeEntityId": "Entity_[1078906895689]"
+                    }
+                }
+            }
+        },
+        "Entity_[382814069356656]": {
+            "Id": "Entity_[382814069356656]",
+            "Name": "GrassTwoGradient",
+            "Components": {
+                "Component_[10707924659521035089]": {
+                    "$type": "EditorImageGradientComponent",
+                    "Id": 10707924659521035089,
+                    "Previewer": {
+                        "BoundsEntity": "Entity_[382814069356656]"
+                    },
+                    "Configuration": {
+                        "StreamingImageAsset": {
+                            "assetId": {
+                                "guid": "{88C107F4-C434-5DF6-8D95-17E9FE71408E}",
+                                "subId": 1000
+                            },
+                            "assetHint": "assets/landscape_textures/grasstwo_gsi.png.streamingimage"
+                        }
+                    }
+                },
+                "Component_[10960632897421163006]": {
+                    "$type": "EditorGradientTransformComponent",
+                    "Id": 10960632897421163006,
+                    "Configuration": {
+                        "ShapeReference": "",
+                        "Bounds": [
+                            512.0,
+                            512.0,
+                            30.0
+                        ],
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            15.0
+                        ]
+                    }
+                },
+                "Component_[14708569048268578784]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14708569048268578784
+                },
+                "Component_[15073569237843637118]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15073569237843637118
+                },
+                "Component_[17715313969582334495]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17715313969582334495,
+                    "Parent Entity": "Entity_[1078906895689]"
+                },
+                "Component_[2808670723362504799]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2808670723362504799
+                },
+                "Component_[2990251911541311224]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2990251911541311224
+                },
+                "Component_[3179131456472003536]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3179131456472003536
+                },
+                "Component_[3670323448284271861]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3670323448284271861
+                },
+                "Component_[6292619247638265173]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6292619247638265173
+                },
+                "Component_[6846134581821263440]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6846134581821263440
+                },
+                "Component_[7920488526460036641]": {
+                    "$type": "EditorReferenceShapeComponent",
+                    "Id": 7920488526460036641,
+                    "Configuration": {
+                        "ShapeEntityId": "Entity_[1078906895689]"
                     }
                 }
             }
