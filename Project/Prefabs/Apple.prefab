@@ -14,10 +14,6 @@
                     "Entity_[532883711761236]"
                 ]
             },
-            "Component_[14711923490105009670]": {
-                "$type": "SelectionComponent",
-                "Id": 14711923490105009670
-            },
             "Component_[17300195898860990188]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 17300195898860990188,
@@ -134,6 +130,23 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 17995894834026756835
                 },
+                "Component_[2958517513867903512]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 2958517513867903512,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
+                            "path": "scriptCanvas/Apple.scriptcanvas"
+                        },
+                        "sourceName": "Apple.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
+                                "path": "scriptCanvas/Apple.scriptcanvas"
+                            }
+                        }
+                    }
+                },
                 "Component_[3630417534287890287]": {
                     "$type": "EditorLockComponent",
                     "Id": 3630417534287890287
@@ -154,6 +167,14 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 6717239618132726328
                 },
+                "Component_[7138985039715548058]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 7138985039715548058,
+                    "Configuration": {
+                        "entityId": "",
+                        "Gravity Enabled": false
+                    }
+                },
                 "Component_[7230618248793844206]": {
                     "$type": "AZ::Render::EditorMeshComponent",
                     "Id": 7230618248793844206,
@@ -168,10 +189,6 @@
                             }
                         }
                     }
-                },
-                "Component_[8175896140022812698]": {
-                    "$type": "SelectionComponent",
-                    "Id": 8175896140022812698
                 }
             }
         }
