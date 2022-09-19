@@ -1,0 +1,282 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "Apple_Crate",
+        "Components": {
+            "Component_[10319944021297111684]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 10319944021297111684
+            },
+            "Component_[12002651572696332522]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 12002651572696332522
+            },
+            "Component_[12052788787504229310]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 12052788787504229310
+            },
+            "Component_[13029979492766395855]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 13029979492766395855,
+                "Child Entity Order": [
+                    "Entity_[368081601558509]",
+                    "Entity_[710347545376749]"
+                ]
+            },
+            "Component_[14710467565401484989]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 14710467565401484989
+            },
+            "Component_[15224001494745498459]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 15224001494745498459,
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        0.0,
+                        0.18009325861930847
+                    ]
+                }
+            },
+            "Component_[15578611361121469530]": {
+                "$type": "EditorLockComponent",
+                "Id": 15578611361121469530
+            },
+            "Component_[4018777637315211517]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 4018777637315211517
+            },
+            "Component_[581434203503420181]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 581434203503420181
+            },
+            "Component_[7076366510474746320]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 7076366510474746320
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[368081601558509]": {
+            "Id": "Entity_[368081601558509]",
+            "Name": "Apple_Crate",
+            "Components": {
+                "Component_[11032823860518593082]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11032823860518593082
+                },
+                "Component_[14063829758759983448]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14063829758759983448,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[16325347661556016829]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16325347661556016829
+                },
+                "Component_[16860679445705058947]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 16860679445705058947
+                },
+                "Component_[1699735674964201617]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 1699735674964201617
+                },
+                "Component_[17515991116920437105]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17515991116920437105
+                },
+                "Component_[6131507114438886105]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 6131507114438886105,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "DefaultMaterial"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{4B118B91-95F2-51D3-89FF-B3295ACF5544}",
+                                    "subId": 1435810015
+                                },
+                                "assetHint": "assets/apple_crate/apple_crate.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{4B118B91-95F2-51D3-89FF-B3295ACF5544}",
+                                        "subId": 1435810015
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/apple_crate/apple_crate.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Component_[6965830782696864825]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6965830782696864825
+                },
+                "Component_[8205517628188817334]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8205517628188817334,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1574106304
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{2547663B-752C-5C7A-BF44-7288D95A7B21}"
+                                            },
+                                            "assetHint": "assets/apple_crate/apple_crate_cratemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[8819040866776028521]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 8819040866776028521,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4B118B91-95F2-51D3-89FF-B3295ACF5544}",
+                                    "subId": 270483317
+                                },
+                                "assetHint": "assets/apple_crate/apple_crate.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[9008534885754287450]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 9008534885754287450,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 14063829758759983448
+                        },
+                        {
+                            "ComponentId": 8819040866776028521,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 8205517628188817334,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 6131507114438886105,
+                            "SortIndex": 3
+                        }
+                    ]
+                },
+                "Component_[9070077239474304225]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9070077239474304225
+                }
+            }
+        },
+        "Entity_[710347545376749]": {
+            "Id": "Entity_[710347545376749]",
+            "Name": "Apples",
+            "Components": {
+                "Component_[12323307880868596825]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 12323307880868596825,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C3ABE52-2FFB-568A-A929-5C03FCE82523}",
+                                    "subId": 281849903
+                                },
+                                "assetHint": "assets/apple_crate/apples.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[14657094464998808317]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14657094464998808317
+                },
+                "Component_[15614483012682780230]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15614483012682780230
+                },
+                "Component_[1829810337210230213]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1829810337210230213
+                },
+                "Component_[2599595645907859440]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2599595645907859440
+                },
+                "Component_[2602067516557266413]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 2602067516557266413,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{8374CF8D-27C3-5B5B-AC6A-2B6CCB79C956}"
+                                            },
+                                            "assetHint": "assets/apple_crate/apples_applemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[2757178427517368518]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2757178427517368518
+                },
+                "Component_[2844246515640413479]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2844246515640413479
+                },
+                "Component_[3815322363885625376]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3815322363885625376
+                },
+                "Component_[6930457845299929764]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 6930457845299929764
+                },
+                "Component_[7961709360424597703]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7961709360424597703,
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            -0.033247172832489014
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
