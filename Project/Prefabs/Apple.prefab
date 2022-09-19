@@ -130,23 +130,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 17995894834026756835
                 },
-                "Component_[2958517513867903512]": {
-                    "$type": "EditorScriptCanvasComponent",
-                    "Id": 2958517513867903512,
-                    "configuration": {
-                        "sourceHandle": {
-                            "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
-                            "path": "scriptCanvas/Apple.scriptcanvas"
-                        },
-                        "sourceName": "Apple.scriptcanvas",
-                        "propertyOverrides": {
-                            "source": {
-                                "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
-                                "path": "scriptCanvas/Apple.scriptcanvas"
-                            }
-                        }
-                    }
-                },
                 "Component_[3630417534287890287]": {
                     "$type": "EditorLockComponent",
                     "Id": 3630417534287890287
