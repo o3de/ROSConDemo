@@ -113,9 +113,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{6B229DA0-87C1-5212-9892-D11894AC6C4C}"
+                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
                                             },
-                                            "assetHint": "assets/apple_tree/appletree_leafmat.azmaterial"
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
                                         }
                                     }
                                 }
@@ -176,7 +176,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": -0.46243637800216675
+                    "value": -0.4624363780021667
                 },
                 {
                     "op": "replace",
@@ -266,7 +266,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": -0.36320945620536804
+                    "value": -0.363209456205368
                 },
                 {
                     "op": "replace",
@@ -296,7 +296,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": -0.10287938266992569
+                    "value": -0.10287938266992568
                 },
                 {
                     "op": "replace",
@@ -351,7 +351,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": 0.37859344482421875
+                    "value": 0.3785934448242187
                 },
                 {
                     "op": "replace",
@@ -381,7 +381,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": 0.10416412353515625
+                    "value": 0.10416412353515624
                 },
                 {
                     "op": "replace",
@@ -416,7 +416,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": 0.42196887731552124
+                    "value": 0.4219688773155213
                 },
                 {
                     "op": "replace",
@@ -721,7 +721,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.2611603736877441
+                    "value": 1.261160373687744
                 },
                 {
                     "op": "replace",
@@ -751,7 +751,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.0599949359893799
+                    "value": 1.05999493598938
                 },
                 {
                     "op": "replace",
@@ -861,7 +861,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": 0.45446014404296875
+                    "value": 0.4544601440429687
                 },
                 {
                     "op": "replace",
@@ -931,7 +931,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.9938002824783325
+                    "value": 1.9938002824783323
                 },
                 {
                     "op": "replace",
@@ -1201,7 +1201,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": -0.12009429931640625
+                    "value": -0.12009429931640624
                 },
                 {
                     "op": "replace",
