@@ -1,5 +1,5 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
     "materialTypeVersion": 5,
     "propertyValues": {
         "baseColor.color": [
@@ -9,7 +9,7 @@
             1.0
         ],
         "baseColor.textureBlendMode": "Lerp",
-        "baseColor.textureMap": "Assets/apple_tree/textures/TreeMAT_BaseColor_lod0.png",
+        "baseColor.textureMap": "textures/TreeMAT_BaseColor_lod0.png",
         "emissive.color": [
             0.0,
             0.0,
@@ -17,8 +17,10 @@
             1.0
         ],
         "irradiance.irradianceColorSource": "BaseColor",
-        "normal.textureMap": "Assets/apple_tree/textures/TreeMAT_Normal_lod0.png",
+        "normal.factor": 1.059999942779541,
+        "normal.textureMap": "textures/TreeMAT_Normal_lod0.png",
         "opacity.factor": 1.0,
-        "roughness.factor": 0.8700000047683716
+        "roughness.factor": 0.6499999761581421,
+        "specularF0.factor": 0.3400000035762787
     }
 }

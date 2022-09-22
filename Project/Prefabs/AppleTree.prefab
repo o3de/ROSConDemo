@@ -3,10 +3,6 @@
         "Id": "ContainerEntity",
         "Name": "AppleTree",
         "Components": {
-            "Component_[12445674437867844546]": {
-                "$type": "SelectionComponent",
-                "Id": 12445674437867844546
-            },
             "Component_[13780854788209656370]": {
                 "$type": "EditorOnlyEntityComponent",
                 "Id": 13780854788209656370
@@ -117,9 +113,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{6B229DA0-87C1-5212-9892-D11894AC6C4C}"
+                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
                                             },
-                                            "assetHint": "assets/apple_tree/appletree_leafmat.azmaterial"
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
                                         }
                                     }
                                 }
@@ -156,10 +152,6 @@
                         }
                     ]
                 },
-                "Component_[7846450723399500641]": {
-                    "$type": "SelectionComponent",
-                    "Id": 7846450723399500641
-                },
                 "Component_[8148146872807561086]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 8148146872807561086
@@ -168,6 +160,786 @@
         }
     },
     "Instances": {
+        "Instance_[1548572892794430]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.07213592529296875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.4624363780021667
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.5165884494781494
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548577187761726]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.41513824462890625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.2893456518650055
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.0679473876953125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548581482729022]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.149261474609375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.6113235354423523
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.381282091140747
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548585777696318]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.2191314697265625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.363209456205368
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 0.870732307434082
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548590072663614]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.19435882568359375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.10287938266992568
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.1406707763671875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548594367630910]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.4815521240234375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.3486593961715698
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.1570849418640137
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548598662598206]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.3785934448242187
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.10347793996334076
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.1171865463256836
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548602957565502]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.10416412353515624
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.3104574382305145
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.8599448204040527
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548607252532798]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.31195831298828125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.4219688773155213
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.739825963973999
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548611547500094]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.25012969970703125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.26127779483795166
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.257394790649414
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548615842467390]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.4533538818359375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.16138377785682678
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.7138378620147705
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548620137434686]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.1374969482421875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.5068332552909851
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.289228916168213
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548624432401982]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.35927581787109375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.28574466705322266
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 0.7248440980911255
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548628727369278]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.4932708740234375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.16957974433898926
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 0.870732307434082
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548633022336574]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.19510650634765625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.3113781809806824
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.1569318771362305
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548637317303870]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.04746246337890625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.4478030800819397
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 0.7974541783332825
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548641612271166]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.1811370849609375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.4102482795715332
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.8217086791992188
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548645907238462]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.11505126953125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.44917887449264526
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.1406707763671875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548650202205758]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.150360107421875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.5059754848480225
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.261160373687744
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548654497173054]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.5008010864257813
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.166781485080719
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.05999493598938
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548658792140350]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.3983917236328125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.43122929334640503
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.163360595703125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548663087107646]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.071136474609375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.10078414529561996
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 2.5067496299743652
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548667382074942]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.40299224853515625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.12834146618843079
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.5323485136032104
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548671677042238]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": 0.4544601440429687
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.25335344672203064
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.5109281539916992
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548675972009534]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.496978759765625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": 0.23004315793514252
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.5109281539916992
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
+        "Instance_[1548680266976830]": {
+            "Source": "Prefabs/Apple.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Parent Entity",
+                    "value": "../ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
+                    "value": -0.3798828125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
+                    "value": -0.19164139032363892
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
+                    "value": 1.9938002824783323
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Rotate/2",
+                    "value": 62.772701263427734
+                }
+            ]
+        },
         "Instance_[2424181840805100]": {
             "Source": "Prefabs/Apple.prefab",
             "Patches": [
@@ -264,7 +1036,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.2892287969589233
+                    "value": 1.2892287969589231
                 }
             ]
         },
@@ -289,7 +1061,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.7398258447647095
+                    "value": 1.7398258447647097
                 }
             ]
         },
@@ -404,7 +1176,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": 0.4070781469345093
+                    "value": 0.33831787109375
                 },
                 {
                     "op": "replace",
@@ -429,12 +1201,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": -0.12009131908416748
+                    "value": -0.12009429931640624
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": 0.6094903945922852
+                    "value": 0.5283724665641785
                 },
                 {
                     "op": "replace",
@@ -554,12 +1326,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": 0.12766426801681519
+                    "value": 0.12766265869140625
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": 0.6296868324279785
+                    "value": 0.5669066905975342
                 },
                 {
                     "op": "replace",
@@ -714,7 +1486,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.5165883302688599
+                    "value": 1.51658833026886
                 }
             ]
         },
@@ -729,7 +1501,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
-                    "value": -0.8092097043991089
+                    "value": -0.7065200805664063
                 },
                 {
                     "op": "replace",
