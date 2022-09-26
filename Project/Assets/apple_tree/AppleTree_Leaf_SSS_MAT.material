@@ -2,7 +2,13 @@
     "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/EnhancedPBR.materialtype",
     "materialTypeVersion": 6,
     "propertyValues": {
-        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.color": [
+            0.48299381136894226,
+            0.48299381136894226,
+            0.48299381136894226,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "Overlay",
         "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod0.png",
         "general.doubleSided": true,
         "irradiance.irradianceColorSource": "BaseColor",
@@ -11,26 +17,27 @@
         "opacity.factor": 0.5199999809265137,
         "opacity.mode": "Cutout",
         "opacity.textureMap": "textures/AppleTreeLeaf_Opacity_lod0.png",
-        "roughness.factor": 0.6200000047683716,
-        "subsurfaceScattering.distanceAttenuation": 0.0,
+        "roughness.factor": 0.4099999964237213,
+        "specularF0.factor": 0.5199999809265137,
+        "subsurfaceScattering.distanceAttenuation": 0.03999999910593033,
         "subsurfaceScattering.enableSubsurfaceScattering": true,
+        "subsurfaceScattering.influenceMap": "textures/AppleTreeLeaf_Thickness_lod0.png",
         "subsurfaceScattering.scatterColor": [
             1.0,
             1.0,
             1.0,
             1.0
         ],
-        "subsurfaceScattering.scatterDistance": 2.4000000953674316,
+        "subsurfaceScattering.scatterDistance": 1.600000023841858,
         "subsurfaceScattering.shrinkFactor": 0.0,
-        "subsurfaceScattering.thickness": 0.7300000190734863,
+        "subsurfaceScattering.thickness": 0.7200000286102295,
         "subsurfaceScattering.thicknessMap": "textures/AppleTreeLeaf_Thickness_lod0.png",
         "subsurfaceScattering.transmissionMode": "ThinObject",
         "subsurfaceScattering.transmissionNdLBias": -0.18000000715255737,
-        "subsurfaceScattering.transmissionScale": 0.800000011920929,
         "subsurfaceScattering.transmissionTint": [
-            0.2859998345375061,
-            0.3333333432674408,
-            0.22815290093421936,
+            0.24603649973869324,
+            0.2993209958076477,
+            0.18092620372772217,
             1.0
         ]
     }
