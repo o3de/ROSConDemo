@@ -3,12 +3,12 @@
     "materialTypeVersion": 5,
     "propertyValues": {
         "baseColor.color": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
+            0.38776230812072754,
+            0.38776230812072754,
+            0.38776230812072754,
             1.0
         ],
-        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureBlendMode": "Overlay",
         "baseColor.textureMap": "textures/TreeMAT_BaseColor_lod0.png",
         "emissive.color": [
             0.0,
@@ -20,7 +20,11 @@
         "normal.factor": 1.059999942779541,
         "normal.textureMap": "textures/TreeMAT_Normal_lod0.png",
         "opacity.factor": 1.0,
-        "roughness.factor": 0.6499999761581421,
-        "specularF0.factor": 0.3400000035762787
+        "parallax.factor": 0.0,
+        "parallax.offset": -0.006000000052154064,
+        "parallax.pdo": true,
+        "parallax.textureMap": "textures/TreeMAT_Height_lod0.png",
+        "roughness.factor": 0.6200000047683716,
+        "specularF0.factor": 0.41999998688697815
     }
 }
