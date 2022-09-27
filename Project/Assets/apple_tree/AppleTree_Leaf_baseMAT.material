@@ -1,0 +1,16 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
+    "propertyValues": {
+        "baseColor.color": [
+            0.3197222948074341,
+            0.3197222948074341,
+            0.3197222948074341,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "Overlay",
+        "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod3.png",
+        "general.doubleSided": true,
+        "irradiance.irradianceColorSource": "BaseColor"
+    }
+}

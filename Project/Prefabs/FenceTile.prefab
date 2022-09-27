@@ -7,10 +7,6 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 10245897363973200994
             },
-            "Component_[10499981923576161753]": {
-                "$type": "SelectionComponent",
-                "Id": 10499981923576161753
-            },
             "Component_[13732373068159500468]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 13732373068159500468
@@ -41,7 +37,14 @@
             "Component_[4968815478519136831]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 4968815478519136831,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        12.946001052856445,
+                        0.0
+                    ]
+                }
             },
             "Component_[8807555830982645442]": {
                 "$type": "EditorLockComponent",
@@ -85,7 +88,8 @@
                                     "subId": 283403668
                                 },
                                 "assetHint": "assets/fence_tile/fencingtile.azmodel"
-                            }
+                            },
+                            "SortKey": 7
                         }
                     }
                 },
@@ -134,11 +138,8 @@
                 "Component_[17873863281161733613]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 17873863281161733613,
-                    "Parent Entity": "ContainerEntity"
-                },
-                "Component_[2111882604764735968]": {
-                    "$type": "SelectionComponent",
-                    "Id": 2111882604764735968
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[262310791187474740]": {
                     "$type": "EditorPendingCompositionComponent",

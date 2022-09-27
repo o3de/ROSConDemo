@@ -1,9 +1,15 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
     "materialTypeVersion": 5,
     "propertyValues": {
-        "baseColor.textureBlendMode": "Lerp",
-        "baseColor.textureMap": "Assets/apple_tree/textures/AppleTreeLeaf_BaseColor_lod0.png",
+        "baseColor.color": [
+            0.48235294222831726,
+            0.48235294222831726,
+            0.48235294222831726,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "Overlay",
+        "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod0.png",
         "emissive.color": [
             0.03810179978609085,
             0.0476233996450901,
@@ -16,7 +22,7 @@
         "opacity.alphaSource": "Split",
         "opacity.factor": 0.5199999809265137,
         "opacity.mode": "Cutout",
-        "opacity.textureMap": "Assets/apple_tree/textures/AppleTreeLeaf_Opacity_lod0.png",
+        "opacity.textureMap": "textures/AppleTreeLeaf_Opacity_lod0.png",
         "specularF0.factor": 0.4099999964237213
     }
 }

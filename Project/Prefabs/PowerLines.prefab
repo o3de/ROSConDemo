@@ -34,10 +34,6 @@
                 "$type": "EditorEntityIconComponent",
                 "Id": 17585909823672982713
             },
-            "Component_[208546707155328569]": {
-                "$type": "SelectionComponent",
-                "Id": 208546707155328569
-            },
             "Component_[3594365854298885964]": {
                 "$type": "EditorVisibilityComponent",
                 "Id": 3594365854298885964
@@ -49,7 +45,14 @@
             "Component_[8438272199993139164]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 8438272199993139164,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        0.0,
+                        -0.11979246139526367
+                    ]
+                }
             }
         }
     },
@@ -78,10 +81,6 @@
                 "Component_[11250813086528649098]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 11250813086528649098
-                },
-                "Component_[11611995415368478694]": {
-                    "$type": "SelectionComponent",
-                    "Id": 11611995415368478694
                 },
                 "Component_[13801841138191914348]": {
                     "$type": "EditorEntitySortComponent",
@@ -172,7 +171,8 @@
                                     "subId": 281775889
                                 },
                                 "assetHint": "assets/barn/powerlines.azmodel"
-                            }
+                            },
+                            "SortKey": 9
                         }
                     }
                 },
@@ -187,7 +187,8 @@
                 "Component_[9795729877304178118]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 9795729877304178118,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 }
             }
         }

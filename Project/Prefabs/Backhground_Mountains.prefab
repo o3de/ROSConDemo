@@ -21,7 +21,14 @@
             "Component_[14642875700494463688]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 14642875700494463688,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        -13.478179931640625,
+                        0.0,
+                        0.0
+                    ]
+                }
             },
             "Component_[16205334719254503100]": {
                 "$type": "EditorVisibilityComponent",
@@ -43,10 +50,6 @@
                 "$type": "EditorDisabledCompositionComponent",
                 "Id": 3367646957211784545
             },
-            "Component_[5076043253456585137]": {
-                "$type": "SelectionComponent",
-                "Id": 5076043253456585137
-            },
             "Component_[861291001460839263]": {
                 "$type": "EditorEntityIconComponent",
                 "Id": 861291001460839263
@@ -62,10 +65,6 @@
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 10635178642265270643,
                     "Parent Entity": "ContainerEntity"
-                },
-                "Component_[12091298713673526982]": {
-                    "$type": "SelectionComponent",
-                    "Id": 12091298713673526982
                 },
                 "Component_[1224995342309174991]": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -119,7 +118,8 @@
                                     "subId": 279054652
                                 },
                                 "assetHint": "assets/background_mountains/mountain.azmodel"
-                            }
+                            },
+                            "SortKey": 8
                         }
                     }
                 },
@@ -141,7 +141,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{6DCE14B3-8659-520D-B21F-34EAB9674D92}"
-                                            }
+                                            },
+                                            "assetHint": "assets/background_mountains/background_objectsmat.azmaterial"
                                         }
                                     }
                                 }

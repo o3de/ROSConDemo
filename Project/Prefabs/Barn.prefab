@@ -15,10 +15,6 @@
                 "$type": "EditorOnlyEntityComponent",
                 "Id": 13580890543322652754
             },
-            "Component_[14622716457040850824]": {
-                "$type": "SelectionComponent",
-                "Id": 14622716457040850824
-            },
             "Component_[1568938860737394222]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 1568938860737394222
@@ -58,14 +54,11 @@
             "Id": "Entity_[945674658144]",
             "Name": "Barn",
             "Components": {
-                "Component_[11573456644863117681]": {
-                    "$type": "SelectionComponent",
-                    "Id": 11573456644863117681
-                },
                 "Component_[12525977908982875780]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 12525977908982875780,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[14274406287625550546]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -78,7 +71,8 @@
                                     "subId": 276633256
                                 },
                                 "assetHint": "assets/barn/barn.azmodel"
-                            }
+                            },
+                            "SortKey": 6
                         }
                     }
                 },

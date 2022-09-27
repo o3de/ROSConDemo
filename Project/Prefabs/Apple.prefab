@@ -17,7 +17,19 @@
             "Component_[17300195898860990188]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 17300195898860990188,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        -0.38065001368522644,
+                        -0.09725484251976013,
+                        1.1198630332946777
+                    ],
+                    "Rotate": [
+                        0.0000023402008082484826,
+                        0.0,
+                        59.386783599853516
+                    ]
+                }
             },
             "Component_[17513034959945529892]": {
                 "$type": "EditorVisibilityComponent",
@@ -169,7 +181,10 @@
                                     "subId": 271503440
                                 },
                                 "assetHint": "assets/apple_tree/apple.azmodel"
-                            }
+                            },
+                            "SortKey": 2,
+                            "LodType": 1,
+                            "QualityDecayRate": 0.30000001192092896
                         }
                     }
                 }
