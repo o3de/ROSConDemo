@@ -46,10 +46,6 @@
             "Component_[84861289435739596]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 84861289435739596
-            },
-            "Component_[9016354564159053885]": {
-                "$type": "SelectionComponent",
-                "Id": 9016354564159053885
             }
         }
     },
@@ -134,10 +130,6 @@
                 "Component_[5877444619960654784]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 5877444619960654784
-                },
-                "Component_[6234736789821756447]": {
-                    "$type": "SelectionComponent",
-                    "Id": 6234736789821756447
                 },
                 "Component_[8570670775398282478]": {
                     "$type": "EditorInspectorComponent",
