@@ -1,0 +1,48 @@
+{
+    "values": [
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{FE202200-8D3B-5DF8-89B6-ACBF75960679}",
+            "name": "VacuumNozzle02",
+            "NodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.VacuumNozzle02",
+                    "Scene.VacuumNozzle02.transform",
+                    "Scene.VacuumNozzle02.UV0",
+                    "Scene.VacuumNozzle02.DefaultMaterial"
+                ]
+            },
+            "export method": 1,
+            "PhysicsMaterialSlots": {
+                "Slots": [
+                    {
+                        "Name": "DefaultMaterial"
+                    }
+                ]
+            },
+            "export method": "1"
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "VacuumNozzle02",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.VacuumNozzle02",
+                    "Scene.VacuumNozzle02.transform",
+                    "Scene.VacuumNozzle02.UV0",
+                    "Scene.VacuumNozzle02.DefaultMaterial"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{05552DD2-6D24-56A8-8740-AFA030940079}"
+        }
+    ]
+}
