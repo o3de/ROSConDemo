@@ -7,10 +7,6 @@
                 "$type": "EditorInspectorComponent",
                 "Id": 12949486167256891560
             },
-            "Component_[1316925373338608118]": {
-                "$type": "SelectionComponent",
-                "Id": 1316925373338608118
-            },
             "Component_[14488354225555543471]": {
                 "$type": "EditorEntitySortComponent",
                 "Id": 14488354225555543471,
@@ -25,7 +21,19 @@
             "Component_[17478803486732630354]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 17478803486732630354,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        26.985807418823242,
+                        -97.05908966064453,
+                        0.0
+                    ],
+                    "Rotate": [
+                        0.0,
+                        0.0,
+                        -126.55982208251953
+                    ]
+                }
             },
             "Component_[18417561163529904681]": {
                 "$type": "EditorVisibilityComponent",
@@ -61,11 +69,19 @@
                 "Component_[11661503052505698670]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 11661503052505698670,
-                    "Parent Entity": "ContainerEntity"
-                },
-                "Component_[1569395306394681504]": {
-                    "$type": "SelectionComponent",
-                    "Id": 1569395306394681504
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            -9.5367431640625e-7,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -6.575888633728027
+                        ]
+                    }
                 },
                 "Component_[15894921980041735849]": {
                     "$type": "EditorEntitySortComponent",
