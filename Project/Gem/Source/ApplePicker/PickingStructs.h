@@ -13,19 +13,19 @@
 namespace AppleKraken
 {
     //! Important states of the Kraken effector (manipulator with a vacuum nozzle)
-    enum EffectorState
+    enum class EffectorState
     {
-        IDLE, //!< Idle state / position, suitable for robot moving around the environment.
-        PREPARED, //!< State and position which are ready for picking tasks.
-        PICKING, //!< The effector is on its way to pick fruit.
-        RETRIEVING, //!< The effector is retrieving a fruit to storage position.
-        INVALID //!< Invalid state. Requires an additional context that could help user understand what happened. @see PickingState.
+        IDLE = 0, //!< Idle state / position, suitable for robot moving around the environment.
+        PREPARED = 10, //!< State and position which are ready for picking tasks.
+        PICKING = 20, //!< The effector is on its way to pick fruit.
+        RETRIEVING = 30, //!< The effector is retrieving a fruit to storage position.
+        INVALID = -1 //!< Invalid state. Requires an additional context that could help user understand what happened. @see PickingState.
     };
 
     //! A structure holding a state of effector, including optional progress and descriptive information.
     struct PickingState
     {
-        EffectorState m_effectorState = IDLE; //!< Current state of effector.
+        EffectorState m_effectorState = EffectorState::IDLE; //!< Current state of effector.
         float m_taskProgress = 0.0f; //!< Optional field signalling progress within current state (picking/retrieving).
         AZStd::string m_description; //!< Optional descriptive field to inform the user.
     };
