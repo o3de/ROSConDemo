@@ -7,6 +7,7 @@
  */
 #pragma once
 
+#include "PickingStructs.h"
 #include <AzCore/EBus/EBus.h>
 #include <AzCore/Interface/Interface.h>
 #include <AzCore/Math/Aabb.h>
@@ -25,18 +26,24 @@ namespace AppleKraken
         virtual void PrepareForPicking() = 0;
 
         //! PickApple by its global bounding box.
-        //! @param globalAppleBoundingBox global bounding box for the apple.
-        //! @param appleId
-        //! Note this could be changed to local Aabb for real use cases.
-        //! Global can be queried once, local is less resilient to robot instability, mini movement.
-        //! Note that this can get a while and result will be signalled through ApplePickingNotifications.
-        virtual void PickApple(AZ::Aabb globalAppleBoundingBox, AZ::EntityId appleId) = 0;
+        //! @param appleTask task structure specifying which apple to pick.
+        //! This task should only be issued if effector state is PREPARED.
+        //! Note that the task can get a while and result will be signalled through ApplePickingNotifications.
+        //! Progress can be checked @see GetEffectorState.
+        //! This function returns immediately.
+        virtual void PickApple(const PickAppleTask& appleTask) = 0;
 
         //! Request to store currently held apple and retrieve manipulator into a travel position.
+        //! This function returns immediately. The effector should respond by transitioning to an IDLE state.
         virtual void FinishPicking() = 0;
 
+        //! Request current effector state.
+        //! This request should be called to inform about whether a task can be issued and whether the robot could start moving.
+        //! @returns current state of the effector.
+        virtual PickingState GetEffectorState() = 0;
+
         //! Return area covered by effector.
-        //! @returns an object bounding box which is a region where apples can be picked.
+        //! @returns a global object bounding box which is a region where apples can be picked.
         virtual AZ::Obb GetEffectorReachArea() = 0;
     };
 

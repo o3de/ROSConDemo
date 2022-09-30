@@ -7,18 +7,25 @@
  */
 #pragma once
 
+#include "PickingStructs.h"
 #include <AzCore/EBus/EBus.h>
 #include <AzCore/RTTI/BehaviorContext.h>
 
 namespace AppleKraken
 {
-    //! Notifications related to apple picking
+    //! Notifications related to apple picking.
     class ApplePickingNotifications : public AZ::EBusTraits
     {
     public:
-        virtual void ApplePicked(AZ::EntityId appleId) = 0;
+        //! An apple was successfully picked.
+        virtual void ApplePicked() = 0;
+
+        //! An apple was successfully retrieved to storage and can count as harvested.
         virtual void AppleRetrieved() = 0;
-        virtual void PickingFailed(AZ::EntityId appleId, const AZStd::string& reason) = 0;
+
+        //! Apple picking failed
+        //! @param reason reason for failure, e.g. "out of reach", "apple not found", "approach obstructed", etc.
+        virtual void PickingFailed(const AZStd::string& reason) = 0;
     };
 
     using ApplePickingNotificationBus = AZ::EBus<ApplePickingNotifications>;

@@ -17,16 +17,11 @@ namespace AppleKraken
     //! The component also acts as a ground-truth detector
     // using DetectionsMessage = vision_msgs::msgs::Detection3DArray;
 
-    struct AppleTask
-    {
-        AZ::EntityId m_appleEntityId;
-        AZ::Aabb m_appleBoundingBox;
-    };
-
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
         : public AZ::Component
         , private ApplePickingNotificationBus::Handler // Probably could use TickBus as well for timeouts
+
     {
     public:
         AZ_COMPONENT(ApplePickerComponent, "{E9E83A4A-31A4-4E7A-AF88-7565AC8B9F27}", AZ::Component);
@@ -35,14 +30,20 @@ namespace AppleKraken
         void Deactivate() override;
         static void Reflect(AZ::ReflectContext* context);
 
+        //! Detect and pick all apples in manipulator range.
         void StartAutomatedOperation();
 
+        //! Report overall progress of gathering task.
+        //! @returns how much of the task is complete (0: nothing, 1: all of it). The task is completed when all reachable apples are
+        //! gathered (or had a failure) and the effector is in IDLE state.
+        float ReportProgress();
+
     private:
-        void ApplePicked(AZ::EntityId appleId) override;
+        void ApplePicked() override;
         void AppleRetrieved() override;
-        void PickingFailed(AZ::EntityId appleId, const AZStd::string& reason) override;
+        void PickingFailed(const AZStd::string& reason) override;
 
         AZ::Obb m_gatheringArea;
-        AZStd::queue<AppleTask> m_currentAppleTasks;
+        AZStd::queue<PickAppleTask> m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
     };
 } // namespace AppleKraken
