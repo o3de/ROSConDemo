@@ -1,0 +1,33 @@
+{
+    "Type": "JsonSerialization",
+    "Version": 1,
+    "ClassName": "PassRequest",
+    "ClassData": {
+        "Name": "SunShaftsFullscreenPass",
+        "TemplateName": "SunShaftsFullScreenPassTemplate",
+        "Enabled": true,
+        "Connections": [
+            {
+                "LocalSlot": "SpecularInputOutput",
+                "AttachmentRef": {
+                    "Pass": "ReflectionsPass",
+                    "Attachment": "SpecularInputOutput"
+                }
+            },
+            {
+                "LocalSlot": "ReflectionInputOutput",
+                "AttachmentRef": {
+                    "Pass": "ReflectionsPass",
+                    "Attachment": "ReflectionOutput"
+                }
+            },
+            {
+                "LocalSlot": "DepthStencilInputOutput",
+                "AttachmentRef": {
+                    "Pass": "ReflectionsPass",
+                    "Attachment": "DepthStencilInputOutput"
+                }
+            }
+        ]
+    }
+}

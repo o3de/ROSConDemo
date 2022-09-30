@@ -2,6 +2,7 @@
 #pragma once
 
 #include <AzCore/Component/Component.h>
+#include <Atom/RPI.Public/Pass/PassSystemInterface.h>
 
 #include <ROSConDemo/ROSConDemoBus.h>
 
@@ -36,5 +37,9 @@ namespace ROSConDemo
         void Activate() override;
         void Deactivate() override;
         ////////////////////////////////////////////////////////////////////////
+
+    private:
+        //! Used for loading the pass templates
+        AZ::RPI::PassSystemInterface::OnReadyLoadTemplatesEvent::Handler m_loadTemplatesHandler;
     };
 }

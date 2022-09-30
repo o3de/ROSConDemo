@@ -51,6 +51,7 @@ ly_add_target(
             Include
     BUILD_DEPENDENCIES
         PRIVATE
+            Gem::Atom_AtomBridge.Static
             Gem::ROSConDemo.Static
             AZ::AzCore
 )
