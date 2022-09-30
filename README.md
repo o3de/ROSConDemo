@@ -11,11 +11,7 @@ For information about contributing to Open 3D Engine, visit [https://o3de.org/do
 
 This project uses Vision messages, which can be obtained:
 
-#### For ROS 2 Humble:
-`sudo apt install ros-humble-vision-msgs`
-
-#### For ROS 2 Galactic
-`sudo apt install ros-galactic-vision-msgs`
+`sudo apt install ros-${ROS_DISTRO}-vision-msgs`
 
 ### Clone the repository 
 
