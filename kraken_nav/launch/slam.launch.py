@@ -23,7 +23,7 @@ def generate_launch_description():
             parameters=[{
                 'min_height': 0.2,
                 'max_height': 3.4,
-                'range_min': 0.1
+                'range_min': 0.2
             }],
             remappings=[
                 ('/cloud_in', '/pc'),
