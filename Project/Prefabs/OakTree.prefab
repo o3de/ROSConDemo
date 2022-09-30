@@ -7,10 +7,6 @@
                 "$type": "EditorInspectorComponent",
                 "Id": 12949486167256891560
             },
-            "Component_[1316925373338608118]": {
-                "$type": "SelectionComponent",
-                "Id": 1316925373338608118
-            },
             "Component_[14488354225555543471]": {
                 "$type": "EditorEntitySortComponent",
                 "Id": 14488354225555543471,
@@ -25,7 +21,19 @@
             "Component_[17478803486732630354]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 17478803486732630354,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        91.03612518310547,
+                        -21.739900588989258,
+                        0.0
+                    ],
+                    "Rotate": [
+                        0.0,
+                        0.0,
+                        11.727625846862793
+                    ]
+                }
             },
             "Component_[18417561163529904681]": {
                 "$type": "EditorVisibilityComponent",
@@ -58,14 +66,34 @@
             "Id": "Entity_[2990713085782]",
             "Name": "OakTree",
             "Components": {
+                "Component_[11409911102284256236]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 11409911102284256236,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 3,
+                        "Cylinder": {
+                            "Configuration": {
+                                "CookedData": "TlhTAUNWWE0NAAAAAAAAAElDRQFDTEhMCQAAACAAAAAwAAAAEgAAAGAAAABs6I2+6h7rvQAAgEBs6I2+6h7rvQAAgMAjOVm+JTlZvgAAgMAjOVm+JTlZvgAAgECamZm+a0nhsgAAgECamZm+a0nhsgAAgMBt6I2+5B7rPQAAgEAlOVm+IzlZPgAAgEAlOVm+IzlZPgAAgMBt6I2+5B7rPQAAgMBrSWGympmZPgAAgMBrSWGympmZPgAAgEDlHus9beiNPgAAgEDlHus9beiNPgAAgMDpHuu9bOiNPgAAgEDpHuu9bOiNPgAAgMAkOVk+JDlZPgAAgMAkOVk+JDlZPgAAgEBs6I0+6B7rPQAAgECamZk+AAAAAAAAgECamZk+AAAAAAAAgMBs6I0+6B7rPQAAgMDuHus9bOiNvgAAgMAoOVk+IjlZvgAAgMAoOVk+IjlZvgAAgEDuHus9bOiNvgAAgEAR9ygzmpmZvgAAgEAR9ygzmpmZvgAAgMBt6I0+4h7rvQAAgMBt6I0+4h7rvQAAgEDiHuu9beiNvgAAgMDiHuu9beiNvgAAgEAAAAAAAAAAAAAAgL8AAIDAAAAQADDbVL/cOQ6/AAAAAAymlr4QAAQQvxR7v8fFR74AAAAADaaWvhQABBIx21S/2zkOPwAAAAANppa+GAAEF78Ue7+1xUc+AAAAAA2mlr4cAAQTtsVHPsAUez8AAAAADaaWviAABBrGxUe+vhR7PwAAAAAMppa+JAAEFts5Dr8w21Q/AAAAAAymlr4oAAQW3DkOPzDbVD8AAAAADKaWviwABAK/FHs/xsVHPgAAAAAMppa+MAAEADDbVD/aOQ4/AAAAAAymlr40AAQA3DkOPy/bVL8AAAAADKaWvjgABAfExUc+vhR7vwAAAAANppa+PAAECsAUez+6xUe+AAAAAA2mlr5AAAQENNtUP9c5Dr8AAAAADaaWvkQABAbaOQ6/MdtUvwAAAAAMppa+SAAEDLbFR77AFHu/AAAAAA6mlr5MAAQKAAAAAAAAAAAAAIA/AACAwFAAEAEcFxYbHgIBBQkIDwoNEBUUAAECAwAEBQEGBwgJBgkFBAoLDA0OCwoPDg8IBxANDBESExQVEhUQERYXGBkWGRobHBQTHRwdGBcfAwIeHx4bGh8aGRgdExIRDAsOBwYEAAMADgALAAwAEAAPAAEAAgAEAAMABwAGAAUACAAKAAkADQECAQ8BEQIRAgQDEQMHAwQEEQUGBREFCAYRBgcHEQgRCAoJEQkNCQoKEQsOCxELDAwRDBANEQ0ODhEPEQ8QEBEBAhEAAQIAAQ8BDxECBBEAAgQDBBEDBxEAAwcAAwQABQYFBhEFCBEABQgGBxEABgcACAoIChEJChEJDREACQ0ACQoACwwACw4LDhELDBEMEBEADBAADQ4NDhEADxAPEBEAAAAAmpmZvpqZmb4AAIDAmpmZPpqZmT4AAIBAixINQLfePEFENrgwW/1OskQ2uDC33jxBAACBJlv9TrIAAIEmZv3FPV9iBzL+SBSyyg8cMwAAgL8MppY+IzlZPiM5WT4AAIBA",
+                                "Type": 1
+                            },
+                            "Height": 8.0,
+                            "Radius": 0.30000001192092896
+                        }
+                    }
+                },
                 "Component_[11661503052505698670]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 11661503052505698670,
                     "Parent Entity": "ContainerEntity"
-                },
-                "Component_[1569395306394681504]": {
-                    "$type": "SelectionComponent",
-                    "Id": 1569395306394681504
                 },
                 "Component_[15894921980041735849]": {
                     "$type": "EditorEntitySortComponent",

@@ -2150,6 +2150,9 @@
                     "Id": 10560395332665053146,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 1
+                        },
                         "Frame Name": "base_link"
                     }
                 },
@@ -2163,7 +2166,8 @@
                         "Entity_[75436695707868]",
                         "Entity_[75402335969500]",
                         "Entity_[75479645380828]",
-                        "Entity_[75419515838684]"
+                        "Entity_[75419515838684]",
+                        "Instance_[535822348083258]/ContainerEntity"
                     ]
                 },
                 "Component_[11587227330168097343]": {
@@ -2315,8 +2319,9 @@
                                 "P": 500.0
                             },
                             "SpeedPID": {
-                                "P": 10.0
-                            }
+                                "P": 100.0
+                            },
+                            "Track": 0.6000000238418579
                         }
                     }
                 },
@@ -2334,6 +2339,7 @@
                     "m_template": {
                         "$type": "ROS2RobotControlComponent",
                         "ControlConfiguration": {
+                            "Topic": "ackermann_vel",
                             "Steering": 1
                         }
                     }
@@ -2620,6 +2626,28 @@
                     "Id": 9851240774884005899
                 }
             }
+        }
+    },
+    "Instances": {
+        "Instance_[535822348083258]": {
+            "Source": "Prefabs/Sensors/LidarOS2.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Parent Entity",
+                    "value": "../Entity_[75475350413532]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/0",
+                    "value": 2.338586807250977
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/2",
+                    "value": 1.0093085765838623
+                }
+            ]
         }
     }
 }

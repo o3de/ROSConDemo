@@ -114,6 +114,30 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 15752591005564428774
                 },
+                "Component_[17566392312502308790]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 17566392312502308790,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 3,
+                        "Cylinder": {
+                            "Configuration": {
+                                "CookedData": "TlhTAUNWWE0NAAAAAAAAAElDRQFDTEhMCQAAACAAAAAwAAAAEgAAAGAAAABt6A2+5B5rPQAAwD8lOdm9IznZPQAAwD8lOdm9IznZPQAAwL9t6A2+5B5rPQAAwL+amRm+a0lhsgAAwL+amRm+a0lhsgAAwD9s6A2+6h5rvQAAwD9s6A2+6h5rvQAAwL8jOdm9JTnZvQAAwL8jOdm9JTnZvQAAwD9s6A0+6B5rPQAAwD+amRk+AAAAAAAAwD+amRk+AAAAAAAAwL9s6A0+6B5rPQAAwL/pHmu9bOgNPgAAwD/pHmu9bOgNPgAAwL/iHmu9begNvgAAwD/iHmu9begNvgAAwL8R96gympkZvgAAwL8R96gympkZvgAAwD/uHms9bOgNvgAAwD8oOdk9IjnZvQAAwD9t6A0+4h5rvQAAwD8kOdk9JDnZPQAAwD/lHms9begNPgAAwD9rSeGxmpkZPgAAwD8kOdk9JDnZPQAAwL/lHms9begNPgAAwL9rSeGxmpkZPgAAwL/uHms9bOgNvgAAwL8oOdk9IjnZvQAAwL9t6A0+4h5rvQAAwL8AAAAAAAAAAAAAgD8AAMC/AAAQAjLbVL/cOQ4/AAAAAA6mFr4QAAQVvxR7v7XFRz4AAAAADaYWvhQABAsw21S/3DkOvwAAAAAMpha+GAAECr8Ue7/IxUe+AAAAAA2mFr4cAAQKvxR7P8bFRz4AAAAADKYWviAABATcOQ6/MNtUPwAAAAAMpha+JAAEFNo5Dr8x21S/AAAAAAymFr4oAAQYtsVHvr8Ue78AAAAADaYWviwABBgx21Q/2zkOPwAAAAAMpha+MAAEBt05Dj8x21Q/AAAAAA2mFr40AAQIx8VHvr8Uez8AAAAADKYWvjgABBK2xUc+vxR7PwAAAAAMpha+PAAEEt05Dj8x21S/AAAAAA6mFr5AAAQBxcVHPr8Ue78AAAAADaYWvkQABA6/FHs/ucVHvgAAAAAMpha+SAAEADTbVD/XOQ6/AAAAAA2mFr5MAAQAAAAAAAAAAAAAAIC/AADAv1AAEAAQExQVFgsKFxgZDgEABQYJAAECAwADBAUGBwgJBgUEBwoLDA0ODwIBEAkIERAREhMaFwoNGhsYFxwPDhkcGRgbHR4VFB0UExIfDAsWHxYVHh8eHRIRCAcEAwIPHBsaDQwACAAOAA0AEAAPAAUACQAKAAwACwAGAAEAAgAEAAMABwEGAREBAgIRAgQDBAMRAwcEEQUPBREFCQYLBhEHEQcICBEIDgkKCREKEQoMCxELDAwRDRENEA0ODhEPEQ8QEBEAAQIAAQYBBhEBAhECBBEAAgQAAwQDBBEDBxEAAwcABQkABQ8FDxEFCREABgsGCxEABwgHCBEIDhEACA4ADQ4ADRAADxAACQoACgwACwwJChEKDBELDBENDhENEBEPEBEAAAAAmpkZvpqZGb4AAMC/mpkZPpqZGT4AAMA/0ZtTPtndHz4/K+4tyDqcLj8r7i3Z3R8+vJsTIsg6nC68mxMiDX4UO0aGfTEg3u+uA1KjsQAAgL8MphY+IznZPSM52T0AAMA/",
+                                "Type": 1
+                            },
+                            "Height": 3.0,
+                            "Radius": 0.15000000596046448
+                        }
+                    }
+                },
                 "Component_[2232052990511423151]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 2232052990511423151

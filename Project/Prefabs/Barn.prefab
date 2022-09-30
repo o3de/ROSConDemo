@@ -117,6 +117,40 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 428393277371854780
                 },
+                "Component_[6153869931080753618]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 6153869931080753618,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "BarnMAT"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
+                                    "subId": 4686939
+                                },
+                                "assetHint": "assets/barn/barn.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
+                                        "subId": 4686939
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/barn/barn.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[630570144579562799]": {
                     "$type": "EditorSurfaceDataMeshComponent",
                     "Id": 630570144579562799,
