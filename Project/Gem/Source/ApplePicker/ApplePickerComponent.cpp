@@ -13,8 +13,37 @@
 
 namespace AppleKraken
 {
-    void ApplePickerComponent::StartAutomatedOperation() // Probably to be connected to another bus
+    namespace Internal
     {
+        AZStd::string TaskString(const PickAppleTask& task)
+        {
+            if (task.m_appleEntityId.IsValid())
+            {
+                return "|Task for an unspecified apple|";
+            }
+
+            return AZStd::string::format("|Task for entity id %s|", task.m_appleEntityId.ToString().c_str());
+        }
+
+        AZStd::string CurrentTaskString(const AZStd::queue<PickAppleTask>& taskQueue)
+        {
+            if (taskQueue.empty())
+            {
+                return "|No task, pick queue empty!|";
+            }
+
+            const auto& currentTask = taskQueue.front();
+            return TaskString(currentTask);
+        }
+    } // namespace Internal
+
+    void ApplePickerComponent::StartAutomatedOperation()
+    {
+    }
+
+    float ApplePickerComponent::ReportProgress()
+    {
+        return 0.0f;
     }
 
     void ApplePickerComponent::Activate()
@@ -40,18 +69,20 @@ namespace AppleKraken
         }
     }
 
-    void ApplePickerComponent::ApplePicked(AZ::EntityId appleId)
+    void ApplePickerComponent::ApplePicked()
     {
-        AZ_TracePrintf("ApplePicker", "Picked apple id %s\n", appleId.ToString().c_str());
+        AZ_TracePrintf("ApplePicker", "%s. Picked apple\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str());
     }
 
     void ApplePickerComponent::AppleRetrieved()
     {
-        AZ_TracePrintf("ApplePicker", "An apple has been retrieved and stored\n");
+        AZ_TracePrintf(
+            "ApplePicker", "%s. An apple has been retrieved and stored\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str());
     }
 
-    void ApplePickerComponent::PickingFailed(AZ::EntityId appleId, const AZStd::string& reason)
+    void ApplePickerComponent::PickingFailed(const AZStd::string& reason)
     {
-        AZ_TracePrintf("ApplePicker", "Picking apple %s failed due to: %s\n", appleId.ToString().c_str(), reason.c_str());
+        AZ_TracePrintf(
+            "ApplePicker", "%s. Picking failed due to: %s\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str(), reason.c_str());
     }
 } // namespace AppleKraken
