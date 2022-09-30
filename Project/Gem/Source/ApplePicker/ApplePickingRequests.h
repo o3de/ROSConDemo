@@ -50,7 +50,7 @@ namespace AppleKraken
     class ApplePickingBusTraits : public AZ::EBusTraits
     {
     public:
-        static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Single;
+        static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Multiple;
         static constexpr AZ::EBusAddressPolicy AddressPolicy = AZ::EBusAddressPolicy::Single;
     };
     using ApplePickingRequestBus = AZ::EBus<ApplePickingRequests, ApplePickingBusTraits>;
