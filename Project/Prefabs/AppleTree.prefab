@@ -159,6 +159,7 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 15752591005564428774
                 },
+
                 "Component_[16858712213851843499]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 16858712213851843499,
@@ -167,6 +168,7 @@
                             "materials": [
                                 {
                                     "Key": {
+
                                         "materialSlotStableId": 1276229897
                                     },
                                     "Value": {
@@ -181,20 +183,25 @@
                                 {
                                     "Key": {
                                         "materialSlotStableId": 2950014666
+
                                     },
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
+
                                             },
                                             "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
+
                                         }
                                     }
                                 },
                                 {
                                     "Key": {
+
                                         "lodIndex": 0,
                                         "materialSlotStableId": 1276229897
+
                                     },
                                     "Value": {
                                         "MaterialAsset": {
@@ -340,6 +347,7 @@
                 "Component_[8148146872807561086]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 8148146872807561086
+
                 }
             }
         }
