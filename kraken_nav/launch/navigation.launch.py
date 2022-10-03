@@ -54,6 +54,12 @@ def generate_launch_description():
         package='o3de_kraken_nav',
         executable='twist_to_ackermann',
         name='twist_to_ackermann',
+        parameters=[{
+            'wheelbase': 2.0,
+            'timeout_control_interval': 0.1,
+            'control_timeout': 0.2,
+            'publish_zeros_on_timeout': True
+        }],
         output={
             'stdout': 'log'
         }
