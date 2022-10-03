@@ -135,6 +135,7 @@
                                 "assetHint": "assets/apple_tree/appletree.azmodel"
                             },
                             "SortKey": 3,
+                            "IsRayTracingEnabled": false,
                             "LodType": 1,
                             "QualityDecayRate": 0.699999988079071
                         }
@@ -2745,7 +2746,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/2",
-                    "value": 1.9777089357376099
+                    "value": 1.97770893573761
                 },
                 {
                     "op": "replace",
