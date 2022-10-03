@@ -170,6 +170,25 @@ namespace AppleKraken
         return reachArea;
     }
 
+    void KrakenEffectorComponent::OnEffectorReadyForPicking()
+    {
+        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
+    }
+
+    void KrakenEffectorComponent::OnApplePicked()
+    {
+        // TODO - also handle picking failed
+        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
+
+        // Just entered retrieving state, transition to Prepared
+        BeginTransitionIfAcceptable(EffectorState::PREPARED);
+    }
+
+    void KrakenEffectorComponent::OnAppleRetrieved()
+    {
+        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
+    }
+
     void KrakenEffectorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
         if (m_effectorState == m_effectorTargetState)
@@ -187,22 +206,30 @@ namespace AppleKraken
         AZ_TracePrintf(
             "KrakenEffectorComponent", "%s", DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
         m_currentStateTransitionTime = 0.0f;
+
+        // Update state
+        auto previousState = m_effectorState;
         m_effectorState = m_effectorTargetState;
 
-        if (m_effectorState == EffectorState::PICKING && m_effectorTargetState == EffectorState::RETRIEVING)
+        if (previousState == EffectorState::IDLE && m_effectorState == EffectorState::PREPARED)
         {
-            // TODO - also handle picking failed
-            ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
-
-            // Start retrieving right away
-            m_effectorTargetState = EffectorState::RETRIEVING;
-            return;
+            OnEffectorReadyForPicking();
         }
 
-        if (m_effectorState == EffectorState::RETRIEVING && m_effectorTargetState == EffectorState::PREPARED)
+        if (previousState == EffectorState::PREPARED && m_effectorState == EffectorState::PICKING)
         {
-            ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
-            return;
+            // start picking the apple
+            BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
+        }
+
+        if (previousState == EffectorState::PICKING && m_effectorState == EffectorState::RETRIEVING)
+        {
+            OnApplePicked();
+        }
+
+        if (previousState == EffectorState::RETRIEVING && m_effectorState == EffectorState::PREPARED)
+        {
+            OnAppleRetrieved();
         }
     }
 } // namespace AppleKraken

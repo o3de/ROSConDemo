@@ -41,6 +41,10 @@ namespace AppleKraken
         bool IsTransitionAcceptable(EffectorState targetState) const;
         bool IsTransitionValid(EffectorState targetState) const;
 
+        void OnEffectorReadyForPicking();
+        void OnApplePicked();
+        void OnAppleRetrieved();
+
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
