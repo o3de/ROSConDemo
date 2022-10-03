@@ -11,13 +11,14 @@
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
 // #include <vision_msgs/msgs/detection_3d_array.h>
-
+#include <AzCore/Component/TickBus.h>
 namespace AppleKraken
 {
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
         : public AZ::Component
-        , private ApplePickingNotificationBus::Handler // Probably could use TickBus as well for timeouts
+        , private ApplePickingNotificationBus::Handler
+        , private AZ::TickBus::Handler
 
     {
     public:
@@ -39,8 +40,9 @@ namespace AppleKraken
         void ApplePicked() override;
         void AppleRetrieved() override;
         void PickingFailed(const AZStd::string& reason) override;
-
+        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
         AZ::Obb m_gatheringArea;
         AZStd::queue<PickAppleTask> m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
+        int m_field {0};
     };
 } // namespace AppleKraken

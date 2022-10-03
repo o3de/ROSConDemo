@@ -7,8 +7,11 @@
  */
 
 #include "ApplePickerComponent.h"
+#include "../Manipulator/ManipulatorRequestBus.h"
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
+
+// #include <ROS2/ROS2Bus.h>
 
 namespace AppleKraken
 {
@@ -66,6 +69,7 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken");
             }
         }
+        ROSConDemo::ManipulatorRequestHandler::Reflect(context);
     }
 
     void ApplePickerComponent::ApplePicked()
@@ -83,5 +87,18 @@ namespace AppleKraken
     {
         AZ_TracePrintf(
             "ApplePicker", "%s. Picking failed due to: %s\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str(), reason.c_str());
+    }
+
+    void ApplePickerComponent::OnTick(float deltaTime, AZ::ScriptTimePoint time){
+        AZ::Vector3 v{(float)time.GetSeconds(), 0,0};
+        ROSConDemo::ManipulatorRequestBus ::Broadcast(&ROSConDemo::ManipulatorRequest::ManipulatorSetPosition, v);
+
+        AZ::Vector3 v2{0, 0,0};
+        ROSConDemo::ManipulatorRequestBus ::BroadcastResult(v2, &ROSConDemo::ManipulatorRequest::ManipulatorReportError);
+
+        AZ_TracePrintf(
+                "ApplePicker","BAR: %f,%f,%f, \n", v2.GetX(),v2.GetY(),v2.GetZ());
+
+
     }
 } // namespace AppleKraken

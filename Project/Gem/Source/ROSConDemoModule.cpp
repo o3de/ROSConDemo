@@ -3,6 +3,7 @@
 #include <AzCore/Module/Module.h>
 
 #include "ROSConDemoSystemComponent.h"
+#include "ApplePicker/ApplePickerComponent.h"
 
 namespace ROSConDemo
 {
@@ -19,7 +20,10 @@ namespace ROSConDemo
             // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
             m_descriptors.insert(m_descriptors.end(), {
                 ROSConDemoSystemComponent::CreateDescriptor(),
+                AppleKraken::ApplePickerComponent::CreateDescriptor()
             });
+
+
         }
 
         /**
