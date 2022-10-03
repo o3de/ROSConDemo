@@ -3,10 +3,6 @@
         "Id": "ContainerEntity",
         "Name": "GrassTileMedDry",
         "Components": {
-            "Component_[11879310072248012545]": {
-                "$type": "SelectionComponent",
-                "Id": 11879310072248012545
-            },
             "Component_[12894623640026920636]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 12894623640026920636,
@@ -109,10 +105,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 2491127605889559809
                 },
-                "Component_[3742292387173076706]": {
-                    "$type": "SelectionComponent",
-                    "Id": 3742292387173076706
-                },
                 "Component_[4418757036571099008]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 4418757036571099008,
@@ -149,7 +141,8 @@
                             0.0,
                             0.0
                         ]
-                    }
+                    },
+                    "IsStatic": true
                 },
                 "Component_[513274801314985611]": {
                     "$type": "EditorEntityIconComponent",

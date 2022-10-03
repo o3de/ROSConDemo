@@ -1,0 +1,301 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "WindMill",
+        "Components": {
+            "Component_[12612714219327877212]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 12612714219327877212
+            },
+            "Component_[15439992882160637816]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 15439992882160637816,
+                "Parent Entity": ""
+            },
+            "Component_[16002608915145917980]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 16002608915145917980
+            },
+            "Component_[16348149553984606924]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 16348149553984606924
+            },
+            "Component_[17073196953434985023]": {
+                "$type": "EditorLockComponent",
+                "Id": 17073196953434985023
+            },
+            "Component_[17162431261581919033]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 17162431261581919033
+            },
+            "Component_[3863629763456790279]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 3863629763456790279
+            },
+            "Component_[4948246039143182698]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 4948246039143182698
+            },
+            "Component_[5928880041043298734]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 5928880041043298734,
+                "Child Entity Order": [
+                    "Entity_[30058651448823]"
+                ]
+            },
+            "Component_[9470172828187170300]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 9470172828187170300
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[30058651448823]": {
+            "Id": "Entity_[30058651448823]",
+            "Name": "WindMill",
+            "Components": {
+                "Component_[10820859260885556691]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10820859260885556691,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
+                                    "subId": 280810325
+                                },
+                                "assetHint": "assets/windmill_01/windmill_01.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11383289093559178580]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11383289093559178580
+                },
+                "Component_[12270302485111512141]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12270302485111512141,
+                    "Child Entity Order": [
+                        "Entity_[30062946416119]"
+                    ]
+                },
+                "Component_[1417072285622022335]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1417072285622022335
+                },
+                "Component_[16773089192474409126]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16773089192474409126,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 17054436815543987301
+                        },
+                        {
+                            "ComponentId": 10820859260885556691,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 2638486204689626469,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[17054436815543987301]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17054436815543987301,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[2638486204689626469]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 2638486204689626469,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2271232354
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C29CC665-E1A0-5C6D-B759-58A04D769C63}"
+                                            },
+                                            "assetHint": "assets/windmill_01/windmill_01_mat_windmill_01.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[3651132840654845030]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3651132840654845030
+                },
+                "Component_[7835143652092526687]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 7835143652092526687
+                },
+                "Component_[7974749586861249603]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7974749586861249603
+                },
+                "Component_[9059852131583388958]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9059852131583388958
+                }
+            }
+        },
+        "Entity_[30062946416119]": {
+            "Id": "Entity_[30062946416119]",
+            "Name": "Top",
+            "Components": {
+                "Component_[12505893031494506309]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 12505893031494506309
+                },
+                "Component_[1656154931613862406]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 1656154931613862406,
+                    "Parent Entity": "Entity_[30058651448823]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.10573393106460571,
+                            -1.0424312353134155,
+                            9.536383628845215
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            180.0
+                        ]
+                    }
+                },
+                "Component_[1697066905204696645]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1697066905204696645
+                },
+                "Component_[17880893970790034360]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 17880893970790034360
+                },
+                "Component_[3554762949551265563]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 3554762949551265563
+                },
+                "Component_[4318374896051261855]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 4318374896051261855,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2271232354
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{0971324D-76A8-5E1B-937C-C75665ED0FDE}"
+                                            },
+                                            "assetHint": "assets/windmill_01/windmillvanes_01_mat_windmill_01.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[4425103438677231732]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4425103438677231732
+                },
+                "Component_[5244262397179251004]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5244262397179251004
+                },
+                "Component_[7184245484278328732]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 7184245484278328732,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{5D6F0E3A-8537-5A3E-9D9A-F81AAE95F73B}",
+                                    "subId": 279736998
+                                },
+                                "assetHint": "assets/windmill_01/windmillvanes_01.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                },
+                "Component_[865571111840123061]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 865571111840123061,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{AC0FEABC-3FC2-526B-983A-0483B1998571}",
+                            "path": "scriptCanvas/WindMill.scriptcanvas"
+                        },
+                        "sourceName": "WindMill.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{AC0FEABC-3FC2-526B-983A-0483B1998571}",
+                                "path": "scriptCanvas/WindMill.scriptcanvas"
+                            },
+                            "variables": [
+                                {
+                                    "Datum": {
+                                        "isOverloadedStorage": false,
+                                        "scriptCanvasType": {
+                                            "m_type": 3
+                                        },
+                                        "isNullPointer": false,
+                                        "$type": "double",
+                                        "value": 0.01
+                                    },
+                                    "VariableId": {
+                                        "m_id": "{9EEE2FD5-2FB3-4E7A-952D-FD779FD64228}"
+                                    },
+                                    "VariableName": "Speed",
+                                    "InitialValueSource": 1
+                                }
+                            ],
+                            "overrides": [
+                                {
+                                    "Datum": {
+                                        "isOverloadedStorage": false,
+                                        "scriptCanvasType": {
+                                            "m_type": 3
+                                        },
+                                        "isNullPointer": false,
+                                        "$type": "double",
+                                        "value": 0.01
+                                    },
+                                    "InputControlVisibility": {
+                                        "Value": 850104567
+                                    },
+                                    "VariableId": {
+                                        "m_id": "{9EEE2FD5-2FB3-4E7A-952D-FD779FD64228}"
+                                    },
+                                    "VariableName": "Speed",
+                                    "InitialValueSource": 1
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[8884123178011090158]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8884123178011090158
+                },
+                "Component_[9318127305777495099]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 9318127305777495099
+                }
+            }
+        }
+    }
+}

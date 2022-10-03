@@ -1,0 +1,163 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "WagonWheel",
+        "Components": {
+            "Component_[10545503655657166083]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 10545503655657166083
+            },
+            "Component_[11183126696391130290]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 11183126696391130290
+            },
+            "Component_[13880237207004906568]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 13880237207004906568,
+                "Child Entity Order": [
+                    "Entity_[1327950099894397]"
+                ]
+            },
+            "Component_[14698883685064172162]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 14698883685064172162
+            },
+            "Component_[3309832537575094755]": {
+                "$type": "EditorLockComponent",
+                "Id": 3309832537575094755
+            },
+            "Component_[3348260828304369503]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 3348260828304369503
+            },
+            "Component_[411038790983028342]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 411038790983028342
+            },
+            "Component_[5123579376316041771]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 5123579376316041771,
+                "Parent Entity": ""
+            },
+            "Component_[8769953351796281515]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 8769953351796281515
+            },
+            "Component_[9590341395167558620]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 9590341395167558620
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1327950099894397]": {
+            "Id": "Entity_[1327950099894397]",
+            "Name": "WagonWheel",
+            "Components": {
+                "Component_[10471638093077467749]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10471638093077467749,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 13991554714683376679
+                        },
+                        {
+                            "ComponentId": 1645625950750841679,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 5870509858378238424,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[13313870920280449183]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13313870920280449183
+                },
+                "Component_[13991554714683376679]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 13991554714683376679,
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
+                },
+                "Component_[15415082778917096339]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 15415082778917096339
+                },
+                "Component_[1645625950750841679]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 1645625950750841679,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
+                                    "subId": 271716100
+                                },
+                                "assetHint": "assets/props/default_wagonwheel_01_95b5e7c8_4232_529c_95d3_7f7d7981eac0_.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                },
+                "Component_[2875949450497552185]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2875949450497552185
+                },
+                "Component_[2899316595668878187]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2899316595668878187
+                },
+                "Component_[5870509858378238424]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 5870509858378238424,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2359231117
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{FF3F43F0-7EC5-5D28-A922-64834A5E2090}"
+                                            },
+                                            "assetHint": "assets/props/wagonwheel_01_mat_prop_02.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2752222900
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{676E3E0E-8DE6-52C6-8C44-4A465CBDD46D}"
+                                            },
+                                            "assetHint": "assets/props/wagonwheel_01_mat_prop_01.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[6347178892225764944]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6347178892225764944
+                },
+                "Component_[7671735403162092781]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 7671735403162092781
+                },
+                "Component_[9683050697670722667]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9683050697670722667
+                }
+            }
+        }
+    }
+}

@@ -14,10 +14,6 @@
                 "$type": "EditorLockComponent",
                 "Id": 13094752354636424414
             },
-            "Component_[139475911102124878]": {
-                "$type": "SelectionComponent",
-                "Id": 139475911102124878
-            },
             "Component_[15596486434279668796]": {
                 "$type": "EditorVisibilityComponent",
                 "Id": 15596486434279668796
@@ -78,15 +74,12 @@
                                 },
                                 "assetHint": "assets/grass_tile_small/grass_tile_small.azmodel"
                             },
+                            "IsRayTracingEnabled": false,
                             "LodType": 1,
                             "LodOverride": 4,
                             "MinimumScreenCoverage": 0.0
                         }
                     }
-                },
-                "Component_[15109299829112859767]": {
-                    "$type": "SelectionComponent",
-                    "Id": 15109299829112859767
                 },
                 "Component_[16009721215956323727]": {
                     "$type": "EditorEntitySortComponent",
@@ -147,7 +140,8 @@
                 "Component_[9282597657560194982]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 9282597657560194982,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[9968360157031577499]": {
                     "$type": "EditorEntityIconComponent",

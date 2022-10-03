@@ -1,0 +1,150 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "Barrel",
+        "Components": {
+            "Component_[11306743233652675541]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 11306743233652675541
+            },
+            "Component_[12493565417732588702]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 12493565417732588702,
+                "Child Entity Order": [
+                    "Entity_[1327675221987453]"
+                ]
+            },
+            "Component_[18109497006073479591]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 18109497006073479591
+            },
+            "Component_[2568900136153796747]": {
+                "$type": "EditorLockComponent",
+                "Id": 2568900136153796747
+            },
+            "Component_[5033994321884248062]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 5033994321884248062
+            },
+            "Component_[6372788350921479434]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 6372788350921479434,
+                "Parent Entity": ""
+            },
+            "Component_[6643811298261390905]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 6643811298261390905
+            },
+            "Component_[7432630660506854770]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 7432630660506854770
+            },
+            "Component_[8700080091930080715]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 8700080091930080715
+            },
+            "Component_[9694748908830647024]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 9694748908830647024
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1327675221987453]": {
+            "Id": "Entity_[1327675221987453]",
+            "Name": "Barrel",
+            "Components": {
+                "Component_[10227230919548968673]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10227230919548968673
+                },
+                "Component_[1050861744078512161]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1050861744078512161
+                },
+                "Component_[1231923852498774425]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1231923852498774425
+                },
+                "Component_[12462794553475093391]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12462794553475093391,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 16619277628896220943
+                        },
+                        {
+                            "ComponentId": 5829329870833145397,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 2695810168678226836,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[13073289245211694411]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13073289245211694411
+                },
+                "Component_[16151617321898719065]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16151617321898719065
+                },
+                "Component_[16619277628896220943]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16619277628896220943,
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
+                },
+                "Component_[2695810168678226836]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 2695810168678226836,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 256825950
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{B827B222-DE49-5061-BD4D-D79F4C325BF9}"
+                                            },
+                                            "assetHint": "assets/props/barrel_mat_barrelmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[3615706611653370219]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3615706611653370219
+                },
+                "Component_[5551637776326913752]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5551637776326913752
+                },
+                "Component_[5829329870833145397]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5829329870833145397,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{7E7F7F4C-717E-50C5-A5AD-A3FFE92093FF}",
+                                    "subId": 274806711
+                                },
+                                "assetHint": "assets/props/barrel.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
