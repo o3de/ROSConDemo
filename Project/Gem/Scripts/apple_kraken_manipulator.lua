@@ -136,7 +136,7 @@ function manipulator_control:OnActivate()
      self.pid2 = PID.new(600.0, 50.0, 0.0, self.max_velocity['x']) 
      self.pid3 = PID.new(200.0, 20.0, 0.0, self.max_velocity['y'])
      self.pid4 = PID.new(200.0, 10.0, 0.0, self.max_velocity['y'])
-     self.gravityThreshold = 0.01
+     self.gravityThreshold = 0.0
 
 
 
