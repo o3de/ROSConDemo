@@ -2,7 +2,6 @@
 #include <AzCore/Serialization/SerializeContext.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
-
 #include "ROSConDemoSystemComponent.h"
 
 namespace ROSConDemo

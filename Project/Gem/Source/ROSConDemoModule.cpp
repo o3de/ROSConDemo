@@ -1,13 +1,13 @@
 
+#include "ApplePicker/ApplePickerComponent.h"
+#include "ApplePicker/KrakenEffectorComponent.h"
+#include "ROSConDemoSystemComponent.h"
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
 
-#include "ROSConDemoSystemComponent.h"
-
 namespace ROSConDemo
 {
-    class ROSConDemoModule
-        : public AZ::Module
+    class ROSConDemoModule : public AZ::Module
     {
     public:
         AZ_RTTI(ROSConDemoModule, "{E38575E4-7D2F-4617-B938-416E8C1C07B4}", AZ::Module);
@@ -17,9 +17,13 @@ namespace ROSConDemo
             : AZ::Module()
         {
             // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
-            m_descriptors.insert(m_descriptors.end(), {
-                ROSConDemoSystemComponent::CreateDescriptor(),
-            });
+            m_descriptors.insert(
+                m_descriptors.end(),
+                {
+                    ROSConDemoSystemComponent::CreateDescriptor(),
+                    AppleKraken::ApplePickerComponent::CreateDescriptor(),
+                    AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
+                });
         }
 
         /**
@@ -32,6 +36,6 @@ namespace ROSConDemo
             };
         }
     };
-}// namespace ROSConDemo
+} // namespace ROSConDemo
 
 AZ_DECLARE_MODULE_CLASS(Gem_ROSConDemo, ROSConDemo::ROSConDemoModule)

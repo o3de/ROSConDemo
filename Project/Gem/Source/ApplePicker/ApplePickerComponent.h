@@ -10,21 +10,19 @@
 #include "ApplePickingNotifications.h"
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
-// #include <vision_msgs/msgs/detection_3d_array.h>
+#include <AzCore/Component/TickBus.h>
 
 namespace AppleKraken
 {
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
         : public AZ::Component
-        , private ApplePickingNotificationBus::Handler // Probably could use TickBus as well for timeouts
-
+        , public ApplePickingNotificationBus::Handler
+        , public AZ::TickBus::Handler
     {
     public:
         AZ_COMPONENT(ApplePickerComponent, "{E9E83A4A-31A4-4E7A-AF88-7565AC8B9F27}", AZ::Component);
         ApplePickerComponent() = default;
-        void Activate() override;
-        void Deactivate() override;
         static void Reflect(AZ::ReflectContext* context);
 
         //! Detect and pick all apples in manipulator range.
@@ -36,11 +34,23 @@ namespace AppleKraken
         float ReportProgress();
 
     private:
+        void Activate() override;
+        void Deactivate() override;
+
+        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
+
+        void EffectorReadyForPicking() override;
         void ApplePicked() override;
         void AppleRetrieved() override;
         void PickingFailed(const AZStd::string& reason) override;
 
+        void PickNextApple();
+        void QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox);
+
+        AZ::EntityId m_effectorEntityId;
         AZ::Obb m_gatheringArea;
-        AZStd::queue<PickAppleTask> m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
+        size_t m_initialTasksSize = 0;
+        AZStd::queue<PickAppleTask>
+            m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
     };
 } // namespace AppleKraken
