@@ -24,7 +24,8 @@
                     "Entity_[11917448356674]",
                     "Entity_[1176639161715]",
                     "Instance_[12778335461144]/ContainerEntity",
-                    "Instance_[75372271198428]/ContainerEntity"
+                    "Instance_[75372271198428]/ContainerEntity",
+                    "Entity_[59775256805105]"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -632,6 +633,80 @@
                     "Id": 5525292316022108872
                 }
             }
+        },
+        "Entity_[59775256805105]": {
+            "Id": "Entity_[59775256805105]",
+            "Name": "Camera",
+            "Components": {
+                "Component_[12060710613613403819]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12060710613613403819
+                },
+                "Component_[12474458365314348654]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12474458365314348654
+                },
+                "Component_[1257102630134967562]": {
+                    "$type": "{CA11DA46-29FF-4083-B5F6-E02C3A8C3A3D} EditorCameraComponent",
+                    "Id": 1257102630134967562,
+                    "Controller": {
+                        "Configuration": {
+                            "Field of View": 60.0,
+                            "EditorEntityId": 3610169365497016703
+                        }
+                    }
+                },
+                "Component_[16168764312493689170]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 16168764312493689170
+                },
+                "Component_[17033513110788495152]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17033513110788495152,
+                    "Parent Entity": "Entity_[1146574390643]",
+                    "Transform Data": {
+                        "Translate": [
+                            -4.050772190093994,
+                            -2.4398536682128906,
+                            2.6749448776245117
+                        ],
+                        "Rotate": [
+                            -22.239971160888672,
+                            18.537425994873047,
+                            -37.86489486694336
+                        ]
+                    }
+                },
+                "Component_[1884686474001305395]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1884686474001305395
+                },
+                "Component_[250234066336357702]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 250234066336357702
+                },
+                "Component_[5838731635791640253]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5838731635791640253
+                },
+                "Component_[6496863128970467536]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6496863128970467536
+                },
+                "Component_[7791268468468476611]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7791268468468476611,
+                    "m_template": {
+                        "$type": "FlyCameraInputComponent",
+                        "Move Speed": 10.0,
+                        "Rotation Speed": 2.0
+                    }
+                },
+                "Component_[902588051442532087]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 902588051442532087
+                }
+            }
         }
     },
     "Instances": {
@@ -680,8 +755,87 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[17071299421335020589]/Transform Data/Translate/1",
-                    "value": -0.09698295593261719
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/4/id",
+                    "value": 4245955024
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/4/name",
+                    "value": "rest"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/4/value/$type",
+                    "value": "EntityId"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/4/value/value",
+                    "value": "Entity_[24179378887263]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/5/id",
+                    "value": 3189570453
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/5/name",
+                    "value": "segment1"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/5/value/value",
+                    "value": "Entity_[75440990675164]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/6/id",
+                    "value": 655731247
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/6/name",
+                    "value": "segment2"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/6/value/value",
+                    "value": "Entity_[75385156100316]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/7/id",
+                    "value": 1343396537
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/7/name",
+                    "value": "segment3"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/7/value/value",
+                    "value": "Entity_[75410925904092]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/8/id",
+                    "value": 3463843610
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/8/name",
+                    "value": "segment4"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/8/value/value",
+                    "value": "Entity_[75393746034908]"
+                },
+                {
+                    "op": "remove",
+                    "path": "/Entities/Entity_[34036328831583]/Components/Component_[12196677571982747821]/ScriptComponent/Properties/Properties/9"
                 }
             ]
         }

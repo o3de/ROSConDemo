@@ -76,10 +76,8 @@ local manipulator_control =
             rest = { default = EntityId() },
             debug = { default = EntityId() },
 
-            --apple1 = { default = EntityId() },
-            --apple2 = { default = EntityId() },
-
-
+            apple1 = { default = EntityId() },
+            apple2 = { default = EntityId() },
 
     }
 }
@@ -124,21 +122,21 @@ function manipulator_control:OnActivate()
 
      self.target_position = {0.0, 0.0, 0.0, 0.0}
 
-     
-     self.pid1 = PID.new(5000.0, 500.0, 0.0, 900.0) 
-     self.pid2 = PID.new(1000.0, 200.0, 0.0, 400.0) 
-     self.pid3 = PID.new(500.0, 200.0, 0.0, 300.0)
-     self.pid4 = PID.new(500.0, 100.0, 0.0, 200.0)
-     self.gravityThreshold = 0.1
-     
-
      --[[
-     self.pid1 = PID.new(600.0, 50.0, 10.0, 90.0) 
-     self.pid2 = PID.new(500.0, 30.0, 0.0, 40.0) 
-     self.pid3 = PID.new(200.0, 20.0, 0.0, 30.0)
-     self.pid4 = PID.new(200.0, 10.0, 0.0, 20.0)
-     self.gravityThreshold = 0.01
+     self.pid1 = PID.new(2000.0, 200.0, 0.0, 900.0) 
+     self.pid2 = PID.new(1000.0, 200.0, 0.0, 400.0) 
+     self.pid3 = PID.new(50.0, 200.0, 0.0, 300.0)
+     self.pid4 = PID.new(50.0, 100.0, 0.0, 200.0)
+     self.gravityThreshold = 0.1
      ]]
+
+     self.max_velocity = Vector3(80.8, 30.0, 80.0)
+
+     self.pid1 = PID.new(600.0, 50.0, 10.0, self.max_velocity['z']) 
+     self.pid2 = PID.new(600.0, 50.0, 0.0, self.max_velocity['x']) 
+     self.pid3 = PID.new(200.0, 20.0, 0.0, self.max_velocity['y'])
+     self.pid4 = PID.new(200.0, 10.0, 0.0, self.max_velocity['y'])
+     self.gravityThreshold = 0.01
 
 
 
@@ -152,7 +150,7 @@ function manipulator_control:OnActivate()
 
      -- To prevent violent reactions right after the simulation starts,
      -- we're waiting this ammount of seconds till running the controller
-     self.startupWait = 1.0 --[s]
+     self.startupWait = 0.5 --[s]
 
      self.currentApple = self.Properties.apple1
 
@@ -195,14 +193,6 @@ end
 
 function manipulator_control:_setSegmentPos(entityid, pid, target_pos, axis1, print_debug)
 
-    --[[
-
-    local current_pos = self:getSegmentPos(entityid)
-
-    current_pos = current_pos[axis1]
-
-    target_pos = current_pos + target_pos
-    ]]
 
     local err = target_pos
     local force = pid:Calculate(self.deltaTime, err)
@@ -215,29 +205,24 @@ function manipulator_control:_setSegmentPos(entityid, pid, target_pos, axis1, pr
 
     force_vector = Transform.TransformVector(tm, force_vector)
 
-    --RigidBodyRequestBus.Event.SetLinearVelocity(entityid, force_vector)   
-    RigidBodyRequestBus.Event.ApplyLinearImpulse(entityid, force_vector)   
+    RigidBodyRequestBus.Event.SetLinearVelocity(entityid, force_vector)   
+    --RigidBodyRequestBus.Event.ApplyLinearImpulse(entityid, force_vector)   
 
     if print_debug then
         -- local entity_name = GameEntityContextRequestBus.Event.GetEntityName(entityid) --TODO make this work
 
         --Debug.Log('[ '..tostring(entityid)..'] is: '..string.format("%1.3f",current_pos)..'  should be: '..string.format("%1.3f",target_pos)..'  impulse: '..string.format("%1.3f",force))
         --Debug.Log('is: '..string.format("%1.3f",current_pos)..'  should be: '..string.format("%1.3f",target_pos1)..' (delta:'..string.format("%1.3f",target_pos)..')  impulse: '..string.format("%1.3f",force))
-        Debug.Log('is: '..string.format("%1.3f",current_pos)..'  should be: '..string.format("%1.3f",target_pos)..'  impulse: '..string.format("%1.3f",force))
+        Debug.Log('error: '..string.format("%1.3f",target_pos)..'  impulse: '..string.format("%1.3f",force))
     end
 
 end
 
 
 
-function manipulator_control:_setBasePosition()
+function manipulator_control:_setPosition()
     self:_setSegmentPos(self.Properties.segment1, self.pid1, self.internalError[1], 'z', false)
     self:_setSegmentPos(self.Properties.segment2, self.pid2, self.internalError[2], 'x', false)
-
-    --return false
-end
-
-function manipulator_control:_setNosePosition()
     self:_setSegmentPos(self.Properties.segment3, self.pid3, self.internalError[3], 'y', false)
     self:_setSegmentPos(self.Properties.segment4, self.pid4, self.internalError[4], 'z', false)
 
@@ -245,9 +230,11 @@ function manipulator_control:_setNosePosition()
 end
 
 
-function manipulator_control:_findGripperApplePosition(target_position)
+function manipulator_control:_findGripperAppleTranslation(target_position)
     local tm = TransformBus.Event.GetWorldTM(self.Properties.gripper)
     local gripper_pos = Transform.GetTranslation(tm)
+    --local gripper_pos_rotated = Vector3(gripper_pos['y'], gripper_pos['z'], gripper_pos['x'])
+
     Transform.Invert(tm)
 
     local pos = Transform.TransformVector(tm, target_position - gripper_pos)
@@ -263,7 +250,7 @@ end
 
 function manipulator_control:_getWorldPosition(target_position)
 
-    return self:_findGripperApplePosition(target_position)
+    return self:_findGripperAppleTranslation(target_position)
 
 end
 
@@ -419,8 +406,7 @@ function manipulator_control:_orchestrator()
 
 
     self:_setInternalState()
-    self:_setBasePosition()
-    self:_setNosePosition()
+    self:_setPosition()
 
     self:_printDebugInfo()
 
@@ -460,70 +446,18 @@ function manipulator_control:OnPressed(value)
 
     -- Process key press
 
-    --[[
-    -- UP --
-    if value == 8.0 then
-        --Debug.Log('up')
-        --self.target_position[1] = 0.7
-        self.target_position[1] = self.segment1_limits[2]
 
-    end
-    -- DOWN --
-    if value == 2.0 then
-        --Debug.Log('down')
-
-        --self.target_position[1] = -0.7
-        self.target_position[1] = self.segment1_limits[1]
-
-    end
-    -- LEFT --
-    if value == 4.0 then
-        --self.target_position[2] = 0.35
-        self.target_position[2] = self.segment2_limits[1]
-
-
-    end
-    -- RIGHT --
-    if value == 6.0 then
-        --self.target_position[2] = -0.35
-        self.target_position[2] = self.segment2_limits[2]
-
-    end
-
-    if value == 5.0 then
-        self.target_position[1] = 0.0
-        self.target_position[2] = 0.0
-        self.target_position[3] = 0.0
-        self.target_position[4] = 0.0
-
-    end
-
-
-    if value == 7.0 then
-        self.target_position[3] = self.segment3_limits[2]
-        self.target_position[4] = self.segment4_limits[1]
-
-    end
-
-    if value == 9.0 then
-        self.target_position[3] = self.segment3_limits[1]
-        self.target_position[4] = self.segment4_limits[2]
-    end
-
-    ]]
-
-
-    --[[
+    
     if value == 1.0 then
         self.currentApple = self.Properties.apple1
         self:PickApple(TransformBus.Event.GetWorldTranslation(self.currentApple))
     end
 
-    if value == 3.0 then
+    if value == 2.0 then
         self.currentApple = self.Properties.apple2
         self:PickApple(TransformBus.Event.GetWorldTranslation(self.currentApple))
     end 
-    ]]   
+    
 
 end
 
@@ -538,24 +472,12 @@ function manipulator_control:OnTick(deltaTime, timePoint)
 
     if self.Properties.segment1~=nil then
 
-        if self.zeroPose[1]==nil then
-            self.zeroPose = { -- TODO not used! Cane be removed?
-                self:getSegmentPos(self.Properties.segment1),
-                self:getSegmentPos(self.Properties.segment2),
-                self:getSegmentPos(self.Properties.segment3),
-                self:getSegmentPos(self.Properties.segment4),
-            }
-
+        if self.startupWait > 0 then
+            self.startupWait = self.startupWait -self.deltaTime
         else
-            if self.startupWait > 0 then
-                self.startupWait = self.startupWait -self.deltaTime
-                --Debug.Log(string.format("%1.3f",self.startupWait))
-                --self:Retract(TransformBus.Event.GetWorldTranslation(self.Properties.rest))
-            else
-                --self:Retract(TransformBus.Event.GetWorldTranslation(self.Properties.rest))
-                self:_orchestrator()
-            end
+            self:_orchestrator()
         end
+
     end
 
 
