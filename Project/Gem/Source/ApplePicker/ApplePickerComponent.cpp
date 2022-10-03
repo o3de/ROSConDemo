@@ -9,7 +9,6 @@
 #include "ApplePickerComponent.h"
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
-// #include <ROS2/ROS2Bus.h>
 
 namespace AppleKraken
 {
@@ -17,7 +16,7 @@ namespace AppleKraken
     {
         AZStd::string TaskString(const PickAppleTask& task)
         {
-            if (task.m_appleEntityId.IsValid())
+            if (!task.m_appleEntityId.IsValid())
             {
                 return "|Task for an unspecified apple|";
             }

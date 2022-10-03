@@ -14,9 +14,6 @@
 
 namespace AppleKraken
 {
-    //! The component also acts as a ground-truth detector
-    // using DetectionsMessage = vision_msgs::msgs::Detection3DArray;
-
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
         : public AZ::Component
