@@ -1,5 +1,7 @@
 # Apple kraken navigation #
 
+This package provides navigation capabilities for the apple Kraken vehicle.
+
 ## ROS2 packages prerequisites
 
 ```
@@ -8,32 +10,34 @@ sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ro
 
 ## Installation ##
 
-It is assumed that ROS2 `galactic` is used and the workspace dir is in `~/o3de_kraken_ws`.
+- Use the [roscon_2022](https://github.com/aws-lumberyard-dev/o3de/tree/roscon_2022) branch of the `O3DE`.
+- Use the the [development](https://github.com/RobotecAI/o3de-ros2-gem/tree/development) branch of the `o3de-ros-gem`.
+- Use [mp/deappletreeized_orchad_kraken](https://github.com/aws-lumberyard/ROSConDemo/tree/mp/deappletreeized_orchad_kraken) branch of the `ROSConDemo`.
 
-1. Source ROS2
+1. Source ROS2 (assumed `galactic`)
 
 ```bash
 source /opt/ros/galactic/setup.bash
 ```
 
-2. Put this package in some workspace directory, inside `src`
+2. Clone `o3de_kraken_nav` package to `src` directory inside a workspace directory (assumed `~/o3de_kraken_ws`), 
 
 ```bash
 mkdir -p ~/o3de_kraken_ws/src && cd ~/o3de_kraken_ws/src
-# put package here
+git clone https://github.com/RobotecAI/o3de_kraken_nav.git
 ```
 
-3. Go to workspace dir and build this package
+3. Build the workspace
 
 ```bash
 cd ~/o3de_kraken_ws
 colcon build --symlink-install
 ```
 
-## Running scene
+## Running simulation
 
-1. Make sure you have `https://github.com/RobotecAI/o3de-ros2-gem/tree/pjaroszek/ackermann_drive_model` branch in your `o3de-ros-gem/development`.
-2. Run the `Main` level from `ROSConDemo` repository - branch `mp/deappletreeized_orchad_kraken`.
+1. [Build](https://github.com/aws-lumberyard/ROSConDemo#download-and-install) and run the `ROSConDemo`
+1. Load level `Main`
 
 ## Running nav stack
 
