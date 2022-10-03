@@ -13,6 +13,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name + "/launch/config", glob('launch/config/*.yaml')),
         ('share/' + package_name + "/launch/config", glob('launch/config/*.xml')),
+        ('share/' + package_name + "/launch/config", glob('launch/config/*.rviz')),
         ('share/' + package_name + "/launch", glob('launch/*.launch.py')),
         ('share/' + package_name + "/launch", glob('launch/*.xml')),
     ],

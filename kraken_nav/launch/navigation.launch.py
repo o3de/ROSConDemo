@@ -15,7 +15,7 @@ def generate_launch_description():
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([str(pathlib.Path(get_package_share_directory("nav2_bringup")).joinpath('launch', 'navigation_launch.py'))]),
             launch_arguments = {
-                'params_file': str(pathlib.Path(__file__).parent.absolute().joinpath('config', 'navigation_params.yaml'))
+                'params_file': str(pathlib.Path(get_package_share_directory("o3de_kraken_nav")).joinpath('launch', 'config', 'navigation_params.yaml'))
             }.items()
         ),
         Node(
@@ -34,7 +34,7 @@ def generate_launch_description():
                 'stdout': 'log',
             },
             arguments=[
-                '-d', str(pathlib.Path(__file__).parent.absolute().joinpath('config', 'config.rviz')),
+                '-d', str(pathlib.Path(get_package_share_directory("o3de_kraken_nav")).joinpath('launch', 'config', 'config.rviz')),
             ]
         ),
     ])
