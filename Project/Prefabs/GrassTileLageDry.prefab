@@ -11,10 +11,6 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 10429021782861335976
             },
-            "Component_[11086712032349116387]": {
-                "$type": "SelectionComponent",
-                "Id": 11086712032349116387
-            },
             "Component_[11500640141313004583]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 11500640141313004583
@@ -122,10 +118,6 @@
                         }
                     }
                 },
-                "Component_[4640619062736095452]": {
-                    "$type": "SelectionComponent",
-                    "Id": 4640619062736095452
-                },
                 "Component_[5662200929387800876]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 5662200929387800876,
@@ -146,7 +138,8 @@
                 "Component_[58120684257820779]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 58120684257820779,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[6176411744441724917]": {
                     "$type": "EditorEntityIconComponent",

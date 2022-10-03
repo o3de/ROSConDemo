@@ -72,7 +72,8 @@
                                 },
                                 "assetHint": "assets/barn/barn.azmodel"
                             },
-                            "SortKey": 6
+                            "SortKey": 6,
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },
