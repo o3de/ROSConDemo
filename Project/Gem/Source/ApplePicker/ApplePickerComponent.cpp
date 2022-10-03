@@ -48,8 +48,7 @@ namespace AppleKraken
 
         // Get effector reach
         AZ::Obb effectorRangeGlobalBox;
-        ApplePickingRequestBus::EventResult(
-            effectorRangeGlobalBox, m_effectorEntityId, &ApplePickingRequests::GetEffectorReachArea);
+        ApplePickingRequestBus::EventResult(effectorRangeGlobalBox, m_effectorEntityId, &ApplePickingRequests::GetEffectorReachArea);
 
         // Find out apples within the reach
         QueryEnvironmentForAllApplesInBox(effectorRangeGlobalBox);
@@ -152,6 +151,7 @@ namespace AppleKraken
 
     void ApplePickerComponent::PickNextApple()
     {
+        AZ_TracePrintf("ApplePicker", "Pick next apple");
         if (!m_currentAppleTasks.empty())
         { // Get another apple!
             ApplePickingRequestBus::Event(m_effectorEntityId, &ApplePickingRequests::PickApple, m_currentAppleTasks.front());
