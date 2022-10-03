@@ -2312,16 +2312,18 @@
                                     "WheelRadius": 0.30000001192092896,
                                     "IsDrive": true
                                 }
-                            ]
+                            ],
+                            "Track": 0.6000000238418579
                         },
                         "DriveModel": {
                             "SteeringPID": {
-                                "P": 500.0
+                                "P": 500.0,
+                                "Output limit": 200.0
                             },
                             "SpeedPID": {
-                                "P": 100.0
-                            },
-                            "Track": 0.6000000238418579
+                                "P": 100.0,
+                                "Output limit": 100.0
+                            }
                         }
                     }
                 },
@@ -2646,6 +2648,11 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/2",
                     "value": 1.0093085765838623
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[417184227077]/Components/Component_[14535670656735835043]/ColliderConfiguration/MaterialSlots/Slots/0/Name",
+                    "value": "DefaultMaterial"
                 }
             ]
         }
