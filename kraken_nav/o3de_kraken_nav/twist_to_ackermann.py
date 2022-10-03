@@ -31,7 +31,7 @@ class TwistToAckermann(Node):
     self.declare_parameter('timeout_control_interval', 0.1)
     self.declare_parameter('control_timeout', 0.2)
     
-    self.wheelbase_ = self.get_parameter('wheelbase').get_parameter_value().double_value
+    self.wheelbase = self.get_parameter('wheelbase').get_parameter_value().double_value
     self.timeout_control_interval = self.get_parameter('timeout_control_interval').get_parameter_value().double_value
     self.control_timeout = self.get_parameter('control_timeout').get_parameter_value().double_value
     self.publish_zeros_on_timeout =  self.get_parameter('publish_zeros_on_timeout').get_parameter_value().bool_value
@@ -55,7 +55,7 @@ class TwistToAckermann(Node):
       return 0
 
     radius = vel/ omega
-    steering = math.atan(self.wheelbase_ / radius)
+    steering = math.atan(self.wheelbase / radius)
     return float(steering)
 
   def cmd_vel_cb(self, data):
