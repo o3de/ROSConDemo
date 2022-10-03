@@ -8,18 +8,21 @@
 #pragma once
 
 #include "PickingStructs.h"
+#include <AzCore/Component/ComponentBus.h>
 #include <AzCore/EBus/EBus.h>
-#include <AzCore/Interface/Interface.h>
+#include <AzCore/EBus/Event.h>
 #include <AzCore/Math/Aabb.h>
 #include <AzCore/Math/Obb.h>
 
 namespace AppleKraken
 {
     //! Requests for apple picking effector (manipulator)
-    class ApplePickingRequests
+    class ApplePickingRequests : public AZ::EBusTraits
     {
     public:
-        AZ_RTTI(ApplePickingRequests, "{E70BC163-4AE0-4660-9769-1C3C7C3493A6}");
+        static constexpr AZ::EBusAddressPolicy AddressPolicy = AZ::EBusAddressPolicy::ById;
+        using BusIdType = AZ::EntityId;
+
         virtual ~ApplePickingRequests() = default;
 
         //! Request to prepare for incoming apple picking tasks. Could be empty if manipulator is always ready.
@@ -47,12 +50,5 @@ namespace AppleKraken
         virtual AZ::Obb GetEffectorReachArea() = 0;
     };
 
-    class ApplePickingBusTraits : public AZ::EBusTraits
-    {
-    public:
-        static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Multiple;
-        static constexpr AZ::EBusAddressPolicy AddressPolicy = AZ::EBusAddressPolicy::Single;
-    };
-    using ApplePickingRequestBus = AZ::EBus<ApplePickingRequests, ApplePickingBusTraits>;
-    using ApplePickingInterface = AZ::Interface<ApplePickingRequests>;
+    using ApplePickingRequestBus = AZ::EBus<ApplePickingRequests>;
 } // namespace AppleKraken

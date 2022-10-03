@@ -2,7 +2,6 @@
 #pragma once
 
 #include <AzCore/Component/Component.h>
-
 #include <ROSConDemo/ROSConDemoBus.h>
 
 namespace ROSConDemo
@@ -25,16 +24,8 @@ namespace ROSConDemo
         ~ROSConDemoSystemComponent();
 
     protected:
-        ////////////////////////////////////////////////////////////////////////
-        // ROSConDemoRequestBus interface implementation
-
-        ////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////
-        // AZ::Component interface implementation
         void Init() override;
         void Activate() override;
         void Deactivate() override;
-        ////////////////////////////////////////////////////////////////////////
     };
 }

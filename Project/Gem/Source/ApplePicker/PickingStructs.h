@@ -13,13 +13,13 @@
 namespace AppleKraken
 {
     //! Important states of the Kraken effector (manipulator with a vacuum nozzle)
-    enum class EffectorState
+    enum class EffectorState : int16_t
     {
+        INVALID = -1, //!< Invalid state. Requires an additional context that could help user understand what happened. @see PickingState.
         IDLE = 0, //!< Idle state / position, suitable for robot moving around the environment.
         PREPARED = 10, //!< State and position which are ready for picking tasks.
         PICKING = 20, //!< The effector is on its way to pick fruit.
-        RETRIEVING = 30, //!< The effector is retrieving a fruit to storage position.
-        INVALID = -1 //!< Invalid state. Requires an additional context that could help user understand what happened. @see PickingState.
+        RETRIEVING = 30 //!< The effector is retrieving a fruit to storage position.
     };
 
     //! A structure holding a state of effector, including optional progress and descriptive information.
@@ -36,4 +36,6 @@ namespace AppleKraken
         AZ::EntityId m_appleEntityId; //!< EntityId of the apple. Can be Invalid if the information is not available (check IsValid()).
         AZ::Aabb m_appleBoundingBox; //!< Bounding box of the apple to pick.
     };
+
+    using StateTransition = std::pair<EffectorState, EffectorState>;
 } // namespace AppleKraken
