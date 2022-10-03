@@ -1,9 +1,10 @@
 # Apple kraken navigation #
 
-## ROS2 package Requirements
+## ROS2 packages prerequisites
 
-- `nav2` navigation package (NAV2)[https://navigation.ros.org/]
-- `slam_toolbox` slam toolbox
+```
+sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard
+```
 
 ## Installation ##
 
