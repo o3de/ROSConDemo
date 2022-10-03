@@ -41,6 +41,7 @@ namespace AppleKraken
 
     void ApplePickerComponent::StartAutomatedOperation()
     {
+
     }
 
     float ApplePickerComponent::ReportProgress()
@@ -50,6 +51,7 @@ namespace AppleKraken
 
     void ApplePickerComponent::Activate()
     {
+        AZ::TickBus::Handler::BusConnect();
     }
 
     void ApplePickerComponent::Deactivate()
@@ -60,13 +62,20 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<ApplePickerComponent, AZ::Component>()->Version(1);
+            serialize->Class<ApplePickerComponent, AZ::Component>()->Version(1)
+                    ->Field("GripperEntity", &ApplePickerComponent::m_gripper_entity)
+                    ->Field("GatheringArea", &ApplePickerComponent::m_gatheringArea);
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
                 ec->Class<ApplePickerComponent>("Apple picking component", "A demo component for apple picking")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
-                    ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken");
+                    ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default, &ApplePickerComponent::m_gripper_entity,"Gripper Entity", "Gripper Entity")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default, &ApplePickerComponent::m_gatheringArea,"Gripper Reach", "Gripper Reach");
+
             }
         }
         ROSConDemo::ManipulatorRequestHandler::Reflect(context);
@@ -90,15 +99,8 @@ namespace AppleKraken
     }
 
     void ApplePickerComponent::OnTick(float deltaTime, AZ::ScriptTimePoint time){
-        AZ::Vector3 v{(float)time.GetSeconds(), 0,0};
-        ROSConDemo::ManipulatorRequestBus ::Broadcast(&ROSConDemo::ManipulatorRequest::ManipulatorSetPosition, v);
-
-        AZ::Vector3 v2{0, 0,0};
-        ROSConDemo::ManipulatorRequestBus ::BroadcastResult(v2, &ROSConDemo::ManipulatorRequest::ManipulatorReportError);
-
-        AZ_TracePrintf(
-                "ApplePicker","BAR: %f,%f,%f, \n", v2.GetX(),v2.GetY(),v2.GetZ());
-
+//        AZ::Vector3 v{0,0,0};
+//        ROSConDemo::ManipulatorRequestBus ::Event(GetEntityId(),&ROSConDemo::ManipulatorRequest::ManipulatorSetPosition, v);
 
     }
 } // namespace AppleKraken

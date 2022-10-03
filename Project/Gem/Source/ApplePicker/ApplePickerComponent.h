@@ -43,6 +43,7 @@ namespace AppleKraken
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
         AZ::Obb m_gatheringArea;
         AZStd::queue<PickAppleTask> m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
-        int m_field {0};
+        PickAppleTask m_current_task;
+        AZ::EntityId m_gripper_entity;
     };
 } // namespace AppleKraken

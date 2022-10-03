@@ -676,12 +676,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17071299421335020589]/Transform Data/Translate/0",
-                    "value": -2.299999952316284
+                    "value": -3.201237201690674
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17071299421335020589]/Transform Data/Translate/1",
-                    "value": -0.6000000238418579
+                    "value": -0.09698295593261719
                 }
             ]
         }

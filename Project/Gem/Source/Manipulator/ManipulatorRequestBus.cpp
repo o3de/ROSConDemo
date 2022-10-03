@@ -16,9 +16,20 @@ namespace ROSConDemo
 
     AZ::Vector3 ManipulatorRequestHandler::ManipulatorReportError(){
         AZ::Vector3 error;
-        CallResult(error, FN_ManipulatorReportError, error);
+        CallResult(error, FN_ManipulatorReportError);
         return error;
     }
+
+    int ManipulatorRequestHandler::ManipulatorGetStatus(){
+        int state;
+        CallResult(state, FN_ManipulatorReportError);
+        return state;
+    }
+
+    void ManipulatorRequestHandler::ManipulatorRetract(){
+        Call(FN_ManipulatorRetract);
+    }
+
 
     void ManipulatorRequestHandler::Reflect(AZ::ReflectContext* context)
     {
@@ -27,7 +38,9 @@ namespace ROSConDemo
             behaviorContext->EBus<ManipulatorRequestBus>("ManipulatorRequestBus")
                 ->Handler<ManipulatorRequestHandler>()
                 ->Event("ManipulatorSetPosition", &ManipulatorRequestBus::Events::ManipulatorSetPosition)
-                ->Event("ManipulatorReportError", &ManipulatorRequestBus::Events::ManipulatorReportError);
+                ->Event("ManipulatorReportError", &ManipulatorRequestBus::Events::ManipulatorReportError)
+                ->Event("ManipulatorGetStatus", &ManipulatorRequestBus::Events::ManipulatorGetStatus)
+                ->Event("ManipulatorRetract", &ManipulatorRequestBus::Events::ManipulatorRetract);
 
         }
     }
