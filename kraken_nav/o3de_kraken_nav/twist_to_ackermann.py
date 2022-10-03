@@ -21,8 +21,6 @@ class TwistToAckermann(Node):
     self.timeout_control_interval = self.get_parameter('timeout_control_interval').get_parameter_value().double_value
     self.control_timeout = self.get_parameter('control_timeout').get_parameter_value().double_value
     self.publish_zeros_on_timeout =  self.get_parameter('publish_zeros_on_timeout').get_parameter_value().bool_value
-    
-    print(self.publish_zeros_on_timeout)
 
     self.last_message_time = self.get_clock().now()
     self.sub_ = self.create_subscription(Twist, "cmd_vel", self.cmd_vel_cb, 10)
