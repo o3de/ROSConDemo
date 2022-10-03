@@ -24,7 +24,6 @@ class TwistToAckermann(Node):
   def cmd_vel_cb(self, data):
     vel = data.linear.x
     steering = self.twist_to_ackermann(vel, data.angular.z)
-    # print(f"v: {vel} steering: {steering}")
     
     msg = AckermannDrive()
     msg.steering_angle = float(steering)
