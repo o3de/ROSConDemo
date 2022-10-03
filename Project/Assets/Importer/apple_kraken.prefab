@@ -2153,6 +2153,13 @@
                         "Frame Name": "base_link"
                     }
                 },
+                "Component_[10827857459669795993]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10827857459669795993,
+                    "m_template": {
+                        "$type": "ApplePickerComponent"
+                    }
+                },
                 "Component_[11557544210003172907]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 11557544210003172907,
@@ -2245,6 +2252,13 @@
                 "Component_[15761721196763571641]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 15761721196763571641
+                },
+                "Component_[15817514089712196717]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 15817514089712196717,
+                    "m_template": {
+                        "$type": "KrakenEffectorComponent"
+                    }
                 },
                 "Component_[17458592949589370902]": {
                     "$type": "EditorEntityIconComponent",
