@@ -1,8 +1,8 @@
 
-#include <AzCore/Serialization/SerializeContext.h>
+#include "ROSConDemoSystemComponent.h"
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
-#include "ROSConDemoSystemComponent.h"
+#include <AzCore/Serialization/SerializeContext.h>
 
 namespace ROSConDemo
 {
@@ -10,17 +10,14 @@ namespace ROSConDemo
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<ROSConDemoSystemComponent, AZ::Component>()
-                ->Version(0)
-                ;
+            serialize->Class<ROSConDemoSystemComponent, AZ::Component>()->Version(0);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
                 ec->Class<ROSConDemoSystemComponent>("ROSConDemo", "[Description of functionality provided by this System Component]")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-                        ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("System"))
-                        ->Attribute(AZ::Edit::Attributes::AutoExpand, true)
-                    ;
+                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("System"))
+                    ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
     }
@@ -72,4 +69,4 @@ namespace ROSConDemo
     {
         ROSConDemoRequestBus::Handler::BusDisconnect();
     }
-}
+} // namespace ROSConDemo
