@@ -218,6 +218,8 @@ namespace AppleKraken
             ApplePickingRequestBus::Event(m_effectorEntityId, &ApplePickingRequests::PickApple, m_currentAppleTasks.front());
             return;
         }
+        AZ_TracePrintf("ApplePicker", "No more apples!");
+        ApplePickingRequestBus::Event(m_effectorEntityId, &ApplePickingRequests::FinishPicking);
     }
 
     void ApplePickerComponent::QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox)
