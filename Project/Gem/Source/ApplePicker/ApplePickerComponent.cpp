@@ -11,9 +11,9 @@
 #include <AzCore/EBus/Event.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
+#include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Names.h>
-#include <ROS2/Frame/ROS2FrameComponent.h>
 
 using namespace ROS2;
 
@@ -53,7 +53,7 @@ namespace AppleKraken
     bool ApplePickerComponent::IsBusy() const
     {
         if (!m_currentAppleTasks.empty())
-        {   // busy - still has tasks in queue
+        { // busy - still has tasks in queue
             return true;
         }
 
@@ -61,7 +61,7 @@ namespace AppleKraken
         PickingState pickingState;
         ApplePickingRequestBus::EventResult(pickingState, m_effectorEntityId, &ApplePickingRequests::GetEffectorState);
         if (pickingState.m_effectorState != EffectorState::IDLE && pickingState.m_effectorState != EffectorState::PREPARED)
-        {   // Effector is not ready - still transitioning to a state. This should be a rare occurrence.
+        { // Effector is not ready - still transitioning to a state. This should be a rare occurrence.
             AZ_Warning("ApplePicker", false, "Task queue empty but apple picker is busy since the effector is working");
             return true;
         }
@@ -176,7 +176,12 @@ namespace AppleKraken
             AZ_Error("ApplePicker", false, "ApplePicked called but no current task");
             return;
         }
+
         AZ_TracePrintf("ApplePicker", "%s. Picked apple\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str());
+
+        // Disappear the apple
+        AZ::Render::MeshComponentRequestBus::Event(
+            m_currentAppleTasks.front().m_appleEntityId, &AZ::Render::MeshComponentRequestBus::Events::SetVisibility, false);
     }
 
     void ApplePickerComponent::AppleRetrieved()

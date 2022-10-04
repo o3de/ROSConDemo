@@ -22,20 +22,31 @@ namespace AppleKraken
         RETRIEVING = 30 //!< The effector is retrieving a fruit to storage position.
     };
 
+    //! A task to pick a single apple.
+    struct PickAppleTask
+    {
+        bool IsValid() const
+        {
+            return m_appleEntityId.IsValid();
+        }
+
+        void Invalidate()
+        {
+            m_appleEntityId = AZ::EntityId();
+        }
+
+        AZ::EntityId m_appleEntityId; //!< EntityId of the apple. Can be Invalid if the information is not available (check IsValid()).
+        AZ::Aabb m_appleBoundingBox; //!< Bounding box of the apple to pick.
+        AZ::Vector3 m_middle; //!< Middle point of Apple
+    };
+
     //! A structure holding a state of effector, including optional progress and descriptive information.
     struct PickingState
     {
         EffectorState m_effectorState = EffectorState::IDLE; //!< Current state of effector.
+        PickAppleTask m_currentTask; //!< Only valid for EffectorState::PICKING and EffectorState::RETRIEVING
         float m_taskProgress = 0.0f; //!< Optional field signalling progress within current state (picking/retrieving).
         AZStd::string m_description; //!< Optional descriptive field to inform the user.
-    };
-
-    //! A task to pick a single apple.
-    struct PickAppleTask
-    {
-        AZ::EntityId m_appleEntityId; //!< EntityId of the apple. Can be Invalid if the information is not available (check IsValid()).
-        AZ::Aabb m_appleBoundingBox; //!< Bounding box of the apple to pick.
-        AZ::Vector3 m_middle; //!< Middle point of Apple
     };
 
     using StateTransition = std::pair<EffectorState, EffectorState>;

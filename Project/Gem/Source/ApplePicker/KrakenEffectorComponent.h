@@ -45,6 +45,7 @@ namespace AppleKraken
         void OnApplePicked();
         void OnAppleRetrieved();
 
+        PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
