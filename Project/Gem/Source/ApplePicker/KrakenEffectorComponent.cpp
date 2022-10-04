@@ -22,43 +22,15 @@ namespace AppleKraken
     namespace DebugStateTransit
     {
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
-        // <startState, targetState>, debugTime
-        using TransitionMap = AZStd::unordered_map<StateTransition, float, TransitionHash>;
-
-        TransitionMap GetTransitionMap()
-        {
-            static const TransitionMap tm = {
-                { std::make_pair(EffectorState::IDLE, EffectorState::PREPARED), 0.1f },
-                { std::make_pair(EffectorState::PREPARED, EffectorState::PICKING), 0.05f },
-                { std::make_pair(EffectorState::PICKING, EffectorState::RETRIEVING), 10.0f },
-                { std::make_pair(EffectorState::RETRIEVING, EffectorState::PREPARED), 2.f },
-                { std::make_pair(EffectorState::PREPARED, EffectorState::IDLE), 0.05f },
-            };
-            return tm;
-        }
-
         AZStd::string StateTransitionString(EffectorState current, EffectorState next)
         {
             return AZStd::string::format("state transition %d -> %d\n", static_cast<int>(current), static_cast<int>(next));
-        }
-
-        float GetStateTransitTime(EffectorState currentState, EffectorState targetState)
-        {
-            auto transitions = GetTransitionMap();
-            auto key = std::make_pair(currentState, targetState);
-            if (transitions.contains(key))
-            {
-                return GetTransitionMap().at(key);
-            }
-
-            // Invalid state transitions detected elsewhere
-            return 0.0f;
         }
     } // namespace DebugStateTransit
 
     KrakenEffectorComponent::KrakenEffectorComponent()
     {
-        InitializeTransitionActions();
+        InitializeStateProperties();
     }
 
     void KrakenEffectorComponent::Activate()
@@ -136,101 +108,6 @@ namespace AppleKraken
             }
         }
         ManipulatorRequestHandler::Reflect(context);
-    }
-
-    void KrakenEffectorComponent::InitializeTransitionActions()
-    {
-        m_stateTransitionActions = {
-            {
-                { EffectorState::IDLE, EffectorState::PREPARED },
-                [this]()
-                {
-                    LockManipulator(false);
-                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
-                },
-            },
-            {
-                { EffectorState::PREPARED, EffectorState::PICKING },
-                []()
-                {
-                },
-            },
-            {
-                { EffectorState::PICKING, EffectorState::RETRIEVING },
-                [this]()
-                {
-                    if (!m_currentTask.IsValid())
-                    {
-                        AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
-                        return;
-                    }
-                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
-                },
-            },
-            {
-                { EffectorState::RETRIEVING, EffectorState::PREPARED },
-                []()
-                {
-                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
-                },
-            },
-            {
-                { EffectorState::PREPARED, EffectorState::IDLE },
-                []()
-                {
-                },
-            },
-        };
-    }
-
-    bool KrakenEffectorComponent::IsTransitionValid(EffectorState targetState) const
-    {
-        auto transitionKey = std::make_pair(m_effectorState, targetState);
-        if (DebugStateTransit::GetTransitionMap().contains(transitionKey))
-        {
-            return true;
-        }
-        return false;
-    }
-
-    bool KrakenEffectorComponent::IsTransitionAcceptable(EffectorState targetState) const
-    {
-        if (m_effectorState == EffectorState::PICKING && m_effectorState == EffectorState::PICKING)
-        {
-            // allow this non-existing state transition without error
-            return true;
-        }
-
-        if (m_effectorState != m_effectorTargetState)
-        {
-            AZ_Error(
-                "KrakenEffectorComponent",
-                false,
-                "Unable to accept request: currently realizing %s",
-                DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
-            return false;
-        }
-
-        if (!IsTransitionValid(targetState))
-        {
-            AZ_Error(
-                "KrakenEffectorComponent",
-                false,
-                "Invalid state transition %s",
-                DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
-            return false;
-        }
-
-        return true;
-    }
-
-    void KrakenEffectorComponent::BeginTransitionIfAcceptable(EffectorState targetState)
-    {
-        if (IsTransitionAcceptable(targetState))
-        {
-            m_currentStateTransitionTime = 0.0f;
-            m_effectorTargetState = targetState;
-        }
     }
 
     void KrakenEffectorComponent::PrepareForPicking()
@@ -313,40 +190,10 @@ namespace AppleKraken
         return reachArea;
     }
 
-    std::function<void()> KrakenEffectorComponent::GetTransitionAction(EffectorState currentState, EffectorState targetState)
-    {
-        auto transitActionIt = m_stateTransitionActions.find(StateTransition{ currentState, targetState });
-        if (transitActionIt == m_stateTransitionActions.end())
-        {
-            AZ_Assert(false, "No function found for provided state");
-            return {};
-        }
-
-        return transitActionIt->second;
-    }
-
     void KrakenEffectorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
         m_currentStateTransitionTime += deltaTime;
-        if (m_effectorState == EffectorState::PICKING && m_currentStateTransitionTime > 5)
-        {
-            AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
-            ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::PickingFailed, "Timeout");
-        }
-
-        if (m_effectorState == EffectorState::RETRIEVING)
-        {
-            int status = -1;
-            ManipulatorRequestBus::EventResult(status, m_manipulatorEntity, &ManipulatorRequest::GetStatus);
-            if (status == 10)
-            {
-                BeginTransitionIfAcceptable(EffectorState::PREPARED);
-            }
-        }
-        if (m_effectorState == EffectorState::IDLE)
-        {
-            LockManipulator(true);
-        }
+        GetCurrentStateAction()();
 
         if (m_effectorState == m_effectorTargetState)
         { // //TODO - nothing to do in stub version
@@ -359,11 +206,10 @@ namespace AppleKraken
         m_currentStateTransitionTime = 0.0f;
 
         // Update state
-        auto previousState = m_effectorState;
+        auto transitionAction = GetCurrentTransitionAction();
         m_effectorState = m_effectorTargetState;
 
-        auto onTransitionFinished = GetTransitionAction(previousState, m_effectorState);
-        onTransitionFinished();
+        transitionAction();
 
         if (!m_registeredCallback)
         {
@@ -378,6 +224,7 @@ namespace AppleKraken
             }
         }
     }
+
     void KrakenEffectorComponent::LockManipulator(bool locked)
     {
         AZStd::vector<AZ::EntityId> descendants;
@@ -403,5 +250,138 @@ namespace AppleKraken
             }
             is_manipulator_locked = locked;
         }
+    }
+
+    bool KrakenEffectorComponent::IsTransitionValid(EffectorState targetState) const
+    {
+        AZ_Assert(m_effectorState != EffectorState::INVALID, "Effector is in an invalid state! Unable to access transition properties.");
+        return m_stateProperties.m_allowedTransitions.contains(AZStd::make_pair(m_effectorState, targetState));
+    }
+
+    bool KrakenEffectorComponent::IsTransitionAcceptable(EffectorState targetState) const
+    {
+        if (m_effectorState == EffectorState::PICKING && m_effectorState == EffectorState::PICKING)
+        {
+            // allow this non-existing state transition without error
+            return true;
+        }
+
+        if (m_effectorState != m_effectorTargetState)
+        {
+            AZ_Error(
+                "KrakenEffectorComponent",
+                false,
+                "Unable to accept request: currently realizing %s",
+                DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
+            return false;
+        }
+
+        if (!IsTransitionValid(targetState))
+        {
+            AZ_Error(
+                "KrakenEffectorComponent",
+                false,
+                "Invalid state transition %s",
+                DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
+            return false;
+        }
+
+        return true;
+    }
+
+    void KrakenEffectorComponent::BeginTransitionIfAcceptable(EffectorState targetState)
+    {
+        if (IsTransitionAcceptable(targetState))
+        {
+            m_currentStateTransitionTime = 0.0f;
+            m_effectorTargetState = targetState;
+        }
+    }
+
+    void KrakenEffectorComponent::InitializeStateProperties()
+    {
+        m_stateProperties.m_stateActions = {
+            { EffectorState::IDLE,
+              [this]()
+              {
+                  LockManipulator(true);
+              } },
+            { EffectorState::PREPARED,
+              []()
+              {
+              } },
+            { EffectorState::PICKING,
+              [this]()
+              {
+                  if (m_currentStateTransitionTime > m_maxPickingTime)
+                  {
+                      AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
+                      ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::PickingFailed, "Timeout");
+                  }
+              } },
+            { EffectorState::RETRIEVING,
+              [this]()
+              {
+                  int status = -1;
+                  ManipulatorRequestBus::EventResult(status, m_manipulatorEntity, &ManipulatorRequest::GetStatus);
+                  if (status == 10)
+                  {
+                      BeginTransitionIfAcceptable(EffectorState::PREPARED);
+                  }
+              } },
+        };
+
+        m_stateProperties.m_allowedTransitions = {
+            {
+                { EffectorState::IDLE, EffectorState::PREPARED },
+                [this]()
+                {
+                    LockManipulator(false);
+                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
+                },
+            },
+            {
+                { EffectorState::PREPARED, EffectorState::PICKING },
+                []()
+                {
+                },
+            },
+            {
+                { EffectorState::PICKING, EffectorState::RETRIEVING },
+                [this]()
+                {
+                    if (!m_currentTask.IsValid())
+                    {
+                        AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
+                        return;
+                    }
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                },
+            },
+            {
+                { EffectorState::RETRIEVING, EffectorState::PREPARED },
+                []()
+                {
+                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
+                },
+            },
+            {
+                { EffectorState::PREPARED, EffectorState::IDLE },
+                []()
+                {
+                },
+            },
+        };
+    }
+
+    const AZStd::function<void()>& KrakenEffectorComponent::GetCurrentStateAction() const
+    {
+        AZ_Assert(m_effectorState != EffectorState::INVALID, "Effector is in an invalid state! Unable to access state properties.");
+        return m_stateProperties.m_stateActions.at(m_effectorState);
+    }
+
+    const AZStd::function<void()>& KrakenEffectorComponent::GetCurrentTransitionAction() const
+    {
+        return m_stateProperties.m_allowedTransitions.at(AZStd::make_pair(m_effectorState, m_effectorTargetState));
     }
 } // namespace AppleKraken
