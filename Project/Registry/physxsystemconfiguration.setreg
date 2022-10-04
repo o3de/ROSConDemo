@@ -3,6 +3,7 @@
         "Gems": {
             "PhysX": {
                 "PhysXSystemConfiguration": {
+                    "OverlapBufferSize": 256,
                     "CollisionConfig": {
                         "Layers": {
                             "LayerNames": [
