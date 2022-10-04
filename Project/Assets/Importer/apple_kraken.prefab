@@ -50,6 +50,80 @@
         }
     },
     "Entities": {
+        "Entity_[10566975603038]": {
+            "Id": "Entity_[10566975603038]",
+            "Name": "Reach",
+            "Components": {
+                "Component_[12134677965642439310]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12134677965642439310
+                },
+                "Component_[12379650427692259737]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12379650427692259737
+                },
+                "Component_[12854123889032285417]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 12854123889032285417,
+                    "Parent Entity": "Entity_[75475350413532]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.3141825199127197,
+                            -1.3080506324768066,
+                            1.3059842586517334
+                        ]
+                    }
+                },
+                "Component_[15528204378368032500]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15528204378368032500
+                },
+                "Component_[15946978491166417219]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 15946978491166417219
+                },
+                "Component_[16579073158310732817]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16579073158310732817
+                },
+                "Component_[3711085650900191423]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3711085650900191423
+                },
+                "Component_[4537990256127437569]": {
+                    "$type": "EditorBoxShapeComponent",
+                    "Id": 4537990256127437569,
+                    "GameView": true,
+                    "ShapeColor": [
+                        0.03504997491836548,
+                        0.014206149615347385,
+                        0.6394598484039307
+                    ],
+                    "BoxShape": {
+                        "Configuration": {
+                            "DrawColor": [
+                                0.03504997491836548,
+                                0.014206149615347385,
+                                0.6394598484039307
+                            ],
+                            "Dimensions": [
+                                1.0,
+                                1.0,
+                                2.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[8062760780184938853]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 8062760780184938853
+                },
+                "Component_[9860291504937187441]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9860291504937187441
+                }
+            }
+        },
         "Entity_[75380861133020]": {
             "Id": "Entity_[75380861133020]",
             "Name": "wheel_rear_left_link_visual",
@@ -2170,7 +2244,8 @@
                         "Entity_[75436695707868]",
                         "Entity_[75402335969500]",
                         "Entity_[75479645380828]",
-                        "Entity_[75419515838684]"
+                        "Entity_[75419515838684]",
+                        "Entity_[10566975603038]"
                     ]
                 },
                 "Component_[11587227330168097343]": {
@@ -2257,7 +2332,8 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 15817514089712196717,
                     "m_template": {
-                        "$type": "KrakenEffectorComponent"
+                        "$type": "KrakenEffectorComponent",
+                        "ReachEntity": "Entity_[10566975603038]"
                     }
                 },
                 "Component_[17458592949589370902]": {
