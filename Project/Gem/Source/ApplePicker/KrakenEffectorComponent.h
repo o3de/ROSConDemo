@@ -48,5 +48,6 @@ namespace AppleKraken
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
+        AZ::EntityId m_reachEntity;
     };
 } // namespace AppleKraken

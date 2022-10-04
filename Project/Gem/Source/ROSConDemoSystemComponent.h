@@ -28,4 +28,4 @@ namespace ROSConDemo
         void Activate() override;
         void Deactivate() override;
     };
-}
+} // namespace ROSConDemo

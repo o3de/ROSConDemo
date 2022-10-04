@@ -20,7 +20,7 @@ namespace AppleKraken
         //! The effector is ready for picking
         virtual void EffectorReadyForPicking() = 0;
 
-         //! An apple was successfully picked.
+        //! An apple was successfully picked.
         virtual void ApplePicked() = 0;
 
         //! An apple was successfully retrieved to storage and can count as harvested.

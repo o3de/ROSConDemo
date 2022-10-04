@@ -9,9 +9,11 @@
 #include "KrakenEffectorComponent.h"
 #include "ApplePickingNotifications.h"
 #include "PickingStructs.h"
+#include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzCore/Serialization/SerializeContext.h>
+#include <LmbrCentral/Shape/BoxShapeComponentBus.h>
 
 namespace AppleKraken
 {
@@ -79,14 +81,21 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<KrakenEffectorComponent, AZ::Component>()->Version(1);
+            serialize->Class<KrakenEffectorComponent, AZ::Component>()->Version(1)->Field(
+                "ReachEntity", &KrakenEffectorComponent::m_reachEntity);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
                 ec->Class<KrakenEffectorComponent>("Kraken Effector", "Manipulator component for picking apples")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::Category, "ROS2")
-                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"));
+                    ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default,
+                        &KrakenEffectorComponent::m_reachEntity,
+                        "Kraken Reach entity",
+                        "Kraken entity with box shape to set reach area")
+                    ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
     }
@@ -166,7 +175,42 @@ namespace AppleKraken
     {
         AZ_TracePrintf("KrakenEffectorComponent", "GetEffectorReachArea\n");
         AZ::Obb reachArea;
-        // TODO - get the actual area
+
+        if (m_reachEntity.IsValid())
+        {
+            AZ::Transform targetTM = AZ::Transform::CreateIdentity();
+            AZ::TransformBus::EventResult(targetTM, m_reachEntity, &AZ::TransformBus::Events::GetWorldTM);
+            AZ::Vector3 dimensions = AZ::Vector3{ 0, 0, 0 };
+            LmbrCentral::BoxShapeComponentRequestsBus::EventResult(
+                dimensions, m_reachEntity, &LmbrCentral::BoxShapeComponentRequests::GetBoxDimensions);
+
+            AZ_Printf("KrakenEffectorComponent", "OurEffectorReachArea :");
+            AZ_Printf("KrakenEffectorComponent", "  local dimensions : %f %f %f", dimensions.GetX(), dimensions.GetY(), dimensions.GetZ());
+            AZ_Printf(
+                "KrakenEffectorComponent",
+                "  transform - rot  : %f %f %f %f",
+                targetTM.GetRotation().GetX(),
+                targetTM.GetRotation().GetY(),
+                targetTM.GetRotation().GetZ(),
+                targetTM.GetRotation().GetW());
+            AZ_Printf(
+                "KrakenEffectorComponent",
+                "  transform - pos  : %f %f %f",
+                targetTM.GetTranslation().GetX(),
+                targetTM.GetTranslation().GetY(),
+                targetTM.GetTranslation().GetZ());
+
+            reachArea.SetHalfLengths(dimensions / 2);
+            reachArea.SetPosition(targetTM.GetTranslation());
+            reachArea.SetRotation(targetTM.GetRotation());
+
+            return reachArea;
+        }
+
+        AZ_Warning("KrakenEffectorComponent", true, "GetEffectorReachArea - returning invalid reach");
+        reachArea.SetHalfLengths(AZ::Vector3{ 0, 0, 0 });
+        reachArea.SetPosition(AZ::Vector3{ 0, 0, 0 }); /// TODO - get it from entity With box
+
         return reachArea;
     }
 
