@@ -2231,6 +2231,24 @@
                     "Id": 12921665263434500262,
                     "Parent Entity": "ContainerEntity"
                 },
+                "Component_[12958874384206631254]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12958874384206631254,
+                    "m_template": {
+                        "$type": "ROS2ImuSensorComponent",
+                        "SensorConfiguration": {
+                            "Publishers": {
+                                "sensor_msgs::msg::Imu": {
+                                    "Type": "sensor_msgs::msg::Imu",
+                                    "Topic": "imu",
+                                    "QoS": {
+                                        "Reliability": 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[1306489892602480225]": {
                     "$type": "GenericComponentWrapper",
                     "Id": 1306489892602480225,
@@ -2302,15 +2320,15 @@
                                         "Entity_[75449580609756]"
                                     ],
                                     "WheelRadius": 0.30000001192092896,
-                                    "IsSteering": true
+                                    "IsSteering": true,
+                                    "IsDrive": true
                                 },
                                 {
                                     "AxleWheels": [
                                         "Entity_[75479645380828]",
                                         "Entity_[75419515838684]"
                                     ],
-                                    "WheelRadius": 0.30000001192092896,
-                                    "IsDrive": true
+                                    "WheelRadius": 0.30000001192092896
                                 }
                             ],
                             "Track": 0.6000000238418579
@@ -2318,12 +2336,17 @@
                         "DriveModel": {
                             "SteeringPID": {
                                 "P": 500.0,
+                                "I": 100.0,
                                 "Output limit": 200.0
                             },
                             "SpeedPID": {
                                 "P": 100.0,
+                                "I": 100.0,
                                 "Output limit": 100.0
                             }
+                        },
+                        "VehicleModelLimits": {
+                            "SteeringLimit": 0.5
                         }
                     }
                 },
