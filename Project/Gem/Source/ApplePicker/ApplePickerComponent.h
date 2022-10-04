@@ -11,9 +11,14 @@
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
+#include <std_srvs/srv/trigger.hpp>
+#include <rclcpp/rclcpp.hpp>
 
 namespace AppleKraken
 {
+    using TriggerRequest = std::shared_ptr<std_srvs::srv::Trigger::Request>;
+    using TriggerResponse = std::shared_ptr<std_srvs::srv::Trigger::Response>;
+
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
         : public AZ::Component
@@ -24,6 +29,7 @@ namespace AppleKraken
         AZ_COMPONENT(ApplePickerComponent, "{E9E83A4A-31A4-4E7A-AF88-7565AC8B9F27}", AZ::Component);
         ApplePickerComponent() = default;
         static void Reflect(AZ::ReflectContext* context);
+        static void GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required);
 
         //! Detect and pick all apples in manipulator range.
         void StartAutomatedOperation();
@@ -44,8 +50,13 @@ namespace AppleKraken
         void AppleRetrieved() override;
         void PickingFailed(const AZStd::string& reason) override;
 
+        bool IsBusy() const;
         void PickNextApple();
         void QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox);
+        void ProcessTriggerServiceCall(const TriggerRequest req, TriggerResponse resp);
+
+        AZStd::string m_triggerServiceTopic = "trigger_apple_gathering";
+        rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
 
         AZ::EntityId m_effectorEntityId;
         AZ::Obb m_gatheringArea;
