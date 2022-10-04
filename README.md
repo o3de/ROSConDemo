@@ -50,6 +50,17 @@ This will compile after some time and binaries will be available in the project 
 
 For a complete tutorial on project configuration, see [Creating Projects Using the Command Line Interface](https://o3de.org/docs/welcome-guide/create/creating-projects-using-cli/) in the documentation.
 
+## Triggering Apple Gathering
+
+Check available services in a terminal using this command:
+- `ros2 service list`
+
+If your simulation is running, you should be able to see the apple gathering service listed there.
+- It could be named `/trigger_apple_gathering`.
+
+If Apple Kraken is in position, you can trigger apple gathering with a terminal command:
+- `ros2 service call /trigger_apple_gathering std_srvs/srv/Trigger`
+
 ## License
 
 For terms please see the LICENSE*.TXT files at the root of this distribution.

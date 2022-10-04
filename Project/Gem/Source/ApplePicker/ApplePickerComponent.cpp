@@ -11,6 +11,11 @@
 #include <AzCore/EBus/Event.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
+#include <ROS2/ROS2Bus.h>
+#include <ROS2/Utilities/ROS2Names.h>
+#include <ROS2/Frame/ROS2FrameComponent.h>
+
+using namespace ROS2;
 
 namespace AppleKraken
 {
@@ -38,9 +43,43 @@ namespace AppleKraken
         }
     } // namespace Internal
 
-    void ApplePickerComponent::StartAutomatedOperation()
+    bool ApplePickerComponent::IsBusy() const
     {
         if (!m_currentAppleTasks.empty())
+        {   // busy - still has tasks in queue
+            return true;
+        }
+
+        // There are no apple tasks, but the effector might not be idle or prepared yet
+        PickingState pickingState;
+        ApplePickingRequestBus::EventResult(pickingState, m_effectorEntityId, &ApplePickingRequests::GetEffectorState);
+        if (pickingState.m_effectorState != EffectorState::IDLE && pickingState.m_effectorState != EffectorState::PREPARED)
+        {   // Effector is not ready - still transitioning to a state. This should be a rare occurrence.
+            AZ_Warning("ApplePicker", false, "Task queue empty but apple picker is busy since the effector is working");
+            return true;
+        }
+        return false;
+    }
+
+    void ApplePickerComponent::ProcessTriggerServiceCall(const TriggerRequest req, TriggerResponse resp)
+    {
+        // TODO - also, perhaps add a check whether Kraken is in gathering position, immobile etc.
+        if (IsBusy())
+        {
+            resp->success = false;
+            resp->message = "Unable to accept request - apple picker is currently busy";
+            return;
+        }
+
+        resp->success = true;
+        resp->message = "Command accepted, picking operation started";
+        StartAutomatedOperation();
+        return;
+    }
+
+    void ApplePickerComponent::StartAutomatedOperation()
+    {
+        if (IsBusy())
         {
             AZ_Error("ApplePicker", false, "Tasks still in progress for current picking!");
             return;
@@ -60,12 +99,6 @@ namespace AppleKraken
     void ApplePickerComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
         // TODO handle timeouts and incoming commands
-
-        // TODO - a debug loop
-        if (m_currentAppleTasks.empty())
-        {
-            StartAutomatedOperation();
-        }
     }
 
     float ApplePickerComponent::ReportProgress()
@@ -85,10 +118,21 @@ namespace AppleKraken
         m_effectorEntityId = GetEntityId(); // TODO - remove this once we expose this field
         ApplePickingNotificationBus::Handler::BusConnect();
         AZ::TickBus::Handler::BusConnect();
+
+        auto ros2Node = ROS2Interface::Get()->GetNode();
+        auto robotNamespace = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity())->GetNamespace();
+        auto topic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
+        m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
+            m_triggerServiceTopic.c_str(),
+            [this](const TriggerRequest request, TriggerResponse response)
+            {
+                this->ProcessTriggerServiceCall(request, response);
+            });
     }
 
     void ApplePickerComponent::Deactivate()
     {
+        m_triggerService.reset();
         AZ::TickBus::Handler::BusDisconnect();
         ApplePickingNotificationBus::Handler::BusDisconnect();
     }
@@ -106,6 +150,11 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken");
             }
         }
+    }
+
+    void ApplePickerComponent::GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required)
+    {
+        required.push_back(AZ_CRC("ROS2Frame"));
     }
 
     void ApplePickerComponent::EffectorReadyForPicking()

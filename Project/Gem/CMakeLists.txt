@@ -31,14 +31,20 @@ ly_add_target(
     FILES_CMAKE
         roscondemo_files.cmake
         ${pal_dir}/roscondemo_${PAL_PLATFORM_NAME_LOWERCASE}_files.cmake
+    PLATFORM_INCLUDE_FILES
+        ${CMAKE_CURRENT_LIST_DIR}/Platform/Common/${PAL_TRAIT_COMPILER_ID}/exceptions_${PAL_TRAIT_COMPILER_ID_LOWERCASE}.cmake
     INCLUDE_DIRECTORIES
         PUBLIC
             Include
     BUILD_DEPENDENCIES
+        PUBLIC
+            Gem::ROS2.Static
         PRIVATE
             AZ::AzGameFramework
             Gem::Atom_AtomBridge.Static
 )
+
+target_depends_on_ros2_packages(ROSConDemo.Static std_srvs)
 
 ly_add_target(
     NAME ROSConDemo ${PAL_TRAIT_MONOLITHIC_DRIVEN_MODULE_TYPE}
