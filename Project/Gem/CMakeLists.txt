@@ -37,7 +37,6 @@ ly_add_target(
     BUILD_DEPENDENCIES
         PRIVATE
             AZ::AzGameFramework
-            AZ::AzToolsFramework
             Gem::LmbrCentral.API
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
