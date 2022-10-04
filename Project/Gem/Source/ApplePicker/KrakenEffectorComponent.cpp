@@ -38,10 +38,10 @@ namespace AppleKraken
         {
             static const TransitionMap tm = {
                 { std::make_pair(EffectorState::IDLE, EffectorState::PREPARED), 0.1f },
-                { std::make_pair(EffectorState::PREPARED, EffectorState::PICKING), 0.5f },
-                { std::make_pair(EffectorState::PICKING, EffectorState::RETRIEVING), 2.0f },
-                { std::make_pair(EffectorState::RETRIEVING, EffectorState::PREPARED), 2.0f },
-                { std::make_pair(EffectorState::PREPARED, EffectorState::IDLE), 0.1f },
+                { std::make_pair(EffectorState::PREPARED, EffectorState::PICKING), 0.05f },
+                { std::make_pair(EffectorState::PICKING, EffectorState::RETRIEVING), 0.1f },
+                { std::make_pair(EffectorState::RETRIEVING, EffectorState::PREPARED), 0.1f },
+                { std::make_pair(EffectorState::PREPARED, EffectorState::IDLE), 0.05f },
             };
             return tm;
         }
@@ -154,6 +154,7 @@ namespace AppleKraken
     {
         AZ_TracePrintf("KrakenEffectorComponent", "PickApple\n");
         // TODO - handle appleTask
+        m_currentTask = appleTask;
         BeginTransitionIfAcceptable(EffectorState::PICKING);
     }
 
@@ -168,6 +169,10 @@ namespace AppleKraken
         PickingState state;
         state.m_effectorState = m_effectorState;
         state.m_taskProgress = 0.0f; // TODO
+        if (m_currentTask.IsValid())
+        {
+            state.m_currentTask = m_currentTask;
+        }
         return state;
     }
 
@@ -225,6 +230,12 @@ namespace AppleKraken
 
     void KrakenEffectorComponent::OnApplePicked()
     {
+        if (!m_currentTask.IsValid())
+        {
+            AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
+            return;
+        }
+
         // TODO - also handle picking failed
         ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
 
