@@ -4,6 +4,8 @@
             "PhysX": {
                 "PhysXSystemConfiguration": {
                     "OverlapBufferSize": 256,
+                    "MaxTimestep": 0.05000000074505806,
+                    "FixedTimeStep": 0.00800000037997961,
                     "CollisionConfig": {
                         "Layers": {
                             "LayerNames": [
