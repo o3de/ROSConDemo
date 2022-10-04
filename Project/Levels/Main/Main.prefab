@@ -515,7 +515,40 @@
                 },
                 "Component_[13711420870643673468]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 13711420870643673468
+                    "Id": 13711420870643673468,
+                    "DisabledComponents": [
+                        {
+                            "$type": "AZ::Render::EditorMeshComponent",
+                            "Id": 5675108321710651991,
+                            "Controller": {
+                                "Configuration": {
+                                    "ModelAsset": {
+                                        "assetId": {
+                                            "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
+                                            "subId": 277889906
+                                        },
+                                        "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "$type": "EditorMaterialComponent",
+                            "Id": 5182430712893438093,
+                            "Controller": {
+                                "Configuration": {
+                                    "materials": [
+                                        {
+                                            "Key": {
+                                                "materialSlotStableId": 803645540
+                                            },
+                                            "Value": {}
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "Component_[138002849734991713]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -526,28 +559,17 @@
                     "Id": 16578565737331764849,
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            0.007371678948402405
+                        ],
                         "UniformScale": 4.943045139312744
                     }
                 },
                 "Component_[16919232076966545697]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 16919232076966545697
-                },
-                "Component_[5182430712893438093]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 5182430712893438093,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 803645540
-                                    },
-                                    "Value": {}
-                                }
-                            ]
-                        }
-                    }
                 },
                 "Component_[5245524694917323904]": {
                     "$type": "EditorColliderComponent",
@@ -585,21 +607,6 @@
                         "LocallyEnabled": false
                     }
                 },
-                "Component_[5675108321710651991]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 5675108321710651991,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
-                                    "subId": 277889906
-                                },
-                                "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
-                            }
-                        }
-                    }
-                },
                 "Component_[5681893399601237518]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 5681893399601237518
@@ -632,7 +639,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 10631397967064389415
+                            "EditorEntityId": 10380259529757397793
                         }
                     }
                 },
@@ -7825,7 +7832,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 8016367789056963516
+                            "EntityId": 9738222105852774648
                         }
                     },
                     "useBakedCubemap": false,
