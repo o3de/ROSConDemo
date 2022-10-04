@@ -20,10 +20,6 @@
                 "Id": 12869331830394677534,
                 "Parent Entity": ""
             },
-            "Component_[14686188999606101794]": {
-                "$type": "SelectionComponent",
-                "Id": 14686188999606101794
-            },
             "Component_[1634656833384783028]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 1634656833384783028
@@ -58,10 +54,6 @@
             "Id": "Entity_[653853241932]",
             "Name": "FlowerOne",
             "Components": {
-                "Component_[11669190883968777902]": {
-                    "$type": "SelectionComponent",
-                    "Id": 11669190883968777902
-                },
                 "Component_[13764239287526023992]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 13764239287526023992,
@@ -118,7 +110,8 @@
                 "Component_[2219158635655674159]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 2219158635655674159,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[3576220131596356961]": {
                     "$type": "EditorDisabledCompositionComponent",

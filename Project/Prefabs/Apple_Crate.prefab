@@ -69,7 +69,8 @@
                 "Component_[14063829758759983448]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 14063829758759983448,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[16325347661556016829]": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -159,7 +160,8 @@
                                     "subId": 270483317
                                 },
                                 "assetHint": "assets/apple_crate/apple_crate.azmodel"
-                            }
+                            },
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },
@@ -205,7 +207,8 @@
                                     "subId": 281849903
                                 },
                                 "assetHint": "assets/apple_crate/apples.azmodel"
-                            }
+                            },
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },
@@ -274,7 +277,8 @@
                             0.0,
                             -0.033247172832489014
                         ]
-                    }
+                    },
+                    "IsStatic": true
                 }
             }
         }
