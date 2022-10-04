@@ -180,33 +180,37 @@ namespace AppleKraken
         {
             AZ::Transform targetTM = AZ::Transform::CreateIdentity();
             AZ::TransformBus::EventResult(targetTM, m_reachEntity, &AZ::TransformBus::Events::GetWorldTM);
-            AZ::Vector3 dimensions = AZ::Vector3{ 0, 0, 0 };
+            AZ::Vector3 dimensions = AZ::Vector3{ 0.f };
             LmbrCentral::BoxShapeComponentRequestsBus::EventResult(
                 dimensions, m_reachEntity, &LmbrCentral::BoxShapeComponentRequests::GetBoxDimensions);
+            if (!dimensions.IsZero())
+            {
+                AZ_Printf("KrakenEffectorComponent", "OurEffectorReachArea :");
+                AZ_Printf(
+                    "KrakenEffectorComponent", "  local dimensions : %f %f %f", dimensions.GetX(), dimensions.GetY(), dimensions.GetZ());
+                AZ_Printf(
+                    "KrakenEffectorComponent",
+                    "  transform - rot  : %f %f %f %f",
+                    targetTM.GetRotation().GetX(),
+                    targetTM.GetRotation().GetY(),
+                    targetTM.GetRotation().GetZ(),
+                    targetTM.GetRotation().GetW());
+                AZ_Printf(
+                    "KrakenEffectorComponent",
+                    "  transform - pos  : %f %f %f",
+                    targetTM.GetTranslation().GetX(),
+                    targetTM.GetTranslation().GetY(),
+                    targetTM.GetTranslation().GetZ());
 
-            AZ_Printf("KrakenEffectorComponent", "OurEffectorReachArea :");
-            AZ_Printf("KrakenEffectorComponent", "  local dimensions : %f %f %f", dimensions.GetX(), dimensions.GetY(), dimensions.GetZ());
-            AZ_Printf(
-                "KrakenEffectorComponent",
-                "  transform - rot  : %f %f %f %f",
-                targetTM.GetRotation().GetX(),
-                targetTM.GetRotation().GetY(),
-                targetTM.GetRotation().GetZ(),
-                targetTM.GetRotation().GetW());
-            AZ_Printf(
-                "KrakenEffectorComponent",
-                "  transform - pos  : %f %f %f",
-                targetTM.GetTranslation().GetX(),
-                targetTM.GetTranslation().GetY(),
-                targetTM.GetTranslation().GetZ());
+                reachArea.SetHalfLengths(dimensions / 2);
+                reachArea.SetPosition(targetTM.GetTranslation());
+                reachArea.SetRotation(targetTM.GetRotation());
 
-            reachArea.SetHalfLengths(dimensions / 2);
-            reachArea.SetPosition(targetTM.GetTranslation());
-            reachArea.SetRotation(targetTM.GetRotation());
-
-            return reachArea;
+                return reachArea;
+            }
+            AZ_Warning(
+                "KrakenEffectorComponent", true, "Reach entity %s does not have BoxShapeComponent!", m_reachEntity.ToString().c_str());
         }
-
         AZ_Warning("KrakenEffectorComponent", true, "GetEffectorReachArea - returning invalid reach");
         reachArea.SetHalfLengths(AZ::Vector3{ 0, 0, 0 });
         reachArea.SetPosition(AZ::Vector3{ 0, 0, 0 }); /// TODO - get it from entity With box
