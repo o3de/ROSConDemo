@@ -5,7 +5,7 @@ This package provides navigation capabilities for the apple Kraken vehicle.
 ## ROS2 packages prerequisites
 
 ```
-sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard
+sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs
 ```
 
 ## Installation ##
@@ -14,10 +14,10 @@ sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ro
 - Use the the [development](https://github.com/RobotecAI/o3de-ros2-gem/tree/development) branch of the `o3de-ros-gem`.
 - Use [mp/deappletreeized_orchad_kraken](https://github.com/aws-lumberyard/ROSConDemo/tree/mp/deappletreeized_orchad_kraken) branch of the `ROSConDemo`.
 
-1. Source ROS2 (assumed `galactic`)
+1. Source ROS2 (assumed `humble`)
 
 ```bash
-source /opt/ros/galactic/setup.bash
+source /opt/ros/humble/setup.bash
 ```
 
 2. Clone `o3de_kraken_nav` package to `src` directory inside a workspace directory (assumed `~/o3de_kraken_ws`), 

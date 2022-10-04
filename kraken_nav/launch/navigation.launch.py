@@ -73,19 +73,13 @@ def generate_launch_description():
             'timeout_control_interval': 0.1,
             'control_timeout': 0.2,
             'publish_zeros_on_timeout': True
-        }],
-        output={
-            'stdout': 'log'
-        }
+        }]
     )
     
     rviz = Node(
         package='rviz2',
         executable='rviz2',
         name='slam',
-        output={
-            'stdout': 'log',
-        },
         arguments=[
             '-d', str(pathlib.Path(package_dir).joinpath('launch', 'config', 'config.rviz')),
         ]
