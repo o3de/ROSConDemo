@@ -22,19 +22,8 @@ namespace AppleKraken
     namespace DebugStateTransit
     {
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
-        struct HashTransition
-        {
-            size_t operator()(const std::pair<EffectorState, EffectorState>& p) const
-            {
-                int16_t first = static_cast<int16_t>(p.first);
-                int16_t second = static_cast<int16_t>(p.second);
-                size_t combined = (size_t)first << 16 | second;
-                return combined;
-            }
-        };
-
         // <startState, targetState>, debugTime
-        using TransitionMap = AZStd::unordered_map<StateTransition, float, HashTransition>;
+        using TransitionMap = AZStd::unordered_map<StateTransition, float, TransitionHash>;
 
         TransitionMap GetTransitionMap()
         {
@@ -66,6 +55,11 @@ namespace AppleKraken
             return 0.0f;
         }
     } // namespace DebugStateTransit
+
+    KrakenEffectorComponent::KrakenEffectorComponent()
+    {
+        InitializeTransitionActions();
+    }
 
     void KrakenEffectorComponent::Activate()
     {
@@ -142,6 +136,51 @@ namespace AppleKraken
             }
         }
         ManipulatorRequestHandler::Reflect(context);
+    }
+
+    void KrakenEffectorComponent::InitializeTransitionActions()
+    {
+        m_stateTransitionActions = {
+            {
+                { EffectorState::IDLE, EffectorState::PREPARED },
+                [this]()
+                {
+                    LockManipulator(false);
+                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
+                },
+            },
+            {
+                { EffectorState::PREPARED, EffectorState::PICKING },
+                []()
+                {
+                },
+            },
+            {
+                { EffectorState::PICKING, EffectorState::RETRIEVING },
+                [this]()
+                {
+                    if (!m_currentTask.IsValid())
+                    {
+                        AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
+                        return;
+                    }
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                },
+            },
+            {
+                { EffectorState::RETRIEVING, EffectorState::PREPARED },
+                []()
+                {
+                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
+                },
+            },
+            {
+                { EffectorState::PREPARED, EffectorState::IDLE },
+                []()
+                {
+                },
+            },
+        };
     }
 
     bool KrakenEffectorComponent::IsTransitionValid(EffectorState targetState) const
@@ -274,25 +313,16 @@ namespace AppleKraken
         return reachArea;
     }
 
-    void KrakenEffectorComponent::OnEffectorReadyForPicking()
+    std::function<void()> KrakenEffectorComponent::GetTransitionAction(EffectorState currentState, EffectorState targetState)
     {
-        LockManipulator(false);
-        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
-    }
-
-    void KrakenEffectorComponent::OnApplePicked()
-    {
-        if (!m_currentTask.IsValid())
+        auto transitActionIt = m_stateTransitionActions.find(StateTransition{ currentState, targetState });
+        if (transitActionIt == m_stateTransitionActions.end())
         {
-            AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
-            return;
+            AZ_Assert(false, "No function found for provided state");
+            return {};
         }
-        ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
-    }
 
-    void KrakenEffectorComponent::OnAppleRetrieved()
-    {
-        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
+        return transitActionIt->second;
     }
 
     void KrakenEffectorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
@@ -332,20 +362,9 @@ namespace AppleKraken
         auto previousState = m_effectorState;
         m_effectorState = m_effectorTargetState;
 
-        if (previousState == EffectorState::IDLE && m_effectorState == EffectorState::PREPARED)
-        {
-            OnEffectorReadyForPicking();
-        }
+        auto onTransitionFinished = GetTransitionAction(previousState, m_effectorState);
+        onTransitionFinished();
 
-        if (previousState == EffectorState::PICKING && m_effectorState == EffectorState::RETRIEVING)
-        {
-            OnApplePicked();
-        }
-
-        if (previousState == EffectorState::RETRIEVING && m_effectorState == EffectorState::PREPARED)
-        {
-            OnAppleRetrieved();
-        }
         if (!m_registeredCallback)
         {
             auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
