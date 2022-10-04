@@ -356,7 +356,9 @@
                             "IntensityMode": 2,
                             "Intensity": 15.0,
                             "CameraEntityId": "Entity_[1163754259827]",
-                            "IsCascadeCorrectionEnabled": true
+                            "IsCascadeCorrectionEnabled": true,
+                            "ShadowFilterMethod": 1,
+                            "PcfFilteringSampleCount": 4
                         }
                     }
                 },
@@ -639,7 +641,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 10380259529757397793
+                            "EditorEntityId": 11586138576425755054
                         }
                     }
                 },
@@ -7832,7 +7834,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 9738222105852774648
+                            "EntityId": 2107272255215807581
                         }
                     },
                     "useBakedCubemap": false,

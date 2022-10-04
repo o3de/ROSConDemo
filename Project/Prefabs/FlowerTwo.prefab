@@ -35,10 +35,6 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 5509442293589726892
             },
-            "Component_[6697034546592676924]": {
-                "$type": "SelectionComponent",
-                "Id": 6697034546592676924
-            },
             "Component_[6768094324489884592]": {
                 "$type": "EditorEntityIconComponent",
                 "Id": 6768094324489884592
@@ -58,10 +54,6 @@
             "Id": "Entity_[1229378859596]",
             "Name": "FlowerTwo",
             "Components": {
-                "Component_[11250090456856070478]": {
-                    "$type": "SelectionComponent",
-                    "Id": 11250090456856070478
-                },
                 "Component_[12161600831647235908]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 12161600831647235908
@@ -139,6 +131,7 @@
                                 },
                                 "assetHint": "assets/flower_tile_two/flower_tile_two.azmodel"
                             },
+                            "IsRayTracingEnabled": false,
                             "LodType": 1,
                             "MinimumScreenCoverage": 0.0
                         }
