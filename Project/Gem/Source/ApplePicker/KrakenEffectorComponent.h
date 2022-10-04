@@ -31,12 +31,13 @@ namespace AppleKraken
     {
     public:
         AZ_COMPONENT(KrakenEffectorComponent, "{9206FC30-DF56-4246-8247-5D6B31603B53}");
-        KrakenEffectorComponent() = default;
+        KrakenEffectorComponent();
         static void Reflect(AZ::ReflectContext* context);
 
     private:
         void Activate() override;
         void Deactivate() override;
+        void InitializeTransitionActions();
 
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
 
@@ -45,14 +46,11 @@ namespace AppleKraken
         void FinishPicking() override;
         PickingState GetEffectorState() override;
         AZ::Obb GetEffectorReachArea() override;
+        std::function<void()> GetTransitionAction(EffectorState currentState, EffectorState targetState);
 
         void BeginTransitionIfAcceptable(EffectorState targetState);
         bool IsTransitionAcceptable(EffectorState targetState) const;
         bool IsTransitionValid(EffectorState targetState) const;
-
-        void OnEffectorReadyForPicking();
-        void OnApplePicked();
-        void OnAppleRetrieved();
 
         void LockManipulator(bool locked);
 
@@ -60,6 +58,8 @@ namespace AppleKraken
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
+        // <startState, targetState>, onTransitionFinished
+        AZStd::unordered_map<StateTransition, std::function<void()>, TransitionHash> m_stateTransitionActions;
         AZ::EntityId m_reachEntity;
         AZ::EntityId m_manipulatorEntity;
         AZ::EntityId m_rootEntityToFreeze;
