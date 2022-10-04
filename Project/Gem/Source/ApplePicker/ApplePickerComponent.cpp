@@ -14,10 +14,10 @@
 
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentConstants.h>
+#include <AzCore/Component/ComponentApplicationBus.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
-#include <AzToolsFramework/Entity/EditorEntityHelpers.h>
 
 namespace AppleKraken
 {
@@ -186,17 +186,16 @@ namespace AppleKraken
             }
 
             AzPhysics::OverlapRequest request = AzPhysics::OverlapRequestHelpers::CreateBoxOverlapRequest(
-                    2.0f * globalBox.GetHalfLengths(),
-                AZ::Transform::CreateFromQuaternionAndTranslation(
-                    globalBox.GetRotation(), globalBox.GetPosition()));
+                2.0f * globalBox.GetHalfLengths(),
+                AZ::Transform::CreateFromQuaternionAndTranslation(globalBox.GetRotation(), globalBox.GetPosition()));
             // we want maximum overlap buffer set in `physxsystemconfiguration.setreg`
             request.m_maxResults = physicsSystem->GetConfiguration()->m_overlapBufferSize;
             AzPhysics::SceneQueryHits results = physicScene->QueryScene(&request);
-            for (auto& r : results.m_hits)
+            for (const auto& r : results.m_hits)
             {
-                auto* entity = AzToolsFramework::GetEntity(r.m_entityId);
-                AZ_Printf("ApplePickerComponent", "hit to %s : %s", r.m_entityId.ToString().c_str(), entity->GetName().c_str());
-                if (entity->GetName() != "Apple")
+                AZStd::string entity_name;
+                AZ::ComponentApplicationBus::BroadcastResult(entity_name, &AZ::ComponentApplicationRequests::GetEntityName, r.m_entityId);
+                if (entity_name != "Apple")
                 {
                     continue;
                 }
@@ -211,14 +210,17 @@ namespace AppleKraken
                 {
                     continue;
                 }
+                AZ::Transform targetTM = AZ::Transform::CreateIdentity();
+                AZ::TransformBus::EventResult(targetTM, r.m_entityId, &AZ::TransformBus::Events::GetWorldTM);
                 PickAppleTask t;
                 t.m_appleEntityId = r.m_entityId;
-                t.m_appleBoundingBox = r.m_shape->GetAabb(entity->GetTransform()->GetWorldTM());
+                t.m_appleBoundingBox = r.m_shape->GetAabb(targetTM);
+                t.m_middle = targetTM.GetTranslation(); /// TODO consider `r.m_position` here
                 m_currentAppleTasks.push(t);
                 found_apples.emplace(r.m_entityId);
             }
-
         }
+        m_initialTasksSize = m_currentAppleTasks.size();
         AZ_Printf("ApplePickerComponent", "There are %d apples in reach box \n", m_currentAppleTasks.size());
     }
 

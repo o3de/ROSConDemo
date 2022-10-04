@@ -35,6 +35,7 @@ namespace AppleKraken
     {
         AZ::EntityId m_appleEntityId; //!< EntityId of the apple. Can be Invalid if the information is not available (check IsValid()).
         AZ::Aabb m_appleBoundingBox; //!< Bounding box of the apple to pick.
+        AZ::Vector3 m_middle; //!< Middle point of Apple
     };
 
     using StateTransition = std::pair<EffectorState, EffectorState>;
