@@ -148,8 +148,7 @@
                 "Component_[12444622250145591703]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 12444622250145591703,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[15156623641462766583]": {
                     "$type": "EditorLockComponent",
@@ -159,7 +158,6 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 15752591005564428774
                 },
-
                 "Component_[16858712213851843499]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 16858712213851843499,
@@ -168,7 +166,6 @@
                             "materials": [
                                 {
                                     "Key": {
-
                                         "materialSlotStableId": 1276229897
                                     },
                                     "Value": {
@@ -183,25 +180,20 @@
                                 {
                                     "Key": {
                                         "materialSlotStableId": 2950014666
-
                                     },
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
-
                                             },
                                             "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
-
                                         }
                                     }
                                 },
                                 {
                                     "Key": {
-
                                         "lodIndex": 0,
                                         "materialSlotStableId": 1276229897
-
                                     },
                                     "Value": {
                                         "MaterialAsset": {
@@ -347,7 +339,6 @@
                 "Component_[8148146872807561086]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 8148146872807561086
-
                 }
             }
         }

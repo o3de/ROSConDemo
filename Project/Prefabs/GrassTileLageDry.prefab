@@ -138,8 +138,7 @@
                 "Component_[58120684257820779]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 58120684257820779,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[6176411744441724917]": {
                     "$type": "EditorEntityIconComponent",

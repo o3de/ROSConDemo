@@ -86,8 +86,7 @@
                 "Component_[1384755603880322158]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 1384755603880322158,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[13983473445634789706]": {
                     "$type": "EditorMaterialComponent",
