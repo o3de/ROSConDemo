@@ -134,10 +134,10 @@ function manipulator_control:OnActivate()
     self.internalError = {nil, nil, nil, nil}
 
     -- Target position (x,y,z) in internal reference
-    self.targetPos = Vector3(nil, nil, nil)
+    self.targetPos = Vector3(0.0, 0.0, 0.0)
 
     -- Target
-    self.requestWorldPos = Vector3(nil, nil, nil)
+    self.requestWorldPos = Vector3(0.0, 0.0, 0.0)
     self.restPos = Vector3(0.0, -0.1, 0.0)
 
     self.pickingState = State.PREPARED
@@ -355,7 +355,7 @@ function manipulator_control:OnPressed(value)
     -- Keypress actions
 
     if self.enableKeyboardInput then
-        
+
         if value == 1.0 then
             local currentApple = self.Properties.apple1
             if currentApple ~= nil then
