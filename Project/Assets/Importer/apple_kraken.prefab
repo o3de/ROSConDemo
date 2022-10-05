@@ -631,6 +631,9 @@
                         "Child Entity": "Entity_[75402335969500]"
                     },
                     "Angular Limit": {
+                        "Standard Limit Configuration": {
+                            "Is Limited": false
+                        },
                         "Positive Limit": 29.994340896606445,
                         "Negative Limit": -29.994340896606445
                     }
@@ -1379,6 +1382,9 @@
                         "Child Entity": "Entity_[75436695707868]"
                     },
                     "Angular Limit": {
+                        "Standard Limit Configuration": {
+                            "Is Limited": false
+                        },
                         "Positive Limit": 29.994340896606445,
                         "Negative Limit": -29.994340896606445
                     }
@@ -2220,7 +2226,7 @@
                         "Box": {
                             "Configuration": [
                                 1.1010500192642212,
-                                0.30713599920272827,
+                                0.05000000074505806,
                                 0.41344401240348816
                             ]
                         }
@@ -2346,7 +2352,7 @@
                             }
                         },
                         "VehicleModelLimits": {
-                            "SteeringLimit": 0.5
+                            "SteeringLimit": 0.800000011920929
                         }
                     }
                 },
@@ -2664,18 +2670,8 @@
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/0",
-                    "value": 2.338586807250977
-                },
-                {
-                    "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/2",
                     "value": 1.0093085765838623
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[417184227077]/Components/Component_[14535670656735835043]/ColliderConfiguration/MaterialSlots/Slots/0/Name",
-                    "value": "DefaultMaterial"
                 }
             ]
         }
