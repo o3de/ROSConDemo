@@ -417,7 +417,9 @@
                             "$type": "GenericComponentWrapper",
                             "Id": 3570157607065538715,
                             "m_template": {
-                                "$type": "ApplePickerComponent"
+                                "$type": "ApplePickerComponent",
+                                "EffectorEntity": "",
+                                "FruitStorageEntity": ""
                             }
                         }
                     ]
@@ -695,6 +697,56 @@
                 "Component_[8946861997072969434]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 8946861997072969434
+                }
+            }
+        },
+        "Entity_[5913901340443]": {
+            "Id": "Entity_[5913901340443]",
+            "Name": "crate_drop_point",
+            "Components": {
+                "Component_[10232652057703614197]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10232652057703614197
+                },
+                "Component_[11299130102496014478]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11299130102496014478
+                },
+                "Component_[13884277907524885317]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13884277907524885317
+                },
+                "Component_[15266374551430105842]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15266374551430105842,
+                    "Parent Entity": "Entity_[75475350413532]",
+                    "Transform Data": {
+                        "Translate": [
+                            -1.0,
+                            0.0,
+                            0.20000000298023224
+                        ]
+                    }
+                },
+                "Component_[2248755397406082196]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2248755397406082196
+                },
+                "Component_[2696593719280132302]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2696593719280132302
+                },
+                "Component_[5897183047265853050]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5897183047265853050
+                },
+                "Component_[6051620210793581310]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6051620210793581310
+                },
+                "Component_[870569210833367376]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 870569210833367376
                 }
             }
         },
@@ -2790,7 +2842,9 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 10827857459669795993,
                     "m_template": {
-                        "$type": "ApplePickerComponent"
+                        "$type": "ApplePickerComponent",
+                        "EffectorEntity": "Entity_[75475350413532]",
+                        "FruitStorageEntity": "Entity_[75475350413532]"
                     }
                 },
                 "Component_[11557544210003172907]": {
@@ -2808,7 +2862,8 @@
                         "Entity_[32188681862897]",
                         "Entity_[75440990675164]",
                         "Entity_[75402335969500]",
-                        "Entity_[34036328831583]"
+                        "Entity_[34036328831583]",
+                        "Entity_[5913901340443]"
                     ]
                 },
                 "Component_[11587227330168097343]": {
@@ -3017,6 +3072,22 @@
                                 0.1539359986782074
                             ]
                         }
+                    }
+                },
+                "Component_[7519155594774373209]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7519155594774373209,
+                    "m_template": {
+                        "$type": "FruitStorageComponent",
+                        "Crate": {
+                            "assetId": {
+                                "guid": "{47A5677E-83C3-59F5-888D-2E3B1F3C0493}",
+                                "subId": 3829363014
+                            },
+                            "assetHint": "prefabs/apple_crate.spawnable"
+                        },
+                        "Capacity": 50,
+                        "CrateDropPoint": "Entity_[5913901340443]"
                     }
                 },
                 "Component_[7534877009621480012]": {

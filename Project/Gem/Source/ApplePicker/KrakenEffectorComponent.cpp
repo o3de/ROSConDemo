@@ -88,7 +88,7 @@ namespace AppleKraken
             {
                 ec->Class<KrakenEffectorComponent>("Kraken Effector", "Manipulator component for picking apples")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-                    ->Attribute(AZ::Edit::Attributes::Category, "ROS2")
+                    ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,

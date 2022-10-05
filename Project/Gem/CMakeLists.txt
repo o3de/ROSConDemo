@@ -36,11 +36,15 @@ ly_add_target(
     INCLUDE_DIRECTORIES
         PUBLIC
             Include
+        PRIVATE
+            Source
     BUILD_DEPENDENCIES
         PUBLIC
             Gem::ROS2.Static
         PRIVATE
             AZ::AzGameFramework
+            AZ::AzToolsFramework
+            AZ::AzFramework
             Gem::LmbrCentral.API
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
@@ -61,6 +65,8 @@ ly_add_target(
         PRIVATE
             Gem::ROSConDemo.Static
             AZ::AzCore
+            AZ::AzToolsFramework
+            AZ::AzFramework
 )
 
 # if enabled, ROSConDemo is used by all kinds of applications

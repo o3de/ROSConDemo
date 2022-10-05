@@ -11,8 +11,8 @@
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
-#include <std_srvs/srv/trigger.hpp>
 #include <rclcpp/rclcpp.hpp>
+#include <std_srvs/srv/trigger.hpp>
 
 namespace AppleKraken
 {
@@ -56,12 +56,11 @@ namespace AppleKraken
         void ProcessTriggerServiceCall(const TriggerRequest req, TriggerResponse resp);
 
         AZStd::string m_triggerServiceTopic = "trigger_apple_gathering";
-        rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
-
         AZ::EntityId m_effectorEntityId;
-        AZ::Obb m_gatheringArea;
+        AZ::EntityId m_fruitStorageEntityId;
+
+        rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
         size_t m_initialTasksSize = 0;
-        AZStd::queue<PickAppleTask>
-            m_currentAppleTasks; //! Populated in StartAutomatedOperation. Tasks are popped when completed or failed.
+        AZStd::queue<PickAppleTask> m_currentAppleTasks;
     };
 } // namespace AppleKraken
