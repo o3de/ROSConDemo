@@ -8,21 +8,21 @@
 
 #include "ApplePickerComponent.h"
 #include "ApplePickingRequests.h"
+#include "FruitStorage/FruitStorageBus.h"
+#include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
+#include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentConstants.h>
+#include <AzCore/Component/ComponentApplicationBus.h>
+#include <AzCore/Component/TransformBus.h>
 #include <AzCore/EBus/Event.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
+#include <AzFramework/Physics/PhysicsSystem.h>
+#include <AzFramework/Physics/Shape.h>
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Names.h>
 
 using namespace ROS2;
-
-#include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
-#include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentConstants.h>
-#include <AzCore/Component/ComponentApplicationBus.h>
-#include <AzCore/Component/TransformBus.h>
-#include <AzFramework/Physics/PhysicsSystem.h>
-#include <AzFramework/Physics/Shape.h>
 
 namespace AppleKraken
 {
@@ -122,7 +122,11 @@ namespace AppleKraken
 
     void ApplePickerComponent::Activate()
     {
-        m_effectorEntityId = GetEntityId(); // TODO - remove this once we expose this field
+        if (!m_effectorEntityId.IsValid())
+        {
+            AZ_Warning("ApplePicker", false, "Effector entity not set, assuming same entity");
+            m_effectorEntityId = GetEntityId();
+        }
         ApplePickingNotificationBus::Handler::BusConnect();
         AZ::TickBus::Handler::BusConnect();
 
@@ -148,13 +152,33 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<ApplePickerComponent, AZ::Component>()->Version(1);
+            serialize->Class<ApplePickerComponent, AZ::Component>()
+                ->Version(2)
+                ->Field("TriggerServiceTopic", &ApplePickerComponent::m_triggerServiceTopic)
+                ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
+                ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId);
+
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
                 ec->Class<ApplePickerComponent>("Apple picking component", "A demo component for apple picking")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
-                    ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken");
+                    ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_triggerServiceTopic,
+                        "Trigger",
+                        "ROS2 service name for gathering trigger")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_effectorEntityId,
+                        "Effector",
+                        "Effector (manipulator) entity")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_fruitStorageEntityId,
+                        "Fruit Storage",
+                        "Fruit storage entity");
             }
         }
     }
@@ -194,6 +218,15 @@ namespace AppleKraken
         AZ_TracePrintf(
             "ApplePicker", "%s. An apple has been retrieved and stored\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str());
         m_currentAppleTasks.pop();
+
+        auto fruitStorageEntityId = m_fruitStorageEntityId;
+        if (!fruitStorageEntityId.IsValid())
+        {
+            AZ_Warning("ApplePicker", false, "Fruit storage entity not set, assuming same entity");
+            fruitStorageEntityId = GetEntityId();
+        }
+        Tags applePickingEventTags = { "automated_picking" };
+        FruitStorageRequestsBus::Event(fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
         PickNextApple();
     }
 

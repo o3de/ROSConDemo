@@ -1,6 +1,7 @@
 
 #include "ApplePicker/ApplePickerComponent.h"
 #include "ApplePicker/KrakenEffectorComponent.h"
+#include "FruitStorage/FruitStorageComponent.h"
 #include "ROSConDemoSystemComponent.h"
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
@@ -16,19 +17,14 @@ namespace ROSConDemo
         ROSConDemoModule()
             : AZ::Module()
         {
-            // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
             m_descriptors.insert(
                 m_descriptors.end(),
-                {
-                    ROSConDemoSystemComponent::CreateDescriptor(),
-                    AppleKraken::ApplePickerComponent::CreateDescriptor(),
-                    AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
-                });
+                { ROSConDemoSystemComponent::CreateDescriptor(),
+                  AppleKraken::ApplePickerComponent::CreateDescriptor(),
+                  AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
+                  AppleKraken::FruitStorageComponent::CreateDescriptor() });
         }
 
-        /**
-         * Add required SystemComponents to the SystemEntity.
-         */
         AZ::ComponentTypeList GetRequiredSystemComponents() const override
         {
             return AZ::ComponentTypeList{
