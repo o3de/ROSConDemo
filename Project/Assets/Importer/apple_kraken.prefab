@@ -57,6 +57,80 @@
         }
     },
     "Entities": {
+        "Entity_[10566975603038]": {
+            "Id": "Entity_[10566975603038]",
+            "Name": "Reach",
+            "Components": {
+                "Component_[12134677965642439310]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12134677965642439310
+                },
+                "Component_[12379650427692259737]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12379650427692259737
+                },
+                "Component_[12854123889032285417]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 12854123889032285417,
+                    "Parent Entity": "Entity_[75475350413532]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.3141825199127197,
+                            -1.3080506324768066,
+                            1.3059842586517334
+                        ]
+                    }
+                },
+                "Component_[15528204378368032500]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15528204378368032500
+                },
+                "Component_[15946978491166417219]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 15946978491166417219
+                },
+                "Component_[16579073158310732817]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16579073158310732817
+                },
+                "Component_[3711085650900191423]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3711085650900191423
+                },
+                "Component_[4537990256127437569]": {
+                    "$type": "EditorBoxShapeComponent",
+                    "Id": 4537990256127437569,
+                    "GameView": true,
+                    "ShapeColor": [
+                        0.03504997491836548,
+                        0.014206149615347385,
+                        0.6394598484039307
+                    ],
+                    "BoxShape": {
+                        "Configuration": {
+                            "DrawColor": [
+                                0.03504997491836548,
+                                0.014206149615347385,
+                                0.6394598484039307
+                            ],
+                            "Dimensions": [
+                                1.0,
+                                1.0,
+                                2.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[8062760780184938853]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 8062760780184938853
+                },
+                "Component_[9860291504937187441]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9860291504937187441
+                }
+            }
+        },
         "Entity_[24179378887263]": {
             "Id": "Entity_[24179378887263]",
             "Name": "Parking",
@@ -337,7 +411,16 @@
             "Components": {
                 "Component_[11597687927208105160]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 11597687927208105160
+                    "Id": 11597687927208105160,
+                    "PendingComponents": [
+                        {
+                            "$type": "GenericComponentWrapper",
+                            "Id": 3570157607065538715,
+                            "m_template": {
+                                "$type": "ApplePickerComponent"
+                            }
+                        }
+                    ]
                 },
                 "Component_[12023151445129612397]": {
                     "$type": "EditorVisibilityComponent",
@@ -539,13 +622,6 @@
                         }
                     ]
                 },
-                "Component_[3570157607065538715]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 3570157607065538715,
-                    "m_template": {
-                        "$type": "ApplePickerComponent"
-                    }
-                },
                 "Component_[9474054171365238479]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 9474054171365238479
@@ -619,80 +695,6 @@
                 "Component_[8946861997072969434]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 8946861997072969434
-                }
-            }
-        },
-        "Entity_[10566975603038]": {
-            "Id": "Entity_[10566975603038]",
-            "Name": "Reach",
-            "Components": {
-                "Component_[12134677965642439310]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 12134677965642439310
-                },
-                "Component_[12379650427692259737]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 12379650427692259737
-                },
-                "Component_[12854123889032285417]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 12854123889032285417,
-                    "Parent Entity": "Entity_[75475350413532]",
-                    "Transform Data": {
-                        "Translate": [
-                            0.3141825199127197,
-                            -1.3080506324768066,
-                            1.3059842586517334
-                        ]
-                    }
-                },
-                "Component_[15528204378368032500]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 15528204378368032500
-                },
-                "Component_[15946978491166417219]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 15946978491166417219
-                },
-                "Component_[16579073158310732817]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 16579073158310732817
-                },
-                "Component_[3711085650900191423]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 3711085650900191423
-                },
-                "Component_[4537990256127437569]": {
-                    "$type": "EditorBoxShapeComponent",
-                    "Id": 4537990256127437569,
-                    "GameView": true,
-                    "ShapeColor": [
-                        0.03504997491836548,
-                        0.014206149615347385,
-                        0.6394598484039307
-                    ],
-                    "BoxShape": {
-                        "Configuration": {
-                            "DrawColor": [
-                                0.03504997491836548,
-                                0.014206149615347385,
-                                0.6394598484039307
-                            ],
-                            "Dimensions": [
-                                1.0,
-                                1.0,
-                                2.0
-                            ]
-                        }
-                    }
-                },
-                "Component_[8062760780184938853]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 8062760780184938853
-                },
-                "Component_[9860291504937187441]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 9860291504937187441
                 }
             }
         },
@@ -1224,6 +1226,7 @@
                     "Configuration": {
                         "entityId": "",
                         "Compute Mass": false,
+                        "Mass": 20.0,
                         "Compute COM": false,
                         "Centre of mass offset": [
                             0.0,
@@ -2017,6 +2020,7 @@
                     "Configuration": {
                         "entityId": "",
                         "Compute Mass": false,
+                        "Mass": 20.0,
                         "Compute COM": false,
                         "Centre of mass offset": [
                             0.0,
@@ -2793,7 +2797,18 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 11557544210003172907,
                     "Child Entity Order": [
-
+                        "Entity_[75436695707868]",
+                        "Entity_[10566975603038]",
+                        "Entity_[75479645380828]",
+                        "Entity_[75419515838684]",
+                        "Entity_[75423810805980]",
+                        "Entity_[75453875577052]",
+                        "Entity_[32197271797489]",
+                        "Entity_[24179378887263]",
+                        "Entity_[32188681862897]",
+                        "Entity_[75440990675164]",
+                        "Entity_[75402335969500]",
+                        "Entity_[34036328831583]"
                     ]
                 },
                 "Component_[11587227330168097343]": {
