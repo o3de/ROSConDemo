@@ -622,7 +622,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 14890572078279778909
+                            "EditorEntityId": 17016124138979129734
                         }
                     }
                 },
@@ -777,7 +777,8 @@
                     "Child Entity Order": [
                         "Entity_[1180934129011]",
                         "Entity_[1163754259827]",
-                        "Entity_[1159459292531]"
+                        "Entity_[1159459292531]",
+                        "Entity_[1557674360805917]"
                     ]
                 },
                 "Component_[7289285641370987338]": {
@@ -863,10 +864,11 @@
                         "Configuration": {
                             "OriginMode": 1,
                             "LuminanceFactor": [
-                                3.0,
-                                3.0,
-                                3.0
+                                2.5,
+                                2.5,
+                                2.5
                             ],
+                            "DrawSun": false,
                             "SunColor": [
                                 1.0,
                                 0.9333333373069763,
@@ -878,7 +880,7 @@
                                 0.8722209334373474,
                                 0.6933394074440002
                             ],
-                            "SunOrientation": "",
+                            "SunOrientation": "Entity_[1155164325235]",
                             "SunRadiusFactor": 14.000085830688477,
                             "SunFalloffFactor": 200.0
                         }
@@ -903,7 +905,7 @@
                             -100.0
                         ],
                         "Rotate": [
-                            -45.0,
+                            -50.0,
                             0.0,
                             0.0
                         ]
@@ -912,6 +914,72 @@
                 "Component_[931091830724002070]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 931091830724002070
+                }
+            }
+        },
+        "Entity_[1557674360805917]": {
+            "Id": "Entity_[1557674360805917]",
+            "Name": "Skybox",
+            "Components": {
+                "Component_[11210588942869907117]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11210588942869907117
+                },
+                "Component_[12830979825997360063]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 12830979825997360063
+                },
+                "Component_[13829715333169255249]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 13829715333169255249
+                },
+                "Component_[13862765638918132616]": {
+                    "$type": "AZ::Render::EditorHDRiSkyboxComponent",
+                    "Id": 13862765638918132616,
+                    "Controller": {
+                        "Configuration": {
+                            "CubemapAsset": {
+                                "assetId": {
+                                    "guid": "{A127016D-187B-5145-B9AC-FE6146A0CFCD}",
+                                    "subId": 1000
+                                },
+                                "assetHint": "assets/images/sunflowers_4k_cm.exr.streamingimage"
+                            },
+                            "Exposure": 1.2999999523162842
+                        }
+                    }
+                },
+                "Component_[15655515888173085534]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15655515888173085534
+                },
+                "Component_[2911900259128099804]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2911900259128099804
+                },
+                "Component_[418416128960033275]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 418416128960033275
+                },
+                "Component_[6899594282566032370]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6899594282566032370,
+                    "Parent Entity": "Entity_[1176639161715]",
+                    "Transform Data": {
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            78.0
+                        ]
+                    }
+                },
+                "Component_[896269974791024975]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 896269974791024975
+                },
+                "Component_[939457053160819228]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 939457053160819228
                 }
             }
         },
@@ -939,7 +1007,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 8520846927245466785,
+                            "EntityId": 1245480897171391887,
                             "ShowVisualization": false
                         }
                     },
@@ -4178,7 +4246,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": 1.6303064823150635
+                    "value": 1.6303064823150637
                 },
                 {
                     "op": "replace",
@@ -4198,7 +4266,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/0",
-                    "value": 24.384817123413086
+                    "value": 24.38481712341309
                 },
                 {
                     "op": "replace",
@@ -4303,7 +4371,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": 1.6135915517807007
+                    "value": 1.613591551780701
                 },
                 {
                     "op": "replace",
@@ -4343,7 +4411,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/0",
-                    "value": -13.710738182067871
+                    "value": -13.710738182067873
                 },
                 {
                     "op": "replace",
@@ -4368,12 +4436,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/0",
-                    "value": -18.447477340698242
+                    "value": -18.44747734069824
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": 0.9301300048828125
+                    "value": 0.9301300048828124
                 },
                 {
                     "op": "replace",
@@ -4473,7 +4541,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": -1.6641286611557007
+                    "value": -1.664128661155701
                 },
                 {
                     "op": "replace",
@@ -4748,7 +4816,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": -29.735740661621094
+                    "value": -29.735740661621097
                 },
                 {
                     "op": "replace",
@@ -4873,7 +4941,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": -30.595745086669922
+                    "value": -30.59574508666992
                 },
                 {
                     "op": "replace",
@@ -4918,7 +4986,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/0",
-                    "value": 31.498249053955078
+                    "value": 31.49824905395508
                 },
                 {
                     "op": "replace",
@@ -5293,7 +5361,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": -60.571937561035156
+                    "value": -60.57193756103515
                 },
                 {
                     "op": "replace",
@@ -5318,7 +5386,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5054581201128950756]/Transform Data/Translate/1",
-                    "value": -54.513267517089844
+                    "value": -54.51326751708984
                 },
                 {
                     "op": "replace",
@@ -6393,7 +6461,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[2919361912050306087]/Transform Data/Rotate/2",
-                    "value": -130.47134399414063
+                    "value": -130.47134399414065
                 },
                 {
                     "op": "replace",

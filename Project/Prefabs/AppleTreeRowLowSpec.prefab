@@ -33,7 +33,7 @@
                 "Transform Data": {
                     "Translate": [
                         -9.045680046081543,
-                        1.7653224468231201,
+                        1.0886905193328857,
                         0.0
                     ]
                 }
@@ -111,6 +111,25 @@
                                                 "guid": "{EC4F9D17-9608-5B00-ACB1-A13466DAC631}"
                                             },
                                             "assetHint": "assets/grass_test/landscape_new_grass_atlas.azmaterial"
+                                        },
+                                        "PropertyOverrides": {
+                                            "baseColor.color": {
+                                                "$type": "Color",
+                                                "Value": [
+                                                    0.16530098021030426,
+                                                    0.6122377514839172,
+                                                    0.016327153891324997,
+                                                    1.0
+                                                ]
+                                            },
+                                            "emissive.enable": {
+                                                "$type": "bool",
+                                                "Value": false
+                                            },
+                                            "emissive.intensity": {
+                                                "$type": "float",
+                                                "Value": 0.3799999952316284
+                                            }
                                         }
                                     }
                                 },
@@ -188,7 +207,7 @@
                                             },
                                             "emissive.enable": {
                                                 "$type": "bool",
-                                                "Value": true
+                                                "Value": false
                                             },
                                             "emissive.intensity": {
                                                 "$type": "float",
@@ -298,7 +317,7 @@
                             },
                             "SortKey": 111,
                             "IsRayTracingEnabled": false,
-                            "LodType": 1,
+                            "LodOverride": 2,
                             "MinimumScreenCoverage": 0.20000000298023224,
                             "QualityDecayRate": 0.8999999761581421
                         }
