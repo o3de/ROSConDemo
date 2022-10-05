@@ -1,9 +1,7 @@
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
     <PipelineSequence name="NavigateWithReplanning">
-      <DistanceController distance="10000000.0">
-        <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
-      </DistanceController>
+      <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
       <FollowPath path="{path}"  controller_id="FollowPath"/>
     </PipelineSequence>
   </BehaviorTree>
