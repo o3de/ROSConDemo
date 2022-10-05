@@ -24,7 +24,8 @@
                     "Entity_[11917448356674]",
                     "Entity_[1176639161715]",
                     "Instance_[12778335461144]/ContainerEntity",
-                    "Instance_[75372271198428]/ContainerEntity"
+                    "Instance_[75372271198428]/ContainerEntity",
+                    "Entity_[21023241260954]"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -587,6 +588,246 @@
                 "Component_[9187134474081291240]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 9187134474081291240
+                }
+            }
+        },
+        "Entity_[21023241260954]": {
+            "Id": "Entity_[21023241260954]",
+            "Name": "SpawnerEntity",
+            "Components": {
+                "Component_[11179275409198257272]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11179275409198257272
+                },
+                "Component_[13095884990491636586]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13095884990491636586,
+                    "Child Entity Order": [
+                        "Entity_[21049011064730]",
+                        "Entity_[21040421130138]",
+                        "Entity_[21031831195546]"
+                    ]
+                },
+                "Component_[14320929831097574422]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14320929831097574422
+                },
+                "Component_[1695648864178738286]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 1695648864178738286
+                },
+                "Component_[1882563092100476819]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1882563092100476819
+                },
+                "Component_[1982767447412352739]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1982767447412352739
+                },
+                "Component_[5432409972454200095]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5432409972454200095
+                },
+                "Component_[7012410783283269654]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7012410783283269654,
+                    "Parent Entity": "Entity_[1146574390643]"
+                },
+                "Component_[707648117374000169]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 707648117374000169,
+                    "m_template": {
+                        "$type": "ROS2SpawnerComponent",
+                        "Spawnables": {
+                            "apple_kraken": {}
+                        },
+                        "Default spawn point": {
+                            "Translation": [
+                                8.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[8708956773214480328]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8708956773214480328
+                }
+            }
+        },
+        "Entity_[21031831195546]": {
+            "Id": "Entity_[21031831195546]",
+            "Name": "SpawnPoint3",
+            "Components": {
+                "Component_[11505762196802972059]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11505762196802972059
+                },
+                "Component_[118724118660250231]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 118724118660250231
+                },
+                "Component_[12480913234444144844]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12480913234444144844
+                },
+                "Component_[13062563319128815786]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13062563319128815786
+                },
+                "Component_[15991406923802035352]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 15991406923802035352
+                },
+                "Component_[17992189176477134811]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17992189176477134811,
+                    "Parent Entity": "Entity_[21023241260954]",
+                    "Transform Data": {
+                        "Translate": [
+                            5.0,
+                            -4.0,
+                            0.0
+                        ]
+                    }
+                },
+                "Component_[2184755770902602203]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2184755770902602203
+                },
+                "Component_[5538954093012514653]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5538954093012514653
+                },
+                "Component_[8078439608056196311]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 8078439608056196311,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "Third"
+                    }
+                },
+                "Component_[8999597841390349370]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8999597841390349370
+                }
+            }
+        },
+        "Entity_[21040421130138]": {
+            "Id": "Entity_[21040421130138]",
+            "Name": "SpawnPoint2",
+            "Components": {
+                "Component_[14100573969314975216]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14100573969314975216,
+                    "Parent Entity": "Entity_[21023241260954]",
+                    "Transform Data": {
+                        "Translate": [
+                            5.0,
+                            4.0,
+                            0.0
+                        ]
+                    }
+                },
+                "Component_[14659690574411628883]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 14659690574411628883,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "second"
+                    }
+                },
+                "Component_[17514322447103251117]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 17514322447103251117
+                },
+                "Component_[2651623736818155875]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2651623736818155875
+                },
+                "Component_[3955685128909342925]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3955685128909342925
+                },
+                "Component_[4007334106158163813]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4007334106158163813
+                },
+                "Component_[4118135024581981022]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4118135024581981022
+                },
+                "Component_[5557539241997702862]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 5557539241997702862
+                },
+                "Component_[8107669945840213343]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 8107669945840213343
+                },
+                "Component_[9865029316564907457]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 9865029316564907457
+                }
+            }
+        },
+        "Entity_[21049011064730]": {
+            "Id": "Entity_[21049011064730]",
+            "Name": "SpawnPoint1",
+            "Components": {
+                "Component_[12121035822635422430]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12121035822635422430
+                },
+                "Component_[16249123433718036253]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16249123433718036253
+                },
+                "Component_[18067872552575038938]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18067872552575038938
+                },
+                "Component_[2093022473204857038]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 2093022473204857038,
+                    "Parent Entity": "Entity_[21023241260954]",
+                    "Transform Data": {
+                        "Translate": [
+                            5.0,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                "Component_[411566660888266819]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 411566660888266819
+                },
+                "Component_[5203450254846831568]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 5203450254846831568
+                },
+                "Component_[6828467626040782420]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6828467626040782420
+                },
+                "Component_[7822909860239119885]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7822909860239119885,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "first",
+                        "Info": "A position for robot, away from a tree"
+                    }
+                },
+                "Component_[8333734041589734654]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8333734041589734654
+                },
+                "Component_[8972919902584128253]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8972919902584128253
                 }
             }
         },
