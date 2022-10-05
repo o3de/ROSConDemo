@@ -55,9 +55,10 @@ def generate_launch_description():
         executable='pointcloud_to_laserscan_node',
         name='pc_to_laserscan',
         parameters=[{
-            'min_height': 0.2,
-            'max_height': 3.4,
-            'range_min': 0.2
+            'min_height': 0.1,
+            'max_height': 5.0,
+            'range_min': 0.2,
+            'range_max': 20.0
         }],
         remappings=[
             ('/cloud_in', '/pc'),

@@ -1,35 +1,10 @@
 <root main_tree_to_execute="MainTree">
   <BehaviorTree ID="MainTree">
-    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
-      <PipelineSequence name="NavigateWithReplanning">
-        <RateController hz="0.5">
-          <RecoveryNode number_of_retries="2" name="ComputePathToPose">
-            <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
-            <ReactiveFallback name="ComputePathToPoseRecoveryFallback">
-              <GoalUpdated/>
-              <ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>
-            </ReactiveFallback>
-          </RecoveryNode>
-        </RateController>
-        <RecoveryNode number_of_retries="3" name="FollowPath">
-          <FollowPath path="{path}" controller_id="FollowPath"/>
-          <ReactiveFallback name="FollowPathRecoveryFallback">
-            <GoalUpdated/>
-            <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
-          </ReactiveFallback>
-        </RecoveryNode>
-      </PipelineSequence>
-      <ReactiveFallback name="RecoveryFallback">
-        <GoalUpdated/>
-        <RoundRobin name="RecoveryActions">
-          <!-- <Sequence name="ClearingActions">
-            <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
-            <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
-          </Sequence> -->
-          <BackUp backup_dist="1.5" backup_speed="0.3"/>
-          <Wait wait_duration="2"/>
-        </RoundRobin>
-      </ReactiveFallback>
-    </RecoveryNode>
+    <PipelineSequence name="NavigateWithReplanning">
+      <DistanceController distance="10000000.0">
+        <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+      </DistanceController>
+      <FollowPath path="{path}"  controller_id="FollowPath"/>
+    </PipelineSequence>
   </BehaviorTree>
 </root>
