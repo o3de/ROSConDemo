@@ -1,0 +1,315 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "AppleTreeRow",
+        "Components": {
+            "Component_[10790829536787788086]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 10790829536787788086,
+                "Child Entity Order": [
+                    "Entity_[528761651221617]"
+                ]
+            },
+            "Component_[12273961508534864525]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 12273961508534864525
+            },
+            "Component_[15587576149022009090]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 15587576149022009090
+            },
+            "Component_[3955084122080679417]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 3955084122080679417
+            },
+            "Component_[4449848526060605438]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 4449848526060605438
+            },
+            "Component_[5054581201128950756]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 5054581201128950756,
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        -9.045680046081543,
+                        1.7653224468231201,
+                        0.0
+                    ]
+                }
+            },
+            "Component_[5995965199876477002]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 5995965199876477002
+            },
+            "Component_[6897898408923940546]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 6897898408923940546
+            },
+            "Component_[7320526686541208018]": {
+                "$type": "EditorLockComponent",
+                "Id": 7320526686541208018
+            },
+            "Component_[7386742852458066824]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 7386742852458066824
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[528761651221617]": {
+            "Id": "Entity_[528761651221617]",
+            "Name": "AppleTreeRow",
+            "Components": {
+                "Component_[10703356922557894848]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10703356922557894848
+                },
+                "Component_[11390786664846469499]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11390786664846469499
+                },
+                "Component_[1462451004646822749]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 1462451004646822749,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1276229897
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{5751E3F7-A665-52B0-A371-D3A7D37C6CC3}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_branch_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2265097760
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{EC4F9D17-9608-5B00-ACB1-A13466DAC631}"
+                                            },
+                                            "assetHint": "assets/grass_test/landscape_new_grass_atlas.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2950014666
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{6B229DA0-87C1-5212-9892-D11894AC6C4C}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leafmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 0,
+                                        "materialSlotStableId": 1276229897
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{55339E98-54B6-5D38-B182-262882507562}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_branchmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 0,
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 0,
+                                        "materialSlotStableId": 2265097760
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{EC4F9D17-9608-5B00-ACB1-A13466DAC631}"
+                                            },
+                                            "assetHint": "assets/grass_test/landscape_new_grass_atlas.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 0,
+                                        "materialSlotStableId": 2950014666
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{6B229DA0-87C1-5212-9892-D11894AC6C4C}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leafmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 1,
+                                        "materialSlotStableId": 1276229897
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{5751E3F7-A665-52B0-A371-D3A7D37C6CC3}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_branch_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 1,
+                                        "materialSlotStableId": 2950014666
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{EB582A15-08B3-59E8-870C-59249E92D948}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leaf_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 2,
+                                        "materialSlotStableId": 1276229897
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{5751E3F7-A665-52B0-A371-D3A7D37C6CC3}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_branch_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 2,
+                                        "materialSlotStableId": 2950014666
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{EB582A15-08B3-59E8-870C-59249E92D948}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leaf_basemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "materialSlotsByLodEnabled": true
+                },
+                "Component_[16125999794784043901]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16125999794784043901,
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "UniformScale": 1.5
+                    }
+                },
+                "Component_[17596984621430123105]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17596984621430123105
+                },
+                "Component_[2334544633077543646]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 2334544633077543646,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{98838CA4-9FB0-5847-B1FF-C20842BA6E11}",
+                                    "subId": 277046587
+                                },
+                                "assetHint": "assets/apple_tree/appletreerow.azmodel"
+                            },
+                            "SortKey": 111,
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.20000000298023224,
+                            "QualityDecayRate": 0.8999999761581421
+                        }
+                    }
+                },
+                "Component_[2651501633983408342]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2651501633983408342
+                },
+                "Component_[2980051946902595299]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2980051946902595299
+                },
+                "Component_[5906588925593900457]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 5906588925593900457
+                },
+                "Component_[605208886404549808]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 605208886404549808,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 16125999794784043901
+                        },
+                        {
+                            "ComponentId": 2334544633077543646,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 1462451004646822749,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[6812521771005541704]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6812521771005541704
+                }
+            }
+        }
+    }
+}
