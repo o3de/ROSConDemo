@@ -88,7 +88,7 @@ function manipulator_control:OnActivate()
 
     -- To prevent violent reactions right after the simulation starts,
     -- we're waiting this ammount of seconds till running the controller
-    self.startupWait = 0.5 --[s]
+    self.startupWait = 2.0 --[s]
 
     -- Zero threshold - is used to check if manipulator reached the destination.
     -- If absolute value of error (target_position - current_position)
@@ -122,10 +122,8 @@ function manipulator_control:OnActivate()
 
     self.InputNotificationBus = InputEventNotificationBus.Connect(self, InputEventNotificationId("manipulator_keyboard_control"))
 
-    -- = {0.0, 0.0, 0.0, 0.0}
-
-    self.pid1 = PID.new(600.0, 50.0, 10.0, self.max_velocity['z']) 
-    self.pid2 = PID.new(600.0, 50.0, 0.0, self.max_velocity['x']) 
+    self.pid1 = PID.new(600.0, 10.0, 0.0, self.max_velocity['z']) 
+    self.pid2 = PID.new(600.0, 0.0, 0.0, self.max_velocity['x']) 
     self.pid3 = PID.new(200.0, 20.0, 0.0, self.max_velocity['y'])
     self.pid4 = PID.new(200.0, 10.0, 0.0, self.max_velocity['y'])
     self.gravityThreshold = 0.0
