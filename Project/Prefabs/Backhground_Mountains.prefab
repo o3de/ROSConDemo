@@ -64,7 +64,8 @@
                 "Component_[10635178642265270643]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 10635178642265270643,
-                    "Parent Entity": "ContainerEntity"
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[1224995342309174991]": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -119,7 +120,8 @@
                                 },
                                 "assetHint": "assets/background_mountains/mountain.azmodel"
                             },
-                            "SortKey": 8
+                            "SortKey": 8,
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },

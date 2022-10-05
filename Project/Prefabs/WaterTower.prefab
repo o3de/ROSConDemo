@@ -1,0 +1,156 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "WaterTower",
+        "Components": {
+            "Component_[11452125695865150951]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 11452125695865150951
+            },
+            "Component_[1344051213416318901]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 1344051213416318901,
+                "Parent Entity": ""
+            },
+            "Component_[13849071365021647578]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 13849071365021647578,
+                "Child Entity Order": [
+                    "Entity_[477018013220429]"
+                ]
+            },
+            "Component_[14043586320093080709]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 14043586320093080709
+            },
+            "Component_[1528743319517047240]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 1528743319517047240
+            },
+            "Component_[17329826394286177466]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 17329826394286177466
+            },
+            "Component_[8231960558408382811]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 8231960558408382811
+            },
+            "Component_[8341651357468804088]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 8341651357468804088
+            },
+            "Component_[8830688923700131384]": {
+                "$type": "EditorLockComponent",
+                "Id": 8830688923700131384
+            },
+            "Component_[9397151420587288528]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 9397151420587288528
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[477018013220429]": {
+            "Id": "Entity_[477018013220429]",
+            "Name": "WaterTower",
+            "Components": {
+                "Component_[10693594580638332358]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10693594580638332358,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{5B4B9DFE-3285-5C40-8C87-9BA9B97CF608}",
+                                    "subId": 284724873
+                                },
+                                "assetHint": "assets/watertower_01/water_tower.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                },
+                "Component_[12600917245392846592]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12600917245392846592
+                },
+                "Component_[13200789265511850218]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13200789265511850218
+                },
+                "Component_[13221487368751250213]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13221487368751250213
+                },
+                "Component_[13792841411106827297]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13792841411106827297
+                },
+                "Component_[15163658933852873296]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15163658933852873296,
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Translate": [
+                            -4.610950469970703,
+                            2.0673446655273438,
+                            0.8090782165527344
+                        ]
+                    }
+                },
+                "Component_[1820975141088865922]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 1820975141088865922,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 15163658933852873296
+                        },
+                        {
+                            "ComponentId": 10693594580638332358,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 8332675028820249836,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[5351062744358445478]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5351062744358445478
+                },
+                "Component_[6925363855363289800]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6925363855363289800
+                },
+                "Component_[7401171650916467768]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 7401171650916467768
+                },
+                "Component_[8332675028820249836]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8332675028820249836,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 505393589
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{1BCC8ED6-C365-51D0-8F99-1AA4C1E6C1CD}"
+                                            },
+                                            "assetHint": "assets/watertower_01/water_tower_mat_propmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

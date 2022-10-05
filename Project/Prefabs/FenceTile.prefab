@@ -89,7 +89,8 @@
                                 },
                                 "assetHint": "assets/fence_tile/fencingtile.azmodel"
                             },
-                            "SortKey": 7
+                            "SortKey": 7,
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },

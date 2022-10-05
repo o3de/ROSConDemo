@@ -1,0 +1,149 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "Crate",
+        "Components": {
+            "Component_[1046339395857493231]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 1046339395857493231
+            },
+            "Component_[1097209984714706339]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 1097209984714706339,
+                "Child Entity Order": [
+                    "Entity_[1328345236885629]"
+                ]
+            },
+            "Component_[13896234582144860317]": {
+                "$type": "EditorLockComponent",
+                "Id": 13896234582144860317
+            },
+            "Component_[16733126560870675783]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 16733126560870675783,
+                "Parent Entity": ""
+            },
+            "Component_[4759105429862499196]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 4759105429862499196
+            },
+            "Component_[5285968405194450183]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 5285968405194450183
+            },
+            "Component_[7212898440565421470]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 7212898440565421470
+            },
+            "Component_[8402551444855321366]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 8402551444855321366
+            },
+            "Component_[8420725118040276991]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 8420725118040276991
+            },
+            "Component_[933410711807899825]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 933410711807899825
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1328345236885629]": {
+            "Id": "Entity_[1328345236885629]",
+            "Name": "Crate",
+            "Components": {
+                "Component_[10301368200525547931]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10301368200525547931
+                },
+                "Component_[1115895664990096780]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1115895664990096780
+                },
+                "Component_[12409671212436496305]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12409671212436496305
+                },
+                "Component_[14342202196345562734]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14342202196345562734,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{D75C5700-9C4C-5B99-9467-A3476DCE5A7E}",
+                                    "subId": 281770934
+                                },
+                                "assetHint": "assets/props/crate_01.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                },
+                "Component_[14739196267454462411]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14739196267454462411
+                },
+                "Component_[15107487218610981818]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15107487218610981818,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 3347602471478609833
+                        },
+                        {
+                            "ComponentId": 14342202196345562734,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 7975836089409290063,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[15825972752429895097]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 15825972752429895097
+                },
+                "Component_[3347602471478609833]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3347602471478609833,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[4176872097269383132]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4176872097269383132
+                },
+                "Component_[7975836089409290063]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 7975836089409290063,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 238517002
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{41EDE047-37F2-5BE1-80A2-ECC89E2D08F4}"
+                                            },
+                                            "assetHint": "assets/props/crate_01_mat_crate_01.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[8900316100069645648]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 8900316100069645648
+                }
+            }
+        }
+    }
+}

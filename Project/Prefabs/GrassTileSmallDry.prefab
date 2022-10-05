@@ -24,10 +24,6 @@
                 "$type": "EditorInspectorComponent",
                 "Id": 275768506901460081
             },
-            "Component_[4062670400954912033]": {
-                "$type": "SelectionComponent",
-                "Id": 4062670400954912033
-            },
             "Component_[4361758238485875837]": {
                 "$type": "EditorLockComponent",
                 "Id": 4361758238485875837
@@ -65,11 +61,8 @@
                 "Component_[13737955704712675420]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 13737955704712675420,
-                    "Parent Entity": "ContainerEntity"
-                },
-                "Component_[14815815203258376625]": {
-                    "$type": "SelectionComponent",
-                    "Id": 14815815203258376625
+                    "Parent Entity": "ContainerEntity",
+                    "IsStatic": true
                 },
                 "Component_[16599094744692216492]": {
                     "$type": "EditorOnlyEntityComponent",

@@ -172,7 +172,8 @@
                                 },
                                 "assetHint": "assets/barn/powerlines.azmodel"
                             },
-                            "SortKey": 9
+                            "SortKey": 9,
+                            "IsRayTracingEnabled": false
                         }
                     }
                 },

@@ -7,6 +7,12 @@ For information about contributing to Open 3D Engine, visit [https://o3de.org/do
 
 ## Download and Install
 
+### Additional ROS 2 packages
+
+This project uses Vision messages, which can be obtained:
+
+`sudo apt install ros-${ROS_DISTRO}-vision-msgs`
+
 ### Clone the repository 
 
 ```shell

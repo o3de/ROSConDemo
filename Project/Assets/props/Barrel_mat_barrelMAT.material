@@ -1,0 +1,26 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.6038910746574402,
+            0.4800946116447449,
+            0.35629814863204956,
+            1.0
+        ],
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "textures/mat_barrelMAT_BaseColor.png",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "irradiance.irradianceColorSource": "BaseColor",
+        "metallic.textureMap": "textures/mat_barrelMAT_Metallic.png",
+        "normal.textureMap": "textures/mat_barrelMAT_Normal.png",
+        "occlusion.diffuseTextureMap": "textures/mat_barrelMAT_AO.png",
+        "opacity.factor": 1.0,
+        "roughness.textureMap": "textures/mat_barrelMAT_Roughness.png"
+    }
+}

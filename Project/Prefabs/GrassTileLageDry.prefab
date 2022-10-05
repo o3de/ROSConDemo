@@ -11,10 +11,6 @@
                 "$type": "EditorVisibilityComponent",
                 "Id": 10429021782861335976
             },
-            "Component_[11086712032349116387]": {
-                "$type": "SelectionComponent",
-                "Id": 11086712032349116387
-            },
             "Component_[11500640141313004583]": {
                 "$type": "EditorPendingCompositionComponent",
                 "Id": 11500640141313004583
@@ -121,10 +117,6 @@
                             "MinimumScreenCoverage": 0.0
                         }
                     }
-                },
-                "Component_[4640619062736095452]": {
-                    "$type": "SelectionComponent",
-                    "Id": 4640619062736095452
                 },
                 "Component_[5662200929387800876]": {
                     "$type": "EditorInspectorComponent",

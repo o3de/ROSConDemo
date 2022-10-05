@@ -1,0 +1,3 @@
+[General]
+version=1
+startScript=ImportActor -filename \"assets/apple_tree/treeactor_low.actor\"\nLoadMotionSet -filename \"@products@/Assets/apple_tree/Tree.motionset\"\nLoadAnimGraph -filename \"@products@/Assets/apple_tree/AnimeGraph.animgraph\"\nActivateAnimGraph -actorInstanceID -1 -animGraphID %LASTRESULT1% -motionSetID %LASTRESULT2% -visualizeScale 1.000000\n

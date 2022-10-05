@@ -20,13 +20,13 @@
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        0.047075167298316956,
-                        0.20852424204349518,
-                        1.2150546312332153
+                        0.09196968376636505,
+                        0.42729446291923523,
+                        1.9483000040054321
                     ],
                     "Rotate": [
                         -1.8461143970489502,
-                        18.462961196899414,
+                        -14.610855102539063,
                         -42.883140563964844
                     ]
                 }
@@ -92,29 +92,6 @@
                         }
                     ]
                 },
-                "Component_[17352323353881558252]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 17352323353881558252,
-                    "ColliderConfiguration": {
-                        "Trigger": true,
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 0,
-                        "Sphere": {
-                            "Radius": 0.03999999910593033
-                        }
-                    },
-                    "DebugDrawSettings": {
-                        "LocallyEnabled": false
-                    }
-                },
                 "Component_[17515715958005323940]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 17515715958005323940,
@@ -160,15 +137,40 @@
                 },
                 "Component_[6717239618132726328]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6717239618132726328
-                },
-                "Component_[7138985039715548058]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 7138985039715548058,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false
-                    }
+                    "Id": 6717239618132726328,
+                    "DisabledComponents": [
+                        {
+                            "$type": "EditorColliderComponent",
+                            "Id": 17352323353881558252,
+                            "ColliderConfiguration": {
+                                "Trigger": true,
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "Entire object"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "ShapeType": 0,
+                                "Sphere": {
+                                    "Radius": 0.03999999910593033
+                                }
+                            },
+                            "DebugDrawSettings": {
+                                "LocallyEnabled": false
+                            }
+                        },
+                        {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 7138985039715548058,
+                            "Configuration": {
+                                "entityId": "",
+                                "Gravity Enabled": false
+                            }
+                        }
+                    ]
                 },
                 "Component_[7230618248793844206]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -185,7 +187,7 @@
                             "SortKey": 2,
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
-                            "QualityDecayRate": 0.4000000059604645
+                            "QualityDecayRate": 0.699999988079071
                         }
                     }
                 }
