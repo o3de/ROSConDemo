@@ -20,9 +20,37 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 ### Packages
 
-```
-sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs
-```
+You will need to install the appropriate ROS2 package. Refer to setup requirements for the [ROS2 Gem](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md)
+
+In addition to the required packages for the ROS2 gem, you will also need some additional ROS2 packages.
+
+1.  Make sure to source the proper distribution's setup script
+
+    For Ubuntu 20.04 + ROS2 Galactic:
+    ```
+    source /opt/ros/galactic/setup.bash
+    ```
+
+    For Ubuntu 22.04 + ROS2 Humble:
+    ```
+    source /opt/ros/humble/setup.bash
+    ```
+
+2.  Run the following command to install the remaining required packages
+    ```
+    sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs
+    ```
+
+3.  You will also need [colcon](https://colcon.readthedocs.io/en/released/user/installation.html) installed in order to build the workspace. Run the following command to install.
+
+    ```
+    sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
+
+    curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+    sudo apt update
+    sudo apt install python3-colcon-common-extensions
+    ```
 
 ## Installation ##
 
