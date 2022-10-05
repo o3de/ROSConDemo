@@ -130,7 +130,7 @@ namespace AppleKraken
         auto robotNamespace = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity())->GetNamespace();
         auto topic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
         m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
-            m_triggerServiceTopic.c_str(),
+            topic.c_str(),
             [this](const TriggerRequest request, TriggerResponse response)
             {
                 this->ProcessTriggerServiceCall(request, response);
