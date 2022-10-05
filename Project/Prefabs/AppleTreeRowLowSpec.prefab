@@ -166,6 +166,34 @@
                                                 "guid": "{EC4F9D17-9608-5B00-ACB1-A13466DAC631}"
                                             },
                                             "assetHint": "assets/grass_test/landscape_new_grass_atlas.azmaterial"
+                                        },
+                                        "PropertyOverrides": {
+                                            "baseColor.color": {
+                                                "$type": "Color",
+                                                "Value": [
+                                                    0.5000076293945313,
+                                                    1.0,
+                                                    0.0,
+                                                    1.0
+                                                ]
+                                            },
+                                            "emissive.color": {
+                                                "$type": "Color",
+                                                "Value": [
+                                                    0.1898832619190216,
+                                                    0.3605401813983917,
+                                                    0.01922636851668358,
+                                                    1.0
+                                                ]
+                                            },
+                                            "emissive.enable": {
+                                                "$type": "bool",
+                                                "Value": true
+                                            },
+                                            "emissive.intensity": {
+                                                "$type": "float",
+                                                "Value": 1.0399999618530273
+                                            }
                                         }
                                     }
                                 },
