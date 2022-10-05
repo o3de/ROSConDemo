@@ -219,14 +219,13 @@ namespace AppleKraken
             "ApplePicker", "%s. An apple has been retrieved and stored\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str());
         m_currentAppleTasks.pop();
 
-        auto fruitStorageEntityId = m_fruitStorageEntityId;
-        if (!fruitStorageEntityId.IsValid())
+        if (!m_fruitStorageEntityId.IsValid())
         {
             AZ_Warning("ApplePicker", false, "Fruit storage entity not set, assuming same entity");
-            fruitStorageEntityId = GetEntityId();
+            m_fruitStorageEntityId = GetEntityId();
         }
         Tags applePickingEventTags = { "automated_picking" };
-        FruitStorageRequestsBus::Event(fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
+        FruitStorageRequestsBus::Event(m_fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
         PickNextApple();
     }
 
