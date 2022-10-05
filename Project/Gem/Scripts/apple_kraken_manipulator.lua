@@ -109,7 +109,6 @@ function manipulator_control:OnActivate()
     -- If true, current manipulaor state will be printed
     self.printState = true
 
-
     -- If true, apple will be retreived automatically after reaching. If false,
     -- Retrieve() function must be called.
     self.autoRetrieve = true
@@ -190,6 +189,9 @@ function manipulator_control:_getWorldPosition(target_position)
     local pos = Transform.TransformVector(tm, target_position - gripper_pos)
 
     TransformBus.Event.SetLocalTranslation(self.Properties.debug, pos) 
+
+    -- Gripper is not in manipulator reference - it must be rotated
+    pos = Vector3(pos['y'], pos['z'], pos['x'])
 
     return pos
 end
