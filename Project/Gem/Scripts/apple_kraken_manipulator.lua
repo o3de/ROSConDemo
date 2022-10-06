@@ -86,9 +86,11 @@ function manipulator_control:OnActivate()
     -- Z (vertical) directions
     self.max_velocity = Vector3(40.0, 30.0, 40.0) 
 
-    -- To prevent violent reactions right after the simulation starts,
-    -- we're waiting this ammount of seconds till running the controller
     self.startupWait = 2.0 --[s]
+
+    -- Wait till FPS reaches this value to start the simulation
+    -- to prevent violent reactions right after the simulation starts
+    self.startapMinFPS = 10.0
 
     -- Zero threshold - is used to check if manipulator reached the destination.
     -- If absolute value of error (target_position - current_position)
@@ -147,10 +149,17 @@ function manipulator_control:OnActivate()
 
     self.retrieveTime = 0.0
 
+    self.startupWait = 0.1 --[s]
+
     self.noseZeroTimeout = 0.5
     self.noseZeroTime = 0.0
-    self.manipulatorRequestBus = ManipulatorRequestBus.Connect(self, self.entityId)
-       
+    self.manipulatorRequestBus = ManipulatorRequestBus.Connect(self, self.entityId)       
+end
+
+function manipulator_control:_getFPS()
+    -- TODO Apply some kind of filter to smooth this vale
+    -- TODO Can we do it in a different way? Obtain it form a bus?
+    return 1.0 / self.deltaTime
 end
 
 function manipulator_control:getSegmentPos(entityid)
@@ -396,7 +405,11 @@ function manipulator_control:OnTick(deltaTime, timePoint)
 
     if self.Properties.segment1~=nil then
         if self.startupWait > 0 then
-            self.startupWait = self.startupWait -self.deltaTime
+            if self:_getFPS() < self.startapMinFPS then
+                self.startupWait = 0.1
+            else
+                self.startupWait = self.startupWait -self.deltaTime
+            end
         else
             self:_orchestrator()
         end
