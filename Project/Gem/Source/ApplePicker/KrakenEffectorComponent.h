@@ -8,10 +8,18 @@
 #pragma once
 
 #include "ApplePickingRequests.h"
+#include "ManipulatorRequestBus.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/EBus/EBus.h>
 
+#include <AzFramework/Physics/PhysicsSystem.h>
+#include <AzFramework/Physics/PhysicsScene.h>
+#include <AzFramework/Physics/Shape.h>
+#include <AzFramework/Physics/SystemBus.h>
+#include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
+#include <AzFramework/Physics/Configuration/RigidBodyConfiguration.h>
+#include <AzFramework/Physics/Common/PhysicsSimulatedBody.h>
 namespace AppleKraken
 {
     //! Component for apple picking effector (manipulator)
@@ -50,5 +58,9 @@ namespace AppleKraken
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
         AZ::EntityId m_reachEntity;
+        AZ::EntityId m_manipulatorEntity;
+        AZ::EntityId m_appleProbe;
+        bool m_registeredCallback{false};
+        AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
     };
 } // namespace AppleKraken
