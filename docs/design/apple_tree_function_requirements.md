@@ -4,8 +4,6 @@
 The goal for the Apple Tree environment is to simulate realistic physical behavior of simulated apples on apple trees when they are picked by a robotic device (i.e. arm). 
 
 
-## Phase One
-
 ### Apple Tree Setup/Configuration
 * For phase one, each apple in the apple tree prefab will be its one individual prefab
 * The apples will be randomly placed as design time for the level
@@ -19,15 +17,6 @@ The goal for the Apple Tree environment is to simulate realistic physical behavi
 * During runtime of the level, the robotic arm will define a volume box to query for entities that fit inside the box
     * The volume box to query must be slightly larger than the apples
 * The robot script will act upon any apple that triggers the volume box query
-* The robot script will enable gravity for the selected apple
-* The apple will then be able to fall into the robot arm or collection tube and into the basket
+* The robot script will detach the apple through the manipulator and collect it into a basket
   
-### Simulating wind in the environment
-
-* Leaves on the tree can be implemented to simulate a windy effect for increased realism
-* O3DE provides a tutorial called [Vertex Defomration for Vegetation Bending](https://www.o3de.org/docs/learning-guide/tutorials/rendering/vegetation-bending-tutorial/)
-
-## Phase Two
-
-TBD
 
