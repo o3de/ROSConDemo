@@ -20,6 +20,7 @@ namespace ROSConDemo
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
+
     }
 
     void ROSConDemoSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)

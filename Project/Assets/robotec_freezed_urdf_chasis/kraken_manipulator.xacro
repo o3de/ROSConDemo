@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="manip_x" value="1.1" />
+  <xacro:property name="manip_y" value="0.0" />
+  <xacro:property name="manip_z" value="0.0" />
+  
+    <link name="kraken_manipulator_link_0">
+      <inertial>
+        <origin rpy="0.1745 0 0" xyz="0.0 -0.6 2.0"/>
+        <mass value="25.0"/>
+        <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.068" iyz="0.0" izz="0.067"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/ChassisAndFrame/ChassisAndFrame.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="1.570798 1.396264 4.712389" xyz="0.485927 -0.460373 1.404769"/>
+        <geometry>
+           <box size="2.451889 0.088234 0.088234"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="1.570798 1.396264 4.712389" xyz="-1.774321 -0.460373 1.404769"/>
+        <geometry>
+           <box size="2.451889 0.088234 0.088234"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="-0.174561 0.000000 0.000000" xyz="-0.646611 -0.254306 2.573430"/>
+        <geometry>
+           <box size="2.087586 0.088237 0.062286"/>
+         </geometry>
+        </collision>     
+    </link>
+
+    <link name="kraken_manipulator_link_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="25.0"/>
+        <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.068" iyz="0.0" izz="0.067"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumMechanismPart01/VacuumMechanismPart01.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="-0.001888 -0.000000 0.000000" xyz="0.000000 0.062564 -0.000045"/>
+        <geometry>
+           <box size="2.019587 0.172379 0.067739"/>
+         </geometry>
+       </collision>
+       
+    </link>
+
+    <link name="kraken_manipulator_link_2">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.05" iyz="0.0" izz="0.05"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="1.571 0 -1.571" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumMechanismPart02/VacuumMechanismPart02.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+        <geometry>
+           <box size="0.396177 0.322944 0.312368"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="-1.570829 0 0 " xyz="-0.066974 -0.2 -0.000000"/>
+        <geometry>
+           <cylinder  length="0.3" radius="0.06"/>
+         </geometry>
+       </collision>
+              
+    </link>
+
+    <!-- Nozzle -->
+    <link name="kraken_manipulator_link_3">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 -1.571 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumNozzle/VacuumNozzle.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0.0"/>
+        <geometry>
+           <cylinder  length="0.25" radius="0.08"/>
+         </geometry>
+       </collision>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0.45"/>
+        <geometry>
+           <sphere  radius="0.03"/>
+         </geometry>
+       </collision>
+
+    </link>
+
+    <!-- Nozzle02 -->
+    <link name="kraken_manipulator_link_4">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 -1.571 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumNozzle02/VacuumNozzle02.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0.19"/>
+        <geometry>
+           <cylinder  length="0.38" radius="0.06"/>
+         </geometry>
+       </collision>
+    </link>
+
+    
+
+    <joint name="kraken_manipulator_joint_0" type="fixed">
+      <origin rpy="0 0 0" xyz="${manip_x} 0 0"/>
+      <parent link="base_link"/>
+      <child link="kraken_manipulator_link_0"/>
+    </joint>
+
+    <!-- Joint that moves manipulator along Z-Axis -->
+    <joint name="kraken_manipulator_joint_1" type="prismatic">
+      <origin rpy="-0.1745 0 0" xyz="${manip_x-0.650001} -0.511055 1.6569"/>
+      <parent link="base_link"/>
+      <child link="kraken_manipulator_link_1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="-1.2" upper="0.67" velocity="1.0"/>
+    </joint>
+
+    <!-- Joint that moves manipulator along X-Axis -->
+    <joint name="kraken_manipulator_joint_2" type="prismatic">
+      <origin rpy="0 1.571 0" xyz="0 0 0"/>
+      <parent link="kraken_manipulator_link_1"/>
+      <child link="kraken_manipulator_link_2"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="-1.0" upper="1.0" velocity="1.0"/>
+    </joint>
+
+    <!-- Nozzle -->
+    <joint name="kraken_manipulator_joint_3" type="prismatic">
+      <origin rpy="1.571 0 0" xyz="-0.067 -0.35 -0.004"/>
+      <parent link="kraken_manipulator_link_2"/>
+      <child link="kraken_manipulator_link_3"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="0" upper="0.28" velocity="1.0"/>
+    </joint>
+
+    <!-- Nozzle02 -->
+    <joint name="kraken_manipulator_joint_4" type="prismatic">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="kraken_manipulator_link_3"/>
+      <child link="kraken_manipulator_link_4"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="0" upper="0.28" velocity="1.0"/>
+    </joint>
+
+
+  
+</robot>
