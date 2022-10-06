@@ -70,7 +70,8 @@
                     "Entity_[7184523221940590]",
                     "Entity_[11555842151561582]",
                     "Entity_[11574632633481582]",
-                    "Entity_[17223493880265070]"
+                    "Entity_[17223493880265070]",
+                    "Entity_[104676312987105]"
                 ]
             },
             "Component_[14409887347711167786]": {
@@ -137,6 +138,85 @@
         }
     },
     "Entities": {
+        "Entity_[104676312987105]": {
+            "Id": "Entity_[104676312987105]",
+            "Name": "Spawner",
+            "Components": {
+                "Component_[11314283884399947310]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11314283884399947310
+                },
+                "Component_[1278397063520719958]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1278397063520719958
+                },
+                "Component_[13364510751216349723]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 13364510751216349723
+                },
+                "Component_[14503514040229650370]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14503514040229650370,
+                    "Child Entity Order": [
+                        "Entity_[177630627476961]",
+                        "Entity_[530427831104993]",
+                        "Entity_[530440716006881]",
+                        "Entity_[530453600908769]",
+                        "Entity_[530466485810657]",
+                        "Entity_[530479370712545]",
+                        "Entity_[530492255614433]",
+                        "Entity_[530505140516321]",
+                        "Entity_[530518025418209]",
+                        "Entity_[530530910320097]",
+                        "Entity_[530543795221985]",
+                        "Entity_[530556680123873]",
+                        "Entity_[530569565025761]",
+                        "Entity_[530582449927649]",
+                        "Entity_[530595334829537]",
+                        "Entity_[530608219731425]",
+                        "Entity_[530621104633313]",
+                        "Entity_[530633989535201]"
+                    ]
+                },
+                "Component_[15452128641512123081]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15452128641512123081
+                },
+                "Component_[16316160855692862306]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16316160855692862306,
+                    "Parent Entity": "Entity_[1146574390643]"
+                },
+                "Component_[16495365342755562265]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 16495365342755562265,
+                    "m_template": {
+                        "$type": "ROS2SpawnerComponent",
+                        "Spawnables": {
+                            "apple_kraken": {
+                                "assetId": {
+                                    "guid": "{62447414-9014-53C1-AD04-B7E610C1D54B}",
+                                    "subId": 2075732302
+                                },
+                                "assetHint": "assets/importer/apple_kraken.spawnable"
+                            }
+                        }
+                    }
+                },
+                "Component_[4811759763261974616]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4811759763261974616
+                },
+                "Component_[6747378079220842443]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6747378079220842443
+                },
+                "Component_[9253893364119359872]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9253893364119359872
+                }
+            }
+        },
         "Entity_[1078906895689]": {
             "Id": "Entity_[1078906895689]",
             "Name": "Terrian",
@@ -7886,6 +7966,70 @@
                 }
             }
         },
+        "Entity_[177630627476961]": {
+            "Id": "Entity_[177630627476961]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row1",
+                        "Info": "Spawn point in front of row number 1."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -63.25,
+                            42.0,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -90.0
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
         "Entity_[1961516426450979]": {
             "Id": "Entity_[1961516426450979]",
             "Name": "PositionGrad",
@@ -9795,6 +9939,1094 @@
                 "Component_[9783394721408264499]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9783394721408264499
+                }
+            }
+        },
+        "Entity_[530427831104993]": {
+            "Id": "Entity_[530427831104993]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row2",
+                        "Info": "Spawn point in front of row number 2."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -59.75,
+                            42.000003814697266,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530440716006881]": {
+            "Id": "Entity_[530440716006881]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row3",
+                        "Info": "Spawn point in front of row number 3."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -56.25,
+                            42.00000762939453,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530453600908769]": {
+            "Id": "Entity_[530453600908769]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row4",
+                        "Info": "Spawn point in front of row number 4."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -52.75,
+                            42.0000114440918,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530466485810657]": {
+            "Id": "Entity_[530466485810657]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row5",
+                        "Info": "Spawn point in front of row number 5."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -49.25,
+                            42.00001525878906,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530479370712545]": {
+            "Id": "Entity_[530479370712545]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row6",
+                        "Info": "Spawn point in front of row number 6."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -45.75,
+                            42.00001907348633,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530492255614433]": {
+            "Id": "Entity_[530492255614433]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row7",
+                        "Info": "Spawn point in front of row number 7."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -42.25,
+                            42.000022888183594,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530505140516321]": {
+            "Id": "Entity_[530505140516321]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row8",
+                        "Info": "Spawn point in front of row number 8."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -38.75,
+                            42.00002670288086,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530518025418209]": {
+            "Id": "Entity_[530518025418209]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row9",
+                        "Info": "Spawn point in front of row number 9."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -35.25,
+                            42.000030517578125,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530530910320097]": {
+            "Id": "Entity_[530530910320097]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row10",
+                        "Info": "Spawn point in front of row number 10."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -31.75,
+                            42.00003433227539,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530543795221985]": {
+            "Id": "Entity_[530543795221985]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row11",
+                        "Info": "Spawn point in front of row number 11."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -28.25,
+                            42.000038146972656,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530556680123873]": {
+            "Id": "Entity_[530556680123873]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row12",
+                        "Info": "Spawn point in front of row number 12."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -24.75,
+                            42.00004196166992,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530569565025761]": {
+            "Id": "Entity_[530569565025761]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row13",
+                        "Info": "Spawn point in front of row number 13."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -21.25,
+                            42.00004577636719,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530582449927649]": {
+            "Id": "Entity_[530582449927649]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row14",
+                        "Info": "Spawn point in front of row number 14."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -17.75,
+                            42.00004959106445,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530595334829537]": {
+            "Id": "Entity_[530595334829537]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row15",
+                        "Info": "Spawn point in front of row number 15."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -14.25,
+                            42.00005340576172,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530608219731425]": {
+            "Id": "Entity_[530608219731425]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row16",
+                        "Info": "Spawn point in front of row number 16."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -10.75,
+                            42.000057220458984,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530621104633313]": {
+            "Id": "Entity_[530621104633313]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row17",
+                        "Info": "Spawn point in front of row number 17."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -7.25,
+                            42.00006103515625,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
+                }
+            }
+        },
+        "Entity_[530633989535201]": {
+            "Id": "Entity_[530633989535201]",
+            "Name": "RowSpawnPoint",
+            "Components": {
+                "Component_[11969757004598554929]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11969757004598554929
+                },
+                "Component_[12359397905874211899]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12359397905874211899
+                },
+                "Component_[13354614953576751340]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13354614953576751340,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "row18",
+                        "Info": "Spawn point in front of row number 18."
+                    }
+                },
+                "Component_[14970139123322509100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14970139123322509100
+                },
+                "Component_[16798292341645736790]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16798292341645736790
+                },
+                "Component_[17503473695063282552]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17503473695063282552
+                },
+                "Component_[2840753425454738983]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2840753425454738983
+                },
+                "Component_[386129393972332621]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 386129393972332621
+                },
+                "Component_[523501923593589864]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 523501923593589864,
+                    "Parent Entity": "Entity_[104676312987105]",
+                    "Transform Data": {
+                        "Translate": [
+                            -3.75,
+                            42.000064849853516,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[9470973296863097127]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9470973296863097127
                 }
             }
         },
