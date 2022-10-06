@@ -16,8 +16,8 @@
 
 namespace AppleKraken
 {
-    using TriggerRequest = std::shared_ptr<std_srvs::srv::Trigger::Request>;
-    using TriggerResponse = std::shared_ptr<std_srvs::srv::Trigger::Response>;
+    using TriggerRequestPtr = std::shared_ptr<std_srvs::srv::Trigger::Request>;
+    using TriggerResponsePtr = std::shared_ptr<std_srvs::srv::Trigger::Response>;
 
     //! Demo component handling orchestration of apple picking
     class ApplePickerComponent
@@ -53,7 +53,7 @@ namespace AppleKraken
         bool IsBusy() const;
         void PickNextApple();
         void QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox);
-        void ProcessTriggerServiceCall(const TriggerRequest req, TriggerResponse resp);
+        void ProcessTriggerServiceCall(const TriggerRequestPtr req, TriggerResponsePtr resp);
 
         AZStd::string m_triggerServiceTopic = "trigger_apple_gathering";
         AZ::EntityId m_effectorEntityId;
