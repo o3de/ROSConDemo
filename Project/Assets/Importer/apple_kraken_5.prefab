@@ -422,6 +422,28 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 14936014742846311560
                 },
+                "Component_[15544873161364637679]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 15544873161364637679,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3852781260
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A657C47-173C-5E21-8FAD-BF84DC26C3F9}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[1618077888546860927]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 1618077888546860927
@@ -558,6 +580,28 @@
                     "$type": "EditorLockComponent",
                     "Id": 13621993063551437541
                 },
+                "Component_[15580845244405269301]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 15580845244405269301,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 854531900
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[16288017587257644633]": {
                     "$type": "AZ::Render::EditorMeshComponent",
                     "Id": 16288017587257644633,
@@ -632,6 +676,28 @@
                                 },
                                 "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft.azmodel"
                             }
+                        }
+                    }
+                },
+                "Component_[16202812158982466244]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 16202812158982466244,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 854531900
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
                         }
                     }
                 },
@@ -957,6 +1023,28 @@
                 "Component_[1728047228517204238]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 1728047228517204238
+                },
+                "Component_[17723810713444900006]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 17723810713444900006,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 298289432
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{11839230-6270-5DE4-A4FD-DF04F5757E9F}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[17777019044500671544]": {
                     "$type": "EditorEntitySortComponent",
@@ -1363,6 +1451,28 @@
                     "$type": "EditorLockComponent",
                     "Id": 15336953769292336569
                 },
+                "Component_[15866991721564831304]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 15866991721564831304,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 854531900
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[16579548347054511705]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 16579548347054511705
@@ -1460,6 +1570,28 @@
                 "Component_[9260033774174037983]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 9260033774174037983
+                },
+                "Component_[9451040396949340190]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 9451040396949340190,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2114009126
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A6C2A1C8-C163-53A5-A02A-CD872B53B21A}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             }
         },
@@ -1486,6 +1618,54 @@
                 "Component_[15916088267657072699]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 15916088267657072699
+                },
+                "Component_[16906553203256584758]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 16906553203256584758,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 197104612
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{D791F916-895A-5592-86E0-7DAB382E0A65}"
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_vent.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1194139712
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{B2846626-AD8F-54D9-9541-9A389F737B95}"
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_vehiclebody.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1881536329
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{69D044B2-C118-5528-B378-DD09772F3709}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[17169033823457850210]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -1904,6 +2084,28 @@
                 "Component_[5817418469452950430]": {
                     "$type": "EditorLockComponent",
                     "Id": 5817418469452950430
+                },
+                "Component_[6912857328967887265]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 6912857328967887265,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2933500654
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{7CBE9ADB-D74D-505F-A118-86BAB783B8F5}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[9816573356845954899]": {
                     "$type": "EditorDisabledCompositionComponent",
@@ -2917,6 +3119,28 @@
                     "$type": "EditorLockComponent",
                     "Id": 15667215247245621136
                 },
+                "Component_[18291475926908034111]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 18291475926908034111,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 854531900
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[1971778114439210211]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 1971778114439210211
@@ -3074,7 +3298,19 @@
                 "Component_[12040159676654048849]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 12040159676654048849,
-                    "Parent Entity": "Entity_[126373983206044]"
+                    "Parent Entity": "Entity_[126373983206044]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.1043353080749512,
+                            -9.98377799987793e-7,
+                            0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            89.99994659423828
+                        ]
+                    }
                 },
                 "Component_[1311500868727532634]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -3100,13 +3336,47 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 6612295996343169260
                 },
+                "Component_[7355804893088000318]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 7355804893088000318,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 2556530217
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{33AEF102-38AF-5516-97B4-C5B311B20D19}"
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/conveyorbelt/conveyorbelt_conveyorbelt.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[8441102659132064461]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 8441102659132064461
                 },
                 "Component_[9771993733213049228]": {
                     "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 9771993733213049228
+                    "Id": 9771993733213049228,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{325297E5-6196-5FFB-B6BF-A357561C3C56}",
+                                    "subId": 284821055
+                                },
+                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/conveyorbelt/conveyorbelt.azmodel"
+                            }
+                        }
+                    }
                 },
                 "Component_[9814676007288694473]": {
                     "$type": "EditorPendingCompositionComponent",
