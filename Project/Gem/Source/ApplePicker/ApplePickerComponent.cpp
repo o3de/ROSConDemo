@@ -106,6 +106,7 @@ namespace AppleKraken
     void ApplePickerComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
         // TODO handle timeouts and incoming commands
+        m_appleGroundTruthDetector->Publish();
     }
 
     float ApplePickerComponent::ReportProgress()
@@ -131,7 +132,8 @@ namespace AppleKraken
         AZ::TickBus::Handler::BusConnect();
 
         auto ros2Node = ROS2Interface::Get()->GetNode();
-        auto robotNamespace = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity())->GetNamespace();
+        auto frame = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity());
+        auto robotNamespace = frame->GetNamespace();
         auto topic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
         m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
             topic.c_str(),
@@ -139,10 +141,13 @@ namespace AppleKraken
             {
                 this->ProcessTriggerServiceCall(request, response);
             });
+
+        m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
     }
 
     void ApplePickerComponent::Deactivate()
     {
+        m_appleGroundTruthDetector.reset();
         m_triggerService.reset();
         AZ::TickBus::Handler::BusDisconnect();
         ApplePickingNotificationBus::Handler::BusDisconnect();
@@ -266,6 +271,7 @@ namespace AppleKraken
         // apples need to be unique
         AZStd::unordered_set<AZ::EntityId> found_apples;
 
+        AZStd::vector<PickAppleTask> appleTasks;
         for (auto& physicScene : physicsSystem->GetAllScenes())
         {
             if (!physicScene)
@@ -304,12 +310,26 @@ namespace AppleKraken
                 t.m_appleEntityId = r.m_entityId;
                 t.m_appleBoundingBox = r.m_shape->GetAabb(targetTM);
                 t.m_middle = targetTM.GetTranslation(); /// TODO consider `r.m_position` here
-                m_currentAppleTasks.push(t);
+                appleTasks.push_back(t);
                 found_apples.emplace(r.m_entityId);
             }
         }
+
+        std::sort(
+            appleTasks.begin(),
+            appleTasks.end(),
+            [globalBox](const PickAppleTask& a, const PickAppleTask& b) -> bool
+            {   // a is further than b from the globalBox
+                return globalBox.GetDistance(a.m_middle) > globalBox.GetDistance(b.m_middle);
+            });
+
+        m_appleGroundTruthDetector->UpdateGroundTruth(appleTasks);
+        for (const auto& appleTask : appleTasks)
+        {
+            m_currentAppleTasks.emplace(appleTask);
+        }
+
         m_initialTasksSize = m_currentAppleTasks.size();
         AZ_Printf("ApplePickerComponent", "There are %d apples in reach box \n", m_currentAppleTasks.size());
     }
-
 } // namespace AppleKraken

@@ -49,7 +49,7 @@ ly_add_target(
             Gem::Atom_AtomBridge.Static
 )
 
-target_depends_on_ros2_packages(ROSConDemo.Static std_srvs)
+target_depends_on_ros2_packages(ROSConDemo.Static std_srvs vision_msgs)
 
 ly_add_target(
     NAME ROSConDemo ${PAL_TRAIT_MONOLITHIC_DRIVEN_MODULE_TYPE}

@@ -8,6 +8,7 @@
 #pragma once
 
 #include "ApplePickingNotifications.h"
+#include "AppleDetectionGroundTruth.h"
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
@@ -62,5 +63,7 @@ namespace AppleKraken
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
         size_t m_initialTasksSize = 0;
         AZStd::queue<PickAppleTask> m_currentAppleTasks;
+
+        AZStd::unique_ptr<AppleDetectionGroundTruth> m_appleGroundTruthDetector;
     };
 } // namespace AppleKraken
