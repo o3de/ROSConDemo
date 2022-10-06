@@ -1,0 +1,13 @@
+Nozzle
+location
+X: 0.883717 m
+Y: -0.650001 m
+Z: 1.79061 m
+
+Rotation
+x:0
+y:-10
+z:0
+
+
+

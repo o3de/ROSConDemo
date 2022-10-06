@@ -84,7 +84,7 @@ function manipulator_control:OnActivate()
 
     -- Maximum velocity in X (in vehicle axis), Y (suction tube), 
     -- Z (vertical) directions
-    self.max_velocity = Vector3(80.8, 30.0, 80.0) 
+    self.max_velocity = Vector3(40.0, 30.0, 40.0) 
 
     -- To prevent violent reactions right after the simulation starts,
     -- we're waiting this ammount of seconds till running the controller
@@ -109,9 +109,12 @@ function manipulator_control:OnActivate()
     -- If true, current manipulaor state will be printed
     self.printState = true
 
+    -- Time to wait in when the parking (aka retrieving) position is reached
+    self.retrieveWait = 0.5 -- [s]
+
     -- If true, apple will be retreived automatically after reaching. If false,
     -- Retrieve() function must be called.
-    self.autoRetrieve = true
+    self.autoRetrieve = false
 
     -- Configuration parameters END --
     ------------------------------------
@@ -121,10 +124,10 @@ function manipulator_control:OnActivate()
 
     self.InputNotificationBus = InputEventNotificationBus.Connect(self, InputEventNotificationId("manipulator_keyboard_control"))
 
-    self.pid1 = PID.new(600.0, 10.0, 0.0, self.max_velocity['z']) 
-    self.pid2 = PID.new(600.0, 0.0, 0.0, self.max_velocity['x']) 
-    self.pid3 = PID.new(200.0, 20.0, 0.0, self.max_velocity['y'])
-    self.pid4 = PID.new(200.0, 10.0, 0.0, self.max_velocity['y'])
+    self.pid1 = PID.new(300.0, 0.0, 0.0, self.max_velocity['z']) 
+    self.pid2 = PID.new(400.0, 0.0, 0.0, self.max_velocity['x']) 
+    self.pid3 = PID.new(100.0, 0.0, 0.0, self.max_velocity['y'])
+    self.pid4 = PID.new(100.0, 0.0, 0.0, self.max_velocity['y'])
     self.gravityThreshold = 0.0
 
     -- Target translation of each segment. Relative to current position
@@ -142,8 +145,12 @@ function manipulator_control:OnActivate()
 
     self.baseZeroTime = 0.0
 
+    self.retrieveTime = 0.0
+
     self.noseZeroTimeout = 0.5
     self.noseZeroTime = 0.0
+    self.manipulatorRequestBus = ManipulatorRequestBus.Connect(self, self.entityId)
+       
 end
 
 function manipulator_control:getSegmentPos(entityid)
@@ -253,14 +260,18 @@ function manipulator_control:_orchestrator()
         self.targetPos = self:_getWorldPosition(self.requestWorldPos)
     end
 
-
     ----------------------------------------------------------
 
     if self.pickingState == State.RETRIEVING_BASE then
         self.requestWorldPos = TransformBus.Event.GetWorldTranslation(self.Properties.rest)
         self.targetPos = self:_getWorldPosition(self.requestWorldPos)
+        self:_setInternalState()
         if (self:_isNearZero(1) and self:_isNearZero(2) and self:_isNearZero(3) and self:_isNearZero(4)) then
-            self.pickingState = State.PREPARED
+            self.retrieveTime = self.retrieveTime + self.deltaTime
+            if self.retrieveTime > self.retrieveWait then
+                self.retrieveTime = 0.0
+                self.pickingState = State.PREPARED
+            end
         end
     end
 
@@ -308,7 +319,6 @@ function manipulator_control:_orchestrator()
     ----------------------------------------------------------
 
     if self.pickingState == State.PICKING_BASE then
-
         self.targetPos = self:_getWorldPosition(self.requestWorldPos)
         self.targetPos['y'] = self.restPos['y']
 
@@ -334,7 +344,7 @@ function manipulator_control:PickApple(apple_pos)
     self.requestWorldPos = apple_pos
     self.pickingState = State.PICKING_BASE
 
-    --Debug.Log("Picking apple at "..tostring(apple_pos))
+    Debug.Log("Picking apple at "..tostring(apple_pos))
 
     --end
 end
@@ -345,7 +355,7 @@ function manipulator_control:Retrieve()
     --Debug.Log("Retracting to "..tostring(rest_pos))
 end
 
-function manipulator_control:getStatus()
+function manipulator_control:GetStatus()
     return self.pickingState
 end
 
@@ -374,6 +384,8 @@ function manipulator_control:OnPressed(value)
 end
 
 function manipulator_control:OnDeactivate()
+      self.manipulatorRequestBus.Disconnect()
+
      -- Deactivation Code
 end
 

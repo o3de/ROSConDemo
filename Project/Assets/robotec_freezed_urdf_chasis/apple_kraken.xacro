@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="apple_kraken">
+  <!-- Enable setting arguments from the launch file -->
+
+  <!-- Import robot description macro -->
+  <xacro:include filename="kraken_chasis.xacro" /> 
+  <xacro:include filename="kraken_manipulator.xacro" />
+
+
+</robot>
