@@ -68,7 +68,7 @@ namespace AppleKraken
         return false;
     }
 
-    void ApplePickerComponent::ProcessTriggerServiceCall(const TriggerRequest req, TriggerResponse resp)
+    void ApplePickerComponent::ProcessTriggerServiceCall(const TriggerRequestPtr req, TriggerResponsePtr resp)
     {
         // TODO - also, perhaps add a check whether Kraken is in gathering position, immobile etc.
         if (IsBusy())
@@ -135,7 +135,7 @@ namespace AppleKraken
         auto topic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
         m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
             topic.c_str(),
-            [this](const TriggerRequest request, TriggerResponse response)
+            [this](const TriggerRequestPtr request, TriggerResponsePtr response)
             {
                 this->ProcessTriggerServiceCall(request, response);
             });

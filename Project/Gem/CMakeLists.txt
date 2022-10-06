@@ -43,7 +43,6 @@ ly_add_target(
             Gem::ROS2.Static
         PRIVATE
             AZ::AzGameFramework
-            AZ::AzToolsFramework
             AZ::AzFramework
             Gem::LmbrCentral.API
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
@@ -65,7 +64,6 @@ ly_add_target(
         PRIVATE
             Gem::ROSConDemo.Static
             AZ::AzCore
-            AZ::AzToolsFramework
             AZ::AzFramework
 )
 
