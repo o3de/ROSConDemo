@@ -107,6 +107,40 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 15825972752429895097
                 },
+                "Component_[3012283993462436523]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 3012283993462436523,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "collision"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{D75C5700-9C4C-5B99-9467-A3476DCE5A7E}",
+                                    "subId": 3806962326
+                                },
+                                "assetHint": "assets/props/crate_01.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{D75C5700-9C4C-5B99-9467-A3476DCE5A7E}",
+                                        "subId": 3806962326
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/props/crate_01.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[3347602471478609833]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 3347602471478609833,
