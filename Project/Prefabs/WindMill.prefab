@@ -10,7 +10,14 @@
             "Component_[15439992882160637816]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 15439992882160637816,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        0.0,
+                        -0.010730981826782227
+                    ]
+                }
             },
             "Component_[16002608915145917980]": {
                 "$type": "EditorInspectorComponent",
@@ -100,6 +107,40 @@
                             "SortIndex": 2
                         }
                     ]
+                },
+                "Component_[16842351070526488773]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 16842351070526488773,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "collision"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
+                                    "subId": 1366355562
+                                },
+                                "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
+                                        "subId": 1366355562
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                                }
+                            }
+                        }
+                    }
                 },
                 "Component_[17054436815543987301]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",

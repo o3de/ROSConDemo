@@ -111,6 +111,31 @@
                         }
                     }
                 },
+                "Component_[17126492626991072176]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 17126492626991072176,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 3,
+                        "Cylinder": {
+                            "Configuration": {
+                                "CookedData": "TlhTAUNWWE0NAAAAAAAAAElDRQFDTEhMCQAAABAAAAAYAAAACgAAADAAAAD0BDW+8gQ1PgAAQEAuvTuyAACAPgAAQEAuvTuyAACAPgAAQMD0BDW+8gQ1PgAAQMAAAIC+Lr27sgAAQMAAAIC+Lr27sgAAQEDzBDU+8wQ1PgAAQEAAAIA+AAAAAAAAQEAAAIA+AAAAAAAAQMDzBDU+8wQ1PgAAQMD1BDU+8QQ1vgAAQMD1BDU+8QQ1vgAAQEDjzQwzAACAvgAAQEDjzQwzAACAvgAAQMDyBDW+9AQ1vgAAQMDyBDW+9AQ1vgAAQEAAAAAAAAAAAP//f7///z/AAAAIABjvw75dg2w/AAAAAFyDbL4IAAQMX4NsvxXvwz4AAAAAXoNsvgwABApdg2w/Fe/DPgAAAABeg2y+EAAEBBXvwz5fg2w/AAAAAF+DbL4UAAQOX4NsPxPvw74AAAAAXoNsvhgABAAb78M+XYNsvwAAAABeg2y+HAAEAF2DbL8Y78O+AAAAAF2DbL4gAAQGE+/Dvl+DbL8AAAAAXoNsviQABAEAAAAAAAAAAP//fz///z/AKAAIAgoNDgQDAgkIAAECAwADBAUGBwgJBgkCAQoIBwsKCwwNDwUEDg8ODQwPDAsHBgEABQAGAAgABwACAAEABAADAAUBCQEEAQICBwIJAwkDBQMEBAkFCQUGBgkGCAcJBwgICQECCQEECQABBAABAgACBwIHCQMECQMFCQADBQADBAAFBgUGCQYICQAGCAAHCAcICQAAAAAAAIC+AACAvgAAQMAAAIA+AACAPgAAQEC2w4c/lppMQB9nFbC6EqAwH2cVsJaaTEACADQluhKgMAIANCXyBPU80jfLMdyd3rGltKkyAACAv12DbD7yBDU+8gQ1PgAAQEA=",
+                                "Type": 1
+                            },
+                            "Subdivision": 8,
+                            "Height": 6.0,
+                            "Radius": 0.25
+                        }
+                    }
+                },
                 "Component_[17430586325677686051]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 17430586325677686051

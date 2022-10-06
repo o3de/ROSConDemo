@@ -1,0 +1,45 @@
+{
+    "values": [
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{2BE909B5-6D04-5243-ACBB-CF787408D99C}",
+            "name": "Barrel",
+            "NodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode.barrel_01"
+                ],
+                "unselectedNodes": [
+                    {},
+                    "RootNode"
+                ]
+            },
+            "export method": 1,
+            "PhysicsMaterialSlots": {
+                "Slots": [
+                    {
+                        "Name": "mat_barrelMAT"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "Barrel",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.barrel_01"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{A33ECF4A-2D50-5135-94EF-0EB391ACD1E9}"
+        }
+    ]
+}

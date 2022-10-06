@@ -29,7 +29,14 @@
             "Component_[6372788350921479434]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 6372788350921479434,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        0.0,
+                        0.0,
+                        -0.011319160461425781
+                    ]
+                }
             },
             "Component_[6643811298261390905]": {
                 "$type": "EditorEntityIconComponent",
@@ -86,6 +93,40 @@
                 "Component_[13073289245211694411]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13073289245211694411
+                },
+                "Component_[14322969105034715544]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 14322969105034715544,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "mat_barrelMAT"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{7E7F7F4C-717E-50C5-A5AD-A3FFE92093FF}",
+                                    "subId": 1999831518
+                                },
+                                "assetHint": "assets/props/barrel.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{7E7F7F4C-717E-50C5-A5AD-A3FFE92093FF}",
+                                        "subId": 1999831518
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/props/barrel.pxmesh"
+                                }
+                            }
+                        }
+                    }
                 },
                 "Component_[16151617321898719065]": {
                     "$type": "EditorLockComponent",

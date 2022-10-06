@@ -86,6 +86,40 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 13792841411106827297
                 },
+                "Component_[13912151555249104113]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 13912151555249104113,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "mat_propMAT"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{5B4B9DFE-3285-5C40-8C87-9BA9B97CF608}",
+                                    "subId": 1894854328
+                                },
+                                "assetHint": "assets/watertower_01/water_tower.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{5B4B9DFE-3285-5C40-8C87-9BA9B97CF608}",
+                                        "subId": 1894854328
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/watertower_01/water_tower.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[15163658933852873296]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 15163658933852873296,

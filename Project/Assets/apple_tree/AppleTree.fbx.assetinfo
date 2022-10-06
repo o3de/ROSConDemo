@@ -1,0 +1,191 @@
+{
+    "values": [
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{FEB19D42-1316-5B67-8E73-FCF7DFD746B5}",
+            "name": "AppleTree",
+            "NodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode.AppleTree_lod3",
+                    "RootNode.AppleTree_lod3.transform",
+                    "RootNode.AppleTree_lod3.custom_properties",
+                    "RootNode.AppleTree_lod3.UV0",
+                    "RootNode.AppleTree_lod3.TreeMAT",
+                    "RootNode.AppleTree_lod3.LeafMAT"
+                ],
+                "unselectedNodes": [
+                    "RootNode",
+                    "RootNode.AppleTree_lod0",
+                    "RootNode.AppleTree_lod1",
+                    "RootNode.AppleTree_lod2",
+                    "RootNode.AppleTree_lod0.transform",
+                    "RootNode.AppleTree_lod0.custom_properties",
+                    "RootNode.AppleTree_lod0.UV0",
+                    "RootNode.AppleTree_lod0.TreeMAT",
+                    "RootNode.AppleTree_lod0.LeafMAT",
+                    "RootNode.AppleTree_lod1.transform",
+                    "RootNode.AppleTree_lod1.custom_properties",
+                    "RootNode.AppleTree_lod1.UV0",
+                    "RootNode.AppleTree_lod1.TreeMAT",
+                    "RootNode.AppleTree_lod1.LeafMAT",
+                    "RootNode.AppleTree_lod2.transform",
+                    "RootNode.AppleTree_lod2.custom_properties",
+                    "RootNode.AppleTree_lod2.UV0",
+                    "RootNode.AppleTree_lod2.TreeMAT",
+                    "RootNode.AppleTree_lod2.LeafMAT"
+                ]
+            },
+            "PhysicsMaterialSlots": {
+                "Slots": [
+                    {
+                        "Name": "TreeMAT"
+                    },
+                    {
+                        "Name": "LeafMAT"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "AppleTree",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode",
+                    "RootNode.AppleTree_lod0",
+                    "RootNode.AppleTree_lod0.transform",
+                    "RootNode.AppleTree_lod0.custom_properties",
+                    "RootNode.AppleTree_lod0.UV0",
+                    "RootNode.AppleTree_lod0.TreeMAT",
+                    "RootNode.AppleTree_lod0.LeafMAT"
+                ],
+                "unselectedNodes": [
+                    "RootNode.AppleTree_lod1",
+                    "RootNode.AppleTree_lod2",
+                    "RootNode.AppleTree_lod3",
+                    "RootNode.AppleTree_lod1.transform",
+                    "RootNode.AppleTree_lod1.custom_properties",
+                    "RootNode.AppleTree_lod1.UV0",
+                    "RootNode.AppleTree_lod1.TreeMAT",
+                    "RootNode.AppleTree_lod1.LeafMAT",
+                    "RootNode.AppleTree_lod2.transform",
+                    "RootNode.AppleTree_lod2.custom_properties",
+                    "RootNode.AppleTree_lod2.UV0",
+                    "RootNode.AppleTree_lod2.TreeMAT",
+                    "RootNode.AppleTree_lod2.LeafMAT",
+                    "RootNode.AppleTree_lod3.transform",
+                    "RootNode.AppleTree_lod3.custom_properties",
+                    "RootNode.AppleTree_lod3.UV0",
+                    "RootNode.AppleTree_lod3.TreeMAT",
+                    "RootNode.AppleTree_lod3.LeafMAT"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "{6E796AC8-1484-4909-860A-6D3F22A7346F} LodRule",
+                        "nodeSelectionList": [
+                            {
+                                "selectedNodes": [
+                                    "RootNode",
+                                    "RootNode.AppleTree_lod1",
+                                    "RootNode.AppleTree_lod1.transform",
+                                    "RootNode.AppleTree_lod1.custom_properties",
+                                    "RootNode.AppleTree_lod1.UV0",
+                                    "RootNode.AppleTree_lod1.TreeMAT",
+                                    "RootNode.AppleTree_lod1.LeafMAT"
+                                ],
+                                "unselectedNodes": [
+                                    "RootNode.AppleTree_lod0",
+                                    "RootNode.AppleTree_lod2",
+                                    "RootNode.AppleTree_lod3",
+                                    "RootNode.AppleTree_lod0.transform",
+                                    "RootNode.AppleTree_lod0.custom_properties",
+                                    "RootNode.AppleTree_lod0.UV0",
+                                    "RootNode.AppleTree_lod0.TreeMAT",
+                                    "RootNode.AppleTree_lod0.LeafMAT",
+                                    "RootNode.AppleTree_lod2.transform",
+                                    "RootNode.AppleTree_lod2.custom_properties",
+                                    "RootNode.AppleTree_lod2.UV0",
+                                    "RootNode.AppleTree_lod2.TreeMAT",
+                                    "RootNode.AppleTree_lod2.LeafMAT",
+                                    "RootNode.AppleTree_lod3.transform",
+                                    "RootNode.AppleTree_lod3.custom_properties",
+                                    "RootNode.AppleTree_lod3.UV0",
+                                    "RootNode.AppleTree_lod3.TreeMAT",
+                                    "RootNode.AppleTree_lod3.LeafMAT"
+                                ]
+                            },
+                            {
+                                "selectedNodes": [
+                                    "RootNode",
+                                    "RootNode.AppleTree_lod2",
+                                    "RootNode.AppleTree_lod2.transform",
+                                    "RootNode.AppleTree_lod2.custom_properties",
+                                    "RootNode.AppleTree_lod2.UV0",
+                                    "RootNode.AppleTree_lod2.TreeMAT",
+                                    "RootNode.AppleTree_lod2.LeafMAT"
+                                ],
+                                "unselectedNodes": [
+                                    "RootNode.AppleTree_lod0",
+                                    "RootNode.AppleTree_lod1",
+                                    "RootNode.AppleTree_lod3",
+                                    "RootNode.AppleTree_lod0.transform",
+                                    "RootNode.AppleTree_lod0.custom_properties",
+                                    "RootNode.AppleTree_lod0.UV0",
+                                    "RootNode.AppleTree_lod0.TreeMAT",
+                                    "RootNode.AppleTree_lod0.LeafMAT",
+                                    "RootNode.AppleTree_lod1.transform",
+                                    "RootNode.AppleTree_lod1.custom_properties",
+                                    "RootNode.AppleTree_lod1.UV0",
+                                    "RootNode.AppleTree_lod1.TreeMAT",
+                                    "RootNode.AppleTree_lod1.LeafMAT",
+                                    "RootNode.AppleTree_lod3.transform",
+                                    "RootNode.AppleTree_lod3.custom_properties",
+                                    "RootNode.AppleTree_lod3.UV0",
+                                    "RootNode.AppleTree_lod3.TreeMAT",
+                                    "RootNode.AppleTree_lod3.LeafMAT"
+                                ]
+                            },
+                            {
+                                "selectedNodes": [
+                                    "RootNode",
+                                    "RootNode.AppleTree_lod3",
+                                    "RootNode.AppleTree_lod3.transform",
+                                    "RootNode.AppleTree_lod3.custom_properties",
+                                    "RootNode.AppleTree_lod3.UV0",
+                                    "RootNode.AppleTree_lod3.TreeMAT",
+                                    "RootNode.AppleTree_lod3.LeafMAT"
+                                ],
+                                "unselectedNodes": [
+                                    "RootNode.AppleTree_lod0",
+                                    "RootNode.AppleTree_lod1",
+                                    "RootNode.AppleTree_lod2",
+                                    "RootNode.AppleTree_lod0.transform",
+                                    "RootNode.AppleTree_lod0.custom_properties",
+                                    "RootNode.AppleTree_lod0.UV0",
+                                    "RootNode.AppleTree_lod0.TreeMAT",
+                                    "RootNode.AppleTree_lod0.LeafMAT",
+                                    "RootNode.AppleTree_lod1.transform",
+                                    "RootNode.AppleTree_lod1.custom_properties",
+                                    "RootNode.AppleTree_lod1.UV0",
+                                    "RootNode.AppleTree_lod1.TreeMAT",
+                                    "RootNode.AppleTree_lod1.LeafMAT",
+                                    "RootNode.AppleTree_lod2.transform",
+                                    "RootNode.AppleTree_lod2.custom_properties",
+                                    "RootNode.AppleTree_lod2.UV0",
+                                    "RootNode.AppleTree_lod2.TreeMAT",
+                                    "RootNode.AppleTree_lod2.LeafMAT"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{58257EBE-4738-5522-B2BD-EF615D7DBD71}"
+        }
+    ]
+}

@@ -1,0 +1,212 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "GroundAckermannTest",
+        "Components": {
+            "Component_[10531416607709390088]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 10531416607709390088,
+                "Child Entity Order": [
+                    "Entity_[1437669224406]"
+                ]
+            },
+            "Component_[10820946349770878339]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 10820946349770878339
+            },
+            "Component_[11548164968935594499]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 11548164968935594499,
+                "Parent Entity": ""
+            },
+            "Component_[12806017428950098523]": {
+                "$type": "EditorLockComponent",
+                "Id": 12806017428950098523
+            },
+            "Component_[13366833982785364256]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 13366833982785364256
+            },
+            "Component_[15193574390268352672]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 15193574390268352672
+            },
+            "Component_[16041890978665359804]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 16041890978665359804
+            },
+            "Component_[1660122675354984722]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 1660122675354984722
+            },
+            "Component_[6413099271825065763]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 6413099271825065763
+            },
+            "Component_[7387102437336072655]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 7387102437336072655
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[1437669224406]": {
+            "Id": "Entity_[1437669224406]",
+            "Name": "Ground",
+            "Components": {
+                "Component_[12260880513256986252]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12260880513256986252
+                },
+                "Component_[13573988936865821516]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13573988936865821516,
+                    "m_template": {
+                        "$type": "AckermannControlComponent"
+                    }
+                },
+                "Component_[13711420870643673468]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13711420870643673468
+                },
+                "Component_[138002849734991713]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 138002849734991713
+                },
+                "Component_[16578565737331764849]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16578565737331764849,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[16586235061884612046]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 16586235061884612046,
+                    "m_template": {
+                        "$type": "ROS2FrameComponent"
+                    }
+                },
+                "Component_[16919232076966545697]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16919232076966545697,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 16578565737331764849
+                        },
+                        {
+                            "ComponentId": 7436476527725757478,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 5675108321710651991,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 5182430712893438093,
+                            "SortIndex": 3
+                        },
+                        {
+                            "ComponentId": 16586235061884612046,
+                            "SortIndex": 4
+                        },
+                        {
+                            "ComponentId": 2719366512497236147,
+                            "SortIndex": 5
+                        },
+                        {
+                            "ComponentId": 5245524694917323904,
+                            "SortIndex": 6
+                        },
+                        {
+                            "ComponentId": 13573988936865821516,
+                            "SortIndex": 7
+                        }
+                    ]
+                },
+                "Component_[2719366512497236147]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 2719366512497236147,
+                    "m_template": {
+                        "$type": "ROS2RobotControlComponent",
+                        "ControlConfiguration": {
+                            "Topic": "cmd_vel_ack",
+                            "Steering": 1
+                        }
+                    }
+                },
+                "Component_[5182430712893438093]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 5182430712893438093
+                },
+                "Component_[5245524694917323904]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 5245524694917323904,
+                    "ColliderConfiguration": {
+                        "Position": [
+                            0.0,
+                            0.0,
+                            -0.5
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                512.0,
+                                512.0,
+                                1.0
+                            ]
+                        }
+                    },
+                    "DebugDrawSettings": {
+                        "LocallyEnabled": false
+                    }
+                },
+                "Component_[5675108321710651991]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5675108321710651991,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
+                                    "subId": 277889906
+                                },
+                                "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[5681893399601237518]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5681893399601237518
+                },
+                "Component_[592692962543397545]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 592692962543397545
+                },
+                "Component_[7090012899106946164]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7090012899106946164
+                },
+                "Component_[7436476527725757478]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7436476527725757478,
+                    "m_template": {
+                        "$type": "VehicleModelComponent"
+                    }
+                },
+                "Component_[9410832619875640998]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9410832619875640998
+                }
+            }
+        }
+    }
+}

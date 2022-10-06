@@ -156,6 +156,40 @@
                 "Component_[9683050697670722667]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 9683050697670722667
+                },
+                "Component_[9744507723268008838]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 9744507723268008838,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "collision"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
+                                    "subId": 2828817795
+                                },
+                                "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
+                                        "subId": 2828817795
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

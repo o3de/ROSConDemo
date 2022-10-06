@@ -85,6 +85,46 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 15710930892613769566
                 },
+                "Component_[15791848428761537412]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 15791848428761537412,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "BarnMAT"
+                                },
+                                {
+                                    "Name": "TinRoofMAT"
+                                },
+                                {
+                                    "Name": "WindowGlassMAT"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
+                                    "subId": 4686939
+                                },
+                                "assetHint": "assets/barn/barn.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
+                                        "subId": 4686939
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "assets/barn/barn.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[16070606561682979869]": {
                     "$type": "EditorLockComponent",
                     "Id": 16070606561682979869

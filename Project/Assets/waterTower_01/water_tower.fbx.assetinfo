@@ -1,0 +1,44 @@
+{
+    "values": [
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{B1DA4E03-0566-5D11-AD92-AC9AC0120840}",
+            "name": "water_tower",
+            "NodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode.waterTower"
+                ],
+                "unselectedNodes": [
+                    {},
+                    "RootNode"
+                ]
+            },
+            "PhysicsMaterialSlots": {
+                "Slots": [
+                    {
+                        "Name": "mat_propMAT"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "water_tower",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.waterTower"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{B15D552B-D82C-5B68-9614-2C202893E0A2}"
+        }
+    ]
+}

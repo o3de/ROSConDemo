@@ -20,14 +20,14 @@
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        0.09196968376636505,
+                        -0.09844169020652771,
                         0.42729446291923523,
                         1.9483000040054321
                     ],
                     "Rotate": [
                         -1.8461143970489502,
-                        -14.610855102539063,
-                        -42.883140563964844
+                        -12.610696792602539,
+                        -92.20634460449219
                     ]
                 }
             },
@@ -92,6 +92,29 @@
                         }
                     ]
                 },
+                "Component_[17352323353881558252]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 17352323353881558252,
+                    "ColliderConfiguration": {
+                        "Trigger": true,
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 0,
+                        "Sphere": {
+                            "Radius": 0.03999999910593033
+                        }
+                    },
+                    "DebugDrawSettings": {
+                        "LocallyEnabled": false
+                    }
+                },
                 "Component_[17515715958005323940]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 17515715958005323940,
@@ -139,29 +162,6 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 6717239618132726328,
                     "DisabledComponents": [
-                        {
-                            "$type": "EditorColliderComponent",
-                            "Id": 17352323353881558252,
-                            "ColliderConfiguration": {
-                                "Trigger": true,
-                                "MaterialSlots": {
-                                    "Slots": [
-                                        {
-                                            "Name": "Entire object"
-                                        }
-                                    ]
-                                }
-                            },
-                            "ShapeConfiguration": {
-                                "ShapeType": 0,
-                                "Sphere": {
-                                    "Radius": 0.03999999910593033
-                                }
-                            },
-                            "DebugDrawSettings": {
-                                "LocallyEnabled": false
-                            }
-                        },
                         {
                             "$type": "EditorRigidBodyComponent",
                             "Id": 7138985039715548058,

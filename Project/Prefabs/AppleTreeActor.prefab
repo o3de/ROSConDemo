@@ -106,6 +106,30 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 10102513585957786679
                 },
+                "Component_[10693682012978395041]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 10693682012978395041,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 3,
+                        "Cylinder": {
+                            "Configuration": {
+                                "CookedData": "TlhTAUNWWE0NAAAAAAAAAElDRQFDTEhMCQAAACAAAAAwAAAAEgAAAGAAAAB7DWO9txi8PAAAAEBQxy29TsctPQAAAEBQxy29TsctPQAAAMB7DWO9txi8PAAAAMC1GLy8ew1jvQAAAEC1GLy8ew1jvQAAAMAOLAcyj8J1vQAAAMAOLAcyj8J1vQAAAEB6DWM9uhi8PAAAAECPwnU9AAAAAAAAAECPwnU9AAAAAAAAAMB6DWM9uhi8PAAAAMB8DWM9tBi8vAAAAMB8DWM9tBi8vAAAAEBRxy09TsctvQAAAEBRxy09TsctvQAAAMC7GLy8eg1jPQAAAEC7GLy8eg1jPQAAAMCPwnW9uzq0sQAAAEB6DWO9vBi8vAAAAEBOxy29UMctvQAAAEC9GLw8eg1jvQAAAEBPxy09T8ctPQAAAEC4GLw8ew1jPQAAAEC7OjSxj8J1PQAAAEC9GLw8eg1jvQAAAMCPwnW9uzq0sQAAAMB6DWO9vBi8vAAAAMC7OjSxj8J1PQAAAMC4GLw8ew1jPQAAAMBOxy29UMctvQAAAMBPxy09T8ctPQAAAMAAAAAAAAAAAAAAgD8AAADAAAAQAi/bVL/eOQ4/AAAAAK4Jcb0QAAQOrcVHvr8Ue78AAAAArAlxvRQABBe/FHs/tsVHPgAAAACsCXG9GAAEEsAUez+oxUe+AAAAAK0Jcb0cAAQSL9tUP9w5Dr8AAAAArAlxvSAABADgOQ6/LdtUPwAAAACsCXG9JAAEDuA5Dj8t21S/AAAAAK0Jcb0oAAQBt8VHPr8Ue78AAAAArQlxvSwABBC/FHu/q8VHPgAAAACsCXG9MAAECb8Ue7+3xUe+AAAAAK0Jcb00AAQItsVHvr8Uez8AAAAArQlxvTgABAatxUc+vxR7PwAAAACsCXG9PAAEBt05Dr8w21S/AAAAAK4Jcb1AAAQXLdtUv+E5Dr8AAAAArQlxvUQABBYu21Q/3zkOPwAAAACsCXG9SAAEEwAAAAAAAAAAAACAvwAAAMBMABAA3zkOPy3bVD8AAAAArAlxvVwABBQQAQASExQEBxUODQkIFhcYAAECAwQFBgcICQoLDAoJDQwNDg8QEQIBGQ8OFRkVBwYaEgADGhsTEhwREBgcGBcdHgUEFB4UExsfFggLHwsKDA8ZBgUeGxoDAhEcHR8dFxYABgABAAkACgAOAA0AAgAIAAcABQAEAAMADwARAAwACwEGARABCQINAhACCAMEAxADDwQQBAUFBwUQBgsGEAcQBwgIEAkKCRAKEAoOCxALDAwRDBANEA0ODhAPEQ8QEBEAAQkAAQYBBhABCRAAAg0CDRACCBAAAggAAw8AAwQDBBADDxAEBRAABAUABQcFBxAABgsGCxAACQoACg4ADQ4ABwgADxEADBEACwwHCBAJChAKDhALDBAMEBENDhAPEBEAAAAAj8J1vY/Cdb0AAADAj8J1PY/CdT0AAABAnZI0PQjscD1kMSQrkKCKrGQxJCsI7HA9AYDVoZCgiqwBgNWheTGiOAG3CzEjDpew9/UsswAAgL+rCXE9TsctPU7HLT0AAABA",
+                                "Type": 1
+                            },
+                            "Height": 4.0,
+                            "Radius": 0.05999999865889549
+                        }
+                    }
+                },
                 "Component_[1175476636645741538]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 1175476636645741538,
