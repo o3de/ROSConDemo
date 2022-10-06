@@ -436,7 +436,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{9A657C47-173C-5E21-8FAD-BF84DC26C3F9}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle02/vacuumnozzle02_vacuumnozzle02.azmaterial"
                                         }
                                     }
                                 }
@@ -594,7 +595,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -693,7 +695,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -1038,7 +1041,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{11839230-6270-5DE4-A4FD-DF04F5757E9F}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart02/vacuummechanismpart02_vacuummachanismpart02.azmaterial"
                                         }
                                     }
                                 }
@@ -1142,6 +1146,7 @@
                     "$type": "EditorColliderComponent",
                     "Id": 5028948294104336508,
                     "ColliderConfiguration": {
+                        "Simulated": false,
                         "Position": [
                             0.8442330360412598,
                             -0.4822969436645508,
@@ -1465,7 +1470,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -1585,7 +1591,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A6C2A1C8-C163-53A5-A02A-CD872B53B21A}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle/vacuumnozzle_vacuumnozzle.azmaterial"
                                         }
                                     }
                                 }
@@ -1659,7 +1666,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{69D044B2-C118-5528-B378-DD09772F3709}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_voltagebox.azmaterial"
                                         }
                                     }
                                 }
@@ -2099,7 +2107,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{7CBE9ADB-D74D-505F-A118-86BAB783B8F5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart01/vacuummechanismpart01_vacuummachanismpart01.azmaterial"
                                         }
                                     }
                                 }
@@ -2434,6 +2443,8 @@
                         "$type": "ROS2RobotControlComponent",
                         "ControlConfiguration": {
                             "Topic": "ackermann_vel",
+                            "Steering": 1,
+                            "Topic": "ackermann_vel",
                             "Steering": 1
                         }
                     }
@@ -2444,8 +2455,7 @@
                     "m_template": {
                         "$type": "KrakenEffectorComponent",
                         "ReachEntity": "Entity_[9058513484485]",
-                        "ManipulatorEntity": "Entity_[126373983206044]",
-                        "AppleProbe": "Entity_[49624638919053]"
+                        "ManipulatorEntity": "Entity_[126373983206044]"
                     }
                 },
                 "Component_[17586042212792946952]": {
@@ -2475,10 +2485,12 @@
                         },
                         "DriveModel": {
                             "SteeringPID": {
-                                "P": 1000.0
+                                "P": 1000.0,
+                                "Output limit": 200.0
                             },
                             "SpeedPID": {
-                                "P": 10.0
+                                "P": 50.0,
+                                "Output limit": 700.0
                             }
                         }
                     }
@@ -3133,7 +3145,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
