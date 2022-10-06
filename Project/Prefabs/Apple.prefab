@@ -20,9 +20,9 @@
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        -0.09844169020652771,
-                        0.42729446291923523,
-                        1.9483000040054321
+                        0.22987917065620422,
+                        -0.10305754840373993,
+                        1.2093260288238525
                     ],
                     "Rotate": [
                         -1.8461143970489502,
@@ -160,17 +160,15 @@
                 },
                 "Component_[6717239618132726328]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6717239618132726328,
-                    "DisabledComponents": [
-                        {
-                            "$type": "EditorRigidBodyComponent",
-                            "Id": 7138985039715548058,
-                            "Configuration": {
-                                "entityId": "",
-                                "Gravity Enabled": false
-                            }
-                        }
-                    ]
+                    "Id": 6717239618132726328
+                },
+                "Component_[7138985039715548058]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 7138985039715548058,
+                    "Configuration": {
+                        "entityId": "",
+                        "Gravity Enabled": false
+                    }
                 },
                 "Component_[7230618248793844206]": {
                     "$type": "AZ::Render::EditorMeshComponent",
