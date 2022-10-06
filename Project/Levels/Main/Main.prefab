@@ -641,7 +641,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 11586138576425755054
+                            "EditorEntityId": 9320729046583491228
                         }
                     }
                 },
@@ -5621,8 +5621,8 @@
                             1.0
                         ],
                         "Translate": [
-                            -25.134960174560547,
-                            -115.57234191894531,
+                            -27.28619384765625,
+                            -23.40618896484375,
                             0.6742335557937622
                         ]
                     }
@@ -5716,8 +5716,8 @@
                             1.0
                         ],
                         "Translate": [
-                            -25.134960174560547,
-                            -115.57234191894531,
+                            -27.28619384765625,
+                            -23.40618896484375,
                             0.6742335557937622
                         ]
                     }
@@ -5812,8 +5812,8 @@
                             1.0
                         ],
                         "Translate": [
-                            -25.134960174560547,
-                            -115.57234191894531,
+                            -27.28619384765625,
+                            -23.40618896484375,
                             0.6742335557937622
                         ]
                     }
@@ -5907,8 +5907,8 @@
                             1.0
                         ],
                         "Translate": [
-                            -25.98611068725586,
-                            -115.57234191894531,
+                            -28.137344360351563,
+                            -23.40618896484375,
                             0.6742335557937622
                         ],
                         "OverrideScale": true,
@@ -6017,8 +6017,8 @@
                     "Parent Entity": "Entity_[1146574390643]",
                     "Transform Data": {
                         "Translate": [
-                            -25.255855560302734,
-                            -116.24183654785156,
+                            -27.407089233398438,
+                            -24.07568359375,
                             0.6742335557937622
                         ]
                     },
@@ -7834,7 +7834,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 2107272255215807581
+                            "EntityId": 1403518120522386204
                         }
                     },
                     "useBakedCubemap": false,
@@ -15309,6 +15309,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -15343,6 +15358,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.899999976158142
                 }
             ]
@@ -15379,6 +15409,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.2999999523162842
                 }
             ]
         },
@@ -15413,6 +15458,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -15449,6 +15509,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -15483,6 +15558,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.899999976158142
                 }
             ]
@@ -15519,6 +15609,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.2999999523162842
                 }
             ]
         },
@@ -15554,6 +15659,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.5
                 }
             ]
         },
@@ -15573,7 +15693,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -94.12094116210938
+                    "value": 7.962034225463867
                 },
                 {
                     "op": "replace",
@@ -15589,6 +15709,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -15603,12 +15738,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 4.75192928314209
+                    "value": 5.367585182189941
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -100.63890838623048
+                    "value": 1.6607112884521484
                 },
                 {
                     "op": "replace",
@@ -15623,6 +15758,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.899999976158142
                 }
             ]
@@ -15659,6 +15809,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.2999999523162842
                 }
             ]
         },
@@ -15694,6 +15859,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.5
                 }
             ]
         },
@@ -15713,7 +15893,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -92.97979736328124
+                    "value": 9.103178024291992
                 },
                 {
                     "op": "replace",
@@ -15728,6 +15908,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.7999999523162842
                 }
             ]
@@ -15748,7 +15943,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -99.08219909667967
+                    "value": 3.0007762908935547
                 },
                 {
                     "op": "replace",
@@ -15763,6 +15958,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.899999976158142
                 }
             ]
@@ -15782,6 +15992,11 @@
                 },
                 {
                     "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
+                    "value": 5.023885726928711
+                },
+                {
+                    "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/2",
                     "value": -0.0006074905395507813
                 },
@@ -15793,6 +16008,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.2999999523162842
                 }
             ]
@@ -15813,7 +16043,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -98.5718765258789
+                    "value": 3.511098861694336
                 },
                 {
                     "op": "replace",
@@ -15828,6 +16058,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -15864,6 +16109,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -15898,6 +16158,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -15934,6 +16209,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -15968,6 +16258,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.2999999523162842
                 }
             ]
@@ -16004,6 +16309,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -16034,6 +16354,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.5
                 }
             ]
         },
@@ -16048,12 +16383,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 89.20313262939453
+                    "value": 19.996498107910156
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -55.9638671875
+                    "value": 22.579282760620117
                 },
                 {
                     "op": "replace",
@@ -16069,6 +16404,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.200000047683716
                 }
             ]
         },
@@ -16083,12 +16433,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 91.03612518310548
+                    "value": 21.829490661621097
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -66.54772186279297
+                    "value": 11.995428085327148
                 },
                 {
                     "op": "replace",
@@ -16098,11 +16448,26 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -49.164039611816406
+                    "value": -49.16403579711914
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 2.0
                 }
             ]
@@ -16118,12 +16483,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 92.94242095947266
+                    "value": 23.73578643798828
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -42.13501739501953
+                    "value": 36.40813446044922
                 },
                 {
                     "op": "replace",
@@ -16138,6 +16503,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.7999999523162842
                 }
             ]
@@ -16174,6 +16554,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.200000047683716
                 }
             ]
         },
@@ -16188,12 +16583,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 94.53147888183594
+                    "value": 21.22101593017578
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -20.958593368530273
+                    "value": 53.97718811035156
                 },
                 {
                     "op": "replace",
@@ -16203,11 +16598,26 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -109.1914291381836
+                    "value": -109.19132995605467
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.7999999523162842
                 }
             ]
@@ -16439,6 +16849,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -16484,11 +16909,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 45.00574493408203
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/2",
-                    "value": -0.01131916046142578
                 }
             ]
         },
@@ -16509,11 +16929,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 48.65117263793945
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/2",
-                    "value": -0.01131916046142578
                 }
             ]
         },
@@ -17003,12 +17418,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 92.864013671875
+                    "value": 23.657379150390625
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -32.57715606689453
+                    "value": 45.96599578857422
                 },
                 {
                     "op": "replace",
@@ -17023,6 +17438,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 2.0
                 }
             ]
@@ -17059,6 +17489,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.200000047683716
                 }
             ]
         },
@@ -17094,6 +17539,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -17123,6 +17583,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -17159,6 +17634,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.200000047683716
                 }
             ]
         },
@@ -17193,6 +17683,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 2.0
                 }
             ]
@@ -17229,6 +17734,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17243,12 +17763,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 18.2103271484375
+                    "value": 18.82598304748535
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -99.3372573852539
+                    "value": 2.962362289428711
                 },
                 {
                     "op": "replace",
@@ -17264,6 +17784,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17278,12 +17813,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 11.524595260620115
+                    "value": 12.140251159667969
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -97.51692962646484
+                    "value": 4.782690048217773
                 },
                 {
                     "op": "replace",
@@ -17299,6 +17834,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.600000023841858
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.600000023841858
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.600000023841858
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.600000023841858
                 }
             ]
         },
@@ -17313,12 +17863,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -3.4554224014282227
+                    "value": -2.839766502380371
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -97.75212860107422
+                    "value": 4.547491073608398
                 },
                 {
                     "op": "replace",
@@ -17334,6 +17884,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -17348,12 +17913,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -11.158379554748535
+                    "value": -10.542725563049316
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -100.46807098388672
+                    "value": 1.8315486907958984
                 },
                 {
                     "op": "replace",
@@ -17369,6 +17934,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.399999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.399999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.399999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.399999976158142
                 }
             ]
         },
@@ -17383,12 +17963,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -17.861007690429688
+                    "value": -15.57585620880127
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -96.88491821289064
+                    "value": 1.4167890548706057
                 },
                 {
                     "op": "replace",
@@ -17404,6 +17984,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.200000047683716
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.200000047683716
                 }
             ]
         },
@@ -17418,12 +18013,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -24.619213104248047
+                    "value": -25.52362823486328
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -100.77685546875
+                    "value": 0.6135883331298828
                 },
                 {
                     "op": "replace",
@@ -17438,6 +18033,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -17468,6 +18078,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -17504,6 +18129,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17539,6 +18179,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17573,6 +18228,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -17634,6 +18304,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17668,6 +18353,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 2.0
                 }
             ]
@@ -17704,6 +18404,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -17738,6 +18453,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.2000000476837158
                 }
             ]
@@ -17774,6 +18504,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17808,6 +18553,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 2.0
                 }
             ]
@@ -17844,6 +18604,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.2000000476837158
                 }
             ]
         },
@@ -17878,6 +18653,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2000000476837158
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.2000000476837158
                 }
             ]
@@ -17914,6 +18704,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.5
                 }
             ]
         },
@@ -17949,6 +18754,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 2.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 2.0
                 }
             ]
         },
@@ -17963,12 +18783,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -78.35881042480469
+                    "value": -69.9554443359375
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": 21.26559066772461
+                    "value": 21.716230392456055
                 },
                 {
                     "op": "replace",
@@ -17984,6 +18804,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.7999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.7999999523162842
                 }
             ]
         },
@@ -17998,12 +18833,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": -76.08277130126953
+                    "value": -71.80432891845703
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": 29.09982109069824
+                    "value": 30.41452407836914
                 },
                 {
                     "op": "replace",
@@ -18018,6 +18853,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.5
                 }
             ]
@@ -18054,6 +18904,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.2999999523162842
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.2999999523162842
                 }
             ]
         },
@@ -18089,6 +18954,21 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
                     "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.5
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
+                    "value": 1.5
                 }
             ]
         },
@@ -18123,6 +19003,21 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/UniformScale",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/0",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/1",
+                    "value": 1.899999976158142
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.899999976158142
                 }
             ]
