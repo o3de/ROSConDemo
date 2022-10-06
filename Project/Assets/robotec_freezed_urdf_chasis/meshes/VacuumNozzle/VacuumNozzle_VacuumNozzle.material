@@ -1,0 +1,17 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.textureMap": "VacuumNozzle_Albedo.png",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "metallic.textureMap": "VacuumNozzle_Metalness.png",
+        "normal.textureMap": "VacuumNozzle_Normal.png",
+        "opacity.factor": 1.0,
+        "roughness.textureMap": "VacuumNozzle_Roughness.png"
+    }
+}
