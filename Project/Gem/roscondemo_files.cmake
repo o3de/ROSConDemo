@@ -1,6 +1,8 @@
 
 set(FILES
         Include/ROSConDemo/ROSConDemoBus.h
+        Source/ApplePicker/AppleDetectionGroundTruth.cpp
+        Source/ApplePicker/AppleDetectionGroundTruth.h
         Source/ApplePicker/ApplePickerComponent.cpp
         Source/ApplePicker/ApplePickerComponent.h
         Source/ApplePicker/ApplePickingNotifications.h
