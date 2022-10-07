@@ -8,10 +8,10 @@
 #pragma once
 
 #include "PickingStructs.h"
-#include <rclcpp/rclcpp.hpp>
-#include <vision_msgs/msg/detection3_d_array.hpp>
-#include <vision_msgs/msg/detection2_d_array.hpp>
 #include <AzCore/std/containers/vector.h>
+#include <rclcpp/rclcpp.hpp>
+#include <vision_msgs/msg/detection2_d_array.hpp>
+#include <vision_msgs/msg/detection3_d_array.hpp>
 
 namespace AppleKraken
 {
