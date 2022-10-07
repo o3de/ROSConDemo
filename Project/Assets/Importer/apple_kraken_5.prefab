@@ -289,41 +289,39 @@
                     "Id": 5108782013390260427,
                     "Parent Entity": "Entity_[126292378827420]"
                 },
+                "Component_[6405455946319320324]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 6405455946319320324,
+                    "ColliderConfiguration": {
+                        "Position": [
+                            0.0,
+                            0.0,
+                            0.1899999976158142
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 3,
+                        "Cylinder": {
+                            "Configuration": {
+                                "CookedData": "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",
+                                "Type": 1
+                            },
+                            "Subdivision": 32,
+                            "Height": 0.3799999952316284,
+                            "Radius": 0.05999999865889549
+                        }
+                    }
+                },
                 "Component_[6852185769417412979]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6852185769417412979,
-                    "DisabledComponents": [
-                        {
-                            "$type": "EditorColliderComponent",
-                            "Id": 6405455946319320324,
-                            "ColliderConfiguration": {
-                                "Position": [
-                                    0.0,
-                                    0.0,
-                                    0.1899999976158142
-                                ],
-                                "MaterialSlots": {
-                                    "Slots": [
-                                        {
-                                            "Name": "Entire object"
-                                        }
-                                    ]
-                                }
-                            },
-                            "ShapeConfiguration": {
-                                "ShapeType": 3,
-                                "Cylinder": {
-                                    "Configuration": {
-                                        "CookedData": "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",
-                                        "Type": 1
-                                    },
-                                    "Subdivision": 32,
-                                    "Height": 0.3799999952316284,
-                                    "Radius": 0.05999999865889549
-                                }
-                            }
-                        }
-                    ]
+                    "Id": 6852185769417412979
                 },
                 "Component_[7937656036735183620]": {
                     "$type": "EditorRigidBodyComponent",
@@ -436,7 +434,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{9A657C47-173C-5E21-8FAD-BF84DC26C3F9}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle02/vacuumnozzle02_vacuumnozzle02.azmaterial"
                                         }
                                     }
                                 }
@@ -594,7 +593,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -693,7 +693,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -1038,7 +1039,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{11839230-6270-5DE4-A4FD-DF04F5757E9F}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart02/vacuummechanismpart02_vacuummachanismpart02.azmaterial"
                                         }
                                     }
                                 }
@@ -1096,40 +1098,6 @@
                     "$type": "EditorEntityIconComponent",
                     "Id": 18125403066651510824
                 },
-                "Component_[2626692928360364982]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 2626692928360364982,
-                    "ColliderConfiguration": {
-                        "Position": [
-                            -1.7743209600448608,
-                            -0.5128980875015259,
-                            1.436042070388794
-                        ],
-                        "Rotation": [
-                            0.7064343690872192,
-                            -0.03084336407482624,
-                            -0.7064331769943237,
-                            0.03084341622889042
-                        ],
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Configuration": [
-                                2.4518890380859375,
-                                0.08823399990797043,
-                                0.08823399990797043
-                            ]
-                        }
-                    }
-                },
                 "Component_[3148076737433910971]": {
                     "$type": "EditorLockComponent",
                     "Id": 3148076737433910971
@@ -1137,40 +1105,6 @@
                 "Component_[3754246985619722010]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 3754246985619722010
-                },
-                "Component_[5028948294104336508]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 5028948294104336508,
-                    "ColliderConfiguration": {
-                        "Position": [
-                            0.8442330360412598,
-                            -0.4822969436645508,
-                            1.390829086303711
-                        ],
-                        "Rotation": [
-                            0.7064343690872192,
-                            -0.030843617394566536,
-                            -0.7064331769943237,
-                            0.030843669548630714
-                        ],
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        }
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Configuration": [
-                                2.4518890380859375,
-                                0.08823399990797043,
-                                0.08823399990797043
-                            ]
-                        }
-                    }
                 },
                 "Component_[6338218438224813452]": {
                     "$type": "EditorRigidBodyComponent",
@@ -1201,7 +1135,78 @@
                 },
                 "Component_[6923878080225973369]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6923878080225973369
+                    "Id": 6923878080225973369,
+                    "DisabledComponents": [
+                        {
+                            "$type": "EditorColliderComponent",
+                            "Id": 2626692928360364982,
+                            "ColliderConfiguration": {
+                                "Position": [
+                                    -1.7743209600448608,
+                                    -0.5128980875015259,
+                                    1.436042070388794
+                                ],
+                                "Rotation": [
+                                    0.7064343690872192,
+                                    -0.03084336407482624,
+                                    -0.7064331769943237,
+                                    0.03084341622889042
+                                ],
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "Entire object"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "ShapeType": 1,
+                                "Box": {
+                                    "Configuration": [
+                                        2.4518890380859375,
+                                        0.08823399990797043,
+                                        0.08823399990797043
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "$type": "EditorColliderComponent",
+                            "Id": 5028948294104336508,
+                            "ColliderConfiguration": {
+                                "Simulated": false,
+                                "Position": [
+                                    0.8442330360412598,
+                                    -0.4822969436645508,
+                                    1.390829086303711
+                                ],
+                                "Rotation": [
+                                    0.7064343690872192,
+                                    -0.030843617394566536,
+                                    -0.7064331769943237,
+                                    0.030843669548630714
+                                ],
+                                "MaterialSlots": {
+                                    "Slots": [
+                                        {
+                                            "Name": "Entire object"
+                                        }
+                                    ]
+                                }
+                            },
+                            "ShapeConfiguration": {
+                                "ShapeType": 1,
+                                "Box": {
+                                    "Configuration": [
+                                        2.4518890380859375,
+                                        0.08823399990797043,
+                                        0.08823399990797043
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "Component_[700333289303357870]": {
                     "$type": "EditorVisibilityComponent",
@@ -1465,7 +1470,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -1585,7 +1591,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A6C2A1C8-C163-53A5-A02A-CD872B53B21A}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle/vacuumnozzle_vacuumnozzle.azmaterial"
                                         }
                                     }
                                 }
@@ -1659,7 +1666,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{69D044B2-C118-5528-B378-DD09772F3709}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_voltagebox.azmaterial"
                                         }
                                     }
                                 }
@@ -2099,7 +2107,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{7CBE9ADB-D74D-505F-A118-86BAB783B8F5}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart01/vacuummechanismpart01_vacuummachanismpart01.azmaterial"
                                         }
                                     }
                                 }
@@ -2398,6 +2407,21 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 12724369969007930765
                 },
+                "Component_[13615012735047716638]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 13615012735047716638,
+                    "m_template": {
+                        "$type": "ROS2OdometrySensorComponent",
+                        "SensorConfiguration": {
+                            "Publishers": {
+                                "nav_msgs::msg::Odometry": {
+                                    "Type": "nav_msgs::msg::Odometry",
+                                    "Topic": "odom"
+                                }
+                            }
+                        }
+                    }
+                },
                 "Component_[13857029336701770935]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13857029336701770935
@@ -2445,7 +2469,7 @@
                         "$type": "KrakenEffectorComponent",
                         "ReachEntity": "Entity_[9058513484485]",
                         "ManipulatorEntity": "Entity_[126373983206044]",
-                        "AppleProbe": "Entity_[49624638919053]"
+                        "AppleProbe": ""
                     }
                 },
                 "Component_[17586042212792946952]": {
@@ -2475,11 +2499,19 @@
                         },
                         "DriveModel": {
                             "SteeringPID": {
-                                "P": 1000.0
+                                "P": 1000.0,
+                                "Output limit": 200.0
                             },
                             "SpeedPID": {
-                                "P": 10.0
+                                "P": 250.0,
+                                "I": 150.0,
+                                "IMax": 500.0,
+                                "Anti windup": true,
+                                "Output limit": 500.0
                             }
+                        },
+                        "VehicleModelLimits": {
+                            "SpeedLimit": 3.0
                         }
                     }
                 },
@@ -2645,116 +2677,118 @@
                 },
                 "Component_[7542806593715109284]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7542806593715109284
+                    "Id": 7542806593715109284,
+                    "DisabledComponents": [
+                        {
+                            "$type": "ScriptEditorComponent",
+                            "Id": 8419181200046736973,
+                            "ScriptComponent": {
+                                "Properties": {
+                                    "Properties": [
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3894317203,
+                                            "name": "apple1",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": ""
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1897382185,
+                                            "name": "apple2",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": ""
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1822771111,
+                                            "name": "debug",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[207318915465040]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 2566542301,
+                                            "name": "gripper",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[49624638919053]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 4245955024,
+                                            "name": "rest",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[50844409631117]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3189570453,
+                                            "name": "segment1",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126378278173340]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 655731247,
+                                            "name": "segment2",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126339623467676]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1343396537,
+                                            "name": "segment3",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126292378827420]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3463843610,
+                                            "name": "segment4",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126300968762012]"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Script": {
+                                    "assetId": {
+                                        "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
+                                        "subId": 1
+                                    },
+                                    "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
+                                }
+                            },
+                            "ScriptAsset": {
+                                "assetId": {
+                                    "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
+                                    "subId": 1
+                                },
+                                "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
+                            }
+                        }
+                    ]
                 },
                 "Component_[8372238163039562532]": {
                     "$type": "EditorLockComponent",
                     "Id": 8372238163039562532
-                },
-                "Component_[8419181200046736973]": {
-                    "$type": "ScriptEditorComponent",
-                    "Id": 8419181200046736973,
-                    "ScriptComponent": {
-                        "Properties": {
-                            "Properties": [
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3894317203,
-                                    "name": "apple1",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": ""
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1897382185,
-                                    "name": "apple2",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": ""
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1822771111,
-                                    "name": "debug",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[207318915465040]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 2566542301,
-                                    "name": "gripper",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[49624638919053]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 4245955024,
-                                    "name": "rest",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[50844409631117]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3189570453,
-                                    "name": "segment1",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126378278173340]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 655731247,
-                                    "name": "segment2",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126339623467676]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1343396537,
-                                    "name": "segment3",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126292378827420]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3463843610,
-                                    "name": "segment4",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126300968762012]"
-                                    }
-                                }
-                            ]
-                        },
-                        "Script": {
-                            "assetId": {
-                                "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
-                                "subId": 1
-                            },
-                            "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
-                        }
-                    },
-                    "ScriptAsset": {
-                        "assetId": {
-                            "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
-                            "subId": 1
-                        },
-                        "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
-                    }
                 },
                 "Component_[9680960067017817233]": {
                     "$type": "EditorVisibilityComponent",
@@ -3133,7 +3167,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
