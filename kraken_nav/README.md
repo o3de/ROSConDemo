@@ -2,7 +2,23 @@
 
 This package provides navigation capabilities for the apple Kraken vehicle.
 
-## ROS2 packages prerequisites
+## ROS2 prerequisites
+
+### Middleware
+
+- CycloneDDS
+
+```
+sudo apt install ros-${ROS_DISTRO}-cyclonedds
+```
+
+It is required that `CycloneDDS` implementation is chosen in every working terminal:
+
+```
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
+
+### Packages
 
 ```
 sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs
@@ -48,7 +64,13 @@ cd ~/o3de_kraken_ws
 source ./install/setup.bash
 ```
 
-2. Run the navigation stack
+2. Set up `CycloneDDS` rmw
+
+```bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
+
+3. Run the navigation stack
 
 ```bash
 ros2 launch o3de_kraken_nav navigation.launch.py
