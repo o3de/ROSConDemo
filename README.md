@@ -5,6 +5,9 @@ The integration is realized through [ROS 2 Gem for O3DE](https://github.com/Robo
 
 ## How does it look like
 
+<img src="static/screenshots/apple_orchard.png" width="640">
+<img src="static/screenshots/apple_kraken.png" width="640">
+
 ## The project includes
 
 - **Apple Orchard**, a simulation scene with many rows of apple trees.
@@ -81,9 +84,7 @@ The vision messages package, which can be obtained:
 git clone https://github.com/aws-lumberyard/ROSConDemo.git
 ```
 
-2. Register this project in O3DE engine:
-
-in O3DE directory:
+2. Register this project in O3DE engine. In O3DE directory:
 ```
 scripts/o3de.sh register -pp <PATH_TO_THIS_PROJECT>
 ```
@@ -147,7 +148,7 @@ If your simulation is running, you should be able to see the apple gathering ser
 
 - It could be named `/trigger_apple_gathering`.
 
-If Apple Kraken is in position, next to a tree, you can trigger apple gathering with a terminal command:
+If Apple Kraken is in position, next to a tree, you can trigger apple gathering with this command:
 
 - `ros2 service call /trigger_apple_gathering std_srvs/srv/Trigger`
 
@@ -166,6 +167,7 @@ TODO
 - Is O3DE running ok with an empty or default project?
 - Is ROS 2 installation ok? (check with `ros2 topic pub` etc.)
 - Is ROS 2 workspace sourced? (check `ROS_DISTRO`, `AMENT_PREFIX_PATH`)
+  - Note this needs to be true before cmake is ran. Re-run configuration and build when in doubt. 
 - Do you have compatible settings for crucial ENV variables when running the navigation / orchestration stack in the
   console and when running the simulator?
     - check `RMW_IMPLEMENTATION`, `ROS_DOMAIN_ID` etc.
