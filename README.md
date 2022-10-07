@@ -67,7 +67,7 @@ Describe level(s).
 
 The main level of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple Kraken.
 
-The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and storing them in its basket. You can choose to control the Apple Kraken manually or use the navigation stack which does that for you.
+The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and storing them in its basket.
 
 ### Playground Level
 
