@@ -1,0 +1,253 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "LidarKraken",
+        "Components": {
+            "Component_[1077326502374799006]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 1077326502374799006
+            },
+            "Component_[12367159780159660725]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 12367159780159660725
+            },
+            "Component_[1323296981264097690]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 1323296981264097690
+            },
+            "Component_[14024330568164208498]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 14024330568164208498,
+                "Parent Entity": ""
+            },
+            "Component_[16131106938232360457]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 16131106938232360457
+            },
+            "Component_[17067142922797634314]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 17067142922797634314
+            },
+            "Component_[17220024935249768828]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 17220024935249768828
+            },
+            "Component_[5436048156690756778]": {
+                "$type": "EditorLockComponent",
+                "Id": 5436048156690756778
+            },
+            "Component_[9701757771266328119]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 9701757771266328119
+            },
+            "Component_[9806955300714235823]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 9806955300714235823,
+                "Child Entity Order": [
+                    "Entity_[2961231660480]"
+                ]
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[2961231660480]": {
+            "Id": "Entity_[2961231660480]",
+            "Name": "LidarKraken",
+            "Components": {
+                "Component_[10387713135725007135]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10387713135725007135,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "subId": 268955557
+                                },
+                                "assetHint": "models/sensors/lidaros2/lidaros2.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11659553095730431803]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11659553095730431803
+                },
+                "Component_[13177781661023720894]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 13177781661023720894
+                },
+                "Component_[14535670656735835043]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 14535670656735835043,
+                    "ColliderConfiguration": {
+                        "CollisionGroupId": {
+                            "GroupId": "{DED3A46E-3588-4BB8-BADF-E3114DBA95A6}"
+                        },
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "DefaultMaterial"
+                                }
+                            ]
+                        },
+                        "MaterialSelection": {
+                            "MaterialIds": [
+                                {}
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "subId": 2574200790
+                                },
+                                "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                        "subId": 2574200790
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Component_[17075071070477116796]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17075071070477116796
+                },
+                "Component_[3201525403568523459]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3201525403568523459,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[5004394864880282263]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5004394864880282263
+                },
+                "Component_[5142969012241927438]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5142969012241927438,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 3201525403568523459
+                        },
+                        {
+                            "ComponentId": 10387713135725007135,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 14535670656735835043,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[6868930103042649999]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6868930103042649999
+                },
+                "Component_[8621809176728013021]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8621809176728013021
+                },
+                "Component_[8808389010192194694]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8808389010192194694,
+                    "Child Entity Order": [
+                        "Entity_[2965526627776]"
+                    ]
+                }
+            }
+        },
+        "Entity_[2965526627776]": {
+            "Id": "Entity_[2965526627776]",
+            "Name": "Sensor",
+            "Components": {
+                "Component_[1058300359310703890]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 1058300359310703890,
+                    "m_template": {
+                        "$type": "ROS2FrameComponent",
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 1
+                        },
+                        "Frame Name": "lidar"
+                    }
+                },
+                "Component_[1067011392942644324]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1067011392942644324
+                },
+                "Component_[10842630456390194262]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10842630456390194262,
+                    "m_template": {
+                        "$type": "ROS2LidarSensorComponent",
+                        "SensorConfiguration": {
+                            "Publishers": {
+                                "sensor_msgs::msg::PointCloud2": {
+                                    "Type": "sensor_msgs::msg::PointCloud2",
+                                    "Topic": "pc"
+                                }
+                            }
+                        },
+                        "LidarTransparentEntityId": "",
+                        "LidarParameters": {
+                            "Min horizontal angle": -120.0,
+                            "Max horizontal angle": 120.0,
+                            "Min vertical angle": 15.0,
+                            "Max vertical angle": -15.0
+                        }
+                    }
+                },
+                "Component_[13013301136498148727]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13013301136498148727
+                },
+                "Component_[13444160964623421011]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13444160964623421011
+                },
+                "Component_[14110476541514862518]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14110476541514862518
+                },
+                "Component_[17124975368240161289]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17124975368240161289
+                },
+                "Component_[1863593986687460136]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1863593986687460136
+                },
+                "Component_[3070834537283917104]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3070834537283917104
+                },
+                "Component_[7054215981025466544]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7054215981025466544
+                },
+                "Component_[8854312938977545065]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 8854312938977545065,
+                    "Parent Entity": "Entity_[2961231660480]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            0.06961321830749512
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
