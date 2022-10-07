@@ -2,16 +2,25 @@
 
 ROSConDemo repo contains the ROSConDemo project for O3DE.
 
-## Contribute
-For information about contributing to Open 3D Engine, visit [https://o3de.org/docs/contributing/](https://o3de.org/docs/contributing/).
+## **Project overview**
 
-## Download and Install
+This project was created as a means of demonstrating the ROS2 Gem capabilities which it achieves by integrating the ROS2 libraries with the O3DE engine.
 
-### Additional ROS 2 packages
+## ****Download and Install****
 
-This project uses Vision messages, which can be obtained:
+### Dependencies
+
+**ROS 2 Gem**
+
+This project uses the [ROS 2 Gem](https://github.com/RobotecAI/o3de-ros2-gem). Please make sure to follow the installation guide located in it’s [README.md](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md) file. To learn more about how the Gem works check out the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
+
+**Additional ROS 2 packages**
+
+The Vision messages package, which can be obtained:
 
 `sudo apt install ros-${ROS_DISTRO}-vision-msgs`
+
+💡 ***Note:*** This is a dependency besides all the packages required by the ROS 2 Gem.
 
 ### Clone the repository 
 
@@ -50,6 +59,32 @@ This will compile after some time and binaries will be available in the project 
 
 For a complete tutorial on project configuration, see [Creating Projects Using the Command Line Interface](https://o3de.org/docs/welcome-guide/create/creating-projects-using-cli/) in the documentation.
 
+## Level(s)
+
+Describe level(s).
+
+### Main Level
+
+The main level of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple Kraken.
+
+The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and storing them in its basket. You can choose to control the Apple Kraken manually or use the navigation stack which does that for you.
+
+### Playground Level
+
+### Test Level
+
+## Apple Kraken import instructions
+
+The AppleKraken is saved in a form of a prefab in the Project' Assets directory.
+
+1. In your Project’s editor, you can instantiate it by clicking the right mouse button and then selecting instantiate prefab (as depicted below).
+    
+    ![Kraken instantiation](static/fig_1.png)
+    
+2. Now select the ***ROSConDemo/Project/Assets/Importer/apple_kraken.prefab*** file
+    
+    <img src="static/fig_2.png" width="60%" alt="AppleKraken Path">
+
 ## Triggering Apple Gathering
 
 Check available services in a terminal using this command:
@@ -63,6 +98,15 @@ If Apple Kraken is in position, you can trigger apple gathering with a terminal 
 
 You can also cancel a gathering operation in progress by calling another service:
 - `ros2 service call /cancel_apple_gathering std_srvs/srv/Trigger`
+
+## Navigation stack
+
+Instructions on how to run it with navigation stack and global automation.
+
+## Troubleshooting
+
+Troubleshooting section
+
 
 ## License
 
