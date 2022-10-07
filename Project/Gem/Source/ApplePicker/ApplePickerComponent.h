@@ -55,12 +55,15 @@ namespace AppleKraken
         void PickNextApple();
         void QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox);
         void ProcessTriggerServiceCall(const TriggerRequestPtr req, TriggerResponsePtr resp);
+        void ProcessCancelServiceCall(const TriggerRequestPtr req, TriggerResponsePtr resp);
 
         AZStd::string m_triggerServiceTopic = "trigger_apple_gathering";
+        AZStd::string m_cancelServiceTopic = "cancel_apple_gathering";
         AZ::EntityId m_effectorEntityId;
         AZ::EntityId m_fruitStorageEntityId;
 
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
+        rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_cancelService;
         size_t m_initialTasksSize = 0;
         AZStd::queue<PickAppleTask> m_currentAppleTasks;
 

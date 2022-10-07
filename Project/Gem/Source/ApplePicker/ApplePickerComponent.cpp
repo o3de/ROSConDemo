@@ -84,6 +84,26 @@ namespace AppleKraken
         return;
     }
 
+    void ApplePickerComponent::ProcessCancelServiceCall(const TriggerRequestPtr req, TriggerResponsePtr resp)
+    {
+        resp->success = true; // The call will be successful regardless of current state
+        if (IsBusy())
+        {
+            resp->message = "Cancelling all pending tasks. Current task will be finished but no more tasks issued";
+
+            // No mutexes and checks for this part of demo code: a couple of assumptions here:
+            // 1. the queue is not empty (depends on IsBusy() implementation as it is now).
+            // 2. callbacks are in same thread - since the executor spins_some in onTick (again we know implementation).
+            AZStd::queue<PickAppleTask> currentTaskQueue;
+            currentTaskQueue.push(m_currentAppleTasks.front());
+            m_currentAppleTasks = currentTaskQueue;
+            return;
+        }
+
+        resp->message = "Apple picker is not busy, accepting request and kindly informing you that nothing will be done about it";
+        return;
+    }
+
     void ApplePickerComponent::StartAutomatedOperation()
     {
         if (IsBusy())
@@ -134,12 +154,20 @@ namespace AppleKraken
         auto ros2Node = ROS2Interface::Get()->GetNode();
         auto frame = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity());
         auto robotNamespace = frame->GetNamespace();
-        auto topic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
+        auto triggerTopic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
         m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
-            topic.c_str(),
+            triggerTopic.c_str(),
             [this](const TriggerRequestPtr request, TriggerResponsePtr response)
             {
                 this->ProcessTriggerServiceCall(request, response);
+            });
+
+        auto cancelTopic = ROS2Names::GetNamespacedName(robotNamespace, m_cancelServiceTopic);
+        m_cancelService = ros2Node->create_service<std_srvs::srv::Trigger>(
+            cancelTopic.c_str(),
+            [this](const TriggerRequestPtr request, TriggerResponsePtr response)
+            {
+                this->ProcessCancelServiceCall(request, response);
             });
 
         m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
@@ -149,6 +177,7 @@ namespace AppleKraken
     {
         m_appleGroundTruthDetector.reset();
         m_triggerService.reset();
+        m_cancelService.reset();
         AZ::TickBus::Handler::BusDisconnect();
         ApplePickingNotificationBus::Handler::BusDisconnect();
     }
@@ -158,8 +187,9 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<ApplePickerComponent, AZ::Component>()
-                ->Version(2)
+                ->Version(3)
                 ->Field("TriggerServiceTopic", &ApplePickerComponent::m_triggerServiceTopic)
+                ->Field("CancelServiceTopic", &ApplePickerComponent::m_cancelServiceTopic)
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
                 ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId);
 
@@ -174,6 +204,11 @@ namespace AppleKraken
                         &ApplePickerComponent::m_triggerServiceTopic,
                         "Trigger",
                         "ROS2 service name for gathering trigger")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_cancelServiceTopic,
+                        "Cancel",
+                        "ROS2 service name to cancel ongoing gathering")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_effectorEntityId,
@@ -333,3 +368,4 @@ namespace AppleKraken
         AZ_Printf("ApplePickerComponent", "There are %d apples in reach box \n", m_currentAppleTasks.size());
     }
 } // namespace AppleKraken
+
