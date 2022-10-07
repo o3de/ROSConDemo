@@ -78,7 +78,9 @@
                     "Instance_[442987324979902]/ContainerEntity",
                     "Instance_[442901425633982]/ContainerEntity",
                     "Instance_[442957260208830]/ContainerEntity",
-                    "Instance_[442888540732094]/ContainerEntity"
+                    "Instance_[442888540732094]/ContainerEntity",
+                    "Entity_[104676312987105]",
+                    "Instance_[453183527714188]/ContainerEntity"
                 ]
             },
             "Component_[14409887347711167786]": {
@@ -720,7 +722,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 9320729046583491228
+                            "EditorEntityId": 14743722355421106776
                         }
                     }
                 },
@@ -7913,7 +7915,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 1403518120522386204
+                            "EntityId": 17687532693666969233
                         }
                     },
                     "useBakedCubemap": false,
@@ -18320,6 +18322,31 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[1344051213416318901]/Transform Data/Rotate/2",
                     "value": 14.720419883728027
+                }
+            ]
+        },
+        "Instance_[453183527714188]": {
+            "Source": "Assets/Importer/apple_kraken_5.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/0",
+                    "value": -75.07823181152344
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/1",
+                    "value": 42.87899398803711
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/2",
+                    "value": 0.83591628074646
                 }
             ]
         },
