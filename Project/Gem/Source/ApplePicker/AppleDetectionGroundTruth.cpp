@@ -83,8 +83,11 @@ namespace AppleKraken
         vision_msgs::msg::Detection2D detection;
         detection.header.frame_id = m_frameId.c_str();
         detection.id = "Apple";
-        detection.bbox.center.position.x = apple.m_middle.GetX();
-        detection.bbox.center.position.y = apple.m_middle.GetY();
+
+        // TODO - warning, these APIs changed between Humble and Galactic!
+        // In Galactic, center has no position, just x and y. In Humble, it has position.
+        // detection.bbox.center.position.x = apple.m_middle.GetX();
+        // detection.bbox.center.position.y = apple.m_middle.GetY();
         detection.bbox.size_x = apple.m_appleBoundingBox.GetExtents().GetX();
         detection.bbox.size_y = apple.m_appleBoundingBox.GetExtents().GetY();
         return detection;
