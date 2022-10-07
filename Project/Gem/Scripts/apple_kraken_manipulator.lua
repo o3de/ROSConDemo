@@ -124,7 +124,7 @@ function manipulator_control:OnActivate()
 
     -- If the velocity of the vehicle is larger, attempts to lock the manipulatro
     -- Set to 0.0 to disable auto lock
-    self.autoLockWhenMovingFasterThen = 0.5
+    self.autoLockWhenMovingFasterThen = 0.1
 
     -- Configuration parameters END --
     ------------------------------------
@@ -371,16 +371,16 @@ function manipulator_control:lockManipulator(state)
         self.manipulatorLockState = state
         if state then
             Debug.Log('Manipulator Lock: ON')
-            self.pid1:SetOutputLimit(0.0) 
-            self.pid2:SetOutputLimit(0.0) 
-            self.pid3:SetOutputLimit(0.0)
-            self.pid4:SetOutputLimit(0.0)
+            RigidBodyRequestBus.Event.DisablePhysics(self.Properties.segment1)
+            RigidBodyRequestBus.Event.DisablePhysics(self.Properties.segment2)
+            RigidBodyRequestBus.Event.DisablePhysics(self.Properties.segment3)
+            RigidBodyRequestBus.Event.DisablePhysics(self.Properties.segment4)
         else
             Debug.Log('Manipulator Lock: OFF')
-            self.pid1:SetOutputLimit(self.max_velocity['z']) 
-            self.pid2:SetOutputLimit(self.max_velocity['x']) 
-            self.pid3:SetOutputLimit(self.max_velocity['y'])
-            self.pid4:SetOutputLimit(self.max_velocity['y'])
+            RigidBodyRequestBus.Event.EnablePhysics(self.Properties.segment1)
+            RigidBodyRequestBus.Event.EnablePhysics(self.Properties.segment2)
+            RigidBodyRequestBus.Event.EnablePhysics(self.Properties.segment3)
+            RigidBodyRequestBus.Event.EnablePhysics(self.Properties.segment4)
         end
     end
 end
