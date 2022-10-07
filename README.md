@@ -61,6 +61,9 @@ If your simulation is running, you should be able to see the apple gathering ser
 If Apple Kraken is in position, you can trigger apple gathering with a terminal command:
 - `ros2 service call /trigger_apple_gathering std_srvs/srv/Trigger`
 
+You can also cancel a gathering operation in progress by calling another service:
+- `ros2 service call /cancel_apple_gathering std_srvs/srv/Trigger`
+
 ## License
 
 For terms please see the LICENSE*.TXT files at the root of this distribution.
