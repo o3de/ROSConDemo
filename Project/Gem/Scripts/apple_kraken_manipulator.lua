@@ -401,15 +401,7 @@ function manipulator_control:OnTick(deltaTime, timePoint)
     self.deltaTime = deltaTime
 
     if self.Properties.segment1~=nil then
-        if self.startupWait > 0 then
-            if self:_getFPS() < self.startapMinFPS then
-                self.startupWait = 0.1
-            else
-                self.startupWait = self.startupWait -self.deltaTime
-            end
-        else
-            self:_orchestrator()
-        end
+        self:_orchestrator()
     end
 end
 
