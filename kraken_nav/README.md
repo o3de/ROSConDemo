@@ -9,7 +9,7 @@ This package provides navigation capabilities for the apple Kraken vehicle.
 - CycloneDDS
 
 ```
-sudo apt install ros-${ROS_DISTRO}-cyclonedds
+sudo apt install ros-${ROS_DISTRO}-cyclonedds ros-${ROS_DISTRO}-rmw-cyclonedds-cpp
 ```
 
 It is required that `CycloneDDS` implementation is chosen in every working terminal:
