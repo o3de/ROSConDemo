@@ -2556,11 +2556,11 @@
                         "Entity_[126352508369564]",
                         "Entity_[126335328500380]",
                         "Entity_[126378278173340]",
+                        "Instance_[3124440417728]/ContainerEntity",
                         "Entity_[126382573140636]",
                         "Entity_[126309558696604]",
                         "Entity_[126356803336860]",
                         "Entity_[126361098304156]",
-                        "Instance_[154793781803676]/ContainerEntity",
                         "Entity_[50844409631117]",
                         "Entity_[9058513484485]",
                         "Entity_[5494828217205]",
@@ -3707,28 +3707,23 @@
         }
     },
     "Instances": {
-        "Instance_[154793781803676]": {
-            "Source": "Prefabs/Sensors/LidarOS2.prefab",
+        "Instance_[3124440417728]": {
+            "Source": "Prefabs/LidarKraken.prefab",
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Parent Entity",
+                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Parent Entity",
                     "value": "../Entity_[126373983206044]"
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/0",
+                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Transform Data/Translate/0",
                     "value": 2.280444860458374
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[5989395931141545750]/Transform Data/Translate/2",
+                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Transform Data/Translate/2",
                     "value": 0.8967376947402954
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[417184227077]/Components/Component_[14535670656735835043]/ColliderConfiguration/MaterialSlots/Slots/0/Name",
-                    "value": "DefaultMaterial"
                 }
             ]
         }
