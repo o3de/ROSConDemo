@@ -8,15 +8,15 @@
 
 #include "KrakenEffectorComponent.h"
 #include "ApplePickingNotifications.h"
-#include "PickingStructs.h"
 #include "ManipulatorRequestBus.h"
+#include "PickingStructs.h"
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzCore/Serialization/SerializeContext.h>
-#include <LmbrCentral/Shape/BoxShapeComponentBus.h>
-#include <AzFramework/Physics/RigidBodyBus.h>
 #include <AzFramework/Physics/Common/PhysicsSimulatedBody.h>
+#include <AzFramework/Physics/RigidBodyBus.h>
+#include <LmbrCentral/Shape/BoxShapeComponentBus.h>
 namespace AppleKraken
 {
     namespace DebugStateTransit
@@ -72,23 +72,28 @@ namespace AppleKraken
         ApplePickingRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
 
-        m_onTriggerHandleBeginHandler = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler([&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle,[[maybe_unused]] const AzPhysics::TriggerEvent& event){
-
-            const AZ::EntityId& e1 = event.m_otherBody->GetEntityId();
-            const AZ::EntityId& e2 = event.m_triggerBody->GetEntityId();
-            [[maybe_unused]]const AZ::EntityId& collideToEntityId =  m_appleProbe == e1 ? e2 : e1;
-            //AzPhysics::SimulatedBody* collideToEntityId = this->GetEntityId() == e1 ?  event.m_triggerBody : event.m_otherBody;}
-            if (m_currentTask.m_appleEntityId == collideToEntityId){
-                AZ_Printf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
-                if ( m_effectorState == EffectorState::PICKING)
+        m_onTriggerHandleBeginHandler = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler(
+            [&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle, [[maybe_unused]] const AzPhysics::TriggerEvent& event)
+            {
+                const AZ::EntityId& e1 = event.m_otherBody->GetEntityId();
+                const AZ::EntityId& e2 = event.m_triggerBody->GetEntityId();
+                [[maybe_unused]] const AZ::EntityId& collideToEntityId = m_appleProbe == e1 ? e2 : e1;
+                // AzPhysics::SimulatedBody* collideToEntityId = this->GetEntityId() == e1 ?  event.m_triggerBody : event.m_otherBody;}
+                if (m_currentTask.m_appleEntityId == collideToEntityId)
                 {
-                    // start picking the apple
-                    BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
+                    AZ_Printf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
+                    if (m_effectorState == EffectorState::PICKING)
+                    {
+                        // start picking the apple
+                        BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
+                    }
                 }
-            }
-            AZ_Printf("m_onTriggerHandleBeginHandler", "m_onTriggerHandleBeginHandler %s : %s \n", m_currentTask.m_appleEntityId.ToString().c_str(), collideToEntityId.ToString().c_str());
-        });
-
+                AZ_Printf(
+                    "m_onTriggerHandleBeginHandler",
+                    "m_onTriggerHandleBeginHandler %s : %s \n",
+                    m_currentTask.m_appleEntityId.ToString().c_str(),
+                    collideToEntityId.ToString().c_str());
+            });
     }
 
     void KrakenEffectorComponent::Deactivate()
@@ -101,12 +106,13 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<KrakenEffectorComponent, AZ::Component>()->Version(3)->Field(
-                "ReachEntity", &KrakenEffectorComponent::m_reachEntity)
+            serialize->Class<KrakenEffectorComponent, AZ::Component>()
+                ->Version(3)
+                ->Field("ReachEntity", &KrakenEffectorComponent::m_reachEntity)
                 ->Field("ManipulatorEntity", &KrakenEffectorComponent::m_manipulatorEntity)
                 ->Field("AppleProbe", &KrakenEffectorComponent::m_appleProbe)
-                ->Field("RootManipulatorFreeze",&KrakenEffectorComponent::m_rootEntityToFreeze)
-                ->Field("BaseLinkToKinematic",&KrakenEffectorComponent::m_baseLinkToKinematic);
+                ->Field("RootManipulatorFreeze", &KrakenEffectorComponent::m_rootEntityToFreeze)
+                ->Field("BaseLinkToKinematic", &KrakenEffectorComponent::m_baseLinkToKinematic);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -125,20 +131,17 @@ namespace AppleKraken
                         "Entity with manipulator",
                         "The entity that has a component handling events from ManipulatorRequestBus")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
-                        &KrakenEffectorComponent::m_appleProbe,
-                        "Entity to probe apples",
-                        "Sucking collider")
+                        AZ::Edit::UIHandlers::Default, &KrakenEffectorComponent::m_appleProbe, "Entity to probe apples", "Sucking collider")
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
                         &KrakenEffectorComponent::m_rootEntityToFreeze,
                         "RootManipulatorFreeze",
                         "RootManipulatorFreeze to freeze during robot movement")
                     ->DataElement(
-                            AZ::Edit::UIHandlers::Default,
-                            &KrakenEffectorComponent::m_baseLinkToKinematic,
-                            "BaseLinkToKinematic",
-                            "BaseLinkToKinematic during manipulator movement")
+                        AZ::Edit::UIHandlers::Default,
+                        &KrakenEffectorComponent::m_baseLinkToKinematic,
+                        "BaseLinkToKinematic",
+                        "BaseLinkToKinematic during manipulator movement")
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
@@ -208,7 +211,6 @@ namespace AppleKraken
     {
         AZ_TracePrintf("KrakenEffectorComponent", "FinishPicking\n");
         BeginTransitionIfAcceptable(EffectorState::IDLE);
-
     }
 
     PickingState KrakenEffectorComponent::GetEffectorState()
@@ -286,7 +288,6 @@ namespace AppleKraken
         ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
         // TODO - also handle picking failed
         ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
-
     }
 
     void KrakenEffectorComponent::OnAppleRetrieved()
@@ -294,79 +295,91 @@ namespace AppleKraken
         ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
     }
 
-    void KrakenEffectorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time) {
+    void KrakenEffectorComponent::OnTick(float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
+    {
         m_currentStateTransitionTime += deltaTime;
-        if (m_effectorState == EffectorState::PICKING && m_currentStateTransitionTime > 5) {
+        if (m_effectorState == EffectorState::PICKING && m_currentStateTransitionTime > 5)
+        {
             AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
             BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
         }
 
-        if (m_effectorState == EffectorState::RETRIEVING) {
+        if (m_effectorState == EffectorState::RETRIEVING)
+        {
             int status = -1;
             ManipulatorRequestBus::EventResult(status, m_manipulatorEntity, &ManipulatorRequest::GetStatus);
-            if (status == 10) {
+            if (status == 10)
+            {
                 BeginTransitionIfAcceptable(EffectorState::PREPARED);
             }
-
         }
-        if (m_effectorState == EffectorState::IDLE) {
+        if (m_effectorState == EffectorState::IDLE)
+        {
             LockManipulator(true);
         }
 
-        if (m_effectorState == m_effectorTargetState) { // //TODO - nothing to do in stub version
+        if (m_effectorState == m_effectorTargetState)
+        { // //TODO - nothing to do in stub version
             return;
         }
 
         // State transition
         AZ_TracePrintf(
-                "KrakenEffectorComponent", "%s",
-                DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
+            "KrakenEffectorComponent", "%s", DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
         m_currentStateTransitionTime = 0.0f;
 
         // Update state
         auto previousState = m_effectorState;
         m_effectorState = m_effectorTargetState;
 
-        if (previousState == EffectorState::IDLE && m_effectorState == EffectorState::PREPARED) {
+        if (previousState == EffectorState::IDLE && m_effectorState == EffectorState::PREPARED)
+        {
             OnEffectorReadyForPicking();
         }
 
-        if (previousState == EffectorState::PICKING && m_effectorState == EffectorState::RETRIEVING) {
+        if (previousState == EffectorState::PICKING && m_effectorState == EffectorState::RETRIEVING)
+        {
             OnApplePicked();
         }
 
-        if (previousState == EffectorState::RETRIEVING && m_effectorState == EffectorState::PREPARED) {
+        if (previousState == EffectorState::RETRIEVING && m_effectorState == EffectorState::PREPARED)
+        {
             OnAppleRetrieved();
         }
-        if (!m_registeredCallback) {
-            auto *physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
-            auto *sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+        if (!m_registeredCallback)
+        {
+            auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
+            auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
             auto [physicScene, physicBody] = physicsSystem->FindAttachedBodyHandleFromEntityId(m_appleProbe);
-            if (physicBody != AzPhysics::InvalidSimulatedBodyHandle && physicScene != AzPhysics::InvalidSceneHandle) {
-                AzPhysics::SimulatedBody *simulated_body = sceneInterface->GetSimulatedBodyFromHandle(physicScene,
-                                                                                                      physicBody);
+            if (physicBody != AzPhysics::InvalidSimulatedBodyHandle && physicScene != AzPhysics::InvalidSceneHandle)
+            {
+                AzPhysics::SimulatedBody* simulated_body = sceneInterface->GetSimulatedBodyFromHandle(physicScene, physicBody);
                 simulated_body->RegisterOnTriggerEnterHandler(m_onTriggerHandleBeginHandler);
                 m_registeredCallback = true;
             }
-
         }
     }
-    void KrakenEffectorComponent::LockManipulator(bool locked) {
+    void KrakenEffectorComponent::LockManipulator(bool locked)
+    {
         AZStd::vector<AZ::EntityId> descendants;
         AZ::TransformBus::EventResult(descendants, m_rootEntityToFreeze, &AZ::TransformBus::Events::GetAllDescendants);
         descendants.push_back(m_rootEntityToFreeze);
-        if (is_manipulator_locked != locked){
-            for (auto &descadant: descendants) {
-                if (locked) {
+        if (is_manipulator_locked != locked)
+        {
+            for (auto& descadant : descendants)
+            {
+                if (locked)
+                {
                     // Lock manipulator, make base_link not kinematic anymore
                     AZ_Printf("KrakenEffectorComponent", "Locking : %s\n", descadant.ToString().c_str());
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::DisablePhysics);
-                    Physics::RigidBodyRequestBus::Event(m_manipulatorEntity, &Physics::RigidBodyRequestBus::Events::SetKinematic,false);
-
-                } else {
+                    Physics::RigidBodyRequestBus::Event(m_manipulatorEntity, &Physics::RigidBodyRequestBus::Events::SetKinematic, false);
+                }
+                else
+                {
                     // loose manipulator, make base_link kinematic
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::EnablePhysics);
-                    Physics::RigidBodyRequestBus::Event(m_manipulatorEntity, &Physics::RigidBodyRequestBus::Events::SetKinematic,true);
+                    Physics::RigidBodyRequestBus::Event(m_manipulatorEntity, &Physics::RigidBodyRequestBus::Events::SetKinematic, true);
                 }
             }
             is_manipulator_locked = locked;

@@ -354,7 +354,7 @@ namespace AppleKraken
             appleTasks.begin(),
             appleTasks.end(),
             [globalBox](const PickAppleTask& a, const PickAppleTask& b) -> bool
-            {   // a is further than b from the globalBox
+            { // a is further than b from the globalBox
                 return globalBox.GetDistance(a.m_middle) > globalBox.GetDistance(b.m_middle);
             });
 
@@ -368,4 +368,3 @@ namespace AppleKraken
         AZ_Printf("ApplePickerComponent", "There are %d apples in reach box \n", m_currentAppleTasks.size());
     }
 } // namespace AppleKraken
-

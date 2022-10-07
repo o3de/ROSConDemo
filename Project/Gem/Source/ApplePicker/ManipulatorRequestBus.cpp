@@ -10,27 +10,29 @@
 
 namespace AppleKraken
 {
-    void ManipulatorRequestHandler::PickApple(const AZ::Vector3 position){
+    void ManipulatorRequestHandler::PickApple(const AZ::Vector3 position)
+    {
         Call(FN_PickApple, position);
     }
 
-    AZ::Vector3 ManipulatorRequestHandler::GetPosition(){
+    AZ::Vector3 ManipulatorRequestHandler::GetPosition()
+    {
         AZ::Vector3 p;
         CallResult(p, FN_GetPosition);
         return p;
     }
 
-
-    void ManipulatorRequestHandler::Retrieve(){
+    void ManipulatorRequestHandler::Retrieve()
+    {
         Call(FN_Retrieve);
     }
 
-    int ManipulatorRequestHandler::GetStatus(){
+    int ManipulatorRequestHandler::GetStatus()
+    {
         int p;
         CallResult(p, FN_GetStatus);
         return p;
     }
-
 
     void ManipulatorRequestHandler::Reflect(AZ::ReflectContext* context)
     {
@@ -45,5 +47,4 @@ namespace AppleKraken
         }
     }
 
-}
-
+} // namespace AppleKraken

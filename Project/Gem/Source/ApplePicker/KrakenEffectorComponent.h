@@ -13,13 +13,13 @@
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/EBus/EBus.h>
 
-#include <AzFramework/Physics/PhysicsSystem.h>
+#include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
+#include <AzFramework/Physics/Common/PhysicsSimulatedBody.h>
+#include <AzFramework/Physics/Configuration/RigidBodyConfiguration.h>
 #include <AzFramework/Physics/PhysicsScene.h>
+#include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
-#include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
-#include <AzFramework/Physics/Configuration/RigidBodyConfiguration.h>
-#include <AzFramework/Physics/Common/PhysicsSimulatedBody.h>
 namespace AppleKraken
 {
     //! Component for apple picking effector (manipulator)
@@ -65,8 +65,8 @@ namespace AppleKraken
         AZ::EntityId m_appleProbe;
         AZ::EntityId m_baseLinkToKinematic;
 
-        bool m_registeredCallback{false};
-        bool is_manipulator_locked = {false};
+        bool m_registeredCallback{ false };
+        bool is_manipulator_locked = { false };
         AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
     };
 } // namespace AppleKraken

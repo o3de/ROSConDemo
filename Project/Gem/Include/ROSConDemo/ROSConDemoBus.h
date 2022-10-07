@@ -14,8 +14,7 @@ namespace ROSConDemo
         // Put your public methods here
     };
 
-    class ROSConDemoBusTraits
-        : public AZ::EBusTraits
+    class ROSConDemoBusTraits : public AZ::EBusTraits
     {
     public:
         //////////////////////////////////////////////////////////////////////////

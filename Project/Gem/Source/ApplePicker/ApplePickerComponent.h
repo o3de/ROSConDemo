@@ -7,8 +7,8 @@
  */
 #pragma once
 
-#include "ApplePickingNotifications.h"
 #include "AppleDetectionGroundTruth.h"
+#include "ApplePickingNotifications.h"
 #include "ApplePickingRequests.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
