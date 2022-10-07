@@ -136,7 +136,13 @@ of apple trees and the robot itself.
 
 ## Apple Kraken spawning instructions
 
-TODO 
+Please read the following section on [Robot Spawner](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md#spawner).
+
+To spawn a new Apple Kraken, you can used named points (provided by a Spawner Component) or custom poses. An example call:
+
+```
+ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', initial_pose: {position:{ x: 4, y: 4, z: 0.2}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
+```
 
 ## Triggering Apple Gathering
 
@@ -158,7 +164,7 @@ You can also cancel a gathering operation in progress by calling another service
 
 ## Navigation stack
 
-TODO 
+If you wish to run ROS 2 navigation stack with this Project, please use this [repo](https://github.com/RobotecAI/o3de_kraken_nav) for necessary instructions and packages.
 
 ## Troubleshooting
 
