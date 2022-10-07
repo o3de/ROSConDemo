@@ -70,7 +70,7 @@ def generate_launch_description():
         executable='twist_to_ackermann',
         name='twist_to_ackermann',
         parameters=[{
-            'wheelbase': 2.0,
+            'wheelbase': 2.2,
             'timeout_control_interval': 0.1,
             'control_timeout': 0.2,
             'publish_zeros_on_timeout': True

@@ -25,7 +25,7 @@ class TwistToAckermann(Node):
   def __init__(self):
     super().__init__('twist_to_ackermann')
 
-    self.declare_parameter('wheelbase', 2.0)
+    self.declare_parameter('wheelbase', 2.2)
     
     self.declare_parameter('publish_zeros_on_timeout', True)
     self.declare_parameter('timeout_control_interval', 0.1)
