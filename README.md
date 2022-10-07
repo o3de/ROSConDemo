@@ -89,7 +89,7 @@ git clone https://github.com/aws-lumberyard/ROSConDemo.git
 scripts/o3de.sh register -pp <PATH_TO_THIS_PROJECT>
 ```
 
-3. Ensure your [ROS 2 is sourced](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html).
+3. Ensure your [ROS 2 is sourced](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html):
 
 ```
 echo $ROS_DISTRO
