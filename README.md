@@ -1,113 +1,188 @@
-# ROSConDemo
+# Apple Kraken Demo Project
 
-ROSConDemo repo contains the ROSConDemo project for O3DE.
+This project demonstrates an example application of [O3DE](https://www.o3de.org/) working with ROS 2.
+The integration is realized through [ROS 2 Gem for O3DE](https://github.com/RobotecAI/o3de-ros2-gem).
 
-## **Project overview**
+## How does it look like
 
-This project was created as a means of demonstrating the ROS2 Gem capabilities which it achieves by integrating the ROS2 libraries with the O3DE engine.
+## The project includes
 
-## ****Download and Install****
+- **Apple Orchard**, a simulation scene with many rows of apple trees.
+- **Apple Kraken**, a robot tasked with apple picking. It is ready to use and also included as an URDF.
+    - Multiple Apple Krakens are supported
+    - .. and you can spawn them using ROS 2 messages!
+- **Custom components** for picking apples, which benefit from direct integration with ROS 2.
+    - Yes, you can write ROS 2 code in O3DE!
+- **Autonomous operation** which is based on ROS 2 navigation stack and ground truth.
+    - Ground truth can be replaced with detectors based on sensor data. Give it a try!
+- **Apples**
+    - Thousands of apples!
 
-### Dependencies
+# How to build the project and its dependencies
 
-**ROS 2 Gem**
+## Requirements
 
-This project uses the [ROS 2 Gem](https://github.com/RobotecAI/o3de-ros2-gem). Please make sure to follow the installation guide located in it’s [README.md](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md) file. To learn more about how the Gem works check out the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
+### Platforms
 
-**Additional ROS 2 packages**
+The project supports the following platforms:
 
-The Vision messages package, which can be obtained:
+- Ubuntu 22.04 with ROS 2 Humble
+- Ubuntu 20.04 with ROS 2 Galactic
+
+### O3DE
+
+1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
+   sure that the system/hardware requirements are met.
+2. Please follow the instructions
+   to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
+3. **Use the `roscon_2022` branch**: `git checkout roscon_2022`.
+
+The following commands should prepare O3DE:
+
+```
+~$ git clone https://github.com/o3de/o3de.git
+~$ cd o3de
+~/o3de$ git lfs install
+~/o3de$ git lfs pull
+~/o3de$ python/get_python.sh
+~/o3de$ scripts/o3de.sh register --this-engine
+```
+
+### ROS 2 Gem
+
+This project uses the [ROS 2 Gem](https://github.com/RobotecAI/o3de-ros2-gem).
+Please make sure to follow the installation guide
+in [README.md](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md) file.
+To learn more about how the Gem works check out
+the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
+
+Note that the Gem instructions include installation of ROS 2 with some additional packages.
+
+The Gem is open to your contributions!
+
+#### Registering the Gem
+
+During the step above, make sure to register the Gem in the engine:
+`scripts/o3de.sh register --gem-path <PATH_TO_CLONED_ROS2_GEM>`
+
+### Additional ROS 2 packages**
+
+The vision messages package, which can be obtained:
 
 `sudo apt install ros-${ROS_DISTRO}-vision-msgs`
 
-💡 ***Note:*** This is a dependency besides all the packages required by the ROS 2 Gem.
+💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
 
-### Clone the repository 
+### Build this project
 
-```shell
+1. Clone it:
+
+```
 git clone https://github.com/aws-lumberyard/ROSConDemo.git
 ```
 
-For more details on the steps above, refer to [Setting up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/) in the documentation.
+2. Register this project in O3DE engine:
 
-### Setting up new projects and building the engine
+in O3DE directory:
+```
+scripts/o3de.sh register -pp <PATH_TO_THIS_PROJECT>
+```
 
-1. From the O3DE repo folder, set up a new project using the `o3de create-project` command.
-    ```
-    scripts\o3de.bat create-project --project-path <your new project path>
-    ```
-2. Configure a solution for your project.
-    ```
-    cmake -B <your project build path> -S <your new project source path> -G "Visual Studio 16"
-    ```
+3. Ensure your [ROS 2 is sourced](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html).
 
-    Example:
-    ```
-    cmake -B C:\my-project\build\windows -S C:\my-project -G "Visual Studio 16"
-    ```
-    
-    > Note:  Do not use trailing slashes for the <3rdParty cache path>.
+```
+echo $ROS_DISTRO
+> humble
+```
 
-3. Build the project, Asset Processor, and Editor to binaries by running this command inside your project:
-    ```
-    cmake --build <your project build path> --target <New Project Name>.GameLauncher Editor --config profile -- /m
-    ```
-    
-    > Note: Your project name used in the build target is the same as the directory name of your project.
+4. Configure build:
 
-This will compile after some time and binaries will be available in the project build path you've specified, under `bin/profile`.
+```
+cmake -B build/linux -G Ninja Multi-Config -DLY_STRIP_DEBUG_SYMBOLS=ON
+```
 
-For a complete tutorial on project configuration, see [Creating Projects Using the Command Line Interface](https://o3de.org/docs/welcome-guide/create/creating-projects-using-cli/) in the documentation.
+5. Execute build (this will take a while the first time):
 
-## Level(s)
+```
+cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor ROSConDemo.Assets
+```
 
-Describe level(s).
+### Running the project
+
+Launch the O3DE Editor (in the Project directory):
+
+```
+build/linux/bin/profile/Editor
+```
+
+## Levels
+
 
 ### Main Level
 
-The main level of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple Kraken.
+The main level of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple
+Kraken.
 
-The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and storing them in its basket.
+The main level is rather performance intensive.
+
+The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and
+storing them in its basket.
 
 ### Playground Level
 
-### Test Level
+The playground level is much lighter and can be used to quickly prototype with Kraken. There is only a couple
+of apple trees and the robot itself.
 
-## Apple Kraken import instructions
+## Apple Kraken spawning instructions
 
-The AppleKraken is saved in a form of a prefab in the Project' Assets directory.
-
-1. In your Project’s editor, you can instantiate it by clicking the right mouse button and then selecting instantiate prefab (as depicted below).
-    
-    ![Kraken instantiation](static/fig_1.png)
-    
-2. Now select the ***ROSConDemo/Project/Assets/Importer/apple_kraken.prefab*** file
-    
-    <img src="static/fig_2.png" width="60%" alt="AppleKraken Path">
+TODO 
 
 ## Triggering Apple Gathering
 
 Check available services in a terminal using this command:
+
 - `ros2 service list`
 
 If your simulation is running, you should be able to see the apple gathering service listed there.
+
 - It could be named `/trigger_apple_gathering`.
 
-If Apple Kraken is in position, you can trigger apple gathering with a terminal command:
+If Apple Kraken is in position, next to a tree, you can trigger apple gathering with a terminal command:
+
 - `ros2 service call /trigger_apple_gathering std_srvs/srv/Trigger`
 
 You can also cancel a gathering operation in progress by calling another service:
+
 - `ros2 service call /cancel_apple_gathering std_srvs/srv/Trigger`
 
 ## Navigation stack
 
-Instructions on how to run it with navigation stack and global automation.
+TODO 
 
 ## Troubleshooting
 
-Troubleshooting section
+#### Check-list
 
+- Is O3DE running ok with an empty or default project?
+- Is ROS 2 installation ok? (check with `ros2 topic pub` etc.)
+- Is ROS 2 workspace sourced? (check `ROS_DISTRO`, `AMENT_PREFIX_PATH`)
+- Do you have compatible settings for crucial ENV variables when running the navigation / orchestration stack in the
+  console and when running the simulator?
+    - check `RMW_IMPLEMENTATION`, `ROS_DOMAIN_ID` etc.
+- Check console for errors as well as logs. From the Project folder, check `user/log/Editor.log`.
+- Are simulation topics up when you play the simulation?
+    - `ros2 node list` should include `/o3de_ros2_node`
+    - `ros2 topic list` should include `/clock`, `/tf` and `/tf_static` regardless of robot presence.
+    - topic list should also include `/pc`, `/ackermann_vel` and `/ground_truth_3D_detection` if there is a robot in the
+      scene and simulation is running.
+        - note that with multiple robots, these topics will be namespaced.
+    - `ros2 service list` should also show several simulation and robot services such as spawning and apple gathering.
+
+#### Other
+
+💡 ***Note:*** Take note that these **vision_msgs** are different between Humble and Galactic,
+in particular detection messages which are used by ground truth detector.
 
 ## License
 
-For terms please see the LICENSE*.TXT files at the root of this distribution.
+For terms please see the LICENSE*.TXT files at the root of this repository.
