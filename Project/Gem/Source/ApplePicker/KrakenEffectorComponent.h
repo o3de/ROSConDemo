@@ -53,14 +53,20 @@ namespace AppleKraken
         void OnApplePicked();
         void OnAppleRetrieved();
 
+        void LockManipulator(bool locked);
+
         PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         float m_currentStateTransitionTime = 0.0f;
         AZ::EntityId m_reachEntity;
         AZ::EntityId m_manipulatorEntity;
+        AZ::EntityId m_rootEntityToFreeze;
         AZ::EntityId m_appleProbe;
+        AZ::EntityId m_baseLinkToKinematic;
+
         bool m_registeredCallback{false};
+        bool is_manipulator_locked = {false};
         AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
     };
 } // namespace AppleKraken
