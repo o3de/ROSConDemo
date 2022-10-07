@@ -30,6 +30,10 @@ function PID.new(kp, kd, ki, limit_output)
     return self
 end
 
+function PID:SetOutputLimit(limit_output)
+    self._limit = limit_output
+end
+
 function PID:Reset()
     self._preError = 0
     self._integral = 0
@@ -118,6 +122,10 @@ function manipulator_control:OnActivate()
     -- Retrieve() function must be called.
     self.autoRetrieve = false
 
+    -- If the velocity of the vehicle is larger, attempts to lock the manipulatro
+    -- Set to 0.0 to disable auto lock
+    self.autoLockWhenMovingFasterThen = 0.5
+
     -- Configuration parameters END --
     ------------------------------------
 
@@ -154,6 +162,9 @@ function manipulator_control:OnActivate()
     self.noseZeroTimeout = 0.5
     self.noseZeroTime = 0.0
     self.manipulatorRequestBus = ManipulatorRequestBus.Connect(self, self.entityId)       
+
+    self.manipulatorLockState = false
+
 end
 
 function manipulator_control:_getFPS()
@@ -355,6 +366,34 @@ function manipulator_control:PickApple(apple_pos)
     --end
 end
 
+function manipulator_control:lockManipulator(state)
+    if state ~= self.manipulatorLockState then
+        self.manipulatorLockState = state
+        if state then
+            Debug.Log('Manipulator Lock: ON')
+            self.pid1:SetOutputLimit(0.0) 
+            self.pid2:SetOutputLimit(0.0) 
+            self.pid3:SetOutputLimit(0.0)
+            self.pid4:SetOutputLimit(0.0)
+        else
+            Debug.Log('Manipulator Lock: OFF')
+            self.pid1:SetOutputLimit(self.max_velocity['z']) 
+            self.pid2:SetOutputLimit(self.max_velocity['x']) 
+            self.pid3:SetOutputLimit(self.max_velocity['y'])
+            self.pid4:SetOutputLimit(self.max_velocity['y'])
+        end
+    end
+end
+
+function manipulator_control:autoLock()
+    local kraken_velocity = RigidBodyRequestBus.Event.GetLinearVelocity(self.entityId)['x']
+    if math.abs(kraken_velocity) > self.autoLockWhenMovingFasterThen then
+        self:lockManipulator(true)
+    else
+        self:lockManipulator(false)
+    end
+end
+
 
 function manipulator_control:Retrieve()
     self.pickingState = State.RETRIEVING_NOSE
@@ -409,6 +448,9 @@ function manipulator_control:OnTick(deltaTime, timePoint)
             end
         else
             self:_orchestrator()
+            if self.autoLockWhenMovingFasterThen > 0.0 then
+                self:autoLock()
+            end
         end
     end
 end
