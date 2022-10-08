@@ -43,10 +43,11 @@ The project supports the following platforms:
 The following commands should prepare O3DE:
 
 ```
-~$ git clone https://github.com/o3de/o3de.git
+~$ git clone https://github.com/aws-lumberyard-dev/o3de.git
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
+~/o3de$ git checkout roscon_2022
 ~/o3de$ python/get_python.sh
 ~/o3de$ scripts/o3de.sh register --this-engine
 ```
@@ -99,7 +100,7 @@ echo $ROS_DISTRO
 4. Configure build:
 
 ```
-cmake -B build/linux -G Ninja Multi-Config -DLY_STRIP_DEBUG_SYMBOLS=ON
+cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
 ```
 
 5. Execute build (this will take a while the first time):
