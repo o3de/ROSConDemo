@@ -59,6 +59,7 @@
                     "Id": 10002942660819099122,
                     "Configuration": {
                         "entityId": "",
+                        "Gravity Enabled": false,
                         "Compute Mass": false,
                         "Mass": 10.0,
                         "Compute COM": false,
@@ -76,8 +77,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[10756722832465606112]": {
@@ -346,8 +347,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[8160934721586853298]": {
@@ -505,8 +506,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[16133372995322410612]": {
@@ -958,8 +959,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[8801526189808124059]": {
@@ -1123,8 +1124,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[6492306332728591622]": {
@@ -1352,8 +1353,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[5537772980649449717]": {
@@ -1871,8 +1872,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[9976445161209749090]": {
@@ -2029,8 +2030,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 }
             }
@@ -2243,8 +2244,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[3377818137773634105]": {
@@ -2620,8 +2621,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[583585224453152908]": {
@@ -2892,8 +2893,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 },
                 "Component_[5405192070174247494]": {
@@ -3050,8 +3051,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 250,
-                        "SolverVelocityIterations": 250
+                        "SolverPositionIterations": 20,
+                        "SolverVelocityIterations": 5
                     }
                 }
             }
@@ -3236,6 +3237,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 14373249753094738440,
                     "ColliderConfiguration": {
+                        "CollisionGroupId": {
+                            "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
+                        },
                         "MaterialSlots": {
                             "Slots": [
                                 {
