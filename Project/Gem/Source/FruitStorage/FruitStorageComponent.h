@@ -18,6 +18,7 @@ namespace AppleKraken
     class FruitStorageComponent
         : public AZ::Component
         , public FruitStorageRequestsBus::Handler
+        , public AZ::TickBus::Handler
     {
     public:
         AZ_COMPONENT(FruitStorageComponent, "{9AC0B456-9C29-4EDD-AD25-6FAA57D253C5}", AZ::Component, FruitStorageRequestsBus::Handler);
@@ -36,7 +37,8 @@ namespace AppleKraken
     private:
         void SpawnCrate();
         void PreSpawn(AzFramework::EntitySpawnTicket::Id, AzFramework::SpawnableEntityContainerView);
-
+        void displayNumberOfApples(int num);
+        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
         AZ::Data::Asset<AzFramework::Spawnable> m_crateSpawnable;
         AzFramework::EntitySpawnTicket m_crateTicket;
         AZ::EntityId m_crateDropPoint;
@@ -44,5 +46,7 @@ namespace AppleKraken
         uint32_t m_applesGathered = 0;
         uint32_t m_applesInStorage = 0;
         ApplesGatheredByTag m_tagsStored;
+        AZ::EntityId m_ui_entity;
+        const static AZStd::string kAppleGatheredElementName;
     };
 } // namespace AppleKraken
