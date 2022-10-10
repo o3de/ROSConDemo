@@ -6,7 +6,8 @@ the demo in this repository.
 
 ## Requisites
 
- * X Gb of free disk space
+ * At least 40Gb of free disk space
+ * The build process can take more than 2 hours
 
 ## Building the Docker Image
 
@@ -15,6 +16,10 @@ To build the Dockerfile the only required step is to clone first the ROSConDemo:
 git clone git@github.com:aws-lumberyard/ROSConDemo.git
 docker build -t roscon_demo -f ROSConDemo/docker/Dockerfile .
 ```
+
+Note: the build process is going to download all the necessary assets for running
+the demo so it can take several hours depending on the Internet connection.
+
 ## Running the Docker Image
 
 GPU acceleration is required for running O3DE correctly. For running docker
