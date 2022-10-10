@@ -145,7 +145,9 @@ namespace AppleKraken
             SpawnCrate();
             m_applesInStorage = 0;
         }
-        displayNumberOfApples(m_applesGathered);
+
+        m_allApplesGathered++;
+        displayNumberOfApples(m_allApplesGathered);
     }
 
     void FruitStorageComponent::displayNumberOfApples(int num){
@@ -169,14 +171,15 @@ namespace AppleKraken
             AZ_Warning("FruitStorageComponent", false,  "ui canvas doest not have %s \n", kAppleGatheredElementName.c_str());
             return;
         }
-        AZStd::string t = "Apples gathered : " + AZStd::to_string(m_applesGathered);
+        AZStd::string t = "Apples gathered : " + AZStd::to_string(num);
         UiTextBus::Event(ui_text_entity, &UiTextInterface::SetText, t);
     }
 
     void FruitStorageComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
-        displayNumberOfApples(m_applesGathered);
+        displayNumberOfApples(m_allApplesGathered);
         AZ::TickBus::Handler::BusDisconnect();
     }
     const AZStd::string FruitStorageComponent::kAppleGatheredElementName{"AppleGatheredElement"};
+    AZStd::atomic_int32_t FruitStorageComponent::m_allApplesGathered {0};
 } // namespace AppleKraken
