@@ -7,9 +7,12 @@ set(FILES
         Source/ApplePicker/ApplePickerComponent.h
         Source/ApplePicker/ApplePickingNotifications.h
         Source/ApplePicker/ApplePickingRequests.h
-        Source/ApplePicker/PickingStructs.h
+        Source/ApplePicker/GatheringRowComponent.cpp
+        Source/ApplePicker/GatheringRowComponent.h
+        Source/ApplePicker/GatheringRowRequests.h
         Source/ApplePicker/KrakenEffectorComponent.cpp
         Source/ApplePicker/KrakenEffectorComponent.h
+        Source/ApplePicker/PickingStructs.h
         Source/FruitStorage/FruitStorageComponent.cpp
         Source/FruitStorage/FruitStorageComponent.h
         Source/FruitStorage/FruitStorageBus.h
