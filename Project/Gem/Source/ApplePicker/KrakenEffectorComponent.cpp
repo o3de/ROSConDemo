@@ -156,6 +156,12 @@ namespace AppleKraken
 
     bool KrakenEffectorComponent::IsTransitionAcceptable(EffectorState targetState) const
     {
+        if (m_effectorState == EffectorState::PICKING && m_effectorState == EffectorState::PICKING)
+        {
+            // allow this non-existing state transition without error
+            return true;
+        }
+
         if (m_effectorState != m_effectorTargetState)
         {
             AZ_Error(
@@ -296,7 +302,6 @@ namespace AppleKraken
         {
             AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
             ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::PickingFailed, "Timeout");
-            BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
         }
 
         if (m_effectorState == EffectorState::RETRIEVING)

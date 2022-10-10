@@ -279,6 +279,7 @@ namespace AppleKraken
         AZ_TracePrintf(
             "ApplePicker", "%s. Picking failed due to: %s\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str(), reason.c_str());
         m_currentAppleTasks.pop();
+        PickNextApple();
     }
 
     void ApplePickerComponent::PickNextApple()
