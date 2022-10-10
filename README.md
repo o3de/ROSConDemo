@@ -75,7 +75,7 @@ During the step above, make sure to register the Gem in the engine:
 
 The additional packages need to be installed. Use the following command:
 
-`sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds`
+`sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds`
 
 💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
 

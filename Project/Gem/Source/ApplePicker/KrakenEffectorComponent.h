@@ -20,6 +20,7 @@
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
+
 namespace AppleKraken
 {
     //! Component for apple picking effector (manipulator)
