@@ -45,6 +45,7 @@ namespace AppleKraken
         uint32_t m_crateCapacity = 0;
         uint32_t m_applesGathered = 0;
         uint32_t m_applesInStorage = 0;
+        static AZStd::atomic_int32_t m_allApplesGathered;
         ApplesGatheredByTag m_tagsStored;
         AZ::EntityId m_ui_entity;
         const static AZStd::string kAppleGatheredElementName;
