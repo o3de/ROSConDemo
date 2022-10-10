@@ -82,17 +82,13 @@ namespace AppleKraken
                 if (m_currentTask.m_appleEntityId == collideToEntityId)
                 {
                     AZ_Printf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
+                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
                     if (m_effectorState == EffectorState::PICKING)
                     {
                         // start picking the apple
                         BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
                     }
                 }
-                AZ_Printf(
-                    "m_onTriggerHandleBeginHandler",
-                    "m_onTriggerHandleBeginHandler %s : %s \n",
-                    m_currentTask.m_appleEntityId.ToString().c_str(),
-                    collideToEntityId.ToString().c_str());
             });
     }
 
@@ -286,8 +282,6 @@ namespace AppleKraken
             return;
         }
         ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
-        // TODO - also handle picking failed
-        ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
     }
 
     void KrakenEffectorComponent::OnAppleRetrieved()
@@ -301,6 +295,7 @@ namespace AppleKraken
         if (m_effectorState == EffectorState::PICKING && m_currentStateTransitionTime > 5)
         {
             AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
+            ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::PickingFailed, "Timeout");
             BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
         }
 
