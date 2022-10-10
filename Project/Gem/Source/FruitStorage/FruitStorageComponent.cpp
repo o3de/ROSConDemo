@@ -11,12 +11,16 @@
 #include <AzCore/Serialization/EditContext.h>
 #include <AzFramework/Components/TransformComponent.h>
 #include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
+#include <LyShine/Bus/UiCanvasBus.h>
+#include <LyShine/Bus/UiTextBus.h>
+#include <LyShine/Bus/World/UiCanvasRefBus.h>
 
 namespace AppleKraken
 {
     void FruitStorageComponent::Activate()
     {
         FruitStorageRequestsBus::Handler::BusConnect(GetEntityId());
+        AZ::TickBus::Handler::BusConnect();
     }
 
     void FruitStorageComponent::Deactivate()
@@ -29,10 +33,12 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<FruitStorageComponent, AZ::Component>()
-                ->Version(1)
+                ->Version(2)
                 ->Field("Crate", &FruitStorageComponent::m_crateSpawnable)
                 ->Field("Capacity", &FruitStorageComponent::m_crateCapacity)
-                ->Field("CrateDropPoint", &FruitStorageComponent::m_crateDropPoint);
+                ->Field("CrateDropPoint", &FruitStorageComponent::m_crateDropPoint)
+                ->Field("UiEntity", &FruitStorageComponent::m_ui_entity);
+
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -46,7 +52,13 @@ namespace AppleKraken
                         AZ::Edit::UIHandlers::EntityId,
                         &FruitStorageComponent::m_crateDropPoint,
                         "Crate drop point",
-                        "Place this entity behind the robot");
+                        "Place this entity behind the robot")
+                    ->DataElement(
+                            AZ::Edit::UIHandlers::EntityId,
+                            &FruitStorageComponent::m_ui_entity,
+                            "Entity with Ui canvas reference ",
+                            "Entity with UI canvas, that contains text element named ");
+
             }
         }
     }
@@ -133,5 +145,38 @@ namespace AppleKraken
             SpawnCrate();
             m_applesInStorage = 0;
         }
+        displayNumberOfApples(m_applesGathered);
     }
+
+    void FruitStorageComponent::displayNumberOfApples(int num){
+        AZ_Printf("FruitStorageComponent",  "displayNumberOfApples %d \n", num);
+        AZ::EntityId ui_canvas;
+
+        EBUS_EVENT_ID_RESULT(ui_canvas, m_ui_entity, UiCanvasRefBus, GetCanvas);
+        if (!ui_canvas.IsValid())
+        {
+            AZ_Warning("FruitStorageComponent", false, "%s doest not have UiCanvasRef\n", m_ui_entity.ToString().c_str());
+            return;
+        }
+
+        AZ::EntityId ui_text_entity;
+        UiCanvasBus::EventResult(ui_text_entity,
+                                 ui_canvas,
+                                 &UiCanvasInterface::FindElementEntityIdByName,
+                                 kAppleGatheredElementName);
+        if (!ui_text_entity.IsValid())
+        {
+            AZ_Warning("FruitStorageComponent", false,  "ui canvas doest not have %s \n", kAppleGatheredElementName.c_str());
+            return;
+        }
+        AZStd::string t = "Apples gathered : " + AZStd::to_string(m_applesGathered);
+        UiTextBus::Event(ui_text_entity, &UiTextInterface::SetText, t);
+    }
+
+    void FruitStorageComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
+    {
+        displayNumberOfApples(m_applesGathered);
+        AZ::TickBus::Handler::BusDisconnect();
+    }
+    const AZStd::string FruitStorageComponent::kAppleGatheredElementName{"AppleGatheredElement"};
 } // namespace AppleKraken

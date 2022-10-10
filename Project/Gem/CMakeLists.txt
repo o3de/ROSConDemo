@@ -45,6 +45,7 @@ ly_add_target(
             AZ::AzGameFramework
             AZ::AzFramework
             Gem::LmbrCentral.API
+            Gem::LyShine
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
 )
