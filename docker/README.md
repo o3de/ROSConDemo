@@ -13,7 +13,7 @@ the demo in this repository.
 To build the Dockerfile the only required step is to clone first the ROSConDemo:
 ```
 git clone git@github.com:aws-lumberyard/ROSConDemo.git
-docker build -t roscon_demo
+docker build -t roscon_demo -f ROSConDemo/docker/Dockerfile .
 ```
 ## Running the Docker Image
 
