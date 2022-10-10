@@ -83,7 +83,7 @@ RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
 COPY ROSConDemo ${WORKDIR}/ROSConDemo
 
 # Install o3de
-RUN git clone https://github.com/aws-lumberyard-dev/o3de.git \
+RUN git clone https://github.com/aws-lumberyard-dev/o3de.git -b roscon_2022 \
     && cd o3de \
     && git lfs install \
     && git lfs pull \
