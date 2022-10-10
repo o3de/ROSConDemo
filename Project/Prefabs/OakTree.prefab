@@ -24,14 +24,14 @@
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        26.985807418823242,
-                        -97.05908966064453,
+                        52.245540618896484,
+                        -102.00430297851563,
                         0.0
                     ],
                     "Rotate": [
                         0.0,
                         0.0,
-                        -126.55982208251953
+                        11.727625846862793
                     ]
                 }
             },
@@ -81,8 +81,7 @@
                             0.0,
                             -6.575888633728027
                         ]
-                    },
-                    "IsStatic": true
+                    }
                 },
                 "Component_[15894921980041735849]": {
                     "$type": "EditorEntitySortComponent",
@@ -127,6 +126,11 @@
                         "ShapeType": 3,
                         "Cylinder": {
                             "Configuration": {
+                                "Scale": [
+                                    2.0,
+                                    2.0,
+                                    2.0
+                                ],
                                 "CookedData": "TlhTAUNWWE0NAAAAAAAAAElDRQFDTEhMCQAAABAAAAAYAAAACgAAADAAAAD0BDW+8gQ1PgAAQEAuvTuyAACAPgAAQEAuvTuyAACAPgAAQMD0BDW+8gQ1PgAAQMAAAIC+Lr27sgAAQMAAAIC+Lr27sgAAQEDzBDU+8wQ1PgAAQEAAAIA+AAAAAAAAQEAAAIA+AAAAAAAAQMDzBDU+8wQ1PgAAQMD1BDU+8QQ1vgAAQMD1BDU+8QQ1vgAAQEDjzQwzAACAvgAAQEDjzQwzAACAvgAAQMDyBDW+9AQ1vgAAQMDyBDW+9AQ1vgAAQEAAAAAAAAAAAP//f7///z/AAAAIABjvw75dg2w/AAAAAFyDbL4IAAQMX4NsvxXvwz4AAAAAXoNsvgwABApdg2w/Fe/DPgAAAABeg2y+EAAEBBXvwz5fg2w/AAAAAF+DbL4UAAQOX4NsPxPvw74AAAAAXoNsvhgABAAb78M+XYNsvwAAAABeg2y+HAAEAF2DbL8Y78O+AAAAAF2DbL4gAAQGE+/Dvl+DbL8AAAAAXoNsviQABAEAAAAAAAAAAP//fz///z/AKAAIAgoNDgQDAgkIAAECAwADBAUGBwgJBgkCAQoIBwsKCwwNDwUEDg8ODQwPDAsHBgEABQAGAAgABwACAAEABAADAAUBCQEEAQICBwIJAwkDBQMEBAkFCQUGBgkGCAcJBwgICQECCQEECQABBAABAgACBwIHCQMECQMFCQADBQADBAAFBgUGCQYICQAGCAAHCAcICQAAAAAAAIC+AACAvgAAQMAAAIA+AACAPgAAQEC2w4c/lppMQB9nFbC6EqAwH2cVsJaaTEACADQluhKgMAIANCXyBPU80jfLMdyd3rGltKkyAACAv12DbD7yBDU+8gQ1PgAAQEA=",
                                 "Type": 1
                             },
