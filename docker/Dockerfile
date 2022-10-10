@@ -37,10 +37,11 @@ RUN apt-get update && apt-get install -y \
     kmod \
     less \
     lsb-release \
-    libglu1-mesa-dev \
+    libglu1-mesa-dev \    
     libxcb-xinerama0 \
     libfontconfig1-dev \
     libcurl4-openssl-dev \
+    libnvidia-gl-470 \
     libssl-dev \
     libxcb-xkb-dev \
     libxkbcommon-x11-dev \
