@@ -1,0 +1,45 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/EnhancedPBR.materialtype",
+    "materialTypeVersion": 6,
+    "propertyValues": {
+        "baseColor.color": [
+            0.364705890417099,
+            0.41960784792900085,
+            0.03921568766236305,
+            1.0
+        ],
+        "baseColor.factor": 0.6600000262260437,
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "textures/grass_base_color.png",
+        "baseColor.textureMapUv": "Unwrapped",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "general.doubleSided": true,
+        "normal.textureMap": "../grass_tile_large/textures/grass_normal.png",
+        "normal.textureMapUv": "Unwrapped",
+        "opacity.factor": 1.0,
+        "roughness.textureMap": "../grass_tile_large/textures/grass_roughness.png",
+        "subsurfaceScattering.distanceAttenuation": 0.0,
+        "subsurfaceScattering.scatterColor": [
+            0.5714350938796997,
+            0.5714350938796997,
+            0.5714350938796997,
+            1.0
+        ],
+        "subsurfaceScattering.shrinkFactor": 0.0,
+        "subsurfaceScattering.thickness": 0.2199999988079071,
+        "subsurfaceScattering.transmissionMode": "ThinObject",
+        "subsurfaceScattering.transmissionNdLBias": 0.25999999046325684,
+        "subsurfaceScattering.transmissionScale": 0.6000000238418579,
+        "subsurfaceScattering.transmissionTint": [
+            0.3954222798347473,
+            0.4149690866470337,
+            0.3172197937965393,
+            1.0
+        ]
+    }
+}
