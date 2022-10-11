@@ -1,0 +1,25 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.7466697096824646,
+            1.0,
+            0.7333333492279053,
+            1.0
+        ],
+        "baseColor.factor": 0.6399999856948853,
+        "baseColor.textureMap": "textures/grass_atlas_diff.tif",
+        "baseColor.textureMapUv": "Unwrapped",
+        "emissive.color": [
+            0.14694437384605408,
+            0.40816357731819153,
+            0.016327153891324997,
+            1.0
+        ],
+        "emissive.enable": true,
+        "emissive.intensity": 1.0,
+        "general.doubleSided": true,
+        "opacity.mode": "Cutout"
+    }
+}

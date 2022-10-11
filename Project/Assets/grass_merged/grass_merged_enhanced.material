@@ -1,0 +1,39 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/EnhancedPBR.materialtype",
+    "materialTypeVersion": 6,
+    "propertyValues": {
+        "baseColor.color": [
+            0.34352636337280273,
+            0.7687037587165833,
+            0.3211413621902466,
+            1.0
+        ],
+        "baseColor.factor": 0.2800000011920929,
+        "baseColor.textureBlendMode": "Overlay",
+        "baseColor.textureMap": "textures/grass_atlas_diff.tif",
+        "emissive.intensity": 3.0,
+        "emissive.textureMap": "textures/grass_atlas_diff.tif",
+        "emissive.textureMapUv": "Unwrapped",
+        "general.doubleSided": true,
+        "opacity.factor": 0.6899999976158142,
+        "opacity.mode": "Cutout",
+        "subsurfaceScattering.distanceAttenuation": 0.0,
+        "subsurfaceScattering.scatterColor": [
+            0.6040131449699402,
+            0.687067985534668,
+            0.531334400177002,
+            1.0
+        ],
+        "subsurfaceScattering.shrinkFactor": 0.0,
+        "subsurfaceScattering.thickness": 0.2199999988079071,
+        "subsurfaceScattering.transmissionMode": "ThinObject",
+        "subsurfaceScattering.transmissionNdLBias": 0.25999999046325684,
+        "subsurfaceScattering.transmissionScale": 0.6000000238418579,
+        "subsurfaceScattering.transmissionTint": [
+            0.5171740055084229,
+            0.5238116979598999,
+            0.5168230533599854,
+            1.0
+        ]
+    }
+}

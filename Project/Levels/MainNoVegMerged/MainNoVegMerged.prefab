@@ -342,7 +342,8 @@
                         "Entity_[357812558576373]",
                         "Entity_[379201495710453]",
                         "Entity_[379115596364533]",
-                        "Entity_[292446084420721]"
+                        "Entity_[292446084420721]",
+                        "Entity_[4575349763039]"
                     ]
                 }
             }
@@ -733,7 +734,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 9401405681626518820
+                            "EditorEntityId": 5290717381575350605
                         }
                     }
                 },
@@ -896,7 +897,8 @@
                         "Entity_[17223493880265070]",
                         "Entity_[1180934129011]",
                         "Entity_[1163754259827]",
-                        "Entity_[1159459292531]"
+                        "Entity_[1159459292531]",
+                        "Entity_[4569290015101]"
                     ]
                 },
                 "Component_[9277695270015777859]": {
@@ -909,24 +911,6 @@
             "Id": "Entity_[1180934129011]",
             "Name": "Global Sky",
             "Components": {
-                "Component_[13126383555450060198]": {
-                    "$type": "AZ::Render::EditorPhysicalSkyComponent",
-                    "Id": 13126383555450060198,
-                    "Controller": {
-                        "Configuration": {
-                            "SkyIntensity": 4.25,
-                            "SunIntensity": 4.0,
-                            "FogSettings": {
-                                "Enable": true,
-                                "Color": [
-                                    0.8507972955703735,
-                                    0.8842145204544067,
-                                    0.9115586876869202
-                                ]
-                            }
-                        }
-                    }
-                },
                 "Component_[1428633914413949476]": {
                     "$type": "EditorLockComponent",
                     "Id": 1428633914413949476
@@ -956,7 +940,27 @@
                 },
                 "Component_[14994774102579326069]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 14994774102579326069
+                    "Id": 14994774102579326069,
+                    "DisabledComponents": [
+                        {
+                            "$type": "AZ::Render::EditorPhysicalSkyComponent",
+                            "Id": 13126383555450060198,
+                            "Controller": {
+                                "Configuration": {
+                                    "SkyIntensity": 4.25,
+                                    "SunIntensity": 4.0,
+                                    "FogSettings": {
+                                        "Enable": true,
+                                        "Color": [
+                                            0.8507972955703735,
+                                            0.8842145204544067,
+                                            0.9115586876869202
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 },
                 "Component_[15417479889044493340]": {
                     "$type": "EditorPendingCompositionComponent",
@@ -968,6 +972,22 @@
                     "Child Entity Order": [
                         "Entity_[1155164325235]"
                     ]
+                },
+                "Component_[16058697021295933395]": {
+                    "$type": "AZ::Render::EditorSkyAtmosphereComponent",
+                    "Id": 16058697021295933395,
+                    "Controller": {
+                        "Configuration": {
+                            "OriginMode": 1,
+                            "LuminanceFactor": [
+                                2.0,
+                                2.0,
+                                2.0
+                            ],
+                            "DrawSun": false,
+                            "SunOrientation": "Entity_[1155164325235]"
+                        }
+                    }
                 },
                 "Component_[1665003113283562343]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -986,6 +1006,11 @@
                     "Id": 6644513399057217122,
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            -100.0
+                        ],
                         "Rotate": [
                             -45.0,
                             0.0,
@@ -1023,7 +1048,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 4255235585367832113
+                            "EntityId": 12353194153736175928
                         }
                     },
                     "useBakedCubemap": false,
@@ -1262,16 +1287,19 @@
         },
         "Entity_[292446084420721]": {
             "Id": "Entity_[292446084420721]",
-            "Name": "Grass",
+            "Name": "Grass Billboard",
             "Components": {
                 "Component_[1106151740756329070]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 1106151740756329070,
-                    "Parent Entity": "Entity_[1078906895689]"
-                },
-                "Component_[13042287448449165802]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 13042287448449165802
+                    "Parent Entity": "Entity_[1078906895689]",
+                    "Transform Data": {
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            180.0
+                        ]
+                    }
                 },
                 "Component_[13392325594736426262]": {
                     "$type": "EditorInspectorComponent",
@@ -1279,7 +1307,32 @@
                 },
                 "Component_[13792978816524169234]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 13792978816524169234
+                    "Id": 13792978816524169234,
+                    "PendingComponents": [
+                        {
+                            "$type": "EditorMaterialComponent",
+                            "Id": 15045768458115272767,
+                            "Controller": {
+                                "Configuration": {
+                                    "materials": [
+                                        {
+                                            "Key": {
+                                                "materialSlotStableId": 3845917758
+                                            },
+                                            "Value": {
+                                                "MaterialAsset": {
+                                                    "assetId": {
+                                                        "guid": "{44BCF5BD-637A-553A-8F02-FA79A1F15B7D}"
+                                                    },
+                                                    "assetHint": "assets/grass_merged/grass_merged_enhanced.azmaterial"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
                 },
                 "Component_[16045467262737659182]": {
                     "$type": "EditorEntityIconComponent",
@@ -1295,7 +1348,25 @@
                 },
                 "Component_[4111006409936537498]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 4111006409936537498
+                    "Id": 4111006409936537498,
+                    "DisabledComponents": [
+                        {
+                            "$type": "AZ::Render::EditorMeshComponent",
+                            "Id": 13042287448449165802,
+                            "Controller": {
+                                "Configuration": {
+                                    "ModelAsset": {
+                                        "assetId": {
+                                            "guid": "{53C8A44E-14CF-53CC-B0B4-6ECF2518CC7A}",
+                                            "subId": 274422785
+                                        },
+                                        "assetHint": "assets/grass_merged/grass_merged.azmodel"
+                                    },
+                                    "IsRayTracingEnabled": false
+                                }
+                            }
+                        }
+                    ]
                 },
                 "Component_[5287415047203296639]": {
                     "$type": "EditorEntitySortComponent",
@@ -2079,6 +2150,161 @@
                     "Id": 7920488526460036641,
                     "Configuration": {
                         "ShapeEntityId": "Entity_[1078906895689]"
+                    }
+                }
+            }
+        },
+        "Entity_[4569290015101]": {
+            "Id": "Entity_[4569290015101]",
+            "Name": "Skybox",
+            "Components": {
+                "Component_[1030066146196689940]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 1030066146196689940,
+                    "Parent Entity": "Entity_[1176639161715]",
+                    "Transform Data": {
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            76.0
+                        ]
+                    }
+                },
+                "Component_[16508829793178525305]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16508829793178525305
+                },
+                "Component_[16929892164416738853]": {
+                    "$type": "AZ::Render::EditorHDRiSkyboxComponent",
+                    "Id": 16929892164416738853,
+                    "Controller": {
+                        "Configuration": {
+                            "CubemapAsset": {
+                                "assetId": {
+                                    "guid": "{A127016D-187B-5145-B9AC-FE6146A0CFCD}",
+                                    "subId": 1000
+                                },
+                                "assetHint": "assets/images/sunflowers_4k_cm.exr.streamingimage"
+                            },
+                            "Exposure": 1.0
+                        }
+                    }
+                },
+                "Component_[17298970327614700857]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 17298970327614700857
+                },
+                "Component_[375615859842590616]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 375615859842590616
+                },
+                "Component_[6031442569134381051]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6031442569134381051
+                },
+                "Component_[7392315063493964287]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7392315063493964287
+                },
+                "Component_[8489512278481689523]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8489512278481689523
+                },
+                "Component_[9191985581143312457]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9191985581143312457
+                },
+                "Component_[9429240633874311395]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9429240633874311395
+                }
+            }
+        },
+        "Entity_[4575349763039]": {
+            "Id": "Entity_[4575349763039]",
+            "Name": "Grass Mesh",
+            "Components": {
+                "Component_[11829562936681814697]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 11829562936681814697
+                },
+                "Component_[11890639404604887989]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11890639404604887989
+                },
+                "Component_[12138013386905564555]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12138013386905564555
+                },
+                "Component_[13334157222591866819]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13334157222591866819
+                },
+                "Component_[14674047238244999169]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14674047238244999169
+                },
+                "Component_[15950638666965376142]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15950638666965376142
+                },
+                "Component_[16974085005086347289]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16974085005086347289
+                },
+                "Component_[18375685026847987119]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 18375685026847987119,
+                    "Parent Entity": "Entity_[1078906895689]",
+                    "Transform Data": {
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            180.0
+                        ]
+                    }
+                },
+                "Component_[5626233881348526034]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 5626233881348526034
+                },
+                "Component_[7554061295846763283]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 7554061295846763283,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3977523045
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{5E288B18-7C32-5972-8332-F2EFA056B534}"
+                                            },
+                                            "assetHint": "assets/grass_merged/grass_merged_tile_enhanced.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[8049329026898303781]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 8049329026898303781,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{2EC2B7FE-B591-548B-B69D-A0971282E3EC}",
+                                    "subId": 281234033
+                                },
+                                "assetHint": "assets/grass_merged/grass_merged_original.azmodel"
+                            },
+                            "SortKey": 222
+                        }
                     }
                 }
             }
@@ -3033,7 +3259,14 @@
                 "Component_[13573289954479275950]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 13573289954479275950,
-                    "Parent Entity": "Entity_[1090499316769908]"
+                    "Parent Entity": "Entity_[1090499316769908]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.5503082275390625,
+                            0.0
+                        ]
+                    }
                 },
                 "Component_[16234154590090037534]": {
                     "$type": "EditorPendingCompositionComponent",
@@ -5084,7 +5317,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.843074798583984
                 }
             ]
         },
@@ -5104,7 +5337,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 28.00027084350586
                 }
             ]
         },
@@ -5144,7 +5377,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.17270851135254
                 }
             ]
         },
@@ -5164,7 +5397,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.749534606933594
                 }
             ]
         },
@@ -5204,7 +5437,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.668464660644531
                 }
             ]
         },
@@ -5224,7 +5457,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.324848175048828
                 }
             ]
         },
@@ -5244,7 +5477,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 2.643644332885742
                 }
             ]
         },
@@ -5264,7 +5497,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 15.305866241455078
                 }
             ]
         },
@@ -5284,7 +5517,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.54168128967285
                 }
             ]
         },
@@ -5304,7 +5537,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 1.6003098487854004
                 }
             ]
         },
@@ -5324,7 +5557,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.173324584960938
                 }
             ]
         },
@@ -5344,7 +5577,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.90949249267578
                 }
             ]
         },
@@ -5364,7 +5597,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 0.3771390914916992
                 }
             ]
         },
@@ -5384,7 +5617,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 23.536930084228516
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -5404,7 +5642,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.467330932617188
                 }
             ]
         },
@@ -5424,7 +5662,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 2.2686572074890137
                 }
             ]
         },
@@ -5444,7 +5682,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 15.5013427734375
                 }
             ]
         },
@@ -5464,7 +5702,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 37.61061096191406
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -5484,7 +5727,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 0.8763980865478516
                 }
             ]
         },
@@ -5504,7 +5747,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 15.096017837524414
                 }
             ]
         },
@@ -5524,7 +5767,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.703296661376953
                 }
             ]
         },
@@ -5544,7 +5787,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 1.482929229736328
                 }
             ]
         },
@@ -5564,7 +5807,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.57143211364746
                 }
             ]
         },
@@ -5584,7 +5827,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.356914520263672
                 }
             ]
         },
@@ -5604,7 +5847,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 10.799423217773438
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -5624,7 +5872,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.539653778076172
                 }
             ]
         },
@@ -5644,7 +5892,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 37.09051513671875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -5664,7 +5917,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -0.4409608840942383
                 }
             ]
         },
@@ -5684,7 +5937,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 13.970388412475586
                 }
             ]
         },
@@ -5704,7 +5957,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.386730194091797
                 }
             ]
         },
@@ -5724,7 +5977,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 0.32785797119140625
                 }
             ]
         },
@@ -5744,7 +5997,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.407383918762209
                 }
             ]
         },
@@ -5764,7 +6017,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 28.09178924560547
                 }
             ]
         },
@@ -5784,7 +6037,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 0.6644086837768555
                 }
             ]
         },
@@ -5804,7 +6057,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.563199996948242
                 }
             ]
         },
@@ -5824,7 +6077,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 27.397266387939453
                 }
             ]
         },
@@ -5844,7 +6097,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 1.3324213027954102
                 }
             ]
         },
@@ -5864,7 +6117,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 14.077167510986328
                 }
             ]
         },
@@ -5884,7 +6137,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 26.59295082092285
                 }
             ]
         },
@@ -5904,7 +6157,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -1.3563132286071775
                 }
             ]
         },
@@ -5924,7 +6177,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 22.25271224975586
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -5944,7 +6202,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 26.92754173278809
                 }
             ]
         },
@@ -5964,7 +6222,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -0.2730264663696289
                 }
             ]
         },
@@ -5984,7 +6242,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 13.088335037231444
                 }
             ]
         },
@@ -6004,7 +6262,17 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 35.4395866394043
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/2",
+                    "value": 0.02790069580078125
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -6024,7 +6292,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -0.461482048034668
                 }
             ]
         },
@@ -6044,7 +6312,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 12.61612319946289
                 }
             ]
         },
@@ -6064,7 +6332,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 26.31484031677246
                 }
             ]
         },
@@ -6084,7 +6352,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": 0.22846698760986328
                 }
             ]
         },
@@ -6104,7 +6372,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 12.08258056640625
                 }
             ]
         },
@@ -6124,7 +6392,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 25.039216995239254
                 }
             ]
         },
@@ -6144,7 +6412,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -0.33907318115234375
                 }
             ]
         },
@@ -6164,7 +6432,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 12.129087448120115
                 }
             ]
         },
@@ -6184,7 +6452,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 23.934295654296875
                 }
             ]
         },
@@ -6204,7 +6472,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 1.0
+                    "value": -0.3401832580566406
                 }
             ]
         },
@@ -6224,7 +6492,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 13.0
+                    "value": 11.69191551208496
                 }
             ]
         },
@@ -6244,7 +6512,12 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Translate/1",
-                    "value": 25.0
+                    "value": 33.742431640625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[6864548319831448188]/Transform Data/Rotate/2",
+                    "value": 180.0
                 }
             ]
         },
@@ -6710,7 +6983,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 17158125052683578102
+                    "value": 2183364793654483696
                 }
             ]
         },
