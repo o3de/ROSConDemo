@@ -127,7 +127,7 @@ function manipulator_control:OnActivate()
     self.InputNotificationBus = InputEventNotificationBus.Connect(self, InputEventNotificationId("manipulator_keyboard_control"))
 
     self.pid1 = PID.new(300.0, 0.0, 0.0, self.max_velocity['z']) 
-    self.pid2 = PID.new(400.0, 0.0, 0.0, self.max_velocity['x']) 
+    self.pid2 = PID.new(200.0, 0.0, 0.0, self.max_velocity['x']) 
     self.pid3 = PID.new(100.0, 0.0, 0.0, self.max_velocity['y'])
     self.pid4 = PID.new(100.0, 0.0, 0.0, self.max_velocity['y'])
     self.gravityThreshold = 0.0
