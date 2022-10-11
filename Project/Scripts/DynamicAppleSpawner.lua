@@ -43,7 +43,7 @@ end
 function DynamicAppleSpawner:OnSpawn(spawnTicket, entityList)
 	-- first entity should be the root
 	table.insert(self.freeAppleGroups, entityList[1])
-	self:SetPhysicsEnabled(entityList[1], false)
+	--self:SetPhysicsEnabled(entityList[1], false)
 	local entityName  = GameEntityContextRequestBus.Broadcast.GetEntityName(entityList[1])
 	Debug.Log("$5 Spawned " .. tostring(entityName))
 	
@@ -51,12 +51,13 @@ function DynamicAppleSpawner:OnSpawn(spawnTicket, entityList)
 		self.spawningPrefabs = false
 	end 
 	
-	local children = TransformBus.Event.GetChildren(entityList[1])
-	for i=1,#children do
-		local childId = children[i]
-		local pos = TransformBus.Event.GetLocalTranslation(childId)
-		Debug.Log("("..tostring(pos.x)..","..tostring(pos.y)..","..tostring(pos.z).."),")
-	end
+	-- print out locations of every apple for scripting purposes
+	--local children = TransformBus.Event.GetChildren(entityList[1])
+	--for i=1,#children do
+	--	local childId = children[i]
+	--	local pos = TransformBus.Event.GetLocalTranslation(childId)
+	--	Debug.Log("("..tostring(pos.x)..","..tostring(pos.y)..","..tostring(pos.z).."),")
+	--end
 	
 	-- mark all follow targets to update in case they are waiting on groups
 	for k,followTarget in pairs(self.followTargets) do
@@ -173,8 +174,8 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
 						-- remove this tree and free the apple group
 						if tree.applesEntityId ~= -1 then
 							table.insert(self.freeAppleGroups, tree.applesEntityId)
-							self:SetPhysicsEnabled(tree.applesEntityId, false)
-							TransformBus.Event.SetWorldTranslation(tree.applesEntityId, Vector3(0,0,1))
+							--self:SetPhysicsEnabled(tree.applesEntityId, false)
+							TransformBus.Event.SetWorldTranslation(tree.applesEntityId, Vector3(0,0,-10 * k))
 						end
 						table.insert(treesToRemove, tree.entityId)
 					end
@@ -199,9 +200,9 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
 									Debug.Log("Claiming apple group " ..tostring(applesEntityId))
 								end
 								local treeTM = TransformBus.Event.GetWorldTM(entityId)
-								self:SetPhysicsEnabled(applesEntityId, false)
+								--self:SetPhysicsEnabled(applesEntityId, false)
 								TransformBus.Event.SetWorldTM(applesEntityId, treeTM)
-								self:SetPhysicsEnabled(applesEntityId, true)
+								--self:SetPhysicsEnabled(applesEntityId, true)
 								
 								-- hide the render meshes
 								RenderMeshComponentRequestBus.Event.SetVisibility(entityId, false)
@@ -249,6 +250,9 @@ function DynamicAppleSpawner:SpawnAppleGroup()
 	
 	local tm = TransformBus.Event.GetWorldTM(self.entityId)
 	local translation = tm:GetTranslation()
+	
+	-- move the prefabs down so they don't collide with eachother (safer than disabling/enabling physics)
+	translation.z = translation.z - self.numPrefabsSpawned * 10
 	local rotation = tm:GetRotation():GetEulerRadians()
 
 	Debug.Log("$7 Spawning apple group " .. tostring(self.numPrefabsSpawned ))
