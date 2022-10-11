@@ -38,8 +38,6 @@ storing them in its basket.
 The playground scene is much lighter and can be used to quickly prototype with Kraken. There is only a couple
 of apple trees and the robot itself.
 
-# How to build the project and its dependencies
-
 # Requirements
 
 ## Platforms
