@@ -96,7 +96,6 @@
                     "$type": "EditorColliderComponent",
                     "Id": 17352323353881558252,
                     "ColliderConfiguration": {
-                        "Trigger": true,
                         "MaterialSlots": {
                             "Slots": [
                                 {
@@ -167,8 +166,20 @@
                     "Id": 7138985039715548058,
                     "Configuration": {
                         "entityId": "",
-                        "Start Asleep": true,
-                        "Gravity Enabled": false
+                        "Gravity Enabled": false,
+                        "Kinematic": true,
+                        "Mass": 0.26808255910873413,
+                        "Inertia tensor": [
+                            0.00017157284310087562,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00017157284310087562,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00017157284310087562
+                        ]
                     }
                 },
                 "Component_[7230618248793844206]": {
