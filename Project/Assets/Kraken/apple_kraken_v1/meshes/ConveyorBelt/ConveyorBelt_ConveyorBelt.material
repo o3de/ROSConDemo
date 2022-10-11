@@ -1,0 +1,23 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
+    "materialTypeVersion": 5,
+    "propertyValues": {
+        "baseColor.color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+        ],
+        "baseColor.textureMap": "ConveyorBelt_Albedo.png",
+        "emissive.color": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+        ],
+        "metallic.textureMap": "ConveyorBelt_Metalness.png",
+        "normal.textureMap": "ConveyorBelt_Normal.png",
+        "opacity.factor": 1.0,
+        "roughness.textureMap": "ConveyorBelt_Roughness.png"
+    }
+}
