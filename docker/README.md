@@ -6,7 +6,7 @@ the demo in this repository.
 
 ## Requisites
 
- * At least 40Gb of free disk space
+ * At least 40GB of free disk space
  * The build process can take more than 2 hours
 
 ## Building the Docker Image
