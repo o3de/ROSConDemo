@@ -158,9 +158,9 @@ build/linux/bin/profile/Editor
 You can try out the demo scenario as presented during ROSCon 2022. Take the following steps:
 
 1. Launch the Editor and select the Main level. Allow it to load.
-2. Run the simulation with Ctrl-G` or by pressing the Play button in the Editor. When it loads, you should be able to see the Apple Kraken.
+2. Run the simulation with `Ctrl-G` or by pressing the Play button in the Editor. When it loads, you should be able to see the Apple Kraken.
 3. Once the simulation is running, start the [navigation stack](https://github.com/RobotecAI/o3de_kraken_nav). If you followed all the instructions, launch it with `ros2 launch o3de_kraken_nav navigation.launch.py`. You should see a new Rviz2 window.
-4. Using RViz2, set the navigation goal using a widget in the toolbar (2D Goal Pose). You need to click and drag to indicate direction the robot will be facing. Make sure to set the goal next to an apple tree, to have the tree on the right side. Not too close, not too far. You can set subsequent goals for the robot to move around.
+4. Using RViz2, set the navigation goal using a widget in the toolbar (`2D Goal Pose`). You need to click and drag to indicate direction the robot will be facing. Make sure to set the goal next to an apple tree, to have the tree on the right side. Not too close, not too far. You can set subsequent goals for the robot to move around.
 5. Once the robot arrives and stops next to the tree, you can [trigger apple gathering](#triggering-apple-gathering).
 6. Either wait for the robot to complete its job (gather all reachable apples) or cancel the gathering through the `/cancel_apple_gathering` service.
 7. Select another navigation goal for the robot.
