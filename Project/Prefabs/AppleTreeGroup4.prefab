@@ -580,6 +580,19 @@
                             "materials": [
                                 {
                                     "Key": {
+                                        "materialSlotStableId": 47274929
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
+                                            },
+                                            "assetHint": "assets/grass_tile_large/grass_tile_large_grass.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
                                         "materialSlotStableId": 1276229897
                                     },
                                     "Value": {
@@ -601,6 +614,20 @@
                                                 "guid": "{EB582A15-08B3-59E8-870C-59249E92D948}"
                                             },
                                             "assetHint": "assets/apple_tree/appletree_leaf_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 0,
+                                        "materialSlotStableId": 47274929
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
+                                            },
+                                            "assetHint": "assets/grass_tile_large/grass_tile_large_grass.azmaterial"
                                         }
                                     }
                                 },
@@ -635,6 +662,20 @@
                                 {
                                     "Key": {
                                         "lodIndex": 1,
+                                        "materialSlotStableId": 47274929
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
+                                            },
+                                            "assetHint": "assets/grass_tile_large/grass_tile_large_grass.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 1,
                                         "materialSlotStableId": 1276229897
                                     },
                                     "Value": {
@@ -663,6 +704,20 @@
                                 {
                                     "Key": {
                                         "lodIndex": 2,
+                                        "materialSlotStableId": 47274929
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
+                                            },
+                                            "assetHint": "assets/grass_tile_large/grass_tile_large_grass.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 2,
                                         "materialSlotStableId": 1276229897
                                     },
                                     "Value": {
@@ -685,6 +740,19 @@
                                                 "guid": "{EB582A15-08B3-59E8-870C-59249E92D948}"
                                             },
                                             "assetHint": "assets/apple_tree/appletree_leaf_basemat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "lodIndex": 3,
+                                        "materialSlotStableId": 47274929
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
+                                            }
                                         }
                                     }
                                 },
