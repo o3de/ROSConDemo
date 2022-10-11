@@ -6965,22 +6965,6 @@
                     "value": 0.28093504905700684
                 },
                 {
-                    "op": "add",
-                    "path": "/Entities/Entity_[126373983206044]/Components/Component_[13857029336701770935]/PendingComponents/1",
-                    "value": {
-                        "$type": "GenericComponentWrapper",
-                        "Id": 15491883442998239562,
-                        "m_template": {
-                            "$type": "ApplePickerComponent",
-                            "Id": 0,
-                            "TriggerServiceTopic": "trigger_apple_gathering",
-                            "CancelServiceTopic": "cancel_apple_gathering",
-                            "EffectorEntity": "Entity_[126373983206044]",
-                            "FruitStorageEntity": "Entity_[126373983206044]"
-                        }
-                    }
-                },
-                {
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
                     "value": 2183364793654483696
