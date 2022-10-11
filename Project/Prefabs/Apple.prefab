@@ -167,6 +167,7 @@
                     "Id": 7138985039715548058,
                     "Configuration": {
                         "entityId": "",
+                        "Start Asleep": true,
                         "Gravity Enabled": false
                     }
                 },
