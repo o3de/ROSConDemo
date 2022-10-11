@@ -81,13 +81,13 @@ namespace AppleKraken
         AZ::TransformBus::EventResult(endPose, m_end, &AZ::TransformBus::Events::GetWorldTM);
 
         // Simplification - we assume same orientations along the way
-        auto rowVector = endPose.GetTranslation() - startPose.GetTranslation();
+        const auto rowVector = endPose.GetTranslation() - startPose.GetTranslation();
         for (int i = 0; i < m_appleTreeCount; ++i)
         {
             AZ::Transform gatheringPoint = startPose;
-            float scale = i / (m_appleTreeCount - 1);
-            gatheringPoint.SetTranslation(gatheringPoint.GetTranslation() + rowVector * scale);
-            m_gatheringPoses.push_back(gatheringPoint);
+            const float scale = static_cast<float>(i) / (m_appleTreeCount - 1);
+            gatheringPoint.SetTranslation(gatheringPoint.GetTranslation() + m_poseOffset + rowVector * scale);
+            m_gatheringPoses.emplace_back(gatheringPoint);
         }
     }
 } // namespace AppleKraken
