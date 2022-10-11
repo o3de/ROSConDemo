@@ -1764,6 +1764,13 @@
                         }
                     }
                 },
+                "Component_[4311952861573879719]": {
+                    "$type": "EditorTagComponent",
+                    "Id": 4311952861573879719,
+                    "Tags": [
+                        "Robot"
+                    ]
+                },
                 "Component_[5034300848744399910]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 5034300848744399910
@@ -3483,6 +3490,13 @@
                 "Component_[10024056911688572127]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 10024056911688572127
+                },
+                "Component_[10784749401815499991]": {
+                    "$type": "EditorTagComponent",
+                    "Id": 10784749401815499991,
+                    "Tags": [
+                        "RobotCamera"
+                    ]
                 },
                 "Component_[12122484710959107959]": {
                     "$type": "{CA11DA46-29FF-4083-B5F6-E02C3A8C3A3D} EditorCameraComponent",

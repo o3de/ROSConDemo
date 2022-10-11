@@ -58,9 +58,51 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 10482022883704485451
                 },
+                "Component_[13256697750700106701]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13256697750700106701,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{6938817F-A68A-5861-B8D3-8D1FF3B12FAE}",
+                                    "subId": 271211390
+                                },
+                                "assetHint": "assets/apple_tree/appletreeapples.azmodel"
+                            },
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.05000000074505806,
+                            "QualityDecayRate": 0.800000011920929
+                        }
+                    }
+                },
                 "Component_[14409809941983633030]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 14409809941983633030
+                },
+                "Component_[15585962792479463770]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 15585962792479463770,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[15978725969754585124]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -132,6 +174,25 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 10482022883704485451
                 },
+                "Component_[1362925325646035617]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 1362925325646035617,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{6938817F-A68A-5861-B8D3-8D1FF3B12FAE}",
+                                    "subId": 271211390
+                                },
+                                "assetHint": "assets/apple_tree/appletreeapples.azmodel"
+                            },
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.05000000074505806,
+                            "QualityDecayRate": 0.800000011920929
+                        }
+                    }
+                },
                 "Component_[14409809941983633030]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 14409809941983633030
@@ -145,6 +206,11 @@
                             0.0,
                             3.0,
                             0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            140.3091278076172
                         ]
                     }
                 },
@@ -199,6 +265,29 @@
                         }
                     }
                 },
+                "Component_[9021025404808262205]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 9021025404808262205,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[913127425512539204]": {
                     "$type": "EditorLockComponent",
                     "Id": 913127425512539204
@@ -226,6 +315,11 @@
                             0.0,
                             6.0,
                             0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            57.42329788208008
                         ]
                     }
                 },
@@ -244,9 +338,51 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 2474345706400577025
                 },
+                "Component_[2637852875434279734]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 2637852875434279734,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{6938817F-A68A-5861-B8D3-8D1FF3B12FAE}",
+                                    "subId": 271211390
+                                },
+                                "assetHint": "assets/apple_tree/appletreeapples.azmodel"
+                            },
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.05000000074505806,
+                            "QualityDecayRate": 0.800000011920929
+                        }
+                    }
+                },
                 "Component_[319287915754503450]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 319287915754503450
+                },
+                "Component_[3637817752601745473]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 3637817752601745473,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[5360396437947281098]": {
                     "$type": "EditorEntityIconComponent",
@@ -298,6 +434,25 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 14409809941983633030
                 },
+                "Component_[14790625882184055621]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14790625882184055621,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{6938817F-A68A-5861-B8D3-8D1FF3B12FAE}",
+                                    "subId": 271211390
+                                },
+                                "assetHint": "assets/apple_tree/appletreeapples.azmodel"
+                            },
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.05000000074505806,
+                            "QualityDecayRate": 0.800000011920929
+                        }
+                    }
+                },
                 "Component_[15978725969754585124]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 15978725969754585124,
@@ -307,6 +462,11 @@
                             0.0,
                             9.0,
                             0.0
+                        ],
+                        "Rotate": [
+                            0.0,
+                            0.0,
+                            -89.93547058105469
                         ]
                     }
                 },
@@ -336,6 +496,29 @@
                 "Component_[5627772272655405898]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 5627772272655405898
+                },
+                "Component_[6623201874098388994]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 6623201874098388994,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1676432290
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[7827092108012797729]": {
                     "$type": "EditorColliderComponent",
@@ -554,7 +737,10 @@
                                 "assetHint": "assets/apple_tree/appletreerow4.azmodel"
                             },
                             "SortKey": 111,
-                            "IsRayTracingEnabled": false
+                            "IsRayTracingEnabled": false,
+                            "LodType": 1,
+                            "MinimumScreenCoverage": 0.0010000000474974513,
+                            "QualityDecayRate": 0.800000011920929
                         }
                     }
                 },
