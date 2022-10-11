@@ -752,7 +752,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{AEC7EDFE-8DCF-5C31-A35A-45461B75A651}"
-                                            }
+                                            },
+                                            "assetHint": "assets/grass_tile_large/grass_tile_large_grass.azmaterial"
                                         }
                                     }
                                 },
