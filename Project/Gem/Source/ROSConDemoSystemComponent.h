@@ -43,7 +43,7 @@ namespace ROSConDemo
     private:
         void ProcessGetPlanServiceCall(const GetPlanRequestPtr req, GetPlanResponsePtr resp);
 
-        AZStd::string m_planTopic = "get_gathering_plan";
+        const AZStd::string m_planTopic = "get_gathering_plan";
         rclcpp::Service<nav_msgs::srv::GetPlan>::SharedPtr m_pathPlanService;
     };
 } // namespace ROSConDemo
