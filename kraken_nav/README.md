@@ -56,7 +56,7 @@ In addition to the required packages for the ROS2 gem, you will also need some a
 
 - Use the [roscon_2022](https://github.com/aws-lumberyard-dev/o3de/tree/roscon_2022) branch of the `O3DE`.
 - Use the the [development](https://github.com/RobotecAI/o3de-ros2-gem/tree/development) branch of the `o3de-ros-gem`.
-- Use [mp/deappletreeized_orchad_kraken](https://github.com/aws-lumberyard/ROSConDemo/tree/mp/deappletreeized_orchad_kraken) branch of the `ROSConDemo`.
+- Use the [main](https://github.com/aws-lumberyard/ROSConDemo) branch of the `ROSConDemo`.
 
 1. Source ROS2 (assumed `humble`)
 
