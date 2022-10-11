@@ -33,8 +33,8 @@
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        0.0,
-                        1.5120699405670166,
+                        8.053382873535156,
+                        -1.394392967224121,
                         0.0
                     ]
                 }
@@ -130,42 +130,6 @@
                         }
                     }
                 },
-                "Component_[1175476636645741538]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 1175476636645741538,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 924759392
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
-                                            },
-                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
-                                        }
-                                    }
-                                },
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 1276229897
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{B03382D7-0965-53E2-A0CE-C526142FAFB8}"
-                                            },
-                                            "assetHint": "assets/apple_tree/appletree_treemat.azmaterial"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                },
                 "Component_[12570401722975448326]": {
                     "$type": "EditorActorComponent",
                     "Id": 12570401722975448326,
@@ -201,7 +165,52 @@
                         },
                         "assetHint": "assets/apple_tree/tree.motionset"
                     },
-                    "ActiveMotionSetName": "Default"
+                    "ActiveMotionSetName": "Tree",
+                    "ParameterDefaults": {
+                        "Parameters": [
+                            {
+                                "$type": "AzFramework::ScriptPropertyBoolean",
+                                "id": 3679663297,
+                                "name": "TurnOn"
+                            }
+                        ]
+                    }
+                },
+                "Component_[18391692011649548]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 18391692011649548,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 924759392
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1276229897
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{55339E98-54B6-5D38-B182-262882507562}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_branchmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "Component_[2131788852609794804]": {
                     "$type": "EditorEntityIconComponent",
@@ -210,6 +219,23 @@
                 "Component_[3727775588980272269]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 3727775588980272269
+                },
+                "Component_[4449701763594978018]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 4449701763594978018,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{97F27EE7-3797-5251-A12C-B7E8C43B42B2}",
+                            "path": "scriptCanvas/TreeActor.scriptcanvas"
+                        },
+                        "sourceName": "TreeActor.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{97F27EE7-3797-5251-A12C-B7E8C43B42B2}",
+                                "path": "scriptCanvas/TreeActor.scriptcanvas"
+                            }
+                        }
+                    }
                 },
                 "Component_[5045837587665104081]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -1705,11 +1731,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/0",
                     "value": 0.05964343249797821
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[17300195898860990188]/Transform Data/Translate/1",
-                    "value": 0.4272944629192352
                 },
                 {
                     "op": "replace",

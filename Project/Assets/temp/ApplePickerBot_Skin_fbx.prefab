@@ -1,0 +1,3842 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "ApplePickerBot_Skin_fbx",
+        "Components": {
+            "Component_[11581065014118401159]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 11581065014118401159
+            },
+            "Component_[12271907079785897789]": {
+                "$type": "EditorLockComponent",
+                "Id": 12271907079785897789
+            },
+            "Component_[1439895042796286589]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 1439895042796286589
+            },
+            "Component_[14627965803227795652]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 14627965803227795652
+            },
+            "Component_[16419137285984695602]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 16419137285984695602
+            },
+            "Component_[16993594165645990476]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 16993594165645990476
+            },
+            "Component_[2453904230634234065]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 2453904230634234065,
+                "Child Entity Order": [
+                    "Entity_[481159694181786]"
+                ]
+            },
+            "Component_[3582251547823142976]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 3582251547823142976,
+                "Parent Entity": ""
+            },
+            "Component_[4295593901463631958]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 4295593901463631958
+            },
+            "Component_[6575910354641031501]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 6575910354641031501
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[481116744508826]": {
+            "Id": "Entity_[481116744508826]",
+            "Name": "Apples_lod1",
+            "Components": {
+                "Component_[1254530377613647455]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1254530377613647455
+                },
+                "Component_[16336264743666803047]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16336264743666803047,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            1.3638912439346313,
+                            0.5059428215026855
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[17897265171051246531]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17897265171051246531
+                },
+                "Component_[1938328530396930054]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1938328530396930054
+                },
+                "Component_[4235026613920685714]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 4235026613920685714
+                },
+                "Component_[4737719289200239056]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 4737719289200239056
+                },
+                "Component_[5111257172569401089]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5111257172569401089
+                },
+                "Component_[5310074277085385933]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 5310074277085385933
+                },
+                "Component_[5898624472948251207]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5898624472948251207,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 279783855
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_6cf0e1d3_f7d0_5d3a_a795_f989d9a1f7a7_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[9772817820562900297]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 9772817820562900297
+                }
+            }
+        },
+        "Entity_[481121039476122]": {
+            "Id": "Entity_[481121039476122]",
+            "Name": "SteeringRack_Coord",
+            "Components": {
+                "Component_[10277826231342411294]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10277826231342411294
+                },
+                "Component_[11364286367817966946]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11364286367817966946
+                },
+                "Component_[17303865665364703703]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 17303865665364703703
+                },
+                "Component_[2553714892026046316]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 2553714892026046316
+                },
+                "Component_[4239793032731777456]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4239793032731777456
+                },
+                "Component_[5966363829545261789]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5966363829545261789
+                },
+                "Component_[7757285968614000570]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7757285968614000570,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            -1.0083600282669067,
+                            0.28828901052474976
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 7.22193717956543
+                    }
+                },
+                "Component_[8950522400413512564]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 8950522400413512564
+                },
+                "Component_[9815349871266174034]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9815349871266174034
+                }
+            }
+        },
+        "Entity_[481125334443418]": {
+            "Id": "Entity_[481125334443418]",
+            "Name": "WheelRight_001",
+            "Components": {
+                "Component_[10616387294352560335]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 10616387294352560335,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[10796027416946875970]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10796027416946875970
+                },
+                "Component_[12360346102843788219]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12360346102843788219
+                },
+                "Component_[16662741439905863624]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16662741439905863624
+                },
+                "Component_[17496651445409455631]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17496651445409455631,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.3527795076370239,
+                            -1.094587802886963,
+                            0.30000004172325134
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[18003902592379612937]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 18003902592379612937,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 283006183
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_3eff3b09_9bd8_5f75_8a21_f124d9963200_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[2423679928169547432]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2423679928169547432
+                },
+                "Component_[2887991262205017461]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2887991262205017461
+                },
+                "Component_[5978951804754133913]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 5978951804754133913
+                },
+                "Component_[76360475004288882]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 76360475004288882
+                },
+                "Component_[9044960129590860758]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9044960129590860758
+                }
+            }
+        },
+        "Entity_[481129629410714]": {
+            "Id": "Entity_[481129629410714]",
+            "Name": "LED_Lights",
+            "Components": {
+                "Component_[11007120537257632005]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11007120537257632005
+                },
+                "Component_[11977516528146637030]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 11977516528146637030
+                },
+                "Component_[12618432653374301510]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 12618432653374301510,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 275793472
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_c9b411c8_9920_5ec8_9b6c_7f98cb3cc99e_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[1281873574417932151]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 1281873574417932151
+                },
+                "Component_[15021460234018800287]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 15021460234018800287
+                },
+                "Component_[18069170457908863813]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 18069170457908863813
+                },
+                "Component_[2003862854303402458]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2003862854303402458
+                },
+                "Component_[2672185320881158434]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2672185320881158434
+                },
+                "Component_[6901671984870964022]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6901671984870964022,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[9967106518345318502]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9967106518345318502
+                }
+            }
+        },
+        "Entity_[481133924378010]": {
+            "Id": "Entity_[481133924378010]",
+            "Name": "Apple_Crate",
+            "Components": {
+                "Component_[10790634028946778071]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 10790634028946778071
+                },
+                "Component_[11629442018729320971]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11629442018729320971
+                },
+                "Component_[13976335302330458009]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13976335302330458009
+                },
+                "Component_[14546271573056573408]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14546271573056573408,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 284643041
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_edc27d31_8b6e_5964_8af5_bf03a4ab0425_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[15231005582883620752]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 15231005582883620752
+                },
+                "Component_[15678138893060848592]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15678138893060848592,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            0.9589152932167053,
+                            0.6444784998893738
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[3216009613570944589]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3216009613570944589
+                },
+                "Component_[4857482986663586527]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4857482986663586527
+                },
+                "Component_[7252749089207556957]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7252749089207556957
+                },
+                "Component_[9613899837923437008]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 9613899837923437008
+                }
+            }
+        },
+        "Entity_[481138219345306]": {
+            "Id": "Entity_[481138219345306]",
+            "Name": "SideBummpers",
+            "Components": {
+                "Component_[12370860893502164236]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12370860893502164236
+                },
+                "Component_[12439075132837835375]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 12439075132837835375,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 271698386
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_2cb1c73d_1916_5809_ad98_7b9e07725ccb_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[14401723955697120389]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14401723955697120389
+                },
+                "Component_[2727523436478776575]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2727523436478776575
+                },
+                "Component_[3234258078743977759]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 3234258078743977759
+                },
+                "Component_[4423522151238233268]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4423522151238233268
+                },
+                "Component_[5077028147785811305]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 5077028147785811305
+                },
+                "Component_[6920150415760724951]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6920150415760724951
+                },
+                "Component_[7552606424858599649]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7552606424858599649,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[8834633241158911608]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8834633241158911608,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 149698722
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A819D60-61EA-563C-9CE5-CB369D919160}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonblackpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1814073633
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A041C3D7-97A3-5C38-A646-9C538B0061FC}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonyellowpaintmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[9228364711214792674]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9228364711214792674
+                }
+            }
+        },
+        "Entity_[481142514312602]": {
+            "Id": "Entity_[481142514312602]",
+            "Name": "WheelRight_005",
+            "Components": {
+                "Component_[1244864010017390322]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 1244864010017390322
+                },
+                "Component_[12649331926634021421]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12649331926634021421
+                },
+                "Component_[13593126488979303609]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 13593126488979303609
+                },
+                "Component_[14064928344533105330]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14064928344533105330
+                },
+                "Component_[1488346208953200727]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 1488346208953200727,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[15753681648330291930]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 15753681648330291930,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 284036894
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_d7d7934e_1fa6_5bf8_9880_8594ee3f3a68_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[16687192182392347540]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16687192182392347540
+                },
+                "Component_[2854677796408542647]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 2854677796408542647,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.3527795076370239,
+                            1.1007847785949707,
+                            0.2999999523162842
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[3272967143945388724]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3272967143945388724
+                },
+                "Component_[416699472233145100]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 416699472233145100
+                },
+                "Component_[5411830502235849613]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5411830502235849613
+                }
+            }
+        },
+        "Entity_[481146809279898]": {
+            "Id": "Entity_[481146809279898]",
+            "Name": "VacuumNozzle",
+            "Components": {
+                "Component_[10453411332063940211]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 10453411332063940211,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
+                        "Position": [
+                            -0.005661085247993469,
+                            0.0,
+                            0.0
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        },
+                        "ColliderTag": "AppleArm"
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Scale": [
+                                100.0,
+                                100.0,
+                                100.0
+                            ],
+                            "Configuration": [
+                                0.0010000000474974513,
+                                0.0010000000474974513,
+                                0.0010000000474974513
+                            ]
+                        },
+                        "Capsule": {
+                            "Scale": [
+                                100.0,
+                                100.0,
+                                100.0
+                            ]
+                        }
+                    }
+                },
+                "Component_[12392706461841643003]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12392706461841643003,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{4BADAE56-A522-51E2-961C-C21CA6D5A4D7}"
+                            },
+                            "assetHint": "assets/temp/appleevent.inputbindings"
+                        }
+                    }
+                },
+                "Component_[13670609515091608921]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13670609515091608921
+                },
+                "Component_[14498332593117808137]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 14498332593117808137
+                },
+                "Component_[15084548497367710334]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15084548497367710334
+                },
+                "Component_[15189584119042967361]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15189584119042967361
+                },
+                "Component_[16788791067712080662]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 16788791067712080662,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 282518154
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_1c8f34a1_ef67_55dd_9153_1cc22fd63b10_.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                },
+                "Component_[18131650321410780546]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 18131650321410780546
+                },
+                "Component_[3488027599862183383]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3488027599862183383
+                },
+                "Component_[3687565472830873855]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 3687565472830873855,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[5370893675916594149]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 5370893675916594149
+                },
+                "Component_[5648408214505697605]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5648408214505697605,
+                    "Child Entity Order": [
+                        "Entity_[481267068364186]"
+                    ]
+                },
+                "Component_[6592157434137856925]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 6592157434137856925,
+                    "Configuration": {
+                        "entityId": "",
+                        "Gravity Enabled": false,
+                        "Centre of mass offset": [
+                            -0.5661085247993469,
+                            0.0,
+                            0.0
+                        ],
+                        "Inertia tensor": [
+                            0.0016666670562699437,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0016666651936247945,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0016666651936247945
+                        ]
+                    }
+                },
+                "Component_[9230389309638572740]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 9230389309638572740,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{61AE1FAA-BC0B-57E7-B8AE-9F35B07056CA}",
+                            "path": "Assets/temp/Arm.scriptcanvas"
+                        },
+                        "sourceName": "Arm.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{61AE1FAA-BC0B-57E7-B8AE-9F35B07056CA}",
+                                "path": "Assets/temp/Arm.scriptcanvas"
+                            }
+                        }
+                    }
+                },
+                "Component_[9479754712200059783]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 9479754712200059783,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.88371741771698,
+                            0.40084409713745117,
+                            1.7906081676483154
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -10.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                }
+            }
+        },
+        "Entity_[481151104247194]": {
+            "Id": "Entity_[481151104247194]",
+            "Name": "VehicleBody_001",
+            "Components": {
+                "Component_[10307705275551466925]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10307705275551466925
+                },
+                "Component_[12472523009289085483]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12472523009289085483
+                },
+                "Component_[13774869213175321492]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13774869213175321492
+                },
+                "Component_[14749168460811539684]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 14749168460811539684
+                },
+                "Component_[163973381202151437]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 163973381202151437
+                },
+                "Component_[2119043030048995639]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 2119043030048995639,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[4740158866916465423]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4740158866916465423
+                },
+                "Component_[6870942044134111775]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 6870942044134111775,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 281373215
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_5f50888e_e8d3_545a_bbf1_dbebea26b9a9_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[9227966060058089828]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9227966060058089828
+                },
+                "Component_[9430239546683181865]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9430239546683181865
+                }
+            }
+        },
+        "Entity_[481155399214490]": {
+            "Id": "Entity_[481155399214490]",
+            "Name": "Plane_001",
+            "Components": {
+                "Component_[10459461460868051563]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10459461460868051563
+                },
+                "Component_[12408737141267325513]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 12408737141267325513,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 283447508
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_cefd7b3f_b439_5af0_9e93_86bbc548e90b_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[13269922814424031209]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13269922814424031209
+                },
+                "Component_[14292489703387712747]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14292489703387712747
+                },
+                "Component_[15708277004740287647]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15708277004740287647,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.30388984084129333,
+                            -0.8611816167831421,
+                            1.2679705619812012
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[16028802434069513493]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 16028802434069513493
+                },
+                "Component_[1884537364423372598]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1884537364423372598
+                },
+                "Component_[2756475250627698385]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2756475250627698385
+                },
+                "Component_[3559890281429516866]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 3559890281429516866
+                },
+                "Component_[8272280201680599085]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8272280201680599085
+                }
+            }
+        },
+        "Entity_[481159694181786]": {
+            "Id": "Entity_[481159694181786]",
+            "Name": "ApplePickerBot_Skin_fbx",
+            "Components": {
+                "Component_[10659372042006829442]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10659372042006829442
+                },
+                "Component_[11966044465894437929]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11966044465894437929,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[1339105754610871304]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1339105754610871304
+                },
+                "Component_[13730248962018287839]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 13730248962018287839,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 11966044465894437929
+                        }
+                    ]
+                },
+                "Component_[13801295645430013841]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13801295645430013841
+                },
+                "Component_[14898979549343269616]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14898979549343269616
+                },
+                "Component_[15900571819446131749]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15900571819446131749,
+                    "Child Entity Order": [
+                        "Entity_[481198348887450]",
+                        "Entity_[481185463985562]",
+                        "Entity_[481249888495002]",
+                        "Entity_[481318607971738]",
+                        "Entity_[481211233789338]",
+                        "Entity_[481275658298778]",
+                        "Entity_[481232708625818]",
+                        "Entity_[481258478429594]",
+                        "Entity_[481241298560410]",
+                        "Entity_[481237003593114]",
+                        "Entity_[481146809279898]",
+                        "Entity_[481121039476122]",
+                        "Entity_[481314313004442]",
+                        "Entity_[481194053920154]",
+                        "Entity_[481202643854746]",
+                        "Entity_[481279953266074]",
+                        "Entity_[481168284116378]",
+                        "Entity_[481133924378010]",
+                        "Entity_[481163989149082]",
+                        "Entity_[481288543200666]",
+                        "Entity_[481176874050970]",
+                        "Entity_[481254183462298]",
+                        "Entity_[481138219345306]",
+                        "Entity_[481215528756634]",
+                        "Entity_[481219823723930]",
+                        "Entity_[481305723069850]",
+                        "Entity_[481310018037146]",
+                        "Entity_[481228413658522]",
+                        "Entity_[481172579083674]",
+                        "Entity_[481125334443418]",
+                        "Entity_[481322902939034]",
+                        "Entity_[481327197906330]",
+                        "Entity_[481151104247194]",
+                        "Entity_[481284248233370]",
+                        "Entity_[481206938822042]",
+                        "Entity_[481181169018266]",
+                        "Entity_[481301428102554]",
+                        "Entity_[481297133135258]",
+                        "Entity_[481331492873626]",
+                        "Entity_[481142514312602]",
+                        "Entity_[481271363331482]",
+                        "Entity_[481262773396890]",
+                        "Entity_[481129629410714]",
+                        "Entity_[481224118691226]",
+                        "Entity_[481245593527706]",
+                        "Entity_[481155399214490]",
+                        "Entity_[481116744508826]",
+                        "Entity_[481292838167962]"
+                    ]
+                },
+                "Component_[2165359494334502423]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2165359494334502423
+                },
+                "Component_[6117600723158456392]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6117600723158456392
+                }
+            }
+        },
+        "Entity_[481163989149082]": {
+            "Id": "Entity_[481163989149082]",
+            "Name": "Cylinder_004",
+            "Components": {
+                "Component_[10854847459612542354]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10854847459612542354,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.2990150451660156,
+                            -0.8608748912811279,
+                            1.2679705619812012
+                        ],
+                        "Rotate": [
+                            -3.0533323265580226e-13,
+                            0.0000025044776066351915,
+                            -89.99996185302734
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[13237370756466806747]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13237370756466806747
+                },
+                "Component_[13575426152288284638]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13575426152288284638,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 280167470
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_a4fdbb94_b474_5066_8d9b_6d56f07f7a7d_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[16169532795357526793]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 16169532795357526793
+                },
+                "Component_[2023304567179682844]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2023304567179682844
+                },
+                "Component_[5262433640590306838]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5262433640590306838
+                },
+                "Component_[5876797376465661260]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 5876797376465661260
+                },
+                "Component_[6737457019490831877]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6737457019490831877
+                },
+                "Component_[7649319434997102859]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7649319434997102859
+                },
+                "Component_[8523078788522048198]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8523078788522048198
+                }
+            }
+        },
+        "Entity_[481168284116378]": {
+            "Id": "Entity_[481168284116378]",
+            "Name": "Apple_Crate_002",
+            "Components": {
+                "Component_[10023493760712581911]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10023493760712581911
+                },
+                "Component_[10832195702500215381]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10832195702500215381
+                },
+                "Component_[12016955362566502922]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12016955362566502922
+                },
+                "Component_[12274499907378310655]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12274499907378310655
+                },
+                "Component_[13029159143669877146]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13029159143669877146,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 279055635
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_4980b5f6_abf9_5e66_9241_ee74bd849866_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[17437794724271694788]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17437794724271694788
+                },
+                "Component_[18299492007469394773]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18299492007469394773
+                },
+                "Component_[1910570732853729480]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 1910570732853729480,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            1.3712812662124634,
+                            0.6444784998893738
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[3482406970252190468]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3482406970252190468
+                },
+                "Component_[7963408825083046847]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7963408825083046847
+                }
+            }
+        },
+        "Entity_[481172579083674]": {
+            "Id": "Entity_[481172579083674]",
+            "Name": "RimHubcaps",
+            "Components": {
+                "Component_[10458556170841150079]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 10458556170841150079
+                },
+                "Component_[12521806316980421204]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12521806316980421204
+                },
+                "Component_[1438413920223713302]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1438413920223713302
+                },
+                "Component_[15831707579318797823]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15831707579318797823,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[17168235169928501861]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 17168235169928501861
+                },
+                "Component_[406885947451725993]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 406885947451725993,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 149698722
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A819D60-61EA-563C-9CE5-CB369D919160}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonblackpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[4508978901165608875]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4508978901165608875
+                },
+                "Component_[5664164808595710270]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5664164808595710270
+                },
+                "Component_[5750719753195152289]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5750719753195152289,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 276210861
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_3d3b51c0_1dfe_5a66_9cde_64b1250913ca_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[7579754578585322964]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 7579754578585322964
+                },
+                "Component_[823752131344573954]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 823752131344573954
+                }
+            }
+        },
+        "Entity_[481176874050970]": {
+            "Id": "Entity_[481176874050970]",
+            "Name": "WheelFrontLeft_Coord",
+            "Components": {
+                "Component_[10806319353420683893]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10806319353420683893,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.35277998447418213,
+                            -1.0945899486541748,
+                            0.30000001192092896
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[1151926838957718317]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1151926838957718317
+                },
+                "Component_[11578483422989477491]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 11578483422989477491
+                },
+                "Component_[14473478249759300836]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 14473478249759300836
+                },
+                "Component_[2697247972530966607]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2697247972530966607
+                },
+                "Component_[3541224272414700873]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 3541224272414700873
+                },
+                "Component_[7488645193195009617]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7488645193195009617
+                },
+                "Component_[8157209834814221666]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8157209834814221666
+                },
+                "Component_[9255518850224726745]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9255518850224726745
+                }
+            }
+        },
+        "Entity_[481181169018266]": {
+            "Id": "Entity_[481181169018266]",
+            "Name": "SteeringArmLeft_Coord",
+            "Components": {
+                "Component_[10180189196894592515]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10180189196894592515
+                },
+                "Component_[11014672321888282317]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11014672321888282317
+                },
+                "Component_[14351109885694698048]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14351109885694698048
+                },
+                "Component_[15506384313885257585]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 15506384313885257585
+                },
+                "Component_[5314645740258408309]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 5314645740258408309
+                },
+                "Component_[7524786521446178165]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7524786521446178165
+                },
+                "Component_[7766527817862309015]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7766527817862309015,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.25646600127220154,
+                            -1.1065800189971924,
+                            0.26796799898147583
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[8002519249912889488]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8002519249912889488
+                },
+                "Component_[8820828430450359335]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 8820828430450359335
+                }
+            }
+        },
+        "Entity_[481185463985562]": {
+            "Id": "Entity_[481185463985562]",
+            "Name": "Bummper",
+            "Components": {
+                "Component_[11043807910563217198]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 11043807910563217198
+                },
+                "Component_[12137708442595213054]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12137708442595213054
+                },
+                "Component_[12561616618445781411]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 12561616618445781411,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 149698722
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A819D60-61EA-563C-9CE5-CB369D919160}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonblackpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1814073633
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A041C3D7-97A3-5C38-A646-9C538B0061FC}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonyellowpaintmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[14879937432135867690]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14879937432135867690
+                },
+                "Component_[17137720781903235363]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 17137720781903235363
+                },
+                "Component_[17674698502039207071]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17674698502039207071,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            7.084706599158608e-9,
+                            -1.505200743675232,
+                            0.527449905872345
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[2377782509059625379]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2377782509059625379
+                },
+                "Component_[2542216868850352991]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2542216868850352991
+                },
+                "Component_[4951714752193994247]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4951714752193994247
+                },
+                "Component_[6734444568523285596]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 6734444568523285596,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 280576075
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_6c2a8dd8_5c62_5a6e_9cbc_7b00c69623b9_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[7285489692237181039]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 7285489692237181039
+                }
+            }
+        },
+        "Entity_[481194053920154]": {
+            "Id": "Entity_[481194053920154]",
+            "Name": "Apples_lod0",
+            "Components": {
+                "Component_[11046642938725002236]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 11046642938725002236
+                },
+                "Component_[11169076977937182250]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11169076977937182250
+                },
+                "Component_[1158738650089957017]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 1158738650089957017
+                },
+                "Component_[13093287663238943255]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13093287663238943255,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 271457876
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_79041265_f5b1_530c_a90d_7fe5c5ac7231_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[16410443966255911932]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16410443966255911932
+                },
+                "Component_[16762861674939313873]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 16762861674939313873
+                },
+                "Component_[5556914972026436150]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 5556914972026436150,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            1.3622705936431885,
+                            0.5299696326255798
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 95.93277740478516
+                    }
+                },
+                "Component_[660157520225864681]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 660157520225864681
+                },
+                "Component_[6980019607297877735]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 6980019607297877735
+                },
+                "Component_[8686581692284819825]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8686581692284819825
+                }
+            }
+        },
+        "Entity_[481198348887450]": {
+            "Id": "Entity_[481198348887450]",
+            "Name": "Cylinder_001",
+            "Components": {
+                "Component_[1194921302091262674]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1194921302091262674
+                },
+                "Component_[13143373017247887806]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 13143373017247887806
+                },
+                "Component_[13759263842050506710]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13759263842050506710,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 275470142
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_486bf5fd_cf2a_5f4e_ae6b_afbf351e59e8_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[17431991782644807075]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 17431991782644807075
+                },
+                "Component_[18057729686469850323]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18057729686469850323
+                },
+                "Component_[2729800778309802660]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 2729800778309802660,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.389330118894577,
+                            0.46348831057548523,
+                            1.3539751768112183
+                        ],
+                        "Rotate": [
+                            90.0,
+                            0.000015367924788733944,
+                            79.43516540527344
+                        ],
+                        "UniformScale": 100.00001525878906
+                    }
+                },
+                "Component_[4878155578813085553]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4878155578813085553
+                },
+                "Component_[7669490289926230005]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7669490289926230005
+                },
+                "Component_[9028332506516823279]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 9028332506516823279
+                },
+                "Component_[9472213293526417552]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9472213293526417552
+                }
+            }
+        },
+        "Entity_[481202643854746]": {
+            "Id": "Entity_[481202643854746]",
+            "Name": "WheelRearRight_Coord",
+            "Components": {
+                "Component_[1181306510285286496]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1181306510285286496
+                },
+                "Component_[12827044836690524879]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 12827044836690524879
+                },
+                "Component_[12928004317099253487]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12928004317099253487
+                },
+                "Component_[14782864147717453485]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14782864147717453485
+                },
+                "Component_[17133683775588277662]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17133683775588277662
+                },
+                "Component_[17765304227912147579]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 17765304227912147579
+                },
+                "Component_[2495829812089787602]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2495829812089787602
+                },
+                "Component_[3379898317275119756]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3379898317275119756,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.35277998447418213,
+                            1.1007800102233887,
+                            0.30000001192092896
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[7479075296848059565]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7479075296848059565
+                }
+            }
+        },
+        "Entity_[481206938822042]": {
+            "Id": "Entity_[481206938822042]",
+            "Name": "Text",
+            "Components": {
+                "Component_[11979832529764789640]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11979832529764789640,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.3071494996547699,
+                            0.7537751793861389,
+                            0.9088025689125061
+                        ],
+                        "Rotate": [
+                            -3.0533323265580226e-13,
+                            -0.0000025044776066351915,
+                            89.99996185302734
+                        ],
+                        "UniformScale": 36.0335693359375
+                    }
+                },
+                "Component_[14236233846713713163]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14236233846713713163
+                },
+                "Component_[15304056710527778750]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15304056710527778750
+                },
+                "Component_[18088142743793945743]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 18088142743793945743,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 270926196
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_2e104cfe_bc9d_596d_ae5e_5f4b7ee2dfc7_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[4624832952410885751]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4624832952410885751
+                },
+                "Component_[551956923635093264]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 551956923635093264
+                },
+                "Component_[6002952170942374989]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 6002952170942374989
+                },
+                "Component_[6142401293286021581]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6142401293286021581
+                },
+                "Component_[6195711093960480675]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6195711093960480675
+                },
+                "Component_[9194722581080122885]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9194722581080122885
+                }
+            }
+        },
+        "Entity_[481211233789338]": {
+            "Id": "Entity_[481211233789338]",
+            "Name": "SteeringArmRight",
+            "Components": {
+                "Component_[10851067383213231137]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10851067383213231137,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 284531792
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_e7772f4b_4f3b_5aa8_8bc9_8f0c115625f7_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11792463385742467982]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11792463385742467982
+                },
+                "Component_[12258837740191074139]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 12258837740191074139,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.23652781546115875,
+                            -0.9963722229003906,
+                            0.2807920575141907
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[3053304045007011536]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3053304045007011536
+                },
+                "Component_[3164906031890127488]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 3164906031890127488
+                },
+                "Component_[3981249917384555753]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 3981249917384555753
+                },
+                "Component_[4693740426365193772]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4693740426365193772
+                },
+                "Component_[6091097214358430285]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6091097214358430285
+                },
+                "Component_[8208606579064739383]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8208606579064739383
+                },
+                "Component_[8875083545597696410]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8875083545597696410
+                }
+            }
+        },
+        "Entity_[481215528756634]": {
+            "Id": "Entity_[481215528756634]",
+            "Name": "WheelFrontRight_Coord",
+            "Components": {
+                "Component_[10306013407309927136]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10306013407309927136
+                },
+                "Component_[14560018820718564154]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14560018820718564154,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.35277998447418213,
+                            -1.0945899486541748,
+                            0.30000001192092896
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[15305563512491119940]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15305563512491119940
+                },
+                "Component_[18383058685709352605]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18383058685709352605
+                },
+                "Component_[313097692897053414]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 313097692897053414
+                },
+                "Component_[4546103370017646149]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4546103370017646149
+                },
+                "Component_[6558999849319227122]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6558999849319227122
+                },
+                "Component_[7440975993602410475]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 7440975993602410475
+                },
+                "Component_[964530744557557175]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 964530744557557175
+                }
+            }
+        },
+        "Entity_[481219823723930]": {
+            "Id": "Entity_[481219823723930]",
+            "Name": "StearingArmLeft-RackCoonection_Coord",
+            "Components": {
+                "Component_[10027316779386411354]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10027316779386411354
+                },
+                "Component_[10390892648229454101]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10390892648229454101
+                },
+                "Component_[13388801759134493109]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13388801759134493109
+                },
+                "Component_[17085150149296590119]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17085150149296590119,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.236517995595932,
+                            -1.0083600282669067,
+                            0.2807919979095459
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 5.600440502166748
+                    }
+                },
+                "Component_[17180729292123913234]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17180729292123913234
+                },
+                "Component_[17281634293742759422]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17281634293742759422
+                },
+                "Component_[2836403761301206386]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2836403761301206386
+                },
+                "Component_[3077266468899174191]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3077266468899174191
+                },
+                "Component_[7739772403961874163]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 7739772403961874163
+                }
+            }
+        },
+        "Entity_[481224118691226]": {
+            "Id": "Entity_[481224118691226]",
+            "Name": "VacuumMechanismPart01",
+            "Components": {
+                "Component_[10969477467016912201]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10969477467016912201,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 280998294
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_7d3fa831_483e_50ab_a70d_631daa0a620f_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[13109067921466032475]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13109067921466032475
+                },
+                "Component_[13743808321428109587]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 13743808321428109587,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.5110553503036499,
+                            0.40084409713745117,
+                            1.6568981409072876
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -9.999998092651367
+                        ],
+                        "UniformScale": 100.00000762939453
+                    }
+                },
+                "Component_[13919313208357988116]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 13919313208357988116
+                },
+                "Component_[14927164716738756741]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 14927164716738756741
+                },
+                "Component_[15756690851402927176]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15756690851402927176
+                },
+                "Component_[16947311203392356063]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 16947311203392356063
+                },
+                "Component_[1911818628520170332]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1911818628520170332
+                },
+                "Component_[567711520852014997]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 567711520852014997,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[7035418944196675674]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 7035418944196675674
+                },
+                "Component_[9022252603242454312]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 9022252603242454312
+                }
+            }
+        },
+        "Entity_[481228413658522]": {
+            "Id": "Entity_[481228413658522]",
+            "Name": "VacuumNozzle02_Coord",
+            "Components": {
+                "Component_[10030705398053011823]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 10030705398053011823
+                },
+                "Component_[11094351317161377479]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11094351317161377479
+                },
+                "Component_[14279635390885525154]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14279635390885525154
+                },
+                "Component_[1552412409546098682]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1552412409546098682
+                },
+                "Component_[36549024409127547]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 36549024409127547,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -1.0717400312423706,
+                            0.4008445739746094,
+                            1.8237600326538086
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -9.999998092651367
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[4024873594752816268]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 4024873594752816268
+                },
+                "Component_[4239929534555542760]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4239929534555542760
+                },
+                "Component_[4810289998941846568]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4810289998941846568
+                },
+                "Component_[8997379830554568182]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8997379830554568182
+                }
+            }
+        },
+        "Entity_[481232708625818]": {
+            "Id": "Entity_[481232708625818]",
+            "Name": "SteeringRack",
+            "Components": {
+                "Component_[11426992314613314183]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11426992314613314183
+                },
+                "Component_[11910716660850641848]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11910716660850641848
+                },
+                "Component_[12194993697033022852]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 12194993697033022852,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 275051591
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_723e7480_3528_5e8a_ab9a_959fbf9d731e_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[12473011717100331010]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12473011717100331010
+                },
+                "Component_[16109858902208990216]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16109858902208990216
+                },
+                "Component_[2929372805721427893]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2929372805721427893
+                },
+                "Component_[6661386706989362691]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6661386706989362691,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            -1.0083600282669067,
+                            0.2882891893386841
+                        ],
+                        "Rotate": [
+                            -89.99996185302734,
+                            -0.000022311791326501407,
+                            180.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[7025671831494471596]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7025671831494471596
+                },
+                "Component_[7129024448389301931]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7129024448389301931
+                },
+                "Component_[7918014165838122760]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 7918014165838122760
+                }
+            }
+        },
+        "Entity_[481237003593114]": {
+            "Id": "Entity_[481237003593114]",
+            "Name": "VacuumMechanismParts_Coord",
+            "Components": {
+                "Component_[1077030550638560270]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1077030550638560270
+                },
+                "Component_[10824276905635542083]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10824276905635542083
+                },
+                "Component_[11689240787499378903]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11689240787499378903
+                },
+                "Component_[13221104197330086642]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 13221104197330086642,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.5110549926757813,
+                            0.4008445739746094,
+                            1.6568999290466309
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -9.999998092651367
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[14149607094633995759]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14149607094633995759
+                },
+                "Component_[16631835761148595907]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16631835761148595907
+                },
+                "Component_[4718111676147729467]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 4718111676147729467
+                },
+                "Component_[8560962293914084005]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8560962293914084005
+                },
+                "Component_[9457966287870990888]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 9457966287870990888
+                }
+            }
+        },
+        "Entity_[481241298560410]": {
+            "Id": "Entity_[481241298560410]",
+            "Name": "Apples_lod2",
+            "Components": {
+                "Component_[12295375387722827235]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12295375387722827235
+                },
+                "Component_[13383923498281282421]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 13383923498281282421
+                },
+                "Component_[16507212381931371155]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 16507212381931371155,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 271073675
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_ae7a079c_ab48_54b2_80ff_7fc1b2a19db1_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[16605834268707231766]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 16605834268707231766
+                },
+                "Component_[1978990346204276948]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1978990346204276948
+                },
+                "Component_[2833124486548402024]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2833124486548402024
+                },
+                "Component_[5621748011708018152]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5621748011708018152
+                },
+                "Component_[5931187979042637324]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 5931187979042637324,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            1.3595986366271973,
+                            0.5059428215026855
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[6031988751988533805]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6031988751988533805
+                },
+                "Component_[6815835751066181530]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6815835751066181530
+                }
+            }
+        },
+        "Entity_[481245593527706]": {
+            "Id": "Entity_[481245593527706]",
+            "Name": "Apple on Z top_001",
+            "Components": {
+                "Component_[1001844680512783873]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 1001844680512783873
+                },
+                "Component_[10193533211030527393]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10193533211030527393,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -2.0,
+                            -0.2491564005613327,
+                            0.699999988079071
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[11929093501746829752]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 11929093501746829752
+                },
+                "Component_[13751448568337191604]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13751448568337191604
+                },
+                "Component_[15223352480220155487]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15223352480220155487
+                },
+                "Component_[15558244331595280413]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 15558244331595280413
+                },
+                "Component_[1601260811141390911]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1601260811141390911
+                },
+                "Component_[7614086773702115989]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 7614086773702115989
+                },
+                "Component_[7907080447319104023]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7907080447319104023
+                }
+            }
+        },
+        "Entity_[481249888495002]": {
+            "Id": "Entity_[481249888495002]",
+            "Name": "Cylinder",
+            "Components": {
+                "Component_[11777594257828242000]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 11777594257828242000
+                },
+                "Component_[11863767572619519592]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11863767572619519592
+                },
+                "Component_[12282998981209043178]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 12282998981209043178
+                },
+                "Component_[16907879878469410349]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 16907879878469410349
+                },
+                "Component_[18347672844021792863]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 18347672844021792863,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[4447896298725001516]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 4447896298725001516,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 280609781
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_ae515b44_f458_5b46_a98f_c1d407b5ea98_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[4735839190990551294]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 4735839190990551294
+                },
+                "Component_[609444506671585753]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 609444506671585753
+                },
+                "Component_[766875441920097206]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 766875441920097206
+                },
+                "Component_[8921812000686546861]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8921812000686546861
+                }
+            }
+        },
+        "Entity_[481254183462298]": {
+            "Id": "Entity_[481254183462298]",
+            "Name": "AppleHardwareSkin",
+            "Components": {
+                "Component_[14545832718419349952]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 14545832718419349952,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 284627699
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_7a95e45d_ab03_524d_94f3_ad5489f7e309_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[1466739754913817275]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 1466739754913817275
+                },
+                "Component_[17072484675446291278]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17072484675446291278
+                },
+                "Component_[202449281003709821]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 202449281003709821
+                },
+                "Component_[3421574015020970106]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3421574015020970106,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.5505279302597046,
+                            0.39636436104774475,
+                            1.584314227104187
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 23.544193267822266
+                    }
+                },
+                "Component_[3939070508183730551]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3939070508183730551
+                },
+                "Component_[4310279291707324978]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 4310279291707324978
+                },
+                "Component_[4864828651386484783]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4864828651386484783
+                },
+                "Component_[4992776412238306005]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 4992776412238306005,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1814073633
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A041C3D7-97A3-5C38-A646-9C538B0061FC}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonyellowpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[6673386643594215910]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 6673386643594215910
+                },
+                "Component_[7662892752047096254]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7662892752047096254
+                }
+            }
+        },
+        "Entity_[481258478429594]": {
+            "Id": "Entity_[481258478429594]",
+            "Name": "Chasis_Coordinate",
+            "Components": {
+                "Component_[12585503104866094209]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12585503104866094209
+                },
+                "Component_[14003943219063362483]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 14003943219063362483
+                },
+                "Component_[15720065422046870340]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15720065422046870340
+                },
+                "Component_[16831847693897895290]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 16831847693897895290
+                },
+                "Component_[17845913318547013308]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17845913318547013308
+                },
+                "Component_[18174105309950526678]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 18174105309950526678
+                },
+                "Component_[18422157988401739265]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18422157988401739265
+                },
+                "Component_[476256819209100405]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 476256819209100405
+                },
+                "Component_[7486968132314175292]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7486968132314175292,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            0.6950939893722534
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 27.685028076171875
+                    }
+                }
+            }
+        },
+        "Entity_[481262773396890]": {
+            "Id": "Entity_[481262773396890]",
+            "Name": "VehicleChassis_003",
+            "Components": {
+                "Component_[10453028748691661594]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 10453028748691661594
+                },
+                "Component_[10877113084190268558]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10877113084190268558,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 282733202
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_3a10840d_14b7_551f_bc4e_b1140a8c7bef_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11667367031137366238]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 11667367031137366238
+                },
+                "Component_[12327720765023000340]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12327720765023000340
+                },
+                "Component_[14351434940475141159]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 14351434940475141159
+                },
+                "Component_[14470943321811485933]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14470943321811485933,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            0.6950939893722534
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[1712865041042444175]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1712865041042444175
+                },
+                "Component_[2077855749648925847]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 2077855749648925847
+                },
+                "Component_[4657204293836538020]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4657204293836538020
+                },
+                "Component_[4977237579707625655]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4977237579707625655
+                }
+            }
+        },
+        "Entity_[481267068364186]": {
+            "Id": "Entity_[481267068364186]",
+            "Name": "VacuumNozzle02",
+            "Components": {
+                "Component_[10550005409305038351]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10550005409305038351
+                },
+                "Component_[11673398531107186046]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 11673398531107186046,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 280242751
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_620fadb2_b9a1_562b_b141_be64ae148201_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[16013090237314468568]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16013090237314468568
+                },
+                "Component_[1900540640100618287]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1900540640100618287
+                },
+                "Component_[231023301663040770]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 231023301663040770
+                },
+                "Component_[4862331088269853523]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4862331088269853523
+                },
+                "Component_[5644177545437772589]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 5644177545437772589,
+                    "Parent Entity": "Entity_[481146809279898]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.0019091814756393433,
+                            -2.9802322387695313e-8,
+                            -1.862645149230957e-9
+                        ]
+                    }
+                },
+                "Component_[623834310440040666]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 623834310440040666
+                },
+                "Component_[6685586846867609547]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6685586846867609547
+                },
+                "Component_[918036044753947243]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 918036044753947243,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[9739834163518993476]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9739834163518993476
+                }
+            }
+        },
+        "Entity_[481271363331482]": {
+            "Id": "Entity_[481271363331482]",
+            "Name": "SteeringArmRightCoord",
+            "Components": {
+                "Component_[10127947750619033637]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10127947750619033637,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.25646600127220154,
+                            -1.0945899486541748,
+                            0.26796799898147583
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[11133020361125513110]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11133020361125513110
+                },
+                "Component_[12413826028001517695]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12413826028001517695
+                },
+                "Component_[17346779372551719371]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17346779372551719371
+                },
+                "Component_[2465886682383914036]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 2465886682383914036
+                },
+                "Component_[4087875832875345856]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4087875832875345856
+                },
+                "Component_[4794789046622369108]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 4794789046622369108
+                },
+                "Component_[6157625595795890752]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 6157625595795890752
+                },
+                "Component_[9954954467766945095]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9954954467766945095
+                }
+            }
+        },
+        "Entity_[481275658298778]": {
+            "Id": "Entity_[481275658298778]",
+            "Name": "ChassisAndFrame",
+            "Components": {
+                "Component_[12575634603604735046]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12575634603604735046
+                },
+                "Component_[13674184865043018891]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13674184865043018891,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 278458643
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_88bf1a95_7310_5973_b207_4e073e693b60_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[4054806077509138974]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4054806077509138974
+                },
+                "Component_[4413811817485225462]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4413811817485225462
+                },
+                "Component_[4579947825980906186]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 4579947825980906186
+                },
+                "Component_[474861652765838242]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 474861652765838242
+                },
+                "Component_[7003179011821994639]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7003179011821994639,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.00027315050829201937,
+                            0.000043590185669017956,
+                            -0.0021895775571465492
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[8288302288172649555]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 8288302288172649555
+                },
+                "Component_[9015205708425207326]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 9015205708425207326,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1814073633
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A041C3D7-97A3-5C38-A646-9C538B0061FC}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonyellowpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[9426294951241645222]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9426294951241645222
+                },
+                "Component_[9583544602310276170]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 9583544602310276170
+                }
+            }
+        },
+        "Entity_[481279953266074]": {
+            "Id": "Entity_[481279953266074]",
+            "Name": "HardwareBummpers",
+            "Components": {
+                "Component_[10287346010822050000]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10287346010822050000
+                },
+                "Component_[10498823261785638937]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10498823261785638937
+                },
+                "Component_[328947789504326501]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 328947789504326501
+                },
+                "Component_[5318192789284782104]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 5318192789284782104,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 275069136
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_eef91bed_6a30_50f8_9325_4f80878c1a85_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[5570784112037320836]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5570784112037320836
+                },
+                "Component_[5656552419915787655]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 5656552419915787655
+                },
+                "Component_[5661690340096955154]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 5661690340096955154
+                },
+                "Component_[745069538831130491]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 745069538831130491,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.259255975484848,
+                            -1.3674370050430298,
+                            0.8774783611297607
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[8390450132554175581]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8390450132554175581
+                },
+                "Component_[9816435200956885210]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 9816435200956885210
+                }
+            }
+        },
+        "Entity_[481284248233370]": {
+            "Id": "Entity_[481284248233370]",
+            "Name": "VacuumMechanismPart02",
+            "Components": {
+                "Component_[10386626215130212269]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10386626215130212269,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 270790829
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_4f9850bc_6a50_5c22_b85e_cfbe1891c1ba_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11203402117038325919]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11203402117038325919,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.5110553503036499,
+                            0.40084409713745117,
+                            1.6568981409072876
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -10.000003814697266
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[16804734363247230733]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16804734363247230733
+                },
+                "Component_[17700674988184623287]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 17700674988184623287,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3469553540
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{C4ABDF1C-AC72-5C0D-A10D-661A01DD6375}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonmetalmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[17864452768718309138]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17864452768718309138
+                },
+                "Component_[18242974998804301814]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18242974998804301814
+                },
+                "Component_[3679519116955553201]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 3679519116955553201
+                },
+                "Component_[3764798249901739120]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 3764798249901739120
+                },
+                "Component_[4334470690842813204]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4334470690842813204
+                },
+                "Component_[4951782958371595117]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4951782958371595117
+                },
+                "Component_[7195780531042918873]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 7195780531042918873
+                }
+            }
+        },
+        "Entity_[481288543200666]": {
+            "Id": "Entity_[481288543200666]",
+            "Name": "VehicleBody",
+            "Components": {
+                "Component_[11424244051442362401]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11424244051442362401
+                },
+                "Component_[1183114138981755172]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 1183114138981755172,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 149698722
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A819D60-61EA-563C-9CE5-CB369D919160}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonblackpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3919806019
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{384165FF-B110-5B3F-8DEE-535A86B61D27}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonwhitepaintmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[11891851705183419976]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11891851705183419976
+                },
+                "Component_[12405325273779195677]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12405325273779195677
+                },
+                "Component_[1832857420118531193]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1832857420118531193
+                },
+                "Component_[2848356511133410073]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2848356511133410073
+                },
+                "Component_[3710957066187772729]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 3710957066187772729,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 268598183
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_f4725b5c_049d_5392_a548_a0c1614a695f_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[4495938394942292870]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 4495938394942292870,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[512766830007613529]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 512766830007613529
+                },
+                "Component_[6696829149955874510]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 6696829149955874510
+                },
+                "Component_[8283716689480950119]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 8283716689480950119
+                }
+            }
+        },
+        "Entity_[481292838167962]": {
+            "Id": "Entity_[481292838167962]",
+            "Name": "VacumNozzle_Coord",
+            "Components": {
+                "Component_[10439882570729227732]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 10439882570729227732
+                },
+                "Component_[12423475517268344311]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 12423475517268344311
+                },
+                "Component_[15705683117562315331]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 15705683117562315331
+                },
+                "Component_[2703635645759035528]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2703635645759035528
+                },
+                "Component_[3525666823432379402]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 3525666823432379402
+                },
+                "Component_[3874256325693046546]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 3874256325693046546
+                },
+                "Component_[4137874658499088359]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4137874658499088359
+                },
+                "Component_[753988333072643693]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 753988333072643693,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.8837169408798218,
+                            0.4008445739746094,
+                            1.7906098365783691
+                        ],
+                        "Rotate": [
+                            90.0,
+                            -4.26886799687054e-7,
+                            -9.999998092651367
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[7785201299103898752]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 7785201299103898752
+                }
+            }
+        },
+        "Entity_[481297133135258]": {
+            "Id": "Entity_[481297133135258]",
+            "Name": "Apple on Y",
+            "Components": {
+                "Component_[10807598074884240392]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10807598074884240392
+                },
+                "Component_[11928357449514592352]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11928357449514592352
+                },
+                "Component_[16940777911143663960]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 16940777911143663960
+                },
+                "Component_[2494073616420441744]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2494073616420441744
+                },
+                "Component_[2498185552146159286]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2498185552146159286
+                },
+                "Component_[3307353214431420137]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3307353214431420137
+                },
+                "Component_[6636963786143875743]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 6636963786143875743
+                },
+                "Component_[918740092729200628]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 918740092729200628
+                },
+                "Component_[9497734928192765859]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 9497734928192765859,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -2.0,
+                            0.7508435845375061,
+                            1.5
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                }
+            }
+        },
+        "Entity_[481301428102554]": {
+            "Id": "Entity_[481301428102554]",
+            "Name": "WheelRearLeft_Coord",
+            "Components": {
+                "Component_[11580412009126722652]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 11580412009126722652
+                },
+                "Component_[16199686006685939831]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 16199686006685939831
+                },
+                "Component_[16548744803450298757]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16548744803450298757
+                },
+                "Component_[17434092856427029392]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 17434092856427029392
+                },
+                "Component_[235097259162351657]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 235097259162351657,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.35277998447418213,
+                            1.1007800102233887,
+                            0.30000001192092896
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[2500224878497300000]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 2500224878497300000
+                },
+                "Component_[658694564545991312]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 658694564545991312
+                },
+                "Component_[7351488271450003157]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 7351488271450003157
+                },
+                "Component_[8245332633131525043]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8245332633131525043
+                }
+            }
+        },
+        "Entity_[481305723069850]": {
+            "Id": "Entity_[481305723069850]",
+            "Name": "Apple on Z top",
+            "Components": {
+                "Component_[14242315585513110626]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14242315585513110626
+                },
+                "Component_[1441296972341786262]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1441296972341786262
+                },
+                "Component_[17975415865818551838]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17975415865818551838
+                },
+                "Component_[5504648178221487709]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 5504648178221487709,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -2.0,
+                            -0.2491564005613327,
+                            2.487934112548828
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[5535312447870219962]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5535312447870219962
+                },
+                "Component_[5766445850107952486]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 5766445850107952486
+                },
+                "Component_[6613223062401389400]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6613223062401389400
+                },
+                "Component_[856027175484468619]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 856027175484468619
+                },
+                "Component_[9312251730334463346]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 9312251730334463346
+                }
+            }
+        },
+        "Entity_[481310018037146]": {
+            "Id": "Entity_[481310018037146]",
+            "Name": "SideSkin",
+            "Components": {
+                "Component_[12510087532612522611]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 12510087532612522611
+                },
+                "Component_[14580907574654417774]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14580907574654417774
+                },
+                "Component_[15997235077888547162]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15997235077888547162
+                },
+                "Component_[16425653644808213925]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 16425653644808213925
+                },
+                "Component_[17547574784335597084]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17547574784335597084
+                },
+                "Component_[17749139003667398273]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 17749139003667398273,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.5179893374443054,
+                            0.40163373947143555,
+                            1.5660651922225952
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[1849756045264108833]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1849756045264108833
+                },
+                "Component_[6002596503375556895]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 6002596503375556895,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 274241779
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_dc0457a8_d1bd_576b_b8ee_98b47d7dd562_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[6987050109582341813]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6987050109582341813
+                },
+                "Component_[8353897387378921295]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8353897387378921295
+                },
+                "Component_[8433001314289862670]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 8433001314289862670,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 149698722
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{9A819D60-61EA-563C-9CE5-CB369D919160}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonblackpaintmat.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1814073633
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A041C3D7-97A3-5C38-A646-9C538B0061FC}"
+                                            },
+                                            "assetHint": "assets/temp/applepickerbot_skin_amazonyellowpaintmat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "Entity_[481314313004442]": {
+            "Id": "Entity_[481314313004442]",
+            "Name": "StearingArmRight-RackCoonection_Coord",
+            "Components": {
+                "Component_[12409197006638773797]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12409197006638773797
+                },
+                "Component_[1319984796031106784]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 1319984796031106784
+                },
+                "Component_[15467781149449827841]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15467781149449827841,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.23652799427509308,
+                            -0.9963719844818115,
+                            0.2807919979095459
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 5.600440502166748
+                    }
+                },
+                "Component_[1795764833889407531]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1795764833889407531
+                },
+                "Component_[1815371792947831737]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 1815371792947831737
+                },
+                "Component_[4436140762354806600]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4436140762354806600
+                },
+                "Component_[5165642500647625301]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 5165642500647625301
+                },
+                "Component_[8292462566959054248]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 8292462566959054248
+                },
+                "Component_[8874456728977644816]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8874456728977644816
+                }
+            }
+        },
+        "Entity_[481318607971738]": {
+            "Id": "Entity_[481318607971738]",
+            "Name": "Cube_006",
+            "Components": {
+                "Component_[1109871852327452445]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 1109871852327452445,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 269950928
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_53b050e4_d70c_5105_9a0f_452625c2ffde_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[14057905902230895318]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14057905902230895318
+                },
+                "Component_[15723273442446086727]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15723273442446086727
+                },
+                "Component_[16858072538890960068]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 16858072538890960068
+                },
+                "Component_[2721635784044496826]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2721635784044496826
+                },
+                "Component_[3443178607637277388]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3443178607637277388,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.043081283569336e-7,
+                            1.1639034748077393,
+                            0.7247134447097778
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 16.639202117919922
+                    }
+                },
+                "Component_[3453243513591706370]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 3453243513591706370
+                },
+                "Component_[3506257927814293199]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3506257927814293199
+                },
+                "Component_[8081955335414432066]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 8081955335414432066
+                },
+                "Component_[8977645135362632660]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8977645135362632660
+                }
+            }
+        },
+        "Entity_[481322902939034]": {
+            "Id": "Entity_[481322902939034]",
+            "Name": "SteeringArmLeft",
+            "Components": {
+                "Component_[10007782715007480057]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10007782715007480057,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 273096208
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_976377ce_032c_5cc7_84a5_cc03f4f98d6d_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[15345431249524715578]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 15345431249524715578
+                },
+                "Component_[16672818831909142906]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 16672818831909142906
+                },
+                "Component_[16948388886534448009]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 16948388886534448009,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.23651759326457977,
+                            -1.0083600282669067,
+                            0.28079208731651306
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[1780231220271592341]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 1780231220271592341
+                },
+                "Component_[195022928149514228]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 195022928149514228
+                },
+                "Component_[7920806365152134043]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 7920806365152134043
+                },
+                "Component_[8519605872691792126]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 8519605872691792126
+                },
+                "Component_[908093734983237602]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 908093734983237602
+                },
+                "Component_[9130963377466676375]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9130963377466676375
+                }
+            }
+        },
+        "Entity_[481327197906330]": {
+            "Id": "Entity_[481327197906330]",
+            "Name": "Apple_Crate_001",
+            "Components": {
+                "Component_[12755044552789632802]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12755044552789632802
+                },
+                "Component_[13170194271257614325]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13170194271257614325
+                },
+                "Component_[13940570847445927318]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 13940570847445927318,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 277425685
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_903f6cd9_b6c4_57bd_a55c_7dfc3897c0fc_.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[13976174074084629409]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 13976174074084629409
+                },
+                "Component_[14408116024894357735]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 14408116024894357735
+                },
+                "Component_[15379138863043082801]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 15379138863043082801
+                },
+                "Component_[1833459013731881336]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1833459013731881336
+                },
+                "Component_[2309429701451794523]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2309429701451794523
+                },
+                "Component_[2469324516559042328]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 2469324516559042328,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.4310297389061283e-16,
+                            0.5429108142852783,
+                            0.6444784998893738
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[711288372836666589]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 711288372836666589
+                }
+            }
+        },
+        "Entity_[481331492873626]": {
+            "Id": "Entity_[481331492873626]",
+            "Name": "Plane",
+            "Components": {
+                "Component_[10010289502046995864]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 10010289502046995864
+                },
+                "Component_[12800271906892567188]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12800271906892567188
+                },
+                "Component_[14212854783295588030]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 14212854783295588030
+                },
+                "Component_[2257070867338412546]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 2257070867338412546
+                },
+                "Component_[5807996430739167889]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 5807996430739167889
+                },
+                "Component_[6043649352894756402]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6043649352894756402
+                },
+                "Component_[6277741472386999170]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 6277741472386999170,
+                    "Parent Entity": "Entity_[481159694181786]",
+                    "Transform Data": {
+                        "Rotate": [
+                            90.00000762939453,
+                            0.0,
+                            0.0
+                        ],
+                        "UniformScale": 100.0
+                    }
+                },
+                "Component_[6402348246749355822]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6402348246749355822
+                },
+                "Component_[7964883250117506014]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 7964883250117506014
+                },
+                "Component_[961455800533597560]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 961455800533597560,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{4C7FAF4B-D1FE-526A-8094-95FFE4916CAF}",
+                                    "subId": 278260354
+                                },
+                                "assetHint": "assets/temp/default_applepickerbot_skin_f7cfa447_8b60_59c4_bbfc_456192d60ba6_.azmodel"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

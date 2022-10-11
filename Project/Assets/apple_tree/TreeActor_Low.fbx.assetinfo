@@ -1,0 +1,134 @@
+{
+    "values": [
+        {
+            "$type": "ActorGroup",
+            "name": "TreeActor_Low",
+            "selectedRootBone": "RootNode",
+            "id": "{9BE839A7-A9BC-5F5F-ABFF-A815E8CACA07}",
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MorphTargetRule",
+                        "morphTargets": {
+                            "selectedNodes": [
+                                "RootNode.AppleTree.Key 1"
+                            ],
+                            "unselectedNodes": [
+                                {},
+                                "RootNode",
+                                "RootNode.AppleTree",
+                                "RootNode.Armature",
+                                "RootNode.Armature.TreeOne",
+                                "RootNode.Armature.TreeOne.TreeTwo",
+                                "RootNode.Armature.TreeOne.TreeTwo.TreeThree",
+                                "RootNode.Armature.TreeOne.TreeTwo.TreeThree.TreeFour"
+                            ]
+                        }
+                    },
+                    {
+                        "$type": "MetaDataRule",
+                        "metaData": "AdjustActor -actorID $(ACTORID) -name \"TreeActor_Low\"\nActorSetCollisionMeshes -actorID $(ACTORID) -lod 0 -nodeList \"\"\nAdjustActor -actorID $(ACTORID) -nodesExcludedFromBounds \"\" -nodeAction \"select\"\nAdjustMorphTarget -actorID $(ACTORID) -lodLevel 0 -name \"Key 1\" -phonemeAction \"replace\" -phonemeSets \"\" -rangeMin 0.000000 -rangeMax 1.000000\nAdjustActor -actorID $(ACTORID) -nodeAction \"replace\" -attachmentNodes \"\"\nAdjustActor -actorID $(ACTORID) -mirrorSetup \"\"\n"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{FACE9CF9-DE43-5C0D-9FAA-64389278581D}",
+            "name": "TreeActor_Low",
+            "NodeSelectionList": {
+                "unselectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.AppleTree",
+                    "RootNode.Armature",
+                    "RootNode.Armature.TreeOne",
+                    "RootNode.Armature.TreeOne.TreeTwo",
+                    "RootNode.Armature.TreeOne.TreeTwo.TreeThree",
+                    "RootNode.Armature.TreeOne.TreeTwo.TreeThree.TreeFour"
+                ]
+            },
+            "PhysicsMaterialSlots": {
+                "Slots": [
+                    {
+                        "Name": "Entire object"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "MotionGroup",
+            "name": "TreeActor_Low",
+            "selectedRootBone": "RootNode",
+            "id": "{2B29630D-4B3B-5DEE-BAAE-75CC0C993013}",
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MorphTargetRuleReadOnly",
+                        "morphCount": 1,
+                        "staticDescription": "1 morph target motions imported"
+                    },
+                    {
+                        "$type": "MotionSamplingRule"
+                    }
+                ]
+            }
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "TreeActor_Low",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.AppleTree",
+                    "RootNode.Armature",
+                    "RootNode.Armature.TreeOne",
+                    "RootNode.Armature.TreeOne.TreeTwo",
+                    "RootNode.Armature.TreeOne.TreeTwo.TreeThree",
+                    "RootNode.Armature.TreeOne.TreeTwo.TreeThree.TreeFour"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "SkinRule"
+                    },
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{9ACF9A20-D082-5465-9200-F9607E58CFAD}"
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "default_TreeActor_Low_0B6435E8_C7B9_5869_9E72_2A80633B9D07_",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode.AppleTree"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "ProceduralMeshGroupRule"
+                    },
+                    {
+                        "$type": "CoordinateSystemRule",
+                        "useAdvancedData": true
+                    },
+                    {
+                        "$type": "{6E796AC8-1484-4909-860A-6D3F22A7346F} LodRule"
+                    }
+                ]
+            },
+            "id": "{0B6435E8-C7B9-5869-9E72-2A80633B9D07}"
+        },
+        {
+            "$type": "PrefabGroup",
+            "name": "Assets/apple_tree/TreeActor_Low_fbx.procprefab",
+            "id": "{E9973244-8063-5696-804A-F109CF8FA12C}"
+        }
+    ]
+}

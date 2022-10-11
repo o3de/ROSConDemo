@@ -1,120 +1,466 @@
 {
     "ContainerEntity": {
         "Id": "ContainerEntity",
-        "Name": "Apple",
+        "Name": "Leaf_Animation",
         "Components": {
-            "Component_[10373988469135272475]": {
-                "$type": "EditorPrefabComponent",
-                "Id": 10373988469135272475
+            "Component_[12322662140813646328]": {
+                "$type": "EditorLockComponent",
+                "Id": 12322662140813646328
             },
-            "Component_[14021823587407781464]": {
+            "Component_[13650285749475726916]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 13650285749475726916
+            },
+            "Component_[14031858388862132027]": {
                 "$type": "EditorEntitySortComponent",
-                "Id": 14021823587407781464,
+                "Id": 14031858388862132027,
                 "Child Entity Order": [
-                    "Entity_[532883711761236]",
-                    "Entity_[15454985734742]"
+                    "Entity_[48239875646874]",
+                    "Entity_[43051555153306]",
+                    "Entity_[43055850120602]",
+                    "Entity_[43060145087898]",
+                    "Entity_[282010650600858]"
                 ]
             },
-            "Component_[17300195898860990188]": {
+            "Component_[14528726373481783419]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 14528726373481783419
+            },
+            "Component_[16595716700756159381]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                "Id": 17300195898860990188,
+                "Id": 16595716700756159381,
                 "Parent Entity": "",
                 "Transform Data": {
                     "Translate": [
-                        0.09196968376636505,
-                        0.42729446291923523,
-                        1.9483000040054321
-                    ],
-                    "Rotate": [
-                        -1.8461143970489502,
-                        -12.610696792602539,
-                        -92.20634460449219
+                        8.278789520263672,
+                        -2.898683786392212,
+                        1.9388500452041626
                     ]
                 }
             },
-            "Component_[17513034959945529892]": {
+            "Component_[17679255660055306558]": {
                 "$type": "EditorVisibilityComponent",
-                "Id": 17513034959945529892
+                "Id": 17679255660055306558
             },
-            "Component_[17779882473767137091]": {
-                "$type": "EditorEntityIconComponent",
-                "Id": 17779882473767137091
+            "Component_[5745448508886905688]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 5745448508886905688
             },
-            "Component_[4564076404394526912]": {
-                "$type": "EditorOnlyEntityComponent",
-                "Id": 4564076404394526912
-            },
-            "Component_[5573734248608357458]": {
+            "Component_[7831987778821010252]": {
                 "$type": "EditorDisabledCompositionComponent",
-                "Id": 5573734248608357458
+                "Id": 7831987778821010252
             },
-            "Component_[701046532996523845]": {
-                "$type": "EditorLockComponent",
-                "Id": 701046532996523845
+            "Component_[8439097057559093244]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 8439097057559093244
             },
-            "Component_[7901666939427846794]": {
+            "Component_[9749450054444279267]": {
                 "$type": "EditorInspectorComponent",
-                "Id": 7901666939427846794
-            },
-            "Component_[9003708224129289693]": {
-                "$type": "EditorPendingCompositionComponent",
-                "Id": 9003708224129289693
+                "Id": 9749450054444279267
             }
         }
     },
     "Entities": {
-        "Entity_[15454985734742]": {
-            "Id": "Entity_[15454985734742]",
-            "Name": "Leaf_Animation",
+        "Entity_[282010650600858]": {
+            "Id": "Entity_[282010650600858]",
+            "Name": "Leaf_Four",
             "Components": {
-                "Component_[12322662140813646328]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 12322662140813646328
-                },
-                "Component_[13650285749475726916]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 13650285749475726916
-                },
-                "Component_[14031858388862132027]": {
+                "Component_[10456745042284478338]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 14031858388862132027,
-                    "Child Entity Order": [
-                        "Entity_[15467870636630]",
-                        "Entity_[15472165603926]",
-                        "Entity_[15459280702038]",
-                        "Entity_[15463575669334]",
-                        "Entity_[15476460571222]"
+                    "Id": 10456745042284478338
+                },
+                "Component_[10661811483048974553]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10661811483048974553
+                },
+                "Component_[11141949854947645899]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11141949854947645899
+                },
+                "Component_[12755311775754111477]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 12755311775754111477,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
+                            "path": "scriptCanvas/Leaf.scriptcanvas"
+                        },
+                        "sourceName": "Leaf.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
+                                "path": "scriptCanvas/Leaf.scriptcanvas"
+                            }
+                        }
+                    }
+                },
+                "Component_[14370931024672174367]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14370931024672174367
+                },
+                "Component_[14535216524783213770]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14535216524783213770
+                },
+                "Component_[14744933089033844067]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 14744933089033844067,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 2
+                        },
+                        "CollisionGroupId": {
+                            "GroupId": "{8770D703-A039-417B-ACE2-93279D16B217}"
+                        },
+                        "Position": [
+                            0.0,
+                            0.0,
+                            0.004562461748719215
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object",
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{5AADFDA4-65CA-5D70-9C55-A12802A37C39}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "physx/terrain_grass.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        },
+                        "ColliderTag": "Leaf"
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                0.05542672425508499,
+                                0.11137882620096207,
+                                0.014986437745392323
+                            ]
+                        }
+                    }
+                },
+                "Component_[15179996452261473116]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15179996452261473116
+                },
+                "Component_[17607170059971697285]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17607170059971697285
+                },
+                "Component_[18004712786400785261]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 18004712786400785261,
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Rotate": [
+                            59.0491828918457,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                "Component_[18168723984414201759]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 18168723984414201759,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 924759392
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[2745031063359843439]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 2745031063359843439,
+                    "Configuration": {
+                        "entityId": "",
+                        "Linear damping": 10.0,
+                        "Start Asleep": true,
+                        "Gravity Enabled": false,
+                        "Compute Mass": false,
+                        "Mass": 0.0029999997932463884,
+                        "Compute COM": false,
+                        "Centre of mass offset": [
+                            0.0,
+                            0.0,
+                            0.004562461748719215
+                        ],
+                        "Inertia tensor": [
+                            0.000003157458877467434,
+                            0.0,
+                            0.0,
+                            0.0,
+                            8.241787554652547e-7,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00000386934107154957
+                        ],
+                        "Maximum Angular Velocity": 1.0
+                    }
+                },
+                "Component_[7888115297358272984]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7888115297358272984,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 18004712786400785261
+                        },
+                        {
+                            "ComponentId": 8240577122544618484,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 18168723984414201759,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 14744933089033844067,
+                            "SortIndex": 3
+                        },
+                        {
+                            "ComponentId": 2745031063359843439,
+                            "SortIndex": 4
+                        }
                     ]
                 },
-                "Component_[14528726373481783419]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 14528726373481783419
-                },
-                "Component_[16595716700756159381]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 16595716700756159381,
-                    "Parent Entity": "ContainerEntity"
-                },
-                "Component_[17679255660055306558]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 17679255660055306558
-                },
-                "Component_[7831987778821010252]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7831987778821010252
-                },
-                "Component_[8439097057559093244]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 8439097057559093244
-                },
-                "Component_[9749450054444279267]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 9749450054444279267
+                "Component_[8240577122544618484]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 8240577122544618484,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{CD26A0B7-6D8D-5F9B-93F6-E31665D948C7}",
+                                    "subId": 278855911
+                                },
+                                "assetHint": "assets/apple_tree/leaf.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
                 }
             }
         },
-        "Entity_[15459280702038]": {
-            "Id": "Entity_[15459280702038]",
+        "Entity_[43051555153306]": {
+            "Id": "Entity_[43051555153306]",
+            "Name": "Leaf_One",
+            "Components": {
+                "Component_[10456745042284478338]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10456745042284478338
+                },
+                "Component_[10661811483048974553]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10661811483048974553
+                },
+                "Component_[11141949854947645899]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11141949854947645899
+                },
+                "Component_[12570166261430111169]": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 12570166261430111169,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
+                            "path": "scriptCanvas/Leaf.scriptcanvas"
+                        },
+                        "sourceName": "Leaf.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
+                                "path": "scriptCanvas/Leaf.scriptcanvas"
+                            }
+                        }
+                    }
+                },
+                "Component_[14370931024672174367]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 14370931024672174367
+                },
+                "Component_[14535216524783213770]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14535216524783213770
+                },
+                "Component_[14744933089033844067]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 14744933089033844067,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 2
+                        },
+                        "CollisionGroupId": {
+                            "GroupId": "{8770D703-A039-417B-ACE2-93279D16B217}"
+                        },
+                        "Position": [
+                            0.0,
+                            0.0,
+                            0.004562461748719215
+                        ],
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object",
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{5AADFDA4-65CA-5D70-9C55-A12802A37C39}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "physx/terrain_grass.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        },
+                        "ColliderTag": "Leaf"
+                    },
+                    "ShapeConfiguration": {
+                        "ShapeType": 1,
+                        "Box": {
+                            "Configuration": [
+                                0.05542672425508499,
+                                0.11137882620096207,
+                                0.014986437745392323
+                            ]
+                        }
+                    }
+                },
+                "Component_[15179996452261473116]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 15179996452261473116
+                },
+                "Component_[17607170059971697285]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17607170059971697285
+                },
+                "Component_[18004712786400785261]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 18004712786400785261,
+                    "Parent Entity": "ContainerEntity",
+                    "Transform Data": {
+                        "Rotate": [
+                            59.0491828918457,
+                            0.0,
+                            0.0
+                        ]
+                    }
+                },
+                "Component_[18168723984414201759]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 18168723984414201759,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 924759392
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
+                                            },
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[2745031063359843439]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 2745031063359843439,
+                    "Configuration": {
+                        "entityId": "",
+                        "Linear damping": 10.0,
+                        "Start Asleep": true,
+                        "Gravity Enabled": false,
+                        "Compute Mass": false,
+                        "Mass": 0.0029999997932463884,
+                        "Compute COM": false,
+                        "Centre of mass offset": [
+                            0.0,
+                            0.0,
+                            0.004562461748719215
+                        ],
+                        "Inertia tensor": [
+                            0.000003157458877467434,
+                            0.0,
+                            0.0,
+                            0.0,
+                            8.241787554652547e-7,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.00000386934107154957
+                        ],
+                        "Maximum Angular Velocity": 1.0
+                    }
+                },
+                "Component_[7888115297358272984]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 7888115297358272984,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 18004712786400785261
+                        },
+                        {
+                            "ComponentId": 8240577122544618484,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 18168723984414201759,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 14744933089033844067,
+                            "SortIndex": 3
+                        },
+                        {
+                            "ComponentId": 2745031063359843439,
+                            "SortIndex": 4
+                        }
+                    ]
+                },
+                "Component_[8240577122544618484]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 8240577122544618484,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{CD26A0B7-6D8D-5F9B-93F6-E31665D948C7}",
+                                    "subId": 278855911
+                                },
+                                "assetHint": "assets/apple_tree/leaf.azmodel"
+                            },
+                            "IsRayTracingEnabled": false
+                        }
+                    }
+                }
+            }
+        },
+        "Entity_[43055850120602]": {
+            "Id": "Entity_[43055850120602]",
             "Name": "Leaf_Two",
             "Components": {
                 "Component_[10456745042284478338]": {
@@ -207,7 +553,7 @@
                 "Component_[18004712786400785261]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 18004712786400785261,
-                    "Parent Entity": "Entity_[15454985734742]",
+                    "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Rotate": [
                             59.0491828918457,
@@ -312,8 +658,8 @@
                 }
             }
         },
-        "Entity_[15463575669334]": {
-            "Id": "Entity_[15463575669334]",
+        "Entity_[43060145087898]": {
+            "Id": "Entity_[43060145087898]",
             "Name": "Leaf_Three",
             "Components": {
                 "Component_[1037352627221915914]": {
@@ -406,7 +752,7 @@
                 "Component_[18004712786400785261]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 18004712786400785261,
-                    "Parent Entity": "Entity_[15454985734742]",
+                    "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Rotate": [
                             59.0491828918457,
@@ -511,8 +857,8 @@
                 }
             }
         },
-        "Entity_[15467870636630]": {
-            "Id": "Entity_[15467870636630]",
+        "Entity_[48239875646874]": {
+            "Id": "Entity_[48239875646874]",
             "Name": "Trigger",
             "Components": {
                 "Component_[11167872855358378100]": {
@@ -568,7 +914,7 @@
                 "Component_[14037613930827247190]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 14037613930827247190,
-                    "Parent Entity": "Entity_[15454985734742]",
+                    "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Translate": [
                             0.0,
@@ -726,554 +1072,6 @@
                 "Component_[9686789728817056027]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 9686789728817056027
-                }
-            }
-        },
-        "Entity_[15472165603926]": {
-            "Id": "Entity_[15472165603926]",
-            "Name": "Leaf_One",
-            "Components": {
-                "Component_[10456745042284478338]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 10456745042284478338
-                },
-                "Component_[10661811483048974553]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 10661811483048974553
-                },
-                "Component_[11141949854947645899]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 11141949854947645899
-                },
-                "Component_[12570166261430111169]": {
-                    "$type": "EditorScriptCanvasComponent",
-                    "Id": 12570166261430111169,
-                    "configuration": {
-                        "sourceHandle": {
-                            "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
-                            "path": "scriptCanvas/Leaf.scriptcanvas"
-                        },
-                        "sourceName": "Leaf.scriptcanvas",
-                        "propertyOverrides": {
-                            "source": {
-                                "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
-                                "path": "scriptCanvas/Leaf.scriptcanvas"
-                            }
-                        }
-                    }
-                },
-                "Component_[14370931024672174367]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 14370931024672174367
-                },
-                "Component_[14535216524783213770]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 14535216524783213770
-                },
-                "Component_[14744933089033844067]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 14744933089033844067,
-                    "ColliderConfiguration": {
-                        "CollisionLayer": {
-                            "Index": 2
-                        },
-                        "CollisionGroupId": {
-                            "GroupId": "{8770D703-A039-417B-ACE2-93279D16B217}"
-                        },
-                        "Position": [
-                            0.0,
-                            0.0,
-                            0.004562461748719215
-                        ],
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object",
-                                    "MaterialAsset": {
-                                        "assetId": {
-                                            "guid": "{5AADFDA4-65CA-5D70-9C55-A12802A37C39}",
-                                            "subId": 1
-                                        },
-                                        "assetHint": "physx/terrain_grass.physicsmaterial"
-                                    }
-                                }
-                            ]
-                        },
-                        "ColliderTag": "Leaf"
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Configuration": [
-                                0.05542672425508499,
-                                0.11137882620096207,
-                                0.014986437745392323
-                            ]
-                        }
-                    }
-                },
-                "Component_[15179996452261473116]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 15179996452261473116
-                },
-                "Component_[17607170059971697285]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 17607170059971697285
-                },
-                "Component_[18004712786400785261]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 18004712786400785261,
-                    "Parent Entity": "Entity_[15454985734742]",
-                    "Transform Data": {
-                        "Rotate": [
-                            59.0491828918457,
-                            0.0,
-                            0.0
-                        ]
-                    }
-                },
-                "Component_[18168723984414201759]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 18168723984414201759,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 924759392
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
-                                            },
-                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                },
-                "Component_[2745031063359843439]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 2745031063359843439,
-                    "Configuration": {
-                        "entityId": "",
-                        "Linear damping": 10.0,
-                        "Start Asleep": true,
-                        "Gravity Enabled": false,
-                        "Compute Mass": false,
-                        "Mass": 0.0029999997932463884,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.004562461748719215
-                        ],
-                        "Inertia tensor": [
-                            0.000003157458877467434,
-                            0.0,
-                            0.0,
-                            0.0,
-                            8.241787554652547e-7,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.00000386934107154957
-                        ],
-                        "Maximum Angular Velocity": 1.0
-                    }
-                },
-                "Component_[7888115297358272984]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 7888115297358272984,
-                    "ComponentOrderEntryArray": [
-                        {
-                            "ComponentId": 18004712786400785261
-                        },
-                        {
-                            "ComponentId": 8240577122544618484,
-                            "SortIndex": 1
-                        },
-                        {
-                            "ComponentId": 18168723984414201759,
-                            "SortIndex": 2
-                        },
-                        {
-                            "ComponentId": 14744933089033844067,
-                            "SortIndex": 3
-                        },
-                        {
-                            "ComponentId": 2745031063359843439,
-                            "SortIndex": 4
-                        }
-                    ]
-                },
-                "Component_[8240577122544618484]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 8240577122544618484,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{CD26A0B7-6D8D-5F9B-93F6-E31665D948C7}",
-                                    "subId": 278855911
-                                },
-                                "assetHint": "assets/apple_tree/leaf.azmodel"
-                            },
-                            "IsRayTracingEnabled": false
-                        }
-                    }
-                }
-            }
-        },
-        "Entity_[15476460571222]": {
-            "Id": "Entity_[15476460571222]",
-            "Name": "Leaf_Four",
-            "Components": {
-                "Component_[10456745042284478338]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 10456745042284478338
-                },
-                "Component_[10661811483048974553]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 10661811483048974553
-                },
-                "Component_[11141949854947645899]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 11141949854947645899
-                },
-                "Component_[12755311775754111477]": {
-                    "$type": "EditorScriptCanvasComponent",
-                    "Id": 12755311775754111477,
-                    "configuration": {
-                        "sourceHandle": {
-                            "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
-                            "path": "scriptCanvas/Leaf.scriptcanvas"
-                        },
-                        "sourceName": "Leaf.scriptcanvas",
-                        "propertyOverrides": {
-                            "source": {
-                                "id": "{1ABF0472-0DEB-5FFD-A08D-DF1D4D3CD029}",
-                                "path": "scriptCanvas/Leaf.scriptcanvas"
-                            }
-                        }
-                    }
-                },
-                "Component_[14370931024672174367]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 14370931024672174367
-                },
-                "Component_[14535216524783213770]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 14535216524783213770
-                },
-                "Component_[14744933089033844067]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 14744933089033844067,
-                    "ColliderConfiguration": {
-                        "CollisionLayer": {
-                            "Index": 2
-                        },
-                        "CollisionGroupId": {
-                            "GroupId": "{8770D703-A039-417B-ACE2-93279D16B217}"
-                        },
-                        "Position": [
-                            0.0,
-                            0.0,
-                            0.004562461748719215
-                        ],
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object",
-                                    "MaterialAsset": {
-                                        "assetId": {
-                                            "guid": "{5AADFDA4-65CA-5D70-9C55-A12802A37C39}",
-                                            "subId": 1
-                                        },
-                                        "assetHint": "physx/terrain_grass.physicsmaterial"
-                                    }
-                                }
-                            ]
-                        },
-                        "ColliderTag": "Leaf"
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 1,
-                        "Box": {
-                            "Configuration": [
-                                0.05542672425508499,
-                                0.11137882620096207,
-                                0.014986437745392323
-                            ]
-                        }
-                    }
-                },
-                "Component_[15179996452261473116]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 15179996452261473116
-                },
-                "Component_[17607170059971697285]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 17607170059971697285
-                },
-                "Component_[18004712786400785261]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 18004712786400785261,
-                    "Parent Entity": "Entity_[15454985734742]",
-                    "Transform Data": {
-                        "Rotate": [
-                            59.0491828918457,
-                            0.0,
-                            0.0
-                        ]
-                    }
-                },
-                "Component_[18168723984414201759]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 18168723984414201759,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 924759392
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
-                                            },
-                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                },
-                "Component_[2745031063359843439]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 2745031063359843439,
-                    "Configuration": {
-                        "entityId": "",
-                        "Linear damping": 10.0,
-                        "Start Asleep": true,
-                        "Gravity Enabled": false,
-                        "Compute Mass": false,
-                        "Mass": 0.0029999997932463884,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.004562461748719215
-                        ],
-                        "Inertia tensor": [
-                            0.000003157458877467434,
-                            0.0,
-                            0.0,
-                            0.0,
-                            8.241787554652547e-7,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.00000386934107154957
-                        ],
-                        "Maximum Angular Velocity": 1.0
-                    }
-                },
-                "Component_[7888115297358272984]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 7888115297358272984,
-                    "ComponentOrderEntryArray": [
-                        {
-                            "ComponentId": 18004712786400785261
-                        },
-                        {
-                            "ComponentId": 8240577122544618484,
-                            "SortIndex": 1
-                        },
-                        {
-                            "ComponentId": 18168723984414201759,
-                            "SortIndex": 2
-                        },
-                        {
-                            "ComponentId": 14744933089033844067,
-                            "SortIndex": 3
-                        },
-                        {
-                            "ComponentId": 2745031063359843439,
-                            "SortIndex": 4
-                        }
-                    ]
-                },
-                "Component_[8240577122544618484]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 8240577122544618484,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{CD26A0B7-6D8D-5F9B-93F6-E31665D948C7}",
-                                    "subId": 278855911
-                                },
-                                "assetHint": "assets/apple_tree/leaf.azmodel"
-                            },
-                            "IsRayTracingEnabled": false
-                        }
-                    }
-                }
-            }
-        },
-        "Entity_[532883711761236]": {
-            "Id": "Entity_[532883711761236]",
-            "Name": "Apple",
-            "Components": {
-                "Component_[10739828887117370513]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 10739828887117370513,
-                    "Parent Entity": "ContainerEntity"
-                },
-                "Component_[15765916809369597913]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 15765916809369597913
-                },
-                "Component_[15960751503235455503]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 15960751503235455503,
-                    "ComponentOrderEntryArray": [
-                        {
-                            "ComponentId": 10739828887117370513
-                        },
-                        {
-                            "ComponentId": 7230618248793844206,
-                            "SortIndex": 1
-                        },
-                        {
-                            "ComponentId": 17515715958005323940,
-                            "SortIndex": 2
-                        }
-                    ]
-                },
-                "Component_[16553231550746332560]": {
-                    "$type": "EditorScriptCanvasComponent",
-                    "Id": 16553231550746332560,
-                    "configuration": {
-                        "sourceHandle": {
-                            "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
-                            "path": "scriptCanvas/Apple.scriptcanvas"
-                        },
-                        "sourceName": "Apple.scriptcanvas",
-                        "propertyOverrides": {
-                            "source": {
-                                "id": "{8581CF74-DE82-588E-AA4F-2F1FE0172D20}",
-                                "path": "scriptCanvas/Apple.scriptcanvas"
-                            }
-                        }
-                    }
-                },
-                "Component_[17352323353881558252]": {
-                    "$type": "EditorColliderComponent",
-                    "Id": 17352323353881558252,
-                    "ColliderConfiguration": {
-                        "Trigger": true,
-                        "MaterialSlots": {
-                            "Slots": [
-                                {
-                                    "Name": "Entire object"
-                                }
-                            ]
-                        },
-                        "ColliderTag": "Apple"
-                    },
-                    "ShapeConfiguration": {
-                        "ShapeType": 0,
-                        "Sphere": {
-                            "Radius": 0.03999999910593033
-                        }
-                    },
-                    "DebugDrawSettings": {
-                        "LocallyEnabled": false
-                    }
-                },
-                "Component_[17515715958005323940]": {
-                    "$type": "EditorMaterialComponent",
-                    "Id": 17515715958005323940,
-                    "Controller": {
-                        "Configuration": {
-                            "materials": [
-                                {
-                                    "Key": {
-                                        "materialSlotStableId": 1676432290
-                                    },
-                                    "Value": {
-                                        "MaterialAsset": {
-                                            "assetId": {
-                                                "guid": "{C21C23D1-C6CE-5D5C-8EB3-D5AC825461E6}"
-                                            },
-                                            "assetHint": "assets/apple_tree/apple_applemat.azmaterial"
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                },
-                "Component_[17995894834026756835]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 17995894834026756835,
-                    "Child Entity Order": [
-                        "Entity_[15454985734742]"
-                    ]
-                },
-                "Component_[3630417534287890287]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 3630417534287890287
-                },
-                "Component_[4245576892433136144]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 4245576892433136144
-                },
-                "Component_[5270060475843959830]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 5270060475843959830
-                },
-                "Component_[5917701838542725357]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 5917701838542725357
-                },
-                "Component_[6717239618132726328]": {
-                    "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6717239618132726328
-                },
-                "Component_[7138985039715548058]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 7138985039715548058,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false
-                    }
-                },
-                "Component_[7230618248793844206]": {
-                    "$type": "AZ::Render::EditorMeshComponent",
-                    "Id": 7230618248793844206,
-                    "Controller": {
-                        "Configuration": {
-                            "ModelAsset": {
-                                "assetId": {
-                                    "guid": "{55097FFC-EE11-5B2D-9E83-1ECE5FCA4341}",
-                                    "subId": 271503440
-                                },
-                                "assetHint": "assets/apple_tree/apple.azmodel"
-                            },
-                            "SortKey": 2,
-                            "IsRayTracingEnabled": false,
-                            "LodType": 1,
-                            "QualityDecayRate": 0.699999988079071
-                        }
-                    }
                 }
             }
         }

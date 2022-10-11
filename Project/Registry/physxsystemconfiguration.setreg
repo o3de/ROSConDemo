@@ -9,9 +9,9 @@
                         "Layers": {
                             "LayerNames": [
                                 "Default",
-                                {},
-                                {},
-                                {},
+                                "Apple_Arm",
+                                "Leaf",
+                                "Ground",
                                 {},
                                 {},
                                 {},
@@ -89,6 +89,24 @@
                                         "Mask": 0
                                     },
                                     "ReadOnly": true
+                                },
+                                {
+                                    "Id": {
+                                        "GroupId": "{5F19C670-2D9D-4E3E-AF5C-29EC55C01F28}"
+                                    },
+                                    "Name": "AppleArm",
+                                    "Group": {
+                                        "Mask": 18446744073709551606
+                                    }
+                                },
+                                {
+                                    "Id": {
+                                        "GroupId": "{8770D703-A039-417B-ACE2-93279D16B217}"
+                                    },
+                                    "Name": "LeafAndGround",
+                                    "Group": {
+                                        "Mask": 18446744073709551612
+                                    }
                                 }
                             ]
                         }
