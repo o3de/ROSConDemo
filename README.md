@@ -32,6 +32,8 @@ The project supports the following platforms:
 - Ubuntu 22.04 with ROS 2 Humble
 - Ubuntu 20.04 with ROS 2 Galactic
 
+💡 ***Note:*** This demo is **not supported on Windows!** 
+
 ### O3DE
 
 1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
@@ -71,11 +73,27 @@ During the step above, make sure to register the Gem in the engine:
 
 ### Additional ROS 2 packages**
 
-The vision messages package, which can be obtained:
+The additional packages need to be installed. Use the following command:
 
-`sudo apt install ros-${ROS_DISTRO}-vision-msgs`
+`sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds`
 
 💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
+
+### Required environment settings
+
+Some commands and environmental variables are necessary for ROS 2 systems, including this demo, to function properly. It is best to add these commands and settings to either `~/.bashrc` or `~/.profile`.
+
+ROS 2 distribution and should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Humble installation, this would mean running the following for each console:
+
+```
+source /opt/ros/humble/setup.bash
+```
+
+Currently we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
+
+```
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
 
 ### Build this project
 
@@ -110,6 +128,7 @@ cmake --build build/linux --config profile --target ROSConDemo Editor AssetProce
 ```
 
 ### Running the project
+
 
 Launch the O3DE Editor (in the Project directory):
 
