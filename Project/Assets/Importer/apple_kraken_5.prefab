@@ -77,8 +77,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[10756722832465606112]": {
@@ -347,8 +347,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[8160934721586853298]": {
@@ -506,8 +506,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[16133372995322410612]": {
@@ -959,8 +959,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[8801526189808124059]": {
@@ -1124,8 +1124,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[6492306332728591622]": {
@@ -1353,8 +1353,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[5537772980649449717]": {
@@ -1881,8 +1881,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[9976445161209749090]": {
@@ -2039,8 +2039,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 }
             }
@@ -2253,8 +2253,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[3377818137773634105]": {
@@ -2638,8 +2638,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[583585224453152908]": {
@@ -2910,8 +2910,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 },
                 "Component_[5405192070174247494]": {
@@ -3068,8 +3068,8 @@
                         "Compute inertia": false
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 20,
-                        "SolverVelocityIterations": 5
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 15
                     }
                 }
             }
@@ -3446,7 +3446,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 11896589052357720660
+                            "EditorEntityId": 11583927400651280762
                         }
                     }
                 },
@@ -3762,8 +3762,8 @@
                             "IsFilled": false,
                             "Dimensions": [
                                 1.7999999523162842,
-                                0.800000011920929,
-                                2.0
+                                0.75,
+                                1.7999999523162842
                             ]
                         }
                     }
@@ -3787,8 +3787,8 @@
                     "Transform Data": {
                         "Translate": [
                             0.699999988079071,
-                            -1.7000000476837158,
-                            1.399999976158142
+                            -1.649999976158142,
+                            1.600000023841858
                         ],
                         "Rotate": [
                             -6.0,
