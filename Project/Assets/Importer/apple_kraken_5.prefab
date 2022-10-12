@@ -235,6 +235,54 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 216819643780060698
                 },
+                "Component_[2825974767324875616]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 2825974767324875616,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 245097776
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{17152BB5-40C7-5C3E-B136-34BA76CB3D0C}"
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_chassisandframe.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 902308382
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{6A495641-F069-59EE-9D47-5D28F455E138}"
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_barier.azmaterial"
+                                        }
+                                    }
+                                },
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 1522956662
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{A5320FCC-06A5-570B-8737-35357E223030}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
                 "Component_[5136732893582031989]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 5136732893582031989
