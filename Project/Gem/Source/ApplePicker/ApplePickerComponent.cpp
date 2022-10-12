@@ -187,11 +187,12 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<ApplePickerComponent, AZ::Component>()
-                ->Version(3)
+                ->Version(4)
                 ->Field("TriggerServiceTopic", &ApplePickerComponent::m_triggerServiceTopic)
                 ->Field("CancelServiceTopic", &ApplePickerComponent::m_cancelServiceTopic)
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
-                ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId);
+                ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
+                ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -218,7 +219,12 @@ namespace AppleKraken
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_fruitStorageEntityId,
                         "Fruit Storage",
-                        "Fruit storage entity");
+                        "Fruit storage entity")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_retrievalPointEntityId,
+                        "Fruit retrieval point",
+                        "Entity which holds the point of the retrieval chute");
             }
         }
     }
@@ -296,7 +302,11 @@ namespace AppleKraken
 
     void ApplePickerComponent::QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox)
     {
-        // TODO - query environment
+        if (!m_retrievalPointEntityId.IsValid())
+        {
+            AZ_Error("ApplePicker", false, "Retrieval chute entity not set for ApplePickerComponent!");
+            return;
+        }
 
         // Scene query for `apple` entity, we want visible entities with exact 'Apple' name
         auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
@@ -349,13 +359,16 @@ namespace AppleKraken
                 found_apples.emplace(r.m_entityId);
             }
         }
+        AZ::Transform m_retrievalPointTransform;
+        AZ::TransformBus::EventResult(m_retrievalPointTransform, m_retrievalPointEntityId, &AZ::TransformBus::Events::GetWorldTM);
+        auto retrievalPoint = m_retrievalPointTransform.GetTranslation();
 
         std::sort(
             appleTasks.begin(),
             appleTasks.end(),
-            [globalBox](const PickAppleTask& a, const PickAppleTask& b) -> bool
-            { // a is further than b from the globalBox
-                return globalBox.GetDistance(a.m_middle) > globalBox.GetDistance(b.m_middle);
+            [retrievalPoint](const PickAppleTask& a, const PickAppleTask& b) -> bool
+            { // a is closer than b to the retrieval point
+                return (retrievalPoint - a.m_middle).GetLengthSq() <= (retrievalPoint - b.m_middle).GetLengthSq();
             });
 
         m_appleGroundTruthDetector->UpdateGroundTruth(appleTasks);
