@@ -2457,7 +2457,8 @@
                             "assetHint": "prefabs/apple_crate.spawnable"
                         },
                         "Capacity": 50,
-                        "CrateDropPoint": "Entity_[5494828217205]"
+                        "CrateDropPoint": "Entity_[5494828217205]",
+                        "UiEntity": "Entity_[5286907825968]"
                     }
                 },
                 "Component_[12724369969007930765]": {
@@ -3760,6 +3761,60 @@
                 "Component_[8400454136611228951]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 8400454136611228951
+                }
+            }
+        },
+        "Entity_[5286907825968]": {
+            "Id": "Entity_[5286907825968]",
+            "Name": "Ui",
+            "Components": {
+                "Component_[10241251369859239566]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10241251369859239566
+                },
+                "Component_[11465251640864354376]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11465251640864354376
+                },
+                "Component_[12565340982288084460]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12565340982288084460
+                },
+                "Component_[12663538255353574993]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 12663538255353574993
+                },
+                "Component_[15097666237341457527]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15097666237341457527
+                },
+                "Component_[15799199674941686217]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 15799199674941686217,
+                    "m_template": {
+                        "$type": "UiCanvasAssetRefComponent",
+                        "CanvasAssetRef": {
+                            "AssetPath": "ui/gamecanvas.uicanvas"
+                        },
+                        "IsAutoLoad": true
+                    }
+                },
+                "Component_[18129706037953483051]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 18129706037953483051,
+                    "Parent Entity": "Entity_[126373983206044]"
+                },
+                "Component_[4946259882969052376]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 4946259882969052376
+                },
+                "Component_[5951762884545543629]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 5951762884545543629
+                },
+                "Component_[9445786852124677420]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 9445786852124677420
                 }
             }
         },

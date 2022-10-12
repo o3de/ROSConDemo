@@ -7,22 +7,21 @@
  */
 #pragma once
 
-#include <AzCore/Component/ComponentBus.h>
+#include "../DemoStatistics/AppleEvent.h"
+#include <AzCore/Component/EntityId.h>
 #include <AzCore/EBus/EBus.h>
-#include <AzCore/Math/Transform.h>
-#include <AzCore/RTTI/BehaviorContext.h>
+#include <AzCore/EBus/Event.h>
 
 namespace AppleKraken
 {
-    using Tags = AZStd::vector<AZStd::string>;
     using ApplesGatheredByTag = AZStd::unordered_map<AZStd::string, uint32_t>;
 
     //! Interface handing fruits storage requests
-    class FruitStorageRequests : public AZ::ComponentBus
+    class FruitStorageRequests : public AZ::EBusTraits
     {
     public:
-        AZ_RTTI(SpawnerRequests, "{129EAABF-706E-4DC1-B272-93EEACE3E893}");
-        static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Multiple;
+        static constexpr AZ::EBusAddressPolicy AddressPolicy = AZ::EBusAddressPolicy::ById;
+        using BusIdType = AZ::EntityId;
 
         virtual ~FruitStorageRequests() = default;
 

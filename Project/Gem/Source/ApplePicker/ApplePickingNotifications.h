@@ -9,7 +9,6 @@
 
 #include "PickingStructs.h"
 #include <AzCore/EBus/EBus.h>
-#include <AzCore/RTTI/BehaviorContext.h>
 
 namespace AppleKraken
 {
