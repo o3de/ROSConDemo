@@ -2425,7 +2425,8 @@
                     "m_template": {
                         "$type": "ApplePickerComponent",
                         "EffectorEntity": "Entity_[126373983206044]",
-                        "FruitStorageEntity": "Entity_[126373983206044]"
+                        "FruitStorageEntity": "Entity_[126373983206044]",
+                        "RetrievalPointEntity": "Entity_[453828565735265]"
                     }
                 },
                 "Component_[15792714784584127302]": {
@@ -2563,7 +2564,8 @@
                         "Entity_[50844409631117]",
                         "Entity_[9058513484485]",
                         "Entity_[5494828217205]",
-                        "Entity_[36172097579699]"
+                        "Entity_[36172097579699]",
+                        "Entity_[453828565735265]"
                     ]
                 },
                 "Component_[3226220641517151136]": {
@@ -3432,7 +3434,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 11583927400651280762
+                            "EditorEntityId": 7939196949259269833
                         }
                     }
                 },
@@ -3495,6 +3497,56 @@
                         "$type": "FlyCameraInputComponent",
                         "Mouse Sensitivity": 0.0
                     }
+                }
+            }
+        },
+        "Entity_[453828565735265]": {
+            "Id": "Entity_[453828565735265]",
+            "Name": "RetrievalChute",
+            "Components": {
+                "Component_[12171884485533334948]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 12171884485533334948
+                },
+                "Component_[12574217689782564474]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 12574217689782564474
+                },
+                "Component_[12999122222194170561]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 12999122222194170561
+                },
+                "Component_[13504040141164984746]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 13504040141164984746
+                },
+                "Component_[13555347149641495242]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 13555347149641495242,
+                    "Parent Entity": "Entity_[126373983206044]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.333984375,
+                            -0.23783111572265625,
+                            1.3847572803497314
+                        ]
+                    }
+                },
+                "Component_[15247268977907304446]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15247268977907304446
+                },
+                "Component_[16426304834367737653]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16426304834367737653
+                },
+                "Component_[2692724083108161793]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 2692724083108161793
+                },
+                "Component_[6950308048593391230]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6950308048593391230
                 }
             }
         },
