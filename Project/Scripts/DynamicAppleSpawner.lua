@@ -147,6 +147,12 @@ function DynamicAppleSpawner:HaveFollowTargetsToUpdate()
     return false
 end
 
+function DynamicAppleSpawner:SetFollowTargetsUpdateStatus(update)
+    for k, followTarget in pairs(self.followTargets) do
+        followTarget.update = update
+    end
+end
+
 function DynamicAppleSpawner:GetTreesNearFollowTargets()
     local treesNearFollowTargets = {}
     for k, followTarget in pairs(self.followTargets) do
@@ -159,7 +165,10 @@ function DynamicAppleSpawner:GetTreesNearFollowTargets()
         if hits.HitArray:Size() > 0 then
             for i = 1, #hits.HitArray do
                 local entityId = hits.HitArray[i].EntityId
-                treesNearFollowTargets[entityId] = entityId
+                if TagComponentRequestBus.Event.HasTag(entityId, self.appleTreeTag) then
+                    treesNearFollowTargets[tostring(entityId)] = entityId
+                    --Debug.Log("Tree found near target " .. tostring(entityId))
+                end
             end
         end
     end
@@ -169,9 +178,9 @@ end
 
 function DynamicAppleSpawner:RemoveTreesOutsideFollowTargetRange(treesNearFollowTargets)
     for k, tree in ipairs(self.closestAppleTrees) do
-        if treesNearFollowTargets[tree.entityId] == nil then
+        if treesNearFollowTargets[tostring(tree.entityId)] == nil then
             if self.Properties.Debug then
-                Debug.Log("Removing apple group entity " .. tostring(tree.applesEntityId))
+                Debug.Log("Removing apple group entity " .. tostring(tree.applesEntityId) .. " tree no longer near target " .. tostring(tree.entityId))
             end
 
             -- reveal the static mesh
@@ -211,7 +220,8 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
     if self:HaveFollowTargetsToUpdate() then
         local treesNearFollowTargets = self:GetTreesNearFollowTargets()
         self:RemoveTreesOutsideFollowTargetRange(treesNearFollowTargets)
-
+        self:SetFollowTargetsUpdateStatus(false)
+        
         local closestTrees = {}
         -- re-use apple groups or spawn new ones
         for k, treeEntityId in pairs(treesNearFollowTargets) do
@@ -219,7 +229,7 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
             if index ~= -1 and self.closestAppleTrees[index].applesEntityId ~= -1 then
                 -- tree is already being tracked
                 table.insert(closestTrees, self.closestAppleTrees[index])
-            elseif TagComponentRequestBus.Event.HasTag(treeEntityId, self.appleTreeTag) then
+            else
                 -- tree has the required tag
                 local applesEntityId = -1
                 if #self.freeAppleGroups > 0 then
@@ -227,7 +237,6 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
                     if applesEntityId == nil or type(applesEntityId) == "number" then
                         Debug.Log("Non EntityId found in freeAppleGroups " ..
                             tostring(applesEntityId) .. " contains " .. #self.freeAppleGroups .. " items")
-                        followTarget.update = true
                         needMorePrefabs = true
                     else
                         self:ReUseAppleGroup(applesEntityId, treeEntityId)
@@ -235,10 +244,9 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
                     end
                 else
                     if self.Properties.Debug then
-                        Debug.Log("$4 Couldn't find free apple tree group in free pool of size" .. tostring(#self.freeAppleGroups))
+                        Debug.Log("$4 Couldn't find free apple tree group in free pool of size " .. tostring(#self.freeAppleGroups))
                     end
                     needMorePrefabs = true
-                    followTarget.update = true
                 end
             end
         end
@@ -252,6 +260,9 @@ function DynamicAppleSpawner:OnTick(delaTime, scriptTime)
         self.closestAppleTrees = closestTrees
     end
 
+    if needMorePrefabs then
+    	    self:SetFollowTargetsUpdateStatus(true)
+    end
     -- spawn additional apple group prefabs on demand
     if needMorePrefabs and self.spawningPrefabs == false then
         self.numPrefabsToSpawn = self.numPrefabsToSpawn + 1
