@@ -8,6 +8,7 @@
 #pragma once
 
 #include "FruitStorageBus.h"
+#include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzCore/Component/Component.h>
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
@@ -24,7 +25,7 @@ namespace AppleKraken
         AZ_COMPONENT(FruitStorageComponent, "{9AC0B456-9C29-4EDD-AD25-6FAA57D253C5}", AZ::Component, FruitStorageRequestsBus::Handler);
 
         // AZ::Component interface implementation.
-        FruitStorageComponent() = default;
+        FruitStorageComponent();
         ~FruitStorageComponent() = default;
         void Activate() override;
         void Deactivate() override;
@@ -33,6 +34,8 @@ namespace AppleKraken
         ApplesGatheredByTag GetTotalGatheredAppleCount(const Tags& tags = {}) const override;
         uint32_t GetCurrentStorageAppleCount() const override;
         void AddApple(const Tags& tags = {}) override;
+
+        static void ResetCounter();
 
     private:
         void SpawnCrate();
@@ -49,5 +52,6 @@ namespace AppleKraken
         ApplesGatheredByTag m_tagsStored;
         AZ::EntityId m_ui_entity;
         const static AZStd::string kAppleGatheredElementName;
+        AzPhysics::SystemEvents::OnPostsimulateEvent ::Handler m_postSimulateHandler;
     };
 } // namespace AppleKraken
