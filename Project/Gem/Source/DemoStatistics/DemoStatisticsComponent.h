@@ -10,7 +10,6 @@
 #include "DemoStatisticsNotifications.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/EntityId.h>
-#include <AzCore/Component/TickBus.h>
 
 namespace AppleKraken
 {
@@ -18,7 +17,6 @@ namespace AppleKraken
     class DemoStatisticsComponent
         : public AZ::Component
         , private DemoStatisticsNotificationBus::Handler
-        , private AZ::TickBus::Handler
     {
     public:
         AZ_COMPONENT(DemoStatisticsComponent, "{C421B635-8B7A-479A-8617-86F5F1ACC4AE}");
@@ -32,7 +30,6 @@ namespace AppleKraken
     private:
         void DisplayNumberOfApples();
         void AddApple(const AppleEvent& appleEvent) override;
-        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
 
         bool HasTag(const AppleEvent& appleEvent, const AZStd::string& tag);
         bool IsFailed(const Tags& tags);
