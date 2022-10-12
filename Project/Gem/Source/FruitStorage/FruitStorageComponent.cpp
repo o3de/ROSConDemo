@@ -17,14 +17,34 @@
 
 namespace AppleKraken
 {
+
+    FruitStorageComponent::FruitStorageComponent()
+    {
+
+        m_postSimulateHandler = AzPhysics::SystemEvents::OnPostsimulateEvent::Handler(
+        [this](float deltaTime)
+        {
+            AZ_Printf("FruitStorageComponent", "FruitStorageComponentClear\n");
+            AppleKraken::FruitStorageComponent::ResetCounter();
+            m_postSimulateHandler.Disconnect();
+        });
+    }
+
     void FruitStorageComponent::Activate()
     {
         FruitStorageRequestsBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
+        auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
+        if (physicsSystem)
+        {
+            physicsSystem->RegisterPostSimulateEvent(m_postSimulateHandler);
+        }
+
     }
 
     void FruitStorageComponent::Deactivate()
     {
+
         FruitStorageRequestsBus::Handler::BusDisconnect(GetEntityId());
     }
 
@@ -180,6 +200,12 @@ namespace AppleKraken
         displayNumberOfApples(m_allApplesGathered);
         AZ::TickBus::Handler::BusDisconnect();
     }
+
+    void FruitStorageComponent::ResetCounter(){
+        FruitStorageComponent::m_allApplesGathered.store(0);
+    }
+
     const AZStd::string FruitStorageComponent::kAppleGatheredElementName{"AppleGatheredElement"};
     AZStd::atomic_int32_t FruitStorageComponent::m_allApplesGathered {0};
+
 } // namespace AppleKraken
