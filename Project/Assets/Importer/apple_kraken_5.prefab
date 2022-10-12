@@ -3446,7 +3446,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 11583927400651280762
+                            "EditorEntityId": 11691463689301160540
                         }
                     }
                 },
@@ -3506,8 +3506,7 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 9374188052930928760,
                     "m_template": {
-                        "$type": "FlyCameraInputComponent",
-                        "Mouse Sensitivity": 0.0
+                        "$type": "FlyCameraInputComponent"
                     }
                 }
             }
