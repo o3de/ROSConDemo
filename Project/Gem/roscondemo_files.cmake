@@ -13,6 +13,10 @@ set(FILES
         Source/ApplePicker/KrakenEffectorComponent.cpp
         Source/ApplePicker/KrakenEffectorComponent.h
         Source/ApplePicker/PickingStructs.h
+        Source/DemoStatistics/AppleEvent.h
+        Source/DemoStatistics/DemoStatisticsComponent.cpp
+        Source/DemoStatistics/DemoStatisticsComponent.h
+        Source/DemoStatistics/DemoStatisticsNotifications.h
         Source/FruitStorage/FruitStorageComponent.cpp
         Source/FruitStorage/FruitStorageComponent.h
         Source/FruitStorage/FruitStorageBus.h

@@ -9,6 +9,7 @@
 #include "ApplePicker/ApplePickerComponent.h"
 #include "ApplePicker/GatheringRowComponent.h"
 #include "ApplePicker/KrakenEffectorComponent.h"
+#include "DemoStatistics/DemoStatisticsComponent.h"
 #include "FruitStorage/FruitStorageComponent.h"
 #include "ROSConDemoSystemComponent.h"
 #include <AzCore/Memory/SystemAllocator.h>
@@ -31,7 +32,8 @@ namespace ROSConDemo
                   AppleKraken::ApplePickerComponent::CreateDescriptor(),
                   AppleKraken::GatheringRowComponent::CreateDescriptor(),
                   AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
-                  AppleKraken::FruitStorageComponent::CreateDescriptor() });
+                  AppleKraken::FruitStorageComponent::CreateDescriptor(),
+                  AppleKraken::DemoStatisticsComponent::CreateDescriptor() });
         }
 
         AZ::ComponentTypeList GetRequiredSystemComponents() const override

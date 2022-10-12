@@ -8,6 +8,7 @@
 
 #include "ApplePickerComponent.h"
 #include "ApplePickingRequests.h"
+#include "DemoStatistics/DemoStatisticsNotifications.h"
 #include "FruitStorage/FruitStorageBus.h"
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentConstants.h>
@@ -201,12 +202,12 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
+                        AZ::Edit::UIHandlers::Default,
                         &ApplePickerComponent::m_triggerServiceTopic,
                         "Trigger",
                         "ROS2 service name for gathering trigger")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
+                        AZ::Edit::UIHandlers::Default,
                         &ApplePickerComponent::m_cancelServiceTopic,
                         "Cancel",
                         "ROS2 service name to cancel ongoing gathering")
@@ -270,8 +271,9 @@ namespace AppleKraken
             AZ_Warning("ApplePicker", false, "Fruit storage entity not set, assuming same entity");
             m_fruitStorageEntityId = GetEntityId();
         }
-        Tags applePickingEventTags = { "automated_picking" };
+        Tags applePickingEventTags = { kPickingAutomatedEventTag };
         FruitStorageRequestsBus::Event(m_fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple, applePickingEventTags);
         PickNextApple();
     }
 
@@ -285,6 +287,9 @@ namespace AppleKraken
         AZ_TracePrintf(
             "ApplePicker", "%s. Picking failed due to: %s\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str(), reason.c_str());
         m_currentAppleTasks.pop();
+
+        Tags applePickingEventTags = { kPickingFailedEventTag, kPickingAutomatedEventTag };
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple, applePickingEventTags);
         PickNextApple();
     }
 
