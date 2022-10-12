@@ -14,14 +14,11 @@ local DynamicAppleSpawner = {
 }
 
 function DynamicAppleSpawner:OnActivate()
+    self.numPrefabsToSpawn = 0 -- don't spawn prefabs until a follow target exists
     self.numPrefabsSpawned = 0
-    self.appleTreePositions = nil
+    self.closestAppleTrees = {}
     self.followTargets = nil
     self.freeAppleGroups = {}
-    self.lastPos = Vector3(0, 0, 0)
-    self.update = false
-    self.closestAppleTrees = {}
-    self.numPrefabsToSpawn = 0 -- don't spawn prefabs until a follow target exists
     self.spawningPrefabs = false
 
     local physicsSystem = GetPhysicsSystem()
