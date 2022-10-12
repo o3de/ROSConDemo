@@ -72,7 +72,7 @@ function DynamicAppleSpawner:AddFollowTarget(entityId)
         self.followTargets = {}
     end
 
-    self.followTargets[entityId] = {
+    self.followTargets[tostring(entityId)] = {
         position = Vector3(0, 0, 0),
         update = false,
         handler = nil,
@@ -90,7 +90,7 @@ function DynamicAppleSpawner:AddFollowTarget(entityId)
         end
     }
 
-    self.followTargets[entityId].handler = TransformNotificationBus.Connect(self.followTargets[entityId], entityId)
+    self.followTargets[tostring(entityId)].handler = TransformNotificationBus.Connect(self.followTargets[tostring(entityId)], entityId)
 
     self.numPrefabsToSpawn = self.numPrefabsToSpawn + self.Properties.NumPrefabsToSpawn
 
