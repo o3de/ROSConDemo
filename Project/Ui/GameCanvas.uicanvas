@@ -179,7 +179,7 @@
 									<Class name="AZ::Component" field="BaseClass1" type="{EDFCB2CF-F75D-43BE-B26B-F35821B29247}">
 										<Class name="AZ::u64" field="Id" value="232720424535605160" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
 									</Class>
-									<Class name="AZStd::string" field="Text" value="0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+									<Class name="AZStd::string" field="Text" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 									<Class name="bool" field="MarkupEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
 									<Class name="Color" field="Color" value="1.0000000 0.0000000 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
 									<Class name="float" field="Alpha" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>
@@ -254,7 +254,7 @@
 									<Class name="AZ::Component" field="BaseClass1" type="{EDFCB2CF-F75D-43BE-B26B-F35821B29247}">
 										<Class name="AZ::u64" field="Id" value="232720424535605160" type="{D6597933-47CD-4FC8-B911-63F3E2B0993A}"/>
 									</Class>
-									<Class name="AZStd::string" field="Text" value="0" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
+									<Class name="AZStd::string" field="Text" value="" type="{03AAAB3F-5C47-5A66-9EBC-D5FA4DB353C9}"/>
 									<Class name="bool" field="MarkupEnabled" value="false" type="{A0CA880C-AFE4-43CB-926C-59AC48496112}"/>
 									<Class name="Color" field="Color" value="1.0000000 0.0000000 0.0000000 1.0000000" type="{7894072A-9050-4F0F-901B-34B1A0D29417}"/>
 									<Class name="float" field="Alpha" value="1.0000000" type="{EA2C3E90-AFBE-44D4-A90D-FAAF79BAF93D}"/>

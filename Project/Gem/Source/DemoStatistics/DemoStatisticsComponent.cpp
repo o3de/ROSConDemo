@@ -19,7 +19,6 @@ namespace AppleKraken
 {
     void DemoStatisticsComponent::Activate()
     {
-        AZ::TickBus::Handler::BusConnect();
         DemoStatisticsNotificationBus::Handler::BusConnect();
         m_applesGathered = 0;
         m_applesFailed = 0;
@@ -28,7 +27,6 @@ namespace AppleKraken
     void DemoStatisticsComponent::Deactivate()
     {
         DemoStatisticsNotificationBus::Handler::BusDisconnect();
-        AZ::TickBus::Handler::BusDisconnect();
     }
 
     void DemoStatisticsComponent::Reflect(AZ::ReflectContext* context)
@@ -62,6 +60,7 @@ namespace AppleKraken
         }
 
         m_applesGathered++;
+        DisplayNumberOfApples();
     }
 
     bool DemoStatisticsComponent::IsFailed(const Tags& tags)
@@ -104,10 +103,5 @@ namespace AppleKraken
             return;
         }
         UiTextBus::Event(uiTextEntity, &UiTextInterface::SetText, AZStd::string::format("%s %d", label.c_str(), counter));
-    }
-
-    void DemoStatisticsComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
-    {
-        DisplayNumberOfApples();
     }
 } // namespace AppleKraken
