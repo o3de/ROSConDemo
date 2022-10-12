@@ -21,18 +21,35 @@ The integration is realized through [ROS 2 Gem for O3DE](https://github.com/Robo
 - **Apples**
     - Thousands of apples!
 
-# How to build the project and its dependencies
+## Simulation scenes (levels)
 
-## Requirements
+### Main Level
 
-### Platforms
+The main scene of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple
+Kraken.
+
+The main level is rather performance intensive.
+
+The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and
+storing them in its basket.
+
+### Playground Level
+
+The playground scene is much lighter and can be used to quickly prototype with Kraken. There is only a couple
+of apple trees and the robot itself.
+
+# Requirements
+
+## Platforms
 
 The project supports the following platforms:
 
 - Ubuntu 22.04 with ROS 2 Humble
 - Ubuntu 20.04 with ROS 2 Galactic
 
-### O3DE
+💡 ***Note:*** This demo is **not supported on Windows!** 
+
+## O3DE
 
 1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
    sure that the system/hardware requirements are met.
@@ -52,7 +69,7 @@ The following commands should prepare O3DE:
 ~/o3de$ scripts/o3de.sh register --this-engine
 ```
 
-### ROS 2 Gem
+## ROS 2 Gem
 
 This project uses the [ROS 2 Gem](https://github.com/RobotecAI/o3de-ros2-gem).
 Please make sure to follow the installation guide
@@ -64,22 +81,42 @@ Note that the Gem instructions include installation of ROS 2 with some additiona
 
 The Gem is open to your contributions!
 
-#### Registering the Gem
+### Registering the Gem
 
 During the step above, make sure to register the Gem in the engine:
 `scripts/o3de.sh register --gem-path <PATH_TO_CLONED_ROS2_GEM>`
 
-### Additional ROS 2 packages**
+### Additional ROS 2 packages
 
-The vision messages package, which can be obtained:
+The additional packages need to be installed. Use the following command:
 
-`sudo apt install ros-${ROS_DISTRO}-vision-msgs`
+```
+sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds
+```
 
 💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
 
-### Build this project
+### Required environment settings
 
-1. Clone it:
+Some commands and environmental variables are necessary for ROS 2 systems, including this demo, to function properly. It is best to add these commands and settings to either `~/.bashrc` or `~/.profile`.
+
+ROS 2 distribution and should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Humble installation, this would mean running the following for each console:
+
+```
+source /opt/ros/humble/setup.bash
+```
+
+Currently we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
+
+```
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+```
+
+# Building this project
+
+## Build steps
+
+1. Clone this project:
 
 ```
 git clone https://github.com/aws-lumberyard/ROSConDemo.git
@@ -109,7 +146,8 @@ cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
 cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor ROSConDemo.Assets
 ```
 
-### Running the project
+## Launching the Editor
+
 
 Launch the O3DE Editor (in the Project directory):
 
@@ -117,43 +155,34 @@ Launch the O3DE Editor (in the Project directory):
 build/linux/bin/profile/Editor
 ```
 
-## Levels
+# Running the demo scenario
 
+You can try out the demo scenario as presented during ROSCon 2022. Take the following steps:
 
-### Main Level
+1. Launch the Editor and select the Main level. Allow it to load.
+2. Run the simulation with `Ctrl-G` or by pressing the Play button in the Editor. When it loads, you should be able to see the Apple Kraken.
+3. Once the simulation is running, start the [navigation stack](https://github.com/RobotecAI/o3de_kraken_nav). If you followed all the instructions, launch it with `ros2 launch o3de_kraken_nav navigation.launch.py`. You should see a new Rviz2 window.
+4. Using RViz2, set the navigation goal using a widget in the toolbar (`2D Goal Pose`). You need to click and drag to indicate direction the robot will be facing. Make sure to set the goal next to an apple tree, to have the tree on the right side. Not too close, not too far. You can set subsequent goals for the robot to move around.
+5. Once the robot arrives and stops next to the tree, you can [trigger apple gathering](#triggering-apple-gathering).
+6. Either wait for the robot to complete its job (gather all reachable apples) or cancel the gathering through the `/cancel_apple_gathering` service.
+7. Select another navigation goal for the robot.
+8. [Spawn another Apple Kraken](#spawn-more-krakens).
 
-The main level of the demo is set in an apple orchard surrounded by a countryside. The orchard is managed by the Apple
-Kraken.
+## Controlling the Apple Kraken
 
-The main level is rather performance intensive.
+### Navigation
 
-The Apple Kraken is a four-wheeled robot assigned the task of navigating around the orchard, collecting apples and
-storing them in its basket.
+To run ROS 2 navigation stack with this Project, please use this [repo](https://github.com/RobotecAI/o3de_kraken_nav) for necessary instructions and packages.
 
-### Playground Level
-
-The playground level is much lighter and can be used to quickly prototype with Kraken. There is only a couple
-of apple trees and the robot itself.
-
-## Apple Kraken spawning instructions
-
-Please read the following section on [Robot Spawner](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md#spawner).
-
-To spawn a new Apple Kraken, you can used named points (provided by a Spawner Component) or custom poses. An example call:
-
-```
-ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', initial_pose: {position:{ x: 4, y: 4, z: 0.2}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
-```
-
-## Triggering Apple Gathering
+### Triggering Apple Gathering
 
 Check available services in a terminal using this command:
 
 - `ros2 service list`
 
-If your simulation is running, you should be able to see the apple gathering service listed there.
+If your simulation is running, you should be able to see the apple gathering service(s) listed there.
 
-- It could be named `/trigger_apple_gathering`.
+- It should be named `/trigger_apple_gathering`. It might include a namespace.
 
 If Apple Kraken is in position, next to a tree, you can trigger apple gathering with this command:
 
@@ -163,13 +192,19 @@ You can also cancel a gathering operation in progress by calling another service
 
 - `ros2 service call /cancel_apple_gathering std_srvs/srv/Trigger`
 
-## Navigation stack
+### Spawn more Krakens
 
-If you wish to run ROS 2 navigation stack with this Project, please use this [repo](https://github.com/RobotecAI/o3de_kraken_nav) for necessary instructions and packages.
+Please read the following section on [Robot Spawner](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md#spawner).
 
-## Troubleshooting
+To spawn a new Apple Kraken, you can used named points (provided by a Spawner Component) or custom poses. An example call:
 
-#### Check-list
+```
+ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', initial_pose: {position:{ x: 4, y: 4, z: 0.2}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
+```
+
+# Troubleshooting
+
+## Check-list
 
 - Is O3DE running ok with an empty or default project?
 - Is ROS 2 installation ok? (check with `ros2 topic pub` etc.)
@@ -187,11 +222,11 @@ If you wish to run ROS 2 navigation stack with this Project, please use this [re
         - note that with multiple robots, these topics will be namespaced.
     - `ros2 service list` should also show several simulation and robot services such as spawning and apple gathering.
 
-#### Other
+## Other
 
 💡 ***Note:*** Take note that these **vision_msgs** are different between Humble and Galactic,
 in particular detection messages which are used by ground truth detector.
 
-## License
+# License
 
 For terms please see the LICENSE*.TXT files at the root of this repository.

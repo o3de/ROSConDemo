@@ -20,24 +20,23 @@
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
+
 namespace AppleKraken
 {
     //! Component for apple picking effector (manipulator)
     class KrakenEffectorComponent
         : public AZ::Component
-        , public ApplePickingRequestBus::Handler
-        , public AZ::TickBus::Handler
+        , protected ApplePickingRequestBus::Handler
+        , protected AZ::TickBus::Handler
     {
     public:
         AZ_COMPONENT(KrakenEffectorComponent, "{9206FC30-DF56-4246-8247-5D6B31603B53}");
-        KrakenEffectorComponent() = default;
+        KrakenEffectorComponent();
         static void Reflect(AZ::ReflectContext* context);
 
-    private:
+    protected:
         void Activate() override;
         void Deactivate() override;
-
-        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
 
         void PrepareForPicking() override;
         void PickApple(const PickAppleTask& appleTask) override;
@@ -45,20 +44,32 @@ namespace AppleKraken
         PickingState GetEffectorState() override;
         AZ::Obb GetEffectorReachArea() override;
 
-        void BeginTransitionIfAcceptable(EffectorState targetState);
-        bool IsTransitionAcceptable(EffectorState targetState) const;
-        bool IsTransitionValid(EffectorState targetState) const;
+        void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
 
-        void OnEffectorReadyForPicking();
-        void OnApplePicked();
-        void OnAppleRetrieved();
-
+    private:
         void LockManipulator(bool locked);
 
+        bool IsTransitionValid(EffectorState targetState) const;
+        bool IsTransitionAcceptable(EffectorState targetState) const;
+        void BeginTransitionIfAcceptable(EffectorState targetState);
+
+        struct EffectorStateProperties
+        {
+        public:
+            AZStd::unordered_map<EffectorState, AZStd::function<void()>> m_stateActions;
+            AZStd::unordered_map<StateTransition, AZStd::function<void()>, TransitionHash> m_allowedTransitions;
+        };
+
+        void InitializeStateProperties();
+        const AZStd::function<void()>& GetCurrentTransitionAction() const;
+        const AZStd::function<void()>& GetCurrentStateAction() const;
+
         PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
+        static constexpr float m_maxPickingTime = 5.0f;
+        float m_currentStateTransitionTime = 0.0f;
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
-        float m_currentStateTransitionTime = 0.0f;
+        EffectorStateProperties m_stateProperties;
         AZ::EntityId m_reachEntity;
         AZ::EntityId m_manipulatorEntity;
         AZ::EntityId m_rootEntityToFreeze;

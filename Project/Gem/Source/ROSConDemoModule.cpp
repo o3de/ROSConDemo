@@ -1,5 +1,13 @@
+/*
+ * Copyright (c) Contributors to the Open 3D Engine Project.
+ * For complete copyright and license terms please see the LICENSE at the root of this distribution.
+ *
+ * SPDX-License-Identifier: Apache-2.0 OR MIT
+ *
+ */
 
 #include "ApplePicker/ApplePickerComponent.h"
+#include "ApplePicker/GatheringRowComponent.h"
 #include "ApplePicker/KrakenEffectorComponent.h"
 #include "FruitStorage/FruitStorageComponent.h"
 #include "ROSConDemoSystemComponent.h"
@@ -21,6 +29,7 @@ namespace ROSConDemo
                 m_descriptors.end(),
                 { ROSConDemoSystemComponent::CreateDescriptor(),
                   AppleKraken::ApplePickerComponent::CreateDescriptor(),
+                  AppleKraken::GatheringRowComponent::CreateDescriptor(),
                   AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
                   AppleKraken::FruitStorageComponent::CreateDescriptor() });
         }

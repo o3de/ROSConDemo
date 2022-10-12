@@ -49,5 +49,16 @@ namespace AppleKraken
         AZStd::string m_description; //!< Optional descriptive field to inform the user.
     };
 
-    using StateTransition = std::pair<EffectorState, EffectorState>;
+    using StateTransition = AZStd::pair<EffectorState, EffectorState>;
+
+    struct TransitionHash
+    {
+        size_t operator()(const AZStd::pair<EffectorState, EffectorState>& p) const
+        {
+            int16_t first = static_cast<int16_t>(p.first);
+            int16_t second = static_cast<int16_t>(p.second);
+            size_t combined = (size_t)first << 16 | second;
+            return combined;
+        }
+    };
 } // namespace AppleKraken
