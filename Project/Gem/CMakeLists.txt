@@ -44,6 +44,7 @@ ly_add_target(
         PRIVATE
             AZ::AzGameFramework
             AZ::AzFramework
+            Gem::EMotionFX.Static
             Gem::LmbrCentral.API
             Gem::LyShine
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static

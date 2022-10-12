@@ -19,6 +19,7 @@
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
+#include <Integration/SimpleMotionComponentBus.h>
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Names.h>
@@ -193,7 +194,8 @@ namespace AppleKraken
                 ->Field("CancelServiceTopic", &ApplePickerComponent::m_cancelServiceTopic)
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
                 ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
-                ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId);
+                ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId)
+                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -224,8 +226,13 @@ namespace AppleKraken
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_retrievalPointEntityId,
-                        "Fruit retrieval point",
-                        "Entity which holds the point of the retrieval chute");
+                        "Retrieval point",
+                        "Entity which holds the point of the apple retrieval chute")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_entryAnimationEntityId,
+                        "Animation point",
+                        "Entity which holds the point of apple entry to chute for animation");
             }
         }
     }
@@ -274,6 +281,17 @@ namespace AppleKraken
         Tags applePickingEventTags = { kPickingAutomatedEventTag };
         FruitStorageRequestsBus::Event(m_fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
         DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple, applePickingEventTags);
+
+        if (!m_entryAnimationEntityId.IsValid())
+        {
+            AZ_Warning("ApplePicker", false, "No animation for apple entry will be played since entry animation entity is invalid");
+        }
+        else
+        {
+            EMotionFX::Integration::SimpleMotionComponentRequestBus::Event(
+                m_entryAnimationEntityId, &EMotionFX::Integration::SimpleMotionComponentRequestBus::Events::PlayMotion);
+        }
+
         PickNextApple();
     }
 

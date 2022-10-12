@@ -64,6 +64,7 @@ namespace AppleKraken
 
         // TODO - actually use this entity for retrieval position
         AZ::EntityId m_retrievalPointEntityId; //!< used to sort apples by distance to retrieval chute
+        AZ::EntityId m_entryAnimationEntityId; //!< used to animate apple going into chute
 
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_cancelService;

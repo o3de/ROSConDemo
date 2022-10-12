@@ -275,7 +275,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A5320FCC-06A5-570B-8737-35357E223030}"
-                                            }
+                                            },
+                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_pipe.azmaterial"
                                         }
                                     }
                                 }
@@ -2457,8 +2458,7 @@
                             "assetHint": "prefabs/apple_crate.spawnable"
                         },
                         "Capacity": 50,
-                        "CrateDropPoint": "Entity_[5494828217205]",
-                        "UiEntity": "Entity_[5286907825968]"
+                        "CrateDropPoint": "Entity_[5494828217205]"
                     }
                 },
                 "Component_[12724369969007930765]": {
@@ -2480,7 +2480,8 @@
                         "$type": "ApplePickerComponent",
                         "EffectorEntity": "Entity_[126373983206044]",
                         "FruitStorageEntity": "Entity_[126373983206044]",
-                        "RetrievalPointEntity": "Entity_[453828565735265]"
+                        "RetrievalPointEntity": "Entity_[453828565735265]",
+                        "AppleEntryAnimationEntity": "Entity_[5359642877688]"
                     }
                 },
                 "Component_[15792714784584127302]": {
@@ -3568,7 +3569,10 @@
                 },
                 "Component_[12999122222194170561]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 12999122222194170561
+                    "Id": 12999122222194170561,
+                    "Child Entity Order": [
+                        "Entity_[5359642877688]"
+                    ]
                 },
                 "Component_[13504040141164984746]": {
                     "$type": "EditorEntityIconComponent",
@@ -3764,57 +3768,116 @@
                 }
             }
         },
-        "Entity_[5286907825968]": {
-            "Id": "Entity_[5286907825968]",
-            "Name": "Ui",
+        "Entity_[5359642877688]": {
+            "Id": "Entity_[5359642877688]",
+            "Name": "ChuteAnimation",
             "Components": {
-                "Component_[10241251369859239566]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 10241251369859239566
-                },
-                "Component_[11465251640864354376]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 11465251640864354376
-                },
-                "Component_[12565340982288084460]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 12565340982288084460
-                },
-                "Component_[12663538255353574993]": {
+                "Component_[1291718221619230642]": {
                     "$type": "EditorEntityIconComponent",
-                    "Id": 12663538255353574993
+                    "Id": 1291718221619230642
                 },
-                "Component_[15097666237341457527]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 15097666237341457527
+                "Component_[12917291486169062442]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 12917291486169062442
                 },
-                "Component_[15799199674941686217]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 15799199674941686217,
-                    "m_template": {
-                        "$type": "UiCanvasAssetRefComponent",
-                        "CanvasAssetRef": {
-                            "AssetPath": "ui/gamecanvas.uicanvas"
+                "Component_[13952856694950286421]": {
+                    "$type": "EditorActorComponent",
+                    "Id": 13952856694950286421,
+                    "ActorAsset": {
+                        "assetId": {
+                            "guid": "{3A5DC656-3A4A-5CF1-B390-1B0FD5635DD9}",
+                            "subId": 4135515199
                         },
-                        "IsAutoLoad": true
+                        "loadBehavior": "QueueLoad",
+                        "assetHint": "assets/animations/appleanime.actor"
+                    },
+                    "MaterialPerLOD": [
+                        {}
+                    ],
+                    "AttachmentTarget": ""
+                },
+                "Component_[14748218583400846268]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14748218583400846268,
+                    "Parent Entity": "Entity_[453828565735265]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.10000000149011612,
+                            0.0
+                        ],
+                        "Rotate": [
+                            -10.0,
+                            0.0,
+                            -90.0
+                        ]
                     }
                 },
-                "Component_[18129706037953483051]": {
-                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 18129706037953483051,
-                    "Parent Entity": "Entity_[126373983206044]"
+                "Component_[14870525916692050186]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 14870525916692050186
                 },
-                "Component_[4946259882969052376]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 4946259882969052376
+                "Component_[15668233960636941169]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 15668233960636941169
                 },
-                "Component_[5951762884545543629]": {
-                    "$type": "EditorVisibilityComponent",
-                    "Id": 5951762884545543629
-                },
-                "Component_[9445786852124677420]": {
+                "Component_[16639282969695111833]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 9445786852124677420
+                    "Id": 16639282969695111833
+                },
+                "Component_[17735886932956230014]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17735886932956230014
+                },
+                "Component_[255154858065024891]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 255154858065024891
+                },
+                "Component_[3947071864839309671]": {
+                    "$type": "EditorSimpleMotionComponent",
+                    "Id": 3947071864839309671,
+                    "PreviewInEditor": true,
+                    "Configuration": {
+                        "MotionAsset": {
+                            "assetId": {
+                                "guid": "{3A5DC656-3A4A-5CF1-B390-1B0FD5635DD9}",
+                                "subId": 2521389219
+                            },
+                            "assetHint": "assets/animations/appleanime.motion"
+                        },
+                        "Reverse": true,
+                        "PlaySpeed": 4.0,
+                        "PlayOnActivation": false,
+                        "FreezeAtLastFrame": false
+                    }
+                },
+                "Component_[4349866872489799165]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 4349866872489799165,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 4137209423
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{55097FFC-EE11-5B2D-9E83-1ECE5FCA4341}",
+                                                "subId": 1676432290
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat_16773115630758679458.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[8809330154460966515]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 8809330154460966515
                 }
             }
         },
