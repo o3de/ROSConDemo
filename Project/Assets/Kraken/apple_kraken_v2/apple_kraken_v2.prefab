@@ -3927,6 +3927,146 @@
                 }
             }
         },
+        "Entity_[2534338808675]": {
+            "Id": "Entity_[2534338808675]",
+            "Name": "Decal",
+            "Components": {
+                "Component_[11147332164271478336]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11147332164271478336,
+                    "Parent Entity": "Entity_[126352508369564]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.40894031524658203,
+                            0.42750024795532227,
+                            0.4281047284603119
+                        ],
+                        "Rotate": [
+                            90.0,
+                            89.99994659423828,
+                            0.0
+                        ],
+                        "UniformScale": 0.1325744092464447
+                    }
+                },
+                "Component_[13376907152103706166]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13376907152103706166
+                },
+                "Component_[14036225256463036621]": {
+                    "$type": "AZ::Render::EditorDecalComponent",
+                    "Id": 14036225256463036621,
+                    "Controller": {
+                        "Configuration": {
+                            "Material": {
+                                "assetId": {
+                                    "guid": "{9D304F3B-0801-5897-A5E8-A532FA587D01}"
+                                },
+                                "assetHint": "assets/images/roslogo.azmaterial"
+                            }
+                        }
+                    }
+                },
+                "Component_[1535886272982743532]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1535886272982743532
+                },
+                "Component_[15605827312953799186]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15605827312953799186
+                },
+                "Component_[17373618825201206446]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17373618825201206446
+                },
+                "Component_[17424778655140299543]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17424778655140299543
+                },
+                "Component_[17646966972785900843]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17646966972785900843
+                },
+                "Component_[2055709345063204600]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2055709345063204600
+                },
+                "Component_[5912343042491542166]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5912343042491542166
+                }
+            }
+        },
+        "Entity_[2542928743267]": {
+            "Id": "Entity_[2542928743267]",
+            "Name": "Decal",
+            "Components": {
+                "Component_[11147332164271478336]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11147332164271478336,
+                    "Parent Entity": "Entity_[126352508369564]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.4510650634765625,
+                            0.4568357467651367,
+                            0.37462687492370605
+                        ],
+                        "Rotate": [
+                            90.00000762939453,
+                            -89.99994659423828,
+                            0.0
+                        ],
+                        "UniformScale": 0.18969540297985077
+                    }
+                },
+                "Component_[13376907152103706166]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13376907152103706166
+                },
+                "Component_[14036225256463036621]": {
+                    "$type": "AZ::Render::EditorDecalComponent",
+                    "Id": 14036225256463036621,
+                    "Controller": {
+                        "Configuration": {
+                            "Material": {
+                                "assetId": {
+                                    "guid": "{9D304F3B-0801-5897-A5E8-A532FA587D01}"
+                                },
+                                "assetHint": "assets/images/roslogo.azmaterial"
+                            }
+                        }
+                    }
+                },
+                "Component_[1535886272982743532]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 1535886272982743532
+                },
+                "Component_[15605827312953799186]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 15605827312953799186
+                },
+                "Component_[17373618825201206446]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17373618825201206446
+                },
+                "Component_[17424778655140299543]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 17424778655140299543
+                },
+                "Component_[17646966972785900843]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17646966972785900843
+                },
+                "Component_[2055709345063204600]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2055709345063204600
+                },
+                "Component_[5912343042491542166]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5912343042491542166
+                }
+            }
+        },
         "Entity_[30581209494170]": {
             "Id": "Entity_[30581209494170]",
             "Name": "top_lamp_1",
