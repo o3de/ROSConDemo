@@ -452,6 +452,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 6405455946319320324,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.0,
@@ -1085,6 +1088,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 14896415747963619829,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.0,
@@ -1459,6 +1465,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 9304968376340893899,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             -0.381258487701416,
                             -0.374284952878952,
@@ -1515,6 +1524,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 16018815697139019715,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             -0.06697399914264679,
                             -0.20000000298023224,
@@ -2119,6 +2131,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 17893928545359419563,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.0,
@@ -2284,6 +2299,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 2147041043453161375,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.0,
@@ -2509,6 +2527,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 18427087225333468215,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.0,
@@ -2637,6 +2658,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 10787486219904805400,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.963687002658844,
                             -0.0,
@@ -2671,6 +2695,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 1169748815476029279,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             1.7916920185089111,
                             -0.0,
@@ -2705,6 +2732,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 12363022230351653153,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             2.540242910385132,
                             0.0,
@@ -2784,19 +2814,7 @@
                 "Component_[15792714784584127302]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 15792714784584127302,
-                    "Parent Entity": "ContainerEntity",
-                    "Transform Data": {
-                        "Translate": [
-                            -5.9128241539001465,
-                            3.0533857345581055,
-                            16.21941566467285
-                        ],
-                        "Rotate": [
-                            0.0,
-                            0.0,
-                            -89.1511001586914
-                        ]
-                    }
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[16550107995791062284]": {
                     "$type": "GenericComponentWrapper",
@@ -2875,6 +2893,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 176770212147820291,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             -0.2881700098514557,
                             -0.0,
@@ -2914,7 +2935,7 @@
                         "Entity_[126352508369564]",
                         "Entity_[126335328500380]",
                         "Entity_[126378278173340]",
-                        "Instance_[3124440417728]/ContainerEntity",
+                        "Entity_[31380524347204]",
                         "Entity_[126382573140636]",
                         "Entity_[126309558696604]",
                         "Entity_[126356803336860]",
@@ -2929,6 +2950,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 3226220641517151136,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.002268000040203333,
                             -0.0,
@@ -2998,6 +3022,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 583585224453152908,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             2.197614908218384,
                             0.0,
@@ -3028,7 +3055,7 @@
                     "m_template": {
                         "$type": "ROS2FrameComponent",
                         "Namespace Configuration": {
-                            "Namespace Strategy": 1
+                            "Namespace Strategy": 2
                         },
                         "Frame Name": "base_link"
                     }
@@ -3154,6 +3181,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 9744171471204770815,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             2.0833680629730225,
                             0.0,
@@ -3299,6 +3329,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 7370586322450868306,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Position": [
                             0.0,
                             0.06256400048732758,
@@ -3806,6 +3839,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 14373249753094738440,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "CollisionGroupId": {
                             "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
                         },
@@ -4039,6 +4075,227 @@
                 }
             }
         },
+        "Entity_[31380524347204]": {
+            "Id": "Entity_[31380524347204]",
+            "Name": "LidarKraken",
+            "Components": {
+                "Component_[10387713135725007135]": {
+                    "$type": "AZ::Render::EditorMeshComponent",
+                    "Id": 10387713135725007135,
+                    "Controller": {
+                        "Configuration": {
+                            "ModelAsset": {
+                                "assetId": {
+                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "subId": 268955557
+                                },
+                                "assetHint": "models/sensors/lidaros2/lidaros2.azmodel"
+                            }
+                        }
+                    }
+                },
+                "Component_[11659553095730431803]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 11659553095730431803
+                },
+                "Component_[13177781661023720894]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 13177781661023720894
+                },
+                "Component_[14535670656735835043]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 14535670656735835043,
+                    "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
+                        "CollisionGroupId": {
+                            "GroupId": "{DED3A46E-3588-4BB8-BADF-E3114DBA95A6}"
+                        },
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "DefaultMaterial"
+                                }
+                            ]
+                        },
+                        "MaterialSelection": {
+                            "MaterialIds": [
+                                {}
+                            ]
+                        }
+                    },
+                    "ShapeConfiguration": {
+                        "PhysicsAsset": {
+                            "Asset": {
+                                "assetId": {
+                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "subId": 2574200790
+                                },
+                                "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                            },
+                            "Configuration": {
+                                "PhysicsAsset": {
+                                    "assetId": {
+                                        "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                        "subId": 2574200790
+                                    },
+                                    "loadBehavior": "QueueLoad",
+                                    "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Component_[17075071070477116796]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 17075071070477116796
+                },
+                "Component_[3201525403568523459]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 3201525403568523459,
+                    "Parent Entity": "Entity_[126373983206044]",
+                    "Transform Data": {
+                        "Translate": [
+                            2.280445098876953,
+                            0.0,
+                            0.8967376947402954
+                        ]
+                    }
+                },
+                "Component_[5004394864880282263]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5004394864880282263
+                },
+                "Component_[5142969012241927438]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5142969012241927438,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 3201525403568523459
+                        },
+                        {
+                            "ComponentId": 10387713135725007135,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 14535670656735835043,
+                            "SortIndex": 2
+                        }
+                    ]
+                },
+                "Component_[6868930103042649999]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 6868930103042649999
+                },
+                "Component_[747584382186458865]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 747584382186458865,
+                    "m_template": {
+                        "$type": "ROS2FrameComponent",
+                        "Frame Name": "lidar_mount"
+                    }
+                },
+                "Component_[8621809176728013021]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8621809176728013021
+                },
+                "Component_[8808389010192194694]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 8808389010192194694,
+                    "Child Entity Order": [
+                        "Entity_[31384819314500]"
+                    ]
+                }
+            }
+        },
+        "Entity_[31384819314500]": {
+            "Id": "Entity_[31384819314500]",
+            "Name": "Sensor",
+            "Components": {
+                "Component_[1058300359310703890]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 1058300359310703890,
+                    "m_template": {
+                        "$type": "ROS2FrameComponent",
+                        "Namespace Configuration": {
+                            "Namespace Strategy": 1
+                        },
+                        "Frame Name": "lidar"
+                    }
+                },
+                "Component_[1067011392942644324]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1067011392942644324
+                },
+                "Component_[10842630456390194262]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10842630456390194262,
+                    "m_template": {
+                        "$type": "ROS2LidarSensorComponent",
+                        "SensorConfiguration": {
+                            "Publishers": {
+                                "sensor_msgs::msg::PointCloud2": {
+                                    "Type": "sensor_msgs::msg::PointCloud2",
+                                    "Topic": "pc"
+                                }
+                            }
+                        },
+                        "LidarParameters": {
+                            "Layers": 16,
+                            "Points per layer": 308,
+                            "Min horizontal angle": -120.0,
+                            "Max horizontal angle": 120.0,
+                            "Min vertical angle": 12.0,
+                            "Max vertical angle": -12.0,
+                            "Max range": 50.0
+                        },
+                        "IgnoreLayer": true,
+                        "IgnoredLayerIndex": 1
+                    }
+                },
+                "Component_[13013301136498148727]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 13013301136498148727
+                },
+                "Component_[13444160964623421011]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 13444160964623421011
+                },
+                "Component_[14110476541514862518]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 14110476541514862518
+                },
+                "Component_[17124975368240161289]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 17124975368240161289
+                },
+                "Component_[1863593986687460136]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1863593986687460136
+                },
+                "Component_[3070834537283917104]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 3070834537283917104
+                },
+                "Component_[7054215981025466544]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7054215981025466544
+                },
+                "Component_[8854312938977545065]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 8854312938977545065,
+                    "Parent Entity": "Entity_[31380524347204]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.0,
+                            0.06961321830749512
+                        ]
+                    }
+                }
+            }
+        },
         "Entity_[36172097579699]": {
             "Id": "Entity_[36172097579699]",
             "Name": "ConveyorBelt_visual",
@@ -4146,7 +4403,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 60.0,
-                            "EditorEntityId": 17278813162428804714
+                            "EditorEntityId": 14242634364439791487
                         }
                     }
                 },
@@ -4164,14 +4421,14 @@
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Translate": [
-                            -6.607332229614258,
-                            5.333132743835449,
-                            19.25365447998047
+                            -1.899999976158142,
+                            0.0,
+                            4.0
                         ],
                         "Rotate": [
-                            34.23008346557617,
-                            6.099089622497559,
-                            -171.1241912841797
+                            0.0,
+                            20.0,
+                            -90.0
                         ]
                     }
                 },
@@ -4245,6 +4502,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 14373249753094738440,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "MaterialSlots": {
                             "Slots": [
                                 {
@@ -4502,28 +4762,6 @@
                     "Id": 9234471473511081064
                 }
             }
-        }
-    },
-    "Instances": {
-        "Instance_[3124440417728]": {
-            "Source": "Prefabs/LidarKraken.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Parent Entity",
-                    "value": "../Entity_[126373983206044]"
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Transform Data/Translate/0",
-                    "value": 2.280444860458374
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[14024330568164208498]/Transform Data/Translate/2",
-                    "value": 0.8967376947402954
-                }
-            ]
         }
     }
 }

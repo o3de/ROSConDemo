@@ -40,8 +40,7 @@
                     "Entity_[104676312987105]",
                     "Entity_[1090499316769908]",
                     "Entity_[1377679985301621]",
-                    "Entity_[613152547383712]",
-                    "Instance_[130276990556569]/ContainerEntity"
+                    "Entity_[613152547383712]"
                 ]
             },
             "Component_[14409887347711167786]": {
@@ -762,7 +761,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 17977136188794208737
+                            "EditorEntityId": 15122883208547555436
                         }
                     }
                 },
@@ -1209,7 +1208,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 14185616554380250015
+                            "EntityId": 15678642925288696794
                         }
                     },
                     "useBakedCubemap": false,
@@ -1325,6 +1324,14 @@
                             0.0,
                             -90.0
                         ]
+                    }
+                },
+                "Component_[8769373046366984691]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 8769373046366984691,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line1"
                     }
                 },
                 "Component_[9470973296863097127]": {
@@ -2509,6 +2516,14 @@
                 "Component_[17503473695063282552]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 17503473695063282552
+                },
+                "Component_[2525712456180805096]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 2525712456180805096,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line2"
+                    }
                 },
                 "Component_[2840753425454738983]": {
                     "$type": "EditorLockComponent",
@@ -5306,31 +5321,6 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[2990713085782]/Components/Component_[17126492626991072176]/ShapeConfiguration/Cylinder/Configuration/Scale/2",
                     "value": 1.7999999523162842
-                }
-            ]
-        },
-        "Instance_[130276990556569]": {
-            "Source": "Assets/Kraken/apple_kraken_v2/apple_kraken_v2.prefab",
-            "Patches": [
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/0",
-                    "value": -54.0646858215332
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/1",
-                    "value": 30.014204025268555
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/2",
-                    "value": 0.9630389213562012
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 4709860214285475499
                 }
             ]
         },
