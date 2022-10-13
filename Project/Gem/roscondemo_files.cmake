@@ -20,8 +20,10 @@ set(FILES
         Source/FruitStorage/FruitStorageComponent.cpp
         Source/FruitStorage/FruitStorageComponent.h
         Source/FruitStorage/FruitStorageBus.h
-        Source/ApplePicker/ManipulatorRequestBus.cpp
-        Source/ApplePicker/ManipulatorRequestBus.h
+        Source/Manipulator/KrakenManipulatorController.cpp
+        Source/Manipulator/KrakenManipulatorController.h
+        Source/Manipulator/ManipulatorRequestBus.cpp
+        Source/Manipulator/ManipulatorRequestBus.h
         Source/ROSConDemoSystemComponent.cpp
         Source/ROSConDemoSystemComponent.h
         enabled_gems.cmake

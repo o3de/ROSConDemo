@@ -27,12 +27,17 @@ namespace AppleKraken
         Call(FN_Retrieve);
     }
 
+    void ManipulatorRequestHandler::RetrieveNose()
+    {
+        Call(FN_RetrieveNose);
+    }
     int ManipulatorRequestHandler::GetStatus()
     {
         int p;
         CallResult(p, FN_GetStatus);
         return p;
     }
+
 
     void ManipulatorRequestHandler::Reflect(AZ::ReflectContext* context)
     {
@@ -43,7 +48,8 @@ namespace AppleKraken
                 ->Event("PickApple", &ManipulatorRequestBus::Events::PickApple)
                 ->Event("GetPosition", &ManipulatorRequestBus::Events::GetPosition)
                 ->Event("Retrieve", &ManipulatorRequestBus::Events::Retrieve)
-                ->Event("GetStatus", &ManipulatorRequestBus::Events::GetStatus);
+                ->Event("GetStatus", &ManipulatorRequestBus::Events::GetStatus)
+                ->Event("RetrieveNose", &ManipulatorRequestBus::Events::RetrieveNose);
         }
     }
 
