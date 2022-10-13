@@ -761,7 +761,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 15122883208547555436
+                            "EditorEntityId": 17796812577344462390
                         }
                     }
                 },
@@ -1208,7 +1208,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 15678642925288696794
+                            "EntityId": 7308784209966455646
                         }
                     },
                     "useBakedCubemap": false,
@@ -2605,6 +2605,14 @@
                         ]
                     }
                 },
+                "Component_[6181205910092673585]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6181205910092673585,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line3"
+                    }
+                },
                 "Component_[9470973296863097127]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9470973296863097127
@@ -2642,6 +2650,14 @@
                 "Component_[386129393972332621]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 386129393972332621
+                },
+                "Component_[4775227584806477299]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 4775227584806477299,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line4"
+                    }
                 },
                 "Component_[523501923593589864]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -2713,6 +2729,14 @@
                             0.0,
                             -89.99994659423828
                         ]
+                    }
+                },
+                "Component_[7157441797508480711]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7157441797508480711,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line5"
                     }
                 },
                 "Component_[9470973296863097127]": {
