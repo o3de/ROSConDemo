@@ -7,6 +7,7 @@
                 "$type": "EditorEntitySortComponent",
                 "Id": 12694914810967694506,
                 "Child Entity Order": [
+                    "Entity_[453802196716717]",
                     "Entity_[126373983206044]"
                 ]
             },
@@ -21,7 +22,19 @@
             "Component_[16951455423041694634]": {
                 "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                 "Id": 16951455423041694634,
-                "Parent Entity": ""
+                "Parent Entity": "",
+                "Transform Data": {
+                    "Translate": [
+                        -52.809242248535156,
+                        45.1510124206543,
+                        0.16203665733337402
+                    ],
+                    "Rotate": [
+                        0.0,
+                        0.0,
+                        -89.4713134765625
+                    ]
+                }
             },
             "Component_[2131465557818323588]": {
                 "$type": "EditorEntityIconComponent",
@@ -50,6 +63,59 @@
         }
     },
     "Entities": {
+        "Entity_[103515049335193]": {
+            "Id": "Entity_[103515049335193]",
+            "Name": "RetrievalChute",
+            "Components": {
+                "Component_[10122968584300041415]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 10122968584300041415,
+                    "Parent Entity": "Entity_[126373983206044]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.3339999914169312,
+                            -0.23800000548362732,
+                            1.3849999904632568
+                        ]
+                    }
+                },
+                "Component_[12761179107665819104]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 12761179107665819104
+                },
+                "Component_[1323749167474485040]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1323749167474485040
+                },
+                "Component_[16257101081699073151]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 16257101081699073151
+                },
+                "Component_[26793577041358885]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 26793577041358885
+                },
+                "Component_[4938114462364595294]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 4938114462364595294,
+                    "Child Entity Order": [
+                        "Entity_[130440199313817]"
+                    ]
+                },
+                "Component_[5647805011346043378]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 5647805011346043378
+                },
+                "Component_[8420345229792641924]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 8420345229792641924
+                },
+                "Component_[9420346074979138202]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 9420346074979138202
+                }
+            }
+        },
         "Entity_[126292378827420]": {
             "Id": "Entity_[126292378827420]",
             "Name": "kraken_manipulator_link_3",
@@ -314,7 +380,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{F3F8C28F-6BFA-5EC8-81FB-6A5747A2AD83}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/pipe.azmaterial"
                                         }
                                     }
                                 }
@@ -535,7 +602,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9429E5B-483E-5CE9-A09B-39DC5587D6F1}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonmetalmat.azmaterial"
                                         }
                                     }
                                 }
@@ -705,7 +773,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9AC3081-DDFC-5090-926B-DC7305DBA90E}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonrubbermat.azmaterial"
                                         }
                                     }
                                 },
@@ -868,7 +937,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9AC3081-DDFC-5090-926B-DC7305DBA90E}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonrubbermat.azmaterial"
                                         }
                                     }
                                 },
@@ -1195,7 +1265,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{B7427E09-3995-5B27-8DAC-39E500FB5891}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonyellowpaintmat.azmaterial"
                                         }
                                     }
                                 },
@@ -1678,7 +1749,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9AC3081-DDFC-5090-926B-DC7305DBA90E}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonrubbermat.azmaterial"
                                         }
                                     }
                                 },
@@ -1735,7 +1807,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9429E5B-483E-5CE9-A09B-39DC5587D6F1}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonmetalmat.azmaterial"
                                         }
                                     }
                                 }
@@ -1822,8 +1895,8 @@
                     "Parent Entity": "Entity_[126373983206044]",
                     "Transform Data": {
                         "Translate": [
-                            1.1018309593200684,
-                            0.0,
+                            1.1018295288085938,
+                            0.00000762939453125,
                             0.0
                         ],
                         "Rotate": [
@@ -1886,7 +1959,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{9780D508-8D8F-52D6-82B7-416FA51E43F6}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/voltagebox.azmaterial"
                                         }
                                     }
                                 },
@@ -2381,7 +2455,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9429E5B-483E-5CE9-A09B-39DC5587D6F1}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonmetalmat.azmaterial"
                                         }
                                     }
                                 }
@@ -2660,6 +2735,13 @@
                         }
                     }
                 },
+                "Component_[12369457332725092485]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12369457332725092485,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent"
+                    }
+                },
                 "Component_[12567448872384764450]": {
                     "$type": "GenericComponentWrapper",
                     "Id": 12567448872384764450,
@@ -2694,7 +2776,9 @@
                     "m_template": {
                         "$type": "ApplePickerComponent",
                         "EffectorEntity": "Entity_[126373983206044]",
-                        "FruitStorageEntity": "Entity_[126373983206044]"
+                        "FruitStorageEntity": "Entity_[126373983206044]",
+                        "RetrievalPointEntity": "Entity_[103515049335193]",
+                        "AppleEntryAnimationEntity": "Entity_[130440199313817]"
                     }
                 },
                 "Component_[15792714784584127302]": {
@@ -2703,9 +2787,14 @@
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Translate": [
-                            1.100000023841858,
+                            -5.9128241539001465,
+                            3.0533857345581055,
+                            16.21941566467285
+                        ],
+                        "Rotate": [
                             0.0,
-                            0.0
+                            0.0,
+                            -89.1511001586914
                         ]
                     }
                 },
@@ -2820,7 +2909,8 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 17916227991713293347,
                     "Child Entity Order": [
-                        "Entity_[453802196716717]",
+                        "Entity_[169107789879705]",
+                        "Entity_[103515049335193]",
                         "Entity_[126352508369564]",
                         "Entity_[126335328500380]",
                         "Entity_[126378278173340]",
@@ -3446,7 +3536,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{A9AC3081-DDFC-5090-926B-DC7305DBA90E}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/amazonrubbermat.azmaterial"
                                         }
                                     }
                                 },
@@ -3522,6 +3613,175 @@
                 "Component_[9301993446292461871]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 9301993446292461871
+                }
+            }
+        },
+        "Entity_[130440199313817]": {
+            "Id": "Entity_[130440199313817]",
+            "Name": "ChuteAnimation",
+            "Components": {
+                "Component_[10507890843639247239]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10507890843639247239
+                },
+                "Component_[11701488946186792989]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 11701488946186792989
+                },
+                "Component_[14068684297165203578]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 14068684297165203578
+                },
+                "Component_[14123300892523853073]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 14123300892523853073
+                },
+                "Component_[1480689290764031869]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 1480689290764031869
+                },
+                "Component_[15243303945139154019]": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 15243303945139154019,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 4137209423
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{55097FFC-EE11-5B2D-9E83-1ECE5FCA4341}",
+                                                "subId": 1676432290
+                                            },
+                                            "assetHint": "assets/apple_tree/apple_applemat_16773115630758679458.azmaterial"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Component_[17844435443125299592]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 17844435443125299592
+                },
+                "Component_[2842420695745002228]": {
+                    "$type": "EditorSimpleMotionComponent",
+                    "Id": 2842420695745002228,
+                    "Configuration": {
+                        "MotionAsset": {
+                            "assetId": {
+                                "guid": "{3A5DC656-3A4A-5CF1-B390-1B0FD5635DD9}",
+                                "subId": 2521389219
+                            },
+                            "assetHint": "assets/animations/appleanime.motion"
+                        },
+                        "Reverse": true,
+                        "PlaySpeed": 3.0,
+                        "PlayOnActivation": false,
+                        "FreezeAtLastFrame": false
+                    }
+                },
+                "Component_[3420152729452085734]": {
+                    "$type": "EditorActorComponent",
+                    "Id": 3420152729452085734,
+                    "ActorAsset": {
+                        "assetId": {
+                            "guid": "{3A5DC656-3A4A-5CF1-B390-1B0FD5635DD9}",
+                            "subId": 4135515199
+                        },
+                        "loadBehavior": "QueueLoad",
+                        "assetHint": "assets/animations/appleanime.actor"
+                    },
+                    "MaterialPerLOD": [
+                        {}
+                    ],
+                    "AttachmentTarget": ""
+                },
+                "Component_[7268445895836999040]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 7268445895836999040
+                },
+                "Component_[7464033973723551470]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7464033973723551470
+                },
+                "Component_[9985420610508218380]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 9985420610508218380,
+                    "Parent Entity": "Entity_[103515049335193]",
+                    "Transform Data": {
+                        "Translate": [
+                            0.0,
+                            0.10000000149011612,
+                            0.0
+                        ],
+                        "Rotate": [
+                            -10.0,
+                            0.0,
+                            -90.0
+                        ]
+                    }
+                }
+            }
+        },
+        "Entity_[169107789879705]": {
+            "Id": "Entity_[169107789879705]",
+            "Name": "RobotTag",
+            "Components": {
+                "Component_[10058073230056239982]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10058073230056239982
+                },
+                "Component_[10267516043902475835]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 10267516043902475835
+                },
+                "Component_[15669922054621906895]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 15669922054621906895
+                },
+                "Component_[15721071893982245073]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 15721071893982245073,
+                    "Parent Entity": "Entity_[126373983206044]",
+                    "Transform Data": {
+                        "Translate": [
+                            1.3339996337890625,
+                            -0.23799896240234375,
+                            1.3849997520446777
+                        ]
+                    }
+                },
+                "Component_[16072919505873918310]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 16072919505873918310
+                },
+                "Component_[1754408956812872133]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 1754408956812872133
+                },
+                "Component_[1838697836835765277]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 1838697836835765277
+                },
+                "Component_[2619722413406735014]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2619722413406735014
+                },
+                "Component_[5950581025089604886]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 5950581025089604886
+                },
+                "Component_[9410937330116672280]": {
+                    "$type": "EditorTagComponent",
+                    "Id": 9410937330116672280,
+                    "Tags": [
+                        "Robot"
+                    ]
                 }
             }
         },
@@ -3834,7 +4094,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{937A8FD9-D6F8-50DE-BC9D-111776FB3766}"
-                                            }
+                                            },
+                                            "assetHint": "assets/kraken/apple_kraken_v2/materials/conveyorbelt_conveyorbelt.azmaterial"
                                         }
                                     }
                                 }
@@ -3884,7 +4145,8 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 78446641329991928
+                            "Field of View": 60.0,
+                            "EditorEntityId": 17278813162428804714
                         }
                     }
                 },
@@ -3899,17 +4161,17 @@
                 "Component_[15610120393058518460]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 15610120393058518460,
-                    "Parent Entity": "Entity_[126373983206044]",
+                    "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Translate": [
-                            -3.0,
-                            0.0,
-                            4.0
+                            -6.607332229614258,
+                            5.333132743835449,
+                            19.25365447998047
                         ],
                         "Rotate": [
-                            0.0,
-                            20.0,
-                            -90.0
+                            34.23008346557617,
+                            6.099089622497559,
+                            -171.1241912841797
                         ]
                     }
                 },
