@@ -4454,5 +4454,92 @@
                 }
             }
         }
+    },
+    "Instances": {
+        "Instance_[15809790840954]": {
+            "Source": "Prefabs/Apple_Crate_empty.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Parent Entity",
+                    "value": "../Entity_[126373983206044]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Translate/0",
+                    "value": 0.5687007904052734
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Translate/1",
+                    "value": 0.000003814697265625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Translate/2",
+                    "value": 0.6364383697509766
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Rotate/2",
+                    "value": 90.00000762939453
+                }
+            ]
+        },
+        "Instance_[16591474888826]": {
+            "Source": "Prefabs/Apple_Crate_empty.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Parent Entity",
+                    "value": "../Entity_[126373983206044]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Translate/0",
+                    "value": 0.15843963623046875
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Translate/2",
+                    "value": 0.6364374160766602
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[14744176274437433019]/Transform Data/Rotate/2",
+                    "value": -90.0
+                }
+            ]
+        },
+        "Instance_[16621539659898]": {
+            "Source": "Prefabs/Apple_Crate.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[15224001494745498459]/Parent Entity",
+                    "value": "../Entity_[126373983206044]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[15224001494745498459]/Transform Data/Translate/0",
+                    "value": -0.2532958984375
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[15224001494745498459]/Transform Data/Translate/1",
+                    "value": 0.000003814697265625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[15224001494745498459]/Transform Data/Translate/2",
+                    "value": 0.635009765625
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[15224001494745498459]/Transform Data/Rotate/2",
+                    "value": 90.00000762939453
+                }
+            ]
+        }
     }
 }
