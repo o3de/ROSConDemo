@@ -196,7 +196,29 @@ You can also cancel a gathering operation in progress by calling another service
 
 Please read the following section on [Robot Spawner](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md#spawner).
 
-To spawn a new Apple Kraken, you can used named points (provided by a Spawner Component) or custom poses. An example call:
+To spawn a new Apple Kraken, you can used named points (provided by a Spawner Component) or custom poses. 
+
+#### Available spawn aliases
+
+You can use the spawn service with following robot names:
+- apple_kraken_rusty
+- apple_kraken_shiny
+- apple_kraken (defualts to shiny).
+These two robots are functionally the same.
+
+#### Available named spawn poses
+
+There are several named poses (`line1` through `line4`) conveniently placed at entrances to apple orchard rows.
+
+#### Example calls:
+
+Named point:
+
+```
+ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', xml: 'line1'}'
+```
+
+Free pose:
 
 ```
 ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', initial_pose: {position:{ x: 4, y: 4, z: 0.2}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
