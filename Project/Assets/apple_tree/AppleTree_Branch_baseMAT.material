@@ -1,6 +1,6 @@
 {
-    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.textureMap": "textures/BranchMAT_BaseColor_lod4.png"
     }

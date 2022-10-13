@@ -1,6 +1,6 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.800000011920929,
@@ -10,16 +10,9 @@
         ],
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "Assets/apple_tree/textures/AppleMAT_BaseColor_0_lod0.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "irradiance.irradianceColorSource": "BaseColor",
         "normal.factor": 0.10000000149011612,
         "normal.textureMap": "Assets/apple_tree/textures/AppleMAT_Normal__lod0.png",
-        "opacity.factor": 1.0,
         "roughness.lowerBound": 0.33000001311302185,
         "roughness.textureMap": "Assets/apple_tree/textures/AppleMAT_Roughness_lod0.png",
         "specularF0.factor": 0.5600000023841858

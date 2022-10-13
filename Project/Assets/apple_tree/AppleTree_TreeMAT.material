@@ -1,6 +1,6 @@
 {
-    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.38776230812072754,
@@ -10,20 +10,9 @@
         ],
         "baseColor.textureBlendMode": "Overlay",
         "baseColor.textureMap": "textures/TreeMAT_BaseColor_lod0.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "irradiance.irradianceColorSource": "BaseColor",
         "normal.factor": 1.059999942779541,
         "normal.textureMap": "textures/TreeMAT_Normal_lod0.png",
-        "opacity.factor": 1.0,
-        "parallax.factor": 0.0,
-        "parallax.offset": -0.006000000052154064,
-        "parallax.pdo": true,
-        "parallax.textureMap": "textures/TreeMAT_Height_lod0.png",
         "roughness.factor": 0.6200000047683716,
         "specularF0.factor": 0.41999998688697815
     }

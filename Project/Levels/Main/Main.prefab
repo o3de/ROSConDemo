@@ -156,22 +156,6 @@
                     "Id": 16316160855692862306,
                     "Parent Entity": "Entity_[1146574390643]"
                 },
-                "Component_[16495365342755562265]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 16495365342755562265,
-                    "m_template": {
-                        "$type": "ROS2SpawnerComponent",
-                        "Spawnables": {
-                            "apple_kraken": {
-                                "assetId": {
-                                    "guid": "{488BBE50-235C-5B9F-A905-500EDEF43739}",
-                                    "subId": 2706842179
-                                },
-                                "assetHint": "assets/importer/apple_kraken_5.spawnable"
-                            }
-                        }
-                    }
-                },
                 "Component_[4811759763261974616]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 4811759763261974616
@@ -482,10 +466,17 @@
                         "Configuration": {
                             "IntensityMode": 2,
                             "Intensity": 15.0,
-                            "CameraEntityId": "Entity_[1163754259827]",
+                            "CameraEntityId": "",
+                            "SplitAutomatic": false,
+                            "CascadeFarDepths": [
+                                4.0,
+                                12.0,
+                                36.0,
+                                100.0
+                            ],
                             "IsCascadeCorrectionEnabled": true,
                             "ShadowFilterMethod": 1,
-                            "PcfFilteringSampleCount": 4
+                            "PcfFilteringSampleCount": 16
                         }
                     }
                 },
@@ -768,7 +759,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 17843646596694970328
+                            "EditorEntityId": 17548236612096937690
                         }
                     }
                 },
@@ -786,14 +777,14 @@
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
                         "Translate": [
-                            1.4898980855941772,
-                            -7.517748832702637,
-                            4.849825859069824
+                            -69.65318298339844,
+                            37.60626983642578,
+                            14.573601722717285
                         ],
                         "Rotate": [
-                            -12.66835880279541,
-                            -9.33165454864502,
-                            35.80552291870117
+                            15.40247917175293,
+                            17.088674545288086,
+                            -133.15306091308594
                         ]
                     }
                 },
@@ -819,27 +810,9 @@
                     "Id": 6360183481254267636,
                     "Controller": {
                         "Configuration": {
-                            "Strength": 0.3199999928474426,
+                            "Strength": 0.44999998807907104,
                             "SamplingRadius": 0.07750000059604645,
                             "BlurDepthFalloffStrength": 184.0
-                        }
-                    }
-                },
-                "Component_[6436091020342598076]": {
-                    "$type": "AZ::Render::EditorDeferredFogComponent",
-                    "Id": 6436091020342598076,
-                    "Controller": {
-                        "Configuration": {
-                            "FogColor": [
-                                0.844449520111084,
-                                1.0,
-                                0.9403677582740784
-                            ],
-                            "FogStartDistance": 0.0,
-                            "FogEndDistance": 600.0,
-                            "FogMinHeight": 0.0,
-                            "FogMaxHeight": 35.0,
-                            "EnableFogLayerShaderOption": true
                         }
                     }
                 },
@@ -862,17 +835,6 @@
                 "Component_[8866210352157164042]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 8866210352157164042
-                },
-                "Component_[8967653191103446244]": {
-                    "$type": "AZ::Render::EditorBloomComponent",
-                    "Id": 8967653191103446244,
-                    "Controller": {
-                        "Configuration": {
-                            "Enabled": true,
-                            "Knee": 0.5799999833106995,
-                            "Intensity": 0.05000000074505806
-                        }
-                    }
                 },
                 "Component_[9129253381063760879]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -1640,7 +1602,7 @@
                                 },
                                 "assetHint": "lightingpresets/highcontrast/goegap_4k_iblglobalcm_iblspecular.exr.streamingimage"
                             },
-                            "exposure": 1.399999976158142
+                            "exposure": 3.0
                         }
                     }
                 },
@@ -5768,15 +5730,6 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 5320963908403420676
                 },
-                "Component_[6506285051007944421]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 6506285051007944421,
-                    "m_template": {
-                        "$type": "GatheringRowComponent",
-                        "Start": "Entity_[1377688575236213]",
-                        "End": "Entity_[1377697165170805]"
-                    }
-                },
                 "Component_[8164175847176343181]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 8164175847176343181,
@@ -8119,7 +8072,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 5861860565537541765
+                            "EntityId": 14889849240526380342
                         }
                     },
                     "useBakedCubemap": false,
@@ -8199,15 +8152,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row1",
-                        "Info": "Spawn point in front of row number 1."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10176,15 +10120,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row2",
-                        "Info": "Spawn point in front of row number 2."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10239,15 +10174,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row3",
-                        "Info": "Spawn point in front of row number 3."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10304,15 +10230,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row4",
-                        "Info": "Spawn point in front of row number 4."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10367,15 +10284,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row5",
-                        "Info": "Spawn point in front of row number 5."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10432,15 +10340,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row6",
-                        "Info": "Spawn point in front of row number 6."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10495,15 +10394,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row7",
-                        "Info": "Spawn point in front of row number 7."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10560,15 +10450,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row8",
-                        "Info": "Spawn point in front of row number 8."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10623,15 +10504,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row9",
-                        "Info": "Spawn point in front of row number 9."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10688,15 +10560,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row10",
-                        "Info": "Spawn point in front of row number 10."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10751,15 +10614,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row11",
-                        "Info": "Spawn point in front of row number 11."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10816,15 +10670,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row12",
-                        "Info": "Spawn point in front of row number 12."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -10879,15 +10724,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row13",
-                        "Info": "Spawn point in front of row number 13."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -10944,15 +10780,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row14",
-                        "Info": "Spawn point in front of row number 14."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -11007,15 +10834,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row15",
-                        "Info": "Spawn point in front of row number 15."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -11072,15 +10890,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row16",
-                        "Info": "Spawn point in front of row number 16."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -11136,15 +10945,6 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
                 },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row17",
-                        "Info": "Spawn point in front of row number 17."
-                    }
-                },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 14970139123322509100
@@ -11199,15 +10999,6 @@
                 "Component_[12359397905874211899]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12359397905874211899
-                },
-                "Component_[13354614953576751340]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 13354614953576751340,
-                    "m_template": {
-                        "$type": "ROS2SpawnPointComponent",
-                        "Name": "row18",
-                        "Info": "Spawn point in front of row number 18."
-                    }
                 },
                 "Component_[14970139123322509100]": {
                     "$type": "EditorVisibilityComponent",
@@ -18545,7 +18336,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 15234215949839940759
+                    "value": 7689968832053407554
                 }
             ]
         },

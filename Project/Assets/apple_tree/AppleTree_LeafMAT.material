@@ -10,13 +10,6 @@
         ],
         "baseColor.textureBlendMode": "Overlay",
         "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod0.png",
-        "emissive.color": [
-            0.03810179978609085,
-            0.0476233996450901,
-            0.03810179978609085,
-            1.0
-        ],
-        "emissive.intensity": -5.78000020980835,
         "general.doubleSided": true,
         "irradiance.irradianceColorSource": "BaseColor",
         "opacity.alphaSource": "Split",
