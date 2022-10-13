@@ -485,6 +485,34 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 6852185769417412979
                 },
+                "Component_[6994135437106136682]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6994135437106136682,
+                    "m_template": {
+                        "$type": "MotorizedJoint",
+                        "JointAxis": [
+                            0.0,
+                            -1.0,
+                            0.0
+                        ],
+                        "Limit": [
+                            0.3499999940395355,
+                            0.949999988079071
+                        ],
+                        "AnimationMode": false,
+                        "ZeroOffset": 0.3499999940395355,
+                        "PidPosition": {
+                            "P": 100.0,
+                            "D": 50.0,
+                            "Output limit": 250.0
+                        },
+                        "DebugDrawEntity": "",
+                        "TestSinActive": false,
+                        "TestSinAmplitude": 0.0,
+                        "TestSinDC": -1000.0,
+                        "OverrideParent": "Entity_[126339623467676]"
+                    }
+                },
                 "Component_[7937656036735183620]": {
                     "$type": "EditorRigidBodyComponent",
                     "Id": 7937656036735183620,
@@ -1600,6 +1628,32 @@
                     "PhysXSpecificConfiguration": {
                         "SolverPositionIterations": 40,
                         "SolverVelocityIterations": 15
+                    }
+                },
+                "Component_[4679764795672415951]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 4679764795672415951,
+                    "m_template": {
+                        "$type": "MotorizedJoint",
+                        "JointAxis": [
+                            1.0,
+                            0.0,
+                            0.0
+                        ],
+                        "Limit": [
+                            {},
+                            1.5
+                        ],
+                        "AnimationMode": false,
+                        "PidPosition": {
+                            "P": 1500.0,
+                            "D": 600.0,
+                            "IMin": 0.0,
+                            "Output limit": 500.0
+                        },
+                        "DebugDrawEntity": "",
+                        "TestSinActive": false,
+                        "OverrideParent": ""
                     }
                 },
                 "Component_[5537772980649449717]": {
@@ -2848,8 +2902,9 @@
                         "ReachEntity": "Entity_[9058513484485]",
                         "ManipulatorEntity": "Entity_[126373983206044]",
                         "AppleProbe": "Entity_[49624638919053]",
-                        "RootManipulatorFreeze": "Entity_[126378278173340]",
-                        "BaseLinkToKinematic": "Entity_[126373983206044]"
+                        "RootManipulatorFreeze": "",
+                        "BaseLinkToKinematic": "Entity_[126373983206044]",
+                        "RestEntity": "Entity_[50844409631117]"
                     }
                 },
                 "Component_[17586042212792946952]": {
@@ -2951,6 +3006,23 @@
                         "Entity_[5494828217205]",
                         "Entity_[36172097579699]"
                     ]
+                },
+                "Component_[1960610162286299537]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 1960610162286299537,
+                    "m_template": {
+                        "$type": "ManipulatorController",
+                        "ManipulatorEntityX": "Entity_[126339623467676]",
+                        "ManipulatorEntityY": "Entity_[126300968762012]",
+                        "ManipulatorEntityZ": "Entity_[126378278173340]",
+                        "ManipulatorVecZ": [
+                            0.0,
+                            0.0,
+                            -1.0
+                        ],
+                        "RestEntity": "Entity_[50844409631117]",
+                        "m_effector": "Entity_[49624638919053]"
+                    }
                 },
                 "Component_[3226220641517151136]": {
                     "$type": "EditorColliderComponent",
@@ -3068,116 +3140,118 @@
                 },
                 "Component_[7542806593715109284]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7542806593715109284
+                    "Id": 7542806593715109284,
+                    "DisabledComponents": [
+                        {
+                            "$type": "ScriptEditorComponent",
+                            "Id": 8419181200046736973,
+                            "ScriptComponent": {
+                                "Properties": {
+                                    "Properties": [
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3894317203,
+                                            "name": "apple1",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": ""
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1897382185,
+                                            "name": "apple2",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": ""
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1822771111,
+                                            "name": "debug",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[207318915465040]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 2566542301,
+                                            "name": "gripper",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[49624638919053]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 4245955024,
+                                            "name": "rest",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[50844409631117]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3189570453,
+                                            "name": "segment1",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126378278173340]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 655731247,
+                                            "name": "segment2",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126339623467676]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 1343396537,
+                                            "name": "segment3",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126292378827420]"
+                                            }
+                                        },
+                                        {
+                                            "$type": "AzFramework::ScriptPropertyGenericClass",
+                                            "id": 3463843610,
+                                            "name": "segment4",
+                                            "value": {
+                                                "$type": "EntityId",
+                                                "value": "Entity_[126300968762012]"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "Script": {
+                                    "assetId": {
+                                        "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
+                                        "subId": 1
+                                    },
+                                    "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
+                                }
+                            },
+                            "ScriptAsset": {
+                                "assetId": {
+                                    "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
+                                    "subId": 1
+                                },
+                                "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
+                            }
+                        }
+                    ]
                 },
                 "Component_[8372238163039562532]": {
                     "$type": "EditorLockComponent",
                     "Id": 8372238163039562532
-                },
-                "Component_[8419181200046736973]": {
-                    "$type": "ScriptEditorComponent",
-                    "Id": 8419181200046736973,
-                    "ScriptComponent": {
-                        "Properties": {
-                            "Properties": [
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3894317203,
-                                    "name": "apple1",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": ""
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1897382185,
-                                    "name": "apple2",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": ""
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1822771111,
-                                    "name": "debug",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[207318915465040]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 2566542301,
-                                    "name": "gripper",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[49624638919053]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 4245955024,
-                                    "name": "rest",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[50844409631117]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3189570453,
-                                    "name": "segment1",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126378278173340]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 655731247,
-                                    "name": "segment2",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126339623467676]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 1343396537,
-                                    "name": "segment3",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126292378827420]"
-                                    }
-                                },
-                                {
-                                    "$type": "AzFramework::ScriptPropertyGenericClass",
-                                    "id": 3463843610,
-                                    "name": "segment4",
-                                    "value": {
-                                        "$type": "EntityId",
-                                        "value": "Entity_[126300968762012]"
-                                    }
-                                }
-                            ]
-                        },
-                        "Script": {
-                            "assetId": {
-                                "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
-                                "subId": 1
-                            },
-                            "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
-                        }
-                    },
-                    "ScriptAsset": {
-                        "assetId": {
-                            "guid": "{9231205C-39C1-5A43-91C3-17BCE926A862}",
-                            "subId": 1
-                        },
-                        "assetHint": "gem/scripts/apple_kraken_manipulator.luac"
-                    }
                 },
                 "Component_[9680960067017817233]": {
                     "$type": "EditorVisibilityComponent",
@@ -3257,6 +3331,27 @@
                             0.0,
                             0.0
                         ]
+                    }
+                },
+                "Component_[12717887196616909839]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12717887196616909839,
+                    "m_template": {
+                        "$type": "MotorizedJoint",
+                        "Limit": [
+                            0.0,
+                            2.200000047683716
+                        ],
+                        "AnimationMode": false,
+                        "ZeroOffset": 1.649999976158142,
+                        "PidPosition": {
+                            "P": 1200.0,
+                            "D": 600.0,
+                            "Output limit": 500.0
+                        },
+                        "DebugDrawEntity": "",
+                        "TestSinActive": false,
+                        "OverrideParent": ""
                     }
                 },
                 "Component_[16342105264437277463]": {
@@ -4568,6 +4663,27 @@
             "Id": "Entity_[50844409631117]",
             "Name": "Rest",
             "Components": {
+                "Component_[10590573249310138745]": {
+                    "$type": "EditorColliderComponent",
+                    "Id": 10590573249310138745,
+                    "ColliderConfiguration": {
+                        "Trigger": true,
+                        "MaterialSlots": {
+                            "Slots": [
+                                {
+                                    "Name": "Entire object"
+                                }
+                            ]
+                        }
+                    },
+                "ShapeConfiguration": {
+                        "ShapeType": 2,
+                        "Capsule": {
+                            "Height": 0.2000001221895218,
+                            "Radius": 0.10000000149011612
+                        }
+                    }
+                },
                 "Component_[12697938191475283348]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 12697938191475283348
@@ -4604,6 +4720,14 @@
                         }
                     }
                 },
+                "Component_[2628453171840423037]": {
+                    "$type": "EditorFixedJointComponent",
+                    "Id": 2628453171840423037,
+                    "Configuration": {
+                        "Parent Entity": "Entity_[126373983206044]",
+                        "Child Entity": "Entity_[50844409631117]"
+                    }
+                },
                 "Component_[5225794773858524084]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 5225794773858524084
@@ -4635,6 +4759,13 @@
                 "Component_[8400454136611228951]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 8400454136611228951
+                },
+                "Component_[9968210862386824332]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 9968210862386824332,
+                    "Configuration": {
+                        "entityId": ""
+                    }
                 }
             }
         },
