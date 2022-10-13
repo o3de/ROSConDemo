@@ -17,7 +17,7 @@ function DynamicAppleSpawner:OnActivate()
     self.numPrefabsToSpawn = 0 -- don't spawn prefabs until a follow target exists
     self.numPrefabsSpawned = 0
     self.closestAppleTrees = {}
-    self.followTargets = nil
+    self.followTargets = {}
     self.freeAppleGroups = {}
     self.spawningPrefabs = false
 
@@ -65,10 +65,6 @@ end
 
 function DynamicAppleSpawner:AddFollowTarget(entityId)
     -- add a follow target that we will spawn apples around
-    if self.followTargets == nil then
-        self.followTargets = {}
-    end
-
     self.followTargets[tostring(entityId)] = {
         position = Vector3(0, 0, 0),
         update = false,
