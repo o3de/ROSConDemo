@@ -2740,6 +2740,13 @@
                         "SolverVelocityIterations": 15
                     }
                 },
+                "Component_[4200637452497905173]": {
+                    "$type": "EditorTagComponent",
+                    "Id": 4200637452497905173,
+                    "Tags": [
+                        "Robot"
+                    ]
+                },
                 "Component_[583585224453152908]": {
                     "$type": "EditorColliderComponent",
                     "Id": 583585224453152908,
@@ -3780,7 +3787,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 10473675986856257916
+                            "EditorEntityId": 8262133817197118411
                         }
                     }
                 },
