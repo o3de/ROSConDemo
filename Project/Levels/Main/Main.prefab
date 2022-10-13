@@ -748,7 +748,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 9990304879201565473
+                            "EditorEntityId": 1167258186589283497
                         }
                     }
                 },
@@ -1195,7 +1195,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 10200073865875905353
+                            "EntityId": 5983109571432295700
                         }
                     },
                     "useBakedCubemap": false,
@@ -3580,7 +3580,7 @@
                                     "$type": "AzFramework::ScriptPropertyNumber",
                                     "id": 1140549467,
                                     "name": "DetectionRadius",
-                                    "value": 6.0
+                                    "value": 12.0
                                 },
                                 {
                                     "$type": "AzFramework::ScriptPropertyString",
@@ -4526,7 +4526,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -100.01538848876953
+                    "value": -100.01538848876952
                 },
                 {
                     "op": "replace",
@@ -4876,7 +4876,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -99.90465545654297
+                    "value": -99.90465545654295
                 },
                 {
                     "op": "replace",
@@ -4976,7 +4976,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": 145.12881469726563
+                    "value": 145.12881469726565
                 },
                 {
                     "op": "replace",
@@ -5106,7 +5106,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 21.829490661621094
+                    "value": 21.829490661621097
                 },
                 {
                     "op": "replace",
@@ -5271,7 +5271,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -109.19132995605469
+                    "value": -109.19132995605467
                 },
                 {
                     "op": "replace",
@@ -6841,7 +6841,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5123579376316041771]/Transform Data/Translate/2",
-                    "value": -0.012486711144447327
+                    "value": -0.012486711144447328
                 },
                 {
                     "op": "replace",
@@ -6946,7 +6946,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 15804924137970715236
+                    "value": 6491928178691963982
                 }
             ]
         },
@@ -7381,7 +7381,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -98.51800537109375
+                    "value": -98.51800537109376
                 },
                 {
                     "op": "replace",
@@ -7431,7 +7431,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -92.29850769042969
+                    "value": -92.29850769042967
                 },
                 {
                     "op": "replace",
@@ -7736,7 +7736,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -124.03113555908203
+                    "value": -124.03113555908205
                 },
                 {
                     "op": "replace",
@@ -7826,7 +7826,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": 1.4167890548706055
+                    "value": 1.4167890548706057
                 },
                 {
                     "op": "replace",
@@ -8021,7 +8021,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/1",
-                    "value": -21.739900588989258
+                    "value": -21.739900588989254
                 },
                 {
                     "op": "replace",
@@ -8191,7 +8191,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Translate/0",
-                    "value": 10.548652648925781
+                    "value": 10.54865264892578
                 },
                 {
                     "op": "replace",
@@ -8301,7 +8301,7 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[17478803486732630354]/Transform Data/Rotate/2",
-                    "value": -15.471959114074707
+                    "value": -15.471959114074709
                 },
                 {
                     "op": "replace",
