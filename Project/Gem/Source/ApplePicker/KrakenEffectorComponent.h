@@ -7,8 +7,8 @@
  */
 #pragma once
 
+#include "../Manipulator/ManipulatorRequestBus.h"
 #include "ApplePickingRequests.h"
-#include "ManipulatorRequestBus.h"
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/EBus/EBus.h>
@@ -65,8 +65,11 @@ namespace AppleKraken
         const AZStd::function<void()>& GetCurrentStateAction() const;
 
         PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
-        static constexpr float m_maxPickingTime = 5.0f;
+        float m_maxPickingTime{ 5.0f };
         float m_currentStateTransitionTime = 0.0f;
+        float m_retrieve_nose_time{ 1.5f };
+        float m_stabilize_time{ 0.5f };
+
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
         EffectorStateProperties m_stateProperties;
@@ -75,6 +78,7 @@ namespace AppleKraken
         AZ::EntityId m_rootEntityToFreeze;
         AZ::EntityId m_appleProbe;
         AZ::EntityId m_baseLinkToKinematic;
+        AZ::EntityId m_restEntityId;
 
         bool m_registeredCallback{ false };
         bool is_manipulator_locked = { false };

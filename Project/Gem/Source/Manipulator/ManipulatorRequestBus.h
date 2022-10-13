@@ -23,6 +23,7 @@ namespace AppleKraken
         virtual void PickApple(const AZ::Vector3 position) = 0;
         virtual AZ::Vector3 GetPosition() = 0;
         virtual void Retrieve() = 0;
+        virtual void RetrieveNose() = 0;
         virtual int GetStatus() = 0;
     };
 
@@ -41,6 +42,7 @@ namespace AppleKraken
             PickApple,
             GetPosition,
             Retrieve,
+            RetrieveNose,
             GetStatus);
 
         virtual void PickApple(const AZ::Vector3 position) override;
@@ -48,6 +50,8 @@ namespace AppleKraken
         virtual AZ::Vector3 GetPosition() override;
 
         virtual void Retrieve() override;
+
+        virtual void RetrieveNose() override;
 
         virtual int GetStatus() override;
 

@@ -19,7 +19,11 @@ namespace AppleKraken
         IDLE = 0, //!< Idle state / position, suitable for robot moving around the environment.
         PREPARED = 10, //!< State and position which are ready for picking tasks.
         PICKING = 20, //!< The effector is on its way to pick fruit.
-        RETRIEVING = 30 //!< The effector is retrieving a fruit to storage position.
+        PICKING_STABILIZE = 25, //!< The effector waits vacuum being built up
+        RETRIEVING_NOSE = 30, //!< The effector is retrieving a fruit to storage position.
+        RETRIEVING = 35, //!< The effector is retrieving a fruit to storage position.
+        RETRIEVING_STABILIZE = 40 //!< The effector is retrieving, wait for apple to drop
+
     };
 
     //! A task to pick a single apple.
