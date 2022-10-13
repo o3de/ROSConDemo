@@ -74,7 +74,7 @@ def main(args=None):
   rclpy.init(args=args)
   tta = TwistToAckermann()
   rclpy.spin(tta)
-  
+  tta.timer.cancel()
   tta.destroy_node()
   rclpy.shutdown()
 
