@@ -192,7 +192,7 @@ You can also cancel a gathering operation in progress by calling another service
 
 - `ros2 service call /cancel_apple_gathering std_srvs/srv/Trigger`
 
-### Spawn more Krakens
+### Spawning more Krakens
 
 Please read the following section on [Robot Spawner](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md#spawner).
 
