@@ -2511,6 +2511,19 @@
                         "CrateDropPoint": "Entity_[5494828217205]"
                     }
                 },
+                "Component_[12633872282053005445]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12633872282053005445,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
+                            },
+                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
+                        }
+                    }
+                },
                 "Component_[12724369969007930765]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 12724369969007930765
@@ -3787,7 +3800,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 8262133817197118411
+                            "EditorEntityId": 3122488936549671511
                         }
                     }
                 },
@@ -4103,14 +4116,14 @@
                     "Parent Entity": "Entity_[453828565735265]",
                     "Transform Data": {
                         "Translate": [
-                            0.0,
-                            0.10000000149011612,
-                            0.0
+                            -0.000003814697265625,
+                            0.05047798156738281,
+                            0.008732080459594727
                         ],
                         "Rotate": [
-                            -10.0,
-                            0.0,
-                            -90.0
+                            -9.999999046325684,
+                            -8.53773599374108e-7,
+                            -90.00001525878906
                         ]
                     }
                 },

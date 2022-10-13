@@ -2769,7 +2769,13 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 12369457332725092485,
                     "m_template": {
-                        "$type": "InputConfigurationComponent"
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
+                            },
+                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
+                        }
                     }
                 },
                 "Component_[12567448872384764450]": {
@@ -3749,13 +3755,13 @@
                     "Transform Data": {
                         "Translate": [
                             0.0,
-                            0.10000000149011612,
-                            0.0
+                            0.07606124877929688,
+                            0.004220247268676758
                         ],
                         "Rotate": [
-                            -10.0,
-                            0.0,
-                            -90.0
+                            -10.000001907348633,
+                            8.53773599374108e-7,
+                            -90.00000762939453
                         ]
                     }
                 }
@@ -4403,7 +4409,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 60.0,
-                            "EditorEntityId": 14242634364439791487
+                            "EditorEntityId": 12742172260309117416
                         }
                     }
                 },
