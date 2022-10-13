@@ -1,0 +1,44 @@
+{
+    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/EnhancedPBR.materialtype",
+    "materialTypeVersion": 6,
+    "propertyValues": {
+        "baseColor.color": [
+            0.5088273286819458,
+            0.659861147403717,
+            0.05572594702243805,
+            1.0
+        ],
+        "baseColor.factor": 0.7799999713897705,
+        "baseColor.textureBlendMode": "Lerp",
+        "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod0.png",
+        "general.doubleSided": true,
+        "irradiance.irradianceColorSource": "BaseColor",
+        "normal.textureMap": "textures/AppleTreeLeaf_Normal_lod0.png",
+        "opacity.alphaSource": "Split",
+        "opacity.factor": 0.6700000166893005,
+        "opacity.mode": "Cutout",
+        "opacity.textureMap": "textures/AppleTreeLeaf_Opacity_lod0.png",
+        "roughness.factor": 0.4099999964237213,
+        "specularF0.factor": 0.5199999809265137,
+        "subsurfaceScattering.distanceAttenuation": 0.03999999910593033,
+        "subsurfaceScattering.influenceMap": "textures/AppleTreeLeaf_Thickness_lod0.png",
+        "subsurfaceScattering.scatterColor": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "subsurfaceScattering.scatterDistance": 1.600000023841858,
+        "subsurfaceScattering.shrinkFactor": 0.0,
+        "subsurfaceScattering.thickness": 0.7200000286102295,
+        "subsurfaceScattering.thicknessMap": "textures/AppleTreeLeaf_Thickness_lod0.png",
+        "subsurfaceScattering.transmissionMode": "ThinObject",
+        "subsurfaceScattering.transmissionNdLBias": -0.18000000715255737,
+        "subsurfaceScattering.transmissionTint": [
+            0.24603649973869324,
+            0.2993209958076477,
+            0.18092620372772217,
+            1.0
+        ]
+    }
+}
