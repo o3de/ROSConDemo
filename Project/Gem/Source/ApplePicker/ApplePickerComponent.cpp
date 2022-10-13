@@ -8,6 +8,7 @@
 
 #include "ApplePickerComponent.h"
 #include "ApplePickingRequests.h"
+#include "DemoStatistics/DemoStatisticsNotifications.h"
 #include "FruitStorage/FruitStorageBus.h"
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
 #include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentConstants.h>
@@ -18,6 +19,7 @@
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
+#include <Integration/SimpleMotionComponentBus.h>
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Names.h>
@@ -187,11 +189,13 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<ApplePickerComponent, AZ::Component>()
-                ->Version(3)
+                ->Version(4)
                 ->Field("TriggerServiceTopic", &ApplePickerComponent::m_triggerServiceTopic)
                 ->Field("CancelServiceTopic", &ApplePickerComponent::m_cancelServiceTopic)
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
-                ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId);
+                ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
+                ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId)
+                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -200,12 +204,12 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
+                        AZ::Edit::UIHandlers::Default,
                         &ApplePickerComponent::m_triggerServiceTopic,
                         "Trigger",
                         "ROS2 service name for gathering trigger")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
+                        AZ::Edit::UIHandlers::Default,
                         &ApplePickerComponent::m_cancelServiceTopic,
                         "Cancel",
                         "ROS2 service name to cancel ongoing gathering")
@@ -218,7 +222,17 @@ namespace AppleKraken
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_fruitStorageEntityId,
                         "Fruit Storage",
-                        "Fruit storage entity");
+                        "Fruit storage entity")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_retrievalPointEntityId,
+                        "Retrieval point",
+                        "Entity which holds the point of the apple retrieval chute")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId,
+                        &ApplePickerComponent::m_entryAnimationEntityId,
+                        "Animation point",
+                        "Entity which holds the point of apple entry to chute for animation");
             }
         }
     }
@@ -264,8 +278,20 @@ namespace AppleKraken
             AZ_Warning("ApplePicker", false, "Fruit storage entity not set, assuming same entity");
             m_fruitStorageEntityId = GetEntityId();
         }
-        Tags applePickingEventTags = { "automated_picking" };
+        Tags applePickingEventTags = { kPickingAutomatedEventTag };
         FruitStorageRequestsBus::Event(m_fruitStorageEntityId, &FruitStorageRequests::AddApple, applePickingEventTags);
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple, applePickingEventTags);
+
+        if (!m_entryAnimationEntityId.IsValid())
+        {
+            AZ_Warning("ApplePicker", false, "No animation for apple entry will be played since entry animation entity is invalid");
+        }
+        else
+        {
+            EMotionFX::Integration::SimpleMotionComponentRequestBus::Event(
+                m_entryAnimationEntityId, &EMotionFX::Integration::SimpleMotionComponentRequestBus::Events::PlayMotion);
+        }
+
         PickNextApple();
     }
 
@@ -279,6 +305,9 @@ namespace AppleKraken
         AZ_TracePrintf(
             "ApplePicker", "%s. Picking failed due to: %s\n", Internal::CurrentTaskString(m_currentAppleTasks).c_str(), reason.c_str());
         m_currentAppleTasks.pop();
+
+        Tags applePickingEventTags = { kPickingFailedEventTag, kPickingAutomatedEventTag };
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple, applePickingEventTags);
         PickNextApple();
     }
 
@@ -296,7 +325,11 @@ namespace AppleKraken
 
     void ApplePickerComponent::QueryEnvironmentForAllApplesInBox(const AZ::Obb& globalBox)
     {
-        // TODO - query environment
+        if (!m_retrievalPointEntityId.IsValid())
+        {
+            AZ_Error("ApplePicker", false, "Retrieval chute entity not set for ApplePickerComponent!");
+            return;
+        }
 
         // Scene query for `apple` entity, we want visible entities with exact 'Apple' name
         auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
@@ -349,13 +382,16 @@ namespace AppleKraken
                 found_apples.emplace(r.m_entityId);
             }
         }
+        AZ::Transform m_retrievalPointTransform;
+        AZ::TransformBus::EventResult(m_retrievalPointTransform, m_retrievalPointEntityId, &AZ::TransformBus::Events::GetWorldTM);
+        auto retrievalPoint = m_retrievalPointTransform.GetTranslation();
 
         std::sort(
             appleTasks.begin(),
             appleTasks.end(),
-            [globalBox](const PickAppleTask& a, const PickAppleTask& b) -> bool
-            { // a is further than b from the globalBox
-                return globalBox.GetDistance(a.m_middle) > globalBox.GetDistance(b.m_middle);
+            [retrievalPoint](const PickAppleTask& a, const PickAppleTask& b) -> bool
+            { // a is closer than b to the retrieval point
+                return (retrievalPoint - a.m_middle).GetLengthSq() <= (retrievalPoint - b.m_middle).GetLengthSq();
             });
 
         m_appleGroundTruthDetector->UpdateGroundTruth(appleTasks);

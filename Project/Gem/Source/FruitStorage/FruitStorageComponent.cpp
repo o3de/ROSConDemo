@@ -9,6 +9,8 @@
 #include "FruitStorageComponent.h"
 #include "FruitStorageBus.h"
 #include <AzCore/Serialization/EditContext.h>
+#include <AzCore/Serialization/EditContextConstants.inl>
+#include <AzCore/Serialization/SerializeContext.h>
 #include <AzFramework/Components/TransformComponent.h>
 #include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 
@@ -29,7 +31,7 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<FruitStorageComponent, AZ::Component>()
-                ->Version(1)
+                ->Version(3)
                 ->Field("Crate", &FruitStorageComponent::m_crateSpawnable)
                 ->Field("Capacity", &FruitStorageComponent::m_crateCapacity)
                 ->Field("CrateDropPoint", &FruitStorageComponent::m_crateDropPoint);

@@ -81,10 +81,6 @@ namespace ROSConDemo
         }
     }
 
-    void ROSConDemoSystemComponent::Init()
-    {
-    }
-
     void ROSConDemoSystemComponent::Activate()
     {   // TODO - the service should probably only be created in Game Mode
         ROSConDemoRequestBus::Handler::BusConnect();

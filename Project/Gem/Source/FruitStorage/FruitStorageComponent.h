@@ -8,6 +8,7 @@
 #pragma once
 
 #include "FruitStorageBus.h"
+#include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzCore/Component/Component.h>
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
@@ -20,9 +21,7 @@ namespace AppleKraken
         , public FruitStorageRequestsBus::Handler
     {
     public:
-        AZ_COMPONENT(FruitStorageComponent, "{9AC0B456-9C29-4EDD-AD25-6FAA57D253C5}", AZ::Component, FruitStorageRequestsBus::Handler);
-
-        // AZ::Component interface implementation.
+        AZ_COMPONENT(FruitStorageComponent, "{9AC0B456-9C29-4EDD-AD25-6FAA57D253C5}", AZ::Component);
         FruitStorageComponent() = default;
         ~FruitStorageComponent() = default;
         void Activate() override;
@@ -36,7 +35,6 @@ namespace AppleKraken
     private:
         void SpawnCrate();
         void PreSpawn(AzFramework::EntitySpawnTicket::Id, AzFramework::SpawnableEntityContainerView);
-
         AZ::Data::Asset<AzFramework::Spawnable> m_crateSpawnable;
         AzFramework::EntitySpawnTicket m_crateTicket;
         AZ::EntityId m_crateDropPoint;

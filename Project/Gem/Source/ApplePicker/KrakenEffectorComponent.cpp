@@ -69,7 +69,7 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<KrakenEffectorComponent, AZ::Component>()
-                ->Version(3)
+                ->Version(4)
                 ->Field("ReachEntity", &KrakenEffectorComponent::m_reachEntity)
                 ->Field("ManipulatorEntity", &KrakenEffectorComponent::m_manipulatorEntity)
                 ->Field("AppleProbe", &KrakenEffectorComponent::m_appleProbe)
@@ -83,24 +83,24 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
+                        AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_reachEntity,
                         "Kraken Reach entity",
                         "Kraken entity with box shape to set reach area")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
+                        AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_manipulatorEntity,
                         "Entity with manipulator",
                         "The entity that has a component handling events from ManipulatorRequestBus")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default, &KrakenEffectorComponent::m_appleProbe, "Entity to probe apples", "Sucking collider")
+                        AZ::Edit::UIHandlers::EntityId, &KrakenEffectorComponent::m_appleProbe, "Entity to probe apples", "Sucking collider")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
+                        AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_rootEntityToFreeze,
                         "RootManipulatorFreeze",
                         "RootManipulatorFreeze to freeze during robot movement")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
+                        AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_baseLinkToKinematic,
                         "BaseLinkToKinematic",
                         "BaseLinkToKinematic during manipulator movement")
