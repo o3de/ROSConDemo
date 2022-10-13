@@ -38,7 +38,7 @@ In addition to the required packages for the ROS2 gem, you will also need some a
 
 2.  Run the following command to install the remaining required packages
     ```
-    sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs
+    sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs ros-${ROS_DISTRO}-topic-tools
     ```
 
 3.  You will also need [colcon](https://colcon.readthedocs.io/en/released/user/installation.html) installed in order to build the workspace. Run the following command to install.
@@ -83,7 +83,7 @@ colcon build --symlink-install
 1. [Build](https://github.com/aws-lumberyard/ROSConDemo#download-and-install) and run the `ROSConDemo`
 2. Load level `Main`
 
-## Running nav stack with multiple vehicles
+## Running nav stack for multiple vehicles
 
 > Note: Slam is turned off by default since we have ground truth information about the robot's position from the simulator. However, it is possible to enable `slam_toolbox` forcefully. You can allow slam by adding `use_slam:=True` to the navigation launch command.
 
