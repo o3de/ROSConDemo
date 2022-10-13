@@ -3,12 +3,13 @@
     "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
-            0.3197222948074341,
-            0.3197222948074341,
-            0.3197222948074341,
+            0.6734416484832764,
+            0.8163271546363831,
+            0.31201648712158203,
             1.0
         ],
-        "baseColor.textureBlendMode": "Overlay",
+        "baseColor.factor": 0.75,
+        "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "textures/AppleTreeLeaf_BaseColor_lod3.png",
         "general.doubleSided": true,
         "irradiance.irradianceColorSource": "BaseColor"

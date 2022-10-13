@@ -72,8 +72,7 @@
                             },
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
-                            "MinimumScreenCoverage": 0.05000000074505806,
-                            "QualityDecayRate": 0.800000011920929
+                            "MinimumScreenCoverage": 0.07000000029802322
                         }
                     }
                 },
@@ -188,8 +187,7 @@
                             },
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
-                            "MinimumScreenCoverage": 0.05000000074505806,
-                            "QualityDecayRate": 0.800000011920929
+                            "MinimumScreenCoverage": 0.07000000029802322
                         }
                     }
                 },
@@ -359,8 +357,7 @@
                             },
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
-                            "MinimumScreenCoverage": 0.05000000074505806,
-                            "QualityDecayRate": 0.800000011920929
+                            "MinimumScreenCoverage": 0.07000000029802322
                         }
                     }
                 },
@@ -460,8 +457,7 @@
                             },
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
-                            "MinimumScreenCoverage": 0.05000000074505806,
-                            "QualityDecayRate": 0.800000011920929
+                            "MinimumScreenCoverage": 0.07000000029802322
                         }
                     }
                 },
@@ -695,9 +691,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{A9A7956A-79C1-53A1-95C1-342AC7C3E8FB}"
+                                                "guid": "{72A5C979-A32D-5CC4-B426-DD9ACBF51104}"
                                             },
-                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat.azmaterial"
+                                            "assetHint": "assets/apple_tree/appletree_leaf_sss_mat_lod2.azmaterial"
                                         }
                                     }
                                 },
