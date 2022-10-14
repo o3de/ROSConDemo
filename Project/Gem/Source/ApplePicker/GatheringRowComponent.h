@@ -24,8 +24,9 @@ namespace AppleKraken
         static void Reflect(AZ::ReflectContext* context);
 
         //! First on the list is always the start pose, the last is the end pose
-        GatheringPoses GetGatheringPoses() const override
+        GatheringPoses GetGatheringPoses() override
         {
+            ComputeGatheringPoses();
             return m_gatheringPoses;
         }
 

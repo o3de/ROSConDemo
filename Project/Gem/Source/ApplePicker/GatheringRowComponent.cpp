@@ -50,7 +50,6 @@ namespace AppleKraken
 
     void GatheringRowComponent::Activate()
     {
-        ComputeGatheringPoses();
         GatheringRowRequestBus::Handler::BusConnect();
     }
 
