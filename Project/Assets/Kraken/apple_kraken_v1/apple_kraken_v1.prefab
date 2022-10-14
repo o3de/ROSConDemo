@@ -4108,7 +4108,7 @@
                     "$type": "EditorFixedJointComponent",
                     "Id": 11816699075836333974,
                     "Configuration": {
-                        "Parent Entity": "",
+                        "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[50844409631117]"
                     }
                 },
