@@ -44,12 +44,14 @@ ly_add_target(
         PRIVATE
             AZ::AzGameFramework
             AZ::AzFramework
+            Gem::EMotionFX.Static
             Gem::LmbrCentral.API
+            Gem::LyShine
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
 )
 
-target_depends_on_ros2_packages(ROSConDemo.Static std_srvs vision_msgs)
+target_depends_on_ros2_packages(ROSConDemo.Static std_srvs nav_msgs vision_msgs)
 
 ly_add_target(
     NAME ROSConDemo ${PAL_TRAIT_MONOLITHIC_DRIVEN_MODULE_TYPE}

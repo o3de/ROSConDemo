@@ -1,0 +1,10 @@
+Origin (Rack connection)
+x -0.236518 m
+y 1.00836 m
+z 0.280792 m
+
+
+Axel Connection
+x -0.256466 m
+y 1.10658 m
+z 0.267968 m
