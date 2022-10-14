@@ -15,8 +15,9 @@
 
 namespace AppleKraken
 {
-    static constexpr int CAMERA_FILTER_BUFFER_SIZE = 30;
 
+    //! Experimental, demo only class for simple camera movement smoothing
+    // TODO - research damping and smoothing camera, use exponential mapping for rotation smoothing as well.
     class FollowingCameraComponent
         : public AZ::Component
         , public AZ::TickBus::Handler
@@ -43,7 +44,7 @@ namespace AppleKraken
     private:
         void OnKeyboardEvent(const AzFramework::InputChannel& inputChannel);
 
-        [[nodiscard]] std::pair<float, float> ObservedXYAverage() const;
+        AZ::Vector3 SmoothTranslation() const;
 
         bool m_isActive = true;
 
@@ -52,11 +53,21 @@ namespace AppleKraken
         AZ::EntityId m_target;
 
         float m_rotationChange = 0.0f;
+        float m_rotationChange2 = 0.0f;
+
 
         float m_zoomChange = 0.0f;
 
-        int m_ticksCounter = 0;
+        int m_smoothingBuffer = 30;
 
-        std::array<std::optional<std::pair<float, float>>, CAMERA_FILTER_BUFFER_SIZE> m_observedXYCoords = {};
+        float m_zoomSpeed = 0.06f;
+        float m_rotationSpeed = 0.05f;
+
+        const float m_zoomMin = -25.f;
+        const float m_zoomMax = 0.6f;
+
+
+        AZStd::deque<AZStd::pair<AZ::Vector3,float>> m_lastTransforms;
+
     };
 }

@@ -26,7 +26,10 @@ namespace AppleKraken
             serializeContext->Class<FollowingCameraComponent, AZ::Component>()
                 ->Version(1)
                 ->Field("Is active", &FollowingCameraComponent::m_isActive)
-                ->Field("Target", &FollowingCameraComponent::m_target);
+                ->Field("Target", &FollowingCameraComponent::m_target)
+                ->Field("SmoothingLength", &FollowingCameraComponent::m_smoothingBuffer)
+                ->Field("ZoomSpeed", &FollowingCameraComponent::m_zoomSpeed)
+                ->Field("RotationSpeed", &FollowingCameraComponent::m_rotationSpeed);
 
             AZ::EditContext* editContext = serializeContext->GetEditContext();
             if (editContext)
@@ -36,7 +39,10 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->DataElement(AZ::Edit::UIHandlers::CheckBox, &FollowingCameraComponent::m_isActive, "Active", "")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &FollowingCameraComponent::m_target, "Target", "Entity of the followed object");
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &FollowingCameraComponent::m_target, "Target", "Entity of the followed object")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_target, "SmoothingLength", "Number of past transform used to smooth")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_zoomSpeed, "Zoom Speed", "Zoom speed")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_rotationSpeed, "Rotation Speed", "Rotation Speed");
             }
         }
     }
@@ -56,8 +62,6 @@ namespace AppleKraken
         AZ::TickBus::Handler::BusConnect();
 
         EBUS_EVENT_ID_RESULT(m_initialPose, GetEntityId(), AZ::TransformBus, GetLocalTM);
-
-        m_observedXYCoords.fill(std::nullopt);
     }
 
     void FollowingCameraComponent::Deactivate()
@@ -66,8 +70,11 @@ namespace AppleKraken
         InputChannelEventListener::Disconnect();
     }
 
-    void FollowingCameraComponent::OnTick(float /*deltaTime*/, AZ::ScriptTimePoint /*time*/)
+    void FollowingCameraComponent::OnTick(float deltaTime, AZ::ScriptTimePoint /*time*/)
     {
+        if (!m_target.IsValid()){
+            AZ_Warning("FollowingCameraComponent", false, "m_target is empty!");
+        }
         if (!m_isActive)
         {
             return;
@@ -75,13 +82,16 @@ namespace AppleKraken
 
         AZ::Transform target_world_transform;
         EBUS_EVENT_ID_RESULT(target_world_transform, m_target, AZ::TransformBus, GetWorldTM);
-        
-        m_observedXYCoords[m_ticksCounter] = {target_world_transform.GetTranslation().GetX(), target_world_transform.GetTranslation().GetY()};
-        auto xy_avgs = ObservedXYAverage();
-        
+
+        m_lastTransforms.push_back(AZStd::make_pair(target_world_transform.GetTranslation(), deltaTime));
+        if (m_lastTransforms.size() > m_smoothingBuffer){
+            m_lastTransforms.pop_front();
+        }
+        AZ::Vector3 translation = SmoothTranslation();
+
         AZ::Transform filtered_transform =
             {
-                AZ::Vector3{xy_avgs.first, xy_avgs.second, 0.0},
+                translation,
                 AZ::Quaternion::CreateRotationZ(target_world_transform.GetEulerRadians().GetZ()),
                 target_world_transform.GetUniformScale()
             };
@@ -90,7 +100,7 @@ namespace AppleKraken
         AZ::Transform rotation_transform =
             {
                 {0.0, 0.0, 0.0},
-                AZ::Quaternion::CreateRotationZ(m_rotationChange),
+               AZ::Quaternion::CreateRotationY(m_rotationChange2) *  AZ::Quaternion::CreateRotationZ(m_rotationChange) ,
                 1.0
             };
         modified_transform *= rotation_transform;
@@ -102,28 +112,17 @@ namespace AppleKraken
 
         EBUS_EVENT_ID(GetEntityId(), AZ::TransformBus, SetWorldTM, filtered_transform * modified_transform);
 
-        m_ticksCounter++;
-        m_ticksCounter = m_ticksCounter % CAMERA_FILTER_BUFFER_SIZE;
     }
 
-    std::pair<float, float> FollowingCameraComponent::ObservedXYAverage() const
+    AZ::Vector3 FollowingCameraComponent::SmoothTranslation() const
     {
-        float sum_x = 0.0f;
-        float sum_y = 0.0f;
-        int valid_counter = 0;
-
-        for (auto xy : m_observedXYCoords)
-        {
-            if (xy == std::nullopt)
-            {
-                break;
-            }
-            valid_counter++;
-            sum_x += xy->first;
-            sum_y += xy->second;
+        AZ::Vector3 sum{0};
+        float normalization{0};
+        for (const auto& p : m_lastTransforms){
+            sum += p.first * p.second;
+            normalization+=p.second;
         }
-
-        return std::make_pair(sum_x / valid_counter,sum_y / valid_counter);
+        return sum/normalization;
     }
 
     bool FollowingCameraComponent::OnInputChannelEventFiltered(const AzFramework::InputChannel& inputChannel)
@@ -151,30 +150,32 @@ namespace AppleKraken
         }
 
         const AzFramework::InputChannelId& channelId = inputChannel.GetInputChannelId();
-
+        // TODO take into account the refresh rate on key pressed for smooth experience
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericW)
         {
-            // magic number which blocks user from zooming in too close
-            if (m_zoomChange < 3)
-                m_zoomChange += 0.06;
+            m_zoomChange = AZStd::min(m_zoomMax, m_zoomChange + m_zoomSpeed);
         }
-
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericA)
         {
-
-            m_rotationChange += 0.02;
+            m_rotationChange += m_rotationSpeed;
         }
-
+        if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericQ)
+        {
+            m_rotationChange2 += m_rotationSpeed;
+        }
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericS)
         {
-            // magic number which blocks user from zooming out too far
-            if (m_zoomChange > -25)
-                m_zoomChange -= 0.06;
+            m_zoomChange = AZStd::max(m_zoomMin, m_zoomChange - m_zoomSpeed);
         }
 
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericD)
         {
-            m_rotationChange -= 0.02;
+            m_rotationChange -= m_rotationSpeed;
         }
+        if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericE)
+        {
+            m_rotationChange2 -= m_rotationSpeed;
+        }
+
     }
 }
