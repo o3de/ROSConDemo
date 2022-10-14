@@ -702,10 +702,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{E2A9BA53-9EE3-5048-A0AE-5C3B67962E3D}",
-                                    "subId": 285169054
+                                    "guid": "{3841F211-1EAF-5B7A-AEE7-034DAACA95E7}",
+                                    "subId": 278093359
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright.azmodel"
+                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft.azmodel"
                             }
                         }
                     }
@@ -737,12 +737,12 @@
                     "Transform Data": {
                         "Translate": [
                             0.0,
-                            0.0,
-                            0.13199999928474426
+                            0.000003814697265625,
+                            0.007572174072265625
                         ],
                         "Rotate": [
-                            0.0,
-                            89.98833465576172,
+                            -0.000012225110367580783,
+                            90.0,
                             0.0
                         ]
                     }
@@ -764,10 +764,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{3841F211-1EAF-5B7A-AEE7-034DAACA95E7}",
-                                    "subId": 278093359
+                                    "guid": "{E2A9BA53-9EE3-5048-A0AE-5C3B67962E3D}",
+                                    "subId": 285169054
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft.azmodel"
+                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright.azmodel"
                             }
                         }
                     }
@@ -826,7 +826,7 @@
                     "Transform Data": {
                         "Rotate": [
                             0.0,
-                            -89.98833465576172,
+                            90.0,
                             0.0
                         ]
                     }
@@ -1623,12 +1623,12 @@
                     "Transform Data": {
                         "Translate": [
                             0.0,
-                            0.0,
-                            0.13199999928474426
+                            -0.000003814697265625,
+                            0.003398895263671875
                         ],
                         "Rotate": [
-                            0.0,
-                            -89.98833465576172,
+                            9.055640362021222e-7,
+                            89.99994659423828,
                             0.0
                         ]
                     }
