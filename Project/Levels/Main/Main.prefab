@@ -789,14 +789,14 @@
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
                         "Translate": [
-                            -66.63411712646484,
-                            25.84063148498535,
-                            1.8881869316101074
+                            1.4898980855941772,
+                            -7.517748832702637,
+                            4.849825859069824
                         ],
                         "Rotate": [
-                            17.27162742614746,
-                            -14.24191665649414,
-                            -38.35277557373047
+                            -12.66835880279541,
+                            -9.33165454864502,
+                            35.80552291870117
                         ]
                     }
                 },
@@ -829,9 +829,27 @@
                     "Id": 6360183481254267636,
                     "Controller": {
                         "Configuration": {
-                            "Strength": 0.44999998807907104,
+                            "Strength": 0.3199999928474426,
                             "SamplingRadius": 0.07750000059604645,
                             "BlurDepthFalloffStrength": 184.0
+                        }
+                    }
+                },
+                "Component_[6436091020342598076]": {
+                    "$type": "AZ::Render::EditorDeferredFogComponent",
+                    "Id": 6436091020342598076,
+                    "Controller": {
+                        "Configuration": {
+                            "FogColor": [
+                                0.844449520111084,
+                                1.0,
+                                0.9403677582740784
+                            ],
+                            "FogStartDistance": 0.0,
+                            "FogEndDistance": 600.0,
+                            "FogMinHeight": 0.0,
+                            "FogMaxHeight": 35.0,
+                            "EnableFogLayerShaderOption": true
                         }
                     }
                 },
@@ -1044,6 +1062,15 @@
                 "Component_[5320963908403420676]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 5320963908403420676
+                },
+                "Component_[6506285051007944421]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6506285051007944421,
+                    "m_template": {
+                        "$type": "GatheringRowComponent",
+                        "Start": "Entity_[1377688575236213]",
+                        "End": "Entity_[1377697165170805]"
+                    }
                 },
                 "Component_[8164175847176343181]": {
                     "$type": "EditorEntitySortComponent",
