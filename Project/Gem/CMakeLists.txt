@@ -39,8 +39,8 @@ ly_add_target(
         PRIVATE
             Source
     BUILD_DEPENDENCIES
-        # PUBLIC
-        #     Gem::ROS2.Static
+        PUBLIC
+            Gem::ROS2.Static
         PRIVATE
             AZ::AzGameFramework
             AZ::AzFramework

@@ -467,16 +467,19 @@
                             "IntensityMode": 2,
                             "Intensity": 15.0,
                             "CameraEntityId": "",
+                            "ShadowmapSize": "Size2048",
+                            "CascadeCount": 2,
                             "SplitAutomatic": false,
                             "CascadeFarDepths": [
-                                4.0,
-                                12.0,
+                                16.0,
+                                100.0,
                                 36.0,
                                 100.0
                             ],
                             "IsCascadeCorrectionEnabled": true,
                             "ShadowFilterMethod": 1,
-                            "PcfFilteringSampleCount": 16
+                            "PcfFilteringSampleCount": 9,
+                            "FullscreenBlurEnabled": false
                         }
                     }
                 },
@@ -759,7 +762,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 17548236612096937690
+                            "EditorEntityId": 6328303205666705857
                         }
                     }
                 },
@@ -777,14 +780,14 @@
                     "Parent Entity": "Entity_[1176639161715]",
                     "Transform Data": {
                         "Translate": [
-                            -69.65318298339844,
-                            37.60626983642578,
-                            14.573601722717285
+                            -66.63411712646484,
+                            25.84063148498535,
+                            1.8881869316101074
                         ],
                         "Rotate": [
-                            15.40247917175293,
-                            17.088674545288086,
-                            -133.15306091308594
+                            17.27162742614746,
+                            -14.24191665649414,
+                            -38.35277557373047
                         ]
                     }
                 },
@@ -8072,7 +8075,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 14889849240526380342
+                            "EntityId": 10268320244937138338
                         }
                     },
                     "useBakedCubemap": false,
@@ -18336,7 +18339,7 @@
                 {
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 7689968832053407554
+                    "value": 12508024174055201996
                 }
             ]
         },
