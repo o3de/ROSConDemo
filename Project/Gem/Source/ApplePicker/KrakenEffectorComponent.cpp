@@ -63,7 +63,7 @@ namespace AppleKraken
                 if (m_currentTask.m_appleEntityId == collideToEntityId)
                 {
                     AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
-                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
+                    ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::ApplePicked);
                     if (m_effectorState == EffectorState::PICKING)
                     {
                         // start picking the apple
@@ -361,7 +361,7 @@ namespace AppleKraken
                   if (m_currentStateTransitionTime > m_maxPickingTime)
                   {
                       AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
-                      ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::PickingFailed, "Timeout");
+                      ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::PickingFailed, "Timeout");
                   }
               } },
             { EffectorState::PICKING_STABILIZE,
@@ -401,7 +401,7 @@ namespace AppleKraken
                 [this]()
                 {
                     LockManipulator(false);
-                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::EffectorReadyForPicking);
+                    ApplePickingNotificationBus::Event(GetEntityId(),&ApplePickingNotifications::EffectorReadyForPicking);
                 },
             },
             {
@@ -443,9 +443,9 @@ namespace AppleKraken
             },
             {
                 { EffectorState::RETRIEVING_STABILIZE, EffectorState::PREPARED },
-                []()
+                [this]()
                 {
-                    ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::AppleRetrieved);
+                    ApplePickingNotificationBus::Event(GetEntityId(),&ApplePickingNotifications::AppleRetrieved);
                 },
             },
 

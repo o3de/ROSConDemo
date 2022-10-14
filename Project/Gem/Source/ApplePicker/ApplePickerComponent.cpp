@@ -150,7 +150,7 @@ namespace AppleKraken
             AZ_Warning("ApplePicker", false, "Effector entity not set, assuming same entity");
             m_effectorEntityId = GetEntityId();
         }
-        ApplePickingNotificationBus::Handler::BusConnect();
+        ApplePickingNotificationBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
 
         auto ros2Node = ROS2Interface::Get()->GetNode();
