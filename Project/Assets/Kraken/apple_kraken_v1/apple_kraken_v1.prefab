@@ -3520,7 +3520,7 @@
                 "Component_[4717135159086115019]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 4717135159086115019,
-                    "GameView": true,
+                    "GameView": false,
                     "ShapeColor": [
                         1.0,
                         0.0,
@@ -4127,7 +4127,7 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
-                    "GameView": true,
+                    "GameView": false,
                     "ShapeColor": [
                         0.0,
                         0.0,
