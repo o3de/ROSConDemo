@@ -1,3 +1,13 @@
+----------------------------------------------------------------------------------------------------
+--
+-- Copyright (c) Contributors to the Open 3D Engine Project.
+-- For complete copyright and license terms please see the LICENSE at the root of this distribution.
+--
+-- SPDX-License-Identifier: Apache-2.0 OR MIT
+--
+--
+--
+----------------------------------------------------------------------------------------------------
 local UILogic = {
     Properties = {
         Debug = false,
@@ -22,15 +32,15 @@ function UILogic:OnActivate()
     self.quitCanvasVisible = false
 
     for event, handler in pairs(self.InputHandlers) do
-		local id = InputEventNotificationId(event)
-		handler.busHandler = InputEventNotificationBus.Connect(handler, id)
+        local id = InputEventNotificationId(event)
+        handler.busHandler = InputEventNotificationBus.Connect(handler, id)
         handler.component = self
-	end
+    end
     for event, handler in pairs(self.GameplayEventHandlers) do
-		local id = GameplayNotificationId(EntityId(0), event, "float")
-		handler.busHandler = GameplayNotificationBus.Connect(handler, id)
+        local id = GameplayNotificationId(EntityId(0), event, "float")
+        handler.busHandler = GameplayNotificationBus.Connect(handler, id)
         handler.component = self
-	end
+    end
 end
 
 function UILogic:SetCanvasVisible(visible)
@@ -67,7 +77,9 @@ function UILogic:Reset()
     if self.resetPressed and self.ctrlPressed then
         Debug.Log("Re-loading level")
         ROSConDemoRequestBus.Broadcast.ReloadLevel();
-        --ConsoleRequestBus.Broadcast.ExecuteConsoleCommand("LoadLevel main")
+        -- LoadLevel command will reload the error but currently has graphic
+        -- issues so a custom ReloadLevel command above is used
+        -- ConsoleRequestBus.Broadcast.ExecuteConsoleCommand("LoadLevel main")
     end
 end
 
@@ -102,3 +114,4 @@ function UILogic:OnDeactivate()
 end
 
 return UILogic
+
