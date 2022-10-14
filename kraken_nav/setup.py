@@ -26,7 +26,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'twist_to_ackermann = o3de_kraken_nav.twist_to_ackermann:main'
+            'twist_to_ackermann = o3de_kraken_nav.twist_to_ackermann:main',
+            'joy_to_ackermann = o3de_kraken_nav.joy_to_ackermann:main',
         ],
     },
 )
