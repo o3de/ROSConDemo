@@ -99,6 +99,7 @@ RUN ${WORKDIR}/o3de/scripts/o3de.sh register --this-engine \
     && cat /root/.o3de/o3de_manifest.json
 
 RUN cd ${WORKDIR}/ROSConDemo/Project \
+    && git lfs pull \
     && . /opt/ros/humble/setup.sh \
     && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
 
