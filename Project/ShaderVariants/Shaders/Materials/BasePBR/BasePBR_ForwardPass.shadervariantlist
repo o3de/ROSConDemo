@@ -1,0 +1,233 @@
+{
+    "Shader": "Shaders/Materials/BasePBR/BasePBR_ForwardPass.shader",
+    "Variants": [
+        {
+            "StableId": 1,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Overlay",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "false",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 2,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Multiply",
+                "o_baseColor_useTexture": "false",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "false",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "true",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 3,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Multiply",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "false",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 4,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Lerp",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 5,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Overlay",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 6,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Lerp",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "true",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 7,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Lerp",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "true",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "true",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 8,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Lerp",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "true",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "true"
+            }
+        },
+        {
+            "StableId": 9,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Multiply",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "true",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "true",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 10,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Multiply",
+                "o_baseColor_useTexture": "false",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "false",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        },
+        {
+            "StableId": 11,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Overlay",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "true",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "true",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "true"
+            }
+        },
+        {
+            "StableId": 12,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Overlay",
+                "o_baseColor_useTexture": "true",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "true",
+                "o_roughness_useTexture": "true",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false"
+            }
+        }
+    ]
+}

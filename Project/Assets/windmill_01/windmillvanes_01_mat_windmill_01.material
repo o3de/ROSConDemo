@@ -1,6 +1,6 @@
 {
-    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.659861147403717,
@@ -10,17 +10,9 @@
         ],
         "baseColor.textureBlendMode": "Overlay",
         "baseColor.textureMap": "textures/mat_windmilTopMAT_BaseColor.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "irradiance.irradianceColorSource": "BaseColor",
         "metallic.factor": 1.0,
         "normal.textureMap": "textures/mat_windmilTopMAT_Normal.png",
-        "occlusion.diffuseTextureMap": "textures/mat_windmilTopMAT_AO.png",
-        "opacity.factor": 1.0,
         "roughness.lowerBound": 0.09000000357627869,
         "roughness.textureMap": "textures/mat_windmilTopMAT_Roughness.png",
         "specularF0.factor": 0.5699999928474426

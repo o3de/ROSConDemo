@@ -1,6 +1,6 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.800000011920929,
@@ -11,16 +11,8 @@
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "Assets/oak_tree/textures/oak_tree_base_color_lod0.png",
         "baseColor.textureMapUv": "Unwrapped",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
-        "general.doubleSided": true,
         "normal.textureMap": "Assets/oak_tree/textures/oak_tree_normal_lod0.png",
         "normal.textureMapUv": "Unwrapped",
-        "opacity.factor": 1.0,
         "roughness.textureMap": "Assets/oak_tree/textures/oak_tree_roughness_lod0.png",
         "roughness.textureMapUv": "Unwrapped"
     }

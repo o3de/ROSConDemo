@@ -1,0 +1,49 @@
+{
+    "Shader": "Shaders/Materials/EnhancedPBR/EnhancedPBR_ForwardPass_EDS.shader",
+    "Variants": [
+        {
+            "StableId": 1,
+            "Options": {
+                "o_applySpecularAA": "true",
+                "o_baseColorTextureBlendMode": "TextureBlendMode::Overlay",
+                "o_baseColor_useTexture": "true",
+                "o_clearCoat_enabled": "false",
+                "o_clearCoat_factor_useTexture": "false",
+                "o_clearCoat_feature_enabled": "false",
+                "o_clearCoat_normal_useTexture": "false",
+                "o_clearCoat_roughness_useTexture": "false",
+                "o_detail_baseColor_useTexture": "false",
+                "o_detail_blendMask_useTexture": "false",
+                "o_detail_normal_useTexture": "false",
+                "o_diffuseOcclusion_useTexture": "false",
+                "o_emissiveEnabled": "false",
+                "o_emissive_useTexture": "false",
+                "o_enableAnisotropy": "false",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_enableSubsurfaceScattering": "true",
+                "o_materialUseForwardPassIBLSpecular": "false",
+                "o_metallic_useTexture": "false",
+                "o_normal_useTexture": "true",
+                "o_opacity_mode": "OpacityMode::Cutout",
+                "o_opacity_source": "OpacitySource::Split",
+                "o_parallax_algorithm": "ParallaxAlgorithm::POM",
+                "o_parallax_enablePixelDepthOffset": "false",
+                "o_parallax_feature_enabled": "false",
+                "o_parallax_highlightClipping": "false",
+                "o_parallax_quality": "ParallaxQuality::Low",
+                "o_roughness_useTexture": "false",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_specularF0_useTexture": "false",
+                "o_specularOcclusion_useTexture": "false",
+                "o_subsurfaceScattering_useTexture": "true",
+                "o_transmission_mode": "TransmissionMode::ThinObject",
+                "o_transmission_useTexture": "true",
+                "o_useHeightmap": "false"
+            }
+        }
+    ]
+}

@@ -1,17 +1,10 @@
 {
-    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.textureMap": "WheelRight_Albedo.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "metallic.textureMap": "WheelRight_Metalness.png",
         "normal.textureMap": "WheelRight_Normal.png",
-        "opacity.factor": 1.0,
         "roughness.textureMap": "WheelRight_Roughness.png"
     }
 }
