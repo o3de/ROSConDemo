@@ -21,7 +21,7 @@ namespace AppleKraken
     {
     public:
         static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Multiple;
-        virtual GatheringPoses GetGatheringPoses() const = 0;
+        virtual GatheringPoses GetGatheringPoses() = 0;
     };
 
     using GatheringRowRequestBus = AZ::EBus<GatheringRowRequests>;
