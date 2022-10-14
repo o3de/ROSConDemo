@@ -41,7 +41,7 @@
                     "Entity_[1090499316769908]",
                     "Entity_[1377679985301621]",
                     "Entity_[613152547383712]",
-                    "Entity_[11855036487321]"
+                    "Entity_[11858716331742]"
                 ]
             },
             "Component_[14409887347711167786]": {
@@ -156,6 +156,36 @@
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 16316160855692862306,
                     "Parent Entity": "Entity_[1146574390643]"
+                },
+                "Component_[16495365342755562265]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 16495365342755562265,
+                    "m_template": {
+                        "$type": "ROS2SpawnerComponent",
+                        "Spawnables": {
+                            "apple_kraken": {
+                                "assetId": {
+                                    "guid": "{66F579B8-CE81-5D9B-9634-628E7E1CFFBE}",
+                                    "subId": 4113364385
+                                },
+                                "assetHint": "assets/kraken/apple_kraken_v2/apple_kraken_v2.spawnable"
+                            },
+                            "apple_kraken_rusty": {
+                                "assetId": {
+                                    "guid": "{46BA014E-E98D-5DAA-9716-BA37E8903E6C}",
+                                    "subId": 485449417
+                                },
+                                "assetHint": "assets/kraken/apple_kraken_v1/apple_kraken_v1.spawnable"
+                            },
+                            "apple_kraken_shiny": {
+                                "assetId": {
+                                    "guid": "{66F579B8-CE81-5D9B-9634-628E7E1CFFBE}",
+                                    "subId": 4113364385
+                                },
+                                "assetHint": "assets/kraken/apple_kraken_v2/apple_kraken_v2.spawnable"
+                            }
+                        }
+                    }
                 },
                 "Component_[4811759763261974616]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -732,7 +762,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 4895539561490889624
+                            "EditorEntityId": 11624781346221010586
                         }
                     }
                 },
@@ -999,46 +1029,22 @@
                 }
             }
         },
-        "Entity_[11855036487321]": {
-            "Id": "Entity_[11855036487321]",
+        "Entity_[11858716331742]": {
+            "Id": "Entity_[11858716331742]",
             "Name": "UI",
             "Components": {
-                "Component_[132321704988614421]": {
-                    "$type": "EditorOnlyEntityComponent",
-                    "Id": 132321704988614421
-                },
-                "Component_[13702930881661432062]": {
-                    "$type": "EditorPendingCompositionComponent",
-                    "Id": 13702930881661432062
-                },
-                "Component_[14836178880406789505]": {
-                    "$type": "EditorEntityIconComponent",
-                    "Id": 14836178880406789505
-                },
-                "Component_[2117660756937888393]": {
+                "Component_[10079862461814890374]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 2117660756937888393
+                    "Id": 10079862461814890374
                 },
-                "Component_[2856901066316370968]": {
+                "Component_[10890805290022279378]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
-                    "Id": 2856901066316370968,
+                    "Id": 10890805290022279378,
                     "Parent Entity": "Entity_[1146574390643]"
                 },
-                "Component_[6982392596004053337]": {
-                    "$type": "EditorEntitySortComponent",
-                    "Id": 6982392596004053337
-                },
-                "Component_[8010611802094493739]": {
-                    "$type": "EditorLockComponent",
-                    "Id": 8010611802094493739
-                },
-                "Component_[8336396370372311505]": {
-                    "$type": "EditorInspectorComponent",
-                    "Id": 8336396370372311505
-                },
-                "Component_[8604255713030173207]": {
+                "Component_[11125254180578763286]": {
                     "$type": "GenericComponentWrapper",
-                    "Id": 8604255713030173207,
+                    "Id": 11125254180578763286,
                     "m_template": {
                         "$type": "UiCanvasAssetRefComponent",
                         "CanvasAssetRef": {
@@ -1047,9 +1053,33 @@
                         "IsAutoLoad": true
                     }
                 },
-                "Component_[992774533832670716]": {
+                "Component_[14946426795756125689]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 14946426795756125689
+                },
+                "Component_[15367887385573375080]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 15367887385573375080
+                },
+                "Component_[18359890103805160418]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 18359890103805160418
+                },
+                "Component_[183750578654281860]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 183750578654281860
+                },
+                "Component_[449364418545463780]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 449364418545463780
+                },
+                "Component_[5539141518233445230]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 5539141518233445230
+                },
+                "Component_[6010974460016478829]": {
                     "$type": "EditorVisibilityComponent",
-                    "Id": 992774533832670716
+                    "Id": 6010974460016478829
                 }
             }
         },
@@ -1088,6 +1118,15 @@
                 "Component_[5320963908403420676]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 5320963908403420676
+                },
+                "Component_[6506285051007944421]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6506285051007944421,
+                    "m_template": {
+                        "$type": "GatheringRowComponent",
+                        "Start": "Entity_[1377688575236213]",
+                        "End": "Entity_[1377697165170805]"
+                    }
                 },
                 "Component_[8164175847176343181]": {
                     "$type": "EditorEntitySortComponent",
@@ -1224,7 +1263,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 17977516285725281116
+                            "EntityId": 14022389843765656853
                         }
                     },
                     "useBakedCubemap": false,
@@ -1340,6 +1379,14 @@
                             0.0,
                             -90.0
                         ]
+                    }
+                },
+                "Component_[8769373046366984691]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 8769373046366984691,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line1"
                     }
                 },
                 "Component_[9470973296863097127]": {
@@ -1606,7 +1653,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 6913475367130875979,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[296994751178328]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -1809,7 +1856,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[357799673674485]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -1892,7 +1939,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[357812558576373]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -2165,7 +2212,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[382784004585584]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -2248,7 +2295,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[382814069356656]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -2525,6 +2572,14 @@
                     "$type": "EditorEntityIconComponent",
                     "Id": 17503473695063282552
                 },
+                "Component_[2525712456180805096]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 2525712456180805096,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line2"
+                    }
+                },
                 "Component_[2840753425454738983]": {
                     "$type": "EditorLockComponent",
                     "Id": 2840753425454738983
@@ -2605,6 +2660,14 @@
                         ]
                     }
                 },
+                "Component_[6181205910092673585]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6181205910092673585,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line3"
+                    }
+                },
                 "Component_[9470973296863097127]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9470973296863097127
@@ -2642,6 +2705,14 @@
                 "Component_[386129393972332621]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 386129393972332621
+                },
+                "Component_[4775227584806477299]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 4775227584806477299,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line4"
+                    }
                 },
                 "Component_[523501923593589864]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -2713,6 +2784,14 @@
                             0.0,
                             -89.99994659423828
                         ]
+                    }
+                },
+                "Component_[7157441797508480711]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7157441797508480711,
+                    "m_template": {
+                        "$type": "ROS2SpawnPointComponent",
+                        "Name": "line5"
                     }
                 },
                 "Component_[9470973296863097127]": {
@@ -3583,6 +3662,7 @@
                                                     "guid": "{854B4BB3-EFE8-5C64-A809-F0A5CCDD5EE6}",
                                                     "subId": 2052237733
                                                 },
+                                                "loadBehavior": "QueueLoad",
                                                 "assetHint": "prefabs/appletreeapples.spawnable"
                                             }
                                         }
