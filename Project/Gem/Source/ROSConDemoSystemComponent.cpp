@@ -10,9 +10,11 @@
 #include "ApplePicker/GatheringRowRequests.h"
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
+#include <AzCore/RTTI/BehaviorContext.h>
 #include <AzCore/Serialization/SerializeContext.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Conversions.h>
+#include <ILevelSystem.h>
 
 namespace ROSConDemo
 {
@@ -30,10 +32,31 @@ namespace ROSConDemo
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
+
+        if (AZ::BehaviorContext* behaviorContext = azrtti_cast<AZ::BehaviorContext*>(context))
+        {
+            behaviorContext->EBus<ROSConDemoRequestBus>("ROSConDemoRequestBus")
+                ->Event("ReloadLevel", &ROSConDemoRequestBus::Events::ReloadLevel);
+        }
+    }
+
+    void ROSConDemoSystemComponent::ReloadLevel()
+    {
+        ISystem* systemInterface = nullptr;
+        CrySystemRequestBus::BroadcastResult(systemInterface, &CrySystemRequests::GetCrySystem);
+        if(systemInterface && systemInterface->GetILevelSystem())
+        {
+            ILevelSystem* levelSystem = systemInterface->GetILevelSystem();
+            AZStd::string currentLevelName = levelSystem->GetCurrentLevelName();
+            levelSystem->UnloadLevel();
+            AZ::TickBus::QueueFunction([levelSystem, currentLevelName]() {
+                levelSystem->LoadLevel(currentLevelName.c_str());
+            });
+        }
     }
 
     void ROSConDemoSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
-    {
+    {   
         provided.push_back(AZ_CRC("ROSConDemoService"));
     }
 

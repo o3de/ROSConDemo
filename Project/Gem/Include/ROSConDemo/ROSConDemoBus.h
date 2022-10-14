@@ -18,7 +18,9 @@ namespace ROSConDemo
     public:
         AZ_RTTI(ROSConDemoRequests, "{2D614DC7-0E0B-4EC9-B0EB-8F2ED827310A}");
         virtual ~ROSConDemoRequests() = default;
-        // Put your public methods here
+
+        //! Reload the current level
+        virtual void ReloadLevel() = 0;
     };
 
     class ROSConDemoBusTraits : public AZ::EBusTraits

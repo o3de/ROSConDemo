@@ -1,0 +1,184 @@
+{
+    "ContainerEntity": {
+        "Id": "ContainerEntity",
+        "Name": "UILogic",
+        "Components": {
+            "Component_[1041699042621353635]": {
+                "$type": "EditorOnlyEntityComponent",
+                "Id": 1041699042621353635
+            },
+            "Component_[12814046806080640047]": {
+                "$type": "EditorEntitySortComponent",
+                "Id": 12814046806080640047,
+                "Child Entity Order": [
+                    "Entity_[35906786687133]"
+                ]
+            },
+            "Component_[13142080617915271961]": {
+                "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                "Id": 13142080617915271961,
+                "Parent Entity": ""
+            },
+            "Component_[14023638413203789638]": {
+                "$type": "EditorEntityIconComponent",
+                "Id": 14023638413203789638
+            },
+            "Component_[14339763460868207585]": {
+                "$type": "EditorDisabledCompositionComponent",
+                "Id": 14339763460868207585
+            },
+            "Component_[17606357367803995024]": {
+                "$type": "EditorPrefabComponent",
+                "Id": 17606357367803995024
+            },
+            "Component_[18253572349287531072]": {
+                "$type": "EditorInspectorComponent",
+                "Id": 18253572349287531072
+            },
+            "Component_[2296265291920297506]": {
+                "$type": "EditorLockComponent",
+                "Id": 2296265291920297506
+            },
+            "Component_[40313531044578384]": {
+                "$type": "EditorVisibilityComponent",
+                "Id": 40313531044578384
+            },
+            "Component_[9279778868904357205]": {
+                "$type": "EditorPendingCompositionComponent",
+                "Id": 9279778868904357205
+            }
+        }
+    },
+    "Entities": {
+        "Entity_[35906786687133]": {
+            "Id": "Entity_[35906786687133]",
+            "Name": "UI Logic",
+            "Components": {
+                "Component_[11523030787389076961]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 11523030787389076961,
+                    "Parent Entity": "ContainerEntity"
+                },
+                "Component_[11608851212741542752]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 11608851212741542752
+                },
+                "Component_[12200596900575047519]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 12200596900575047519
+                },
+                "Component_[16755178164058506730]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 16755178164058506730,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{54F5C4CD-C30E-5EEA-96CE-22BB86633167}"
+                            },
+                            "assetHint": "assets/inputbindings/ui-main.inputbindings"
+                        }
+                    }
+                },
+                "Component_[17330767922857874409]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 17330767922857874409
+                },
+                "Component_[192954100086478604]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 192954100086478604,
+                    "m_template": {
+                        "$type": "UiCanvasAssetRefComponent",
+                        "CanvasAssetRef": {
+                            "AssetPath": "ui/quitconfirmation.uicanvas"
+                        }
+                    }
+                },
+                "Component_[2643723568299382725]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 2643723568299382725
+                },
+                "Component_[3835458572009420387]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 3835458572009420387
+                },
+                "Component_[4625534857708642626]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 4625534857708642626
+                },
+                "Component_[4826561718818095337]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 4826561718818095337,
+                    "ComponentOrderEntryArray": [
+                        {
+                            "ComponentId": 11523030787389076961
+                        },
+                        {
+                            "ComponentId": 192954100086478604,
+                            "SortIndex": 1
+                        },
+                        {
+                            "ComponentId": 16755178164058506730,
+                            "SortIndex": 2
+                        },
+                        {
+                            "ComponentId": 5112855786931537693,
+                            "SortIndex": 3
+                        }
+                    ]
+                },
+                "Component_[5112855786931537693]": {
+                    "$type": "ScriptEditorComponent",
+                    "Id": 5112855786931537693,
+                    "ScriptComponent": {
+                        "Properties": {
+                            "Properties": [
+                                {
+                                    "$type": "AzFramework::ScriptPropertyString",
+                                    "id": 261715790,
+                                    "name": "CtrlInputEvent",
+                                    "value": "Ctrl"
+                                },
+                                {
+                                    "$type": "AzFramework::ScriptPropertyBoolean",
+                                    "id": 1822771111,
+                                    "name": "Debug"
+                                },
+                                {
+                                    "$type": "AzFramework::ScriptPropertyString",
+                                    "id": 1013725814,
+                                    "name": "QuitInputEvent",
+                                    "value": "Quit"
+                                },
+                                {
+                                    "$type": "AzFramework::ScriptPropertyString",
+                                    "id": 1311705664,
+                                    "name": "ResetInputEvent",
+                                    "value": "Reset"
+                                }
+                            ]
+                        },
+                        "Script": {
+                            "assetId": {
+                                "guid": "{D1D71492-0F89-53DF-A95E-C7A64B9F8574}",
+                                "subId": 1
+                            },
+                            "assetHint": "scripts/uilogic.luac"
+                        }
+                    },
+                    "ScriptAsset": {
+                        "assetId": {
+                            "guid": "{D1D71492-0F89-53DF-A95E-C7A64B9F8574}",
+                            "subId": 1
+                        },
+                        "assetHint": "scripts/uilogic.luac"
+                    }
+                },
+                "Component_[5581518532572380002]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 5581518532572380002
+                }
+            }
+        }
+    }
+}
