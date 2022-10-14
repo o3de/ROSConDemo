@@ -16,6 +16,10 @@ namespace AppleKraken
     class ApplePickingNotifications : public AZ::EBusTraits
     {
     public:
+        static const AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Single;
+        static const AZ::EBusAddressPolicy AddressPolicy = AZ::EBusAddressPolicy::ById;
+        // Messages are addressed by EntityId.
+        using BusIdType = AZ::EntityId;
         //! The effector is ready for picking
         virtual void EffectorReadyForPicking() = 0;
 
