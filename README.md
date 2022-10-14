@@ -83,13 +83,18 @@ The Gem is open to your contributions!
 
 ### Registering the Gem
 
-During the step above, make sure to register the Gem in the engine. Run this command in O3DE directory:
+During the step above, make sure to register the Gem in the engine:
 `scripts/o3de.sh register --gem-path <PATH_TO_CLONED_ROS2_GEM>`
 
-You can confirm the Gem is registered running the following command from O3DE directory:
+### Additional ROS 2 packages
+
+The additional packages need to be installed. Use the following command:
+
 ```
-scripts/o3de.sh get-registered -gn ROS2
+sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds
 ```
+
+💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
 
 ### Required environment settings
 
@@ -106,26 +111,6 @@ Currently we are observing issues when running navigation with FastDDS (the defa
 ```
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
-
-### Additional ROS 2 packages
-
-First, ensure your ROS 2 is installed and sourced properly:
-
-```
-echo ${ROS_DISTRO}
-```
-
-It should show `humble` or `galactic`.
-
-
-The additional packages need to be installed. Use the following command:
-
-```
-sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds
-```
-
-💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
-
 
 # Building this project
 
@@ -149,7 +134,7 @@ echo $ROS_DISTRO
 > humble
 ```
 
-4. From the ROSConDemo Project folder, configure the build:
+4. Configure build:
 
 ```
 cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
