@@ -124,7 +124,7 @@ function manipulator_control:OnActivate()
     self.tickBusHandler = TickBus.CreateHandler(self)
     self.tickBusHandler:Connect()    
 
-    self.InputNotificationBus = InputEventNotificationBus.Connect(self, InputEventNotificationId("manipulator_keyboard_control"))
+    self.inputEventBusHandler = InputEventNotificationBus.Connect(self, InputEventNotificationId("manipulator_keyboard_control"))
 
     self.pid1 = PID.new(300.0, 0.0, 0.0, self.max_velocity['z']) 
     self.pid2 = PID.new(200.0, 0.0, 0.0, self.max_velocity['x']) 
@@ -390,9 +390,9 @@ function manipulator_control:OnPressed(value)
 end
 
 function manipulator_control:OnDeactivate()
-      self.manipulatorRequestBus.Disconnect()
-
-     -- Deactivation Code
+    self.manipulatorRequestBus:Disconnect()
+    self.tickBusHandler:Disconnect()
+    self.inputEventBusHandler:Disconnect()
 end
 
 -- This callback is called every frame by the tick bus after this entity activates
