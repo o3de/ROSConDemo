@@ -8,6 +8,7 @@
 
 #include "ROSConDemoSystemComponent.h"
 #include "ApplePicker/GatheringRowRequests.h"
+#include <AzCore/Component/TickBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzCore/RTTI/BehaviorContext.h>
@@ -15,6 +16,7 @@
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Conversions.h>
 #include <ILevelSystem.h>
+#include <ISystem.h>
 
 namespace ROSConDemo
 {
