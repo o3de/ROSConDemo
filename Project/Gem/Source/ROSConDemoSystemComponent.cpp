@@ -96,9 +96,17 @@ namespace ROSConDemo
         AZ::EBusAggregateResults<AppleKraken::GatheringPoses> results;
         AppleKraken::GatheringRowRequestBus::BroadcastResult(results, &AppleKraken::GatheringRowRequests::GetGatheringPoses);
 
+        // remove all empty rows to avoid checking it later
+        results.values.erase(
+            std::remove_if(
+                results.values.begin(),
+                results.values.end(),
+                [](const auto& row){ return row.empty(); }),
+            results.values.end());
+
         if (results.values.empty())
         {
-            // there are no gathering rows detected
+            // there are no gathering rows containing at least one pose detected
             return;
         }
 
