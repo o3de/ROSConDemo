@@ -79,11 +79,14 @@ namespace AppleKraken
         AZ::TransformBus::EventResult(startPose, m_start, &AZ::TransformBus::Events::GetWorldTM);
         AZ::TransformBus::EventResult(endPose, m_end, &AZ::TransformBus::Events::GetWorldTM);
 
+        const AZ::Transform rowLookAt =
+            AZ::Transform::CreateLookAt(startPose.GetTranslation(), endPose.GetTranslation(), AZ::Constants::Axis::XPositive);
+
         // Simplification - we assume same orientations along the way
         const auto rowVector = endPose.GetTranslation() - startPose.GetTranslation();
         for (int i = 0; i < m_appleTreeCount; ++i)
         {
-            AZ::Transform gatheringPoint = startPose;
+            AZ::Transform gatheringPoint = rowLookAt;
             const float scale = static_cast<float>(i) / (m_appleTreeCount - 1);
             gatheringPoint.SetTranslation(gatheringPoint.GetTranslation() + m_poseOffset + rowVector * scale);
             m_gatheringPoses.emplace_back(gatheringPoint);
