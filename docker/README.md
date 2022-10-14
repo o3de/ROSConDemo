@@ -6,6 +6,7 @@ the demo in this repository.
 
 ## Requisites
 
+ * [Hardware requirements of o3de](https://www.o3de.org/docs/welcome-guide/requirements/)
  * At least 40GB of free disk space
  * The build process can take more than 2 hours
 
@@ -26,5 +27,17 @@ GPU acceleration is required for running O3DE correctly. For running docker
 with support for GPU please follow the documentation for
 [docker run](https://docs.docker.com/engine/reference/commandline/run/).
 
-Another option is to install and use
-[rocker](https://github.com/osrf/rocker).
+Another option is to install and use [rocker](https://github.com/osrf/rocker).
+
+```
+rocker --x11 --nvidia roscon_demo
+```
+
+The `Dockerfile` leaves ready the compilation of all the O3DE artifacts to be able
+to execute the Editor.
+```
+/data/workspace/ROSConDemo/Project/build/linux/bin/profile/Editor
+```
+
+Continue with the instruction in the
+[main README file](https://github.com/aws-lumberyard/ROSConDemo/blob/main/README.md).
