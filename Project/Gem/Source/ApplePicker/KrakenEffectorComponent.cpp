@@ -22,7 +22,7 @@ namespace AppleKraken
 {
     namespace DebugStateTransit
     {
-        static const AZStd::unordered_map<EffectorState, AZStd::string> kMapToString{ { EffectorState::INVALID, "INVALID" },
+        static const AZStd::unordered_map<EffectorState, const char*> kMapToString{ { EffectorState::INVALID, "INVALID" },
                                                                                 { EffectorState::IDLE, "IDLE" },
                                                                                 { EffectorState::PREPARED, "PREPARED" },
                                                                                 { EffectorState::PICKING, "PICKING" },
@@ -35,7 +35,7 @@ namespace AppleKraken
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
         AZStd::string StateTransitionString(EffectorState current, EffectorState next)
         {
-            return AZStd::string::format("state transition %s -> %s\n", kMapToString.at(current).c_str(), kMapToString.at(next).c_str());
+            return AZStd::string::format("state transition %s -> %s\n", kMapToString.at(current), kMapToString.at(next));
         }
     } // namespace DebugStateTransit
 
@@ -62,7 +62,7 @@ namespace AppleKraken
                 // AzPhysics::SimulatedBody* collideToEntityId = this->GetEntityId() == e1 ?  event.m_triggerBody : event.m_otherBody;}
                 if (m_currentTask.m_appleEntityId == collideToEntityId)
                 {
-                    AZ_Printf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
+                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
                     ApplePickingNotificationBus::Broadcast(&ApplePickingNotifications::ApplePicked);
                     if (m_effectorState == EffectorState::PICKING)
                     {
@@ -72,7 +72,7 @@ namespace AppleKraken
                 }
                 if (m_restEntityId == collideToEntityId)
                 {
-                    AZ_Printf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Rest!====================");
+                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Rest!====================");
                     if (m_effectorState == EffectorState::RETRIEVING)
                     {
                         // start picking the apple
