@@ -26,7 +26,10 @@ namespace AppleKraken
         //! First on the list is always the start pose, the last is the end pose
         GatheringPoses GetGatheringPoses() override
         {
-            ComputeGatheringPoses();
+            if (m_gatheringPoses.empty())
+            {
+                ComputeGatheringPoses();
+            }
             return m_gatheringPoses;
         }
 
