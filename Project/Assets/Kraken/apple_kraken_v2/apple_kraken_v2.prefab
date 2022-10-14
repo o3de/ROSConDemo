@@ -2101,11 +2101,7 @@
                 },
                 "Component_[1935418376842285128]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 1935418376842285128,
-                    "Child Entity Order": [
-                        "Entity_[2542928743267]",
-                        "Entity_[2534338808675]"
-                    ]
+                    "Id": 1935418376842285128
                 },
                 "Component_[394584207891896443]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -4486,7 +4482,6 @@
                                 }
                             }
                         },
-                        "LidarTransparentEntityId": "",
                         "LidarParameters": {
                             "Layers": 16,
                             "Points per layer": 308,
@@ -4495,7 +4490,9 @@
                             "Min vertical angle": 12.0,
                             "Max vertical angle": -12.0,
                             "Max range": 50.0
-                        }
+                        },
+                        "IgnoreLayer": true,
+                        "IgnoredLayerIndex": 1
                     }
                 },
                 "Component_[13013301136498148727]": {
@@ -4647,7 +4644,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 60.0,
-                            "EditorEntityId": 15462183038290765989
+                            "EditorEntityId": 12742172260309117416
                         }
                     }
                 },
@@ -4819,7 +4816,7 @@
                             ]
                         }
                     },
-                    "ShapeConfiguration": {
+                "ShapeConfiguration": {
                         "ShapeType": 2,
                         "Capsule": {
                             "Height": 0.2000001221895218,
