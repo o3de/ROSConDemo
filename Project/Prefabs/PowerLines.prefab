@@ -188,8 +188,7 @@
                 "Component_[9795729877304178118]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 9795729877304178118,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 }
             }
         }
