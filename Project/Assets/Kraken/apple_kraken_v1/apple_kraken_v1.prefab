@@ -2747,7 +2747,10 @@
                         "Entity_[9058513484485]",
                         "Entity_[5494828217205]",
                         "Entity_[36172097579699]",
-                        "Entity_[453828565735265]"
+                        "Entity_[453828565735265]",
+                        "Instance_[15809790840954]/ContainerEntity",
+                        "Instance_[16591474888826]/ContainerEntity",
+                        "Instance_[16621539659898]/ContainerEntity"
                     ]
                 },
                 "Component_[3226220641517151136]": {
@@ -3724,6 +3727,7 @@
                                 }
                             }
                         },
+                        "LidarTransparentEntityId": "",
                         "LidarParameters": {
                             "Layers": 16,
                             "Points per layer": 308,
@@ -3732,9 +3736,7 @@
                             "Min vertical angle": 12.0,
                             "Max vertical angle": -12.0,
                             "Max range": 50.0
-                        },
-                        "IgnoreLayer": true,
-                        "IgnoredLayerIndex": 1
+                        }
                     }
                 },
                 "Component_[13013301136498148727]": {
@@ -3892,7 +3894,7 @@
                     "Id": 12122484710959107959,
                     "Controller": {
                         "Configuration": {
-                            "EditorEntityId": 3122488936549671511
+                            "EditorEntityId": 3983586778043080688
                         }
                     }
                 },
@@ -3910,14 +3912,14 @@
                     "Parent Entity": "ContainerEntity",
                     "Transform Data": {
                         "Translate": [
-                            -1.9000015258789063,
+                            -2.0,
                             0.0,
-                            4.0
+                            3.0
                         ],
                         "Rotate": [
-                            0.0,
-                            20.000001907348633,
-                            -90.00000762939453
+                            0.0000027257005967840087,
+                            20.000003814697266,
+                            -90.00001525878906
                         ]
                     }
                 },
@@ -3940,6 +3942,14 @@
                     "$type": "EditorInspectorComponent",
                     "Id": 17766027344918997686
                 },
+                "Component_[2426430931063954294]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 2426430931063954294,
+                    "m_template": {
+                        "$type": "FollowingCameraComponent",
+                        "Target": "Entity_[126373983206044]"
+                    }
+                },
                 "Component_[4338215858930337320]": {
                     "$type": "EditorLockComponent",
                     "Id": 4338215858930337320
@@ -3947,14 +3957,6 @@
                 "Component_[692191384982186014]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 692191384982186014
-                },
-                "Component_[9374188052930928760]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 9374188052930928760,
-                    "m_template": {
-                        "$type": "FlyCameraInputComponent",
-                        "Mouse Sensitivity": 0.0
-                    }
                 }
             }
         },
