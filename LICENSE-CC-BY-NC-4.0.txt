@@ -1,0 +1,5 @@
+Loft Arch Vis Sample Assets
+Copyright 2022 Amazon.com, Inc. or its affiliates, all rights reserved.
+
+3D models, image textures, and other asset files are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, available at http://creativecommons.org/licenses/by-nc/4.0/.
+
