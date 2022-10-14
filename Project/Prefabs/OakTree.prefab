@@ -81,8 +81,7 @@
                             0.0,
                             -6.575888633728027
                         ]
-                    },
-                    "IsStatic": true
+                    }
                 },
                 "Component_[15894921980041735849]": {
                     "$type": "EditorEntitySortComponent",
