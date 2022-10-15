@@ -1,6 +1,6 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.800000011920929,
@@ -10,14 +10,7 @@
         ],
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "Assets/Barn/textures/BarnMAT_BaseColor.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "irradiance.irradianceColorSource": "BaseColor",
-        "normal.textureMap": "Assets/Barn/textures/BarnMAT_Normal.png",
-        "opacity.factor": 1.0
+        "normal.textureMap": "Assets/Barn/textures/BarnMAT_Normal.png"
     }
 }

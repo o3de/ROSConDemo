@@ -1,26 +1,13 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
-        "baseColor.color": [
-            0.800000011920929,
-            0.800000011920929,
-            0.800000011920929,
-            1.0
-        ],
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "Assets/grass_tile_small_dry/textures/grass_base_color.png",
         "baseColor.textureMapUv": "Unwrapped",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "general.doubleSided": true,
         "normal.textureMap": "Assets/grass_tile_small_dry/textures/grass_normal.png",
         "normal.textureMapUv": "Unwrapped",
-        "opacity.factor": 1.0,
         "roughness.textureMap": "Assets/grass_tile_small_dry/textures/grass_roughness.png"
     }
 }

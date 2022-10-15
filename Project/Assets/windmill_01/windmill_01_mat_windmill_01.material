@@ -1,19 +1,11 @@
 {
-    "materialType": "@gemroot:Atom_Feature_Common@/Assets/Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "textures/mat_windmillMAT_BaseColor.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "irradiance.irradianceColorSource": "BaseColor",
         "normal.textureMap": "textures/mat_windmillMAT_Normal.png",
-        "occlusion.diffuseTextureMap": "textures/mat_windmillMAT_AO.png",
-        "opacity.factor": 1.0,
         "roughness.lowerBound": 0.5099999904632568,
         "roughness.textureMap": "textures/mat_windmillMAT_Roughness.png",
         "roughness.textureMapUv": "Unwrapped",

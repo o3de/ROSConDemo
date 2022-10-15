@@ -1,0 +1,27 @@
+{
+    "Shader": "Shaders/Materials/EnhancedPBR/EnhancedPBR_Shadowmap_WithPS.shader",
+    "Variants": [
+        {
+            "StableId": 1,
+            "Options": {
+                "o_clearCoat_feature_enabled": "false",
+                "o_enableAreaLights": "true",
+                "o_enableDirectionalLights": "true",
+                "o_enableIBL": "true",
+                "o_enablePunctualLights": "true",
+                "o_enableShadows": "true",
+                "o_enableSubsurfaceScattering": "true",
+                "o_opacity_mode": "OpacityMode::Cutout",
+                "o_opacity_source": "OpacitySource::Split",
+                "o_parallax_algorithm": "ParallaxAlgorithm::POM",
+                "o_parallax_enablePixelDepthOffset": "false",
+                "o_parallax_feature_enabled": "false",
+                "o_parallax_highlightClipping": "false",
+                "o_parallax_quality": "ParallaxQuality::Low",
+                "o_specularF0_enableMultiScatterCompensation": "false",
+                "o_transmission_mode": "TransmissionMode::ThinObject",
+                "o_useHeightmap": "false"
+            }
+        }
+    ]
+}

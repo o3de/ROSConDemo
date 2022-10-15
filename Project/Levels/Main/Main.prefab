@@ -477,9 +477,19 @@
                             "IntensityMode": 2,
                             "Intensity": 15.0,
                             "CameraEntityId": "",
+                            "ShadowmapSize": "Size2048",
+                            "CascadeCount": 2,
+                            "SplitAutomatic": false,
+                            "CascadeFarDepths": [
+                                16.0,
+                                100.0,
+                                36.0,
+                                100.0
+                            ],
                             "IsCascadeCorrectionEnabled": true,
                             "ShadowFilterMethod": 1,
-                            "PcfFilteringSampleCount": 4
+                            "PcfFilteringSampleCount": 9,
+                            "FullscreenBlurEnabled": false
                         }
                     }
                 },
@@ -862,17 +872,6 @@
                 "Component_[8866210352157164042]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 8866210352157164042
-                },
-                "Component_[8967653191103446244]": {
-                    "$type": "AZ::Render::EditorBloomComponent",
-                    "Id": 8967653191103446244,
-                    "Controller": {
-                        "Configuration": {
-                            "Enabled": true,
-                            "Knee": 0.5799999833106995,
-                            "Intensity": 0.05000000074505806
-                        }
-                    }
                 },
                 "Component_[9129253381063760879]": {
                     "$type": "EditorOnlyEntityComponent",

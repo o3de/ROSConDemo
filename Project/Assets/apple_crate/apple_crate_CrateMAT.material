@@ -1,6 +1,6 @@
 {
-    "materialType": "Materials/Types/StandardPBR.materialtype",
-    "materialTypeVersion": 5,
+    "materialType": "Materials/Types/BasePBR.materialtype",
+    "materialTypeVersion": 1,
     "propertyValues": {
         "baseColor.color": [
             0.8299381732940674,
@@ -10,15 +10,8 @@
         ],
         "baseColor.textureBlendMode": "Lerp",
         "baseColor.textureMap": "Assets/apple_crate/textures/CrateMAT_BaseColor.png",
-        "emissive.color": [
-            0.0,
-            0.0,
-            0.0,
-            1.0
-        ],
         "metallic.textureMap": "Assets/apple_crate/textures/CrateMAT_Metallic.png",
         "normal.textureMap": "Assets/apple_crate/textures/CrateMAT_Normal.png",
-        "opacity.factor": 1.0,
         "roughness.textureMap": "Assets/apple_crate/textures/CrateMAT_Roughness.png"
     }
 }
