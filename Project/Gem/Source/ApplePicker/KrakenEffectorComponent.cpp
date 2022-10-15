@@ -26,11 +26,11 @@ namespace AppleKraken
                                                                                 { EffectorState::IDLE, "IDLE" },
                                                                                 { EffectorState::PREPARED, "PREPARED" },
                                                                                 { EffectorState::PICKING, "PICKING" },
-                                                                                { EffectorState::PICKING_STABILIZE, "PICKING_STABILIZE" },
+                                                                                { EffectorState::PICKING_STABILIZE, "STABILIZE" },
                                                                                 { EffectorState::RETRIEVING, "RETRIEVING" },
-                                                                                { EffectorState::RETRIEVING_NOSE, "RETRIEVING_NOSE" },
+                                                                                { EffectorState::RETRIEVING_NOSE, "RETRIEVING" },
                                                                                 { EffectorState::RETRIEVING_STABILIZE,
-                                                                                  "RETRIEVING_STABILIZE" } };
+                                                                                  "STABILIZE" } };
 
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
         AZStd::string StateTransitionString(EffectorState current, EffectorState next)
@@ -181,6 +181,7 @@ namespace AppleKraken
         PickingState state;
         state.m_effectorState = m_effectorState;
         state.m_taskProgress = 0.0f; // TODO
+        state.m_description = DebugStateTransit::kMapToString.at(m_effectorState);
         if (m_currentTask.IsValid())
         {
             state.m_currentTask = m_currentTask;

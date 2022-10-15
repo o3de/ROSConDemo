@@ -127,12 +127,27 @@ namespace AppleKraken
 
     void ApplePickerComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
+        // TODO - instead of polling the effector should have a notification bus that we subscribe to
+        // or have it send states directly to the DemoStatisticsBus if it an get the unique id of the robot
+        // it is attached to - for now we use the ApplePickerComponent's EntityId
+        if(m_effectorEntityId.IsValid())
+        {
+            PickingState pickingState;
+            ApplePickingRequestBus::EventResult(pickingState, m_effectorEntityId, &ApplePickingRequests::GetEffectorState);
+            if(pickingState.m_effectorState != m_lastPickingState.m_effectorState) 
+            {
+                m_lastPickingState = pickingState;
+                DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), pickingState.m_description);
+            }
+        }
+
         // TODO handle timeouts and incoming commands
         m_appleGroundTruthDetector->Publish();
     }
 
     float ApplePickerComponent::ReportProgress()
     {
+
         // TODO (minor) - take into consideration current task progress (effector state)
         if (m_initialTasksSize == 0)
         {
@@ -152,6 +167,8 @@ namespace AppleKraken
         }
         ApplePickingNotificationBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
+
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::OnApplePickerSpawned, GetEntityId());
 
         auto ros2Node = ROS2Interface::Get()->GetNode();
         auto frame = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity());

@@ -22,6 +22,8 @@ namespace AppleKraken
        static constexpr AZ::EBusHandlerPolicy HandlerPolicy = AZ::EBusHandlerPolicy::Single;
        virtual ~DemoStatisticsNotifications() = default;
        virtual void AddApple(const AppleEvent& appleEvent) = 0;
+       virtual void OnApplePickerSpawned(const AZ::EntityId& entityId) = 0;
+       virtual void SetApplePickerStatus(const AZ::EntityId& entityId, const AZStd::string& status) = 0;
    };
 
    using DemoStatisticsNotificationBus = AZ::EBus<DemoStatisticsNotifications>;

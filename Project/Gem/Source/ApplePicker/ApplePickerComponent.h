@@ -78,6 +78,7 @@ namespace AppleKraken
         rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr m_progressPublisher;
 
         size_t m_initialTasksSize = 0;
+        PickingState m_lastPickingState;
         AZStd::queue<PickAppleTask> m_currentAppleTasks;
 
         AZStd::unique_ptr<AppleDetectionGroundTruth> m_appleGroundTruthDetector;

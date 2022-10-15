@@ -772,7 +772,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 55.0,
-                            "EditorEntityId": 3659314624400262759
+                            "EditorEntityId": 8699021241896625237
                         }
                     }
                 },
@@ -1208,7 +1208,7 @@
                                 },
                                 "assetHint": "reflectionprobes/refprobmain__c4ee43e2-3ffe-4955-9dee-679ca04c2a53__iblspecularcm256.dds.streamingimage"
                             },
-                            "EntityId": 17914642513714863215
+                            "EntityId": 14249967126715671836
                         }
                     },
                     "useBakedCubemap": false,
@@ -1315,14 +1315,14 @@
                     "Parent Entity": "Entity_[104676312987105]",
                     "Transform Data": {
                         "Translate": [
-                            -63.25,
-                            42.0,
+                            -63.24999237060547,
+                            34.93028259277344,
                             0.0
                         ],
                         "Rotate": [
                             0.0,
                             0.0,
-                            -90.0
+                            -89.99994659423828
                         ]
                     }
                 },
@@ -1598,7 +1598,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 6913475367130875979,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[296994751178328]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -1801,7 +1801,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[357799673674485]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -1884,7 +1884,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[357812558576373]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -2157,7 +2157,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[382784004585584]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
@@ -2240,7 +2240,7 @@
                     "$type": "EditorImageGradientComponent",
                     "Id": 10707924659521035089,
                     "Previewer": {
-                        "BoundsEntity": "Entity_[382814069356656]"
+                        "BoundsEntity": ""
                     },
                     "Configuration": {
                         "StreamingImageAsset": {
