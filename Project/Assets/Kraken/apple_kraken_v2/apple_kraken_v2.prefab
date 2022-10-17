@@ -2130,7 +2130,7 @@
         },
         "Entity_[126356803336860]": {
             "Id": "Entity_[126356803336860]",
-            "Name": "wheel_rear_left_link",
+            "Name": "wheel_rear_right_link",
             "Components": {
                 "Component_[10749074399584885532]": {
                     "$type": "EditorLockComponent",
@@ -2293,7 +2293,7 @@
         },
         "Entity_[126361098304156]": {
             "Id": "Entity_[126361098304156]",
-            "Name": "wheel_rear_right_link",
+            "Name": "wheel_rear_left_link",
             "Components": {
                 "Component_[12495206482953274316]": {
                     "$type": "EditorInspectorComponent",
@@ -2925,8 +2925,8 @@
                                 {
                                     "AxleTag": "BACK",
                                     "AxleWheels": [
-                                        "Entity_[126356803336860]",
-                                        "Entity_[126361098304156]"
+                                        "Entity_[126361098304156]",
+                                        "Entity_[126356803336860]"
                                     ],
                                     "IsDrive": true
                                 }
