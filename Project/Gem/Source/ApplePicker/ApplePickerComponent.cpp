@@ -127,27 +127,12 @@ namespace AppleKraken
 
     void ApplePickerComponent::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
-        // TODO - instead of polling the effector should have a notification bus that we subscribe to
-        // or have it send states directly to the DemoStatisticsBus if it an get the unique id of the robot
-        // it is attached to - for now we use the ApplePickerComponent's EntityId
-        if(m_effectorEntityId.IsValid())
-        {
-            PickingState pickingState;
-            ApplePickingRequestBus::EventResult(pickingState, m_effectorEntityId, &ApplePickingRequests::GetEffectorState);
-            if(pickingState.m_effectorState != m_lastPickingState.m_effectorState) 
-            {
-                m_lastPickingState = pickingState;
-                DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), pickingState.m_description);
-            }
-        }
-
         // TODO handle timeouts and incoming commands
         m_appleGroundTruthDetector->Publish();
     }
 
     float ApplePickerComponent::ReportProgress()
     {
-
         // TODO (minor) - take into consideration current task progress (effector state)
         if (m_initialTasksSize == 0)
         {
@@ -196,6 +181,13 @@ namespace AppleKraken
         m_progressPublisher =  ros2Node->create_publisher<std_msgs::msg::Float32>(statusTopic.c_str(),10);
         m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
 
+        auto orchestrationStatusTopic = ROS2Names::GetNamespacedName(robotNamespace, m_orchestratorStatusTopic);
+        m_orchestrationStatusSubscriber = ros2Node->create_subscription<std_msgs::msg::String>(orchestrationStatusTopic.c_str(),10,
+           [this](const std_msgs::msg::String::ConstSharedPtr msg)
+           {
+               AZStd::string label(msg->data.c_str(), msg->data.size());
+               DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), label);
+           });
     }
 
     void ApplePickerComponent::Deactivate()
@@ -220,7 +212,9 @@ namespace AppleKraken
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
                 ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
                 ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId)
-                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId);
+                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId)
+                ->Field("OrchestratorStatusTopic", &ApplePickerComponent::m_orchestratorStatusTopic);
+
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -238,6 +232,11 @@ namespace AppleKraken
                         &ApplePickerComponent::m_cancelServiceTopic,
                         "Cancel",
                         "ROS2 service name to cancel ongoing gathering")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default,
+                        &ApplePickerComponent::m_orchestratorStatusTopic,
+                        "OrchestratorStatus",
+                        "ROS2 topic name with robot's status")
                     ->DataElement(
                             AZ::Edit::UIHandlers::Default,
                             &ApplePickerComponent::m_progressTopic,
