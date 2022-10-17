@@ -93,15 +93,41 @@ namespace ROSConDemo
 
     void ROSConDemoSystemComponent::ProcessGetPlanServiceCall(const GetPlanRequestPtr req, GetPlanResponsePtr resp)
     {
-        AppleKraken::GatheringPoses results;
+        AZ::EBusAggregateResults<AppleKraken::GatheringPoses> results;
         AppleKraken::GatheringRowRequestBus::BroadcastResult(results, &AppleKraken::GatheringRowRequests::GetGatheringPoses);
-        // TODO - get closest to startTransform
-        // auto startTransform = ROS2::ROS2Conversions::FromROS2Pose(req->start.pose);
 
-        for (auto result : results)
+        // remove all empty rows to avoid checking it later
+        results.values.erase(
+            std::remove_if(
+                results.values.begin(),
+                results.values.end(),
+                [](const auto& row){ return row.empty(); }),
+            results.values.end());
+
+        if (results.values.empty())
+        {
+            // there are no gathering rows containing at least one pose detected
+            return;
+        }
+
+        auto startTransform = ROS2::ROS2Conversions::FromROS2Pose(req->start.pose);
+
+        auto nearest_row = *std::min_element(
+            results.values.begin(),
+            results.values.end(),
+            [startTranslation = startTransform.GetTranslation()](const auto& row1,const auto& row2)
+            {
+                if (row1[0].GetTranslation().GetDistance(startTranslation) < row2[0].GetTranslation().GetDistance(startTranslation))
+                {
+                   return true;
+                }
+                return false;
+            });
+
+        for( const auto& pose : nearest_row)
         {
             geometry_msgs::msg::PoseStamped stampedPose; // TODO - fill in header
-            stampedPose.pose = ROS2::ROS2Conversions::ToROS2Pose(result);
+            stampedPose.pose = ROS2::ROS2Conversions::ToROS2Pose(pose);
             resp->plan.poses.push_back(stampedPose);
         }
     }
