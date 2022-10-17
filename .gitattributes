@@ -126,4 +126,4 @@ Gems/AtomLyIntegration/CommonFeatures/Assets/Objects/Lucy/.wip/marmoset_bake.tbs
 Gems/AtomLyIntegration/CommonFeatures/Assets/Objects/Lucy/.wip/Brass/brass_bake.spp filter=lfs diff=lfs merge=lfs -text
 Gems/AtomLyIntegration/CommonFeatures/Assets/Objects/Lucy/.wip/stone/stone_bake.spp filter=lfs diff=lfs merge=lfs -text
 static/screenshots/*.png filter= diff= merge= -text
-docs/URDF_import/media/*.png filter= diff= merge= -text
+docs/URDF_import/static/images/*.png filter= diff= merge= -text
