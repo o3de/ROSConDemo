@@ -17,7 +17,6 @@
         <mass value="300"/>
         <inertia ixx="50.0" ixy="0.0" ixz="0.0" iyy="240.0" iyz="0.0" izz="250.0"/>
       </inertial>
-         
       <visual>
         <origin rpy="0.000000 -0.000000 -1.570796" xyz="1.101831 0.000000 0.000000"/>
         <geometry>
@@ -55,9 +54,9 @@
          </geometry>
        </collision>
        <collision>
-        <origin rpy="1.570796 -0.000000 1.570796" xyz="2.565201 0.000000 0.432055"/>
+        <origin rpy="1.570796 -0.000000 1.570796" xyz="2.5402429 0.000000 0.562592"/>
         <geometry>
-           <box size="0.513190 0.131902 0.055878"/>
+           <box size="0.437199 0.131902 0.055878"/>
          </geometry>
        </collision>
        <collision>
@@ -66,6 +65,7 @@
            <box size="0.592215 0.555096 0.228493"/>
          </geometry>
        </collision>         
+
     </link>
 
     <link name="wheel_rear_right_link">
@@ -76,14 +76,14 @@
       </inertial>
 
       <visual>
-        <origin rpy="0 1.571 0" xyz="0 0 ${wheel_width}"/>
+        <origin rpy="0 1.571 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="meshes/Wheels/WheelRight.dae" scale="0.6 0.6 0.6"/>
+          <mesh filename="meshes/Wheels/WheelRight.dae" scale="1 1 1"/>
         </geometry>
       </visual>
 
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 ${wheel_width/2}"/>
+        <origin rpy="0 0 0" xyz="0 0 ${-wheel_width/2}"/>
         <geometry>
           <cylinder radius="${wheel_radius}" length="${wheel_width}" />
         </geometry>
@@ -98,14 +98,14 @@
       </inertial>
 
       <visual>
-        <origin rpy="0 -1.571 0 " xyz="0 0 0.0"/>
+        <origin rpy="0 1.571 0 " xyz="0 0 0.0"/>
         <geometry>
-          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="0.6 0.6 0.6"/>
+          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="1 1 1"/>
         </geometry>
       </visual>
 
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 -${wheel_width/2}"/>
+        <origin rpy="0 0 0" xyz="0 0 ${wheel_width/2}"/>
         <geometry>
           <cylinder radius="${wheel_radius}" length="${wheel_width}" />
         </geometry>
@@ -114,7 +114,7 @@
 
     <link name="wheel_front_right_link">
       <inertial>
-        <origin rpy="0 0 0" xyz="0 0.0 ${-wheel_width/2}"/>
+        <origin rpy="0 0 0" xyz="0 0.0 ${wheel_width/2}"/>
         <mass value="24.5"/>
         <inertia ixx="0.787" ixy="0.0" ixz="0.0" iyy="0.787" iyz="0.0" izz="1.309"/>
       </inertial>
@@ -122,7 +122,7 @@
       <visual>
         <origin rpy="0 1.571 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="meshes/Wheels/WheelRight.dae" scale="0.6 0.6 0.6"/>
+          <mesh filename="meshes/Wheels/WheelRight.dae" scale="1 1 1"/>
         </geometry>
       </visual>
 
@@ -142,9 +142,9 @@
       </inertial>
 
       <visual>
-        <origin rpy="0 -1.571 0" xyz="0 0 ${wheel_width}"/>
+        <origin rpy="0 1.571 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="0.6 0.6 0.6"/>
+          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="1 1 1"/>
         </geometry>
       </visual>
 
@@ -162,7 +162,7 @@
     <link name="steering_front_right_link">
       <inertial>
         <origin rpy="0 0 -1.571" xyz="0 0 -0.04"/>
-        <mass value="1"/>
+        <mass value="20.0"/>
         <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
       </inertial>
 
@@ -177,7 +177,7 @@
     <link name="steering_front_left_link">
       <inertial>
         <origin rpy="0 0 -1.571" xyz="0 0 -0.04"/>
-        <mass value="1"/>
+        <mass value="20.0"/>
         <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
       </inertial>
       <visual>
@@ -189,7 +189,7 @@
     </link>
 
     <joint name="wheel_rear_right_joint" type="continuous">
-      <origin rpy="-1.570796 -0.000000 0.000000" xyz="0.000000 ${wheel_base_rear} ${wheel_radius}"/>
+      <origin rpy="-1.570796 0.000000 0.000000" xyz="0.000000 ${-wheel_base_rear} ${wheel_radius}"/>
       <parent link="base_link"/>
       <child link="wheel_rear_right_link"/>
       <axis xyz="0.0 0.0 1.0"/>
@@ -197,7 +197,7 @@
     </joint>
 
     <joint name="wheel_rear_left_joint" type="continuous">
-      <origin rpy="-1.570796 -0.000000 0.000000" xyz="0.000000 ${-wheel_base_rear} ${wheel_radius}"/>
+      <origin rpy="-1.570796 -0.000000 0.000000" xyz="0.000000 ${wheel_base_rear} ${wheel_radius}"/>
       <parent link="base_link"/>
       <child link="wheel_rear_left_link"/>
       <axis xyz="0.0 0.0 1.0"/>
@@ -237,46 +237,6 @@
       <dynamics damping="2.0" friction="1.0"/>
       <limit effort="1000000.0" lower="-0.5235" upper="0.5235" velocity="100"/>
     </joint>
-
-<!--     
-    <link name="manipulator_link_0_old">
-      <inertial>
-        <origin rpy="0.1745 0 0" xyz="0.0 -0.6 2.0"/>
-        <mass value="25.0"/>
-        <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.068" iyz="0.0" izz="0.067"/>
-      </inertial>
-
-      <visual>
-        <origin rpy="-0.174533 0 0" xyz="0.9 -0.65 2.4"/>
-        <geometry>
-          <box size = "0.1 0.1 2.0"/>
-        </geometry>
-      </visual>
-      <visual>
-        <origin rpy="-0.174533 0 0" xyz="-0.9 -0.65 2.4"/>
-        <geometry>
-          <box size = "0.1 0.1 2.0"/>
-        </geometry>
-      </visual>
-
-      <collision>
-        <origin rpy="-0.174533 0 0" xyz="0.9 -0.65 2.4"/>
-        <geometry>
-          <box size = "0.1 0.1 2.0"/>
-        </geometry>
-      </collision>
-        <collision>
-        <origin rpy="-0.174533 0 0" xyz="-0.9 -0.65 2.4"/>
-        <geometry>
-          <box size = "0.1 0.1 2.0"/>
-        </geometry>
-      </collision>
-    </link>
-    <joint name="manipulator_joint_0" type="fixed">
-      <origin rpy="0 0 0" xyz="${manip_x+0.003927} ${manip_y} ${manip_z-1.0}"/>
-      <parent link="base_link"/>
-      <child link="manipulator_link_0_old"/>
-    </joint>  -->
 
  
 </robot>
