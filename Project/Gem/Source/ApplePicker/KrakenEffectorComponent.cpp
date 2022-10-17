@@ -455,6 +455,14 @@ namespace AppleKraken
                 {
                 },
             },
+            {
+                { EffectorState::PICKING, EffectorState::IDLE },
+                [this]()
+                {
+                    // apple picking was finished with timeout
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                },
+            },
         };
     }
 
