@@ -140,7 +140,7 @@ namespace AppleKraken
             return 1.0f;
         }
 
-        return 1.0f - (m_currentAppleTasks.size() / m_initialTasksSize);
+        return 1.0f - (static_cast<float>(m_currentAppleTasks.size()) / static_cast<float>(m_initialTasksSize));
     }
 
     void ApplePickerComponent::Activate()
@@ -172,7 +172,13 @@ namespace AppleKraken
                 this->ProcessCancelServiceCall(request, response);
             });
 
+        auto doneTopic = ROS2Names::GetNamespacedName(robotNamespace, m_doneServiceTopic);
+        m_doneServiceClient = ros2Node->create_client<std_srvs::srv::Empty>(doneTopic.c_str());
+
+        auto statusTopic = ROS2Names::GetNamespacedName(robotNamespace, m_progressTopic);
+        m_progressPublisher =  ros2Node->create_publisher<std_msgs::msg::Float32>(statusTopic.c_str(),10);
         m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
+
     }
 
     void ApplePickerComponent::Deactivate()
@@ -189,9 +195,11 @@ namespace AppleKraken
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<ApplePickerComponent, AZ::Component>()
-                ->Version(4)
+                ->Version(5)
                 ->Field("TriggerServiceTopic", &ApplePickerComponent::m_triggerServiceTopic)
                 ->Field("CancelServiceTopic", &ApplePickerComponent::m_cancelServiceTopic)
+                ->Field("ProgressTopic", &ApplePickerComponent::m_progressTopic)
+                ->Field("DoneServiceTopic", &ApplePickerComponent::m_doneServiceTopic)
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
                 ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
                 ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId)
@@ -213,6 +221,16 @@ namespace AppleKraken
                         &ApplePickerComponent::m_cancelServiceTopic,
                         "Cancel",
                         "ROS2 service name to cancel ongoing gathering")
+                    ->DataElement(
+                            AZ::Edit::UIHandlers::Default,
+                            &ApplePickerComponent::m_progressTopic,
+                            "Status",
+                            "ROS2 topic that reports progress of gathering")
+                    ->DataElement(
+                            AZ::Edit::UIHandlers::Default,
+                            &ApplePickerComponent::m_doneServiceTopic,
+                            "Done",
+                            "ROS2 service name send on finish gathering")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_effectorEntityId,
@@ -313,6 +331,9 @@ namespace AppleKraken
 
     void ApplePickerComponent::PickNextApple()
     {
+        auto message = std_msgs::msg::Float32 ();
+        message.data = this->ReportProgress();
+        m_progressPublisher->publish(message);
         AZ_TracePrintf("ApplePicker", "Pick next apple");
         if (!m_currentAppleTasks.empty())
         { // Get another apple!
@@ -320,6 +341,8 @@ namespace AppleKraken
             return;
         }
         AZ_TracePrintf("ApplePicker", "No more apples!");
+        auto request = std::make_shared<std_srvs::srv::Empty::Request>();
+        m_doneServiceClient->async_send_request(request);
         ApplePickingRequestBus::Event(m_effectorEntityId, &ApplePickingRequests::FinishPicking);
     }
 

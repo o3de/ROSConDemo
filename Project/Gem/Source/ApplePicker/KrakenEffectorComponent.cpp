@@ -73,7 +73,7 @@ namespace AppleKraken
                 if (m_restEntityId == collideToEntityId)
                 {
                     AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Rest!====================");
-                    if (m_effectorState == EffectorState::RETRIEVING)
+                    if (m_effectorState == EffectorState::RETRIEVING || m_effectorState == EffectorState::RETRIEVING_NOSE )
                     {
                         // start picking the apple
                         BeginTransitionIfAcceptable(EffectorState::RETRIEVING_STABILIZE);
@@ -435,6 +435,13 @@ namespace AppleKraken
                     ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
                 },
             },
+            { // on skip
+                    { EffectorState::RETRIEVING_NOSE, EffectorState::RETRIEVING_STABILIZE },
+                    [this]()
+                    {
+                        ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                    },
+            },
             {
                 { EffectorState::RETRIEVING, EffectorState::RETRIEVING_STABILIZE },
                 []()
@@ -453,6 +460,14 @@ namespace AppleKraken
                 { EffectorState::PREPARED, EffectorState::IDLE },
                 []()
                 {
+                },
+            },
+            {
+                { EffectorState::PICKING, EffectorState::IDLE },
+                [this]()
+                {
+                    // apple picking was finished with timeout
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
                 },
             },
         };
