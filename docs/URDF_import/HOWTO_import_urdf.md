@@ -85,12 +85,20 @@ Select the `lidar_mount` entity, open the right-click menu and select `Instantia
 
 ## Test robot navigation
 
+Select `base_link` entity and change it's name to `apple_kraken_rusty_1`. This step assures, that we are using correct namespace.
+
+![](static/images/URDF_tutorial_base_link_name.png)
+
 Follow instructions in the [o3de_kraken_nav](https://github.com/RobotecAI/o3de_kraken_nav) to install the navigation stack. After the `Installation` part run the O3DE simulation, switch to terminal and perform:
 
 ```bash
 cd ~/o3de_kraken_ws
 source ./install/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=base_link rviz:=True
+ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=apple_kraken_rusty_1 rviz:=True
 ```
+
+You should see something like this.
+
+![](static/images/URDF_tutorial_RViz_test.png)
 
