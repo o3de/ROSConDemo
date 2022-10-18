@@ -39,11 +39,7 @@ namespace AppleKraken
 
         void ComputeGatheringPoses();
 
-        AZ::EntityId m_start;
-        AZ::EntityId m_end;
         AZ::Vector3 m_poseOffset = AZ::Vector3::CreateZero(); //!< Depends on robot / effector setting, exposed for experimenting
-        uint16_t m_appleTreeCount = 13;
-
         GatheringPoses m_gatheringPoses;
     };
 } // namespace AppleKraken
