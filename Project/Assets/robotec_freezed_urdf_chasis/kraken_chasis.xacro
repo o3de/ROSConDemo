@@ -198,6 +198,20 @@
     </link>
 
 
+    <link name="conveyor_belt">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.5"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/ConveyorBelt/ConveyorBelt.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+    </link>
+
 
     <joint name="wheel_rear_right_joint" type="continuous">
       <origin rpy="-1.570796 0.000000 0.000000" xyz="0.000000 ${-wheel_base_rear} ${wheel_radius}"/>
@@ -249,13 +263,17 @@
       <limit effort="1000000.0" lower="-0.5235" upper="0.5235" velocity="100"/>
     </joint>
 
-
-
     <joint name="lidar_mount_joint" type="fixed">
       <origin rpy="0 0 0" xyz="2.2804451 0.0 0.8967377"/>
       <parent link="base_link"/>
       <child link="lidar_mount"/>
     </joint>
 
+
+    <joint name="conveyor_belt_joint" type="fixed">
+      <origin rpy="0 0 1.571" xyz="1.1043353 0 0.0"/>
+      <parent link="base_link"/>
+      <child link="conveyor_belt"/>
+    </joint>
  
 </robot>
