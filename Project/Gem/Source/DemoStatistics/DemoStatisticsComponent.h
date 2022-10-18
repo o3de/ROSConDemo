@@ -29,16 +29,27 @@ namespace AppleKraken
 
     private:
         void DisplayNumberOfApples();
+        void DisplayStatus();
         void AddApple(const AppleEvent& appleEvent) override;
+        void OnApplePickerSpawned(const AZ::EntityId& entityId) override;
+        void SetApplePickerStatus(const AZ::EntityId& entityId, const AZStd::string& status) override;
 
         bool HasTag(const AppleEvent& appleEvent, const AZStd::string& tag);
         bool IsFailed(const Tags& tags);
         bool IsAutomated(const Tags& tags);
 
-        void UpdateTextField(const AZStd::string& fieldName, const AZStd::string& label, uint16_t counter);
+        void UpdateTextField(const AZStd::string& fieldName, const AZStd::string& label, uint16_t counter, bool labelOnly = false);
         const AZStd::string m_appleGatheredElementName = "ApplesGathered";
         const AZStd::string m_appleFailedElementName = "ApplesFailed";
+        const AZStd::string m_applePickerCountElementName = "ApplePickerCount";
+        const AZStd::string m_applePickerStatusElementName = "ApplePickerStatus";
+
         AZ::EntityId m_uiEntity;
+        struct ApplePickerStatus {
+            AZ::EntityId m_entityId;
+            AZStd::string m_status;
+        }; 
+        AZStd::list<ApplePickerStatus> m_applePickerStatus;
         uint16_t m_applesGathered = 0;
         uint16_t m_applesFailed = 0;
     };

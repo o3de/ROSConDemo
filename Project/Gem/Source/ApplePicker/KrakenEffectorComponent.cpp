@@ -184,6 +184,7 @@ namespace AppleKraken
         PickingState state;
         state.m_effectorState = m_effectorState;
         state.m_taskProgress = 0.0f; // TODO
+        state.m_description = DebugStateTransit::kMapToString.at(m_effectorState);
         if (m_currentTask.IsValid())
         {
             state.m_currentTask = m_currentTask;

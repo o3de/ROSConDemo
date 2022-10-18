@@ -153,6 +153,8 @@ namespace AppleKraken
         ApplePickingNotificationBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
 
+        DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::OnApplePickerSpawned, GetEntityId());
+
         auto ros2Node = ROS2Interface::Get()->GetNode();
         auto frame = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity());
         auto robotNamespace = frame->GetNamespace();
@@ -179,6 +181,13 @@ namespace AppleKraken
         m_progressPublisher =  ros2Node->create_publisher<std_msgs::msg::Float32>(statusTopic.c_str(),10);
         m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
 
+        auto orchestrationStatusTopic = ROS2Names::GetNamespacedName(robotNamespace, m_orchestratorStatusTopic);
+        m_orchestrationStatusSubscriber = ros2Node->create_subscription<std_msgs::msg::String>(orchestrationStatusTopic.c_str(),10,
+           [this](const std_msgs::msg::String::ConstSharedPtr msg)
+           {
+               AZStd::string label(msg->data.c_str(), msg->data.size());
+               DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), label);
+           });
     }
 
     void ApplePickerComponent::Deactivate()
@@ -203,7 +212,9 @@ namespace AppleKraken
                 ->Field("EffectorEntity", &ApplePickerComponent::m_effectorEntityId)
                 ->Field("FruitStorageEntity", &ApplePickerComponent::m_fruitStorageEntityId)
                 ->Field("RetrievalPointEntity", &ApplePickerComponent::m_retrievalPointEntityId)
-                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId);
+                ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId)
+                ->Field("OrchestratorStatusTopic", &ApplePickerComponent::m_orchestratorStatusTopic);
+
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -221,6 +232,11 @@ namespace AppleKraken
                         &ApplePickerComponent::m_cancelServiceTopic,
                         "Cancel",
                         "ROS2 service name to cancel ongoing gathering")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::Default,
+                        &ApplePickerComponent::m_orchestratorStatusTopic,
+                        "OrchestratorStatus",
+                        "ROS2 topic name with robot's status")
                     ->DataElement(
                             AZ::Edit::UIHandlers::Default,
                             &ApplePickerComponent::m_progressTopic,

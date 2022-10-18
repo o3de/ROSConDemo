@@ -16,7 +16,7 @@
 #include <std_srvs/srv/trigger.hpp>
 #include <std_srvs/srv/empty.hpp>
 #include <std_msgs/msg/float32.hpp>
-
+#include <std_msgs/msg/string.hpp>
 
 namespace AppleKraken
 {
@@ -62,6 +62,7 @@ namespace AppleKraken
 
         AZStd::string m_triggerServiceTopic = "trigger_apple_gathering";
         AZStd::string m_cancelServiceTopic = "cancel_apple_gathering";
+        AZStd::string m_orchestratorStatusTopic = "orchestration_status";
         AZStd::string m_doneServiceTopic = "done_apple_gathering";
         AZStd::string m_progressTopic = "progress_apple_gathering";
 
@@ -75,6 +76,7 @@ namespace AppleKraken
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_cancelService;
         rclcpp::Client<std_srvs::srv::Empty>::SharedPtr m_doneServiceClient;
+        rclcpp::Subscription<std_msgs::msg::String>::SharedPtr m_orchestrationStatusSubscriber;
         rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr m_progressPublisher;
 
         size_t m_initialTasksSize = 0;
