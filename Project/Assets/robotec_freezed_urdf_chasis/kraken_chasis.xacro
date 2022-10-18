@@ -188,6 +188,17 @@
       </visual>
     </link>
 
+
+    <link name="lidar_mount">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+    </link>
+
+
+
     <joint name="wheel_rear_right_joint" type="continuous">
       <origin rpy="-1.570796 0.000000 0.000000" xyz="0.000000 ${-wheel_base_rear} ${wheel_radius}"/>
       <parent link="base_link"/>
@@ -236,6 +247,14 @@
       <axis xyz="0.0 0.0 1.0"/>
       <dynamics damping="2.0" friction="1.0"/>
       <limit effort="1000000.0" lower="-0.5235" upper="0.5235" velocity="100"/>
+    </joint>
+
+
+
+    <joint name="lidar_mount_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="2.2804451 0.0 0.8967377"/>
+      <parent link="base_link"/>
+      <child link="lidar_mount"/>
     </joint>
 
  

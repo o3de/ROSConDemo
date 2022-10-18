@@ -44,7 +44,7 @@
       <inertial>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <mass value="25.0"/>
-        <inertia ixx="0.002" ixy="0.0" ixz="0.0" iyy="0.068" iyz="0.0" izz="0.067"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="8.0" iyz="0.0" izz="8.0"/>
       </inertial>
 
       <visual>
@@ -54,7 +54,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin rpy="-0.000 -0.000000 0.000000" xyz="0.000000 0.062564 -0.000045"/>
+        <origin rpy="-0.000 -0.000000 0.000000" xyz="0.2732149 0.062564 -0.000045"/>
         <geometry>
            <box size="2.019587 0.172379 0.067739"/>
          </geometry>
@@ -146,7 +146,66 @@
        </collision>
     </link>
 
-    
+
+
+    <link name="Effector">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+      
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <sphere  radius="0.05"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <box  size="0.12 0.12 0.12"/>
+        </geometry>
+      </visual>
+
+    </link>
+
+
+
+    <link name="Rest">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+      
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <sphere  radius="0.1"/>
+        </geometry>
+      </visual>
+    </link>
+
+
+
+    <link name="Reach">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+      
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <box size="1.8 0.75 1.8"/>
+        </geometry>
+      </collision>
+    </link>
+
+
 
     <joint name="kraken_manipulator_joint_0" type="fixed">
       <origin rpy="0 0 0" xyz="${manip_x} 0 0"/>
@@ -194,6 +253,23 @@
       <limit effort="1000.0" lower="0" upper="0.3" velocity="1.0"/>
     </joint>
 
+    <joint name="rest_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="${manip_x+0.2558164} -1.2641881 1.6814755"/>
+      <parent link="base_link"/>
+      <child link="Rest"/>
+    </joint>
 
-  
+    <joint name="reach_joint" type="fixed">
+      <origin rpy="-0.10471975512 0 0" xyz="${manip_x-0.4} -1.65 1.6"/>
+      <parent link="base_link"/>
+      <child link="Reach"/>
+    </joint>
+
+    <joint name="effector_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="-0.0100173 -0.0020601 0.4332509"/>
+      <parent link="kraken_manipulator_link_4"/>
+      <child link="Effector"/>
+    </joint>
+
+
 </robot>
