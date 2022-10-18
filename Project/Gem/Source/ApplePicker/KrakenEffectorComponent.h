@@ -69,6 +69,7 @@ namespace AppleKraken
         float m_currentStateTransitionTime = 0.0f;
         float m_retrieve_nose_time{ 1.5f };
         float m_stabilize_time{ 0.5f };
+        const float m_maxRetrieveTime{ 3.5f };
 
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
