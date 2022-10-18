@@ -9,6 +9,7 @@
 
 #include "AppleEvent.h"
 #include <AzCore/EBus/EBus.h>
+#include <AzCore/Component/EntityId.h>
 
 namespace AppleKraken
 {
