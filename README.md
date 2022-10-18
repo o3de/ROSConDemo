@@ -60,7 +60,7 @@ The project supports the following platforms:
 The following commands should prepare O3DE:
 
 ```
-~$ git clone https://github.com/aws-lumberyard-dev/o3de.git
+~$ git clone https://github.com/o3de/o3de.git
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
@@ -134,7 +134,7 @@ sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${
 1. Clone this project:
 
 ```
-git clone https://github.com/aws-lumberyard/ROSConDemo.git
+git clone https://github.com/o3de/ROSConDemo.git
 ```
 
 2. Register this project in O3DE engine. In O3DE directory:
