@@ -1,9 +1,14 @@
 # Importing URDF robot - ROSConDemo tutorial
 
+This document contains a step-by-step tutorial guiding through a URDF import procedure. It covers the vehicle part of the robot. This tutorial uses the [ROSConDemo project](https://github.com/o3de/ROSConDemo). 
+
+## Preparation of the project
+
+Follow the instructions in the [ROSConDemo project README](https://github.com/o3de/ROSConDemo) to build and test the project. 
+
 ## Prepare the URDF file
 
 Enter ROSConDemo folder and:
-
 
 ```bash
 cd Project/Assets/robotec_freezed_urdf_chasis
@@ -12,7 +17,7 @@ xacro apple_kraken.xacro > apple_kraken_new.urdf
 
 ## Import URDF into O3DE
 
-Run the ROSConDemo O3DE project and follow these steps
+Run the ROSConDemo O3DE project, load `Main` level and follow these steps
 
 Import `apple_kraken_new.urdf` file using `RobotImporter` button. The `apple_kraken_new` prefab should apear in the `Entity Outliner`.
 
