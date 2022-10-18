@@ -10,6 +10,7 @@
 #include "ApplePickingNotifications.h"
 #include "Manipulator/ManipulatorRequestBus.h"
 #include "PickingStructs.h"
+#include <AzCore/Component/Entity.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
