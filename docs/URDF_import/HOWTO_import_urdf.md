@@ -17,9 +17,7 @@ xacro apple_kraken.xacro > apple_kraken_new.urdf
 
 ## 3. Import URDF into O3DE
 
-Run the ROSConDemo O3DE project, load `Main` level and follow these steps
-
-Import `apple_kraken_new.urdf` file using `RobotImporter` button. The `apple_kraken_new` prefab should apear in the `Entity Outliner`.
+Run the ROSConDemo O3DE project, load `Main` level and import `apple_kraken_new.urdf` file using `RobotImporter` button. The `apple_kraken_new` prefab should apear in the `Entity Outliner`.
 
 ## 4. Set up the vehicle control
 
@@ -35,12 +33,12 @@ In the `apple_kraken_new` prefab:
 3. In the `base_link` entity add a `Vehicle Model` component. In this component:
     - Add 2 new axles by clicking `+` next to `Axles`. 
     - In the first of these axles:
-      - set `Axle tag` to `Front`
+      - Set `Axle tag` to `Front`
       - Add 2 wheels by clicking `+` next to `Axle wheels`
       - Set the first of these wheels to `wheel_front_left_link` and the second to `wheel_front_right_link` (by dragging these entities from the `Entity Outliner`). 
       - Turn on `Is it a steering axle` switch.
     - In the second of these axles:
-      - set `Axle tag` to `Rear`
+      - Set `Axle tag` to `Rear`
       - Add 2 wheels by clicking `+` next to `Axle wheels`
       - Set the first of these wheels to `wheel_rear_left_link` and the second to `wheel_rear_right_link` (by dragging these entities from the `Entity Outliner`). 
       - Turn on the `Is it a drive axle` switch.
@@ -71,16 +69,16 @@ In the `apple_kraken_new` prefab:
 
 ## 5. Set collision layers and parameters
 
-- Browse each entity and find `PhysX Collider` components. Change `Collision Layer` to `Robot` in each.
+- Browse each entity in the `apple_kraken_new` prefab and find all `PhysX Collider` components. Change `Collision Layer` to `Robot` in each.
 - Select `Reach` entity, select `PhysX Collider` and change `Collides With` to `None`
 
 ## 6. Test robot mobility
 
-Now it is a good time to test the robot. Check that the robot is standing on the ground and set a camera to see the robot. Click the Play button in the right-top corner of the O3DE window, or press `Ctrl G`. You should be able to control robot movement using arrow keys on the keyboard.
+Now it is a good time to test the robot. Check that the robot is located over the ground (but not too high) and set a camera to see the robot. Click the Play button in the right-top corner of the O3DE window, or press `Ctrl G`. You should be able to control robot movement using arrow keys on the keyboard.
 
 ## 7. Add lidar
 
-Select the `lidar_mount` entity, open the right-click menu and select `Instantiate Prefab`. Select `ROSConDemo/Project/Prefabs/LidarKraken.prefab` and click `OK`. Enter the `LidarKraken` prefab, select `Sensor` entity and change:
+Select the `lidar_mount` entity in the `apple_kraken_new` prefab, open the right-click menu and select `Instantiate Prefab`. Select `ROSConDemo/Project/Prefabs/LidarKraken.prefab` and click `OK`. Enter the `LidarKraken` prefab, select `Sensor` entity and change:
 1. Set `Ignore layer` to `True`
 2. Set `Ignored layer index` to `1`
 
@@ -92,7 +90,7 @@ Select `base_link` entity and change it's name to `apple_kraken_rusty_1`. This s
 
 ![](static/images/URDF_tutorial_base_link_name.png)
 
-Follow instructions in the [o3de_kraken_nav](https://github.com/RobotecAI/o3de_kraken_nav) to install the navigation stack. After the `Installation` part run the O3DE simulation, switch to terminal and perform:
+Follow instructions in the [o3de_kraken_nav](https://github.com/RobotecAI/o3de_kraken_nav) to install the navigation stack. After the `Installation` part run the O3DE simulation (`Ctrl G`), switch to terminal and perform:
 
 ```bash
 cd ~/o3de_kraken_ws
