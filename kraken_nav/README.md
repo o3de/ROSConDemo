@@ -122,13 +122,13 @@ source ./install/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 
-4. Run the first navigation stack with `Rviz` param set to `True`:
+3. Run the first navigation stack with `Rviz` param set to `True`:
 
 ```bash
 ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=apple_kraken_rusty_1 rviz:=True
 ```
 
-5. Run the navigation stack for rest of the robots (in different terminals, remember about points `1-3`):
+4. Run the navigation stack for rest of the robots (in different terminals, remember about points `1-3`):
 
 ```bash
 ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=apple_kraken_shiny_2 rviz:=False
@@ -136,7 +136,7 @@ ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=apple_kraken_r
 ros2 launch o3de_kraken_nav navigation_multi.launch.py namespace:=apple_kraken_shiny_4 rviz:=False
 ```
 
-6. Run the orchestration nodes for all the robots (in speparate terminals):
+5. Run the orchestration nodes for all the robots (in speparate terminals):
 
 ```bash
 ros2 run o3de_kraken_orchestration kraken_orchestration_node --ros-args -p robot_name:=apple_kraken_rusty_1 -p spawn_line:=line1
