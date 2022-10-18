@@ -2,11 +2,11 @@
 
 This document contains a step-by-step tutorial guiding through a URDF import procedure. It covers the vehicle part of the robot. This tutorial uses the [ROSConDemo project](https://github.com/o3de/ROSConDemo). 
 
-## Preparation of the project
+## 1. Preparation of the project
 
-Follow the instructions in the [ROSConDemo project README](https://github.com/o3de/ROSConDemo) to build and test the project. 
+Follow the instructions in the [ROSConDemo project README](https://github.com/o3de/ROSConDemo) to build and test the project.
 
-## Prepare the URDF file
+## 2. Prepare the URDF file
 
 Enter ROSConDemo folder and:
 
@@ -15,13 +15,13 @@ cd Project/Assets/robotec_freezed_urdf_chasis
 xacro apple_kraken.xacro > apple_kraken_new.urdf
 ```
 
-## Import URDF into O3DE
+## 3. Import URDF into O3DE
 
 Run the ROSConDemo O3DE project, load `Main` level and follow these steps
 
 Import `apple_kraken_new.urdf` file using `RobotImporter` button. The `apple_kraken_new` prefab should apear in the `Entity Outliner`.
 
-## Set up vehicle control
+## 4. Set up vehicle control
 
 In the `apple_kraken_new` prefab:
 
@@ -58,11 +58,9 @@ In the `apple_kraken_new` prefab:
 
 ![](static/images/URDF_tutorial_Vehicle_Model.png)
 
-
 4. In the `base_link` entity select `ROS2 Robot control` component and change `Topic` to `ackermann_vel` and `Steering` to `Ackermann`.
 
 ![](static/images/URDF_tutorial_ROS2_Robot_Control.png)
-
 
 5. In the `base_link` entity add a `Ackermann Control` component. 
 6. In the `base_link` entity add a `Tag` component. Add 1 tag by clicking `+` next to `Tags` and set the name to `Robot`.
@@ -71,16 +69,16 @@ In the `apple_kraken_new` prefab:
 ![](static/images/URDF_tutorial_Tag_Input.png)
 
 
-## Set collision layers and parameters
+## 5. Set collision layers and parameters
 
 - Browse each entity and find `PhysX Collider` components. Change `Collision Layer` to `Robot` in each.
 - Select `Reach` entity, select `PhysX Collider` and change `Collides With` to `None`
 
-## Test robot mobility
+## 6. Test robot mobility
 
 Now it is a good time to test the robot. Check that the robot is standing on the ground and set a camera to see the robot. Click the Play button in the right-top corner of the O3DE window, or press `Ctrl G`. You should be able to control robot movement using arrow keys on the keyboard.
 
-## Add lidar
+## 7. Add lidar
 
 Select the `lidar_mount` entity, open the right-click menu and select `Instantiate Prefab`. Select `ROSConDemo/Project/Prefabs/LidarKraken.prefab` and click `OK`. Enter the `LidarKraken` prefab, select `Sensor` entity and change:
 1. Set `Ignore layer` to `True`
@@ -88,7 +86,7 @@ Select the `lidar_mount` entity, open the right-click menu and select `Instantia
 
 ![](static/images/URDF_tutorial_Lidar_Kraken.png)
 
-## Test robot navigation
+## 8. Test robot navigation
 
 Select `base_link` entity and change it's name to `apple_kraken_rusty_1`. This step assures, that we are using correct namespace.
 
