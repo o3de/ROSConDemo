@@ -172,6 +172,17 @@
     </link>
 
 
+    <link name="RetrievalChute">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+
+    </link>
+
+
+
 
     <link name="Rest">
       <inertial>
@@ -197,12 +208,12 @@
         <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
       </inertial>
       
-      <collision>
+      <visual>
         <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
         <geometry>
           <box size="1.8 0.75 1.8"/>
         </geometry>
-      </collision>
+      </visual>
     </link>
 
 
@@ -269,6 +280,12 @@
       <origin rpy="0 0 0" xyz="-0.0100173 -0.0020601 0.4332509"/>
       <parent link="kraken_manipulator_link_4"/>
       <child link="Effector"/>
+    </joint>
+
+    <joint name="retrieval_chute_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="1.3339844 -0.2378311 1.3847573"/>
+      <parent link="base_link"/>
+      <child link="RetrievalChute"/>
     </joint>
 
 
