@@ -129,9 +129,9 @@ local_costmap:
           clearing: True
           marking: True
           data_type: "LaserScan"
-          raytrace_max_range: 20.0
+          raytrace_max_range: 60.0
           raytrace_min_range: 0.0
-          obstacle_max_range: 20.0
+          obstacle_max_range: 60.0
           obstacle_min_range: 0.0
       always_send_full_costmap: True
   local_costmap_client:
@@ -168,9 +168,9 @@ global_costmap:
           clearing: True
           marking: True
           data_type: "LaserScan"
-          raytrace_max_range: 40.0
+          raytrace_max_range: 60.0
           raytrace_min_range: 0.0
-          obstacle_max_range: 40.0
+          obstacle_max_range: 60.0
           obstacle_min_range: 0.0
       inflation_layer:
         enabled: True
