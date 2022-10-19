@@ -31,7 +31,7 @@ class JoyToAckermann(Node):
     def joy_callback(self, msg):
         drive = AckermannDrive()
         drive.speed = 1.5*msg.axes[1]
-        drive.steering_angle = 1.1*msg.axes[2]
+        drive.steering_angle = 1.1*msg.axes[0]
         self.publisher .publish(drive)
     
 

@@ -9,7 +9,6 @@ def generate_launch_description():
         'namespace',
         default_value='',
     )
-    print (namespace.variable_name())
     return LaunchDescription([
         declare_namespace_cmd,
         Node(
