@@ -97,6 +97,10 @@ namespace AppleKraken
         {
             m_desiredPosition = *m_desiredApple;
         }
+        else if (m_positionRequest)
+        {
+            m_desiredPosition = *m_positionRequest;
+        }
         else
         {
             AZ::TransformBus::EventResult(m_desiredPosition, m_restEntity, &AZ::TransformBus::Events::GetWorldTranslation);
@@ -170,10 +174,19 @@ namespace AppleKraken
         AZ_Printf("ManipulatorController", "PickApple\n");
         ResetTimer();
         m_desiredApple = position;
+        m_positionRequest.reset();
     };
+
+    void ManipulatorController::GoToPosition(const AZ::Vector3 position)
+    {
+        m_desiredApple.reset();
+        m_positionRequest = position;
+    };
+
 
     AZ::Vector3 ManipulatorController::GetPosition()
     {
+        //ToDo implement
         return AZ::Vector3(0);
     };
 
@@ -183,6 +196,7 @@ namespace AppleKraken
         m_time_XZ_ok = std::numeric_limits<float>::lowest();
         m_noseRetrieved = true;
         m_desiredApple.reset();
+        m_positionRequest.reset();
     };
     void ManipulatorController::RetrieveNose()
     {

@@ -12,6 +12,7 @@
 #include "DemoStatistics/DemoStatisticsComponent.h"
 #include "FruitStorage/FruitStorageComponent.h"
 #include "Manipulator/KrakenManipulatorController.h"
+#include "Manipulator/ManipulatorJoySubscriber.h"
 #include "KrakenCamera/FollowingCameraComponent.h"
 #include "ROSConDemoSystemComponent.h"
 #include <AzCore/Memory/SystemAllocator.h>
@@ -37,7 +38,8 @@ namespace ROSConDemo
                   AppleKraken::FruitStorageComponent::CreateDescriptor(),
                   AppleKraken::DemoStatisticsComponent::CreateDescriptor(),
                   AppleKraken::ManipulatorController::CreateDescriptor(),
-                  AppleKraken::FollowingCameraComponent::CreateDescriptor() });
+                  AppleKraken::FollowingCameraComponent::CreateDescriptor(),
+                  AppleKraken::ManipulatorJoySubscriber::CreateDescriptor() });
         }
 
         AZ::ComponentTypeList GetRequiredSystemComponents() const override
