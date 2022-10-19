@@ -436,7 +436,8 @@
                     "Id": 3691948631299900871,
                     "Child Entity Order": [
                         "Entity_[126305263729308]",
-                        "Entity_[49624638919053]"
+                        "Entity_[49624638919053]",
+                        "Entity_[4496489508844]"
                     ]
                 },
                 "Component_[4417776303498956820]": {
@@ -2101,7 +2102,11 @@
                 },
                 "Component_[1935418376842285128]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 1935418376842285128
+                    "Id": 1935418376842285128,
+                    "Child Entity Order": [
+                        "Entity_[2534338808675]",
+                        "Entity_[2542928743267]"
+                    ]
                 },
                 "Component_[394584207891896443]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -3987,7 +3992,6 @@
                 "Component_[4717135159086115019]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 4717135159086115019,
-                    "GameView": false,
                     "ShapeColor": [
                         1.0,
                         0.0,
@@ -4630,6 +4634,87 @@
                 }
             }
         },
+        "Entity_[4496489508844]": {
+            "Id": "Entity_[4496489508844]",
+            "Name": "camera",
+            "Components": {
+                "Component_[10339226228768129102]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 10339226228768129102
+                },
+                "Component_[14284311215250335833]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 14284311215250335833,
+                    "Parent Entity": "Entity_[126300968762012]",
+                    "Transform Data": {
+                        "Translate": [
+                            -0.16611474752426147,
+                            0.0000057220458984375,
+                            0.18544769287109375
+                        ],
+                        "Rotate": [
+                            0.000008263266863650642,
+                            0.0000034335987493250286,
+                            -89.99994659423828
+                        ]
+                    }
+                },
+                "Component_[15476078910411106164]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 15476078910411106164
+                },
+                "Component_[2448588360942929597]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 2448588360942929597
+                },
+                "Component_[3643507305771218454]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 3643507305771218454,
+                    "m_template": {
+                        "$type": "ROS2FrameComponent"
+                    }
+                },
+                "Component_[3879386484406930788]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 3879386484406930788,
+                    "m_template": {
+                        "$type": "ROS2CameraSensorComponent",
+                        "SensorConfiguration": {
+                            "Publishers": {
+                                "sensor_msgs::msg::CameraInfo": {
+                                    "Type": "sensor_msgs::msg::CameraInfo",
+                                    "Topic": "camera_info"
+                                },
+                                "sensor_msgs::msg::Image": {
+                                    "Type": "sensor_msgs::msg::Image",
+                                    "Topic": "camera_image"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Component_[6182577240806786857]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 6182577240806786857
+                },
+                "Component_[620482302983115945]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 620482302983115945
+                },
+                "Component_[6721755778232440424]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 6721755778232440424
+                },
+                "Component_[7848096227282922909]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 7848096227282922909
+                },
+                "Component_[9585565379676359094]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 9585565379676359094
+                }
+            }
+        },
         "Entity_[453802196716717]": {
             "Id": "Entity_[453802196716717]",
             "Name": "camera",
@@ -4644,7 +4729,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 60.0,
-                            "EditorEntityId": 12742172260309117416
+                            "EditorEntityId": 9351733487673859408
                         }
                     }
                 },
@@ -4816,7 +4901,7 @@
                             ]
                         }
                     },
-                "ShapeConfiguration": {
+                    "ShapeConfiguration": {
                         "ShapeType": 2,
                         "Capsule": {
                             "Height": 0.2000001221895218,
@@ -4839,7 +4924,6 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
-                    "GameView": false,
                     "ShapeColor": [
                         0.0,
                         0.0,
