@@ -24,6 +24,8 @@ set(FILES
         Source/KrakenCamera/FollowingCameraComponent.h
         Source/Manipulator/KrakenManipulatorController.cpp
         Source/Manipulator/KrakenManipulatorController.h
+        Source/Manipulator/ManipulatorJoySubscriber.cpp
+        Source/Manipulator/ManipulatorJoySubscriber.h
         Source/Manipulator/ManipulatorRequestBus.cpp
         Source/Manipulator/ManipulatorRequestBus.h
         Source/ROSConDemoSystemComponent.cpp

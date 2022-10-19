@@ -31,6 +31,7 @@ namespace AppleKraken
         void Activate() override;
         void Deactivate() override;
         static void Reflect(AZ::ReflectContext* context);
+        void GoToPosition(const AZ::Vector3 position);
 
     private:
         bool initialized{ false };
@@ -46,6 +47,8 @@ namespace AppleKraken
 
         AZ::Vector3 m_desiredPosition{0, 0, 0 };
         AZStd::optional<AZ::Vector3> m_desiredApple;
+        AZStd::optional<AZ::Vector3> m_positionRequest;
+
         bool m_noseRetrieved{false };
 
         AZ::Vector3 m_vectorX{1, 0, 0 };
