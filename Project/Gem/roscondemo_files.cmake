@@ -20,6 +20,8 @@ set(FILES
         Source/FruitStorage/FruitStorageComponent.cpp
         Source/FruitStorage/FruitStorageComponent.h
         Source/FruitStorage/FruitStorageBus.h
+        Source/KrakenCamera/CameraJoySubscriber.cpp
+        Source/KrakenCamera/CameraJoySubscriber.h
         Source/KrakenCamera/FollowingCameraComponent.cpp
         Source/KrakenCamera/FollowingCameraComponent.h
         Source/Manipulator/KrakenManipulatorController.cpp
