@@ -9,10 +9,14 @@
 #include "ManipulatorJoySubscriber.h"
 #include "KrakenManipulatorController.h"
 
+#include "DemoStatistics/DemoStatisticsNotifications.h"
+
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
 #include <ROS2/Utilities/ROS2Names.h>
 
+#include <AzFramework/Physics/RigidBodyBus.h>
+#include <AtomLyIntegration/CommonFeatures/Mesh/MeshComponentBus.h>
 #include <LmbrCentral/Shape/BoxShapeComponentBus.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/SerializeContext.h>
@@ -41,6 +45,7 @@ namespace AppleKraken
        });
        ManipulatorRequestBus::Handler::BusConnect(GetEntityId());
        AZ::TickBus::Handler::BusConnect();
+       m_registeredCallback = false;
     }
 
     void ManipulatorJoySubscriber::Deactivate()
@@ -59,8 +64,9 @@ namespace AppleKraken
                     ->Field("AxisManipulatorX", &ManipulatorJoySubscriber::m_axisManipulatorX)
                     ->Field("AxisManipulatorY", &ManipulatorJoySubscriber::m_axisManipulatorY)
                     ->Field("AxisManipulatorZ", &ManipulatorJoySubscriber::m_axisManipulatorZ)
-                    ->Field("DebugEntity", &ManipulatorJoySubscriber::m_debug);
-
+                    ->Field("DebugEntity", &ManipulatorJoySubscriber::m_debug)
+                    ->Field("m_appleProbe", &ManipulatorJoySubscriber::m_appleProbe)
+                    ->Field("m_entityToFail", &ManipulatorJoySubscriber::m_entityToFail);
 
             if (AZ::EditContext *ec = serialize->GetEditContext()) {
                 ec->Class<ManipulatorJoySubscriber>("ManipulatorJoySubscriber", "ManipulatorJoySubscriber")
@@ -91,13 +97,123 @@ namespace AppleKraken
                                 AZ::Edit::UIHandlers::EntityId,
                                 &ManipulatorJoySubscriber::m_debug,
                                 "DebugEntity",
-                                "DebugEntity");
+                                "DebugEntity")
+                        ->DataElement(
+                                AZ::Edit::UIHandlers::EntityId,
+                                &ManipulatorJoySubscriber::m_appleProbe,
+                                "AppleProbe",
+                                "Effector that cause apples to gather")
+                        ->DataElement(
+                                AZ::Edit::UIHandlers::EntityId,
+                                &ManipulatorJoySubscriber::m_entityToFail,
+                                "FailProbe",
+                                "Effector that cause apples to fail");
+
 
             }
         }
     }
 
     void ManipulatorJoySubscriber::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time){
+
+        if (!m_registeredCallback)
+        {
+            if (m_appleProbe.IsValid()) {
+                m_onTriggerHandleBeginHandlerApple = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler(
+                        [&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle,
+                            [[maybe_unused]] const AzPhysics::TriggerEvent &event) {
+                            if (m_deactivate) {
+                                return;
+                            }
+
+                            const AZ::EntityId &e1 = event.m_otherBody->GetEntityId();
+                            const AZ::EntityId &e2 = event.m_triggerBody->GetEntityId();
+                            const AZ::EntityId &collideToEntityId = m_appleProbe == e1 ? e2 : e1;
+
+                            AZStd::string entity_name;
+                            AZ::ComponentApplicationBus::BroadcastResult(entity_name,
+                                                                         &AZ::ComponentApplicationRequests::GetEntityName,
+                                                                         collideToEntityId);
+                            if (entity_name == "Apple") {
+                                // is apple visible
+                                bool is_visible = false;
+                                AZ::Render::MeshComponentRequestBus::EventResult(
+                                        is_visible, collideToEntityId,
+                                        &AZ::Render::MeshComponentRequests::GetVisibility);
+
+                                if (is_visible) {
+                                    Tags applePickingEventTags = {kPickingAutomatedEventTag};
+                                    DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple,
+                                                                             applePickingEventTags);
+
+                                    // hide apple
+                                    AZ::Render::MeshComponentRequestBus::Event(collideToEntityId,
+                                                                               &AZ::Render::MeshComponentRequests::SetVisibility,
+                                                                               false);
+                                }
+                            }
+                        });
+            }
+
+            if (m_entityToFail.IsValid()) {
+                m_onTriggerHandleBeginHandlerFail = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler(
+                        [&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle,
+                            [[maybe_unused]] const AzPhysics::TriggerEvent &event) {
+                            if (m_deactivate) {
+                                return;
+                            }
+
+                            const AZ::EntityId &e1 = event.m_otherBody->GetEntityId();
+                            const AZ::EntityId &e2 = event.m_triggerBody->GetEntityId();
+                            const AZ::EntityId &collideToEntityId = m_entityToFail == e1 ? e2 : e1;
+                            AZStd::string entity_name;
+                            AZ::ComponentApplicationBus::BroadcastResult(entity_name,
+                                                                         &AZ::ComponentApplicationRequests::GetEntityName,
+                                                                         collideToEntityId);
+                            AZ_Printf("m_onTriggerHandleBeginHandlerFail", "onFail : %s ",entity_name.c_str() );
+                            if (entity_name == "Apple") {
+                                // is apple visible
+                                bool is_visible = false;
+                                AZ::Render::MeshComponentRequestBus::EventResult(
+                                        is_visible, collideToEntityId,
+                                        &AZ::Render::MeshComponentRequests::GetVisibility);
+
+                                if (is_visible) {
+                                    Tags applePickingEventTags = {kPickingFailedEventTag};
+                                    DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::AddApple,
+                                                                             applePickingEventTags);
+
+                                    Physics::RigidBodyRequestBus::Event(collideToEntityId, &Physics::RigidBodyRequestBus::Events::SetKinematic, false);
+                                    Physics::RigidBodyRequestBus::Event(collideToEntityId, &Physics::RigidBodyRequestBus::Events::SetGravityEnabled, true);
+                                }
+                            }
+                        });
+            }
+
+            auto* physicsSystem = AZ::Interface<AzPhysics::SystemInterface>::Get();
+            auto* sceneInterface = AZ::Interface<AzPhysics::SceneInterface>::Get();
+            if (m_appleProbe.IsValid()) {
+                auto [physicScene, physicBody] = physicsSystem->FindAttachedBodyHandleFromEntityId(m_appleProbe);
+                if (physicBody != AzPhysics::InvalidSimulatedBodyHandle &&
+                    physicScene != AzPhysics::InvalidSceneHandle) {
+                    AzPhysics::SimulatedBody *simulated_body = sceneInterface->GetSimulatedBodyFromHandle(physicScene,
+                                                                                                          physicBody);
+                    simulated_body->RegisterOnTriggerEnterHandler(m_onTriggerHandleBeginHandlerApple);
+
+                }
+            }
+            if (m_entityToFail.IsValid()) {
+                auto [physicScene, physicBody] = physicsSystem->FindAttachedBodyHandleFromEntityId(m_entityToFail);
+                if (physicBody != AzPhysics::InvalidSimulatedBodyHandle &&
+                    physicScene != AzPhysics::InvalidSceneHandle) {
+                    AzPhysics::SimulatedBody *simulated_body = sceneInterface->GetSimulatedBodyFromHandle(physicScene,
+                                                                                                          physicBody);
+                    simulated_body->RegisterOnTriggerEnterHandler(m_onTriggerHandleBeginHandlerFail);
+                }
+            }
+            m_registeredCallback = true;
+        }
+
         if (m_deactivate) {
             return;
             AZ::TransformBus::Event( m_debug, &AZ::TransformBus::Events::SetWorldTranslation,AZ::Vector3{0,0,-5.f});

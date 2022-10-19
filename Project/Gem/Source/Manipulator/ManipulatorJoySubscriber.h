@@ -20,6 +20,15 @@
 #include <sensor_msgs/msg/joy.hpp>
 #include <std_srvs/srv/trigger.hpp>
 
+#include <AzFramework/Physics/Common/PhysicsSceneQueries.h>
+#include <AzFramework/Physics/Common/PhysicsSimulatedBody.h>
+#include <AzFramework/Physics/Configuration/RigidBodyConfiguration.h>
+#include <AzFramework/Physics/PhysicsScene.h>
+#include <AzFramework/Physics/PhysicsSystem.h>
+#include <AzFramework/Physics/Shape.h>
+#include <AzFramework/Physics/SystemBus.h>
+
+
 namespace AppleKraken
 {
     class ManipulatorJoySubscriber
@@ -46,11 +55,12 @@ namespace AppleKraken
         rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr m_triggerService;
 
         AZStd::string m_joyTopic{"/joy"};
-        AZ::Vector3 m_speeds {0.02,-0.001,0.02};
+        AZ::Vector3 m_speeds {0.02,-0.01,0.02};
         AZ::EntityId m_reachEntity;
         AZ::EntityId m_manipulatorEntity;
         AZ::EntityId m_debug;
-
+        AZ::EntityId m_appleProbe;
+        AZ::EntityId m_entityToFail;
 
         AZ::Vector3 m_currentSetpoint{0,0,0};
         AZ::Vector3 m_joyInput{0,0,0};
@@ -58,6 +68,11 @@ namespace AppleKraken
         uint16_t  m_axisManipulatorX {2};
         uint16_t  m_axisManipulatorY {5};
         uint16_t  m_axisManipulatorZ {3};
+
+        bool m_registeredCallback{ false };
+        AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandlerApple;
+        AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandlerFail;
+
 
         bool m_deactivate{true};
 
