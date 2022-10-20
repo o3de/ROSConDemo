@@ -10,8 +10,8 @@
 
 #include <AzCore/Component/Component.h>
 #include <AzCore/Component/TickBus.h>
-#include <AzFramework/Input/Events/InputChannelEventListener.h>
 #include <AzFramework/Components/TransformComponent.h>
+#include <AzFramework/Input/Events/InputChannelEventListener.h>
 
 namespace AppleKraken
 {
@@ -27,17 +27,17 @@ namespace AppleKraken
         static void GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required);
 
         static void Reflect(AZ::ReflectContext* reflection);
-        
+
         AZ_COMPONENT(FollowingCameraComponent, "{92317883-9956-455E-9A1C-BF8986DC2F80}", AZ::Component);
-        
+
         // AZ::Component
         void Init() override;
         void Activate() override;
         void Deactivate() override;
-        
+
         // AZ::TickBus
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
-        
+
         // AzFramework::InputChannelEventListener
         bool OnInputChannelEventFiltered(const AzFramework::InputChannel& inputChannel) override;
 
@@ -55,7 +55,6 @@ namespace AppleKraken
         float m_rotationChange = 0.0f;
         float m_rotationChange2 = 0.0f;
 
-
         float m_zoomChange = 0.0f;
 
         int m_smoothingBuffer = 30;
@@ -63,11 +62,13 @@ namespace AppleKraken
         float m_zoomSpeed = 0.06f;
         float m_rotationSpeed = 0.05f;
 
-        const float m_zoomMin = -25.f;
-        const float m_zoomMax = 0.6f;
+        float m_min_camera_distance = 1.5f;
+        float m_max_camera_distance = 25.0f;
 
+        bool m_look_at_center_entity = false;
 
-        AZStd::deque<AZStd::pair<AZ::Vector3,float>> m_lastTransforms;
+        bool m_activated = false;
 
+        AZStd::deque<AZStd::pair<AZ::Vector3, float>> m_lastTransforms;
     };
-}
+} // namespace AppleKraken
