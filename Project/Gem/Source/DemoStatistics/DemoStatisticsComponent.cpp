@@ -62,10 +62,9 @@ namespace AppleKraken
         if (IsFailed(appleEvent))
         {
             m_applesFailed++;
-            return;
-        }   
-
-        m_applesGathered++;
+        }else{
+            m_applesGathered++;
+        }
         DisplayNumberOfApples();
     }
 
