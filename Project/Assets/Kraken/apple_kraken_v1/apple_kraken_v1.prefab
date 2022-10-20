@@ -3913,6 +3913,17 @@
                         }
                     }
                 },
+                "Component_[12627599096047669120]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 12627599096047669120,
+                    "m_template": {
+                        "$type": "UiCanvasAssetRefComponent",
+                        "CanvasAssetRef": {
+                            "AssetPath": "ui/joystick.uicanvas"
+                        },
+                        "IsAutoLoad": true
+                    }
+                },
                 "Component_[14009251538560288926]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 14009251538560288926
