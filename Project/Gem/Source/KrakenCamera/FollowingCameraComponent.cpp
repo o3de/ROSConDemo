@@ -45,7 +45,7 @@ namespace AppleKraken
                         AZ::Edit::UIHandlers::EntityId, &FollowingCameraComponent::m_target, "Target", "Entity of the followed object")
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
-                        &FollowingCameraComponent::m_target,
+                        &FollowingCameraComponent::m_smoothingBuffer,
                         "SmoothingLength",
                         "Number of past transform used to smooth")
                     ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_zoomSpeed, "Zoom Speed", "Zoom speed")
@@ -66,7 +66,7 @@ namespace AppleKraken
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
                         &FollowingCameraComponent::m_look_at_center_entity,
-                        "Look At Center Entity",
+                        "Look At Target",
                         "If true, camera will be rotatet to look at the rotation center entity");
             }
         }
