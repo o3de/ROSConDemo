@@ -55,7 +55,7 @@ The project supports the following platforms:
    sure that the system/hardware requirements are met.
 2. Please follow the instructions
    to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
-3. **Use the `roscon_2022` branch**: `git checkout roscon_2022`.
+3. **Use the `development` branch**: `git checkout development`.
 
 The following commands should prepare O3DE:
 
