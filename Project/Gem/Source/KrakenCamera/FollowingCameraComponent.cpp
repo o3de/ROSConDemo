@@ -124,6 +124,8 @@ namespace AppleKraken
                 EBUS_EVENT_ID(GetEntityId(), AZ::TransformBus, SetWorldTM, new_pose);
             }
 
+            // TODO using GetLocalTM here may lead to problems, if the camera is not in the top level of prefab hierarchy. To be tested and
+            // considered to use GetWorldTM instead
             EBUS_EVENT_ID_RESULT(m_initialPose, GetEntityId(), AZ::TransformBus, GetLocalTM);
             m_activated = true;
         }
