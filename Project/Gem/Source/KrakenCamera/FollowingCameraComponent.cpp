@@ -40,7 +40,7 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->DataElement(AZ::Edit::UIHandlers::CheckBox, &FollowingCameraComponent::m_isActive, "Active", "")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &FollowingCameraComponent::m_target, "Target", "Entity of the followed object")
-                    ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_target, "SmoothingLength", "Number of past transform used to smooth")
+                    ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_smoothingBuffer, "SmoothingLength", "Number of past transform used to smooth")
                     ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_zoomSpeed, "Zoom Speed", "Zoom speed")
                     ->DataElement(AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_rotationSpeed, "Rotation Speed", "Rotation Speed");
             }
@@ -84,15 +84,18 @@ namespace AppleKraken
         EBUS_EVENT_ID_RESULT(target_world_transform, m_target, AZ::TransformBus, GetWorldTM);
 
         m_lastTransforms.push_back(AZStd::make_pair(target_world_transform.GetTranslation(), deltaTime));
+        m_lastRotations.push_back(AZStd::make_pair(target_world_transform.GetRotation(), deltaTime));
+
         if (m_lastTransforms.size() > m_smoothingBuffer){
             m_lastTransforms.pop_front();
+            m_lastRotations.pop_front();
         }
         AZ::Vector3 translation = SmoothTranslation();
-
+        AZ::Quaternion quat = SmoothRotation();
         AZ::Transform filtered_transform =
             {
                 translation,
-                AZ::Quaternion::CreateRotationZ(target_world_transform.GetEulerRadians().GetZ()),
+                AZ::Quaternion::CreateRotationZ(quat.GetEulerRadians().GetZ()),
                 target_world_transform.GetUniformScale()
             };
 
@@ -112,6 +115,7 @@ namespace AppleKraken
 
         EBUS_EVENT_ID(GetEntityId(), AZ::TransformBus, SetWorldTM, filtered_transform * modified_transform);
 
+
     }
 
     AZ::Vector3 FollowingCameraComponent::SmoothTranslation() const
@@ -123,6 +127,20 @@ namespace AppleKraken
             normalization+=p.second;
         }
         return sum/normalization;
+    }
+
+    AZ::Quaternion FollowingCameraComponent::SmoothRotation() const
+    {
+        // Smoothing is done by taking an exponential map. Note that the exponential map is the same thing as 'ScaledAxisAngle'
+        // for 3D rotations. This map can be treated as linear space locally.
+        // In that linear space the average is computed. It should give a pleasant experience for slow-moving objects.
+        float normalization{0};
+        AZ::Vector3 sum{0};
+        for (const auto& p : m_lastRotations){
+            sum += p.second * (p.first.ConvertToScaledAxisAngle());
+            normalization+=p.second;
+        }
+        return AZ::Quaternion::CreateFromScaledAxisAngle(sum/normalization);
     }
 
     bool FollowingCameraComponent::OnInputChannelEventFiltered(const AzFramework::InputChannel& inputChannel)
