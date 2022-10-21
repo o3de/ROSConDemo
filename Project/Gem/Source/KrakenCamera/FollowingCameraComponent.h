@@ -46,6 +46,8 @@ namespace AppleKraken
 
         AZ::Vector3 SmoothTranslation() const;
 
+        AZ::Quaternion SmoothRotation() const;
+
         bool m_isActive = true;
 
         AZ::Transform m_initialPose;
@@ -54,12 +56,9 @@ namespace AppleKraken
 
         float m_rotationChange = 0.0f;
         float m_rotationChange2 = 0.0f;
-
-
         float m_zoomChange = 0.0f;
 
         int m_smoothingBuffer = 30;
-
         float m_zoomSpeed = 0.06f;
         float m_rotationSpeed = 0.05f;
 
@@ -68,6 +67,7 @@ namespace AppleKraken
 
 
         AZStd::deque<AZStd::pair<AZ::Vector3,float>> m_lastTransforms;
+        AZStd::deque<AZStd::pair<AZ::Quaternion,float>> m_lastRotations;
 
     };
 }
