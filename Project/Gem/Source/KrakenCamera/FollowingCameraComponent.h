@@ -62,10 +62,10 @@ namespace AppleKraken
         float m_zoomSpeed = 0.06f;
         float m_rotationSpeed = 0.05f;
 
-        float m_min_camera_distance = 1.5f;
-        float m_max_camera_distance = 25.0f;
+        float m_minCameraDistance = 1.5f;
+        float m_maxCameraDistance = 25.0f;
 
-        bool m_look_at_center_entity = false;
+        bool m_lookAtCenterEntity = false;
 
         bool m_activated = false;
 

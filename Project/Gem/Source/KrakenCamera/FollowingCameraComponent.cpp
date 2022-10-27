@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Contributors to the Open 3D Engine Project.
- * For complete copyright and license terms please see the LICENSE at the root of this distribution.
- *
- * SPDX-License-Identifier: Apache-2.0 OR MIT
- *
- */
+* Copyright (c) Contributors to the Open 3D Engine Project.
+* For complete copyright and license terms please see the LICENSE at the root of this distribution.
+*
+* SPDX-License-Identifier: Apache-2.0 OR MIT
+*
+*/
 
 #include "FollowingCameraComponent.h"
 
@@ -29,9 +29,9 @@ namespace AppleKraken
                 ->Field("SmoothingLength", &FollowingCameraComponent::m_smoothingBuffer)
                 ->Field("ZoomSpeed", &FollowingCameraComponent::m_zoomSpeed)
                 ->Field("RotationSpeed", &FollowingCameraComponent::m_rotationSpeed)
-                ->Field("MinCameraDistance", &FollowingCameraComponent::m_min_camera_distance)
-                ->Field("MaxCameraDistance", &FollowingCameraComponent::m_max_camera_distance)
-                ->Field("LookAtCenterEntity", &FollowingCameraComponent::m_look_at_center_entity);
+                ->Field("MinCameraDistance", &FollowingCameraComponent::m_minCameraDistance)
+                ->Field("MaxCameraDistance", &FollowingCameraComponent::m_maxCameraDistance)
+                ->Field("LookAtCenterEntity", &FollowingCameraComponent::m_lookAtCenterEntity);
 
             AZ::EditContext* editContext = serializeContext->GetEditContext();
             if (editContext)
@@ -53,19 +53,19 @@ namespace AppleKraken
                         AZ::Edit::UIHandlers::Default, &FollowingCameraComponent::m_rotationSpeed, "Rotation Speed", "Rotation Speed")
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
-                        &FollowingCameraComponent::m_min_camera_distance,
+                        &FollowingCameraComponent::m_minCameraDistance,
                         "Min. Camera Distance",
                         "Camera move-foreward limit")
                     ->Attribute(AZ::Edit::Attributes::Min, 0.0)
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
-                        &FollowingCameraComponent::m_max_camera_distance,
+                        &FollowingCameraComponent::m_maxCameraDistance,
                         "Max. Camera Distance",
                         "Camera move-backward limit")
                     ->Attribute(AZ::Edit::Attributes::Min, 0.0)
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
-                        &FollowingCameraComponent::m_look_at_center_entity,
+                        &FollowingCameraComponent::m_lookAtCenterEntity,
                         "Look At Target",
                         "If true, camera will be rotatet to look at the rotation center entity");
             }
@@ -104,11 +104,13 @@ namespace AppleKraken
             return;
         }
 
+        // Check, if the component was already activated (initialized). If not, perform activation. 
         if (!m_activated)
         {
-            if (m_look_at_center_entity)
+            if (m_lookAtCenterEntity)
             {
-                // m_target may be not initiated on Activate(). We have to wait for it.
+                // Some initiatialization tasks can not be done in the Activate(), because m_target entitie may not be accessible at that 
+                // moment. We must wait for it.  
                 AZ::Transform center_transform;
                 EBUS_EVENT_ID_RESULT(center_transform, m_target, AZ::TransformBus, GetWorldTM);
                 AZ::Transform self_transform;
@@ -197,16 +199,16 @@ namespace AppleKraken
             return;
         }
 
-        if (m_min_camera_distance > m_max_camera_distance)
+        if (m_minCameraDistance > m_maxCameraDistance)
         {
-            m_max_camera_distance = m_min_camera_distance;
+            m_maxCameraDistance = m_minCameraDistance;
         }
 
         const AzFramework::InputChannelId& channelId = inputChannel.GetInputChannelId();
         // TODO take into account the refresh rate on key pressed for smooth experience
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericW)
         {
-            m_zoomChange = AZStd::min((-m_min_camera_distance + 2.0f), m_zoomChange + m_zoomSpeed);
+            m_zoomChange = AZStd::min((-m_minCameraDistance + 2.0f), m_zoomChange + m_zoomSpeed);
         }
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericA)
         {
@@ -218,7 +220,7 @@ namespace AppleKraken
         }
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericS)
         {
-            m_zoomChange = AZStd::max(-m_max_camera_distance, m_zoomChange - m_zoomSpeed);
+            m_zoomChange = AZStd::max(-m_maxCameraDistance, m_zoomChange - m_zoomSpeed);
         }
 
         if (channelId == AzFramework::InputDeviceKeyboard::Key::AlphanumericD)
