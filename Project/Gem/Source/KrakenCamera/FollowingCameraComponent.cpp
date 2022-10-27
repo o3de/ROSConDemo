@@ -107,28 +107,28 @@ namespace AppleKraken
         // Check, if the component was already activated (initialized). If not, perform activation. 
         if (!m_activated)
         {
-            if (m_lookAtCenterEntity)
+            AZ::Transform center_transform;
+            EBUS_EVENT_ID_RESULT(center_transform, m_target, AZ::TransformBus, GetWorldTM);
+            AZ::Transform self_transform;
+            EBUS_EVENT_ID_RESULT(self_transform, GetEntityId(), AZ::TransformBus, GetWorldTM);
+
+            // Some initiatialization tasks can not be done in the Activate(), because m_target entitie may not be accessible at that 
+            // moment. We must wait for it.  
+            if (!center_transform.IsFinite() || !self_transform.IsFinite())
             {
-                // Some initiatialization tasks can not be done in the Activate(), because m_target entitie may not be accessible at that 
-                // moment. We must wait for it.  
-                AZ::Transform center_transform;
-                EBUS_EVENT_ID_RESULT(center_transform, m_target, AZ::TransformBus, GetWorldTM);
-                AZ::Transform self_transform;
-                EBUS_EVENT_ID_RESULT(self_transform, GetEntityId(), AZ::TransformBus, GetWorldTM);
-
-                if (!center_transform.IsFinite() || !self_transform.IsFinite())
-                {
-                    return;
-                }
-
-                AZ::Transform new_pose = AZ::Transform::CreateLookAt(self_transform.GetTranslation(), center_transform.GetTranslation());
-                new_pose.SetTranslation(self_transform.GetTranslation());
-                EBUS_EVENT_ID(GetEntityId(), AZ::TransformBus, SetWorldTM, new_pose);
+                return;
             }
 
-            // TODO using GetLocalTM here may lead to problems, if the camera is not in the top level of prefab hierarchy. To be tested and
-            // considered to use GetWorldTM instead
-            EBUS_EVENT_ID_RESULT(m_initialPose, GetEntityId(), AZ::TransformBus, GetLocalTM);
+            if (m_lookAtCenterEntity)
+            {
+                AZ::Transform new_pose = AZ::Transform::CreateLookAt(self_transform.GetTranslation(), center_transform.GetTranslation());
+                new_pose.SetTranslation(self_transform.GetTranslation());
+                self_transform = new_pose;
+                EBUS_EVENT_ID(GetEntityId(), AZ::TransformBus, SetWorldTM, self_transform);
+            }
+
+            center_transform.SetRotation(self_transform.GetRotation());
+            m_initialPose = center_transform.GetInverse() * self_transform;
             m_activated = true;
         }
         else
