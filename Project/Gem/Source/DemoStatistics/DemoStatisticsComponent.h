@@ -45,10 +45,11 @@ namespace AppleKraken
         const AZStd::string m_applePickerStatusElementName = "ApplePickerStatus";
 
         AZ::EntityId m_uiEntity;
-        struct ApplePickerStatus {
+        struct ApplePickerStatus
+        {
             AZ::EntityId m_entityId;
             AZStd::string m_status;
-        }; 
+        };
         AZStd::list<ApplePickerStatus> m_applePickerStatus;
         uint16_t m_applesGathered = 0;
         uint16_t m_applesFailed = 0;
