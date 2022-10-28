@@ -19,16 +19,16 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<GatheringRowComponent, AZ::Component>()
-                ->Version(4)
-                ->Field("PoseOffset", &GatheringRowComponent::m_poseOffset);
+            serialize->Class<GatheringRowComponent, AZ::Component>()->Version(4)->Field("PoseOffset", &GatheringRowComponent::m_poseOffset);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
-                ec->Class<GatheringRowComponent>("Gathering Row Component", "Poses (points with orientation) suitable for apple gathering."
-                                                                            "Component will return as navigation plan all its children "
-                                                                            "with name containing \'GatherPoint\'. "
-                                                                            "Points are sorted with entity name.")
+                ec->Class<GatheringRowComponent>(
+                      "Gathering Row Component",
+                      "Poses (points with orientation) suitable for apple gathering."
+                      "Component will return as navigation plan all its children "
+                      "with name containing \'GatherPoint\'. "
+                      "Points are sorted with entity name.")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
@@ -65,22 +65,23 @@ namespace AppleKraken
         }
         // Simplification - we assume same orientations along the way
         AZStd::map<AZStd::string, AZ::EntityId> sorted_names;
-        for (const auto& entity_id:descendants)
+        for (const auto& entity_id : descendants)
         {
             AZStd::string entity_name;
             AZ::ComponentApplicationBus::BroadcastResult(entity_name, &AZ::ComponentApplicationRequests::GetEntityName, entity_id);
-            if (entity_id.IsValid()) {
-                if (entity_name.contains("GatherPoint")) {
+            if (entity_id.IsValid())
+            {
+                if (entity_name.contains("GatherPoint"))
+                {
                     sorted_names[entity_name] = entity_id;
                 }
             }
         }
-        for (const auto &[_, entity_id]:sorted_names)
+        for (const auto& [_, entity_id] : sorted_names)
         {
             AZ::Transform pose;
             AZ::TransformBus::EventResult(pose, entity_id, &AZ::TransformBus::Events::GetWorldTM);
-            pose = pose * AZ::Transform::CreateFromQuaternionAndTranslation(AZ::Quaternion::CreateIdentity(),
-                                                                            m_poseOffset);
+            pose = pose * AZ::Transform::CreateFromQuaternionAndTranslation(AZ::Quaternion::CreateIdentity(), m_poseOffset);
             m_gatheringPoses.emplace_back(pose);
         }
     }

@@ -24,7 +24,7 @@ namespace AppleKraken
         m_applesFailed = 0;
 
         // default to our own EntityId if no UI entity is specified
-        if(!m_uiEntity.IsValid())
+        if (!m_uiEntity.IsValid())
         {
             m_uiEntity = GetEntityId();
         }
@@ -39,8 +39,7 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<DemoStatisticsComponent, AZ::Component>()->Version(1)->Field(
-                "UiEntity", &DemoStatisticsComponent::m_uiEntity);
+            serialize->Class<DemoStatisticsComponent, AZ::Component>()->Version(1)->Field("UiEntity", &DemoStatisticsComponent::m_uiEntity);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -62,7 +61,9 @@ namespace AppleKraken
         if (IsFailed(appleEvent))
         {
             m_applesFailed++;
-        }else{
+        }
+        else
+        {
             m_applesGathered++;
         }
         DisplayNumberOfApples();
@@ -70,16 +71,16 @@ namespace AppleKraken
 
     void DemoStatisticsComponent::OnApplePickerSpawned(const AZ::EntityId& entityId)
     {
-        m_applePickerStatus.push_back({entityId,"READY"});
+        m_applePickerStatus.push_back({ entityId, "READY" });
         UpdateTextField(m_applePickerCountElementName, "", m_applePickerStatus.size());
         DisplayStatus();
     }
 
     void DemoStatisticsComponent::SetApplePickerStatus(const AZ::EntityId& entityId, const AZStd::string& status)
     {
-        for(ApplePickerStatus& applePicker : m_applePickerStatus)
+        for (ApplePickerStatus& applePicker : m_applePickerStatus)
         {
-            if(applePicker.m_entityId == entityId)
+            if (applePicker.m_entityId == entityId)
             {
                 applePicker.m_status = status;
                 break;
@@ -114,17 +115,17 @@ namespace AppleKraken
     {
         UpdateTextField(m_applePickerCountElementName, "", static_cast<uint16_t>(m_applePickerStatus.size()));
         int row = 0;
-        for(const ApplePickerStatus& applePicker : m_applePickerStatus)
+        for (const ApplePickerStatus& applePicker : m_applePickerStatus)
         {
             // increment row here so the display number starts at 1
-            const AZStd::string& elementName = AZStd::string::format("%s%d",m_applePickerStatusElementName.c_str(), row++);
-            const AZStd::string& label = AZStd::string::format("APPLEKRAKEN%d    %s",row, applePicker.m_status.c_str());
+            const AZStd::string& elementName = AZStd::string::format("%s%d", m_applePickerStatusElementName.c_str(), row++);
+            const AZStd::string& label = AZStd::string::format("APPLEKRAKEN%d    %s", row, applePicker.m_status.c_str());
             UpdateTextField(elementName, label, 0, true);
         }
     }
 
-
-    void DemoStatisticsComponent::UpdateTextField(const AZStd::string& fieldName, const AZStd::string& label, uint16_t counter, bool labelOnly)
+    void DemoStatisticsComponent::UpdateTextField(
+        const AZStd::string& fieldName, const AZStd::string& label, uint16_t counter, bool labelOnly)
     {
         AZ::EntityId uiCanvas;
         EBUS_EVENT_ID_RESULT(uiCanvas, m_uiEntity, UiCanvasRefBus, GetCanvas);
@@ -142,7 +143,7 @@ namespace AppleKraken
             return;
         }
 
-        if(labelOnly)
+        if (labelOnly)
         {
             UiTextBus::Event(uiTextEntity, &UiTextInterface::SetText, label);
         }
@@ -150,6 +151,5 @@ namespace AppleKraken
         {
             UiTextBus::Event(uiTextEntity, &UiTextInterface::SetText, AZStd::string::format("%s %d", label.c_str(), counter));
         }
-
     }
 } // namespace AppleKraken
