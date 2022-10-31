@@ -3169,6 +3169,9 @@
                         "CollisionLayer": {
                             "Index": 1
                         },
+                        "CollisionGroupId": {
+                            "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
+                        },
                         "Position": [
                             0.0,
                             0.06256400048732758,
