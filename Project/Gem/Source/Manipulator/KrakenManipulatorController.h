@@ -41,12 +41,14 @@ namespace AppleKraken
         void Retrieve() override;
         void RetrieveNose() override;
         int GetStatus() override;
+        bool IsNoseRetreived() override;
 
         void ResetTimer();
 
         AZ::Vector3 m_desiredPosition{0, 0, 0 };
         AZStd::optional<AZ::Vector3> m_desiredApple;
         bool m_noseRetrieved{false };
+        bool m_noseRetrievingSuccess{false};
 
         AZ::Vector3 m_vectorX{1, 0, 0 };
         AZ::Vector3 m_vectorY{0, 1, 0 };
@@ -64,8 +66,10 @@ namespace AppleKraken
         float m_setPointZ{ 0 };
 
         float max_errorXZ{ 0.05 };
-        float m_timeXZsetpointReach{1.5 };
+        float max_errorY{ 0.05 };
+        float m_timeSetpointReach{ 0.2 };
 
-        float m_time_XZ_ok = std::numeric_limits<float>::lowest();
+        float m_time_XZ_ok { 0.0 };
+        float m_time_Y_ok { 0.0 };
     };
 } // namespace AppleKraken
