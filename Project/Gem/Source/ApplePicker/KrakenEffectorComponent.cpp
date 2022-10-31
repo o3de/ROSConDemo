@@ -105,7 +105,6 @@ namespace AppleKraken
                 ->Field("RootManipulatorFreeze", &KrakenEffectorComponent::m_rootEntityToFreeze)
                 ->Field("BaseLinkToKinematic", &KrakenEffectorComponent::m_baseLinkToKinematic)
                 ->Field("RestEntity", &KrakenEffectorComponent::m_restEntityId)
-                ->Field("RetrieveNoseTime", &KrakenEffectorComponent::m_retrieve_nose_time)
                 ->Field("PickStabilizeTime", &KrakenEffectorComponent::m_stabilize_time)
                 ->Field("MaxPickingTime", &KrakenEffectorComponent::m_maxPickingTime);
 
@@ -142,11 +141,6 @@ namespace AppleKraken
                         &KrakenEffectorComponent::m_restEntityId,
                         "ManipulatorRestPoint",
                         "ManipulatorRestPoint")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
-                        &KrakenEffectorComponent::m_retrieve_nose_time,
-                        "Nose Retrieve Time",
-                        "Nose Retrieve Time")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_stabilize_time,
@@ -375,7 +369,7 @@ namespace AppleKraken
                   if (m_currentStateTransitionTime > m_maxPickingTime)
                   {
                       AZ_Printf("m_onTriggerHandleBeginHandler", "%s : Failed to retrieve apple--------------------\n", GetEntity()->GetName().c_str());
-                      ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::PickingFailed, "Timeout");
+                      BeginTransitionIfAcceptable(EffectorState::RETRIEVING_FAILED);
                   }
               } },
             { EffectorState::PICKING_STABILIZE,
@@ -389,10 +383,24 @@ namespace AppleKraken
             { EffectorState::RETRIEVING_NOSE,
               [this]()
               {
-                  if (m_currentStateTransitionTime > m_retrieve_nose_time)
-                  {
-                      BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
-                  }
+                bool result;
+                EBUS_EVENT_ID_RESULT(result, m_manipulatorEntity, ManipulatorRequestBus, IsNoseRetreived);
+
+                if (result)
+                {
+                    BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
+                }
+              } },
+            { EffectorState::RETRIEVING_FAILED,
+              [this]()
+              {
+                bool result;
+                EBUS_EVENT_ID_RESULT(result, m_manipulatorEntity, ManipulatorRequestBus, IsNoseRetreived);
+
+                if (result)
+                {
+                      BeginTransitionIfAcceptable(EffectorState::PREPARED);
+                }
               } },
             {EffectorState::RETRIEVING,
               [this]() {
@@ -466,6 +474,14 @@ namespace AppleKraken
                 },
             },
             {
+                { EffectorState::RETRIEVING_FAILED, EffectorState::PREPARED },
+                [this]()
+                {
+                    ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::PickingFailed, "Timeout");
+                },
+            },
+
+            {
                 { EffectorState::RETRIEVING_STABILIZE, EffectorState::PREPARED },
                 [this]()
                 {
@@ -485,6 +501,13 @@ namespace AppleKraken
                 {
                     // apple picking was finished with timeout
                     ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                },
+            },
+            {
+                { EffectorState::PICKING, EffectorState::RETRIEVING_FAILED },
+                [this]()
+                {
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::RetrieveNose);
                 },
             },
         };

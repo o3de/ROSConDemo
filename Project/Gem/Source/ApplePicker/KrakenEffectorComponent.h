@@ -67,7 +67,6 @@ namespace AppleKraken
         PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
         float m_maxPickingTime{ 5.0f };
         float m_currentStateTransitionTime = 0.0f;
-        float m_retrieve_nose_time{ 1.5f };
         float m_stabilize_time{ 0.5f };
         const float m_maxRetrieveTime{ 3.5f };
 

@@ -52,7 +52,8 @@ namespace AppleKraken
                 ->Field("RestEntity", &ManipulatorController::m_restEntity)
                 ->Field("m_effector", &ManipulatorController::m_effector)
                 ->Field("max_errorXZ", &ManipulatorController::max_errorXZ)
-                ->Field("timeXZsetpointReach", &ManipulatorController::m_timeXZsetpointReach);
+                ->Field("max_errorY", &ManipulatorController::max_errorY)
+                ->Field("timeSetpointReach", &ManipulatorController::m_timeSetpointReach);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -69,11 +70,12 @@ namespace AppleKraken
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_effector, "Effector", "Effector")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_restEntity, "Rest entity", "Rest Entity")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorXZ, "max_errorXZ", "max error XZ to retract nose")
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorY, "max_errorY", "max error Y to retract nose")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
-                        &ManipulatorController::m_timeXZsetpointReach,
-                        "XZ SetPoint Reach time",
-                        "XZ SetPoint reach time");
+                        &ManipulatorController::m_timeSetpointReach,
+                        "SetPoint Reach time",
+                        "SetPoint reach time");
             }
         }
     }
@@ -134,19 +136,18 @@ namespace AppleKraken
             }
         }
         // auto - disable nose retrieve only if we reached small error.
-        if (m_noseRetrieved == true && error_x < max_errorXZ && error_z < max_errorXZ)
+        if (m_noseRetrieved == true)
         {
             m_time_XZ_ok += deltaTime;
-        }
-        else
-        {
-            m_time_XZ_ok = 0;
-        }
-
-        if (m_noseRetrieved == true && m_time_XZ_ok > m_timeXZsetpointReach)
-        {
-            AZ_Printf("ManipulatorController", "Nose is sliding out  \n");
-            m_noseRetrieved = false;
+            if (m_time_XZ_ok > m_timeSetpointReach)
+            {
+                if (error_x < max_errorXZ  && error_x > -max_errorXZ && error_z < max_errorXZ && error_z > -max_errorXZ)
+                {
+                    AZ_Printf("ManipulatorController", "Nose is sliding out  \n");
+                    m_noseRetrieved = false;
+                    m_time_XZ_ok = 0;
+                }
+            }
         }
         float setpoint_y = position_in_effector_tf.Dot(m_vectorY);
         if (m_entityY.IsValid())
@@ -157,6 +158,21 @@ namespace AppleKraken
                 if (m_noseRetrieved)
                 {
                     setpoint_y = 0;
+                    m_time_Y_ok += deltaTime;
+                    if (m_time_Y_ok > m_timeSetpointReach)
+                    {
+
+                        auto error_y = getMotorizedJoint(m_entityY)->GetError();
+                        if (error_y < max_errorY && error_y > -max_errorY) 
+                        {
+                            m_noseRetrievingSuccess = true;
+                            m_time_Y_ok = 0.0;
+                        }
+                    }
+                }
+                else
+                {
+                    m_noseRetrievingSuccess = false;
                 }
                 component_y->SetSetpoint(setpoint_y);
             }
@@ -174,7 +190,12 @@ namespace AppleKraken
 
     AZ::Vector3 ManipulatorController::GetPosition()
     {
-        return AZ::Vector3(0);
+        auto currentPosition = AZ::Vector3(
+            getMotorizedJoint(m_entityX)->GetCurrentPosition(),
+            getMotorizedJoint(m_entityY)->GetCurrentPosition(),
+            getMotorizedJoint(m_entityZ)->GetCurrentPosition()
+            );
+        return currentPosition;
     };
 
     void ManipulatorController::Retrieve()
@@ -200,6 +221,11 @@ namespace AppleKraken
     {
         AZ_Printf("ManipulatorController", "Timer is RESET!\n");
         m_time_XZ_ok = 0;
+    }
+
+    bool ManipulatorController::IsNoseRetreived()
+    {
+        return m_noseRetrievingSuccess;
     }
 
 } // namespace AppleKraken
