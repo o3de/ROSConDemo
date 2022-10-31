@@ -336,9 +336,9 @@
                         "AnimationMode": false,
                         "ZeroOffset": 0.36000001430511475,
                         "PidPosition": {
-                            "P": 250.0,
-                            "D": 50.0,
-                            "Output limit": 250.0
+                            "P": 300.0,
+                            "D": 20.0,
+                            "Output limit": 300.0
                         },
                         "DebugDrawEntity": "",
                         "TestSinActive": false,
@@ -1382,6 +1382,9 @@
                         "CollisionLayer": {
                             "Index": 1
                         },
+                        "CollisionGroupId": {
+                            "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
+                        },
                         "Position": [
                             -0.06697399914264679,
                             -0.20000000298023224,
@@ -1511,8 +1514,8 @@
                         "AnimationMode": false,
                         "PidPosition": {
                             "P": 1500.0,
-                            "D": 600.0,
-                            "Output limit": 500.0
+                            "D": 500.0,
+                            "Output limit": 450.0
                         },
                         "DebugDrawEntity": "",
                         "TestSinActive": false,
@@ -3082,8 +3085,8 @@
                         "ZeroOffset": 1.649999976158142,
                         "PidPosition": {
                             "P": 1200.0,
-                            "D": 600.0,
-                            "Output limit": 500.0
+                            "D": 400.0,
+                            "Output limit": 400.0
                         },
                         "DebugDrawEntity": "",
                         "TestSinActive": false,
