@@ -43,6 +43,18 @@ namespace AppleKraken
         CallResult(p, FN_IsNoseRetreived);
         return p;
     }
+    AZ::EntityId ManipulatorRequestHandler::GetEffectorEntity()
+    {
+        AZ::EntityId p;
+        CallResult(p, FN_GetEffectorEntity);
+        return p;
+    }
+    AZ::EntityId ManipulatorRequestHandler::GetRestEntity()
+    {
+        AZ::EntityId p;
+        CallResult(p, FN_GetRestEntity);
+        return p;
+    }
 
 
     void ManipulatorRequestHandler::Reflect(AZ::ReflectContext* context)
@@ -55,6 +67,8 @@ namespace AppleKraken
                 ->Event("GetPosition", &ManipulatorRequestBus::Events::GetPosition)
                 ->Event("Retrieve", &ManipulatorRequestBus::Events::Retrieve)
                 ->Event("GetStatus", &ManipulatorRequestBus::Events::GetStatus)
+                ->Event("GetEffectorEntity", &ManipulatorRequestBus::Events::GetEffectorEntity)
+                ->Event("GetRestEntity", &ManipulatorRequestBus::Events::GetRestEntity)
                 ->Event("IsNoseRetreived", &ManipulatorRequestBus::Events::IsNoseRetreived)
                 ->Event("RetrieveNose", &ManipulatorRequestBus::Events::RetrieveNose);
         }
