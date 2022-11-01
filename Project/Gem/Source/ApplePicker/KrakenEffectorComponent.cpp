@@ -52,6 +52,9 @@ namespace AppleKraken
         ApplePickingRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
 
+        EBUS_EVENT_ID_RESULT(m_appleProbe, m_manipulatorEntity, ManipulatorRequestBus, GetEffectorEntity);
+        EBUS_EVENT_ID_RESULT(m_restEntityId, m_manipulatorEntity, ManipulatorRequestBus, GetRestEntity);
+
         m_onTriggerHandleBeginHandler = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler(
             [&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle, [[maybe_unused]] const AzPhysics::TriggerEvent& event)
             {
@@ -101,10 +104,8 @@ namespace AppleKraken
                 ->Version(4)
                 ->Field("ReachEntity", &KrakenEffectorComponent::m_reachEntity)
                 ->Field("ManipulatorEntity", &KrakenEffectorComponent::m_manipulatorEntity)
-                ->Field("AppleProbe", &KrakenEffectorComponent::m_appleProbe)
                 ->Field("RootManipulatorFreeze", &KrakenEffectorComponent::m_rootEntityToFreeze)
                 ->Field("BaseLinkToKinematic", &KrakenEffectorComponent::m_baseLinkToKinematic)
-                ->Field("RestEntity", &KrakenEffectorComponent::m_restEntityId)
                 ->Field("PickStabilizeTime", &KrakenEffectorComponent::m_stabilize_time)
                 ->Field("MaxPickingTime", &KrakenEffectorComponent::m_maxPickingTime);
 
@@ -125,8 +126,6 @@ namespace AppleKraken
                         "Entity with manipulator",
                         "The entity that has a component handling events from ManipulatorRequestBus")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId, &KrakenEffectorComponent::m_appleProbe, "Entity to probe apples", "Sucking collider")
-                    ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_rootEntityToFreeze,
                         "RootManipulatorFreeze",
@@ -136,11 +135,6 @@ namespace AppleKraken
                         &KrakenEffectorComponent::m_baseLinkToKinematic,
                         "BaseLinkToKinematic",
                         "BaseLinkToKinematic during manipulator movement")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
-                        &KrakenEffectorComponent::m_restEntityId,
-                        "ManipulatorRestPoint",
-                        "ManipulatorRestPoint")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_stabilize_time,

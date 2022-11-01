@@ -26,6 +26,8 @@ namespace AppleKraken
         virtual void RetrieveNose() = 0;
         virtual int GetStatus() = 0;
         virtual bool IsNoseRetreived() = 0;
+        virtual AZ::EntityId GetEffectorEntity() = 0;
+        virtual AZ::EntityId GetRestEntity() = 0;
     };
 
     using ManipulatorRequestBus = AZ::EBus<ManipulatorRequest>;
@@ -45,7 +47,9 @@ namespace AppleKraken
             Retrieve,
             RetrieveNose,
             GetStatus,
-            IsNoseRetreived);
+            IsNoseRetreived,
+            GetEffectorEntity,
+            GetRestEntity);
 
         virtual void PickApple(const AZ::Vector3 position) override;
 
@@ -58,6 +62,10 @@ namespace AppleKraken
         virtual int GetStatus() override;
 
         virtual bool IsNoseRetreived() override;
+
+        virtual AZ::EntityId GetEffectorEntity() override;
+
+        virtual AZ::EntityId GetRestEntity() override;
 
         static void Reflect(AZ::ReflectContext* context);
     };

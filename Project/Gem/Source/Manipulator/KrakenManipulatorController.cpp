@@ -52,8 +52,7 @@ namespace AppleKraken
                 ->Field("RestEntity", &ManipulatorController::m_restEntity)
                 ->Field("m_effector", &ManipulatorController::m_effector)
                 ->Field("max_errorXZ", &ManipulatorController::max_errorXZ)
-                ->Field("max_errorY", &ManipulatorController::max_errorY)
-                ->Field("timeSetpointReach", &ManipulatorController::m_timeSetpointReach);
+                ->Field("max_errorY", &ManipulatorController::max_errorY);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
@@ -70,12 +69,7 @@ namespace AppleKraken
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_effector, "Effector", "Effector")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_restEntity, "Rest entity", "Rest Entity")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorXZ, "max_errorXZ", "max error XZ to retract nose")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorY, "max_errorY", "max error Y to retract nose")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
-                        &ManipulatorController::m_timeSetpointReach,
-                        "SetPoint Reach time",
-                        "SetPoint reach time");
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorY, "max_errorY", "max error Y to retract nose");
             }
         }
     }
@@ -177,6 +171,11 @@ namespace AppleKraken
                 component_y->SetSetpoint(setpoint_y);
             }
         }
+        //auto currentPosition = GetPosition();
+        AZ_Printf("ManipulatorController", "#### [%f, %f, %f]  [%f, %f, %f]\n",setpoint_x, setpoint_y, setpoint_z, 
+                getMotorizedJoint(m_entityX)->GetCurrentPosition(),
+                getMotorizedJoint(m_entityY)->GetCurrentPosition(),
+                getMotorizedJoint(m_entityZ)->GetCurrentPosition());
     }
 
     void ManipulatorController::PickApple(const AZ::Vector3 position)
@@ -226,6 +225,16 @@ namespace AppleKraken
     bool ManipulatorController::IsNoseRetreived()
     {
         return m_noseRetrievingSuccess;
+    }
+
+    AZ::EntityId ManipulatorController::GetEffectorEntity()
+    {
+        return m_effector;
+    }
+
+    AZ::EntityId ManipulatorController::GetRestEntity()
+    {
+        return m_restEntity;
     }
 
 } // namespace AppleKraken

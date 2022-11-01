@@ -42,6 +42,8 @@ namespace AppleKraken
         void RetrieveNose() override;
         int GetStatus() override;
         bool IsNoseRetreived() override;
+        AZ::EntityId GetEffectorEntity() override;
+        AZ::EntityId GetRestEntity() override;
 
         void ResetTimer();
 
