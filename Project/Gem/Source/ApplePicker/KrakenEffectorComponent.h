@@ -20,6 +20,8 @@
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
+#include <ImGuiBus.h>
+#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -28,6 +30,7 @@ namespace AppleKraken
         : public AZ::Component
         , protected ApplePickingRequestBus::Handler
         , protected AZ::TickBus::Handler
+        , protected  ImGui::ImGuiUpdateListenerBus::Handler
     {
     public:
         AZ_COMPONENT(KrakenEffectorComponent, "{9206FC30-DF56-4246-8247-5D6B31603B53}");
@@ -45,6 +48,7 @@ namespace AppleKraken
         AZ::Obb GetEffectorReachArea() override;
 
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
+        void OnImGuiUpdate() override;
 
     private:
         void LockManipulator(bool locked);

@@ -49,6 +49,7 @@ ly_add_target(
             Gem::LyShine
             Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
+            Gem::ImGui.Static
 )
 
 target_depends_on_ros2_packages(ROSConDemo.Static std_srvs nav_msgs vision_msgs)

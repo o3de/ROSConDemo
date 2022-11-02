@@ -50,6 +50,7 @@ namespace AppleKraken
     {
         ApplePickingRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusConnect();
 
         EBUS_EVENT_ID_RESULT(m_appleProbe, m_manipulatorEntity, ManipulatorRequestBus, GetEffectorEntity);
         EBUS_EVENT_ID_RESULT(m_restEntityId, m_manipulatorEntity, ManipulatorRequestBus, GetRestEntity);
@@ -93,6 +94,7 @@ namespace AppleKraken
     {
         AZ::TickBus::Handler::BusDisconnect();
         ApplePickingRequestBus::Handler::BusDisconnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusDisconnect();
     }
 
     void KrakenEffectorComponent::Reflect(AZ::ReflectContext* context)
@@ -513,4 +515,16 @@ namespace AppleKraken
     {
         return m_stateProperties.m_allowedTransitions.at(AZStd::make_pair(m_effectorState, m_effectorTargetState));
     }
+
+    void KrakenEffectorComponent::OnImGuiUpdate(){
+
+        AZStd::string window_name("ManipulatorController %s", GetEntityId().ToString().c_str()));
+        ImGui::Begin(window_name.c_str());
+        if (ImGui::CollapsingHeader("KrakenEffectorComponent"))
+        {
+            const auto & state_name = DebugStateTransit::kMapToString.at(m_effectorState);
+            ImGui::Text("state : %s",state_name);
+        }
+        ImGui::End();
+    };
 } // namespace AppleKraken

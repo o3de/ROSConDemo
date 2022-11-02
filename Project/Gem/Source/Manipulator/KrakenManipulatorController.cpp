@@ -28,6 +28,7 @@ namespace AppleKraken
     {
         ManipulatorRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusConnect();
         initialized = false;
     }
 
@@ -35,6 +36,7 @@ namespace AppleKraken
     {
         ManipulatorRequestBus::Handler::BusDisconnect(GetEntityId());
         AZ::TickBus::Handler::BusDisconnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusDisconnect();
     }
 
     void ManipulatorController::Reflect(AZ::ReflectContext* context)
@@ -104,8 +106,8 @@ namespace AppleKraken
         AZ::Vector3 position_in_baselink_tf = current_base_link.GetInverse().TransformPoint(m_desiredPosition);
         AZ::Vector3 position_in_effector_tf = m_transform_base_link_to_effector.GetInverse().TransformPoint(position_in_baselink_tf);
 
-        float setpoint_x = position_in_effector_tf.Dot(m_vectorX);
-        float setpoint_z = position_in_effector_tf.Dot(m_vectorZ);
+        m_setPointX = position_in_effector_tf.Dot(m_vectorX);
+        m_setPointZ = position_in_effector_tf.Dot(m_vectorZ);
 
         float error_x = std::numeric_limits<float>::max();
         float error_z = std::numeric_limits<float>::max();
@@ -115,7 +117,7 @@ namespace AppleKraken
             auto component_x = getMotorizedJoint(m_entityX);
             if (component_x)
             {
-                component_x->SetSetpoint(setpoint_x);
+                component_x->SetSetpoint(m_setPointX);
                 error_x = component_x->GetError();
             }
         }
@@ -125,7 +127,7 @@ namespace AppleKraken
             auto component_z = getMotorizedJoint(m_entityZ);
             if (component_z)
             {
-                component_z->SetSetpoint(setpoint_z);
+                component_z->SetSetpoint(m_setPointZ);
                 error_z = component_z->GetError();
             }
         }
@@ -143,7 +145,7 @@ namespace AppleKraken
                 }
             }
         }
-        float setpoint_y = position_in_effector_tf.Dot(m_vectorY);
+        m_setPointY = position_in_effector_tf.Dot(m_vectorY);
         if (m_entityY.IsValid())
         {
             auto component_y = getMotorizedJoint(m_entityY);
@@ -151,7 +153,7 @@ namespace AppleKraken
             {
                 if (m_noseRetrieved)
                 {
-                    setpoint_y = 0;
+                    m_setPointY = 0;
                     m_time_Y_ok += deltaTime;
                     if (m_time_Y_ok > m_timeSetpointReach)
                     {
@@ -168,14 +170,10 @@ namespace AppleKraken
                 {
                     m_noseRetrievingSuccess = false;
                 }
-                component_y->SetSetpoint(setpoint_y);
+                component_y->SetSetpoint(m_setPointY);
             }
         }
-        //auto currentPosition = GetPosition();
-        AZ_Printf("ManipulatorController", "#### [%f, %f, %f]  [%f, %f, %f]\n",setpoint_x, setpoint_y, setpoint_z, 
-                getMotorizedJoint(m_entityX)->GetCurrentPosition(),
-                getMotorizedJoint(m_entityY)->GetCurrentPosition(),
-                getMotorizedJoint(m_entityZ)->GetCurrentPosition());
+
     }
 
     void ManipulatorController::PickApple(const AZ::Vector3 position)
@@ -235,6 +233,31 @@ namespace AppleKraken
     AZ::EntityId ManipulatorController::GetRestEntity()
     {
         return m_restEntity;
+    }
+
+    void ManipulatorController::OnImGuiUpdate()
+    {
+
+        AZStd::string window_name("ManipulatorController %s", GetEntityId().ToString().c_str()));
+        ImGui::Begin(window_name.c_str());
+        auto pos = GetPosition();
+        if (m_desiredApple){
+            ImGui::Text("Desired Apple : %.1f %.1f %.1f", m_desiredApple->GetX(),m_desiredApple->GetY(),m_desiredApple->GetZ());
+        }else{
+            ImGui::Text("No Desired Apple");
+        }
+        if (ImGui::CollapsingHeader("Gantry"))
+        {
+            ImGui::Text("Positions : %.1f %.1f", pos.GetX(), pos.GetZ() );
+            ImGui::Text("SetPoint  : %.1f %.1f", m_setPointX,  m_setPointZ );
+        }
+        if (ImGui::CollapsingHeader("Nose"))
+        {
+            ImGui::Text("Positions : %.1f", pos.GetY());
+            ImGui::Text("SetPoint  : %.1f", m_setPointY);
+        }
+        ImGui::End();
+
     }
 
 } // namespace AppleKraken
