@@ -87,5 +87,6 @@ namespace AppleKraken
         bool m_registeredCallback{ false };
         bool is_manipulator_locked = { false };
         AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
+        std::array<float,3> m_debugApple;
     };
 } // namespace AppleKraken
