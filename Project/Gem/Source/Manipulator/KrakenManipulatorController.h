@@ -13,6 +13,8 @@
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
 #include <ROS2/Manipulator/MotorizedJoint.h>
+#include <ImGuiBus.h>
+#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -20,6 +22,7 @@ namespace AppleKraken
     class ManipulatorController
         : public AZ::Component
         , public ManipulatorRequestBus ::Handler
+        , public ImGui::ImGuiUpdateListenerBus::Handler
         , public AZ::TickBus::Handler
     {
     public:
@@ -36,6 +39,7 @@ namespace AppleKraken
         bool initialized{ false };
         ROS2::MotorizedJoint* getMotorizedJoint(const AZ::EntityId& entityWithMotJoint);
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
+        void OnImGuiUpdate() override;
         void PickApple(const AZ::Vector3 position) override;
         AZ::Vector3 GetPosition() override;
         void Retrieve() override;
@@ -73,5 +77,7 @@ namespace AppleKraken
 
         float m_time_XZ_ok { 0.0 };
         float m_time_Y_ok { 0.0 };
+        bool m_imguiManualControl{false};
+
     };
 } // namespace AppleKraken
