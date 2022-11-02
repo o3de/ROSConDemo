@@ -2472,6 +2472,23 @@
                         }
                     }
                 },
+                "Component_[10991465535828186402]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10991465535828186402,
+                    "m_template": {
+                        "$type": "ManipulatorJoySubscriber",
+                        "Speed": [
+                            0.019999999552965164,
+                            -0.009999999776482582,
+                            0.019999999552965164
+                        ],
+                        "ReachEntity": "Entity_[9058513484485]",
+                        "ManipualtorEntity": "Entity_[126373983206044]",
+                        "DebugEntity": "",
+                        "m_appleProbe": "Entity_[49624638919053]",
+                        "m_entityToFail": "Entity_[126300968762012]"
+                    }
+                },
                 "Component_[1169748815476029279]": {
                     "$type": "EditorColliderComponent",
                     "Id": 1169748815476029279,
@@ -3951,6 +3968,13 @@
                 "Component_[4338215858930337320]": {
                     "$type": "EditorLockComponent",
                     "Id": 4338215858930337320
+                },
+                "Component_[6643668247362373900]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 6643668247362373900,
+                    "m_template": {
+                        "$type": "CameraJoySubscriber"
+                    }
                 },
                 "Component_[692191384982186014]": {
                     "$type": "EditorPendingCompositionComponent",
