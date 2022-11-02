@@ -41,6 +41,8 @@ namespace AppleKraken
         // AzFramework::InputChannelEventListener
         bool OnInputChannelEventFiltered(const AzFramework::InputChannel& inputChannel) override;
 
+        void Rotate(const AZ::Vector2& speed);
+
     private:
         void OnKeyboardEvent(const AzFramework::InputChannel& inputChannel);
 

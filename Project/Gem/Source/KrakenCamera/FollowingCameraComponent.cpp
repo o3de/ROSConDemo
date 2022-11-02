@@ -178,4 +178,11 @@ namespace AppleKraken
         }
 
     }
+
+
+    void FollowingCameraComponent::Rotate(const AZ::Vector2& speed){
+        m_rotationChange2+= speed.GetX();
+        m_rotationChange += speed.GetY();
+
+    }
 }
