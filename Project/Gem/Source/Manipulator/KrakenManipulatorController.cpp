@@ -132,7 +132,7 @@ namespace AppleKraken
             }
         }
         // auto - disable nose retrieve only if we reached small error.
-        if (m_noseRetrieved == true)
+        if (m_noseRetrieveRequest == true)
         {
             m_time_XZ_ok += deltaTime;
             if (m_time_XZ_ok > m_timeSetpointReach)
@@ -140,7 +140,7 @@ namespace AppleKraken
                 if (error_x < max_errorXZ  && error_x > -max_errorXZ && error_z < max_errorXZ && error_z > -max_errorXZ)
                 {
                     AZ_Printf("ManipulatorController", "Nose is sliding out  \n");
-                    m_noseRetrieved = false;
+                    m_noseRetrieveRequest = false;
                     m_time_XZ_ok = 0;
                 }
             }
@@ -151,7 +151,7 @@ namespace AppleKraken
             auto component_y = getMotorizedJoint(m_entityY);
             if (component_y)
             {
-                if (m_noseRetrieved)
+                if (m_noseRetrieveRequest)
                 {
                     m_setPointY = 0;
                     m_time_Y_ok += deltaTime;
@@ -178,7 +178,7 @@ namespace AppleKraken
 
     void ManipulatorController::PickApple(const AZ::Vector3 position)
     {
-        m_noseRetrieved = true;
+        m_noseRetrieveRequest = true;
         m_time_XZ_ok = 0;
         AZ_Printf("ManipulatorController", "PickApple\n");
         ResetTimer();
@@ -199,14 +199,14 @@ namespace AppleKraken
     {
         AZ_Printf("ManipulatorController", "Retrieve\n");
         m_time_XZ_ok = std::numeric_limits<float>::lowest();
-        m_noseRetrieved = true;
+        m_noseRetrieveRequest = true;
         m_desiredApple.reset();
     };
     void ManipulatorController::RetrieveNose()
     {
         AZ_Printf("ManipulatorController", "RetrieveNose\n");
         m_time_XZ_ok = std::numeric_limits<float>::lowest();
-        m_noseRetrieved = true;
+        m_noseRetrieveRequest = true;
     }
 
     int ManipulatorController::GetStatus()
@@ -216,7 +216,6 @@ namespace AppleKraken
 
     void ManipulatorController::ResetTimer()
     {
-        AZ_Printf("ManipulatorController", "Timer is RESET!\n");
         m_time_XZ_ok = 0;
     }
 
@@ -238,7 +237,7 @@ namespace AppleKraken
     void ManipulatorController::OnImGuiUpdate()
     {
 
-        AZStd::string window_name("ManipulatorController %s", GetEntityId().ToString().c_str()));
+        AZStd::string window_name = AZStd::string::format("ManipulatorController%s", GetEntityId().ToString().c_str());
         ImGui::Begin(window_name.c_str());
         auto pos = GetPosition();
         if (m_desiredApple){
@@ -255,6 +254,8 @@ namespace AppleKraken
         {
             ImGui::Text("Positions : %.1f", pos.GetY());
             ImGui::Text("SetPoint  : %.1f", m_setPointY);
+            ImGui::Checkbox("noseRetrieveRequest", &m_noseRetrieveRequest);
+            ImGui::Checkbox("noseRetrievingSuccess", &m_noseRetrievingSuccess);
         }
         ImGui::End();
 

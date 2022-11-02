@@ -24,7 +24,6 @@ namespace AppleKraken
         RETRIEVING = 35, //!< The effector is retrieving a fruit to storage position.
         RETRIEVING_STABILIZE = 40, //!< The effector is retrieving, wait for apple to drop
         RETRIEVING_FAILED = 50 //!< The effector is retrieving after failing to pick the apple.
- 
     };
 
     //! A task to pick a single apple.

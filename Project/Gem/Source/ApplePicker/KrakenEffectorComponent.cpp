@@ -30,10 +30,12 @@ namespace AppleKraken
                                                                                 { EffectorState::PREPARED, "PREPARED" },
                                                                                 { EffectorState::PICKING, "PICKING" },
                                                                                 { EffectorState::PICKING_STABILIZE, "PICKING_STABILIZE" },
-                                                                                { EffectorState::RETRIEVING, "RETRIEVING" },
                                                                                 { EffectorState::RETRIEVING_NOSE, "RETRIEVING_NOSE" },
+                                                                                { EffectorState::RETRIEVING, "RETRIEVING" },
                                                                                 { EffectorState::RETRIEVING_STABILIZE,
-                                                                                  "RETRIEVING_STABILIZE" } };
+                                                                                  "RETRIEVING_STABILIZE" },
+                                                                                { EffectorState::RETRIEVING_FAILED,
+                                                                                            "RETRIEVING_FAILED" }  };
 
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
         AZStd::string StateTransitionString(EffectorState current, EffectorState next)
@@ -147,7 +149,6 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
-        ManipulatorRequestHandler::Reflect(context);
     }
 
     void KrakenEffectorComponent::PrepareForPicking()
@@ -186,7 +187,6 @@ namespace AppleKraken
 
     AZ::Obb KrakenEffectorComponent::GetEffectorReachArea()
     {
-        AZ_TracePrintf("KrakenEffectorComponent", "%s: GetEffectorReachArea\n", GetEntity()->GetName().c_str());
         AZ::Obb reachArea;
 
         if (m_reachEntity.IsValid())
@@ -198,23 +198,6 @@ namespace AppleKraken
                 dimensions, m_reachEntity, &LmbrCentral::BoxShapeComponentRequests::GetBoxDimensions);
             if (!dimensions.IsZero())
             {
-                AZ_Printf("KrakenEffectorComponent", "OurEffectorReachArea :");
-                AZ_Printf(
-                    "KrakenEffectorComponent", "  local dimensions : %f %f %f", dimensions.GetX(), dimensions.GetY(), dimensions.GetZ());
-                AZ_Printf(
-                    "KrakenEffectorComponent",
-                    "  transform - rot  : %f %f %f %f",
-                    targetTM.GetRotation().GetX(),
-                    targetTM.GetRotation().GetY(),
-                    targetTM.GetRotation().GetZ(),
-                    targetTM.GetRotation().GetW());
-                AZ_Printf(
-                    "KrakenEffectorComponent",
-                    "  transform - pos  : %f %f %f",
-                    targetTM.GetTranslation().GetX(),
-                    targetTM.GetTranslation().GetY(),
-                    targetTM.GetTranslation().GetZ());
-
                 reachArea.SetHalfLengths(dimensions / 2);
                 reachArea.SetPosition(targetTM.GetTranslation());
                 reachArea.SetRotation(targetTM.GetRotation());
@@ -522,12 +505,37 @@ namespace AppleKraken
 
     void KrakenEffectorComponent::OnImGuiUpdate(){
 
-        AZStd::string window_name("ManipulatorController %s", GetEntityId().ToString().c_str()));
+        AZStd::string window_name = AZStd::string::format("ManipulatorController%s", GetEntityId().ToString().c_str());
         ImGui::Begin(window_name.c_str());
-        if (ImGui::CollapsingHeader("KrakenEffectorComponent"))
-        {
-            const auto & state_name = DebugStateTransit::kMapToString.at(m_effectorState);
-            ImGui::Text("state : %s",state_name);
+        const auto & state_name = DebugStateTransit::kMapToString.at(m_effectorState);
+        ImGui::Text("m_effectorState : %s",state_name);
+        ImGui::BeginGroup();
+        ImGui::Text("m_currentTask:");
+        ImGui::Text("m_appleEntityId : %s",m_currentTask.m_appleEntityId.ToString().c_str());
+        ImGui::Text("m_middle : %.1f %.1f %.1f",m_currentTask.m_middle.GetX(),m_currentTask.m_middle.GetY(),m_currentTask.m_middle.GetZ());
+        ImGui::EndGroup();
+        if (ImGui::CollapsingHeader("KrakenTestApplePicking") && m_reachEntity.IsValid()) {
+            AZ::Obb r = KrakenEffectorComponent::GetEffectorReachArea();
+
+            ImGui::SliderFloat("Horizontal", &m_debugApple[0], -r.GetHalfLengthX(), r.GetHalfLengthX());
+            ImGui::SliderFloat("Vertical", &m_debugApple[2], -r.GetHalfLengthZ(), r.GetHalfLengthZ());
+            ImGui::SliderFloat("Nose", &m_debugApple[1], -r.GetHalfLengthY(), r.GetHalfLengthY());
+
+            if (ImGui::Button("Send 'PickApple'")) {
+                AZ::Transform targetTM = AZ::Transform::CreateIdentity();
+                AZ::TransformBus::EventResult(targetTM, m_reachEntity, &AZ::TransformBus::Events::GetWorldTM);
+                PickAppleTask appleTask;
+                appleTask.m_middle = targetTM.TransformPoint(AZ::Vector3::CreateFromFloat3(m_debugApple.data()));
+                PickApple(appleTask);
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Send 'PrepareForPicking'")) {
+                PrepareForPicking();
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Send 'FinishPicking'")) {
+                FinishPicking();
+            }
         }
         ImGui::End();
     };
