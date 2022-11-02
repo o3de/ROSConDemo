@@ -81,7 +81,10 @@ RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
     && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
 
 # Assumes a local checkout of private ROSConDemo
-COPY ROSConDemo ${WORKDIR}/ROSConDemo
+RUN git clone https://github.com/o3de/ROSConDemo.git \
+    && cd ROSConDemo \
+    && git lfs install \
+    && git lfs pull \
 
 # Install o3de
 RUN git clone https://github.com/aws-lumberyard-dev/o3de.git -b roscon_2022 \
