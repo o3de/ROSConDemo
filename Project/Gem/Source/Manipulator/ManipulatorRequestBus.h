@@ -23,6 +23,7 @@ namespace AppleKraken
         virtual void PickApple(const AZ::Vector3 position) = 0;
         virtual AZ::Vector3 GetPosition() = 0;
         virtual void Retrieve() = 0;
+        virtual void ResetApple() = 0;
         virtual void RetrieveNose() = 0;
         virtual int GetStatus() = 0;
         virtual bool IsNoseRetreived() = 0;

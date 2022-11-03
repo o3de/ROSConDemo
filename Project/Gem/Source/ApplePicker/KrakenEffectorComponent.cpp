@@ -487,6 +487,7 @@ namespace AppleKraken
                 [this]()
                 {
                     ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::RetrieveNose);
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::ResetApple);
                 },
             },
         };
