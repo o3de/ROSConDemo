@@ -29,7 +29,7 @@ class KrakenOrchestrationNode(Node):
             self.get_logger().info('Get plan service not available waiting again...')
 
     def apple_gathering_done_callback(self, request, response):
-        print("Received done client msg.")
+        self.get_logger().info("Received done client msg.")
         self.gathering_done = True
         return Empty.Response()
 
@@ -101,11 +101,9 @@ class KrakenOrchestrationNode(Node):
         self.init_apple_subscriptions()
 
     def log_cb(self, msg):
-        if msg.msg == "Goal succeeded" and self.kraken_name in str(self.kraken_name):
-            print("Navigation point reached.")
+        if msg.msg == "Goal succeeded" and self.kraken_name in str(msg.name):
+            self.get_logger().info("Navigation point reached.")
             self.goal_pose_reached = True
-
-
 
     def spawn_kraken(self):
         req = SpawnEntity.Request()
