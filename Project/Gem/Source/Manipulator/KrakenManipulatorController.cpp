@@ -200,6 +200,10 @@ namespace AppleKraken
         AZ_Printf("ManipulatorController", "Retrieve\n");
         m_time_XZ_ok = std::numeric_limits<float>::lowest();
         m_noseRetrieveRequest = true;
+        ResetApple();
+    };
+    void ManipulatorController::ResetApple()
+    {
         m_desiredApple.reset();
     };
     void ManipulatorController::RetrieveNose()

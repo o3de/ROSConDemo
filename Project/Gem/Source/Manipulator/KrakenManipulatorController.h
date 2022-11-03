@@ -43,6 +43,7 @@ namespace AppleKraken
         void PickApple(const AZ::Vector3 position) override;
         AZ::Vector3 GetPosition() override;
         void Retrieve() override;
+        void ResetApple() override;
         void RetrieveNose() override;
         int GetStatus() override;
         bool IsNoseRetreived() override;
