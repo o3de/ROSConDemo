@@ -84,7 +84,7 @@ RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
 RUN git clone https://github.com/o3de/ROSConDemo.git \
     && cd ROSConDemo \
     && git lfs install \
-    && git lfs pull \
+    && git lfs pull
 
 # Install o3de
 RUN git clone https://github.com/aws-lumberyard-dev/o3de.git -b roscon_2022 \
