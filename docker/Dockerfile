@@ -95,10 +95,10 @@ RUN git clone https://github.com/o3de/o3de.git -b development \
 
 RUN git clone https://github.com/RobotecAI/o3de-ros2-gem.git
 
-RUN ${WORKDIR}/o3de/scripts/o3de.sh register --this-engine \
-    && $WORKDIR/o3de/scripts/o3de.sh register --gem-path ${WORKDIR}/o3de-ros2-gem \
-    && $WORKDIR/o3de/scripts/o3de.sh register -pp ${WORKDIR}/ROSConDemo/Project \
-    && $WORKDIR/o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ${WORKDIR}/ROSConDemo/Project \
+RUN ./o3de/scripts/o3de.sh register --this-engine \
+    && ./o3de/scripts/o3de.sh register --gem-path ./o3de-ros2-gem \
+    && ./o3de/scripts/o3de.sh register -pp ./ROSConDemo/Project \
+    && ./o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ./ROSConDemo/Project \
     && cat /root/.o3de/o3de_manifest.json
 
 RUN cd ${WORKDIR}/ROSConDemo/Project \
