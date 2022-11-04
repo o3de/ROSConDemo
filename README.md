@@ -55,16 +55,15 @@ The project supports the following platforms:
    sure that the system/hardware requirements are met.
 2. Please follow the instructions
    to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
-3. **Use the `development` branch**: `git checkout development`.
+3. **Use the `development` branch**.
 
 The following commands should prepare O3DE:
 
 ```
-~$ git clone https://github.com/o3de/o3de.git
+~$ git clone --branch development --single-branch https://github.com/o3de/o3de.git
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
-~/o3de$ git checkout roscon_2022
 ~/o3de$ python/get_python.sh
 ~/o3de$ scripts/o3de.sh register --this-engine
 ```
