@@ -101,17 +101,16 @@ RUN ./o3de/scripts/o3de.sh register --this-engine \
     && ./o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ./ROSConDemo/Project \
     && cat /root/.o3de/o3de_manifest.json
 
-RUN cd ${WORKDIR}/ROSConDemo/Project \
-    && git lfs pull \
+WORKDIR $WORKDIR/ROSConDemo/Project
+
+RUN git lfs pull \
     && . /opt/ros/humble/setup.sh \
     && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
 
-RUN cd ${WORKDIR}/ROSConDemo/Project \
-    && . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/humble/setup.sh \
     && cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor
 
 # This final step takes long since they Assets will be downloading
-RUN cd ${WORKDIR}/ROSConDemo/Project \
-    && . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/humble/setup.sh \
     && echo "This final step can take more than 1 hour. Good time for going for a coffee :)" \
     && cmake --build build/linux --config profile --target ROSConDemo.Assets
