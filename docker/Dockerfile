@@ -114,3 +114,30 @@ RUN . /opt/ros/humble/setup.sh \
 RUN . /opt/ros/humble/setup.sh \
     && echo "This final step can take more than 1 hour. Good time for going for a coffee :)" \
     && cmake --build build/linux --config profile --target ROSConDemo.Assets
+
+# Installing o3de_kraken_nav
+RUN apt-get update && apt-get install -y \
+    python3-colcon-common-extensions \
+    ros-humble-cyclonedds \
+    ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-slam-toolbox \
+    ros-humble-navigation2 \
+    ros-humble-nav2-bringup \
+    ros-humble-pointcloud-to-laserscan \
+    ros-humble-teleop-twist-keyboard \
+    ros-humble-ackermann-msgs \
+    ros-humble-topic-tools \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install python-statemachine
+
+WORKDIR $WORKDIR
+
+RUN mkdir -p o3de_kraken_ws/src \
+    && cd o3de_kraken_ws/src \
+    && git clone https://github.com/RobotecAI/o3de_kraken_nav.git
+
+RUN cd o3de_kraken_ws \
+    && colcon build --symlink-install
+
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
