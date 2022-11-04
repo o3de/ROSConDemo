@@ -10,6 +10,7 @@
 #include "ApplePickingNotifications.h"
 #include "Manipulator/ManipulatorRequestBus.h"
 #include "PickingStructs.h"
+#include "ROS2/VehicleDynamics/VehicleInputControlBus.h"
 #include <AzCore/Component/Entity.h>
 #include <AzCore/Component/ComponentApplicationBus.h>
 #include <AzCore/Component/TransformBus.h>
@@ -290,17 +291,20 @@ namespace AppleKraken
             }
             for (auto& descadant : descendants)
             {
+                using VehicleBus = VehicleDynamics::VehicleInputControlRequestBus;
                 if (locked)
                 {
                     // Lock manipulator, make base_link not kinematic anymore
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::DisablePhysics);
                     Physics::RigidBodyRequestBus::Event(m_baseLinkToKinematic, &Physics::RigidBodyRequestBus::Events::SetKinematic, false);
+                    VehicleBus::Event(m_baseLinkToKinematic, &VehicleBus::Events::SetDisableVehicleDynamics, false);
                 }
                 else
                 {
                     // loose manipulator, make base_link kinematic
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::EnablePhysics);
                     Physics::RigidBodyRequestBus::Event(m_baseLinkToKinematic, &Physics::RigidBodyRequestBus::Events::SetKinematic, true);
+                    VehicleBus::Event(m_baseLinkToKinematic, &VehicleBus::Events::SetDisableVehicleDynamics, true);
                 }
             }
             is_manipulator_locked = locked;
