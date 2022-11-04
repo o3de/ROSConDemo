@@ -26,7 +26,8 @@
                     "Instance_[12778335461144]/ContainerEntity",
                     "Entity_[5326069303457]",
                     "Instance_[5798250064374]/ContainerEntity",
-                    "Entity_[10454073709875]"
+                    "Entity_[10454073709875]",
+                    "Instance_[34598695804924]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -705,7 +706,7 @@
                     "Controller": {
                         "Configuration": {
                             "Field of View": 60.0,
-                            "EditorEntityId": 4316764856613180626
+                            "EditorEntityId": 16000656119588705004
                         }
                     }
                 },
@@ -3497,6 +3498,46 @@
                 }
             ]
         },
+        "Instance_[34598695804924]": {
+            "Source": "Assets/Kraken/apple_kraken_v1/apple_kraken_v1.prefab",
+            "Patches": [
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Parent Entity",
+                    "value": "../Entity_[1146574390643]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/0",
+                    "value": -5.258350849151611
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/1",
+                    "value": -11.578788757324219
+                },
+                {
+                    "op": "replace",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/2",
+                    "value": 0.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[126373983206044]/Components/Component_[17916227991713293347]/Child Entity Order/13",
+                    "value": "Instance_[16591474888826]/ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[126373983206044]/Components/Component_[17916227991713293347]/Child Entity Order/14",
+                    "value": "Instance_[15809790840954]/ContainerEntity"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[126373983206044]/Components/Component_[17916227991713293347]/Child Entity Order/15",
+                    "value": "Instance_[16621539659898]/ContainerEntity"
+                }
+            ]
+        },
         "Instance_[5387454034805]": {
             "Source": "Assets/Importer/apple_kraken_5.prefab"
         },
@@ -3521,12 +3562,17 @@
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/2",
-                    "value": -16.012577056884766
+                    "value": 0.34189414978027344
                 },
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
-                    "value": 17278813162428804714
+                    "path": "/Entities/Entity_[126352508369564]/Components/Component_[1935418376842285128]/Child Entity Order/0",
+                    "value": "Entity_[2534338808675]"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[126352508369564]/Components/Component_[1935418376842285128]/Child Entity Order/1",
+                    "value": "Entity_[2542928743267]"
                 }
             ]
         }

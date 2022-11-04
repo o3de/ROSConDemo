@@ -3977,6 +3977,33 @@
                     "$type": "EditorLockComponent",
                     "Id": 16272049984670614162
                 },
+                "Component_[16901080131432660088]": {
+                    "$type": "EditorFixedJointComponent",
+                    "Id": 16901080131432660088,
+                    "Configuration": {
+                        "Parent Entity": "Entity_[126300968762012]",
+                        "Child Entity": "Entity_[49624638919053]"
+                    }
+                },
+                "Component_[17237199249672192650]": {
+                    "$type": "EditorRigidBodyComponent",
+                    "Id": 17237199249672192650,
+                    "Configuration": {
+                        "entityId": "",
+                        "Mass": 0.5235987901687622,
+                        "Inertia tensor": [
+                            0.0005235988064669073,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0005235988064669073,
+                            0.0,
+                            0.0,
+                            0.0,
+                            0.0005235988064669073
+                        ]
+                    }
+                },
                 "Component_[17622040488620010506]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 17622040488620010506,
