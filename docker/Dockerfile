@@ -87,7 +87,7 @@ RUN git clone https://github.com/o3de/ROSConDemo.git \
     && git lfs pull
 
 # Install o3de
-RUN git clone https://github.com/aws-lumberyard-dev/o3de.git -b roscon_2022 \
+RUN git clone https://github.com/o3de/o3de.git -b development \
     && cd o3de \
     && git lfs install \
     && git lfs pull \
