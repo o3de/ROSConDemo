@@ -2565,8 +2565,11 @@
                     "m_template": {
                         "$type": "ROS2RobotControlComponent",
                         "ControlConfiguration": {
-                            "Topic": "ackermann_vel",
                             "Steering": 1
+                        },
+                        "SubscriberConfiguration": {
+                            "Type": "ackermann_msgs::msg::AckermannDrive",
+                            "Topic": "ackermann_vel"
                         }
                     }
                 },
