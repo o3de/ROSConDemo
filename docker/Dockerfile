@@ -74,6 +74,7 @@ RUN apt-get update && apt-get install -y \
     ros-humble-tf2-ros \
     ros-humble-urdfdom \
     ros-humble-vision-msgs \
+    ros-humble-joy \
     && rm -rf /var/lib/apt/lists/*
 
 ## Symlink clang version to non-versioned clang and set cc to clang
