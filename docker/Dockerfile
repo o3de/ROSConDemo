@@ -69,12 +69,12 @@ RUN apt-get update && apt-get install -y \
     ros-humble-ackermann-msgs \
     ros-humble-control-toolbox \
     ros-humble-gazebo-msgs \
+    ros-humble-joy \
     ros-humble-navigation2 \
     ros-humble-rviz2 \
     ros-humble-tf2-ros \
     ros-humble-urdfdom \
     ros-humble-vision-msgs \
-    ros-humble-joy \
     && rm -rf /var/lib/apt/lists/*
 
 ## Symlink clang version to non-versioned clang and set cc to clang
