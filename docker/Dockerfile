@@ -1,5 +1,8 @@
-FROM ros:humble-ros-core-jammy
+ARG ROS_VERSION=humble
+ARG UBUNTU_VERSION=jammy
+FROM ros:${ROS_VERSION}-ros-core-${UBUNTU_VERSION}
 
+ARG ROS_VERSION
 ENV WORKDIR=/data/workspace
 WORKDIR $WORKDIR
 
@@ -66,14 +69,14 @@ RUN apt-get update && apt-get install -y \
 
 # Gem + ROSConDemo ROS pacakges
 RUN apt-get update && apt-get install -y \
-    ros-humble-ackermann-msgs \
-    ros-humble-control-toolbox \
-    ros-humble-gazebo-msgs \
-    ros-humble-navigation2 \
-    ros-humble-rviz2 \
-    ros-humble-tf2-ros \
-    ros-humble-urdfdom \
-    ros-humble-vision-msgs \
+    ros-${ROS_VERSION}-ackermann-msgs \
+    ros-${ROS_VERSION}-control-toolbox \
+    ros-${ROS_VERSION}-gazebo-msgs \
+    ros-${ROS_VERSION}-navigation2 \
+    ros-${ROS_VERSION}-rviz2 \
+    ros-${ROS_VERSION}-tf2-ros \
+    ros-${ROS_VERSION}-urdfdom \
+    ros-${ROS_VERSION}-vision-msgs \
     && rm -rf /var/lib/apt/lists/*
 
 ## Symlink clang version to non-versioned clang and set cc to clang
@@ -104,29 +107,29 @@ RUN ./o3de/scripts/o3de.sh register --this-engine \
 WORKDIR $WORKDIR/ROSConDemo/Project
 
 RUN git lfs pull \
-    && . /opt/ros/humble/setup.sh \
+    && . /opt/ros/${ROS_VERSION}/setup.sh \
     && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
 
-RUN . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/${ROS_VERSION}/setup.sh \
     && cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor
 
 # This final step takes long since they Assets will be downloading
-RUN . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/${ROS_VERSION}/setup.sh \
     && echo "This final step can take more than 1 hour. Good time for going for a coffee :)" \
     && cmake --build build/linux --config profile --target ROSConDemo.Assets
 
 # Installing o3de_kraken_nav
 RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
-    ros-humble-cyclonedds \
-    ros-humble-rmw-cyclonedds-cpp \
-    ros-humble-slam-toolbox \
-    ros-humble-navigation2 \
-    ros-humble-nav2-bringup \
-    ros-humble-pointcloud-to-laserscan \
-    ros-humble-teleop-twist-keyboard \
-    ros-humble-ackermann-msgs \
-    ros-humble-topic-tools \
+    ros-${ROS_VERSION}-cyclonedds \
+    ros-${ROS_VERSION}-rmw-cyclonedds-cpp \
+    ros-${ROS_VERSION}-slam-toolbox \
+    ros-${ROS_VERSION}-navigation2 \
+    ros-${ROS_VERSION}-nav2-bringup \
+    ros-${ROS_VERSION}-pointcloud-to-laserscan \
+    ros-${ROS_VERSION}-teleop-twist-keyboard \
+    ros-${ROS_VERSION}-ackermann-msgs \
+    ros-${ROS_VERSION}-topic-tools \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install python-statemachine
