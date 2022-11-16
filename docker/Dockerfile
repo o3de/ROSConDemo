@@ -72,6 +72,7 @@ RUN apt-get update && apt-get install -y \
     ros-${ROS_VERSION}-ackermann-msgs \
     ros-${ROS_VERSION}-control-toolbox \
     ros-${ROS_VERSION}-gazebo-msgs \
+    ros-${ROS_VERSION}-joy \
     ros-${ROS_VERSION}-navigation2 \
     ros-${ROS_VERSION}-rviz2 \
     ros-${ROS_VERSION}-tf2-ros \
