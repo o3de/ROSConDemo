@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     bind9-utils \
     binutils \
     ca-certificates \
-    clang \
+    clang-12 \
     cmake \
     file \
     firewalld \
@@ -79,9 +79,20 @@ RUN apt-get update && apt-get install -y \
     ros-${ROS_VERSION}-vision-msgs \
     && rm -rf /var/lib/apt/lists/*
 
+# Focal needs a modern version for CMake since it
+RUN if [ "${ROS_VERSION}" = "galactic" ]; then \
+      wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | \
+        gpg --dearmor - | \
+        tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null \
+      && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | \
+        tee /etc/apt/sources.list.d/kitware.list >/dev/null \
+      && apt-get update && apt-get install -y cmake=3.24.1-0kitware1ubuntu20.04.1 \
+      && rm -rf /var/lib/apt/lists/*; \
+    fi
+
 ## Symlink clang version to non-versioned clang and set cc to clang
-RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
-    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
+RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-12 100 \
+    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-12 100
 
 # Assumes a local checkout of private ROSConDemo
 RUN git clone https://github.com/o3de/ROSConDemo.git \
