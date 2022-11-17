@@ -58,4 +58,4 @@ to execute the Editor.
 ```
 
 Continue with the instruction in the
-[main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md).
+[main README file](../README.md).
