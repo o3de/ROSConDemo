@@ -1,0 +1,4 @@
+Copyright 2022 Amazon.com, Inc. or its affiliates, all rights reserved.
+
+Documentation content excluding code, and including images, is licensed under a Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/.
+

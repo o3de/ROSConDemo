@@ -11,6 +11,7 @@
                 "$type": "EditorEntitySortComponent",
                 "Id": 12814046806080640047,
                 "Child Entity Order": [
+                    "Entity_[4428599646439]",
                     "Entity_[35906786687133]"
                 ]
             },
@@ -52,7 +53,7 @@
     "Entities": {
         "Entity_[35906786687133]": {
             "Id": "Entity_[35906786687133]",
-            "Name": "UI Logic",
+            "Name": "Quit & Reset UI",
             "Components": {
                 "Component_[11523030787389076961]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -177,6 +178,68 @@
                 "Component_[5581518532572380002]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 5581518532572380002
+                }
+            }
+        },
+        "Entity_[4428599646439]": {
+            "Id": "Entity_[4428599646439]",
+            "Name": "Demo Statistics",
+            "Components": {
+                "Component_[10324930039877259302]": {
+                    "$type": "EditorPendingCompositionComponent",
+                    "Id": 10324930039877259302
+                },
+                "Component_[15619761195927060651]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 15619761195927060651,
+                    "m_template": {
+                        "$type": "UiCanvasAssetRefComponent",
+                        "CanvasAssetRef": {
+                            "AssetPath": "Ui/GameCanvas.uicanvas"
+                        },
+                        "IsAutoLoad": true
+                    }
+                },
+                "Component_[16694828435610717518]": {
+                    "$type": "EditorDisabledCompositionComponent",
+                    "Id": 16694828435610717518
+                },
+                "Component_[17996738649912726735]": {
+                    "$type": "EditorLockComponent",
+                    "Id": 17996738649912726735
+                },
+                "Component_[18380822925310040489]": {
+                    "$type": "EditorVisibilityComponent",
+                    "Id": 18380822925310040489
+                },
+                "Component_[2891571323706424086]": {
+                    "$type": "EditorInspectorComponent",
+                    "Id": 2891571323706424086
+                },
+                "Component_[319536893523122204]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 319536893523122204,
+                    "m_template": {
+                        "$type": "DemoStatisticsComponent",
+                        "UiEntity": "Entity_[4428599646439]"
+                    }
+                },
+                "Component_[4041424097202725965]": {
+                    "$type": "EditorOnlyEntityComponent",
+                    "Id": 4041424097202725965
+                },
+                "Component_[5900249943696614320]": {
+                    "$type": "EditorEntityIconComponent",
+                    "Id": 5900249943696614320
+                },
+                "Component_[7087924878087252371]": {
+                    "$type": "EditorEntitySortComponent",
+                    "Id": 7087924878087252371
+                },
+                "Component_[7273304788652061132]": {
+                    "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
+                    "Id": 7273304788652061132,
+                    "Parent Entity": "ContainerEntity"
                 }
             }
         }

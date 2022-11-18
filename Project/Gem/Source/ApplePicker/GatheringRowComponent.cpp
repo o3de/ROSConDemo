@@ -7,6 +7,7 @@
  */
 
 #include "GatheringRowComponent.h"
+#include <AzCore/Component/ComponentApplicationBus.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
@@ -18,31 +19,24 @@ namespace AppleKraken
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<GatheringRowComponent, AZ::Component>()
-                ->Version(3)
-                ->Field("Start", &GatheringRowComponent::m_start)
-                ->Field("End", &GatheringRowComponent::m_end)
-                ->Field("PoseOffset", &GatheringRowComponent::m_poseOffset)
-                ->Field("TreeCount", &GatheringRowComponent::m_appleTreeCount);
+            serialize->Class<GatheringRowComponent, AZ::Component>()->Version(4)->Field("PoseOffset", &GatheringRowComponent::m_poseOffset);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
-                ec->Class<GatheringRowComponent>("Gathering Row Component", "Poses (points with orientation) suitable for apple gathering")
+                ec->Class<GatheringRowComponent>(
+                      "Gathering Row Component",
+                      "Poses (points with orientation) suitable for apple gathering."
+                      "Component will return as navigation plan all its children "
+                      "with name containing \'GatherPoint\'. "
+                      "Points are sorted with entity name.")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
-                    ->DataElement(AZ::Edit::UIHandlers::Default, &GatheringRowComponent::m_start, "Start", "Entity with the start pose")
-                    ->DataElement(AZ::Edit::UIHandlers::Default, &GatheringRowComponent::m_end, "End", "Entity with the end pose")
                     ->DataElement(
                         AZ::Edit::UIHandlers::Default,
                         &GatheringRowComponent::m_poseOffset,
                         "Offset",
                         "Pose offset for each point (depends on robot)")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::Default,
-                        &GatheringRowComponent::m_appleTreeCount,
-                        "Tree count",
-                        "How many trees are in the row")
                     ->Attribute(AZ::Edit::Attributes::Min, 1);
             }
         }
@@ -61,35 +55,34 @@ namespace AppleKraken
 
     void GatheringRowComponent::ComputeGatheringPoses()
     {
-        if (!m_start.IsValid() || !m_end.IsValid())
+        // find all children
+        AZStd::vector<AZ::EntityId> descendants;
+        AZ::TransformBus::EventResult(descendants, GetEntityId(), &AZ::TransformBus::Events::GetAllDescendants);
+        if (descendants.empty())
         {
-            AZ_Error("GatheringRowComponent", false, "ComputeGatheringPoses: unable to proceed without both start and end entity set");
+            AZ_Error("GatheringRowComponent", false, "ComputeGatheringPoses: unable to proceed with empty set");
             return;
         }
-
-        if (m_appleTreeCount < 1)
-        {
-            AZ_Error("GatheringRowComponent", false, "ComputeGatheringPoses: unable to proceed with apple tree count less than 1");
-            return;
-        }
-
-        GatheringPoses allPoses;
-        AZ::Transform startPose;
-        AZ::Transform endPose;
-        AZ::TransformBus::EventResult(startPose, m_start, &AZ::TransformBus::Events::GetWorldTM);
-        AZ::TransformBus::EventResult(endPose, m_end, &AZ::TransformBus::Events::GetWorldTM);
-
-        const AZ::Transform rowLookAt =
-            AZ::Transform::CreateLookAt(startPose.GetTranslation(), endPose.GetTranslation(), AZ::Constants::Axis::XPositive);
-
         // Simplification - we assume same orientations along the way
-        const auto rowVector = endPose.GetTranslation() - startPose.GetTranslation();
-        for (int i = 0; i < m_appleTreeCount; ++i)
+        AZStd::map<AZStd::string, AZ::EntityId> sorted_names;
+        for (const auto& entity_id : descendants)
         {
-            AZ::Transform gatheringPoint = rowLookAt;
-            const float scale = static_cast<float>(i) / (m_appleTreeCount - 1);
-            gatheringPoint.SetTranslation(gatheringPoint.GetTranslation() + m_poseOffset + rowVector * scale);
-            m_gatheringPoses.emplace_back(gatheringPoint);
+            AZStd::string entity_name;
+            AZ::ComponentApplicationBus::BroadcastResult(entity_name, &AZ::ComponentApplicationRequests::GetEntityName, entity_id);
+            if (entity_id.IsValid())
+            {
+                if (entity_name.contains("GatherPoint"))
+                {
+                    sorted_names[entity_name] = entity_id;
+                }
+            }
+        }
+        for (const auto& [_, entity_id] : sorted_names)
+        {
+            AZ::Transform pose;
+            AZ::TransformBus::EventResult(pose, entity_id, &AZ::TransformBus::Events::GetWorldTM);
+            pose = pose * AZ::Transform::CreateFromQuaternionAndTranslation(AZ::Quaternion::CreateIdentity(), m_poseOffset);
+            m_gatheringPoses.emplace_back(pose);
         }
     }
 } // namespace AppleKraken

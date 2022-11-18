@@ -13,6 +13,8 @@
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
 #include <ROS2/Manipulator/MotorizedJoint.h>
+#include <ImGuiBus.h>
+#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -20,6 +22,7 @@ namespace AppleKraken
     class ManipulatorController
         : public AZ::Component
         , public ManipulatorRequestBus ::Handler
+        , public ImGui::ImGuiUpdateListenerBus::Handler
         , public AZ::TickBus::Handler
     {
     public:
@@ -36,17 +39,23 @@ namespace AppleKraken
         bool initialized{ false };
         ROS2::MotorizedJoint* getMotorizedJoint(const AZ::EntityId& entityWithMotJoint);
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
+        void OnImGuiUpdate() override;
         void PickApple(const AZ::Vector3 position) override;
         AZ::Vector3 GetPosition() override;
         void Retrieve() override;
+        void ResetApple() override;
         void RetrieveNose() override;
         int GetStatus() override;
+        bool IsNoseRetreived() override;
+        AZ::EntityId GetEffectorEntity() override;
+        AZ::EntityId GetRestEntity() override;
 
         void ResetTimer();
 
         AZ::Vector3 m_desiredPosition{0, 0, 0 };
         AZStd::optional<AZ::Vector3> m_desiredApple;
-        bool m_noseRetrieved{false };
+        bool m_noseRetrieveRequest{false };
+        bool m_noseRetrievingSuccess{false};
 
         AZ::Vector3 m_vectorX{1, 0, 0 };
         AZ::Vector3 m_vectorY{0, 1, 0 };
@@ -64,8 +73,12 @@ namespace AppleKraken
         float m_setPointZ{ 0 };
 
         float max_errorXZ{ 0.05 };
-        float m_timeXZsetpointReach{1.5 };
+        float max_errorY{ 0.05 };
+        float m_timeSetpointReach{ 0.2 };
 
-        float m_time_XZ_ok = std::numeric_limits<float>::lowest();
+        float m_time_XZ_ok { 0.0 };
+        float m_time_Y_ok { 0.0 };
+        bool m_imguiManualControl{false};
+
     };
 } // namespace AppleKraken

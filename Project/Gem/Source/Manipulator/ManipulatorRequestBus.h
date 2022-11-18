@@ -23,38 +23,14 @@ namespace AppleKraken
         virtual void PickApple(const AZ::Vector3 position) = 0;
         virtual AZ::Vector3 GetPosition() = 0;
         virtual void Retrieve() = 0;
+        virtual void ResetApple() = 0;
         virtual void RetrieveNose() = 0;
         virtual int GetStatus() = 0;
+        virtual bool IsNoseRetreived() = 0;
+        virtual AZ::EntityId GetEffectorEntity() = 0;
+        virtual AZ::EntityId GetRestEntity() = 0;
     };
 
     using ManipulatorRequestBus = AZ::EBus<ManipulatorRequest>;
 
-    //! EventHanlder with AZ_EBUS_BEHAVIOR_BINDER to integrate with LUA/Canvas
-    class ManipulatorRequestHandler
-        : public ManipulatorRequestBus::Handler
-        , public AZ::BehaviorEBusHandler
-    {
-    public:
-        AZ_EBUS_BEHAVIOR_BINDER(
-            ManipulatorRequestHandler,
-            "{30CE1753-DEDE-4D83-8C7C-F5F2BBD12DE8}",
-            AZ::SystemAllocator,
-            PickApple,
-            GetPosition,
-            Retrieve,
-            RetrieveNose,
-            GetStatus);
-
-        virtual void PickApple(const AZ::Vector3 position) override;
-
-        virtual AZ::Vector3 GetPosition() override;
-
-        virtual void Retrieve() override;
-
-        virtual void RetrieveNose() override;
-
-        virtual int GetStatus() override;
-
-        static void Reflect(AZ::ReflectContext* context);
-    };
 } // namespace AppleKraken

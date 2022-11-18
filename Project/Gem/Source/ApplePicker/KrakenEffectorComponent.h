@@ -20,6 +20,8 @@
 #include <AzFramework/Physics/PhysicsSystem.h>
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
+#include <ImGuiBus.h>
+#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -28,6 +30,7 @@ namespace AppleKraken
         : public AZ::Component
         , protected ApplePickingRequestBus::Handler
         , protected AZ::TickBus::Handler
+        , protected  ImGui::ImGuiUpdateListenerBus::Handler
     {
     public:
         AZ_COMPONENT(KrakenEffectorComponent, "{9206FC30-DF56-4246-8247-5D6B31603B53}");
@@ -45,6 +48,7 @@ namespace AppleKraken
         AZ::Obb GetEffectorReachArea() override;
 
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
+        void OnImGuiUpdate() override;
 
     private:
         void LockManipulator(bool locked);
@@ -67,8 +71,8 @@ namespace AppleKraken
         PickAppleTask m_currentTask; //!> valid if RETRIEVING or PICKING
         float m_maxPickingTime{ 5.0f };
         float m_currentStateTransitionTime = 0.0f;
-        float m_retrieve_nose_time{ 1.5f };
         float m_stabilize_time{ 0.5f };
+        const float m_maxRetrieveTime{ 3.5f };
 
         EffectorState m_effectorState = EffectorState::IDLE;
         EffectorState m_effectorTargetState = EffectorState::IDLE;
@@ -83,5 +87,6 @@ namespace AppleKraken
         bool m_registeredCallback{ false };
         bool is_manipulator_locked = { false };
         AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
+        std::array<float,3> m_debugApple;
     };
 } // namespace AppleKraken

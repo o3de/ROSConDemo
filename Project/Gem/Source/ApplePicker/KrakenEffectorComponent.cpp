@@ -10,6 +10,9 @@
 #include "ApplePickingNotifications.h"
 #include "Manipulator/ManipulatorRequestBus.h"
 #include "PickingStructs.h"
+#include "ROS2/VehicleDynamics/VehicleInputControlBus.h"
+#include <AzCore/Component/Entity.h>
+#include <AzCore/Component/ComponentApplicationBus.h>
 #include <AzCore/Component/TransformBus.h>
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
@@ -27,10 +30,12 @@ namespace AppleKraken
                                                                                 { EffectorState::PREPARED, "PREPARED" },
                                                                                 { EffectorState::PICKING, "PICKING" },
                                                                                 { EffectorState::PICKING_STABILIZE, "PICKING_STABILIZE" },
-                                                                                { EffectorState::RETRIEVING, "RETRIEVING" },
                                                                                 { EffectorState::RETRIEVING_NOSE, "RETRIEVING_NOSE" },
+                                                                                { EffectorState::RETRIEVING, "RETRIEVING" },
                                                                                 { EffectorState::RETRIEVING_STABILIZE,
-                                                                                  "RETRIEVING_STABILIZE" } };
+                                                                                  "RETRIEVING_STABILIZE" },
+                                                                                { EffectorState::RETRIEVING_FAILED,
+                                                                                            "RETRIEVING_FAILED" }  };
 
         // TODO - this is a debug space for a stub implementation. Proper: a state transition machine with lambdas.
         AZStd::string StateTransitionString(EffectorState current, EffectorState next)
@@ -48,6 +53,10 @@ namespace AppleKraken
     {
         ApplePickingRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusConnect();
+
+        EBUS_EVENT_ID_RESULT(m_appleProbe, m_manipulatorEntity, ManipulatorRequestBus, GetEffectorEntity);
+        EBUS_EVENT_ID_RESULT(m_restEntityId, m_manipulatorEntity, ManipulatorRequestBus, GetRestEntity);
 
         m_onTriggerHandleBeginHandler = AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler(
             [&]([[maybe_unused]] AzPhysics::SimulatedBodyHandle bodyHandle, [[maybe_unused]] const AzPhysics::TriggerEvent& event)
@@ -62,7 +71,8 @@ namespace AppleKraken
                 // AzPhysics::SimulatedBody* collideToEntityId = this->GetEntityId() == e1 ?  event.m_triggerBody : event.m_otherBody;}
                 if (m_currentTask.m_appleEntityId == collideToEntityId)
                 {
-                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Apple!====================");
+                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", " %s : m_onTriggerHandle to Apple!====================",
+                                   GetEntity()->GetName().c_str());
                     ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::ApplePicked);
                     if (m_effectorState == EffectorState::PICKING)
                     {
@@ -72,8 +82,9 @@ namespace AppleKraken
                 }
                 if (m_restEntityId == collideToEntityId)
                 {
-                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", "=================m_onTriggerHandle to Rest!====================");
-                    if (m_effectorState == EffectorState::RETRIEVING)
+                    AZ_TracePrintf("m_onTriggerHandleBeginHandler", "%s : m_onTriggerHandle to Rest!====================",
+                                   GetEntity()->GetName().c_str());
+                    if (m_effectorState == EffectorState::RETRIEVING || m_effectorState == EffectorState::RETRIEVING_NOSE )
                     {
                         // start picking the apple
                         BeginTransitionIfAcceptable(EffectorState::RETRIEVING_STABILIZE);
@@ -86,6 +97,7 @@ namespace AppleKraken
     {
         AZ::TickBus::Handler::BusDisconnect();
         ApplePickingRequestBus::Handler::BusDisconnect();
+        ImGui::ImGuiUpdateListenerBus::Handler::BusDisconnect();
     }
 
     void KrakenEffectorComponent::Reflect(AZ::ReflectContext* context)
@@ -96,11 +108,8 @@ namespace AppleKraken
                 ->Version(4)
                 ->Field("ReachEntity", &KrakenEffectorComponent::m_reachEntity)
                 ->Field("ManipulatorEntity", &KrakenEffectorComponent::m_manipulatorEntity)
-                ->Field("AppleProbe", &KrakenEffectorComponent::m_appleProbe)
                 ->Field("RootManipulatorFreeze", &KrakenEffectorComponent::m_rootEntityToFreeze)
                 ->Field("BaseLinkToKinematic", &KrakenEffectorComponent::m_baseLinkToKinematic)
-                ->Field("RestEntity", &KrakenEffectorComponent::m_restEntityId)
-                ->Field("RetrieveNoseTime", &KrakenEffectorComponent::m_retrieve_nose_time)
                 ->Field("PickStabilizeTime", &KrakenEffectorComponent::m_stabilize_time)
                 ->Field("MaxPickingTime", &KrakenEffectorComponent::m_maxPickingTime);
 
@@ -121,8 +130,6 @@ namespace AppleKraken
                         "Entity with manipulator",
                         "The entity that has a component handling events from ManipulatorRequestBus")
                     ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId, &KrakenEffectorComponent::m_appleProbe, "Entity to probe apples", "Sucking collider")
-                    ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_rootEntityToFreeze,
                         "RootManipulatorFreeze",
@@ -134,16 +141,6 @@ namespace AppleKraken
                         "BaseLinkToKinematic during manipulator movement")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
-                        &KrakenEffectorComponent::m_restEntityId,
-                        "ManipulatorRestPoint",
-                        "ManipulatorRestPoint")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
-                        &KrakenEffectorComponent::m_retrieve_nose_time,
-                        "Nose Retrieve Time",
-                        "Nose Retrieve Time")
-                    ->DataElement(
-                        AZ::Edit::UIHandlers::EntityId,
                         &KrakenEffectorComponent::m_stabilize_time,
                         "PickStabilizeTime",
                         "PickStabilizeTime")
@@ -152,18 +149,17 @@ namespace AppleKraken
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
             }
         }
-        ManipulatorRequestHandler::Reflect(context);
     }
 
     void KrakenEffectorComponent::PrepareForPicking()
     {
-        AZ_TracePrintf("KrakenEffectorComponent", "PrepareForPicking\n");
+        AZ_TracePrintf("KrakenEffectorComponent", "%s: PrepareForPicking\n", GetEntity()->GetName().c_str());
         BeginTransitionIfAcceptable(EffectorState::PREPARED);
     }
 
     void KrakenEffectorComponent::PickApple(const PickAppleTask& appleTask)
     {
-        AZ_TracePrintf("KrakenEffectorComponent", "PickApple\n");
+        AZ_TracePrintf("KrakenEffectorComponent", "%s: PickApple\n", GetEntity()->GetName().c_str());
         // TODO - handle appleTask
         m_currentTask = appleTask;
         ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::PickApple, appleTask.m_middle);
@@ -172,7 +168,7 @@ namespace AppleKraken
 
     void KrakenEffectorComponent::FinishPicking()
     {
-        AZ_TracePrintf("KrakenEffectorComponent", "FinishPicking\n");
+        AZ_TracePrintf("KrakenEffectorComponent", "%s : FinishPicking\n", GetEntity()->GetName().c_str());
         BeginTransitionIfAcceptable(EffectorState::IDLE);
     }
 
@@ -181,6 +177,7 @@ namespace AppleKraken
         PickingState state;
         state.m_effectorState = m_effectorState;
         state.m_taskProgress = 0.0f; // TODO
+        state.m_description = DebugStateTransit::kMapToString.at(m_effectorState);
         if (m_currentTask.IsValid())
         {
             state.m_currentTask = m_currentTask;
@@ -190,7 +187,6 @@ namespace AppleKraken
 
     AZ::Obb KrakenEffectorComponent::GetEffectorReachArea()
     {
-        AZ_TracePrintf("KrakenEffectorComponent", "GetEffectorReachArea\n");
         AZ::Obb reachArea;
 
         if (m_reachEntity.IsValid())
@@ -202,23 +198,6 @@ namespace AppleKraken
                 dimensions, m_reachEntity, &LmbrCentral::BoxShapeComponentRequests::GetBoxDimensions);
             if (!dimensions.IsZero())
             {
-                AZ_Printf("KrakenEffectorComponent", "OurEffectorReachArea :");
-                AZ_Printf(
-                    "KrakenEffectorComponent", "  local dimensions : %f %f %f", dimensions.GetX(), dimensions.GetY(), dimensions.GetZ());
-                AZ_Printf(
-                    "KrakenEffectorComponent",
-                    "  transform - rot  : %f %f %f %f",
-                    targetTM.GetRotation().GetX(),
-                    targetTM.GetRotation().GetY(),
-                    targetTM.GetRotation().GetZ(),
-                    targetTM.GetRotation().GetW());
-                AZ_Printf(
-                    "KrakenEffectorComponent",
-                    "  transform - pos  : %f %f %f",
-                    targetTM.GetTranslation().GetX(),
-                    targetTM.GetTranslation().GetY(),
-                    targetTM.GetTranslation().GetZ());
-
                 reachArea.SetHalfLengths(dimensions / 2);
                 reachArea.SetPosition(targetTM.GetTranslation());
                 reachArea.SetRotation(targetTM.GetRotation());
@@ -247,7 +226,7 @@ namespace AppleKraken
 
         // State transition
         AZ_TracePrintf(
-            "KrakenEffectorComponent", "%s", DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
+            "KrakenEffectorComponent", "%s : %s", GetEntity()->GetName().c_str(), DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
         m_currentStateTransitionTime = 0.0f;
 
         // Update state
@@ -277,20 +256,28 @@ namespace AppleKraken
         descendants.push_back(m_rootEntityToFreeze);
         if (is_manipulator_locked != locked)
         {
+            if (locked) {
+                AZ_Printf("KrakenEffectorComponent", "Locking : %s\n", GetEntity()->GetName().c_str());
+            }
+            else{
+                AZ_Printf("KrakenEffectorComponent", "Unlocking : %s\n", GetEntity()->GetName().c_str());
+            }
             for (auto& descadant : descendants)
             {
+                using VehicleBus = VehicleDynamics::VehicleInputControlRequestBus;
                 if (locked)
                 {
                     // Lock manipulator, make base_link not kinematic anymore
-                    AZ_Printf("KrakenEffectorComponent", "Locking : %s\n", descadant.ToString().c_str());
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::DisablePhysics);
                     Physics::RigidBodyRequestBus::Event(m_baseLinkToKinematic, &Physics::RigidBodyRequestBus::Events::SetKinematic, false);
+                    VehicleBus::Event(m_baseLinkToKinematic, &VehicleBus::Events::SetDisableVehicleDynamics, false);
                 }
                 else
                 {
                     // loose manipulator, make base_link kinematic
                     Physics::RigidBodyRequestBus::Event(descadant, &Physics::RigidBodyRequestBus::Events::EnablePhysics);
                     Physics::RigidBodyRequestBus::Event(m_baseLinkToKinematic, &Physics::RigidBodyRequestBus::Events::SetKinematic, true);
+                    VehicleBus::Event(m_baseLinkToKinematic, &VehicleBus::Events::SetDisableVehicleDynamics, true);
                 }
             }
             is_manipulator_locked = locked;
@@ -316,7 +303,7 @@ namespace AppleKraken
             AZ_Error(
                 "KrakenEffectorComponent",
                 false,
-                "Unable to accept request: currently realizing %s",
+                "%s: Unable to accept request: currently realizing %s", GetEntity()->GetName().c_str(),
                 DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
             return false;
         }
@@ -326,7 +313,7 @@ namespace AppleKraken
             AZ_Error(
                 "KrakenEffectorComponent",
                 false,
-                "Invalid state transition %s",
+                "%s: Invalid state transition %s",GetEntity()->GetName().c_str(),
                 DebugStateTransit::StateTransitionString(m_effectorState, m_effectorTargetState).c_str());
             return false;
         }
@@ -360,8 +347,8 @@ namespace AppleKraken
               {
                   if (m_currentStateTransitionTime > m_maxPickingTime)
                   {
-                      AZ_Printf("m_onTriggerHandleBeginHandler", "---------------Failed to retrieve apple--------------------\n");
-                      ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::PickingFailed, "Timeout");
+                      AZ_Printf("m_onTriggerHandleBeginHandler", "%s : Failed to retrieve apple--------------------\n", GetEntity()->GetName().c_str());
+                      BeginTransitionIfAcceptable(EffectorState::RETRIEVING_FAILED);
                   }
               } },
             { EffectorState::PICKING_STABILIZE,
@@ -375,14 +362,31 @@ namespace AppleKraken
             { EffectorState::RETRIEVING_NOSE,
               [this]()
               {
-                  if (m_currentStateTransitionTime > m_retrieve_nose_time)
-                  {
-                      BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
-                  }
+                bool result;
+                EBUS_EVENT_ID_RESULT(result, m_manipulatorEntity, ManipulatorRequestBus, IsNoseRetreived);
+
+                if (result)
+                {
+                    BeginTransitionIfAcceptable(EffectorState::RETRIEVING);
+                }
               } },
-            { EffectorState::RETRIEVING,
-              []()
+            { EffectorState::RETRIEVING_FAILED,
+              [this]()
               {
+                bool result;
+                EBUS_EVENT_ID_RESULT(result, m_manipulatorEntity, ManipulatorRequestBus, IsNoseRetreived);
+
+                if (result)
+                {
+                      BeginTransitionIfAcceptable(EffectorState::PREPARED);
+                }
+              } },
+            {EffectorState::RETRIEVING,
+              [this]() {
+                  // Continue if manipulator retraction was blocked
+                  if (m_currentStateTransitionTime > m_maxRetrieveTime) {
+                      BeginTransitionIfAcceptable(EffectorState::RETRIEVING_STABILIZE);
+                  }
               } },
             { EffectorState::RETRIEVING_STABILIZE,
               [this]()
@@ -422,7 +426,7 @@ namespace AppleKraken
                 {
                     if (!m_currentTask.IsValid())
                     {
-                        AZ_Error("KrakenEffectorComponent", true, "No valid task for current picking!");
+                        AZ_Error("KrakenEffectorComponent", true, "%s : No valid task for current picking!",GetEntity()->GetName().c_str());
                         return;
                     }
                     ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::RetrieveNose);
@@ -435,12 +439,27 @@ namespace AppleKraken
                     ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
                 },
             },
+            { // on skip
+                    { EffectorState::RETRIEVING_NOSE, EffectorState::RETRIEVING_STABILIZE },
+                    [this]()
+                    {
+                        ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                    },
+            },
             {
                 { EffectorState::RETRIEVING, EffectorState::RETRIEVING_STABILIZE },
                 []()
                 {
                 },
             },
+            {
+                { EffectorState::RETRIEVING_FAILED, EffectorState::PREPARED },
+                [this]()
+                {
+                    ApplePickingNotificationBus::Event(this->GetEntityId(),&ApplePickingNotifications::PickingFailed, "Timeout");
+                },
+            },
+
             {
                 { EffectorState::RETRIEVING_STABILIZE, EffectorState::PREPARED },
                 [this]()
@@ -455,12 +474,28 @@ namespace AppleKraken
                 {
                 },
             },
+            {
+                { EffectorState::PICKING, EffectorState::IDLE },
+                [this]()
+                {
+                    // apple picking was finished with timeout
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::Retrieve);
+                },
+            },
+            {
+                { EffectorState::PICKING, EffectorState::RETRIEVING_FAILED },
+                [this]()
+                {
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::RetrieveNose);
+                    ManipulatorRequestBus::Event(m_manipulatorEntity, &ManipulatorRequest::ResetApple);
+                },
+            },
         };
     }
 
     const AZStd::function<void()>& KrakenEffectorComponent::GetCurrentStateAction() const
     {
-        AZ_Assert(m_effectorState != EffectorState::INVALID, "Effector is in an invalid state! Unable to access state properties.");
+        AZ_Assert(m_effectorState != EffectorState::INVALID, "%s : Effector is in an invalid state! Unable to access state properties.",GetEntity()->GetName().c_str());
         return m_stateProperties.m_stateActions.at(m_effectorState);
     }
 
@@ -468,4 +503,41 @@ namespace AppleKraken
     {
         return m_stateProperties.m_allowedTransitions.at(AZStd::make_pair(m_effectorState, m_effectorTargetState));
     }
+
+    void KrakenEffectorComponent::OnImGuiUpdate(){
+
+        AZStd::string window_name = AZStd::string::format("ManipulatorController%s", GetEntityId().ToString().c_str());
+        ImGui::Begin(window_name.c_str());
+        const auto & state_name = DebugStateTransit::kMapToString.at(m_effectorState);
+        ImGui::Text("m_effectorState : %s",state_name);
+        ImGui::BeginGroup();
+        ImGui::Text("m_currentTask:");
+        ImGui::Text("m_appleEntityId : %s",m_currentTask.m_appleEntityId.ToString().c_str());
+        ImGui::Text("m_middle : %.1f %.1f %.1f",m_currentTask.m_middle.GetX(),m_currentTask.m_middle.GetY(),m_currentTask.m_middle.GetZ());
+        ImGui::EndGroup();
+        if (ImGui::CollapsingHeader("KrakenTestApplePicking") && m_reachEntity.IsValid()) {
+            AZ::Obb r = KrakenEffectorComponent::GetEffectorReachArea();
+
+            ImGui::SliderFloat("Horizontal", &m_debugApple[0], -r.GetHalfLengthX(), r.GetHalfLengthX());
+            ImGui::SliderFloat("Vertical", &m_debugApple[2], -r.GetHalfLengthZ(), r.GetHalfLengthZ());
+            ImGui::SliderFloat("Nose", &m_debugApple[1], -r.GetHalfLengthY(), r.GetHalfLengthY());
+
+            if (ImGui::Button("Send 'PickApple'")) {
+                AZ::Transform targetTM = AZ::Transform::CreateIdentity();
+                AZ::TransformBus::EventResult(targetTM, m_reachEntity, &AZ::TransformBus::Events::GetWorldTM);
+                PickAppleTask appleTask;
+                appleTask.m_middle = targetTM.TransformPoint(AZ::Vector3::CreateFromFloat3(m_debugApple.data()));
+                PickApple(appleTask);
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Send 'PrepareForPicking'")) {
+                PrepareForPicking();
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Send 'FinishPicking'")) {
+                FinishPicking();
+            }
+        }
+        ImGui::End();
+    };
 } // namespace AppleKraken
