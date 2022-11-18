@@ -2,9 +2,518 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="apple_kraken">
   <!-- Enable setting arguments from the launch file -->
 
-  <!-- Import robot description macro -->
-  <xacro:include filename="kraken_chasis.xacro" /> 
-  <xacro:include filename="kraken_manipulator.xacro" />
+  <!-- PARAMETERS -->
+  <!-- Chassis -->
+  <xacro:property name="wheel_width" value="0.132" />
+  <xacro:property name="front_axis_X" value="2.2" />
+  <xacro:property name="wheel_base_rear" value="0.35" />
+  <xacro:property name="wheel_base_front" value="0.225" />
+  <xacro:property name="wheel_radius" value="0.3" />
+
+  <!-- Manipulator -->
+  <xacro:property name="manip_x" value="1.1" />
+  <xacro:property name="manip_y" value="0.0" />
+  <xacro:property name="manip_z" value="0.0" />
+
+  
+  <!--  CHASIS: begin  -->
+
+    <link name="base_link">
+      <inertial>
+        <origin rpy="0.000000 -0.000000 -1.570796" xyz="1.003638 0.000000 0.000000"/>
+        <!-- TODO: Update mass as volume from Meshlab will overestimate the mass -->
+        <mass value="300"/>
+        <inertia ixx="50.0" ixy="0.0" ixz="0.0" iyy="240.0" iyz="0.0" izz="250.0"/>
+      </inertial>
+      <visual>
+        <origin rpy="0.000000 -0.000000 -1.570796" xyz="1.101831 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="meshes/VehicleBody/VehicleBody.dae" scale="1 1 1"/>
+        </geometry>
+      </visual> 
+      <collision>
+        <origin rpy="1.570796 -0.000000 1.570796" xyz="0.002268 -0.000000 0.668965"/>
+        <geometry>
+           <box size="0.592215 0.491737 0.491032"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="-1.570796 -0.000000 -3.141593" xyz="0.963687 -0.000000 0.804149"/>
+        <geometry>
+           <box size="1.427517 0.762107 0.592215"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="0.000000 -0.000000 0.000000" xyz="2.197615 0.000000 0.762109"/>
+        <geometry>
+           <box size="0.583352 0.544691 0.264003"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="-1.570796 -0.000000 -3.141593" xyz="2.083368 0.000000 0.526601"/>
+        <geometry>
+           <box size="0.811846 0.207011 0.097965"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="1.570796 -0.000000 1.570796" xyz="-0.288170 -0.000000 0.522611"/>
+        <geometry>
+           <box size="0.592215 0.236236 0.089846"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="1.570796 -0.000000 1.570796" xyz="2.5402429 0.000000 0.562592"/>
+        <geometry>
+           <box size="0.437199 0.131902 0.055878"/>
+         </geometry>
+       </collision>
+       <collision>
+        <origin rpy="1.570796 -0.000000 1.570796" xyz="1.791692 -0.000000 0.907655"/>
+        <geometry>
+           <box size="0.592215 0.555096 0.228493"/>
+         </geometry>
+       </collision>         
+
+    </link>
+
+    <link name="wheel_rear_right_link">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
+        <mass value="24.5"/>
+        <inertia ixx="0.787" ixy="0.0" ixz="0.0" iyy="0.787" iyz="0.0" izz="1.309"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 1.571 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/Wheels/WheelRight.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 ${-wheel_width/2}"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_rear_left_link">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0.0 ${wheel_width}"/>
+        <mass value="24.5"/>
+        <inertia ixx="0.787" ixy="0.0" ixz="0.0" iyy="0.787" iyz="0.0" izz="1.309"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 1.571 0 " xyz="0 0 0.0"/>
+        <geometry>
+          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 ${wheel_width/2}"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_front_right_link">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0.0 ${wheel_width/2}"/>
+        <mass value="24.5"/>
+        <inertia ixx="0.787" ixy="0.0" ixz="0.0" iyy="0.787" iyz="0.0" izz="1.309"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 1.571 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/Wheels/WheelRight.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 ${-wheel_width/2}"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="wheel_front_left_link">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0.0 ${wheel_width/2}"/>
+        <mass value="24.5"/>
+        <inertia ixx="0.787" ixy="0.0" ixz="0.0" iyy="0.787" iyz="0.0" izz="1.309"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 1.571 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/Wheels/WheelLeft.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 ${wheel_width/2}"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}" />
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="steering_front_right_link">
+      <inertial>
+        <origin rpy="0 0 -1.571" xyz="0 0 -0.04"/>
+        <mass value="20.0"/>
+        <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0 -0.03 -0.03"/>
+        <geometry>
+          <mesh filename="meshes/Steering/SteeringArmRight.dae" scale="0.6 0.6 0.6"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="steering_front_left_link">
+      <inertial>
+        <origin rpy="0 0 -1.571" xyz="0 0 -0.04"/>
+        <mass value="20.0"/>
+        <inertia ixx="1" ixy="0.0" ixz="0.0" iyy="1" iyz="0.0" izz="1"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0 0.03 -0.03"/>
+        <geometry>
+          <mesh filename="meshes/Steering/SteeringArmLeft.dae" scale="0.6 0.6 0.6"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="lidar_mount">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+    </link>
+
+    <link name="conveyor_belt">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.5"/>
+      </inertial>
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="meshes/ConveyorBelt/ConveyorBelt.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="wheel_rear_right_joint" type="continuous">
+      <origin rpy="-1.570796 0.000000 0.000000" xyz="0.000000 ${-wheel_base_rear} ${wheel_radius}"/>
+      <parent link="base_link"/>
+      <child link="wheel_rear_right_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <limit effort="1000000.0" velocity="1000.0"/>
+    </joint>
+
+    <joint name="wheel_rear_left_joint" type="continuous">
+      <origin rpy="-1.570796 -0.000000 0.000000" xyz="0.000000 ${wheel_base_rear} ${wheel_radius}"/>
+      <parent link="base_link"/>
+      <child link="wheel_rear_left_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <limit effort="1000000.0" velocity="1000.0"/>
+    </joint>
+
+    <joint name="wheel_front_right_joint" type="continuous">
+      <origin rpy="-1.571 0 0" xyz="0 ${wheel_base_front-wheel_base_rear} 0"/>
+      <parent link="steering_front_right_link"/>
+      <child link="wheel_front_right_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <limit effort="1000000.0" velocity="1000.0"/>
+    </joint>
+
+    <joint name="wheel_front_left_joint" type="continuous">
+      <origin rpy="-1.571 0 0" xyz="0 ${-wheel_base_front+wheel_base_rear} 0"/>
+      <parent link="steering_front_left_link"/>
+      <child link="wheel_front_left_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <limit effort="1000000.0" velocity="1000.0"/>
+    </joint>
+
+    <joint name="steering_front_right_joint" type="revolute">
+      <origin rpy="0 0 0" xyz="${front_axis_X} ${-wheel_base_front} ${wheel_radius}"/>
+      <parent link="base_link"/>
+      <child link="steering_front_right_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000000.0" lower="-0.5235" upper="0.5235" velocity="100"/>
+    </joint>
+
+    <joint name="steering_front_left_joint" type="revolute">
+      <origin rpy="0 0 0" xyz="${front_axis_X} ${wheel_base_front} ${wheel_radius}"/>
+      <parent link="base_link"/>
+      <child link="steering_front_left_link"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000000.0" lower="-0.5235" upper="0.5235" velocity="100"/>
+    </joint>
+
+    <joint name="lidar_mount_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="2.2804451 0.0 0.8967377"/>
+      <parent link="base_link"/>
+      <child link="lidar_mount"/>
+    </joint>
+
+    <joint name="conveyor_belt_joint" type="fixed">
+      <origin rpy="0 0 1.571" xyz="1.1043353 0 0.0"/>
+      <parent link="base_link"/>
+      <child link="conveyor_belt"/>
+    </joint>
+
+  <!-- CHASIS: end -->
+
+  <!-- MANIPULATOR: begin -->
+  
+    <link name="kraken_manipulator_link_0">
+      <inertial>
+        <origin rpy="0.1745 0 0" xyz="0.0 -0.6 2.0"/>
+        <mass value="25.0"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/ChassisAndFrame/ChassisAndFrame.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+       <collision>
+        <origin rpy="-0.0872664626 0.000000 0.000000" xyz="-0.3812585 -0.374285 2.5734301"/>
+        <geometry>
+           <box size="2.087586 0.088237 0.062286"/>
+         </geometry>
+        </collision>     
+    </link>
+
+    <link name="kraken_manipulator_link_1">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="25.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="8.0" iyz="0.0" izz="8.0"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 0 -1.571" xyz="0.2528269 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumMechanismPart01/VacuumMechanismPart01.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="-0.000 -0.000000 0.000000" xyz="0.2732149 0.062564 -0.000045"/>
+        <geometry>
+           <box size="2.019587 0.172379 0.067739"/>
+         </geometry>
+       </collision>
+    </link>
+
+    <link name="kraken_manipulator_link_2">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="25.0"/>
+        <inertia ixx="0.804004" ixy="0.0" ixz="0.0" iyy="0.9002936" iyz="0.0" izz="1.0483408"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="1.571 0 -1.571" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumMechanismPart02/VacuumMechanismPart02.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+       <collision>
+        <origin rpy="-1.570829 0 0 " xyz="-0.066974 -0.2 -0.000000"/>
+        <geometry>
+           <cylinder  length="0.3" radius="0.06"/>
+         </geometry>
+       </collision>
+    </link>
+
+    <!-- Nozzle -->
+    <link name="kraken_manipulator_link_3">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 -1.571 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumNozzle/VacuumNozzle.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Nozzle02 -->
+    <link name="kraken_manipulator_link_4">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+
+      <visual>
+        <origin rpy="0 -1.4835298642 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <mesh filename="meshes/VacuumNozzle02/VacuumNozzle02.dae" scale="1 1 1"/>
+        </geometry>
+      </visual>
+
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0.19"/>
+        <geometry>
+           <cylinder  length="0.38" radius="0.06"/>
+         </geometry>
+       </collision>
+    </link>
+
+    <link name="Effector">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+      
+      <collision>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <sphere  radius="0.05"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <box  size="0.12 0.12 0.12"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="RetrievalChute">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+      </inertial>
+    </link>
+
+    <link name="Rest">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+      
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <sphere  radius="0.1"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="Reach">
+      <inertial>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+        <mass value="10.0"/>
+        <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.2"/>
+      </inertial>
+      
+      <visual>
+        <origin rpy="0 0 0" xyz="0.0 0.0 0"/>
+        <geometry>
+          <box size="1.8 0.75 1.8"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <joint name="kraken_manipulator_joint_0" type="fixed">
+      <origin rpy="0 0 0" xyz="${manip_x} 0 0"/>
+      <parent link="base_link"/>
+      <child link="kraken_manipulator_link_0"/>
+    </joint>
+
+    <!-- Joint that moves manipulator along Z-Axis -->
+    <joint name="kraken_manipulator_joint_1" type="prismatic">
+      <origin rpy="-0.0872664626 0 0" xyz="${manip_x-0.650001} -0.511055 1.6569"/>
+      <parent link="base_link"/>
+      <child link="kraken_manipulator_link_1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="-1.2" upper="0.67" velocity="1.0"/>
+    </joint>
+
+    <!-- Joint that moves manipulator along X-Axis -->
+    <joint name="kraken_manipulator_joint_2" type="prismatic">
+      <origin rpy="0 1.571 0" xyz="0 0 0"/>
+      <parent link="kraken_manipulator_link_1"/>
+      <child link="kraken_manipulator_link_2"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="-0.8" upper="1.2" velocity="1.0"/>
+    </joint>
+
+    <!-- Nozzle -->
+    <joint name="kraken_manipulator_joint_3" type="prismatic">
+      <origin rpy="1.571 0 0" xyz="-0.067 -0.35 -0.004"/>
+      <parent link="kraken_manipulator_link_2"/>
+      <child link="kraken_manipulator_link_3"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="0" upper="0.3" velocity="1.0"/>
+    </joint>
+
+    <!-- Nozzle02 -->
+    <joint name="kraken_manipulator_joint_4" type="prismatic">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <parent link="kraken_manipulator_link_3"/>
+      <child link="kraken_manipulator_link_4"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <dynamics damping="2.0" friction="1.0"/>
+      <limit effort="1000.0" lower="0" upper="0.3" velocity="1.0"/>
+    </joint>
+
+    <joint name="rest_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="${manip_x+0.2558164} -1.2641881 1.6814755"/>
+      <parent link="base_link"/>
+      <child link="Rest"/>
+    </joint>
+
+    <joint name="reach_joint" type="fixed">
+      <origin rpy="-0.10471975512 0 0" xyz="${manip_x-0.4} -1.65 1.6"/>
+      <parent link="base_link"/>
+      <child link="Reach"/>
+    </joint>
+
+    <joint name="effector_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="-0.0100173 -0.0020601 0.4332509"/>
+      <parent link="kraken_manipulator_link_4"/>
+      <child link="Effector"/>
+    </joint>
+
+    <joint name="retrieval_chute_joint" type="fixed">
+      <origin rpy="0 0 0" xyz="1.3339844 -0.2378311 1.3847573"/>
+      <parent link="base_link"/>
+      <child link="RetrievalChute"/>
+    </joint>
+
+  <!-- MANIPULATOR: end -->
 
 
 </robot>
