@@ -1,4 +1,0 @@
-Steering Rack
-x: 0 m 
-y: 1.00836 m
-z: 0.288289 m
