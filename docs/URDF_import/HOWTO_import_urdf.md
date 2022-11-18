@@ -15,7 +15,7 @@ sudo apt install ros-$ROS_DISTRO-xacro
 Enter ROSConDemo folder and:
 
 ```bash
-cd Project/Assets/robotec_freezed_urdf_chasis
+cd Project/Assets/applekraken_urdf
 xacro apple_kraken.xacro > apple_kraken_new.urdf
 ```
 
