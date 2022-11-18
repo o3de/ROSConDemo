@@ -1,9 +1,0 @@
-Location
-x 1.07174 m
-y -0.650001 m
-z 1.82376 m
-
-Rotation
-x 0
-y -10d
-z 0
