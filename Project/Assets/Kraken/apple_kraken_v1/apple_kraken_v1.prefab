@@ -228,10 +228,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{37786481-8484-5C61-A753-08FBB123673A}",
+                                    "guid": "{9AFE14A8-0BDD-5381-BE7B-C04B23681BB1}",
                                     "subId": 281942244
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/chassisandframe/chassisandframe.azmodel"
                             }
                         }
                     }
@@ -261,9 +261,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{17152BB5-40C7-5C3E-B136-34BA76CB3D0C}"
+                                                "guid": "{1465553E-E2D4-54C8-A5D3-DACF562437F2}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_chassisandframe.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/chassisandframe/chassisandframe_chassisandframe.azmaterial"
                                         }
                                     }
                                 },
@@ -274,9 +274,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{6A495641-F069-59EE-9D47-5D28F455E138}"
+                                                "guid": "{BAC3E9D7-A5AC-5028-8114-4DC53F8E764D}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_barier.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/chassisandframe/chassisandframe_barier.azmaterial"
                                         }
                                     }
                                 },
@@ -287,9 +287,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{A5320FCC-06A5-570B-8737-35357E223030}"
+                                                "guid": "{26C78D75-C084-51AA-AE71-386E19997567}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/chassisandframe/chassisandframe_pipe.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/chassisandframe/chassisandframe_pipe.azmaterial"
                                         }
                                     }
                                 }
@@ -526,9 +526,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{9A657C47-173C-5E21-8FAD-BF84DC26C3F9}"
+                                                "guid": "{230A33AE-922B-55C8-A304-7E68D74510CE}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle02/vacuumnozzle02_vacuumnozzle02.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vacuumnozzle02/vacuumnozzle02_vacuumnozzle02.azmaterial"
                                         }
                                     }
                                 }
@@ -551,10 +551,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{784BFB29-4400-5DDD-B630-801D32ADBC95}",
+                                    "guid": "{A859C579-A38E-529E-AE6C-36526F53535A}",
                                     "subId": 280990918
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle02/vacuumnozzle02.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/vacuumnozzle02/vacuumnozzle02.azmodel"
                             }
                         }
                     }
@@ -685,9 +685,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
+                                                "guid": "{6840A3BA-1B70-5B1E-880B-A2769F2AC258}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -702,10 +702,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{3841F211-1EAF-5B7A-AEE7-034DAACA95E7}",
+                                    "guid": "{3602DD44-EFF8-50CD-9F29-9994A79756C4}",
                                     "subId": 278093359
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelleft.azmodel"
                             }
                         }
                     }
@@ -764,10 +764,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{E2A9BA53-9EE3-5048-A0AE-5C3B67962E3D}",
+                                    "guid": "{70F9D715-A981-5292-88FA-89F30535BA66}",
                                     "subId": 285169054
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelright.azmodel"
                             }
                         }
                     }
@@ -785,9 +785,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
+                                                "guid": "{39235C03-D496-5057-9A75-E97DD8AF0236}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -860,10 +860,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{E9DAC033-967F-596D-869F-DDF9DCA9867E}",
+                                    "guid": "{7E3BABD5-32F6-5AC0-902A-2AEA5D9B86C8}",
                                     "subId": 275245994
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/steering/steeringarmright.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/steering/steeringarmright.azmodel"
                             }
                         }
                     }
@@ -1081,10 +1081,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{92A20F1E-BB20-50B6-A9B9-B21B9A6FD6B0}",
+                                    "guid": "{73881354-FC8B-5127-829C-0E7245B3C188}",
                                     "subId": 281174595
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart02/vacuummechanismpart02.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/vacuummechanismpart02/vacuummechanismpart02.azmodel"
                             }
                         }
                     }
@@ -1134,9 +1134,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{11839230-6270-5DE4-A4FD-DF04F5757E9F}"
+                                                "guid": "{60FFE5DA-C33C-52A0-B0F8-BF12BAFD4183}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart02/vacuummechanismpart02_vacuummachanismpart02.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vacuummechanismpart02/vacuummechanismpart02_vacuummachanismpart02.azmaterial"
                                         }
                                     }
                                 }
@@ -1568,10 +1568,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{3841F211-1EAF-5B7A-AEE7-034DAACA95E7}",
+                                    "guid": "{3602DD44-EFF8-50CD-9F29-9994A79756C4}",
                                     "subId": 278093359
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelleft.azmodel"
                             }
                         }
                     }
@@ -1601,9 +1601,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{57FB14CA-9DA2-5812-9FFB-74D19320749B}"
+                                                "guid": "{6840A3BA-1B70-5B1E-880B-A2769F2AC258}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelleft_wheelright.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelleft_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -1689,10 +1689,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{B30F148C-6DA1-5C68-AE1F-0D0CC22092C9}",
+                                    "guid": "{FC328E08-5887-5332-842A-B01DE759CB48}",
                                     "subId": 270905871
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle/vacuumnozzle.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/vacuumnozzle/vacuumnozzle.azmodel"
                             }
                         }
                     }
@@ -1722,9 +1722,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{A6C2A1C8-C163-53A5-A02A-CD872B53B21A}"
+                                                "guid": "{35984AAD-15B0-5613-8352-314AB46D6351}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuumnozzle/vacuumnozzle_vacuumnozzle.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vacuumnozzle/vacuumnozzle_vacuumnozzle.azmaterial"
                                         }
                                     }
                                 }
@@ -1771,9 +1771,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{D791F916-895A-5592-86E0-7DAB382E0A65}"
+                                                "guid": "{B5F8E8F2-566C-5D53-A108-A64303ADEC26}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_vent.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vehiclebody/vehiclebody_vent.azmaterial"
                                         }
                                     }
                                 },
@@ -1784,9 +1784,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{B2846626-AD8F-54D9-9541-9A389F737B95}"
+                                                "guid": "{70780994-31A3-5FFE-8F46-CA4A494A1403}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_vehiclebody.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vehiclebody/vehiclebody_vehiclebody.azmaterial"
                                         }
                                     }
                                 },
@@ -1797,9 +1797,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{69D044B2-C118-5528-B378-DD09772F3709}"
+                                                "guid": "{8C299D6E-23C2-57DD-8FB0-6E66674FFB0C}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody_voltagebox.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vehiclebody/vehiclebody_voltagebox.azmaterial"
                                         }
                                     }
                                 }
@@ -1835,10 +1835,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{C7E837BA-190B-5268-A2C9-F77F15C9DAB3}",
+                                    "guid": "{874FCF6B-409F-566F-97BD-8E5F86470273}",
                                     "subId": 278383502
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vehiclebody/vehiclebody.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/vehiclebody/vehiclebody.azmodel"
                             }
                         }
                     }
@@ -2190,10 +2190,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{59165A84-3034-5A0D-977A-96F1FE0BC176}",
+                                    "guid": "{849E145F-9BDF-5B26-838F-C688EDDDE9C2}",
                                     "subId": 281752569
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart01/vacuummechanismpart01.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/vacuummechanismpart01/vacuummechanismpart01.azmodel"
                             }
                         }
                     }
@@ -2256,9 +2256,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{7CBE9ADB-D74D-505F-A118-86BAB783B8F5}"
+                                                "guid": "{0F3274E5-1271-500F-9DCB-0B8D8EB66A11}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/vacuummechanismpart01/vacuummechanismpart01_vacuummachanismpart01.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/vacuummechanismpart01/vacuummechanismpart01_vacuummachanismpart01.azmaterial"
                                         }
                                     }
                                 }
@@ -2651,10 +2651,8 @@
                         "$type": "KrakenEffectorComponent",
                         "ReachEntity": "Entity_[9058513484485]",
                         "ManipulatorEntity": "Entity_[126373983206044]",
-                        "AppleProbe": "Entity_[49624638919053]",
                         "RootManipulatorFreeze": "",
-                        "BaseLinkToKinematic": "Entity_[126373983206044]",
-                        "RestEntity": "Entity_[50844409631117]"
+                        "BaseLinkToKinematic": "Entity_[126373983206044]"
                     }
                 },
                 "Component_[17586042212792946952]": {
@@ -3210,10 +3208,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{E09E278D-A5F1-5606-84C0-A802B5DEF2D4}",
+                                    "guid": "{58733639-EA3A-5C12-9BB8-F677F219308B}",
                                     "subId": 277195318
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/steering/steeringarmleft.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/steering/steeringarmleft.azmodel"
                             }
                         }
                     }
@@ -3291,9 +3289,9 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{1934DB96-54C4-5895-9280-C32A28C5DF72}"
+                                                "guid": "{39235C03-D496-5057-9A75-E97DD8AF0236}"
                                             },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright_wheelright.azmaterial"
+                                            "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelright_wheelright.azmaterial"
                                         }
                                     }
                                 }
@@ -3312,10 +3310,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{E2A9BA53-9EE3-5048-A0AE-5C3B67962E3D}",
+                                    "guid": "{70F9D715-A981-5292-88FA-89F30535BA66}",
                                     "subId": 285169054
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/wheels/wheelright.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/wheels/wheelright.azmodel"
                             }
                         }
                     }
@@ -3422,7 +3420,6 @@
                 "Component_[4717135159086115019]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 4717135159086115019,
-                    "GameView": false,
                     "ShapeColor": [
                         1.0,
                         0.0,
@@ -3739,9 +3736,8 @@
                                     "Value": {
                                         "MaterialAsset": {
                                             "assetId": {
-                                                "guid": "{33AEF102-38AF-5516-97B4-C5B311B20D19}"
-                                            },
-                                            "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/conveyorbelt/conveyorbelt_conveyorbelt.azmaterial"
+                                                "guid": "{4DB05AB8-A41A-58CA-9988-6CEEE83A27C3}"
+                                            }
                                         }
                                     }
                                 }
@@ -3760,10 +3756,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{325297E5-6196-5FFB-B6BF-A357561C3C56}",
+                                    "guid": "{9AB01A07-F38F-59BD-A587-750422EC1A29}",
                                     "subId": 284821055
                                 },
-                                "assetHint": "assets/robotec_freezed_urdf_chasis/meshes/conveyorbelt/conveyorbelt.azmodel"
+                                "assetHint": "assets/applekraken_urdf/meshes/conveyorbelt/conveyorbelt.azmodel"
                             }
                         }
                     }
@@ -4056,7 +4052,6 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
-                    "GameView": false,
                     "ShapeColor": [
                         0.0,
                         0.0,
