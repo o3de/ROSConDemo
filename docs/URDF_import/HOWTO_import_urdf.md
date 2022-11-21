@@ -60,7 +60,7 @@ In the `apple_kraken_new` prefab:
 
 ![](static/images/URDF_tutorial_Vehicle_Model.png)
 
-4. In the `base_link` entity select `ROS2 Robot control` component and change `Topic` to `ackermann_vel` and `Steering` to `Ackermann`.
+4. In the `base_link` entity select `ROS2 Robot control` component and change `Topic` to `ackermann_vel`, `Type` to `ackermann_msgs::msg::AckermannDrive` and `Steering` to `Ackermann`.
 
 ![](static/images/URDF_tutorial_ROS2_Robot_Control.png)
 
@@ -176,9 +176,7 @@ In the `apple_kraken_new` prefab:
 - Add a `Kraken Effector` Component. Perform:
   - Set `Kraken Reach entity` to `Reach_visual` (by dragging entity from the Entity Outliner)
   - Set `Entity with manipulator` to `base_link` or `apple_kraken_rusty_1` if you performed test form step 8 (by dragging entity from the Entity Outliner)
-  - Set `Entity with probe apples` to `Effector` (by dragging entity from the Entity Outliner)
   - Set `BaseLinkToKinematic` to `base_link` or `apple_kraken_rusty_1` if you performed test form step 8 (by dragging entity from the Entity Outliner)
-  - Set `ManipulatorRestPoint` to `Rest` (by dragging entity from the Entity Outliner)
 
 ![](static/images/URDF_tutorial_kraken_effector.png)
 
