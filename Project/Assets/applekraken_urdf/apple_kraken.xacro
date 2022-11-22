@@ -502,7 +502,7 @@
     </joint>
 
     <joint name="effector_joint" type="fixed">
-      <origin rpy="0 0 0" xyz="-0.0100173 -0.0020601 0.4332509"/>
+      <origin rpy="1.571 0 1.571" xyz="-0.0100173 -0.0020601 0.4332509"/>
       <parent link="kraken_manipulator_link_4"/>
       <child link="Effector"/>
     </joint>
