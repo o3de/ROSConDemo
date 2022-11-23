@@ -87,7 +87,9 @@ RUN if [ "${ROS_VERSION}" = "galactic" ]; then \
         tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null \
       && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | \
         tee /etc/apt/sources.list.d/kitware.list >/dev/null \
-      && apt-get update && apt-get install -y cmake=3.24.1-0kitware1ubuntu20.04.1 \
+      && apt-get update && apt-get install -y \
+        cmake=3.24.1-0kitware1ubuntu20.04.1 \
+        cmake-data=3.24.1-0kitware1ubuntu20.04.1 \
       && rm -rf /var/lib/apt/lists/*; \
     fi
 
