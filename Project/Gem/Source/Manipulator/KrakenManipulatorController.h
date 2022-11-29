@@ -12,7 +12,7 @@
 #include <AzCore/Component/TickBus.h>
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
-#include <ROS2/Manipulator/MotorizedJoint.h>
+#include <ROS2/Manipulator/MotorizedJointComponent.h>
 #include <ImGuiBus.h>
 #include <ImGui/ImGuiPass.h>
 
@@ -37,7 +37,7 @@ namespace AppleKraken
 
     private:
         bool initialized{ false };
-        ROS2::MotorizedJoint* getMotorizedJoint(const AZ::EntityId& entityWithMotJoint);
+        ROS2::MotorizedJointComponent* getMotorizedJointComponent(const AZ::EntityId& entityWithMotJoint);
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
         void OnImGuiUpdate() override;
         void PickApple(const AZ::Vector3 position) override;

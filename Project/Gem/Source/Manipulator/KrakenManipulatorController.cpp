@@ -13,14 +13,14 @@
 
 namespace AppleKraken
 {
-    ROS2::MotorizedJoint* ManipulatorController::getMotorizedJoint(const AZ::EntityId& entityWithMotJoint)
+    ROS2::MotorizedJointComponent* ManipulatorController::getMotorizedJointComponent(const AZ::EntityId& entityWithMotJoint)
     {
         AZ_Assert(entityWithMotJoint.IsValid(), "Entity Invalid");
         AZ::Entity* e_ptr{ nullptr };
         AZ::ComponentApplicationBus::BroadcastResult(e_ptr, &AZ::ComponentApplicationRequests::FindEntity, entityWithMotJoint);
         AZ_Assert(e_ptr, "No such entity");
-        ROS2::MotorizedJoint* component = e_ptr->FindComponent<ROS2::MotorizedJoint>();
-        //        AZ_Assert(component, "No  ROS2::MotorizedJoint in %s", e_ptr->GetName().c_str());
+        ROS2::MotorizedJointComponent* component = e_ptr->FindComponent<ROS2::MotorizedJointComponent>();
+        //        AZ_Assert(component, "No  ROS2::MotorizedJointComponent in %s", e_ptr->GetName().c_str());
         return component;
     }
 
@@ -114,7 +114,7 @@ namespace AppleKraken
 
         if (m_entityX.IsValid())
         {
-            auto component_x = getMotorizedJoint(m_entityX);
+            auto component_x = getMotorizedJointComponent(m_entityX);
             if (component_x)
             {
                 component_x->SetSetpoint(m_setPointX);
@@ -124,7 +124,7 @@ namespace AppleKraken
 
         if (m_entityZ.IsValid())
         {
-            auto component_z = getMotorizedJoint(m_entityZ);
+            auto component_z = getMotorizedJointComponent(m_entityZ);
             if (component_z)
             {
                 component_z->SetSetpoint(m_setPointZ);
@@ -148,7 +148,7 @@ namespace AppleKraken
         m_setPointY = position_in_effector_tf.Dot(m_vectorY);
         if (m_entityY.IsValid())
         {
-            auto component_y = getMotorizedJoint(m_entityY);
+            auto component_y = getMotorizedJointComponent(m_entityY);
             if (component_y)
             {
                 if (m_noseRetrieveRequest)
@@ -158,7 +158,7 @@ namespace AppleKraken
                     if (m_time_Y_ok > m_timeSetpointReach)
                     {
 
-                        auto error_y = getMotorizedJoint(m_entityY)->GetError();
+                        auto error_y = getMotorizedJointComponent(m_entityY)->GetError();
                         if (error_y < max_errorY && error_y > -max_errorY) 
                         {
                             m_noseRetrievingSuccess = true;
@@ -188,9 +188,9 @@ namespace AppleKraken
     AZ::Vector3 ManipulatorController::GetPosition()
     {
         auto currentPosition = AZ::Vector3(
-            getMotorizedJoint(m_entityX)->GetCurrentPosition(),
-            getMotorizedJoint(m_entityY)->GetCurrentPosition(),
-            getMotorizedJoint(m_entityZ)->GetCurrentPosition()
+            getMotorizedJointComponent(m_entityX)->GetCurrentPosition(),
+            getMotorizedJointComponent(m_entityY)->GetCurrentPosition(),
+            getMotorizedJointComponent(m_entityZ)->GetCurrentPosition()
             );
         return currentPosition;
     };

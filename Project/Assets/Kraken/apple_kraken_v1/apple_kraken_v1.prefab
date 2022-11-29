@@ -323,7 +323,7 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 11904146489978765935,
                     "m_template": {
-                        "$type": "MotorizedJoint",
+                        "$type": "MotorizedJointComponent",
                         "JointAxis": [
                             0.0,
                             -1.0,
@@ -1501,7 +1501,7 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 7694774780356362973,
                     "m_template": {
-                        "$type": "MotorizedJoint",
+                        "$type": "MotorizedJointComponent",
                         "JointAxis": [
                             1.0,
                             0.0,
@@ -2969,7 +2969,7 @@
                     "$type": "GenericComponentWrapper",
                     "Id": 15310090381130276626,
                     "m_template": {
-                        "$type": "MotorizedJoint",
+                        "$type": "MotorizedJointComponent",
                         "Limit": [
                             0.6000000238418579,
                             2.200000047683716
