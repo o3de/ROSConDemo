@@ -164,9 +164,9 @@ namespace AppleKraken
         float x{0};
         float y{0};
         float z{0};
-        ROS2::MotorizedJointRequestBus::EventResult(x, m_entityX, &MotorizedJointRequest::GetCurrentMeasurement);
-        ROS2::MotorizedJointRequestBus::EventResult(y, m_entityY, &MotorizedJointRequest::GetCurrentMeasurement);
-        ROS2::MotorizedJointRequestBus::EventResult(z, m_entityZ, &MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::MotorizedJointRequestBus::EventResult(x, m_entityX, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::MotorizedJointRequestBus::EventResult(y, m_entityY, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::MotorizedJointRequestBus::EventResult(z, m_entityZ, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
         return AZ::Vector3{x,y,z};
     };
 
