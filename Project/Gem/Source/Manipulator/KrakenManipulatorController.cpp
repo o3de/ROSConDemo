@@ -7,23 +7,14 @@
  */
 
 #include "KrakenManipulatorController.h"
+#include <ROS2/Manipulator/MotorizedJointBus.h>
 #include <AzCore/Serialization/EditContext.h>
+
 #include <AzFramework/Components/TransformComponent.h>
 #include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 
 namespace AppleKraken
 {
-    ROS2::MotorizedJointComponent* ManipulatorController::getMotorizedJointComponent(const AZ::EntityId& entityWithMotJoint)
-    {
-        AZ_Assert(entityWithMotJoint.IsValid(), "Entity Invalid");
-        AZ::Entity* e_ptr{ nullptr };
-        AZ::ComponentApplicationBus::BroadcastResult(e_ptr, &AZ::ComponentApplicationRequests::FindEntity, entityWithMotJoint);
-        AZ_Assert(e_ptr, "No such entity");
-        ROS2::MotorizedJointComponent* component = e_ptr->FindComponent<ROS2::MotorizedJointComponent>();
-        //        AZ_Assert(component, "No  ROS2::MotorizedJointComponent in %s", e_ptr->GetName().c_str());
-        return component;
-    }
-
     void ManipulatorController::Activate()
     {
         ManipulatorRequestBus::Handler::BusConnect(GetEntityId());
@@ -112,25 +103,12 @@ namespace AppleKraken
         float error_x = std::numeric_limits<float>::max();
         float error_z = std::numeric_limits<float>::max();
 
-        if (m_entityX.IsValid())
-        {
-            auto component_x = getMotorizedJointComponent(m_entityX);
-            if (component_x)
-            {
-                component_x->SetSetpoint(m_setPointX);
-                error_x = component_x->GetError();
-            }
-        }
+        ROS2::MotorizedJointRequestBus::Event(m_entityX, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointX);
+        ROS2::MotorizedJointRequestBus::EventResult(error_x, m_entityX, &ROS2::MotorizedJointRequest::GetError);
 
-        if (m_entityZ.IsValid())
-        {
-            auto component_z = getMotorizedJointComponent(m_entityZ);
-            if (component_z)
-            {
-                component_z->SetSetpoint(m_setPointZ);
-                error_z = component_z->GetError();
-            }
-        }
+        ROS2::MotorizedJointRequestBus::Event(m_entityZ, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointZ);
+        ROS2::MotorizedJointRequestBus::EventResult(error_z, m_entityZ, &ROS2::MotorizedJointRequest::GetError);
+
         // auto - disable nose retrieve only if we reached small error.
         if (m_noseRetrieveRequest == true)
         {
@@ -148,30 +126,26 @@ namespace AppleKraken
         m_setPointY = position_in_effector_tf.Dot(m_vectorY);
         if (m_entityY.IsValid())
         {
-            auto component_y = getMotorizedJointComponent(m_entityY);
-            if (component_y)
+            if (m_noseRetrieveRequest)
             {
-                if (m_noseRetrieveRequest)
+                m_setPointY = 0;
+                m_time_Y_ok += deltaTime;
+                if (m_time_Y_ok > m_timeSetpointReach)
                 {
-                    m_setPointY = 0;
-                    m_time_Y_ok += deltaTime;
-                    if (m_time_Y_ok > m_timeSetpointReach)
+                    float error_y = std::numeric_limits<float>::max();
+                    ROS2::MotorizedJointRequestBus::EventResult(error_y, m_entityY, &ROS2::MotorizedJointRequest::GetError);
+                    if (error_y < max_errorY && error_y > -max_errorY)
                     {
-
-                        auto error_y = getMotorizedJointComponent(m_entityY)->GetError();
-                        if (error_y < max_errorY && error_y > -max_errorY) 
-                        {
-                            m_noseRetrievingSuccess = true;
-                            m_time_Y_ok = 0.0;
-                        }
+                        m_noseRetrievingSuccess = true;
+                        m_time_Y_ok = 0.0;
                     }
                 }
-                else
-                {
-                    m_noseRetrievingSuccess = false;
-                }
-                component_y->SetSetpoint(m_setPointY);
             }
+            else
+            {
+                m_noseRetrievingSuccess = false;
+            }
+            ROS2::MotorizedJointRequestBus::Event(m_entityY, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointY);
         }
 
     }
@@ -187,12 +161,13 @@ namespace AppleKraken
 
     AZ::Vector3 ManipulatorController::GetPosition()
     {
-        auto currentPosition = AZ::Vector3(
-            getMotorizedJointComponent(m_entityX)->GetCurrentPosition(),
-            getMotorizedJointComponent(m_entityY)->GetCurrentPosition(),
-            getMotorizedJointComponent(m_entityZ)->GetCurrentPosition()
-            );
-        return currentPosition;
+        float x{0};
+        float y{0};
+        float z{0};
+        ROS2::MotorizedJointRequestBus::EventResult(x, m_entityX, &MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::MotorizedJointRequestBus::EventResult(y, m_entityY, &MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::MotorizedJointRequestBus::EventResult(z, m_entityZ, &MotorizedJointRequest::GetCurrentMeasurement);
+        return AZ::Vector3{x,y,z};
     };
 
     void ManipulatorController::Retrieve()
