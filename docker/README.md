@@ -1,8 +1,12 @@
 # Dockerfile for running the ROSConDemo
 
-The Dockerfile is going to create an Ubuntu Jammy + ROS Humble platform
-that prepares the O3DE simulator together with the o3de-ros2-gem to run
-the demo in this repository.
+
+The Dockerfile is going to create an image that prepares the O3DE simulator
+together with the o3de-ros2-gem and o3de_kraken_nav to run the demo hosted
+in this repository.
+
+The image by default will use Ubuntu Jammy and ROS 2 Humble but can also
+be configured to use Ubuntu Focal and ROS 2 Galactic.
 
 ## Requisites
 
@@ -10,17 +14,30 @@ the demo in this repository.
  * At least 40GB of free disk space
  * The build process can take more than 2 hours
 
-## Building the Docker Image
+Note: the build process is going to download all the necessary assets for running
+the demo so it can take several hours depending on the Internet connection.
 
-To build the Dockerfile the only required step is to clone first the ROSConDemo:
+## Building the default Docker Image (Ubuntu Jammy + ROS 2 Humble)
+
+Creating the image using the Dockerfile to have an Ubuntu Jammy and ROS 2
+Humble platform requires just to have docker installed:
+
 ```
-git clone git@github.com:aws-lumberyard/ROSConDemo.git
-cd ROSConDemo/docker
+wget https://raw.githubusercontent.com/o3de/ROSConDemo/main/docker/Dockerfile
 docker build -t roscon_demo -f Dockerfile .
 ```
 
-Note: the build process is going to download all the necessary assets for running
-the demo so it can take several hours depending on the Internet connection.
+## Building the Docker Image using Ubuntu Focal and ROS 2 Galactic
+
+Creating the image using the Dockerfile to have an Ubuntu Focal and ROS 2
+Galactic platform requires just to have docker installed and provide some
+extra building arguments to it:
+
+```
+wget https://raw.githubusercontent.com/o3de/ROSConDemo/main/docker/Dockerfile
+docker build -t roscon_demo_galactic --build-arg ROS_VERSION=galactic --build-arg UBUNTU_VERSION=focal  .
+```
+
 
 ## Running the Docker Image
 
@@ -41,4 +58,4 @@ to execute the Editor.
 ```
 
 Continue with the instruction in the
-[main README file](https://github.com/aws-lumberyard/ROSConDemo/blob/main/README.md).
+[main README file](../README.md).
