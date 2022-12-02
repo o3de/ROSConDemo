@@ -76,7 +76,7 @@ pip install python-statemachine
 
 ## Installation ##
 
-- Use the [roscon_2022](https://github.com/aws-lumberyard-dev/o3de/tree/roscon_2022) branch of the `O3DE`.
+- Use the [development](https://github.com/o3de/o3de/tree/development) branch of the `O3DE`.
 - Use the the [development](https://github.com/RobotecAI/o3de-ros2-gem/tree/development) branch of the `o3de-ros-gem`.
 - Use the [main](https://github.com/aws-lumberyard/ROSConDemo) branch of the `ROSConDemo`.
 
@@ -86,23 +86,16 @@ pip install python-statemachine
 source /opt/ros/humble/setup.bash
 ```
 
-2. Clone `o3de_kraken_nav` package to `src` directory inside a workspace directory (assumed `~/o3de_kraken_ws`), 
+2. Build the workspace
 
 ```bash
-mkdir -p ~/o3de_kraken_ws/src && cd ~/o3de_kraken_ws/src
-git clone https://github.com/RobotecAI/o3de_kraken_nav.git
-```
-
-3. Build the workspace
-
-```bash
-cd ~/o3de_kraken_ws
+cd ./kraken_nav
 colcon build --symlink-install
 ```
 
 ## Running simulation
 
-1. [Build](https://github.com/aws-lumberyard/ROSConDemo#download-and-install) and run the `ROSConDemo`
+1. [Build](https://github.com/o3de/ROSConDemo#download-and-install) and run the `ROSConDemo`
 2. Load level `Main`
 3. Start a simulation by hitting `CTRL+G`
 
@@ -116,8 +109,7 @@ You can consider adding it to your `~/.bashrc`.
 1. Make sure that you have ROS2 workspace sourced
 
 ```bash
-cd ~/o3de_kraken_ws
-source ./install/setup.bash
+source ./kraken_nav/install/setup.bash
 ```
 
 2. Make sure that you have `CycleDDS` as middleware 

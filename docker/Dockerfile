@@ -142,7 +142,7 @@ WORKDIR $WORKDIR
 
 RUN mkdir -p o3de_kraken_ws/src \
     && cd o3de_kraken_ws/src \
-    && git clone https://github.com/RobotecAI/o3de_kraken_nav.git
+    && ln -s $WORKDIR/ROSConDemo/kraken_nav kraken_nav
 
 RUN cd o3de_kraken_ws \
     && colcon build --symlink-install
