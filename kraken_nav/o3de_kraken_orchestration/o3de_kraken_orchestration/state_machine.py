@@ -3,7 +3,6 @@ from statemachine import StateMachine, State
 
 class GlobalOrchestrationSM(StateMachine):
     #### Members for debug purposes ###
-    sim_started = True  # Simplification for now
     can_gather = False
     has_finished = True
     ###################################

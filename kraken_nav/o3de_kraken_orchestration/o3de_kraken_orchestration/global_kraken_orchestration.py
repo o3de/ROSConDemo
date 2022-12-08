@@ -41,11 +41,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         self.logger.info('Has the simulation started?')
         self.send_state("Wait for connection")
         # Perform a check whether the simulation has started or not.
-        if (self.sim_started):
-            self.started()
-        else:
-            self.sim_started = True
-            self.await_start()
+        self.started()
 
     def on_enter_spawning(self):
         self.logger.info('Spawning the robot.')
@@ -66,21 +62,15 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
     def on_enter_gathering(self):
         self.logger.info('Is the robot in a gathering position?')
         # Perform a check whether the robot is in a gathering position or not.
-        if (self.can_gather):
+        if self.can_gather:
             self.gather()
         else:
             self.navigate()
 
-    def on_gather(self):
-        self.logger.info('Gathering the apples.')
-        # Instruct the robot to start gathering apples.
-        self.has_finished = not self.has_finished
-        pass
-
     def on_enter_finishing(self):
         self.logger.info('Has the robot completed its job?')
         # Perform a check whether the robot has finished its job or not.
-        if (self.current_index >= len(self.poses)):
+        if self.current_index >= len(self.poses):
             self.finished()
         else:
             self.finish()
@@ -124,7 +114,6 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         self.send_state("Completed")
         self.logger.info('The robot has completed its job.')
         # The robot has finished its job.
-        pass
 
 
 def main():
