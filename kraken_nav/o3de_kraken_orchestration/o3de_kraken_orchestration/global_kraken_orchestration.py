@@ -8,6 +8,7 @@ from geometry_msgs.msg import PoseStamped
 from .state_machine import GlobalOrchestrationSM
 from .orchestration_node import KrakenOrchestrationNode
 
+
 class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
     def __init__(self):
         rclpy.init()
@@ -26,7 +27,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         if self.current_index >= len(self.poses):
             self.logger.error('Invalid index!')
             return PoseStamped()
-        
+
         pose = self.poses[self.current_index]
         self.logger.info("Current goal id is %d " % self.current_index)
         self.current_index += 1
@@ -61,7 +62,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         # Give nav stack a few seconds before we start first goal point
         self.logger.info('Waiting for robot sensors to latch...')
         time.sleep(3)
-        
+
     def on_enter_gathering(self):
         self.logger.info('Is the robot in a gathering position?')
         # Perform a check whether the robot is in a gathering position or not.
@@ -93,21 +94,21 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
 
         while not self.goal_pose_reached:
             time.sleep(1)
-            
+
         self.goal_pose_reached = False
         self.can_gather = True
 
     def on_gather(self):
         self.logger.info("Requesting gathering...")
-        self.send_state("Gather %.1f "% self.apple_progress)
+        self.send_state("Gather %.1f " % self.apple_progress)
         trigger_res = self.trigger_apple_gathering()
         self.logger.info(trigger_res.message)
 
         if trigger_res.success:
             while not self.gathering_done:
-                self.send_state("Gather %.0f %%"% self.apple_progress)
+                self.send_state("Gather %.0f %%" % self.apple_progress)
                 time.sleep(0.2)
-            
+
             self.logger.info("Done gathering apples.")
         else:
             self.logger.info("Freeing up the AppleKraken...")
@@ -125,9 +126,11 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         # The robot has finished its job.
         pass
 
+
 def main():
     global_orch = GlobalOrchestration()
     global_orch.run()
+
 
 if __name__ == '__main__':
     main()
