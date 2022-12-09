@@ -21,19 +21,19 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Joy
 from ackermann_msgs.msg import AckermannDrive
 
+
 class JoyToAckermann(Node):
 
     def __init__(self):
         super().__init__('joy_to_ackermann')
         self.publisher = self.create_publisher(AckermannDrive, 'ackermann_vel', 10)
-        self.subscription = self.create_subscription(Joy, "/joy", self.joy_callback, 10) 
+        self.subscription = self.create_subscription(Joy, "/joy", self.joy_callback, 10)
 
     def joy_callback(self, msg):
         drive = AckermannDrive()
-        drive.speed = 1.5*msg.axes[1]
-        drive.steering_angle = 1.1*msg.axes[0]
-        self.publisher .publish(drive)
-    
+        drive.speed = 1.5 * msg.axes[1]
+        drive.steering_angle = 1.1 * msg.axes[0]
+        self.publisher.publish(drive)
 
 
 def main(args=None):
