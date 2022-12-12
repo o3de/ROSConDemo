@@ -1,3 +1,14 @@
+# coding:utf-8
+#!/usr/bin/env python3
+
+#
+# Copyright (c) Contributors to the Open 3D Engine Project.
+# For complete copyright and license terms please see the LICENSE at the root of this distribution.
+#
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+#
+#
+
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity
 from gazebo_msgs.srv import GetModelState
@@ -12,30 +23,53 @@ from std_msgs.msg import Float32
 
 
 class KrakenOrchestrationNode(Node):
+    """
+    Class containing implementation of state machine. 
+    """
+
     def init_spawn_entity_client(self):
+        """"
+        Initialize ROS2 service client to spawn robot
+        """
         self.spawn_entity_client = self.create_client(SpawnEntity, 'spawn_entity')
         while not self.spawn_entity_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Spawn entity service not available waiting again...')
 
     def init_get_spawn_point_info_client(self):
+        """"
+        Initialize ROS2 service to retrieve spawn points from simulation
+        """
         self.get_spawn_point_info_client = self.create_client(GetModelState, 'get_spawn_point_info')
         while not self.get_spawn_point_info_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Get spawn point info service not available waiting again...')
 
     def init_get_plan_client(self):
+        """"
+        Initialize ROS2 service to retrieve gathering plan from simulation
+        """
         self.get_plan_client = self.create_client(GetPlan, 'get_gathering_plan')
         while not self.get_plan_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Get plan service not available waiting again...')
 
     def apple_gathering_done_callback(self, request, response):
+        """"
+        Implementation of the callback called from simulation, called on finished apple gathering.
+        """
         self.get_logger().info("Received done client msg.")
         self.gathering_done = True
         return Empty.Response()
 
     def apple_progress_callback(self, msg):
+        """"
+        Implementation of the callback called from simulation with current gathering progress.
+        """
         self.apple_progress = 100.0 * float(msg.data)
 
     def init_apple_gathering_srvs(self):
+        """"
+        Initialize servers for services that are served by this node. 
+        Blocking wait for service initialization.
+        """
         self.done_apple_gathering_service = self.create_service(Empty, f'{self.kraken_name}/done_apple_gathering',
                                                                 self.apple_gathering_done_callback)
 
@@ -47,6 +81,9 @@ class KrakenOrchestrationNode(Node):
             self.get_logger().info('Apple gathering services not available waiting again...')
 
     def init_apple_subscriptions(self):
+        """"
+        Initialize apple gathering progress topic subsrciptions, listened by this node. 
+        """
         qos = QoSProfile(
             depth=5,
             history=QoSHistoryPolicy.KEEP_LAST,
@@ -58,6 +95,9 @@ class KrakenOrchestrationNode(Node):
                                                                      self.apple_progress_callback, qos)
 
     def init_goal_pose_publisher(self):
+        """"
+        Initialize goal topic subsrciptions, listened by this node. 
+        """
         qos = QoSProfile(
             depth=5,
             history=QoSHistoryPolicy.KEEP_LAST,
@@ -68,6 +108,9 @@ class KrakenOrchestrationNode(Node):
         self.goal_pose_publisher = self.create_publisher(PoseStamped, f'{self.kraken_name}/goal_pose', qos)
 
     def init_status_publisher(self):
+        """"
+        Initialize topic pusblishers, sent by this node. 
+        """
         qos = QoSProfile(
             depth=5,
             history=QoSHistoryPolicy.KEEP_LAST,
@@ -77,6 +120,9 @@ class KrakenOrchestrationNode(Node):
         self.status_publisher = self.create_publisher(String, f'{self.kraken_name}/orchestration_status', qos)
 
     def send_state(self, status_str):
+        """"
+        Publish status message which is presented by simulator's GUI
+        """
         msg = String()
         msg.data = status_str
         self.status_publisher.publish(msg)
@@ -103,11 +149,17 @@ class KrakenOrchestrationNode(Node):
         self.init_apple_subscriptions()
 
     def log_cb(self, msg):
+        """"
+        Implementation of the callback for message sent from nav2, used to find if navigation has succeed.
+        """
         if msg.msg == "Goal succeeded" and self.kraken_name in str(msg.name):
             self.get_logger().info("Navigation point reached.")
             self.goal_pose_reached = True
 
     def spawn_kraken(self):
+        """
+        Spawn robot by calling service
+        """
         req = SpawnEntity.Request()
         req.name = self.kraken_name[:len(self.kraken_name) - 2]
         req.xml = self.spawn_point
@@ -119,6 +171,9 @@ class KrakenOrchestrationNode(Node):
         return res.success
 
     def get_spawn_point_pose(self):
+        """
+        Retrieve spawn points from the Simulation.
+        """
         req = GetModelState.Request()
         req.model_name = self.spawn_point
 
@@ -127,6 +182,9 @@ class KrakenOrchestrationNode(Node):
         return res.pose  # TODO - Add exception handling
 
     def get_plan_poses(self, pose):
+        """
+        Retrieve plan from the Simulation.
+        """
         req = GetPlan.Request()
         req.start.pose = pose
 
@@ -134,14 +192,23 @@ class KrakenOrchestrationNode(Node):
         return res.plan.poses
 
     def trigger_apple_gathering(self):
+        """"
+        Calls service the Simulation to start apple gathering.
+        """
         self.gathering_done = False
         req = Trigger.Request()
         return self.trigger_apple_gathering_client.call(req)
 
     def cancel_apple_gathering(self):
+        """"
+        Calls service the Simulation to abort apple gathering.
+        """
         req = Trigger.Request()
         return self.cancel_apple_gathering_client.call(req)
 
     def navigate_to_pose(self, pose):
+        """"
+        Sets navigation goal to nav2.
+        """
         pose.header = Header(stamp=self.get_clock().now().to_msg(), frame_id='map')
         self.goal_pose_publisher.publish(pose)
