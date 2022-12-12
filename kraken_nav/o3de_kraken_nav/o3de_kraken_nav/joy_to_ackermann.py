@@ -1,18 +1,15 @@
+# coding:utf-8
 #!/usr/bin/env python3
 
-# Copyright 2019-2022 Robotec.ai.
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Copyright (c) Contributors to the Open 3D Engine Project.
+# For complete copyright and license terms please see the LICENSE at the root of this distribution.
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+# SPDX-License-Identifier: Apache-2.0 OR MIT
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+#
+
+
 
 import rclpy
 from rclpy.node import Node
@@ -23,6 +20,9 @@ from ackermann_msgs.msg import AckermannDrive
 
 
 class JoyToAckermann(Node):
+    """
+    ROS2 Node to convert joystick message to Ackermann Drive message. 
+    """
 
     def __init__(self):
         super().__init__('joy_to_ackermann')
@@ -30,6 +30,11 @@ class JoyToAckermann(Node):
         self.subscription = self.create_subscription(Joy, "/joy", self.joy_callback, 10)
 
     def joy_callback(self, msg):
+        """
+        Callback called on new message from the joystick driver.
+        It creates AckermanDrive message and publish it.
+        :param msg: message from the joystick driver
+        """
         drive = AckermannDrive()
         drive.speed = 1.5 * msg.axes[1]
         drive.steering_angle = 1.1 * msg.axes[0]
