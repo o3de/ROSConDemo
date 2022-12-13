@@ -1,4 +1,3 @@
-# coding:utf-8
 #!/usr/bin/env python3
 
 #
@@ -10,19 +9,15 @@
 #
 
 
-
 import rclpy
 from rclpy.node import Node
 
-from std_msgs.msg import String
 from sensor_msgs.msg import Joy
 from ackermann_msgs.msg import AckermannDrive
 
 
 class JoyToAckermann(Node):
-    """
-    ROS2 Node to convert joystick message to Ackermann Drive message. 
-    """
+    """ROS2 Node to convert joystick message to Ackermann Drive message."""
 
     def __init__(self):
         super().__init__('joy_to_ackermann')
@@ -30,11 +25,7 @@ class JoyToAckermann(Node):
         self.subscription = self.create_subscription(Joy, "/joy", self.joy_callback, 10)
 
     def joy_callback(self, msg):
-        """
-        Callback called on new message from the joystick driver.
-        It creates AckermanDrive message and publish it.
-        :param msg: message from the joystick driver
-        """
+        """Create Ackermann message from the joystick message."""
         drive = AckermannDrive()
         drive.speed = 1.5 * msg.axes[1]
         drive.steering_angle = 1.1 * msg.axes[0]

@@ -23,12 +23,13 @@ setup(
     zip_safe=True,
     maintainer='alekkam',
     maintainer_email='aleksander.kaminski@robotec.ai',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Orchestration code for AppleKraken robot',
+    license='Apache 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'kraken_orchestration_node = o3de_kraken_orchestration.global_kraken_orchestration:main'
+            'kraken_orchestration_node = '
+            'o3de_kraken_orchestration.global_kraken_orchestration:main'
         ],
     },
 )

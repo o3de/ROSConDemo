@@ -1,4 +1,3 @@
-# coding:utf-8
 #!/usr/bin/env python3
 
 #
@@ -10,21 +9,16 @@
 #
 
 
-
 import math
 from rclpy.node import Node
 import rclpy
-from rclpy.duration import Duration
+
 from geometry_msgs.msg import Twist
 from ackermann_msgs.msg import AckermannDrive
 
 
 class TwistToAckermann(Node):
-    """
-    ROS2 node to convert Twist message to Ackermann Drive message.
-    It translates cmd_vel messages from nav2 to Ackermann Drive.
-    It also has timeout that stops robot when no new messages are retrieved.
-    """
+    """ROS2 node to convert velocity commands to Ackermann commands."""
 
     def __init__(self):
         super().__init__('twist_to_ackermann')
@@ -38,8 +32,12 @@ class TwistToAckermann(Node):
         self.wheelbase = self.get_parameter('wheelbase').get_parameter_value().double_value
         self.timeout_control_interval = self.get_parameter(
             'timeout_control_interval').get_parameter_value().double_value
-        self.control_timeout = self.get_parameter('control_timeout').get_parameter_value().double_value
-        self.publish_zeros_on_timeout = self.get_parameter('publish_zeros_on_timeout').get_parameter_value().bool_value
+
+        par_timeout = self.get_parameter('control_timeout')
+        par_publish_zero_tout = self.get_parameter('publish_zeros_on_timeout')
+
+        self.control_timeout = par_timeout.get_parameter_value().double_value
+        self.publish_zeros_on_timeout = par_publish_zero_tout.get_parameter_value().bool_value
 
         self.last_message_time = self.get_clock().now()
         self.sub_ = self.create_subscription(Twist, "cmd_vel", self.cmd_vel_cb, 10)

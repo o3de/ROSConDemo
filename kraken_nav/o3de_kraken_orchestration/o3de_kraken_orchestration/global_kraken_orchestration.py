@@ -1,4 +1,3 @@
-# coding:utf-8
 #!/usr/bin/env python3
 
 #
@@ -13,7 +12,6 @@ import rclpy
 import time
 from threading import Thread
 
-from nav_msgs.msg import Path
 from geometry_msgs.msg import PoseStamped
 
 from .state_machine import GlobalOrchestrationSM
@@ -35,9 +33,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         self.current_index = 0
 
     def get_next_pose(self):
-        """
-        Retrieve next goal from the Plan
-        """
+        """Retrieve next goal from the Plan."""
         if self.current_index >= len(self.poses):
             self.logger.error('Invalid index!')
             return PoseStamped()
@@ -52,19 +48,14 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         rclpy.shutdown()
 
     def on_enter_waiting(self):
-        """
-        Callback called on entry to waiting state.
-        """
+        """Is called on entry to waiting state."""
         self.logger.info('Has the simulation started?')
         self.send_state("Wait for connection")
         # Perform a check whether the simulation has started or not.
         self.started()
 
     def on_enter_spawning(self):
-        """
-        Callback called on entry to spawning state.
-        Spawns robot.
-        """
+        """Is called on entry to spawning state and spawns robot."""
         self.logger.info('Spawning the robot.')
         self.send_state("Spawning the robot")
         if self.spawn_kraken():
@@ -73,10 +64,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
             self.logger.info('Robot spawning failed.')
 
     def on_spawned(self):
-        """
-        Callback called on successful spawn.
-        Retrieves spawn position and plan for the Robot.
-        """
+        """Is called on spawn, retrieves plan and position."""
         self.logger.info('Robot spawned successfully. Fetching info.')
         pose = self.get_spawn_point_pose()
         self.poses = self.get_plan_poses(pose)
@@ -85,9 +73,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         time.sleep(3)
 
     def on_enter_gathering(self):
-        """
-        Callback called on entry to gathering state.
-        """
+        """Is called on entry to gathering state."""
         self.logger.info('Is the robot in a gathering position?')
         # Perform a check whether the robot is in a gathering position or not.
         if self.can_gather:
@@ -96,9 +82,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
             self.navigate()
 
     def on_enter_finishing(self):
-        """
-        Callback called on entry to finishing apple gathering state.
-        """
+        """Is called on entry to finishing apple gathering state."""
         self.logger.info('Has the robot completed its job?')
         # Perform a check whether the robot has finished its job or not.
         if self.current_index >= len(self.poses):
@@ -107,10 +91,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
             self.finish()
 
     def on_navigate(self):
-        """
-        Callback called on entry to navigation state.
-        Sends goal position to nav2.
-        """
+        """Is called on nav. state, sends goal position to nav2, monitors."""
         self.send_state("Navigating")
         self.logger.info('Navigating the robot to a closest gathering position?')
         self.can_gather = False
@@ -124,9 +105,7 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
         self.can_gather = True
 
     def on_gather(self):
-        """
-        Callback called on entry to gathering state.
-        """
+        """Is called on gathering state and monitor progress."""
         self.logger.info("Requesting gathering...")
         self.send_state("Gather %.1f " % self.apple_progress)
         trigger_res = self.trigger_apple_gathering()
@@ -145,18 +124,12 @@ class GlobalOrchestration(GlobalOrchestrationSM, KrakenOrchestrationNode):
             time.sleep(2)
 
     def on_finish(self):
-        """
-        Callback called on finish state.
-        Asks to navigate to the last position in the plan.
-        """
+        """Is called on finish state, navigates to last goal."""
         # Same action is performed.
         self.on_navigate()
 
     def on_finished(self):
-        """
-        Callback called on finished state.
-        The orchestration is done.
-        """
+        """Is called after finished."""
         self.send_state("Completed")
         self.logger.info('The robot has completed its job.')
         # The robot has finished its job.

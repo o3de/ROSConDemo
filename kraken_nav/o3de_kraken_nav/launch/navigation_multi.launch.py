@@ -8,7 +8,6 @@
 
 
 import pathlib
-from unicodedata import name
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, GroupAction, DeclareLaunchArgument
@@ -21,17 +20,20 @@ from launch.conditions import IfCondition, UnlessCondition
 from launch_ros.actions import ComposableNodeContainer
 from launch_ros.descriptions import ComposableNode
 
+
 def substitute_namespace(namespace, value):
     if not namespace:
         return TextSubstitution(text=value)
     else:
         return PythonExpression(['str("', namespace, '")', "+", f"'/{value}'"])
-    
+
+
 def substitute_name(namespace, value):
     if not namespace:
         return TextSubstitution(text=value)
     else:
         return PythonExpression(['str("', namespace, '")', "+", f"'_{value}'"])
+
 
 def generate_launch_description():
     namespace = LaunchConfiguration('namespace')
@@ -45,7 +47,7 @@ def generate_launch_description():
         'use_slam',
         default_value='False',
     )
-    
+
     rviz = LaunchConfiguration('rviz')
     declare_rviz_cmd = DeclareLaunchArgument(
         'rviz',
@@ -56,15 +58,21 @@ def generate_launch_description():
     slam_toolbox_dir = get_package_share_directory('slam_toolbox')
     nav2_dir = get_package_share_directory("nav2_bringup")
 
-    nav2_params_file = str(pathlib.Path(package_dir).joinpath('launch', 'config', 'navigation_multi_params.yaml'))
+    nav2_params_file = str(
+        pathlib.Path(package_dir).joinpath('launch', 'config', 'navigation_multi_params.yaml')
+    )
     bt_xml_file = str(pathlib.Path(package_dir).joinpath('launch', 'config', 'bt.xml'))
-    slam_params_file = str(pathlib.Path(package_dir).joinpath('launch', 'config', 'slam_multi_params.yaml'))
+    slam_params_file = str(
+        pathlib.Path(package_dir).joinpath('launch', 'config', 'slam_multi_params.yaml')
+    )
 
     nav_param_substitutions = {
         'default_nav_to_pose_bt_xml': bt_xml_file,
         'robot_base_frame': substitute_namespace(namespace, "base_link"),
-        'local_costmap.local_costmap.ros__parameters.global_frame': substitute_namespace(namespace, "odom"),
-        'global_costmap.global_costmap.ros__parameters.global_frame': substitute_namespace(namespace, "map"),
+        'local_costmap.local_costmap.ros__parameters.global_frame':
+            substitute_namespace(namespace, "odom"),
+        'global_costmap.global_costmap.ros__parameters.global_frame':
+            substitute_namespace(namespace, "map"),
         'bt_navigator.ros__parameters.global_frame': substitute_namespace(namespace, "map"),
         # 'topic': substitute_namespace(namespace, "scan")
     }
@@ -73,32 +81,34 @@ def generate_launch_description():
         'odom_frame': substitute_namespace(namespace, "odom"),
         'map_frame': substitute_namespace(namespace, "map")
     }
-    
+
     configured_nav2_params = RewrittenYaml(
         source_file=nav2_params_file,
         root_key='',
         param_rewrites=nav_param_substitutions,
         convert_types=True)
-    
+
     configured_slam_params = RewrittenYaml(
         source_file=slam_params_file,
         root_key=namespace,
         param_rewrites=slam_param_substitutions,
         convert_types=True)
-    
+
+    online_async_launch = pathlib.Path(slam_toolbox_dir).joinpath('launch',
+                                                                  'online_async_launch.py')
     slam = GroupAction(
         condition=IfCondition(use_slam),
         actions=[
             PushRosNamespace(namespace),
             IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([str(pathlib.Path(slam_toolbox_dir).joinpath('launch', 'online_async_launch.py'))]),
-                launch_arguments = {
+                PythonLaunchDescriptionSource([str(online_async_launch)]),
+                launch_arguments={
                     'slam_params_file': configured_slam_params,
                 }.items()
             ),
         ]
     )
-    
+
     local_costmap_scan_relay = Node(
         name="pc_relay",
         package="topic_tools",
@@ -186,12 +196,13 @@ def generate_launch_description():
         output='both',
     )
 
+    navigation_launch = pathlib.Path(nav2_dir).joinpath('launch', 'navigation_launch.py')
     nav_nodes = GroupAction(
         actions=[
             PushRosNamespace(namespace),
             IncludeLaunchDescription(
-                PythonLaunchDescriptionSource([str(pathlib.Path(nav2_dir).joinpath('launch', 'navigation_launch.py'))]),
-                launch_arguments = {
+                PythonLaunchDescriptionSource([str(navigation_launch)]),
+                launch_arguments={
                     'params_file': configured_nav2_params,
                     'namespace': namespace,
                     'use_sim_time': 'True',
@@ -200,7 +211,7 @@ def generate_launch_description():
             )
         ]
     )
-    
+
     pointcloud_to_laserscan = Node(
         package='pointcloud_to_laserscan',
         executable='pointcloud_to_laserscan_node',
@@ -216,7 +227,7 @@ def generate_launch_description():
             ('cloud_in', 'pc'),
         ]
     )
-    
+
     twist_to_ackermann = Node(
         package='o3de_kraken_nav',
         executable='twist_to_ackermann',
@@ -232,7 +243,7 @@ def generate_launch_description():
             ('/ackermann_vel', substitute_namespace(namespace, 'ackermann_vel')),
         ]
     )
-    
+
     rviz = GroupAction(
         condition=IfCondition(rviz),
         actions=[
@@ -241,12 +252,14 @@ def generate_launch_description():
                 executable='rviz2',
                 name='slam',
                 arguments=[
-                    '-d', str(pathlib.Path(package_dir).joinpath('launch', 'config', 'config_multi.rviz')),
+                    '-d', str(pathlib.Path(package_dir).joinpath('launch',
+                                                                 'config',
+                                                                 'config_multi.rviz')),
                 ]
             )
         ]
     )
-    
+
     ld = LaunchDescription()
     ld.add_action(declare_namespace_cmd)
     ld.add_action(declare_use_slam_cmd)
@@ -263,5 +276,4 @@ def generate_launch_description():
     ld.add_action(slam)
     ld.add_action(nav_nodes)
     ld.add_action(rviz)
-    
     return ld

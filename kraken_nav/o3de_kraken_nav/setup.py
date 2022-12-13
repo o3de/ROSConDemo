@@ -31,7 +31,7 @@ setup(
     maintainer='Piotr Jaroszek',
     maintainer_email='piotr.jaroszek@robotec.ai',
     description='Navigation package for Roscon apple kraken demo',
-    license='TODO: License declaration',
+    license='Apache 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

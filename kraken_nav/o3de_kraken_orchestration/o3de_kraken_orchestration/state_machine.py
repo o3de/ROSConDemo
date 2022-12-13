@@ -1,4 +1,3 @@
-# coding:utf-8
 #!/usr/bin/env python3
 
 #
@@ -11,16 +10,12 @@
 
 from statemachine import StateMachine, State
 
-class GlobalOrchestrationSM(StateMachine):
-    """
-    Orchestration state machine implementation -containst list of states and
-    valid transitions.
-    """
 
-    #### Members for debug purposes ###
+class GlobalOrchestrationSM(StateMachine):
+    """State machine implementation, contains list of states and valid transitions."""
+
     can_gather = False
     has_finished = True
-    ###################################
 
     start = State('Start', initial=True)
     waiting = State('Waiting')  # Waiting for the simulation start
