@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>ROSConDemo</string>
+	<string>RobotHarvestingSample</string>
 	<key>CFBundleExecutable</key>
-	<string>ROSConDemo.GameLauncher</string>
+	<string>RobotHarvestingSample.GameLauncher</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.amazon.lumberyard.ROSConDemo</string>
+	<string>com.amazon.lumberyard.RobotHarvestingSample</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>ROSConDemo</string>
+	<string>RobotHarvestingSample</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

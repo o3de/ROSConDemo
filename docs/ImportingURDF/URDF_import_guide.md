@@ -6,7 +6,7 @@ This document will guide you through the process of importing a robot and covers
 
 ## 1. Before you start
 
-- Follow the instructions in the [project README](https://github.com/o3de/ROSConDemo) to build and test the orchard demo project.
+- Follow the instructions in the [project README](https://github.com/o3de/RobotHarvestingSample) to build and test the orchard demo project.
 - Examples in the demo use the .xacro extension, which is helpful for parametrization of robot definition. 
 To follow the guide, you need this package installed:
 ```bash
@@ -18,7 +18,7 @@ sudo apt install ros-$ROS_DISTRO-xacro
 First, we need to produce our URF file out of the .xacro file. This is typically done through running a command and specifying robot parameters.
 For this example, we will use default values.
 
-In `ROSConDemo` folder run:
+In `RobotHarvestingSample` folder run:
 
 ```bash
 cd Project/Assets/applekraken_urdf
@@ -27,7 +27,7 @@ xacro apple_kraken.xacro > apple_kraken_new.urdf
 
 ## 3. Import URDF into O3DE
 
-Run the ROSConDemo O3DE project, load `Main` level and import `apple_kraken_new.urdf` file using `RobotImporter` button. 
+Run the RobotHarvestingSample O3DE project, load `Main` level and import `apple_kraken_new.urdf` file using `RobotImporter` button. 
 The `apple_kraken_new` prefab should appear in the `Entity Outliner`.
 
 The robot imported in this way should look correct and have all the parts included. 
@@ -104,7 +104,7 @@ URDF format by itself does not specify sensor behavior (unless through Gazebo ex
 ## 7. Add LIDAR
 
 Select the `lidar_mount` entity in the `apple_kraken_new` prefab, open the right-click menu and select `Instantiate Prefab`.
-Select `ROSConDemo/Project/Prefabs/LidarKraken.prefab` and click `OK`. Enter the `LidarKraken` prefab, select `Sensor` entity and change:
+Select `RobotHarvestingSample/Project/Prefabs/LidarKraken.prefab` and click `OK`. Enter the `LidarKraken` prefab, select `Sensor` entity and change:
 1. Set `Ignore layer` to `True`
 2. Set `Ignored layer index` to `1`
 

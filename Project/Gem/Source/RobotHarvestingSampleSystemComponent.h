@@ -9,21 +9,21 @@
 #pragma once
 
 #include <AzCore/Component/Component.h>
-#include <ROSConDemo/ROSConDemoBus.h>
+#include <RobotHarvestingSample/RobotHarvestingSampleBus.h>
 #include <nav_msgs/srv/get_plan.hpp>
 #include <rclcpp/rclcpp.hpp>
 
-namespace ROSConDemo
+namespace RobotHarvestingSample
 {
     using GetPlanRequestPtr = std::shared_ptr<nav_msgs::srv::GetPlan::Request>;
     using GetPlanResponsePtr = std::shared_ptr<nav_msgs::srv::GetPlan::Response>;
 
-    class ROSConDemoSystemComponent
+    class RobotHarvestingSampleSystemComponent
         : public AZ::Component
-        , protected ROSConDemoRequestBus::Handler
+        , protected RobotHarvestingSampleRequestBus::Handler
     {
     public:
-        AZ_COMPONENT(ROSConDemoSystemComponent, "{194FFE4C-CA95-400E-BCA2-CB5083ABEC5F}");
+        AZ_COMPONENT(RobotHarvestingSampleSystemComponent, "{194FFE4C-CA95-400E-BCA2-CB5083ABEC5F}");
 
         static void Reflect(AZ::ReflectContext* context);
 
@@ -32,8 +32,8 @@ namespace ROSConDemo
         static void GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required);
         static void GetDependentServices(AZ::ComponentDescriptor::DependencyArrayType& dependent);
 
-        ROSConDemoSystemComponent();
-        ~ROSConDemoSystemComponent();
+        RobotHarvestingSampleSystemComponent();
+        ~RobotHarvestingSampleSystemComponent();
 
     protected:
         void Activate() override;
@@ -46,4 +46,4 @@ namespace ROSConDemo
         const AZStd::string m_planTopic = "get_gathering_plan";
         rclcpp::Service<nav_msgs::srv::GetPlan>::SharedPtr m_pathPlanService;
     };
-} // namespace ROSConDemo
+} // namespace RobotHarvestingSample

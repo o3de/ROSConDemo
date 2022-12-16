@@ -1,6 +1,6 @@
 
 set(FILES
-        Include/ROSConDemo/ROSConDemoBus.h
+        Include/RobotHarvestingSample/RobotHarvestingSampleBus.h
         Source/ApplePicker/AppleDetectionGroundTruth.cpp
         Source/ApplePicker/AppleDetectionGroundTruth.h
         Source/ApplePicker/ApplePickerComponent.cpp
@@ -25,7 +25,7 @@ set(FILES
         Source/Manipulator/KrakenManipulatorController.cpp
         Source/Manipulator/KrakenManipulatorController.h
         Source/Manipulator/ManipulatorRequestBus.h
-        Source/ROSConDemoSystemComponent.cpp
-        Source/ROSConDemoSystemComponent.h
+        Source/RobotHarvestingSampleSystemComponent.cpp
+        Source/RobotHarvestingSampleSystemComponent.h
         enabled_gems.cmake
         )

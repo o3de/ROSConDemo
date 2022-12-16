@@ -1,6 +1,6 @@
 
 set(ENABLED_GEMS
-    ROSConDemo
+    RobotHarvestingSample
     Atom
     AudioSystem
     AWSCore

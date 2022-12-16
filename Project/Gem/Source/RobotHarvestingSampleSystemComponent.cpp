@@ -6,7 +6,7 @@
 *
 */
 
-#include "ROSConDemoSystemComponent.h"
+#include "RobotHarvestingSampleSystemComponent.h"
 #include "ApplePicker/GatheringRowRequests.h"
 #include <AzCore/Component/TickBus.h>
 #include <AzCore/Serialization/EditContext.h>
@@ -18,17 +18,17 @@
 #include <ILevelSystem.h>
 #include <ISystem.h>
 
-namespace ROSConDemo
+namespace RobotHarvestingSample
 {
-    void ROSConDemoSystemComponent::Reflect(AZ::ReflectContext* context)
+    void RobotHarvestingSampleSystemComponent::Reflect(AZ::ReflectContext* context)
     {
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
-            serialize->Class<ROSConDemoSystemComponent, AZ::Component>()->Version(0);
+            serialize->Class<RobotHarvestingSampleSystemComponent, AZ::Component>()->Version(0);
 
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
-                ec->Class<ROSConDemoSystemComponent>("ROSConDemo", "[Description of functionality provided by this System Component]")
+                ec->Class<RobotHarvestingSampleSystemComponent>("RobotHarvestingSample", "[Description of functionality provided by this System Component]")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("System"))
                     ->Attribute(AZ::Edit::Attributes::AutoExpand, true);
@@ -37,12 +37,12 @@ namespace ROSConDemo
 
         if (AZ::BehaviorContext* behaviorContext = azrtti_cast<AZ::BehaviorContext*>(context))
         {
-            behaviorContext->EBus<ROSConDemoRequestBus>("ROSConDemoRequestBus")
-                ->Event("ReloadLevel", &ROSConDemoRequestBus::Events::ReloadLevel);
+            behaviorContext->EBus<RobotHarvestingSampleRequestBus>("RobotHarvestingSampleRequestBus")
+                ->Event("ReloadLevel", &RobotHarvestingSampleRequestBus::Events::ReloadLevel);
         }
     }
 
-    void ROSConDemoSystemComponent::ReloadLevel()
+    void RobotHarvestingSampleSystemComponent::ReloadLevel()
     {
         ISystem* systemInterface = nullptr;
         CrySystemRequestBus::BroadcastResult(systemInterface, &CrySystemRequests::GetCrySystem);
@@ -57,41 +57,41 @@ namespace ROSConDemo
         }
     }
 
-    void ROSConDemoSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
+    void RobotHarvestingSampleSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
     {   
-        provided.push_back(AZ_CRC("ROSConDemoService"));
+        provided.push_back(AZ_CRC("RobotHarvestingSampleService"));
     }
 
-    void ROSConDemoSystemComponent::GetIncompatibleServices(AZ::ComponentDescriptor::DependencyArrayType& incompatible)
+    void RobotHarvestingSampleSystemComponent::GetIncompatibleServices(AZ::ComponentDescriptor::DependencyArrayType& incompatible)
     {
-        incompatible.push_back(AZ_CRC("ROSConDemoService"));
+        incompatible.push_back(AZ_CRC("RobotHarvestingSampleService"));
     }
 
-    void ROSConDemoSystemComponent::GetRequiredServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& required)
-    {
-    }
-
-    void ROSConDemoSystemComponent::GetDependentServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& dependent)
+    void RobotHarvestingSampleSystemComponent::GetRequiredServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& required)
     {
     }
 
-    ROSConDemoSystemComponent::ROSConDemoSystemComponent()
+    void RobotHarvestingSampleSystemComponent::GetDependentServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& dependent)
     {
-        if (ROSConDemoInterface::Get() == nullptr)
+    }
+
+    RobotHarvestingSampleSystemComponent::RobotHarvestingSampleSystemComponent()
+    {
+        if (RobotHarvestingSampleInterface::Get() == nullptr)
         {
-            ROSConDemoInterface::Register(this);
+            RobotHarvestingSampleInterface::Register(this);
         }
     }
 
-    ROSConDemoSystemComponent::~ROSConDemoSystemComponent()
+    RobotHarvestingSampleSystemComponent::~RobotHarvestingSampleSystemComponent()
     {
-        if (ROSConDemoInterface::Get() == this)
+        if (RobotHarvestingSampleInterface::Get() == this)
         {
-            ROSConDemoInterface::Unregister(this);
+            RobotHarvestingSampleInterface::Unregister(this);
         }
     }
 
-    void ROSConDemoSystemComponent::ProcessGetPlanServiceCall(const GetPlanRequestPtr req, GetPlanResponsePtr resp)
+    void RobotHarvestingSampleSystemComponent::ProcessGetPlanServiceCall(const GetPlanRequestPtr req, GetPlanResponsePtr resp)
     {
         AZ::EBusAggregateResults<AppleKraken::GatheringPoses> results;
         AppleKraken::GatheringRowRequestBus::BroadcastResult(results, &AppleKraken::GatheringRowRequests::GetGatheringPoses);
@@ -132,9 +132,9 @@ namespace ROSConDemo
         }
     }
 
-    void ROSConDemoSystemComponent::Activate()
+    void RobotHarvestingSampleSystemComponent::Activate()
     {   // TODO - the service should probably only be created in Game Mode
-        ROSConDemoRequestBus::Handler::BusConnect();
+        RobotHarvestingSampleRequestBus::Handler::BusConnect();
         auto ros2Node = ROS2::ROS2Interface::Get()->GetNode();
         m_pathPlanService = ros2Node->create_service<nav_msgs::srv::GetPlan>(
             m_planTopic.c_str(),
@@ -144,9 +144,9 @@ namespace ROSConDemo
             });
     }
 
-    void ROSConDemoSystemComponent::Deactivate()
+    void RobotHarvestingSampleSystemComponent::Deactivate()
     {
         m_pathPlanService.reset();
-        ROSConDemoRequestBus::Handler::BusDisconnect();
+        RobotHarvestingSampleRequestBus::Handler::BusDisconnect();
     }
-} // namespace ROSConDemo
+} // namespace RobotHarvestingSample

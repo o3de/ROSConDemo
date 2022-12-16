@@ -70,7 +70,7 @@ RUN apt-get update && apt-get install -y \
     xz-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# Gem + ROSConDemo ROS pacakges
+# Gem + RobotHarvestingSample ROS pacakges
 RUN apt-get update && apt-get install -y \
     ros-humble-ackermann-msgs \
     ros-humble-control-toolbox \
@@ -87,7 +87,7 @@ RUN apt-get update && apt-get install -y \
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
     && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
 
-# Assumes a local checkout of private ROSConDemo
+# Assumes a local checkout of private RobotHarvestingSample
 RUN git clone https://github.com/o3de/ROSConDemo.git \
     && cd ROSConDemo \
     && git lfs install \
@@ -115,12 +115,12 @@ RUN git lfs pull \
     && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
 
 RUN . /opt/ros/humble/setup.sh \
-    && cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor
+    && cmake --build build/linux --config profile --target RobotHarvestingSample Editor AssetProcessor
 
 # This final step takes long since they Assets will be downloading
 RUN . /opt/ros/humble/setup.sh \
     && echo "This final step can take more than 1 hour. Good time for going for a coffee :)" \
-    && cmake --build build/linux --config profile --target ROSConDemo.Assets
+    && cmake --build build/linux --config profile --target RobotHarvestingSample.Assets
 
 # Installing o3de_kraken_nav
 RUN apt-get update && apt-get install -y \

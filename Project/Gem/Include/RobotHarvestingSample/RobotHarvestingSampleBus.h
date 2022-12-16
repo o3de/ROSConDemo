@@ -11,19 +11,19 @@
 #include <AzCore/EBus/EBus.h>
 #include <AzCore/Interface/Interface.h>
 
-namespace ROSConDemo
+namespace RobotHarvestingSample
 {
-    class ROSConDemoRequests
+    class RobotHarvestingSampleRequests
     {
     public:
-        AZ_RTTI(ROSConDemoRequests, "{2D614DC7-0E0B-4EC9-B0EB-8F2ED827310A}");
-        virtual ~ROSConDemoRequests() = default;
+        AZ_RTTI(RobotHarvestingSampleRequests, "{2D614DC7-0E0B-4EC9-B0EB-8F2ED827310A}");
+        virtual ~RobotHarvestingSampleRequests() = default;
 
         //! Reload the current level
         virtual void ReloadLevel() = 0;
     };
 
-    class ROSConDemoBusTraits : public AZ::EBusTraits
+    class RobotHarvestingSampleBusTraits : public AZ::EBusTraits
     {
     public:
         //////////////////////////////////////////////////////////////////////////
@@ -33,7 +33,7 @@ namespace ROSConDemo
         //////////////////////////////////////////////////////////////////////////
     };
 
-    using ROSConDemoRequestBus = AZ::EBus<ROSConDemoRequests, ROSConDemoBusTraits>;
-    using ROSConDemoInterface = AZ::Interface<ROSConDemoRequests>;
+    using RobotHarvestingSampleRequestBus = AZ::EBus<RobotHarvestingSampleRequests, RobotHarvestingSampleBusTraits>;
+    using RobotHarvestingSampleInterface = AZ::Interface<RobotHarvestingSampleRequests>;
 
-} // namespace ROSConDemo
+} // namespace RobotHarvestingSample

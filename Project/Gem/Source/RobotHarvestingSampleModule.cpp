@@ -13,24 +13,24 @@
 #include "FruitStorage/FruitStorageComponent.h"
 #include "Manipulator/KrakenManipulatorController.h"
 #include "KrakenCamera/FollowingCameraComponent.h"
-#include "ROSConDemoSystemComponent.h"
+#include "RobotHarvestingSampleSystemComponent.h"
 #include <AzCore/Memory/SystemAllocator.h>
 #include <AzCore/Module/Module.h>
 
-namespace ROSConDemo
+namespace RobotHarvestingSample
 {
-    class ROSConDemoModule : public AZ::Module
+    class RobotHarvestingSampleModule : public AZ::Module
     {
     public:
-        AZ_RTTI(ROSConDemoModule, "{E38575E4-7D2F-4617-B938-416E8C1C07B4}", AZ::Module);
-        AZ_CLASS_ALLOCATOR(ROSConDemoModule, AZ::SystemAllocator, 0);
+        AZ_RTTI(RobotHarvestingSampleModule, "{E38575E4-7D2F-4617-B938-416E8C1C07B4}", AZ::Module);
+        AZ_CLASS_ALLOCATOR(RobotHarvestingSampleModule, AZ::SystemAllocator, 0);
 
-        ROSConDemoModule()
+        RobotHarvestingSampleModule()
             : AZ::Module()
         {
             m_descriptors.insert(
                 m_descriptors.end(),
-                { ROSConDemoSystemComponent::CreateDescriptor(),
+                { RobotHarvestingSampleSystemComponent::CreateDescriptor(),
                   AppleKraken::ApplePickerComponent::CreateDescriptor(),
                   AppleKraken::GatheringRowComponent::CreateDescriptor(),
                   AppleKraken::KrakenEffectorComponent::CreateDescriptor(),
@@ -43,10 +43,10 @@ namespace ROSConDemo
         AZ::ComponentTypeList GetRequiredSystemComponents() const override
         {
             return AZ::ComponentTypeList{
-                azrtti_typeid<ROSConDemoSystemComponent>(),
+                azrtti_typeid<RobotHarvestingSampleSystemComponent>(),
             };
         }
     };
-} // namespace ROSConDemo
+} // namespace RobotHarvestingSample
 
-AZ_DECLARE_MODULE_CLASS(Gem_ROSConDemo, ROSConDemo::ROSConDemoModule)
+AZ_DECLARE_MODULE_CLASS(Gem_RobotHarvestingSample, RobotHarvestingSample::RobotHarvestingSampleModule)

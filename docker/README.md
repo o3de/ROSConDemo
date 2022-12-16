@@ -1,4 +1,4 @@
-# Dockerfile for running the ROSConDemo
+# Dockerfile for running the RobotHarvestingSample
 
 The Dockerfile is going to create an Ubuntu Jammy + ROS Humble platform
 that prepares the O3DE simulator together with the o3de-ros2-gem to run
@@ -12,11 +12,11 @@ the demo in this repository.
 
 ## Building the Docker Image
 
-To build the Dockerfile the only required step is to clone first the ROSConDemo:
+To build the Dockerfile the only required step is to clone first the RobotHarvestingSample:
 ```
-git clone git@github.com:aws-lumberyard/ROSConDemo.git
-cd ROSConDemo/docker
-docker build -t roscon_demo -f Dockerfile .
+git clone git@github.com:o3de/RobotHarvestingSample.git
+cd RobotHarvestingSample/docker
+docker build -t robot_harvesting_sample -f Dockerfile .
 ```
 
 Note: the build process is going to download all the necessary assets for running
@@ -31,14 +31,14 @@ with support for GPU please follow the documentation for
 Another option is to install and use [rocker](https://github.com/osrf/rocker).
 
 ```
-rocker --x11 --nvidia roscon_demo
+rocker --x11 --nvidia robot_harvesting_sample
 ```
 
 The `Dockerfile` leaves ready the compilation of all the O3DE artifacts to be able
 to execute the Editor.
 ```
-/data/workspace/ROSConDemo/Project/build/linux/bin/profile/Editor
+/data/workspace/RobotHarvestingSample/Project/build/linux/bin/profile/Editor
 ```
 
 Continue with the instruction in the
-[main README file](https://github.com/aws-lumberyard/ROSConDemo/blob/main/README.md).
+[main README file](https://github.com/o3de/RobotHarvestingSample/blob/main/README.md).
