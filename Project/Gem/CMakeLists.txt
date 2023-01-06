@@ -23,7 +23,7 @@ if(NOT PAL_TRAIT_ROSCONDEMO_SUPPORTED)
 endif()
 
 # We are on a supported platform, so add the RobotHarvestingSample target
-# Note: We include the common files and the platform specific files which are set in roscondemo_files.cmake and
+# Note: We include the common files and the platform specific files which are set in robot_harvesting_sample_files.cmake and
 # in ${pal_dir}/roscondemo_${PAL_PLATFORM_NAME_LOWERCASE}_files.cmake
 ly_add_target(
     NAME RobotHarvestingSample.Static STATIC
