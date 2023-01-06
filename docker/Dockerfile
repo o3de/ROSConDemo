@@ -4,8 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-FROM ros:humble-ros-core-jammy
+ARG ROS_VERSION=humble
+ARG UBUNTU_VERSION=jammy
+FROM ros:${ROS_VERSION}-ros-core-${UBUNTU_VERSION}
 
+ARG ROS_VERSION
 ENV WORKDIR=/data/workspace
 WORKDIR $WORKDIR
 
@@ -32,7 +35,7 @@ RUN apt-get update && apt-get install -y \
     bind9-utils \
     binutils \
     ca-certificates \
-    clang \
+    clang-12 \
     cmake \
     file \
     firewalld \
@@ -72,20 +75,33 @@ RUN apt-get update && apt-get install -y \
 
 # Gem + RobotHarvestingSample ROS pacakges
 RUN apt-get update && apt-get install -y \
-    ros-humble-ackermann-msgs \
-    ros-humble-control-toolbox \
-    ros-humble-gazebo-msgs \
-    ros-humble-joy \
-    ros-humble-navigation2 \
-    ros-humble-rviz2 \
-    ros-humble-tf2-ros \
-    ros-humble-urdfdom \
-    ros-humble-vision-msgs \
+    ros-${ROS_VERSION}-ackermann-msgs \
+    ros-${ROS_VERSION}-control-toolbox \
+    ros-${ROS_VERSION}-gazebo-msgs \
+    ros-${ROS_VERSION}-joy \
+    ros-${ROS_VERSION}-navigation2 \
+    ros-${ROS_VERSION}-rviz2 \
+    ros-${ROS_VERSION}-tf2-ros \
+    ros-${ROS_VERSION}-urdfdom \
+    ros-${ROS_VERSION}-vision-msgs \
     && rm -rf /var/lib/apt/lists/*
 
+# Focal needs a modern version for CMake since it
+RUN if [ "${ROS_VERSION}" = "galactic" ]; then \
+      wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | \
+        gpg --dearmor - | \
+        tee /usr/share/keyrings/kitware-archive-keyring.gpg >/dev/null \
+      && echo 'deb [signed-by=/usr/share/keyrings/kitware-archive-keyring.gpg] https://apt.kitware.com/ubuntu/ focal main' | \
+        tee /etc/apt/sources.list.d/kitware.list >/dev/null \
+      && apt-get update && apt-get install -y \
+        cmake=3.24.1-0kitware1ubuntu20.04.1 \
+        cmake-data=3.24.1-0kitware1ubuntu20.04.1 \
+      && rm -rf /var/lib/apt/lists/*; \
+    fi
+
 ## Symlink clang version to non-versioned clang and set cc to clang
-RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100 \
-    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
+RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-12 100 \
+    && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-12 100
 
 # Assumes a local checkout of private RobotHarvestingSample
 RUN git clone https://github.com/o3de/ROSConDemo.git \
@@ -111,29 +127,29 @@ RUN ./o3de/scripts/o3de.sh register --this-engine \
 WORKDIR $WORKDIR/ROSConDemo/Project
 
 RUN git lfs pull \
-    && . /opt/ros/humble/setup.sh \
+    && . /opt/ros/${ROS_VERSION}/setup.sh \
     && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
 
-RUN . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/${ROS_VERSION}/setup.sh \
     && cmake --build build/linux --config profile --target RobotHarvestingSample Editor AssetProcessor
 
 # This final step takes long since they Assets will be downloading
-RUN . /opt/ros/humble/setup.sh \
+RUN . /opt/ros/${ROS_VERSION}/setup.sh \
     && echo "This final step can take more than 1 hour. Good time for going for a coffee :)" \
     && cmake --build build/linux --config profile --target RobotHarvestingSample.Assets
 
 # Installing o3de_kraken_nav
 RUN apt-get update && apt-get install -y \
     python3-colcon-common-extensions \
-    ros-humble-cyclonedds \
-    ros-humble-rmw-cyclonedds-cpp \
-    ros-humble-slam-toolbox \
-    ros-humble-navigation2 \
-    ros-humble-nav2-bringup \
-    ros-humble-pointcloud-to-laserscan \
-    ros-humble-teleop-twist-keyboard \
-    ros-humble-ackermann-msgs \
-    ros-humble-topic-tools \
+    ros-${ROS_VERSION}-cyclonedds \
+    ros-${ROS_VERSION}-rmw-cyclonedds-cpp \
+    ros-${ROS_VERSION}-slam-toolbox \
+    ros-${ROS_VERSION}-navigation2 \
+    ros-${ROS_VERSION}-nav2-bringup \
+    ros-${ROS_VERSION}-pointcloud-to-laserscan \
+    ros-${ROS_VERSION}-teleop-twist-keyboard \
+    ros-${ROS_VERSION}-ackermann-msgs \
+    ros-${ROS_VERSION}-topic-tools \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install python-statemachine

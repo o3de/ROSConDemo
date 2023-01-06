@@ -64,6 +64,7 @@ The following commands should prepare O3DE:
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
+~/o3de$ git checkout development
 ~/o3de$ python/get_python.sh
 ~/o3de$ scripts/o3de.sh register --this-engine
 ```
