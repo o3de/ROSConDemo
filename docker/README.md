@@ -32,7 +32,7 @@ Creating the image using the Dockerfile to have an Ubuntu Jammy and ROS 2
 Humble platform requires just to have docker installed:
 
 ```
-wget https://raw.githubusercontent.com/o3de/ROSConDemo/main/docker/Dockerfile
+wget https://raw.githubusercontent.com/o3de/RobotHarvestingSample/main/docker/Dockerfile
 docker build -t roscon_demo -f Dockerfile .
 ```
 
@@ -43,7 +43,7 @@ Galactic platform requires just to have docker installed and provide some
 extra building arguments to it:
 
 ```
-wget https://raw.githubusercontent.com/o3de/ROSConDemo/main/docker/Dockerfile
+wget https://raw.githubusercontent.com/o3de/RobotHarvestingSample/main/docker/Dockerfile
 docker build -t roscon_demo_galactic --build-arg ROS_VERSION=galactic --build-arg UBUNTU_VERSION=focal  .
 ```
 

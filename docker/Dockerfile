@@ -104,8 +104,8 @@ RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang-12 100 \
     && update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++-12 100
 
 # Assumes a local checkout of private RobotHarvestingSample
-RUN git clone https://github.com/o3de/ROSConDemo.git \
-    && cd ROSConDemo \
+RUN git clone https://github.com/o3de/RobotHarvestingSample.git \
+    && cd RobotHarvestingSample \
     && git lfs install \
     && git lfs pull
 
@@ -116,15 +116,15 @@ RUN git clone https://github.com/o3de/o3de.git -b development \
     && git lfs pull \
     && python/get_python.sh
 
-RUN git clone https://github.com/RobotecAI/o3de-ros2-gem.git
+RUN git clone https://github.com/o3de/o3de-extras
 
 RUN ./o3de/scripts/o3de.sh register --this-engine \
-    && ./o3de/scripts/o3de.sh register --gem-path ./o3de-ros2-gem \
-    && ./o3de/scripts/o3de.sh register -pp ./ROSConDemo/Project \
-    && ./o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ./ROSConDemo/Project \
+    && ./o3de/scripts/o3de.sh register --gem-path ./o3de-extras/Gems/ROS2 \
+    && ./o3de/scripts/o3de.sh register -pp ./RobotHarvestingSample/Project \
+    && ./o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ./RobotHarvestingSample/Project \
     && cat /root/.o3de/o3de_manifest.json
 
-WORKDIR $WORKDIR/ROSConDemo/Project
+WORKDIR $WORKDIR/RobotHarvestingSample/Project
 
 RUN git lfs pull \
     && . /opt/ros/${ROS_VERSION}/setup.sh \
