@@ -40,5 +40,10 @@ to execute the Editor.
 /data/workspace/ROSConDemo/Project/build/linux/bin/profile/Editor
 ```
 
+💡 ***Please Note:*** You need to source ROS2 workspace after attaching new terminal to the container:
+```
+source ./o3de_kraken_ws/install/setup.bash
+```
+
 Continue with the instruction in the
 [main README file](https://github.com/aws-lumberyard/ROSConDemo/blob/main/README.md).
