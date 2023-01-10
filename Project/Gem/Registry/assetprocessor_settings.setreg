@@ -2,13 +2,13 @@
     "Amazon": {
         "AssetProcessor": {
             "Settings": {
-                "ScanFolder ROSConDemo/Assets": {
-                    "watch": "@GEMROOT:ROSConDemo@/Assets",
+                "ScanFolder RobotHarvestingSample/Assets": {
+                    "watch": "@GEMROOT:RobotHarvestingSample@/Assets",
                     "recursive": 1,
                     "order": 101
                 },
-                "ScanFolder ROSConDemo/Registry": {
-                    "watch": "@GEMROOT:ROSConDemo@/Registry",
+                "ScanFolder RobotHarvestingSample/Registry": {
+                    "watch": "@GEMROOT:RobotHarvestingSample@/Registry",
                     "recursive": 1,
                     "order": 102
                 }

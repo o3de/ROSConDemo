@@ -1,22 +1,22 @@
 {
-    "project_name": "ROSConDemo",
+    "project_name": "RobotHarvestingSample",
     "project_id": "{A871E69A-15DA-4A3B-9A47-EC994B37FD3C}",
-    "origin": "The primary repo for ROSConDemo goes here: i.e. http://www.mydomain.com",
-    "license": "What license ROSConDemo uses goes here: i.e. https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
-    "display_name": "ROSConDemo",
-    "summary": "A short description of ROSConDemo.",
+    "origin": "https://git.com/o3de/RobotHarvestingSample",
+    "license": "https://opensource.org/licenses/Apache-2.0 Or https://opensource.org/licenses/MIT etc.",
+    "display_name": "RobotHarvestingSample",
+    "summary": "O3DE Demonstration of an Apple Harvesting Robot.",
     "canonical_tags": [
         "Project"
     ],
     "user_tags": [
-        "ROSConDemo"
+        "RobotHarvestingSample"
     ],
     "icon_path": "preview.png",
     "engine": "o3de",
     "external_subdirectories": [
         "Gem"
     ],
-    "restricted": "ROSConDemo",
+    "restricted": "RobotHarvestingSample",
     "gem_names": [
         "ROS2"
     ]

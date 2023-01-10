@@ -76,7 +76,7 @@ end
 function UILogic:Reset()
     if self.resetPressed and self.ctrlPressed then
         Debug.Log("Re-loading level")
-        ROSConDemoRequestBus.Broadcast.ReloadLevel();
+        RobotHarvestingSampleBus.Broadcast.ReloadLevel();
         -- LoadLevel command will reload the error but currently has graphic
         -- issues so a custom ReloadLevel command above is used
         -- ConsoleRequestBus.Broadcast.ExecuteConsoleCommand("LoadLevel main")

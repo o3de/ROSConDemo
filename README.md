@@ -1,4 +1,4 @@
-# Apple Kraken Demo Project
+# Robot Harvesting Sample Project
 
 This project demonstrates an example application of [O3DE](https://www.o3de.org/) working with ROS 2.
 The integration is realized through [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
@@ -64,6 +64,7 @@ The following commands should prepare O3DE:
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
+~/o3de$ git checkout development
 ~/o3de$ python/get_python.sh
 ~/o3de$ scripts/o3de.sh register --this-engine
 ```
@@ -118,7 +119,7 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 1. Clone this project:
 
 ```
-git clone https://github.com/o3de/ROSConDemo.git
+git clone https://github.com/o3de/RobotHarvestingDemo.git
 ```
 
 2. Register this project in O3DE engine. In O3DE directory:
@@ -142,7 +143,7 @@ cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
 5. Execute build (this will take a while the first time):
 
 ```
-cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor ROSConDemo.Assets
+cmake --build build/linux --config profile --target RobotHarvestingSample Editor AssetProcessor RobotHarvestingSample.Assets
 ```
 
 ## Launching the Editor
