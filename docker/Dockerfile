@@ -128,7 +128,7 @@ WORKDIR $WORKDIR/RobotHarvestingSample/Project
 
 RUN git lfs pull \
     && . /opt/ros/${ROS_VERSION}/setup.sh \
-    && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
+    && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON -DLY_STRIP_DEBUG_SYMBOLS=ON
 
 RUN . /opt/ros/${ROS_VERSION}/setup.sh \
     && cmake --build build/linux --config profile --target RobotHarvestingSample Editor AssetProcessor
@@ -158,7 +158,7 @@ WORKDIR $WORKDIR
 
 RUN mkdir -p o3de_kraken_ws/src \
     && cd o3de_kraken_ws/src \
-    && git clone https://github.com/RobotecAI/o3de_kraken_nav.git
+    && ln -s $WORKDIR/ROSConDemo/kraken_nav kraken_nav
 
 RUN cd o3de_kraken_ws \
     && colcon build --symlink-install

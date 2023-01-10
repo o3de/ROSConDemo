@@ -117,7 +117,7 @@ This step ensures that our namespace is the same as if the robot was spawned and
 
 ![](static/images/URDF_tutorial_base_link_name.png)
 
-Follow instructions in the [o3de_kraken_nav](https://github.com/RobotecAI/o3de_kraken_nav) to install the navigation stack.
+Follow instructions in the [o3de_kraken_nav](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md) to install the navigation stack.
 After the `Installation` part run the O3DE simulation (`ctrl-g`), switch to terminal and run the following commands:
 
 ```bash
