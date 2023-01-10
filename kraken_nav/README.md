@@ -32,7 +32,7 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 ### Packages
 
-You will need to install the appropriate ROS2 package. Refer to setup requirements for the [ROS2 Gem](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md)
+You will need to install the appropriate ROS2 package. Refer to setup requirements for the [ROS2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md)
 
 In addition to the required packages for the ROS2 gem, you will also need some additional ROS2 packages.
 
@@ -77,7 +77,7 @@ pip install python-statemachine
 ## Installation ##
 
 - Use the [development](https://github.com/o3de/o3de/tree/development) branch of the `O3DE`.
-- Use the the [development](https://github.com/RobotecAI/o3de-ros2-gem/tree/development) branch of the `o3de-ros-gem`.
+- Use the the [development](https://github.com/o3de/o3de-extras/tree/development) branch of the `o3de-extras`.
 - Use the [main](https://github.com/aws-lumberyard/ROSConDemo) branch of the `ROSConDemo`.
 
 1. Source ROS2 (assumed `humble`)
