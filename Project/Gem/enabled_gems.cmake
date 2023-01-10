@@ -25,4 +25,5 @@ set(ENABLED_GEMS
     Terrain
     Vegetation
     ROS2
+    PhysXDebug
 )

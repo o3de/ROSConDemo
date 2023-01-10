@@ -18,6 +18,7 @@
     ],
     "restricted": "ROSConDemo",
     "gem_names": [
-        "ROS2"
+        "ROS2",
+        "PhysXDebug"
     ]
 }
