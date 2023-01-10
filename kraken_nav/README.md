@@ -78,7 +78,7 @@ pip install python-statemachine
 
 - Use the [development](https://github.com/o3de/o3de/tree/development) branch of the `O3DE`.
 - Use the the [development](https://github.com/o3de/o3de-extras/tree/development) branch of the `o3de-extras`.
-- Use the [main](https://github.com/aws-lumberyard/ROSConDemo) branch of the `ROSConDemo`.
+- Use the [development](https://github.com/o3de/ROSConDemo) branch of the `ROSConDemo`.
 
 1. Source ROS2 (assumed `humble`)
 
