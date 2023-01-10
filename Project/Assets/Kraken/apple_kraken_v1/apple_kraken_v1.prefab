@@ -624,6 +624,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126309558696604]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[3950558941332218098]": {
@@ -1976,6 +1980,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[6459884325005728245]": {
@@ -2066,6 +2074,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[16851971225857889294]": {
@@ -2520,7 +2532,7 @@
                             "Index": 1
                         },
                         "Position": [
-                            2.540242910385132,
+                            2.7,
                             0.0,
                             0.5625920295715332
                         ],
@@ -2542,7 +2554,7 @@
                         "ShapeType": 1,
                         "Box": {
                             "Configuration": [
-                                0.4371989965438843,
+                                0.8,
                                 0.13190199434757233,
                                 0.05587799847126007
                             ]
@@ -2682,15 +2694,8 @@
                         },
                         "DriveModel": {
                             "SteeringPID": {
-                                "P": 1000.0,
+                                "P": 10.0,
                                 "Output limit": 200.0
-                            },
-                            "SpeedPID": {
-                                "P": 250.0,
-                                "I": 150.0,
-                                "IMax": 500.0,
-                                "Anti windup": true,
-                                "Output limit": 500.0
                             }
                         },
                         "VehicleModelLimits": {
@@ -2843,7 +2848,7 @@
                         "Position": [
                             2.197614908218384,
                             0.0,
-                            0.7621089816093445
+                            0.7799999713897705
                         ],
                         "MaterialSlots": {
                             "Slots": [
@@ -2859,7 +2864,7 @@
                             "Configuration": [
                                 0.5833520293235779,
                                 0.5446910262107849,
-                                0.2640030086040497
+                                0.20000000298023224
                             ]
                         }
                     }
@@ -3125,6 +3130,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126382573140636]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[18116517932786798066]": {
