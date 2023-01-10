@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>ROSConDemo.GameLauncher</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.amazon.lumberyard.ROSConDemo</string>
+	<string>com.amazon.o3de.ROSConDemo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
