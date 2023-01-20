@@ -100,10 +100,10 @@ RUN git clone https://github.com/o3de/o3de.git -b development \
     && git lfs pull \
     && python/get_python.sh
 
-RUN git clone https://github.com/RobotecAI/o3de-ros2-gem.git
+RUN git clone https://github.com/o3de/o3de-extras.git -b development
 
 RUN ./o3de/scripts/o3de.sh register --this-engine \
-    && ./o3de/scripts/o3de.sh register --gem-path ./o3de-ros2-gem \
+    && ./o3de/scripts/o3de.sh register --gem-path ./o3de-extras/Gems/ROS2 \
     && ./o3de/scripts/o3de.sh register -pp ./ROSConDemo/Project \
     && ./o3de/scripts/o3de.sh enable-gem -gn ROS2 -pp ./ROSConDemo/Project \
     && cat /root/.o3de/o3de_manifest.json
@@ -112,7 +112,7 @@ WORKDIR $WORKDIR/ROSConDemo/Project
 
 RUN git lfs pull \
     && . /opt/ros/humble/setup.sh \
-    && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_STRIP_DEBUG_SYMBOLS=ON
+    && cmake -B build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON
 
 RUN . /opt/ros/humble/setup.sh \
     && cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor

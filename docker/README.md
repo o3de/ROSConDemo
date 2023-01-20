@@ -14,7 +14,7 @@ the demo in this repository.
 
 To build the Dockerfile the only required step is to clone first the ROSConDemo:
 ```
-git clone git@github.com:aws-lumberyard/ROSConDemo.git
+git clone https://github.com/o3de/ROSConDemo.git
 cd ROSConDemo/docker
 docker build -t roscon_demo -f Dockerfile .
 ```
@@ -46,4 +46,5 @@ source ./o3de_kraken_ws/install/setup.bash
 ```
 
 Continue with the instruction in the
-[main README file](https://github.com/aws-lumberyard/ROSConDemo/blob/main/README.md).
+[main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md).
+

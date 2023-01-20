@@ -1,7 +1,7 @@
 # Apple Kraken Demo Project
 
 This project demonstrates an example application of [O3DE](https://www.o3de.org/) working with ROS 2.
-The integration is realized through [ROS 2 Gem for O3DE](https://github.com/RobotecAI/o3de-ros2-gem).
+The integration is realized through [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
 
 ## How does it look like
 
@@ -70,9 +70,9 @@ The following commands should prepare O3DE:
 
 ## ROS 2 Gem
 
-This project uses the [ROS 2 Gem](https://github.com/RobotecAI/o3de-ros2-gem).
+This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
 Please make sure to follow the installation guide
-in [README.md](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/README.md) file.
+in [README.md](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md) file.
 To learn more about how the Gem works check out
 the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
 

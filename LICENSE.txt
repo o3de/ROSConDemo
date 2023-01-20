@@ -1,13 +1,13 @@
 ## LICENSE
 
 PROJECT DATA: "ROSConDemo/Project"
-URL: https://github.com/aws-lumberyard/ROSConDemo/tree/main/Project/Assets
+URL: https://github.com/o3de/ROSConDemo/tree/main/Project/Assets
 The project data and code samples, including inline code, and related data
 are dual-licensed under Apache 2.0 and the MIT licenses.
 (see LICENSE-APACHE2.txt and LICENSE_MIT.TXT)
 
 ASSET DATA: "ROSConDemo/tree/main/Project/Assets"
-URL: https://github.com/aws-lumberyard/ROSConDemo/tree/main/Project/Assets
+URL: https://github.com/o3de/ROSConDemo/tree/main/Project/Assets
 The ROSConDemo Project and it's contents including 3D models, image textures,
 and other game asset files are licensed under the Creative Commons license
 Attribution-NonCommercial 4.0 International (see LICENSE-CC-BY-NC-4.0.txt)
