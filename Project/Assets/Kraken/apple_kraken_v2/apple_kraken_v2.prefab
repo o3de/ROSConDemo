@@ -536,8 +536,8 @@
                         ]
                     },
                     "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
+                        "SolverPositionIterations": 4,
+                        "SolverVelocityIterations": 1
                     }
                 },
                 "Component_[8160934721586853298]": {
@@ -722,6 +722,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126309558696604]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[3950558941332218098]": {
@@ -2101,7 +2105,11 @@
                 },
                 "Component_[1935418376842285128]": {
                     "$type": "EditorEntitySortComponent",
-                    "Id": 1935418376842285128
+                    "Id": 1935418376842285128,
+                    "Child Entity Order": [
+                        "Entity_[2534338808675]",
+                        "Entity_[2542928743267]"
+                    ]
                 },
                 "Component_[394584207891896443]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -2244,6 +2252,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[6459884325005728245]": {
@@ -2335,6 +2347,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[16851971225857889294]": {
@@ -2790,7 +2806,7 @@
                             "Index": 1
                         },
                         "Position": [
-                            2.540242910385132,
+                            2.700000047683716,
                             0.0,
                             0.5625920295715332
                         ],
@@ -2812,23 +2828,10 @@
                         "ShapeType": 1,
                         "Box": {
                             "Configuration": [
-                                0.4371989965438843,
+                                0.800000011920929,
                                 0.13190199434757233,
                                 0.05587799847126007
                             ]
-                        }
-                    }
-                },
-                "Component_[12369457332725092485]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 12369457332725092485,
-                    "m_template": {
-                        "$type": "InputConfigurationComponent",
-                        "Input Event Bindings": {
-                            "assetId": {
-                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
-                            },
-                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
                         }
                     }
                 },
@@ -2855,6 +2858,38 @@
                 "Component_[13857029336701770935]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13857029336701770935
+                },
+                "Component_[14372962472142680156]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 14372962472142680156,
+                    "m_template": {
+                        "$type": "AckermannVehicleModelComponent",
+                        "VehicleConfiguration": {
+                            "AxlesConfigurations": [
+                                {
+                                    "AxleTag": "Front",
+                                    "AxleWheels": [
+                                        "Entity_[126326738565788]",
+                                        "Entity_[126369688238748]"
+                                    ],
+                                    "IsSteering": true
+                                },
+                                {
+                                    "AxleTag": "Back",
+                                    "AxleWheels": [
+                                        "Entity_[126356803336860]",
+                                        "Entity_[126361098304156]"
+                                    ],
+                                    "IsDrive": true
+                                }
+                            ]
+                        },
+                        "DriveModel": {
+                            "SteeringPID": {
+                                "P": 5.0
+                            }
+                        }
+                    }
                 },
                 "Component_[15332622959147885179]": {
                     "$type": "EditorEntityIconComponent",
@@ -2904,53 +2939,8 @@
                         "$type": "KrakenEffectorComponent",
                         "ReachEntity": "Entity_[9058513484485]",
                         "ManipulatorEntity": "Entity_[126373983206044]",
-                        "AppleProbe": "Entity_[49624638919053]",
                         "RootManipulatorFreeze": "",
-                        "BaseLinkToKinematic": "Entity_[126373983206044]",
-                        "RestEntity": "Entity_[50844409631117]"
-                    }
-                },
-                "Component_[17586042212792946952]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 17586042212792946952,
-                    "m_template": {
-                        "$type": "VehicleModelComponent",
-                        "VehicleConfiguration": {
-                            "AxlesConfigurations": [
-                                {
-                                    "AxleTag": "FRONT",
-                                    "AxleWheels": [
-                                        "Entity_[126326738565788]",
-                                        "Entity_[126369688238748]"
-                                    ],
-                                    "IsSteering": true
-                                },
-                                {
-                                    "AxleTag": "BACK",
-                                    "AxleWheels": [
-                                        "Entity_[126361098304156]",
-                                        "Entity_[126356803336860]"
-                                    ],
-                                    "IsDrive": true
-                                }
-                            ]
-                        },
-                        "DriveModel": {
-                            "SteeringPID": {
-                                "P": 1000.0,
-                                "Output limit": 200.0
-                            },
-                            "SpeedPID": {
-                                "P": 250.0,
-                                "I": 150.0,
-                                "IMax": 500.0,
-                                "Anti windup": true,
-                                "Output limit": 500.0
-                            }
-                        },
-                        "VehicleModelLimits": {
-                            "SpeedLimit": 3.0
-                        }
+                        "BaseLinkToKinematic": "Entity_[126373983206044]"
                     }
                 },
                 "Component_[176770212147820291]": {
@@ -3109,7 +3099,7 @@
                         "Position": [
                             2.197614908218384,
                             0.0,
-                            0.7621089816093445
+                            0.7799999713897705
                         ],
                         "MaterialSlots": {
                             "Slots": [
@@ -3125,7 +3115,7 @@
                             "Configuration": [
                                 0.5833520293235779,
                                 0.5446910262107849,
-                                0.2640030086040497
+                                0.20000000298023224
                             ]
                         }
                     }
@@ -3139,6 +3129,19 @@
                             "Namespace Strategy": 2
                         },
                         "Frame Name": "base_link"
+                    }
+                },
+                "Component_[7284699326735359369]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 7284699326735359369,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
+                            },
+                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
+                        }
                     }
                 },
                 "Component_[7542806593715109284]": {
@@ -3391,6 +3394,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126382573140636]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[18116517932786798066]": {
@@ -3886,7 +3893,6 @@
                 "Component_[4717135159086115019]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 4717135159086115019,
-                    "GameView": false,
                     "ShapeColor": [
                         1.0,
                         0.0,
@@ -4257,11 +4263,6 @@
                                 {
                                     "Name": "DefaultMaterial"
                                 }
-                            ]
-                        },
-                        "MaterialSelection": {
-                            "MaterialIds": [
-                                {}
                             ]
                         }
                     },
@@ -4684,6 +4685,14 @@
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 3266432004800697983
                 },
+                "Component_[5589806606209403424]": {
+                    "$type": "EditorFixedJointComponent",
+                    "Id": 5589806606209403424,
+                    "Configuration": {
+                        "Parent Entity": "Entity_[126300968762012]",
+                        "Child Entity": "Entity_[49624638919053]"
+                    }
+                },
                 "Component_[6394972190778556843]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 6394972190778556843
@@ -4695,14 +4704,6 @@
                 "Component_[9476603463300257200]": {
                     "$type": "EditorEntityIconComponent",
                     "Id": 9476603463300257200
-                },
-                "Component_[5589806606209403424]": {
-                    "$type": "EditorFixedJointComponent",
-                    "Id": 5589806606209403424,
-                    "Configuration": {
-                        "Parent Entity": "Entity_[126300968762012]",
-                        "Child Entity": "Entity_[49624638919053]"
-                    }
                 },
                 "Component_[9950297320598638205]": {
                     "$type": "EditorRigidBodyComponent",
@@ -4742,7 +4743,7 @@
                             ]
                         }
                     },
-                "ShapeConfiguration": {
+                    "ShapeConfiguration": {
                         "ShapeType": 2,
                         "Capsule": {
                             "Height": 0.2000001221895218,
@@ -4765,7 +4766,6 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
-                    "GameView": false,
                     "ShapeColor": [
                         0.0,
                         0.0,
