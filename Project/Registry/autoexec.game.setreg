@@ -2,7 +2,8 @@
     "O3DE": {
         "Autoexec":{
             "ConsoleCommands": {
-                "bg_ConnectToAssetProcessor":false
+                "bg_ConnectToAssetProcessor":false,
+                "LoadLevel": "main"
             }
         }
     }
