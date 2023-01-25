@@ -144,7 +144,7 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && git -C $WORKSPACE/ROSConDemo lfs install \
         && git -C $WORKSPACE/ROSConDemo lfs pull \
         && $WORKSPACE/o3de/scripts/o3de.sh register -pp $WORKSPACE/ROSConDemo/Project \
-        && . /opt/ros/humble/setup.sh \
+        && . /opt/ros/${ROS_DISTRO}/setup.sh \
         && cd $WORKSPACE/ROSConDemo/Project \
         && cmake -B $WORKSPACE/ROSConDemo/Project/build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON \
         && cmake --build $WORKSPACE/ROSConDemo/Project/build/linux --config profile --target ROSConDemo.GameLauncher Editor ROSConDemo.Assets -j $CMAKE_JOBS \
@@ -179,7 +179,7 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && git -C $WORKSPACE/ROSConDemo lfs install \
         && git -C $WORKSPACE/ROSConDemo lfs pull \
         && $WORKSPACE/o3de/scripts/o3de.sh register -pp $WORKSPACE/ROSConDemo/Project \
-        && . /opt/ros/humble/setup.sh \
+        && . /opt/ros/${ROS_DISTRO}/setup.sh \
         && cd $WORKSPACE/ROSConDemo/Project \
         && cmake -B $WORKSPACE/ROSConDemo/Project/build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON \
         && cmake --build $WORKSPACE/ROSConDemo/Project/build/linux --config profile --target ROSConDemo.GameLauncher ROSConDemo.Assets -j $CMAKE_JOBS \
