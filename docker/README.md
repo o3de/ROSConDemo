@@ -99,7 +99,16 @@ A slimmer docker image can be built that only contains the ROSConDemo simulation
 The Dockerfile provides arguments to build docker images that only contain the necessary files to run the O3DE simulation launcher and the navigation stack, without the need to launch the O3DE Editor. To build the the docker image for just the simulation portion of the ROSConDemo, run the following command:
 
 ```
-docker build --build-arg IMAGE_TYPE=simulation --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo -f Dockerfile .
+docker build --build-arg IMAGE_TYPE=simulation --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo_simulation -f Dockerfile .
 ```
+
+## Creating a navigation stack only Docker Images.
+
+A minimal docker image that only contains the built ```kraken_nav``` navigation stack can also be specified. This is useful to have an image separate from the simulation environment to monitor and control the simulation through the ROS2 framework. The argument ```IMAGE_TYPE``` will need to be set to ```navstack``` to build this image. The image will be even smaller since it will not contain any O3DE simulation binaries or assets. It will have the necessary ROS2 packages including the rviz visualizer to view and control the simulation. To build the navigation stack only docker image, run the following command:
+
+```
+docker build --build-arg IMAGE_TYPE=navstack --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo_navstack -f Dockerfile .
+```
+
 
 
