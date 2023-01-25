@@ -1,6 +1,6 @@
 # Dockerfile for running the ROSConDemo
 
-The dockerfile defined in this path will prepare the appropiate ROS2 package (Ubuntu 20.04/Focal Galactic or Ubuntu 22.04/Jammy + Humble) based environment and build the components necessary to run the O3DE demo project simulator through the O3DE engine.
+The dockerfile defined in this path will prepare the appropiate ROS2 package (Ubuntu 20.04/Focal Galactic or Ubuntu 22.04/Jammy + Humble) based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
 ## Prerequisites
 
@@ -18,14 +18,14 @@ The dockerfile supports defining which version of Ubuntu+ROS to base the docker 
 To build the docker image for the ROSConDemo environment, run the following command:
 
 ```
-docker build -t roscon_demo -f Dockerfile .
+docker build --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo -f Dockerfile .
 ```
 
 This will create a `roscon_demo` docker image which will used when running the container.
 
 
 **Note** 
-The above command example will build the full simulation environment needed to run the O3DE editor, O3DE simulation launcher, and the simulation navigation stack, based on the latest code from the o3de (O3DE Engine), o3de-extras (ROS2 Gem), and the ROSConDemo. Arguments are available to customize and fine-tune this process which is discussed below.
+The above command example will build the full simulation environment needed to run the O3DE editor, O3DE simulation launcher, and the simulation navigation stack, based on the latest code from the o3de (O3DE Engine), o3de-extras (ROS2 Gem), and the ROSConDemo. The arguments specified will pull in the last known good version of the dependent projects from their repo. Additional arguments are available to customize and fine-tune this process and is described below.
 
 The build process may take over two hours depending on the hardware resource and network connectivity of the machine used to build the image.
 
@@ -39,11 +39,6 @@ Another option is to install and use [rocker](https://github.com/osrf/rocker).
 rocker --x11 --nvidia roscon_demo
 ```
 
-To launch the rviz visualizer tool with the navigation stack, you will need to run the ```kraken_nav``` setup script first.
-
-```
-source /data/workspace/ROSConDemo/Project/kraken_nav/install/setup.bash
-```
 
 To launch the O3DE editor for the ROSConDemo project, execute the following command within the docker terminal
 
@@ -56,21 +51,10 @@ Further instructions and details can be found in the [main README file](https://
 To launch the O3DE simulation launcher for the ROSConDemo project, execute the following command within the docker terminal
 
 ```
-/data/workspace/ROSConDemo/Project/build/linux/bin/profile/./ROSConDemo.GameLauncher -bg_ConnectToAssetProcessor=0 -LoadLevel=main
+/data/workspace/ROSConDemo/Project/build/linux/bin/profile/./ROSConDemo.GameLauncher -LoadLevel=main
 ```
 
 To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
-
-
-## Creating the Simulation only Docker Images.
-
-The Dockerfile provides arguments to build docker images that only contain the necessary files to run the O3DE simulation launcher and the navigation stack, without the need to launch the O3DE Editor. To build the the docker image for just the simulation portion of the ROSConDemo, run the following command:
-
-```
-docker build -t roscon_demo_simulation --build-arg IMAGE_TYPE=simulation -f Dockerfile . 
-```
-
-The resulting docker image ```roscon_demo_simulation``` will be a leaner image that does not the O3DE editor, only the items needed to launch the O3DE simulation for the ROSConDemo and the ```kraken_nav``` navigation stack.
 
 ## Advanced Options
 
@@ -107,7 +91,15 @@ In addition the repositories, the following arguments target the branch, commit,
 The docker script provides a cmake-specific argument override to control the number of parallel jobs that can be used during the build of the docker image. ```CMAKE_JOBS``` sets the maximum number of concurrent jobs cmake will run during its build process and defaults to 8 jobs. This number can be adjusted to better suit the hardware which is running the docker image build.
 
 
+## Creating the Simulation only Docker Images.
+
+A slimmer docker image can be built that only contains the ROSConDemo simulation launcher and the kraken_nav navigation stack. The O3DE editor will not be part of the image, and therefore will build will take less time and will take less space. The argument ```IMAGE_TYPE``` can be set to ```simulation``` to create this docker image.
+
+
+The Dockerfile provides arguments to build docker images that only contain the necessary files to run the O3DE simulation launcher and the navigation stack, without the need to launch the O3DE Editor. To build the the docker image for just the simulation portion of the ROSConDemo, run the following command:
+
 ```
-docker build --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo -f Dockerfile .
+docker build --build-arg IMAGE_TYPE=simulation --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo -f Dockerfile .
 ```
+
 

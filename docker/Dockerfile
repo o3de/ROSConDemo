@@ -14,7 +14,7 @@ ARG ROS_VERSION
 ARG UBUNTU_VERSION
 
 # Argument to control the type of docker image to build
-ARG IMAGE_TYPE=simulation  # Default to 'simulation'
+ARG IMAGE_TYPE=full  # Default to 'full'
 
 # Arguments for the source repos 
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
@@ -154,8 +154,6 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && rm -rf $WORKSPACE/o3de/.git \
         && rm -rf $WORKSPACE/o3de/AutomatedTesting \
         && rm -rf $WORKSPACE/o3de/python/downloaded_packages \
-        && rm -rf $WORKSPACE/o3de/Code \
-        && rm -rf $WORKSPACE/o3de/Gems \
         && rm -rf $WORKSPACE/ROSConDemo/build/linux/Azcg/ \
         && rm -rf $WORKSPACE/ROSConDemo/build/linux/CMake \
         && rm -rf $WORKSPACE/ROSConDemo/build/linux/CMakeFiles/ \
@@ -185,8 +183,6 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && cd $WORKSPACE/ROSConDemo/Project \
         && cmake -B $WORKSPACE/ROSConDemo/Project/build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON \
         && cmake --build $WORKSPACE/ROSConDemo/Project/build/linux --config profile --target ROSConDemo.GameLauncher ROSConDemo.Assets -j $CMAKE_JOBS \
-        && cd $WORKSPACE/ROSConDemo/kraken_nav \
-        && colcon build --symlink-install \
         && rm -rf $WORKSPACE/o3de-extras/ \
         && rm -rf ~/.o3de/3rdParty/ \
         && rm -rf $WORKSPACE/o3de/.git \
@@ -221,14 +217,17 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         git clone $ROSCON_DEMO_REPO \
         && git -C $WORKSPACE/ROSConDemo checkout $ROSCON_DEMO_BRANCH \
         && git -C $WORKSPACE/ROSConDemo lfs install \
-        && git -C $WORKSPACE/ROSConDemo lfs pull \
-        && cd $WORKSPACE/ROSConDemo/kraken_nav \
-        && colcon build --symlink-install; \
+        && git -C $WORKSPACE/ROSConDemo lfs pull; \
     else \
         echo "Unsupported IMAGE_TYPE: ${IMAGE_TYPE}" && exit 1; \
     fi
 
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+# Compile the navstack and add configuration to the startup
+RUN cd $WORKSPACE/ROSConDemo/kraken_nav \
+    && colcon build --symlink-install \
+    && echo "source /data/workspace/ROSConDemo/kraken_nav/install/setup.bash" >> ~/.bashrc
 
 # Add the appropriate ros2 environment setup script to the system startup
 RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
@@ -244,6 +243,7 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service
+
 
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES all
