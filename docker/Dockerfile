@@ -24,7 +24,7 @@ ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
 ARG O3DE_EXTRAS_BRANCH=development
 
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
-ARG ROSCON_DEMO_BRANCH=main
+ARG ROSCON_DEMO_BRANCH=development
 
 # Additional argument to control build concurrency
 ARG CMAKE_JOBS=8
