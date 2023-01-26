@@ -88,7 +88,7 @@ A slimmer docker image can be built that only contains the ROSConDemo simulation
 The Dockerfile provides arguments to build docker images that only contain the necessary files to run the O3DE simulation launcher and the navigation stack, without the need to launch the O3DE Editor. To build the the docker image for just the simulation portion of the ROSConDemo, run the following command:
 
 ```
-docker build --build-arg IMAGE_TYPE=simulation --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 --build-arg ROSCON_DEMO_BRANCH=development -t roscon_demo_simulation -f Dockerfile .
+docker build --build-arg IMAGE_TYPE=simulation --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 -t roscon_demo_simulation -f Dockerfile .
 ```
 
 ## Creating a navigation stack only Docker Images.
