@@ -4,14 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-# Collect the arguments for the base ros image
-ARG ROS_VERSION=humble
-ARG UBUNTU_VERSION=jammy
-
-FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
-
-ARG ROS_VERSION
-ARG UBUNTU_VERSION
+FROM ros:humble-ros-base-jammy
 
 # Argument to control the type of docker image to build
 ARG IMAGE_TYPE=full  # Default to 'full'
@@ -33,15 +26,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV WORKSPACE=/data/workspace
 
 WORKDIR $WORKSPACE
-
-# Verify only the supported ROS2 versions was specified
-RUN if [ "${ROS_VERSION}" = "humble" ]; then \
-        echo "Building ROS2/Humble based image"; \
-    elif [ "${ROS_VERSION}" = "galactic" ]; then \
-        echo "Building ROS2/Galactic based image"; \
-    else \
-        echo "Unsupported ROS_VERSION: ${ROS_VERSION}" && exit 1; \
-    fi
 
 # Setup time zone and locale data (necessary for SSL and HTTPS packages)
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y \
@@ -106,25 +90,25 @@ RUN sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_re
     && curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - 
 
 RUN apt-get update && apt-get install -y \
-    ros-${ROS_DISTRO}-ackermann-msgs \
-    ros-${ROS_DISTRO}-control-toolbox \
-    ros-${ROS_DISTRO}-gazebo-msgs \
-    ros-${ROS_DISTRO}-joy \
-    ros-${ROS_DISTRO}-navigation2 \
-    ros-${ROS_DISTRO}-rviz2 \
-    ros-${ROS_DISTRO}-tf2-ros \
-    ros-${ROS_DISTRO}-urdfdom \
-    ros-${ROS_DISTRO}-vision-msgs \
+    ros-humble-ackermann-msgs \
+    ros-humble-control-toolbox \
+    ros-humble-gazebo-msgs \
+    ros-humble-joy \
+    ros-humble-navigation2 \
+    ros-humble-rviz2 \
+    ros-humble-tf2-ros \
+    ros-humble-urdfdom \
+    ros-humble-vision-msgs \
     python3-colcon-common-extensions \
-    ros-${ROS_DISTRO}-cyclonedds \
-    ros-${ROS_DISTRO}-rmw-cyclonedds-cpp \
-    ros-${ROS_DISTRO}-slam-toolbox \
-    ros-${ROS_DISTRO}-navigation2 \
-    ros-${ROS_DISTRO}-nav2-bringup \
-    ros-${ROS_DISTRO}-pointcloud-to-laserscan \
-    ros-${ROS_DISTRO}-teleop-twist-keyboard \
-    ros-${ROS_DISTRO}-ackermann-msgs \
-    ros-${ROS_DISTRO}-topic-tools \
+    ros-humble-cyclonedds \
+    ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-slam-toolbox \
+    ros-humble-navigation2 \
+    ros-humble-nav2-bringup \
+    ros-humble-pointcloud-to-laserscan \
+    ros-humble-teleop-twist-keyboard \
+    ros-humble-ackermann-msgs \
+    ros-humble-topic-tools \
     && rm -rf /var/lib/apt/lists/* \
     && pip install python-statemachine
 
@@ -144,7 +128,7 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && git -C $WORKSPACE/ROSConDemo lfs install \
         && git -C $WORKSPACE/ROSConDemo lfs pull \
         && $WORKSPACE/o3de/scripts/o3de.sh register -pp $WORKSPACE/ROSConDemo/Project \
-        && . /opt/ros/${ROS_DISTRO}/setup.sh \
+        && . /opt/ros/humble/setup.sh \
         && cd $WORKSPACE/ROSConDemo/Project \
         && cmake -B $WORKSPACE/ROSConDemo/Project/build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON \
         && cmake --build $WORKSPACE/ROSConDemo/Project/build/linux --config profile --target ROSConDemo.GameLauncher Editor ROSConDemo.Assets -j $CMAKE_JOBS \
@@ -179,7 +163,7 @@ RUN if [ "${IMAGE_TYPE}" = "full" ]; then \
         && git -C $WORKSPACE/ROSConDemo lfs install \
         && git -C $WORKSPACE/ROSConDemo lfs pull \
         && $WORKSPACE/o3de/scripts/o3de.sh register -pp $WORKSPACE/ROSConDemo/Project \
-        && . /opt/ros/${ROS_DISTRO}/setup.sh \
+        && . /opt/ros/humble/setup.sh \
         && cd $WORKSPACE/ROSConDemo/Project \
         && cmake -B $WORKSPACE/ROSConDemo/Project/build/linux -S . -G "Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON \
         && cmake --build $WORKSPACE/ROSConDemo/Project/build/linux --config profile --target ROSConDemo.GameLauncher ROSConDemo.Assets -j $CMAKE_JOBS \
@@ -234,11 +218,7 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && if [ "${ROS_VERSION}" = "humble" ]; then \
-         echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       elif [ "${ROS_VERSION}" = "galactic" ]; then \
-         echo "ExecStart=/opt/ros/galactic/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       fi \
+    && echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \

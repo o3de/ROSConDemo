@@ -1,6 +1,6 @@
 # Dockerfile for running the ROSConDemo
 
-The dockerfile defined in this path will prepare the appropiate ROS2 package (Ubuntu 20.04/Focal Galactic or Ubuntu 22.04/Jammy + Humble) based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
+The dockerfile defined in this path will prepare the appropiate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
 ## Prerequisites
 
@@ -57,16 +57,6 @@ To launch the O3DE simulation launcher for the ROSConDemo project, execute the f
 To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
 
 ## Advanced Options
-### Target ROS2 Distribution
-The Docker script defaults to building an image based on Ubuntu 22.04 (jammy) and the ROS2 Humble distribution. This can be overridden 
-with a combination if the `ROS_VERSION` and `UBUNTU_VERSION` arguments.
-
-| ROS2 Distro   | Repository                                |
-|---------------|-------------------------------------------|
-| galactic      | ROS_VERSION=galactic UBUNTU_VERSION=focal |
-| humble        | ROS_VERSION=humble UBUNTU_VERSION=jammy   |
-
-
 ### Custom source repos and branches
 
 The Dockerscripts use the following arguments to determine the repository to pull the source from. 
