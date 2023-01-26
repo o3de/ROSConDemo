@@ -218,7 +218,7 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
+    && echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \
