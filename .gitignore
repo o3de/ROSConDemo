@@ -20,4 +20,7 @@ server*.cfg
 _savebackup/
 *.swatches
 /imgui.ini
-
+cmake-build-*
+kraken_nav/build
+kraken_nav/install
+kraken_nav/log

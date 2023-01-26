@@ -624,6 +624,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126309558696604]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[3950558941332218098]": {
@@ -1976,6 +1980,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[6459884325005728245]": {
@@ -2066,6 +2074,10 @@
                     "Angular Limit": {
                         "Positive Limit": 360.0,
                         "Negative Limit": -360.0
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 100.0
                     }
                 },
                 "Component_[16851971225857889294]": {
@@ -2520,7 +2532,7 @@
                             "Index": 1
                         },
                         "Position": [
-                            2.540242910385132,
+                            2.700000047683716,
                             0.0,
                             0.5625920295715332
                         ],
@@ -2542,7 +2554,7 @@
                         "ShapeType": 1,
                         "Box": {
                             "Configuration": [
-                                0.4371989965438843,
+                                0.800000011920929,
                                 0.13190199434757233,
                                 0.05587799847126007
                             ]
@@ -2563,19 +2575,6 @@
                         },
                         "Capacity": 50,
                         "CrateDropPoint": "Entity_[5494828217205]"
-                    }
-                },
-                "Component_[12633872282053005445]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 12633872282053005445,
-                    "m_template": {
-                        "$type": "InputConfigurationComponent",
-                        "Input Event Bindings": {
-                            "assetId": {
-                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
-                            },
-                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
-                        }
                     }
                 },
                 "Component_[12724369969007930765]": {
@@ -2655,49 +2654,6 @@
                         "BaseLinkToKinematic": "Entity_[126373983206044]"
                     }
                 },
-                "Component_[17586042212792946952]": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 17586042212792946952,
-                    "m_template": {
-                        "$type": "VehicleModelComponent",
-                        "VehicleConfiguration": {
-                            "AxlesConfigurations": [
-                                {
-                                    "AxleTag": "FRONT",
-                                    "AxleWheels": [
-                                        "Entity_[126326738565788]",
-                                        "Entity_[126369688238748]"
-                                    ],
-                                    "IsSteering": true
-                                },
-                                {
-                                    "AxleTag": "BACK",
-                                    "AxleWheels": [
-                                        "Entity_[126361098304156]",
-                                        "Entity_[126356803336860]"
-                                    ],
-                                    "IsDrive": true
-                                }
-                            ]
-                        },
-                        "DriveModel": {
-                            "SteeringPID": {
-                                "P": 1000.0,
-                                "Output limit": 200.0
-                            },
-                            "SpeedPID": {
-                                "P": 250.0,
-                                "I": 150.0,
-                                "IMax": 500.0,
-                                "Anti windup": true,
-                                "Output limit": 500.0
-                            }
-                        },
-                        "VehicleModelLimits": {
-                            "SpeedLimit": 3.0
-                        }
-                    }
-                },
                 "Component_[176770212147820291]": {
                     "$type": "EditorColliderComponent",
                     "Id": 176770212147820291,
@@ -2751,7 +2707,10 @@
                         "Entity_[9058513484485]",
                         "Entity_[5494828217205]",
                         "Entity_[36172097579699]",
-                        "Entity_[453828565735265]"
+                        "Entity_[453828565735265]",
+                        "Instance_[16621539659898]/ContainerEntity",
+                        "Instance_[15809790840954]/ContainerEntity",
+                        "Instance_[16591474888826]/ContainerEntity"
                     ]
                 },
                 "Component_[3226220641517151136]": {
@@ -2791,9 +2750,54 @@
                         }
                     }
                 },
+                "Component_[3769897478237731638]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 3769897478237731638,
+                    "m_template": {
+                        "$type": "AckermannVehicleModelComponent",
+                        "VehicleConfiguration": {
+                            "AxlesConfigurations": [
+                                {
+                                    "AxleTag": "Front",
+                                    "AxleWheels": [
+                                        "Entity_[126326738565788]",
+                                        "Entity_[126369688238748]"
+                                    ],
+                                    "IsSteering": true
+                                },
+                                {
+                                    "AxleTag": "Back",
+                                    "AxleWheels": [
+                                        "Entity_[126361098304156]",
+                                        "Entity_[126356803336860]"
+                                    ],
+                                    "IsDrive": true
+                                }
+                            ]
+                        },
+                        "DriveModel": {
+                            "SteeringPID": {
+                                "P": 10.0
+                            }
+                        }
+                    }
+                },
                 "Component_[3987457873009984691]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 3987457873009984691
+                },
+                "Component_[4070916475902897328]": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 4070916475902897328,
+                    "m_template": {
+                        "$type": "InputConfigurationComponent",
+                        "Input Event Bindings": {
+                            "assetId": {
+                                "guid": "{D808C6BB-DEA9-518A-ACEC-FA3B781A35FA}"
+                            },
+                            "assetHint": "gem/scripts/mobile_robot_control_keyboard.inputbindings"
+                        }
+                    }
                 },
                 "Component_[4128152538995544053]": {
                     "$type": "EditorRigidBodyComponent",
@@ -2806,7 +2810,7 @@
                         "Centre of mass offset": [
                             1.0036380290985107,
                             0.0,
-                            0.0
+                            0.4000000059604645
                         ],
                         "Compute inertia": false,
                         "Inertia tensor": [
@@ -2843,7 +2847,7 @@
                         "Position": [
                             2.197614908218384,
                             0.0,
-                            0.7621089816093445
+                            0.7799999713897705
                         ],
                         "MaterialSlots": {
                             "Slots": [
@@ -2859,7 +2863,7 @@
                             "Configuration": [
                                 0.5833520293235779,
                                 0.5446910262107849,
-                                0.2640030086040497
+                                0.20000000298023224
                             ]
                         }
                     }
@@ -3125,6 +3129,10 @@
                         ],
                         "Parent Entity": "Entity_[126373983206044]",
                         "Child Entity": "Entity_[126382573140636]"
+                    },
+                    "Motor": {
+                        "UseMotor": true,
+                        "ForceLimit": 50.0
                     }
                 },
                 "Component_[18116517932786798066]": {
@@ -3497,11 +3505,6 @@
                                     "Name": "DefaultMaterial"
                                 }
                             ]
-                        },
-                        "MaterialSelection": {
-                            "MaterialIds": [
-                                {}
-                            ]
                         }
                     },
                     "ShapeConfiguration": {
@@ -3737,7 +3740,8 @@
                                         "MaterialAsset": {
                                             "assetId": {
                                                 "guid": "{4DB05AB8-A41A-58CA-9988-6CEEE83A27C3}"
-                                            }
+                                            },
+                                            "assetHint": "assets/applekraken_urdf/meshes/conveyorbelt/conveyorbelt_conveyorbelt.azmaterial"
                                         }
                                     }
                                 }
