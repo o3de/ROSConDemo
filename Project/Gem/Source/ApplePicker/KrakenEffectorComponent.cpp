@@ -264,7 +264,7 @@ namespace AppleKraken
             }
             for (auto& descadant : descendants)
             {
-                using VehicleBus = VehicleDynamics::VehicleInputControlRequestBus;
+                using VehicleBus = ROS2::VehicleDynamics::VehicleInputControlRequestBus;
                 if (locked)
                 {
                     // Lock manipulator, make base_link not kinematic anymore
