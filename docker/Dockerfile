@@ -4,14 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-# Collect the arguments for the base ros image
-ARG ROS_VERSION=humble
-ARG UBUNTU_VERSION=jammy
-
-FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
-
-ARG ROS_VERSION
-ARG UBUNTU_VERSION
+FROM ros:humble-ros-base-jammy
 
 # Argument to control the type of docker image to build
 ARG IMAGE_TYPE=full  # Default to 'full'
@@ -33,15 +26,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV WORKSPACE=/data/workspace
 
 WORKDIR $WORKSPACE
-
-# Verify only the supported ROS2 versions was specified
-RUN if [ "${ROS_VERSION}" = "humble" ]; then \
-        echo "Building ROS2/Humble based image"; \
-    elif [ "${ROS_VERSION}" = "galactic" ]; then \
-        echo "Building ROS2/Galactic based image"; \
-    else \
-        echo "Unsupported ROS_VERSION: ${ROS_VERSION}" && exit 1; \
-    fi
 
 # Setup time zone and locale data (necessary for SSL and HTTPS packages)
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y \
@@ -234,9 +218,9 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && if [ "${ROS_VERSION}" = "humble" ]; then \
+    && if [ "${ROS_DISTRO}" = "humble" ]; then \
          echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       elif [ "${ROS_VERSION}" = "galactic" ]; then \
+       elif [ "${ROS_DISTRO}" = "galactic" ]; then \
          echo "ExecStart=/opt/ros/galactic/setup.bash" >> /etc/systemd/system/setup_ros.service; \
        fi \
     && echo "" >> /etc/systemd/system/setup_ros.service \
@@ -244,6 +228,6 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service
 
-
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES all
+
