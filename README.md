@@ -42,10 +42,7 @@ of apple trees and the robot itself.
 
 ## Platforms
 
-The project supports the following platforms:
-
-- Ubuntu 22.04 with ROS 2 Humble
-- Ubuntu 20.04 with ROS 2 Galactic
+The project runs on Ubuntu 22.04 with ROS 2 Humble.
 
 💡 ***Note:*** This demo is **not supported on Windows!** 
 
@@ -264,11 +261,6 @@ This can be very informative for a similar process with another robot.
       scene and simulation is running.
         - note that these topics will be namespaced.
     - `ros2 service list` should also show several simulation and robot services such as spawning and apple gathering.
-
-## Other
-
-💡 ***Note:*** Take note that these **vision_msgs** are different between Humble and Galactic,
-in particular detection messages which are used by ground truth detector.
 
 # License
 
