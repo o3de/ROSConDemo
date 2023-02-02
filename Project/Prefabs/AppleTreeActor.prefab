@@ -177,14 +177,15 @@
                         "loadBehavior": "QueueLoad",
                         "assetHint": "assets/apple_tree/treeactor_low.actor"
                     },
-                    "MaterialPerLOD": [
-                        {}
-                    ],
                     "AttachmentTarget": ""
                 },
                 "Component_[13253659960280977550]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13253659960280977550
+                },
+                "Component_[1515504553522652732]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 1515504553522652732
                 },
                 "Component_[18379086314719632114]": {
                     "$type": "EditorAnimGraphComponent",

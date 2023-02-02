@@ -65,6 +65,10 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 10227230919548968673
                 },
+                "Component_[10313951811214243517]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 10313951811214243517
+                },
                 "Component_[1050861744078512161]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 1050861744078512161

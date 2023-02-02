@@ -77,6 +77,10 @@
                         }
                     }
                 },
+                "Component_[150438397273139290]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 150438397273139290
+                },
                 "Component_[15552214180054837448]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 15552214180054837448

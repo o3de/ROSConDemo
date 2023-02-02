@@ -3410,6 +3410,10 @@
                     "$type": "EditorEntitySortComponent",
                     "Id": 17622040488620010506
                 },
+                "Component_[17696704781786021152]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 17696704781786021152
+                },
                 "Component_[3266432004800697983]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 3266432004800697983,
@@ -3576,6 +3580,10 @@
                             "SortIndex": 2
                         }
                     ]
+                },
+                "Component_[6038553280605434344]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 6038553280605434344
                 },
                 "Component_[6868930103042649999]": {
                     "$type": "EditorLockComponent",
@@ -4161,9 +4169,6 @@
                         "loadBehavior": "QueueLoad",
                         "assetHint": "assets/animations/appleanime.actor"
                     },
-                    "MaterialPerLOD": [
-                        {}
-                    ],
                     "AttachmentTarget": ""
                 },
                 "Component_[14748218583400846268]": {

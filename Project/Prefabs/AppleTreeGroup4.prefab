@@ -58,6 +58,10 @@
                     "$type": "EditorVisibilityComponent",
                     "Id": 10482022883704485451
                 },
+                "Component_[12327959761196252288]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 12327959761196252288
+                },
                 "Component_[13256697750700106701]": {
                     "$type": "AZ::Render::EditorMeshComponent",
                     "Id": 13256697750700106701,
@@ -269,6 +273,10 @@
                         }
                     }
                 },
+                "Component_[8716379520725788005]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 8716379520725788005
+                },
                 "Component_[9021025404808262205]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 9021025404808262205,
@@ -364,6 +372,10 @@
                 "Component_[319287915754503450]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 319287915754503450
+                },
+                "Component_[3371623277830438773]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 3371623277830438773
                 },
                 "Component_[3637817752601745473]": {
                     "$type": "EditorMaterialComponent",
@@ -497,6 +509,10 @@
                 "Component_[319287915754503450]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 319287915754503450
+                },
+                "Component_[4156455539102055211]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 4156455539102055211
                 },
                 "Component_[5360396437947281098]": {
                     "$type": "EditorEntityIconComponent",

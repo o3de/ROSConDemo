@@ -80,6 +80,10 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 11383289093559178580
                 },
+                "Component_[11783035496993850514]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 11783035496993850514
+                },
                 "Component_[12270302485111512141]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 12270302485111512141,
