@@ -151,6 +151,10 @@
                     "$type": "EditorInspectorComponent",
                     "Id": 16919232076966545697
                 },
+                "Component_[17578596083606768898]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 17578596083606768898
+                },
                 "Component_[5182430712893438093]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 5182430712893438093
@@ -630,6 +634,362 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
                     "value": 8767423579655362464
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/ModelAsset/loadBehavior",
+                    "value": "QueueLoad"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/SortKey",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/ExcludeFromReflectionCubeMaps",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/UseForwardPassIBLSpecular",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/IsRayTracingEnabled",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/IsAlwaysDynamic",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/LodType",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/LodOverride",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/MinimumScreenCoverage",
+                    "value": 0.0009259259095415473
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/Controller/Configuration/QualityDecayRate",
+                    "value": 0.5
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[10387713135725007135]/meshStats",
+                    "value": {}
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[11659553095730431803]/PendingComponents",
+                    "value": []
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[13177781661023720894]/IsEditorOnly",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Visible",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Trigger",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Simulated",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/InSceneQueries",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Exclusive",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Position",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/Rotation",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset",
+                    "value": {
+                        "assetId": {
+                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                            "subId": 0
+                        },
+                        "loadBehavior": "QueueLoad",
+                        "assetHint": ""
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/propertyVisibilityFlags",
+                    "value": 255
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/ColliderTag",
+                    "value": ""
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/RestOffset",
+                    "value": 0.0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ColliderConfiguration/ContactOffset",
+                    "value": 0.019999999552965164
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/ShapeType",
+                    "value": 7
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/Sphere",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Radius": 0.5
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/Box",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Configuration": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/Capsule",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Height": 1.0,
+                        "Radius": 0.25
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/Cylinder",
+                    "value": {
+                        "Configuration": {
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "CookedData": "",
+                            "Type": 0
+                        },
+                        "Subdivision": 16,
+                        "Height": 1.0,
+                        "Radius": 1.0
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Asset/loadBehavior",
+                    "value": "QueueLoad"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/Scale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/AssetScale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/UseMaterialsFromAsset",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/SubdivisionLevel",
+                    "value": 4
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/HasNonUniformScale",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ShapeConfiguration/SubdivisionLevel",
+                    "value": 4
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/DebugDrawSettings",
+                    "value": {
+                        "LocallyEnabled": true
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/ComponentMode",
+                    "value": {}
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[14535670656735835043]/HasNonUniformScale",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[17075071070477116796]/DisabledComponents",
+                    "value": []
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[18376511454985353613]/m_template/Id",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[18376511454985353613]/m_template/Namespace Configuration/Namespace",
+                    "value": ""
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[18376511454985353613]/m_template/Publish Transform",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/Transform Data/Rotate",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/Transform Data/Scale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/Transform Data/Locked",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/Transform Data/UniformScale",
+                    "value": 1.0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/Parent Activation Transform Mode",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/IsStatic",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/InterpolatePosition",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[3201525403568523459]/InterpolateRotation",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[5004394864880282263]/EntityIconAssetId",
+                    "value": {
+                        "guid": "{00000000-0000-0000-0000-000000000000}",
+                        "subId": 0
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[5142969012241927438]/ComponentOrderEntryArray/0/SortIndex",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[6868930103042649999]/Locked",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[30555890626372]/Components/Component_[8621809176728013021]/VisibilityFlag",
+                    "value": true
                 }
             ]
         },
@@ -705,6 +1065,365 @@
                     "op": "replace",
                     "path": "/Entities/Entity_[453802196716717]/Components/Component_[12122484710959107959]/Controller/Configuration/EditorEntityId",
                     "value": 14786048654008262359
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/ModelAsset/loadBehavior",
+                    "value": "QueueLoad"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/SortKey",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/ExcludeFromReflectionCubeMaps",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/UseForwardPassIBLSpecular",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/IsRayTracingEnabled",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/IsAlwaysDynamic",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/LodType",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/LodOverride",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/MinimumScreenCoverage",
+                    "value": 0.0009259259095415473
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/Controller/Configuration/QualityDecayRate",
+                    "value": 0.5
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[10387713135725007135]/meshStats",
+                    "value": {}
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[11659553095730431803]/PendingComponents",
+                    "value": []
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[13177781661023720894]/IsEditorOnly",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Visible",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Trigger",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Simulated",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/InSceneQueries",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Exclusive",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Position",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/Rotation",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/MaterialSlots/Slots/0/MaterialAsset",
+                    "value": {
+                        "assetId": {
+                            "guid": "{00000000-0000-0000-0000-000000000000}",
+                            "subId": 0
+                        },
+                        "loadBehavior": "QueueLoad",
+                        "assetHint": ""
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/propertyVisibilityFlags",
+                    "value": 255
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/ColliderTag",
+                    "value": ""
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/RestOffset",
+                    "value": 0.0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ColliderConfiguration/ContactOffset",
+                    "value": 0.019999999552965164
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/ShapeType",
+                    "value": 7
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/Sphere",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Radius": 0.5
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/Box",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Configuration": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ]
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/Capsule",
+                    "value": {
+                        "Scale": [
+                            1.0,
+                            1.0,
+                            1.0
+                        ],
+                        "Height": 1.0,
+                        "Radius": 0.25
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/Cylinder",
+                    "value": {
+                        "Configuration": {
+                            "Scale": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ],
+                            "CookedData": "",
+                            "Type": 0
+                        },
+                        "Subdivision": 16,
+                        "Height": 1.0,
+                        "Radius": 1.0
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Asset/loadBehavior",
+                    "value": "QueueLoad"
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/Scale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/AssetScale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/UseMaterialsFromAsset",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/PhysicsAsset/Configuration/SubdivisionLevel",
+                    "value": 4
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/HasNonUniformScale",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ShapeConfiguration/SubdivisionLevel",
+                    "value": 4
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/DebugDrawSettings",
+                    "value": {
+                        "LocallyEnabled": true
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/ComponentMode",
+                    "value": {}
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[14535670656735835043]/HasNonUniformScale",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[17075071070477116796]/DisabledComponents",
+                    "value": []
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/Transform Data/Rotate",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/Transform Data/Scale",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/Transform Data/Locked",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/Transform Data/UniformScale",
+                    "value": 1.0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/Parent Activation Transform Mode",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/IsStatic",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/InterpolatePosition",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[3201525403568523459]/InterpolateRotation",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[5004394864880282263]/EntityIconAssetId",
+                    "value": {
+                        "guid": "{00000000-0000-0000-0000-000000000000}",
+                        "subId": 0
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[5142969012241927438]/ComponentOrderEntryArray/0/SortIndex",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[6868930103042649999]/Locked",
+                    "value": false
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[747584382186458865]/m_template/Id",
+                    "value": 0
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[747584382186458865]/m_template/Namespace Configuration",
+                    "value": {
+                        "Namespace Strategy": 0,
+                        "Namespace": ""
+                    }
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[747584382186458865]/m_template/Publish Transform",
+                    "value": true
+                },
+                {
+                    "op": "add",
+                    "path": "/Entities/Entity_[31380524347204]/Components/Component_[8621809176728013021]/VisibilityFlag",
+                    "value": true
                 }
             ]
         },

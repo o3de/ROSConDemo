@@ -77,6 +77,10 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 13177781661023720894
                 },
+                "Component_[14073014337522366363]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 14073014337522366363
+                },
                 "Component_[14535670656735835043]": {
                     "$type": "EditorColliderComponent",
                     "Id": 14535670656735835043,
@@ -89,11 +93,6 @@
                                 {
                                     "Name": "DefaultMaterial"
                                 }
-                            ]
-                        },
-                        "MaterialSelection": {
-                            "MaterialIds": [
-                                {}
                             ]
                         }
                     },
@@ -198,7 +197,6 @@
                                 }
                             }
                         },
-                        "LidarTransparentEntityId": "",
                         "LidarParameters": {
                             "Layers": 16,
                             "Points per layer": 308,

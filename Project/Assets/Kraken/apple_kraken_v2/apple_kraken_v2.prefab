@@ -534,10 +534,6 @@
                             0.0,
                             0.20000000298023224
                         ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 4,
-                        "SolverVelocityIterations": 1
                     }
                 },
                 "Component_[8160934721586853298]": {
@@ -3736,9 +3732,6 @@
                         "loadBehavior": "QueueLoad",
                         "assetHint": "assets/animations/appleanime.actor"
                     },
-                    "MaterialPerLOD": [
-                        {}
-                    ],
                     "AttachmentTarget": ""
                 },
                 "Component_[7268445895836999040]": {
@@ -3889,6 +3882,10 @@
                             }
                         }
                     ]
+                },
+                "Component_[4289470494115960939]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 4289470494115960939
                 },
                 "Component_[4717135159086115019]": {
                     "$type": "EditorBoxShapeComponent",
@@ -4347,6 +4344,10 @@
                     "Child Entity Order": [
                         "Entity_[31384819314500]"
                     ]
+                },
+                "Component_[9498624917137333943]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 9498624917137333943
                 }
             }
         },

@@ -751,6 +751,10 @@
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 592692962543397545
                 },
+                "Component_[6745893621331682328]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 6745893621331682328
+                },
                 "Component_[7090012899106946164]": {
                     "$type": "EditorLockComponent",
                     "Id": 7090012899106946164

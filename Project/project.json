@@ -19,5 +19,6 @@
     "restricted": "ROSConDemo",
     "gem_names": [
         "ROS2"
-    ]
+    ],
+    "engine_version": "1.0.0"
 }

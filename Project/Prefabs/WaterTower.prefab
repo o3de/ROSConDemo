@@ -161,6 +161,10 @@
                     "$type": "EditorEntityIconComponent",
                     "Id": 7401171650916467768
                 },
+                "Component_[7502856007236827885]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 7502856007236827885
+                },
                 "Component_[8332675028820249836]": {
                     "$type": "EditorMaterialComponent",
                     "Id": 8332675028820249836,
