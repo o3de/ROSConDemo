@@ -2,10 +2,10 @@
 
 The dockerfile defined in this path will prepare the appropiate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
-## Prerequisites
+##
 
 * [Hardware requirements of o3de](https://www.o3de.org/docs/welcome-guide/requirements/)
-* Ubuntu 20.04 (Focal) or 22.04 (Jammy)
+* Ubuntu 22.04 (Jammy)
 * At least 60 GB of free disk space
 * Docker installed and configured
   * **Note** It is recommended to have Docker installed correctly and in a secure manner so that the docker commands in this guide do not require elevated privileges (sudo) in order to run them. See [Docker Engine post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) for more details.
@@ -13,7 +13,7 @@ The dockerfile defined in this path will prepare the appropiate ROS2 Humble dist
 
 ## Building the Docker Image
 
-The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Humber distribution. It will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
+The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Humble distribution. This is currently the only version supported by the demo. The dockerfile will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
 
 To build the docker image for the ROSConDemo environment, run the following command:
 
