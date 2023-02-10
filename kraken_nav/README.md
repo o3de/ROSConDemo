@@ -32,18 +32,10 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 ### Packages
 
-You will need to install the appropriate ROS2 package. Refer to setup requirements for the [ROS2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md)
+On top of dependencies for the [agricultural demo project](https://github.com/o3de/ROSConDemo), you will also need some additional ROS2 packages.
 
-In addition to the required packages for the ROS2 gem, you will also need some additional ROS2 packages.
+1.  Make sure to source the Humble distribution's setup script
 
-1.  Make sure to source the proper distribution's setup script
-
-    For Ubuntu 20.04 + ROS2 Galactic:
-    ```
-    source /opt/ros/galactic/setup.bash
-    ```
-
-    For Ubuntu 22.04 + ROS2 Humble:
     ```
     source /opt/ros/humble/setup.bash
     ```
@@ -80,7 +72,7 @@ pip install python-statemachine
 - Use the the [development](https://github.com/o3de/o3de-extras/tree/development) branch of the `o3de-extras`.
 - Use the [development](https://github.com/o3de/ROSConDemo) branch of the `ROSConDemo`.
 
-1. Source ROS2 (assumed `humble`)
+1. Source ROS 2 Humble
 
 ```bash
 source /opt/ros/humble/setup.bash
@@ -106,7 +98,7 @@ Please make sure that the enviroment is correct.
 Note that you need to set it up for every console.
 You can consider adding it to your `~/.bashrc`.
 
-1. Make sure that you have ROS2 workspace sourced
+1. Make sure that you have ROS 2 workspace sourced
 
 ```bash
 source ./kraken_nav/install/setup.bash
