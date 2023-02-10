@@ -2,7 +2,7 @@
 
 The dockerfile defined in this path will prepare the appropiate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
-##
+## Prerequisites
 
 * [Hardware requirements of o3de](https://www.o3de.org/docs/welcome-guide/requirements/)
 * Ubuntu 22.04 (Jammy)
