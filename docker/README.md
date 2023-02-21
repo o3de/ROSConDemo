@@ -18,7 +18,7 @@ The dockerfile supports defining which version of Ubuntu+ROS to base the docker 
 To build the docker image for the ROSConDemo environment, run the following command:
 
 ```
-docker build --build-arg O3DE_BRANCH=199205f --build-arg O3DE_EXTRAS_BRANCH=cbd3cd5 -t roscon_demo -f Dockerfile .
+docker build -t roscon_demo -f Dockerfile .
 ```
 
 This will create a `roscon_demo` docker image which will used when running the container.
@@ -72,8 +72,8 @@ In addition to the repositories, the following arguments target the branch, comm
 
 | Argument                | Repository                       | Default     |
 |-------------------------|----------------------------------|-------------|
-| O3DE_BRANCH             | O3DE                             | development |
-| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | development |
+| O3DE_BRANCH             | O3DE                             | ff4c065     |
+| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | 4c13bbf     |
 | ROSCON_DEMO_BRANCH      | ROSConDemo repository            | main        |
 
 ### Optimizing the build process ###
