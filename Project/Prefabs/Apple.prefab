@@ -71,6 +71,10 @@
                     "Id": 10739828887117370513,
                     "Parent Entity": "ContainerEntity"
                 },
+                "Component_[1150289872635476658]": {
+                    "$type": "EditorStaticRigidBodyComponent",
+                    "Id": 1150289872635476658
+                },
                 "Component_[15765916809369597913]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 15765916809369597913
@@ -160,28 +164,18 @@
                 },
                 "Component_[6717239618132726328]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6717239618132726328
-                },
-                "Component_[7138985039715548058]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 7138985039715548058,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false,
-                        "Kinematic": true,
-                        "Mass": 0.26808255910873413,
-                        "Inertia tensor": [
-                            0.00017157284310087562,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.00017157284310087562,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.00017157284310087562
-                        ]
-                    }
+                    "Id": 6717239618132726328,
+                    "DisabledComponents": [
+                        {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 7138985039715548058,
+                            "Configuration": {
+                                "entityId": "",
+                                "Kinematic": true,
+                                "Gravity Enabled": false
+                            }
+                        }
+                    ]
                 },
                 "Component_[7230618248793844206]": {
                     "$type": "AZ::Render::EditorMeshComponent",
