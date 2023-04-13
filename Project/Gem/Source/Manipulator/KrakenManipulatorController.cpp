@@ -7,7 +7,7 @@
  */
 
 #include "KrakenManipulatorController.h"
-#include <ROS2/Manipulator/PidMotorControllerBus.h>
+#include <ROS2/Manipulation/PidMotorControllerBus.h>
 #include <AzCore/Serialization/EditContext.h>
 
 #include <AzFramework/Components/TransformComponent.h>
