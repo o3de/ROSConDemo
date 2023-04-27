@@ -70,11 +70,11 @@ The Dockerscripts use the following arguments to determine the repository to pul
 
 In addition to the repositories, the following arguments target the branch, commit, or tag to pull from their corresponding repository
 
-| Argument                | Repository                       | Default     |
-|-------------------------|----------------------------------|-------------|
-| O3DE_BRANCH             | O3DE                             | ff4c065     |
-| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | 4c13bbf     |
-| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | main        |
+| Argument                | Repository                       | Default                |
+|-------------------------|----------------------------------|------------------------|
+| O3DE_BRANCH             | O3DE                             | stabilization/2305     |
+| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | stabilization/2305     |
+| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | development            |
 
 ### Optimizing the build process ###
 The docker script provides a cmake-specific argument override to control the number of parallel jobs that can be used during the build of the docker image. `CMAKE_JOBS` sets the maximum number of concurrent jobs cmake will run during its build process and defaults to 8 jobs. This number can be adjusted to better suit the hardware which is running the docker image build.
