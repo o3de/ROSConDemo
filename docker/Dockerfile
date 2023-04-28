@@ -11,10 +11,10 @@ ARG IMAGE_TYPE=full  # Default to 'full'
 
 # Arguments for the source repos 
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
-ARG O3DE_BRANCH=ff4c065
+ARG O3DE_BRANCH=stabilization/2305
 
 ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
-ARG O3DE_EXTRAS_BRANCH=4c13bbf
+ARG O3DE_EXTRAS_BRANCH=stabilization/2305
 
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
 ARG ROSCON_DEMO_BRANCH=development
