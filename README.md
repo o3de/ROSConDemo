@@ -51,7 +51,12 @@ The project runs on Ubuntu 22.04 with ROS 2 Humble.
 
 💡 ***Note:*** This demo is **not supported on Windows!** 
 
-## O3DE
+## O3DE (from release)
+1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
+   sure that the system/hardware requirements are met.
+2. Download and prepare O3DE [(O3DE download)](https://www.o3de.org/download/)
+
+## O3DE (from source)
 
 1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
    sure that the system/hardware requirements are met.
@@ -74,7 +79,7 @@ The following commands should prepare O3DE:
 
 This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
 Please make sure to follow the installation guide
-in [README.md](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md) file.
+in [README.md](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md) file or use the [documentation](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/).
 To learn more about how the Gem works check out
 the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
 
@@ -115,7 +120,26 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 # Building this project
 
-## Build steps
+## Build steps (GUI)
+
+1. Clone this project:
+
+```
+git clone https://github.com/o3de/ROSConDemo.git
+```
+
+2. Open the O3DE project manager. To open the release version:
+```
+/opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
+```
+
+3. Select new project and click open existing project.
+
+4. Select ROSConDemo/Project. A new project should appear in the project manager called ROSConDemo.
+
+5. Build the project and launch the editor.
+
+## Build steps (CLI)
 
 1. Clone this project:
 
@@ -144,10 +168,17 @@ cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
 5. Execute build (this will take a while the first time):
 
 ```
-cmake --build build/linux --config profile --target ROSConDemo Editor AssetProcessor ROSConDemo.Assets
+cmake --build build/linux --config profile --target ROSConDemo Editor ROSConDemo.Assets
 ```
 
-## Launching the Editor
+## Launching the Editor (from release)
+
+Launch the editor through O3DE project manager
+```
+/opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
+```
+
+## Launching the Editor (from source)
 
 
 Launch the O3DE Editor (in the Project directory):
@@ -221,7 +252,7 @@ To spawn a new Apple Kraken, you can used named points (provided by a Spawner Co
 You can use the spawn service with following robot names:
 - apple_kraken_rusty
 - apple_kraken_shiny
-- apple_kraken (defualts to shiny).
+- apple_kraken (defaults to shiny).
 These two robots are functionally the same.
 
 #### Available named spawn poses
