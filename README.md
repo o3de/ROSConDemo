@@ -108,16 +108,16 @@ echo $ROS_DISTRO
 > humble
 ```
 
-3. Open the O3DE project manager. To open the release version:
+3. Open the O3DE Project Manager. To open the release version:
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
 
-4. Select new project and click open existing project.
+4. Select ```New Project``` and click ```Open Existing Project```.
 
-5. Select ROSConDemo/Project. A new project should appear in the project manager called ROSConDemo.
+5. Select ```ROSConDemo/Project```. A new project should appear in the Project Manager called ```ROSConDemo```.
 
-6. Build the project and launch the editor.
+6. Click on the ```Build Project``` button.
 
 ## Build steps (CLI)
 
@@ -152,12 +152,12 @@ cmake --build build/linux --config profile --target ROSConDemo Editor ROSConDemo
 ```
 
 ## Launching the Editor
-After installing through the debian or snap package launching the editor can be achieved through O3DE project manager:
+After installing through the debian or snap package launching the editor can be achieved through O3DE Project Manager:
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
 
-Alternatively the editor can be launched directly if the O3DE engine was set up from GitHub:
+Alternatively, the editor can be launched directly if the O3DE engine was set up from GitHub:
 ```
 build/linux/bin/profile/Editor
 ```
