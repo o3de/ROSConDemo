@@ -51,46 +51,19 @@ The project runs on Ubuntu 22.04 with ROS 2 Humble.
 
 💡 ***Note:*** This demo is **not supported on Windows!** 
 
-## O3DE (from release)
-1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
-   sure that the system/hardware requirements are met.
-2. Download and prepare O3DE [(O3DE download)](https://www.o3de.org/download/)
+## Installing O3DE
+To install the O3DE engine please refer to the [setup documentation](https://www.o3de.org/docs/welcome-guide/setup/).
 
-## O3DE (from source)
-
-1. Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make
-   sure that the system/hardware requirements are met.
-2. Please follow the instructions
-   to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
-3. **Use the `development` branch**.
-
-The following commands should prepare O3DE:
-
-```
-~$ git clone --branch development --single-branch https://github.com/o3de/o3de.git
-~$ cd o3de
-~/o3de$ git lfs install
-~/o3de$ git lfs pull
-~/o3de$ python/get_python.sh
-~/o3de$ scripts/o3de.sh register --this-engine
-```
-
-## ROS 2 Gem
+## Setting up the ROS 2 Gem
 
 This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
-Please make sure to follow the installation guide
-in [README.md](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md) file or use the [documentation](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/).
+Please make sure to follow the [installation guide](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/).  
 To learn more about how the Gem works check out
 the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
 
 Note that the Gem instructions include installation of ROS 2 with some additional packages.
 
 The Gem is open to your contributions!
-
-### Registering the Gem
-
-During the step above, make sure to register the Gem in the engine:
-`scripts/o3de.sh register --gem-path <PATH_TO_CLONED_ROS2_GEM>`
 
 ### Additional ROS 2 packages
 
@@ -128,16 +101,23 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 git clone https://github.com/o3de/ROSConDemo.git
 ```
 
-2. Open the O3DE project manager. To open the release version:
+2. Ensure your [ROS 2 is sourced](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Configuring-ROS2-Environment.html):
+
+```
+echo $ROS_DISTRO
+> humble
+```
+
+3. Open the O3DE project manager. To open the release version:
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
 
-3. Select new project and click open existing project.
+4. Select new project and click open existing project.
 
-4. Select ROSConDemo/Project. A new project should appear in the project manager called ROSConDemo.
+5. Select ROSConDemo/Project. A new project should appear in the project manager called ROSConDemo.
 
-5. Build the project and launch the editor.
+6. Build the project and launch the editor.
 
 ## Build steps (CLI)
 
@@ -171,18 +151,13 @@ cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
 cmake --build build/linux --config profile --target ROSConDemo Editor ROSConDemo.Assets
 ```
 
-## Launching the Editor (from release)
-
-Launch the editor through O3DE project manager
+## Launching the Editor
+After installing through the debian or snap package launching the editor can be achieved through O3DE project manager:
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
 
-## Launching the Editor (from source)
-
-
-Launch the O3DE Editor (in the Project directory):
-
+Alternatively the editor can be launched directly if the O3DE engine was set up from GitHub:
 ```
 build/linux/bin/profile/Editor
 ```
