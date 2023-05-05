@@ -108,7 +108,7 @@ echo $ROS_DISTRO
 > humble
 ```
 
-3. Open the O3DE Project Manager. To open the release version:
+3. Open the O3DE Project Manager. Use this command to open the release version:
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
@@ -117,7 +117,7 @@ echo $ROS_DISTRO
 
 5. Select ```ROSConDemo/Project```. A new project should appear in the Project Manager called ```ROSConDemo```.
 
-6. Click on the ```Build Project``` button.
+6. Click on the ```Build Project``` button on the newly created project.
 
 ## Build steps (CLI)
 
