@@ -152,12 +152,12 @@ cmake --build build/linux --config profile --target ROSConDemo Editor ROSConDemo
 ```
 
 ## Launching the Editor
-After installing through the debian or snap package launching the editor can be achieved through O3DE Project Manager:
+Launch the Editor using O3DE Project Manager using this command if the O3DE engine was installed using the debian or snap package.
 ```
 /opt/O3DE/<engine_version>/bin/Linux/profile/Default/o3de
 ```
 
-Alternatively, the editor can be launched directly if the O3DE engine was set up from GitHub:
+Alternatively, launch the Editor directly if the O3DE engine was set up from GitHub:
 ```
 build/linux/bin/profile/Editor
 ```
