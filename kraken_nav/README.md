@@ -34,11 +34,12 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 On top of dependencies for the [agricultural demo project](https://github.com/o3de/ROSConDemo), you will also need some additional ROS2 packages.
 
-1.  Make sure to source the Humble distribution's setup script
+1.  Make sure to source the Iron distribution's setup script
+    ```
+    source /opt/ros/iron/setup.bash
+    ```
+    💡 ***Note:*** ROS 2 Humble is also supported. In that case, the provided command would be `source /opt/ros/humble/setup.bash`
 
-    ```
-    source /opt/ros/humble/setup.bash
-    ```
 
 2.  Run the following command to install the remaining required packages
     ```
@@ -72,11 +73,11 @@ pip install python-statemachine
 - Use the the [development](https://github.com/o3de/o3de-extras/tree/development) branch of the `o3de-extras`.
 - Use the [development](https://github.com/o3de/ROSConDemo) branch of the `ROSConDemo`.
 
-1. Source ROS 2 Humble
-
+1. Source ROS 2 Iron
 ```bash
-source /opt/ros/humble/setup.bash
+source /opt/ros/iron/setup.bash
 ```
+💡 ***Note:*** ROS 2 Humble is also supported. In that case, the provided command would be `source /opt/ros/humble/setup.bash`
 
 2. Build the workspace
 

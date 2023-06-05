@@ -1,6 +1,7 @@
 # Dockerfile for running the ROSConDemo
 
-The dockerfile defined in this path will prepare the appropiate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
+The dockerfile defined in this path will prepare the appropriate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.  
+💡 ***Note:*** ROS 2 Iron is not yet supported.
 
 ## Prerequisites
 

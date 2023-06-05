@@ -47,7 +47,7 @@ of apple trees and the robot itself.
 
 ## Platforms
 
-The project runs on Ubuntu 22.04 with ROS 2 Humble.
+The project runs on Ubuntu 22.04 with ROS 2 Humble or ROS 2 Iron.
 
 💡 ***Note:*** This demo is **not supported on Windows!** 
 
@@ -101,13 +101,14 @@ sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${
 
 Some commands and environmental variables are necessary for ROS 2 systems, including this demo, to function properly. It is best to add these commands and settings to either `~/.bashrc` or `~/.profile`.
 
-ROS 2 distribution and should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Humble installation, this would mean running the following for each console:
+ROS 2 distribution and should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Iron installation, this would mean running the following for each console:
 
 ```
-source /opt/ros/humble/setup.bash
+source /opt/ros/iron/setup.bash
 ```
+💡 ***Note:*** ROS 2 Humble is also supported. In that case, the provided command would be `source /opt/ros/humble/setup.bash`
 
-Currently we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
+Currently we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble and ROS 2 Iron). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
 
 ```
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
@@ -132,8 +133,9 @@ scripts/o3de.sh register -pp <PATH_TO_THIS_PROJECT>
 
 ```
 echo $ROS_DISTRO
-> humble
+> iron
 ```
+💡 ***Note:*** ROS 2 Humble is also supported. In the case that ROS 2 Humble was sourced this command output will be `humble`
 
 4. Configure build:
 
