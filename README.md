@@ -57,12 +57,12 @@ The project runs on Ubuntu 22.04 with ROS 2 Humble or ROS 2 Iron.
    sure that the system/hardware requirements are met.
 2. Please follow the instructions
    to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
-3. **Use the `development` branch**.
+3. **Use the `main` branch**.
 
 The following commands should prepare O3DE:
 
 ```
-~$ git clone --branch development --single-branch https://github.com/o3de/o3de.git
+~$ git clone --branch main --single-branch https://github.com/o3de/o3de.git
 ~$ cd o3de
 ~/o3de$ git lfs install
 ~/o3de$ git lfs pull
@@ -74,9 +74,9 @@ The following commands should prepare O3DE:
 
 This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
 Please make sure to follow the installation guide
-in [README.md](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2/README.md) file.
+in [ROS 2 Project Configuration](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/).
 To learn more about how the Gem works check out
-the [ROS 2 Gem user guide](https://github.com/RobotecAI/o3de-ros2-gem/blob/development/docs/guides/ros2-gem.md).
+the [Robotics in O3DE](https://www.o3de.org/docs/user-guide/interactivity/robotics/).
 
 Note that the Gem instructions include installation of ROS 2 with some additional packages.
 
