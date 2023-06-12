@@ -1,7 +1,6 @@
 # Dockerfile for running the ROSConDemo
 
-The dockerfile defined in this path will prepare the appropriate ROS2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.  
-💡 ***Note:*** ROS 2 Iron is not yet supported.
+The dockerfile defined in this path will prepare the appropriate ROS2 Iron distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
 ## Prerequisites
 
@@ -14,7 +13,7 @@ The dockerfile defined in this path will prepare the appropriate ROS2 Humble dis
 
 ## Building the Docker Image
 
-The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Humble distribution. This is currently the only version supported by the demo. The dockerfile will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
+The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Iron distribution. The dockerfile will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
 
 To build the docker image for the ROSConDemo environment, run the following command:
 
@@ -73,8 +72,8 @@ In addition to the repositories, the following arguments target the branch, comm
 
 | Argument                | Repository                       | Default                |
 |-------------------------|----------------------------------|------------------------|
-| O3DE_BRANCH             | O3DE                             | stabilization/2305     |
-| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | stabilization/2305     |
+| O3DE_BRANCH             | O3DE                             | 2305.0                 |
+| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | 2305.0                 |
 | ROSCON_DEMO_BRANCH      | ROSConDemo repository            | development            |
 
 ### Optimizing the build process ###
