@@ -4,17 +4,17 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-FROM ros:humble-ros-base-jammy
+FROM ros:iron-ros-base-jammy
 
 # Argument to control the type of docker image to build
 ARG IMAGE_TYPE=full  # Default to 'full'
 
 # Arguments for the source repos 
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
-ARG O3DE_BRANCH=stabilization/2305
+ARG O3DE_BRANCH=2305.0
 
 ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
-ARG O3DE_EXTRAS_BRANCH=stabilization/2305
+ARG O3DE_EXTRAS_BRANCH=2305.0
 
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
 ARG ROSCON_DEMO_BRANCH=development
@@ -218,10 +218,10 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && if [ "${ROS_DISTRO}" = "humble" ]; then \
+    && if [ "${ROS_DISTRO}" = "iron" ]; then \
+         echo "ExecStart=/opt/ros/iron/setup.bash" >> /etc/systemd/system/setup_ros.service; \
+       elif [ "${ROS_DISTRO}" = "humble" ]; then \
          echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       elif [ "${ROS_DISTRO}" = "galactic" ]; then \
-         echo "ExecStart=/opt/ros/galactic/setup.bash" >> /etc/systemd/system/setup_ros.service; \
        fi \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
