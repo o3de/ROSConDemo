@@ -225,6 +225,8 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
          echo "ExecStart=/opt/ros/iron/setup.bash" >> /etc/systemd/system/setup_ros.service; \
        elif [ "${ROS_DISTRO}" = "humble" ]; then \
          echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
+       elif [ "${ROS_DISTRO}" = "galactic" ]; then \
+         echo "ExecStart=/opt/ros/galactic/setup.bash" >> /etc/systemd/system/setup_ros.service; \
        fi \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
