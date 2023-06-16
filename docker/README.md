@@ -13,9 +13,9 @@ The dockerfile defined in this path will prepare the appropriate ROS2 Iron distr
 
 ## Building the Docker Image
 
-The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Iron distribution. The dockerfile will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
+The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Humble distribution. The dockerfile will build an O3DE simulation environment that is configured to launch the O3DE editor, O3DE simulation launcher, and the simulation navigation stack used for the simulation.
 
-To build the docker image for the ROSConDemo environment, run the following command:
+Run the following command to build the docker image for the ROSConDemo environment using default configuration:
 
 ```
 docker build -t roscon_demo -f Dockerfile .
@@ -25,7 +25,7 @@ This will create a `roscon_demo` docker image which will used when running the c
 
 
 **Note** 
-The above command example will build the full simulation environment needed to run the O3DE editor, O3DE simulation launcher, and the simulation navigation stack, based on the latest code from the o3de (O3DE Engine), o3de-extras (ROS2 Gem), and the ROSConDemo. The arguments specified will pull in the last known good version of the dependent projects from their repo. Additional arguments are available to customize and fine-tune this process and is described below.
+The above command example will build the full simulation environment needed to run the O3DE editor, O3DE simulation launcher, and the simulation navigation stack, based on the latest code from the o3de (O3DE Engine), o3de-extras (ROS2 Gem), and the ROSConDemo. The arguments specified will pull in the last known good version of the dependent projects from their repo. See the Advanced Options section below for more information.
 
 The build process may take over two hours depending on the hardware resource and network connectivity of the machine used to build the image.
 
@@ -57,12 +57,22 @@ To launch the O3DE simulation launcher for the ROSConDemo project, execute the f
 To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
 
 ## Advanced Options
+
+### Target ROS2 Distribution
+The Docker script defaults to building an image based on Ubuntu 22.04 (jammy) and the ROS2 Humble distribution. This can be overridden with a combination of the `ROS_VERSION` and `UBUNTU_VERSION` arguments.
+
+| Arguments                                 | ROS2 Distro   |
+|-------------------------------------------|---------------|
+| ROS_VERSION=galactic UBUNTU_VERSION=focal | galactic      |
+| ROS_VERSION=humble   UBUNTU_VERSION=jammy | humble        |
+| ROS_VERSION=iron     UBUNTU_VERSION=jammy | iron          |
+
 ### Custom source repos and branches
 
 The Dockerscripts use the following arguments to determine the repository to pull the source from. 
 
-| Argument              | Repository                       | Default     |
-|-----------------------|----------------------------------|-------------|
+| Argument              | Repository                       | Default                                            |
+|-----------------------|----------------------------------|----------------------------------------------------|
 | O3DE_REPO             | O3DE                             | https://github.com/o3de/o3de.git                   |
 | O3DE_EXTRAS_REPO      | O3DE Extras                      | https://github.com/o3de/o3de-extras.git            |
 | ROSCON_DEMO_REPO      | ROSConDemo repository            | https://github.com/o3de/RobotVacuumSample          |
