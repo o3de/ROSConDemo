@@ -4,7 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-FROM ros:iron-ros-base-jammy
+ARG ROS_VERSION=humble
+ARG UBUNTU_VERSION=jammy
+￼
+FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
 # Argument to control the type of docker image to build
 ARG IMAGE_TYPE=full  # Default to 'full'
