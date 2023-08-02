@@ -14,7 +14,7 @@ ARG IMAGE_TYPE=full  # Default to 'full'
 
 # Arguments for the source repos 
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
-ARG O3DE_BRANCH=2305.0
+ARG O3DE_BRANCH=2305.1
 
 ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
 ARG O3DE_EXTRAS_BRANCH=2305.0
