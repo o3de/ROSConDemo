@@ -6,7 +6,7 @@
 
 ARG ROS_VERSION=humble
 ARG UBUNTU_VERSION=jammy
-￼
+
 FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
 # Argument to control the type of docker image to build
