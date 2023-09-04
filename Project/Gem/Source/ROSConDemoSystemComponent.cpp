@@ -22,6 +22,7 @@ namespace ROSConDemo
 {
     void ROSConDemoSystemComponent::Reflect(AZ::ReflectContext* context)
     {
+
         if (AZ::SerializeContext* serialize = azrtti_cast<AZ::SerializeContext*>(context))
         {
             serialize->Class<ROSConDemoSystemComponent, AZ::Component>()->Version(0);
@@ -67,7 +68,7 @@ namespace ROSConDemo
         incompatible.push_back(AZ_CRC("ROSConDemoService"));
     }
 
-    void ROSConDemoSystemComponent::GetRequiredServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& required)
+    void ROSConDemoSystemComponent::GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required)
     {
     }
 
@@ -133,7 +134,7 @@ namespace ROSConDemo
     }
 
     void ROSConDemoSystemComponent::Activate()
-    {   // TODO - the service should probably only be created in Game Mode
+    {
         ROSConDemoRequestBus::Handler::BusConnect();
         auto ros2Node = ROS2::ROS2Interface::Get()->GetNode();
         m_pathPlanService = ros2Node->create_service<nav_msgs::srv::GetPlan>(
