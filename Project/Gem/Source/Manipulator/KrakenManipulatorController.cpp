@@ -7,7 +7,7 @@
  */
 
 #include "KrakenManipulatorController.h"
-#include <ROS2/Manipulator/MotorizedJointBus.h>
+#include <ROS2/Manipulation/MotorizedJoints/PidMotorControllerBus.h>
 #include <AzCore/Serialization/EditContext.h>
 
 #include <AzFramework/Components/TransformComponent.h>
@@ -103,11 +103,11 @@ namespace AppleKraken
         float error_x = std::numeric_limits<float>::max();
         float error_z = std::numeric_limits<float>::max();
 
-        ROS2::MotorizedJointRequestBus::Event(m_entityX, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointX);
-        ROS2::MotorizedJointRequestBus::EventResult(error_x, m_entityX, &ROS2::MotorizedJointRequest::GetError);
+        ROS2::PidMotorControllerRequestBus::Event(m_entityX, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointX);
+        ROS2::PidMotorControllerRequestBus::EventResult(error_x, m_entityX, &ROS2::PidMotorControllerRequests::GetError);
 
-        ROS2::MotorizedJointRequestBus::Event(m_entityZ, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointZ);
-        ROS2::MotorizedJointRequestBus::EventResult(error_z, m_entityZ, &ROS2::MotorizedJointRequest::GetError);
+        ROS2::PidMotorControllerRequestBus::Event(m_entityZ, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointZ);
+        ROS2::PidMotorControllerRequestBus::EventResult(error_z, m_entityZ, &ROS2::PidMotorControllerRequests::GetError);
 
         // auto - disable nose retrieve only if we reached small error.
         if (m_noseRetrieveRequest == true)
@@ -133,7 +133,7 @@ namespace AppleKraken
                 if (m_time_Y_ok > m_timeSetpointReach)
                 {
                     float error_y = std::numeric_limits<float>::max();
-                    ROS2::MotorizedJointRequestBus::EventResult(error_y, m_entityY, &ROS2::MotorizedJointRequest::GetError);
+                    ROS2::PidMotorControllerRequestBus::EventResult(error_y, m_entityY, &ROS2::PidMotorControllerRequests::GetError);
                     if (error_y < max_errorY && error_y > -max_errorY)
                     {
                         m_noseRetrievingSuccess = true;
@@ -145,7 +145,7 @@ namespace AppleKraken
             {
                 m_noseRetrievingSuccess = false;
             }
-            ROS2::MotorizedJointRequestBus::Event(m_entityY, &ROS2::MotorizedJointRequest::SetSetpoint, m_setPointY);
+            ROS2::PidMotorControllerRequestBus::Event(m_entityY, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointY);
         }
 
     }
@@ -164,9 +164,9 @@ namespace AppleKraken
         float x{0};
         float y{0};
         float z{0};
-        ROS2::MotorizedJointRequestBus::EventResult(x, m_entityX, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
-        ROS2::MotorizedJointRequestBus::EventResult(y, m_entityY, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
-        ROS2::MotorizedJointRequestBus::EventResult(z, m_entityZ, &ROS2::MotorizedJointRequest::GetCurrentMeasurement);
+        ROS2::PidMotorControllerRequestBus::EventResult(x, m_entityX, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
+        ROS2::PidMotorControllerRequestBus::EventResult(y, m_entityY, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
+        ROS2::PidMotorControllerRequestBus::EventResult(z, m_entityZ, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
         return AZ::Vector3{x,y,z};
     };
 
