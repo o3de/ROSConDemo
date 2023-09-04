@@ -25,6 +25,7 @@ set(FILES
         Source/Manipulator/KrakenManipulatorController.cpp
         Source/Manipulator/KrakenManipulatorController.h
         Source/Manipulator/ManipulatorRequestBus.h
+        Source/ROSConDemoModuleInterface.h
         Source/ROSConDemoSystemComponent.cpp
         Source/ROSConDemoSystemComponent.h
         enabled_gems.cmake
