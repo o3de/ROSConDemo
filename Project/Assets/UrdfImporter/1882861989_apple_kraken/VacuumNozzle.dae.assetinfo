@@ -1,0 +1,25 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "VacuumNozzle",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.VacuumNozzle",
+                    "Scene.VacuumNozzle.UV0",
+                    "Scene.VacuumNozzle.VacuumNozzle",
+                    "Scene.VacuumNozzle.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{46362E00-D50F-48F0-BC03-5B9BF83EF02C}"
+        }
+    ]
+}

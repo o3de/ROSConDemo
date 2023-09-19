@@ -59,9 +59,9 @@ namespace AppleKraken
         AZ::Vector3 m_vectorY{0, 1, 0 };
         AZ::Vector3 m_vectorZ{0, 0, 1 };
 
-        AZ::EntityId m_entityX;
-        AZ::EntityId m_entityY;
-        AZ::EntityId m_entityZ;
+        AZStd::string m_jointX;
+        AZStd::string m_jointY;
+        AZStd::string m_jointZ;
         AZ::EntityId m_effector;
         AZ::EntityId m_restEntity;
 

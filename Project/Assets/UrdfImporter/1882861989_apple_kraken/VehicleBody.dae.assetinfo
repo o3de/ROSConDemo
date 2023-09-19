@@ -1,0 +1,27 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "VehicleBody",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.VehicleBody",
+                    "Scene.VehicleBody.UV0",
+                    "Scene.VehicleBody.VehicleBody",
+                    "Scene.VehicleBody.Vent",
+                    "Scene.VehicleBody.VoltageBox",
+                    "Scene.VehicleBody.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{DC1F40C5-3732-4337-8C34-061223AD7859}"
+        }
+    ]
+}

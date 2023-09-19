@@ -1,0 +1,25 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "WheelRight",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.WheelRightFront",
+                    "Scene.WheelRightFront.UV0",
+                    "Scene.WheelRightFront.WheelRight",
+                    "Scene.WheelRightFront.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{DF94FDE8-C7B1-4CF9-AFE7-FB94A8027D5B}"
+        }
+    ]
+}

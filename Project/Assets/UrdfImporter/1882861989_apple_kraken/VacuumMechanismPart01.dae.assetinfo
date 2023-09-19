@@ -1,0 +1,25 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "VacuumMechanismPart01",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.VacuumMechanismPart01",
+                    "Scene.VacuumMechanismPart01.UV0",
+                    "Scene.VacuumMechanismPart01.VacuumMachanismPart01",
+                    "Scene.VacuumMechanismPart01.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{476DF3C4-8BBB-467F-807C-99B1AA804627}"
+        }
+    ]
+}

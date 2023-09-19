@@ -1,0 +1,33 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "ChassisAndFrame",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.ChassisAndFrame",
+                    "Scene.ChassisAndFrame.Barier",
+                    "Scene.ChassisAndFrame.ChassisAndFrame",
+                    "Scene.ChassisAndFrame.UV0",
+                    "Scene.ChassisAndFrame.UV1",
+                    "Scene.ChassisAndFrame.transform",
+                    "Scene.ChassisAndFrame_001",
+                    "Scene.ChassisAndFrame_001.ChassisAndFrame",
+                    "Scene.ChassisAndFrame_001.Pipe",
+                    "Scene.ChassisAndFrame_001.UV0",
+                    "Scene.ChassisAndFrame_001.UV1",
+                    "Scene.ChassisAndFrame_001.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{B34BF59C-859D-4680-952E-E495538F445C}"
+        }
+    ]
+}

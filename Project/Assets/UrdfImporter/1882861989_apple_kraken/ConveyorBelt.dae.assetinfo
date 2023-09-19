@@ -1,0 +1,24 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "ConveyorBelt",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.ConveyorBelt_001",
+                    "Scene.ConveyorBelt_001.ConveyorBelt",
+                    "Scene.ConveyorBelt_001.UV0"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{126C5999-C8C6-47C7-8A2A-EC747B31A3DA}"
+        }
+    ]
+}

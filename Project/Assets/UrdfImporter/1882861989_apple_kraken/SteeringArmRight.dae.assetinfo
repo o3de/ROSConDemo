@@ -1,0 +1,25 @@
+{
+    "values": [
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "SteeringArmRight",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    "Scene",
+                    "Scene.SteeringArmRight",
+                    "Scene.SteeringArmRight.SteeringArmRight",
+                    "Scene.SteeringArmRight.UV0",
+                    "Scene.SteeringArmRight.transform"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "UVsRule"
+                    }
+                ]
+            },
+            "id": "{53636546-1482-4D73-8212-765D62908775}"
+        }
+    ]
+}
