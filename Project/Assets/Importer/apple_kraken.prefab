@@ -716,24 +716,6 @@
             "Id": "Entity_[22963947049357]",
             "Name": "kraken_manipulator_link_3",
             "Components": {
-                "EditorArticulationLinkComponent": {
-                    "$type": "EditorArticulationLinkComponent",
-                    "Id": 4167292518210714744,
-                    "ArticulationConfiguration": {
-                        "entityId": "",
-                        "Mass": 10.0,
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 10,
-                        "Articulation Joint Type": 2,
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Linear Limit Lower": 0.30000001192092896,
-                        "Linear Limit Upper": 0.0
-                    }
-                },
                 "EditorDisabledCompositionComponent": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 12853527708996185397
@@ -765,18 +747,65 @@
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13525156554441961271
                 },
+                "EditorScriptCanvasComponent": {
+                    "$type": "EditorScriptCanvasComponent",
+                    "Id": 5351306226489631631,
+                    "configuration": {
+                        "sourceHandle": {
+                            "id": "{91641115-06A4-5EA6-918F-D7AC6BEF9F96}",
+                            "path": "Assets/Kraken/nose_middle_script.scriptcanvas"
+                        },
+                        "sourceName": "nose_middle_script.scriptcanvas",
+                        "propertyOverrides": {
+                            "source": {
+                                "id": "{91641115-06A4-5EA6-918F-D7AC6BEF9F96}",
+                                "path": "Assets/Kraken/nose_middle_script.scriptcanvas"
+                            },
+                            "variables": [
+                                {
+                                    "Datum": {
+                                        "isOverloadedStorage": false,
+                                        "scriptCanvasType": {
+                                            "m_type": 1
+                                        },
+                                        "isNullPointer": false,
+                                        "$type": "EntityId",
+                                        "value": ""
+                                    },
+                                    "VariableId": {
+                                        "m_id": "{04507A1B-EB87-4A66-97D5-FBED973CDD5F}"
+                                    },
+                                    "VariableName": "nose_tip",
+                                    "InitialValueSource": 1
+                                }
+                            ],
+                            "overrides": [
+                                {
+                                    "Datum": {
+                                        "isOverloadedStorage": false,
+                                        "scriptCanvasType": {
+                                            "m_type": 1
+                                        },
+                                        "isNullPointer": false,
+                                        "$type": "EntityId",
+                                        "value": "Entity_[23058436329869]"
+                                    },
+                                    "InputControlVisibility": {
+                                        "Value": 850104567
+                                    },
+                                    "VariableId": {
+                                        "m_id": "{04507A1B-EB87-4A66-97D5-FBED973CDD5F}"
+                                    },
+                                    "VariableName": "nose_tip",
+                                    "InitialValueSource": 1
+                                }
+                            ]
+                        }
+                    }
+                },
                 "EditorVisibilityComponent": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 12071744171189080617
-                },
-                "ROS2FrameComponent": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 2955116941049850578,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
-                        "Frame Name": "kraken_manipulator_link_3",
-                        "Joint Name": "kraken_manipulator_joint_3"
-                    }
                 },
                 "TransformComponent": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -1074,9 +1103,9 @@
                         "Linear Limit Upper": -0.800000011920929,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "ForceLimit": 1000.0,
-                            "Stiffness": 600.0,
-                            "Damping": 200.0
+                            "ForceLimit": 10.0,
+                            "Stiffness": 1800.0,
+                            "Damping": 600.0
                         }
                     }
                 },
@@ -1332,9 +1361,9 @@
                         "Linear Limit Upper": -1.2000000476837158,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "ForceLimit": 1000.0,
-                            "Stiffness": 600.0,
-                            "Damping": 200.0
+                            "ForceLimit": 10.0,
+                            "Stiffness": 21000.0,
+                            "Damping": 7000.0
                         }
                     }
                 },
@@ -2737,7 +2766,6 @@
                                     "guid": "{5A0A846B-E176-5C1E-A60D-5AFBDF0F0A98}",
                                     "subId": 278383502
                                 },
-                                "loadBehavior": "PreLoad",
                                 "assetHint": "assets/urdfimporter/1882861989_apple_kraken/vehiclebody.dae.azmodel"
                             }
                         }
