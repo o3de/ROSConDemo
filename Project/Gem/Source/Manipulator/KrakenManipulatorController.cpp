@@ -117,15 +117,11 @@ namespace AppleKraken
         // auto - disable nose retrieve only if we reached small error.
         if (m_noseRetrieveRequest == true)
         {
-            std::cout << "Retrieve request is true\n";
             m_time_XZ_ok += deltaTime;
             if (m_time_XZ_ok > m_timeSetpointReach)
             {
-                std::cout << "Time long enough\n";
-                std::cout << "Errors: " << error_x << " " << error_z << "\n";
                 if (error_x < max_errorXZ && error_x > -max_errorXZ && error_z < max_errorXZ && error_z > -max_errorXZ)
                 {
-                    std::cout << "Error small enough\n";
                     AZ_Printf("ManipulatorController", "Nose is sliding out  \n");
                     m_noseRetrieveRequest = false;
                     m_time_XZ_ok = 0;
