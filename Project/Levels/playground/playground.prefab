@@ -939,8 +939,18 @@
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[23054141362573]/Components/AZ::Render::EditorMeshComponent/Controller/Configuration/ModelAsset/loadBehavior",
-                    "value": "QueueLoad"
+                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Stiffness",
+                    "value": 1000.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Damping",
+                    "value": 400.0
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[23049846395277]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Fixed Base",
+                    "value": true
                 },
                 {
                     "op": "add",
@@ -1008,63 +1018,18 @@
                 },
                 {
                     "op": "replace",
+                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
+                    "value": 3.7734313011169434
+                },
+                {
+                    "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": 10.099998474121094
+                    "value": -2.5501718521118164
                 },
                 {
                     "op": "replace",
                     "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 4.012842655181885
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[23049846395277]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Fixed Base",
-                    "value": true
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[23049846395277]/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 3.353863477706909
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[23049846395277]/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": -10.792308807373049
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[23049846395277]/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": -3.9885971546173096
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Stiffness",
-                    "value": 1000.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Damping",
-                    "value": 400.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22994011820429]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Linear Limit Lower",
-                    "value": -1.2000000476837158
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22994011820429]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Linear Limit Upper",
-                    "value": 0.6700000166893005
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22994011820429]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/ForceLimit",
-                    "value": 100.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22994011820429]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Stiffness",
-                    "value": 20000.0
+                    "value": 0.11927628517150879
                 }
             ]
         },

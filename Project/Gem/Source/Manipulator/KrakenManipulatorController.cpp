@@ -14,6 +14,8 @@
 #include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 #include <type_traits>
 
+#include <iostream>
+
 namespace AppleKraken
 {
     void ManipulatorController::Activate()
@@ -156,6 +158,8 @@ namespace AppleKraken
             }
             ROS2::JointsManipulationRequestBus::Event(GetEntityId(), &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointY, m_setPointY);
         }
+
+        std::cout << "Set points x y z: " << m_setPointX << " " << m_setPointY << " " << m_setPointZ << "\n";
 
     }
 

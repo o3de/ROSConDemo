@@ -1357,8 +1357,8 @@
                             -89.99999237060547,
                             0.0
                         ],
-                        "Linear Limit Lower": 0.6700000166893005,
-                        "Linear Limit Upper": -1.2000000476837158,
+                        "Linear Limit Lower": -1.2000000476837158,
+                        "Linear Limit Upper": 0.6700000166893005,
                         "Motor configuration": {
                             "UseMotor": true,
                             "ForceLimit": 10.0,
