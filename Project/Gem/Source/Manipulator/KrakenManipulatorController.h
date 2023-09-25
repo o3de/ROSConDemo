@@ -52,8 +52,8 @@ namespace AppleKraken
 
         AZ::Vector3 m_desiredPosition{0, 0, 0 };
         AZStd::optional<AZ::Vector3> m_desiredApple;
-        bool m_noseRetrieveRequest{false };
-        bool m_noseRetrievingSuccess{false};
+        bool m_noseRetrieveRequest{ false };
+        bool m_noseRetrievingSuccess{ false };
 
         AZ::Vector3 m_vectorX{1, 0, 0 };
         AZ::Vector3 m_vectorY{0, 1, 0 };
