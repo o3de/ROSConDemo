@@ -158,9 +158,6 @@ namespace AppleKraken
             }
             ROS2::JointsManipulationRequestBus::Event(GetEntityId(), &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointY, m_setPointY);
         }
-
-        std::cout << "Set points x y z: " << m_setPointX << " " << m_setPointY << " " << m_setPointZ << "\n";
-
     }
 
     void ManipulatorController::PickApple(const AZ::Vector3 position)
