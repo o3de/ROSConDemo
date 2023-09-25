@@ -561,11 +561,11 @@
                     "m_template": {
                         "$type": "PidMotorControllerComponent",
                         "PidPosition": {
-                            "P": 180.0,
-                            "D": 60.0,
-                            "Output limit": 300.0
+                            "P": 240.0,
+                            "D": 80.0,
+                            "Output limit": 1.0
                         },
-                        "MinPid": 4.0
+                        "MinPid": 1.0
                     }
                 }
             }
@@ -1712,9 +1712,9 @@
                         "PidPosition": {
                             "P": 180.0,
                             "D": 60.0,
-                            "Output limit": 450.0
+                            "Output limit": 1.0
                         },
-                        "MinPid": 2.0
+                        "MinPid": 1.0
                     }
                 }
             }
@@ -3347,9 +3347,9 @@
                         "PidPosition": {
                             "P": 270.0,
                             "D": 90.0,
-                            "Output limit": 400.0
+                            "Output limit": 1.0
                         },
-                        "MinPid": 2.0
+                        "MinPid": 1.0
                     }
                 }
             }
@@ -4375,6 +4375,7 @@
                             }
                         },
                         "lidarConfiguration": {
+                            "lidarImplementation": "Scene Queries",
                             "LidarParameters": {
                                 "Layers": 16,
                                 "Points per layer": 308,
@@ -4384,8 +4385,9 @@
                                 "Max vertical angle": -12.0,
                                 "Max range": 50.0
                             },
-                            "IgnoreLayer": true,
-                            "IgnoredLayerIndex": 1
+                            "IgnoredLayerIndices": [
+                                1
+                            ]
                         }
                     }
                 },
