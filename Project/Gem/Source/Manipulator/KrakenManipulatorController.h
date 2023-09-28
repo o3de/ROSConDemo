@@ -64,6 +64,7 @@ namespace AppleKraken
         AZStd::string m_jointZ;
         AZ::EntityId m_effector;
         AZ::EntityId m_restEntity;
+        AZ::EntityId m_manipulatorBase;
 
         AZ::Transform m_transform_base_link_to_effector;
         float m_setPointX{ 0 };

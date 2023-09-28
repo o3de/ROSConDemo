@@ -402,53 +402,35 @@
                 },
                 "Component_[6852185769417412979]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6852185769417412979
-                },
-                "Component_[7937656036735183620]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 7937656036735183620,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false,
-                        "Compute Mass": false,
-                        "Mass": 10.0,
-                        "Compute COM": false,
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.5,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.5,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.20000000298023224
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
-                "Component_[8160934721586853298]": {
-                    "$type": "EditorPrismaticJointComponent",
-                    "Id": 8160934721586853298,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126339623467676]",
-                        "Child Entity": "Entity_[126300968762012]"
-                    },
-                    "Linear Limit": {
-                        "Lower Limit": 0.0,
-                        "Upper Limit": 0.6000000238418579
-                    },
-                    "Motor": {
-                        "UseMotor": true
+                    "Id": 6852185769417412979,
+                    "DisabledComponents": {
+                        "Component_[7937656036735183620]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 7937656036735183620,
+                            "Configuration": {
+                                "entityId": "",
+                                "Gravity Enabled": false,
+                                "Compute Mass": false,
+                                "Mass": 10.0,
+                                "Compute COM": false,
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.5,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.5,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.20000000298023224
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
                     }
                 },
                 "Component_[839061643917149005]": {
@@ -456,12 +438,57 @@
                     "Id": 839061643917149005,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
-                        "Frame Name": "kraken_manipulator_link_4"
+                        "Frame Name": "kraken_manipulator_link_4",
+                        "Joint Name": "kraken_manipulator_joint_4"
                     }
                 },
                 "Component_[9315219505705754091]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 9315219505705754091
+                    "Id": 9315219505705754091,
+                    "PendingComponents": {
+                        "Component_[8160934721586853298]": {
+                            "$type": "EditorPrismaticJointComponent",
+                            "Id": 8160934721586853298,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126339623467676]",
+                                "Child Entity": "Entity_[126300968762012]"
+                            },
+                            "Linear Limit": {
+                                "Lower Limit": 0.0,
+                                "Upper Limit": 0.6000000238418579
+                            },
+                            "Motor": {
+                                "UseMotor": true
+                            }
+                        }
+                    }
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 15591373275211045154,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 10.0,
+                        "Articulation Joint Type": 2,
+                        "Local Rotation": [
+                            0.0,
+                            -90.0,
+                            0.0
+                        ],
+                        "Linear Limit Lower": 0.0,
+                        "Linear Limit Upper": 0.6000000238418579,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "ForceLimit": 100.0,
+                            "Stiffness": 600.0,
+                            "Damping": 200.0
+                        }
+                    }
                 },
                 "PidMotorControllerComponent": {
                     "$type": "GenericComponentWrapper",
@@ -585,26 +612,6 @@
                         ]
                     }
                 },
-                "Component_[1613217090165345540]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 1613217090165345540,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 20.0,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            -0.03999999910593033
-                        ],
-                        "Compute inertia": false
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
                 "Component_[16133372995322410612]": {
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 16133372995322410612
@@ -616,23 +623,6 @@
                 "Component_[224703928368321986]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 224703928368321986
-                },
-                "Component_[3605180164621546848]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 3605180164621546848,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126309558696604]"
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 50.0
-                    }
                 },
                 "Component_[3950558941332218098]": {
                     "$type": "GenericComponentWrapper",
@@ -661,6 +651,35 @@
                 "Component_[8528267547197646072]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 8528267547197646072
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 154035539727517075,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 20.0,
+                        "Centre of mass offset": [
+                            0.0,
+                            0.0,
+                            -0.03999999910593033
+                        ],
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Angular Limit Negative": -29.994340896606445,
+                        "Angular Limit Positive": 29.994340896606445,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "ForceLimit": 50.0,
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
+                    }
                 }
             }
         },
@@ -943,7 +962,40 @@
                 },
                 "Component_[12574681316984350453]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 12574681316984350453
+                    "Id": 12574681316984350453,
+                    "DisabledComponents": {
+                        "Component_[7170656092478701158]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 7170656092478701158,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 24.5,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    0.0,
+                                    0.0,
+                                    0.06599999964237213
+                                ],
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.309000015258789
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[12589217388276244759]": {
                     "$type": "GenericComponentWrapper",
@@ -1005,26 +1057,28 @@
                         }
                     }
                 },
-                "Component_[17812549898914385186]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 17812549898914385186,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126382573140636]",
-                        "Child Entity": "Entity_[126326738565788]"
-                    },
-                    "Angular Limit": {
-                        "Positive Limit": 360.0,
-                        "Negative Limit": -360.0
-                    }
-                },
                 "Component_[2381004773039104774]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 2381004773039104774
+                    "Id": 2381004773039104774,
+                    "PendingComponents": {
+                        "Component_[17812549898914385186]": {
+                            "$type": "EditorHingeJointComponent",
+                            "Id": 17812549898914385186,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126382573140636]",
+                                "Child Entity": "Entity_[126326738565788]"
+                            },
+                            "Angular Limit": {
+                                "Positive Limit": 360.0,
+                                "Negative Limit": -360.0
+                            }
+                        }
+                    }
                 },
                 "Component_[477952826064294185]": {
                     "$type": "EditorInspectorComponent",
@@ -1033,37 +1087,6 @@
                 "Component_[4965244644527836261]": {
                     "$type": "EditorLockComponent",
                     "Id": 4965244644527836261
-                },
-                "Component_[7170656092478701158]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 7170656092478701158,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 24.5,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.06599999964237213
-                        ],
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.309000015258789
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
                 },
                 "Component_[8801526189808124059]": {
                     "$type": "EditorEntitySortComponent",
@@ -1075,6 +1098,32 @@
                 "Component_[9696718486461945394]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 9696718486461945394
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 11815838107820047893,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 24.5,
+                        "Centre of mass offset": [
+                            0.0,
+                            0.0,
+                            0.06599999964237213
+                        ],
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Is Limited": false,
+                        "Motor configuration": {
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
+                    }
                 }
             }
         },
@@ -1182,14 +1231,6 @@
                         ]
                     }
                 },
-                "Component_[1693781120187366471]": {
-                    "$type": "EditorFixedJointComponent",
-                    "Id": 1693781120187366471,
-                    "Configuration": {
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126335328500380]"
-                    }
-                },
                 "Component_[17312067275736616703]": {
                     "$type": "GenericComponentWrapper",
                     "Id": 17312067275736616703,
@@ -1209,26 +1250,6 @@
                 "Component_[3754246985619722010]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 3754246985619722010
-                },
-                "Component_[6338218438224813452]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 6338218438224813452,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 25.0,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            -0.6000000238418579,
-                            2.0
-                        ],
-                        "Compute inertia": false
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
                 },
                 "Component_[6492306332728591622]": {
                     "$type": "EditorEntitySortComponent",
@@ -1309,6 +1330,26 @@
                                     ]
                                 }
                             }
+                        },
+                        "Component_[6338218438224813452]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 6338218438224813452,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 25.0,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    0.0,
+                                    -0.6000000238418579,
+                                    2.0
+                                ],
+                                "Compute inertia": false
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
                         }
                     }
                 },
@@ -1322,7 +1363,17 @@
                 },
                 "Component_[924895257842488405]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 924895257842488405
+                    "Id": 924895257842488405,
+                    "PendingComponents": {
+                        "Component_[1693781120187366471]": {
+                            "$type": "EditorFixedJointComponent",
+                            "Id": 1693781120187366471,
+                            "Configuration": {
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[126335328500380]"
+                            }
+                        }
+                    }
                 },
                 "Component_[9304968376340893899]": {
                     "$type": "EditorColliderComponent",
@@ -1360,6 +1411,14 @@
                             ]
                         }
                     }
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 3017352758693730469,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 25.0
+                    }
                 }
             }
         },
@@ -1377,7 +1436,30 @@
                 },
                 "Component_[15593375620524967830]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 15593375620524967830
+                    "Id": 15593375620524967830,
+                    "PendingComponents": {
+                        "Component_[8256314269288681187]": {
+                            "$type": "EditorPrismaticJointComponent",
+                            "Id": 8256314269288681187,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126378278173340]",
+                                "Child Entity": "Entity_[126339623467676]"
+                            },
+                            "Linear Limit": {
+                                "Lower Limit": -0.800000011920929,
+                                "Upper Limit": 1.2000000476837158
+                            },
+                            "Motor": {
+                                "UseMotor": true,
+                                "ForceLimit": 3.0
+                            }
+                        }
+                    }
                 },
                 "Component_[15912017527077177972]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -1441,37 +1523,37 @@
                         ]
                     }
                 },
-                "Component_[4084901303012084421]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 4084901303012084421,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false,
-                        "Compute Mass": false,
-                        "Mass": 25.0,
-                        "Compute COM": false,
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.8040039539337158,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.9002935886383057,
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.0483407974243164
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
                 "Component_[5537772980649449717]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 5537772980649449717,
                     "DisabledComponents": {
+                        "Component_[4084901303012084421]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 4084901303012084421,
+                            "Configuration": {
+                                "entityId": "",
+                                "Gravity Enabled": false,
+                                "Compute Mass": false,
+                                "Mass": 25.0,
+                                "Compute COM": false,
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.8040039539337158,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.9002935886383057,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.0483407974243164
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        },
                         "Component_[6396534764272724810]": {
                             "$type": "EditorColliderComponent",
                             "Id": 6396534764272724810,
@@ -1494,6 +1576,18 @@
                                     ]
                                 }
                             }
+                        },
+                        "PidMotorControllerComponent": {
+                            "$type": "GenericComponentWrapper",
+                            "Id": 14936381386396778998,
+                            "m_template": {
+                                "$type": "PidMotorControllerComponent",
+                                "PidPosition": {
+                                    "P": 180.0,
+                                    "D": 60.0,
+                                    "Output limit": 450.0
+                                }
+                            }
                         }
                     }
                 },
@@ -1506,27 +1600,6 @@
                         "Entity_[126292378827420]"
                     ]
                 },
-                "Component_[8256314269288681187]": {
-                    "$type": "EditorPrismaticJointComponent",
-                    "Id": 8256314269288681187,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126378278173340]",
-                        "Child Entity": "Entity_[126339623467676]"
-                    },
-                    "Linear Limit": {
-                        "Lower Limit": -0.800000011920929,
-                        "Upper Limit": 1.2000000476837158
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 3.0
-                    }
-                },
                 "Component_[8857359616044755216]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 8857359616044755216
@@ -1536,18 +1609,29 @@
                     "Id": 9145617912145528580,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
-                        "Frame Name": "kraken_manipulator_link_2"
+                        "Frame Name": "kraken_manipulator_link_2",
+                        "Joint Name": "kraken_manipulator_joint_2"
                     }
                 },
-                "PidMotorControllerComponent": {
-                    "$type": "GenericComponentWrapper",
-                    "Id": 14936381386396778998,
-                    "m_template": {
-                        "$type": "PidMotorControllerComponent",
-                        "PidPosition": {
-                            "P": 180.0,
-                            "D": 60.0,
-                            "Output limit": 450.0
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 4665094235647312465,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 25.0,
+                        "Articulation Joint Type": 2,
+                        "Local Rotation": [
+                            0.0,
+                            -90.0,
+                            0.0
+                        ],
+                        "Linear Limit Lower": -0.800000011920929,
+                        "Linear Limit Upper": 1.2000000476837158,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "ForceLimit": 10.0,
+                            "Stiffness": 1800.0,
+                            "Damping": 600.0
                         }
                     }
                 }
@@ -1887,11 +1971,67 @@
                 },
                 "Component_[13574930033733880726]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 13574930033733880726
+                    "Id": 13574930033733880726,
+                    "DisabledComponents": {
+                        "Component_[9840464468751628122]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 9840464468751628122,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 24.5,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    0.0,
+                                    0.0,
+                                    0.13199999928474426
+                                ],
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.309000015258789
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[13834265536861532185]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 13834265536861532185
+                    "Id": 13834265536861532185,
+                    "PendingComponents": {
+                        "Component_[639197027413389068]": {
+                            "$type": "EditorHingeJointComponent",
+                            "Id": 639197027413389068,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[126356803336860]"
+                            },
+                            "Angular Limit": {
+                                "Positive Limit": 360.0,
+                                "Negative Limit": -360.0
+                            },
+                            "Motor": {
+                                "UseMotor": true,
+                                "ForceLimit": 100.0
+                            }
+                        }
+                    }
                 },
                 "Component_[13880015424379613991]": {
                     "$type": "EditorVisibilityComponent",
@@ -1961,27 +2101,6 @@
                         "Frame Name": "wheel_rear_left_link"
                     }
                 },
-                "Component_[639197027413389068]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 639197027413389068,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126356803336860]"
-                    },
-                    "Angular Limit": {
-                        "Positive Limit": 360.0,
-                        "Negative Limit": -360.0
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 100.0
-                    }
-                },
                 "Component_[6459884325005728245]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 6459884325005728245,
@@ -1989,40 +2108,31 @@
                         "Entity_[126318148631196]"
                     ]
                 },
-                "Component_[9840464468751628122]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 9840464468751628122,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 24.5,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            0.13199999928474426
-                        ],
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.309000015258789
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
                 "Component_[9976445161209749090]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 9976445161209749090
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 5741169488533457115,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 24.5,
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Is Limited": false,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
+                    }
                 }
             }
         },
@@ -2053,32 +2163,62 @@
                 },
                 "Component_[15683610170114144474]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 15683610170114144474
-                },
-                "Component_[16510639015629632154]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 16510639015629632154,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126361098304156]"
-                    },
-                    "Angular Limit": {
-                        "Positive Limit": 360.0,
-                        "Negative Limit": -360.0
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 100.0
+                    "Id": 15683610170114144474,
+                    "PendingComponents": {
+                        "Component_[16510639015629632154]": {
+                            "$type": "EditorHingeJointComponent",
+                            "Id": 16510639015629632154,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[126361098304156]"
+                            },
+                            "Angular Limit": {
+                                "Positive Limit": 360.0,
+                                "Negative Limit": -360.0
+                            },
+                            "Motor": {
+                                "UseMotor": true,
+                                "ForceLimit": 100.0
+                            }
+                        }
                     }
                 },
                 "Component_[16851971225857889294]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 16851971225857889294
+                    "Id": 16851971225857889294,
+                    "DisabledComponents": {
+                        "Component_[931213666660357013]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 931213666660357013,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 24.5,
+                                "Compute COM": false,
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.309000015258789
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[17060182853893590654]": {
                     "$type": "EditorVisibilityComponent",
@@ -2159,30 +2299,31 @@
                         "SteeringEntity": ""
                     }
                 },
-                "Component_[931213666660357013]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 931213666660357013,
-                    "Configuration": {
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 4633671380686055009,
+                    "ArticulationConfiguration": {
                         "entityId": "",
-                        "Compute Mass": false,
                         "Mass": 24.5,
-                        "Compute COM": false,
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.7870000004768372,
+                        "Centre of mass offset": [
                             0.0,
                             0.0,
-                            0.0,
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.309000015258789
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
+                            0.13199999928474426
+                        ],
                         "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Is Limited": false,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
                     }
                 }
             }
@@ -2376,61 +2517,65 @@
                         ]
                     }
                 },
-                "Component_[3295703957640737463]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 3295703957640737463,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 24.5,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            0.0,
-                            0.0,
-                            -0.06599999964237213
-                        ],
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            0.7870000004768372,
-                            0.0,
-                            0.0,
-                            0.0,
-                            1.309000015258789
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
                 "Component_[3377818137773634105]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 3377818137773634105
-                },
-                "Component_[6758186630462144257]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 6758186630462144257,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126309558696604]",
-                        "Child Entity": "Entity_[126369688238748]"
-                    },
-                    "Angular Limit": {
-                        "Positive Limit": 360.0,
-                        "Negative Limit": -360.0
+                    "Id": 3377818137773634105,
+                    "PendingComponents": {
+                        "Component_[6758186630462144257]": {
+                            "$type": "EditorHingeJointComponent",
+                            "Id": 6758186630462144257,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126309558696604]",
+                                "Child Entity": "Entity_[126369688238748]"
+                            },
+                            "Angular Limit": {
+                                "Positive Limit": 360.0,
+                                "Negative Limit": -360.0
+                            }
+                        }
                     }
                 },
                 "Component_[6853700600595112405]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6853700600595112405
+                    "Id": 6853700600595112405,
+                    "DisabledComponents": {
+                        "Component_[3295703957640737463]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 3295703957640737463,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 24.5,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    0.0,
+                                    0.0,
+                                    -0.06599999964237213
+                                ],
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    0.7870000004768372,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    1.309000015258789
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[8600248634478648640]": {
                     "$type": "GenericComponentWrapper",
@@ -2438,6 +2583,32 @@
                     "m_template": {
                         "$type": "ROS2FrameComponent",
                         "Frame Name": "wheel_front_right_link"
+                    }
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 4839198707164261515,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 24.5,
+                        "Centre of mass offset": [
+                            0.0,
+                            0.0,
+                            0.06599999964237213
+                        ],
+                        "SolverPositionIterations": 40,
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Is Limited": false,
+                        "Motor configuration": {
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
                     }
                 }
             }
@@ -2606,9 +2777,10 @@
                     "Id": 16519715061517421897,
                     "m_template": {
                         "$type": "ManipulatorController",
-                        "ManipulatorEntityX": "Entity_[126339623467676]",
-                        "ManipulatorEntityY": "Entity_[126300968762012]",
-                        "ManipulatorEntityZ": "Entity_[126378278173340]",
+                        "ManipulatorEntityX": "base_link/kraken_manipulator_joint_2",
+                        "ManipulatorEntityY": "base_link/kraken_manipulator_joint_4",
+                        "ManipulatorEntityZ": "base_link/kraken_manipulator_joint_1",
+                        "ManipulatorBase": "Entity_[126378278173340]",
                         "ManipulatorVecZ": [
                             0.0,
                             0.0,
@@ -2795,37 +2967,6 @@
                         }
                     }
                 },
-                "Component_[4128152538995544053]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 4128152538995544053,
-                    "Configuration": {
-                        "entityId": "",
-                        "Compute Mass": false,
-                        "Mass": 300.0,
-                        "Compute COM": false,
-                        "Centre of mass offset": [
-                            1.0036380290985107,
-                            0.0,
-                            0.4000000059604645
-                        ],
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            50.0,
-                            0.0,
-                            0.0,
-                            0.0,
-                            239.99998474121094,
-                            0.0,
-                            0.0,
-                            0.0,
-                            249.99998474121094
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
                 "Component_[4200637452497905173]": {
                     "$type": "EditorTagComponent",
                     "Id": 4200637452497905173,
@@ -2877,7 +3018,40 @@
                 },
                 "Component_[7542806593715109284]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 7542806593715109284
+                    "Id": 7542806593715109284,
+                    "DisabledComponents": {
+                        "Component_[4128152538995544053]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 4128152538995544053,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 300.0,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    1.0036380290985107,
+                                    0.0,
+                                    0.4000000059604645
+                                ],
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    50.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    239.99998474121094,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    249.99998474121094
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[8372238163039562532]": {
                     "$type": "EditorLockComponent",
@@ -2922,6 +3096,14 @@
                                 0.09796500205993652
                             ]
                         }
+                    }
+                },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 3272542068414424514,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 300.0
                     }
                 }
             }
@@ -2969,7 +3151,36 @@
                 },
                 "Component_[2131174044217704056]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 2131174044217704056
+                    "Id": 2131174044217704056,
+                    "DisabledComponents": {
+                        "Component_[530056128556857278]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 530056128556857278,
+                            "Configuration": {
+                                "entityId": "",
+                                "Gravity Enabled": false,
+                                "Compute Mass": false,
+                                "Mass": 25.0,
+                                "Compute COM": false,
+                                "Compute inertia": false,
+                                "Inertia tensor": [
+                                    0.5,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    8.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                    8.0
+                                ]
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[4789539639202395499]": {
                     "$type": "EditorLockComponent",
@@ -2979,65 +3190,41 @@
                     "$type": "EditorOnlyEntityComponent",
                     "Id": 5240487496890216289
                 },
-                "Component_[530056128556857278]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 530056128556857278,
-                    "Configuration": {
-                        "entityId": "",
-                        "Gravity Enabled": false,
-                        "Compute Mass": false,
-                        "Mass": 25.0,
-                        "Compute COM": false,
-                        "Compute inertia": false,
-                        "Inertia tensor": [
-                            0.5,
-                            0.0,
-                            0.0,
-                            0.0,
-                            8.0,
-                            0.0,
-                            0.0,
-                            0.0,
-                            8.0
-                        ]
-                    },
-                    "PhysXSpecificConfiguration": {
-                        "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
-                    }
-                },
-                "Component_[5405192070174247494]": {
-                    "$type": "EditorPrismaticJointComponent",
-                    "Id": 5405192070174247494,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126378278173340]"
-                    },
-                    "Linear Limit": {
-                        "Lower Limit": -1.2000000476837158,
-                        "Upper Limit": 0.6700000166893005
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 3.0
-                    }
-                },
                 "Component_[6517663388098082332]": {
                     "$type": "GenericComponentWrapper",
                     "Id": 6517663388098082332,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
-                        "Frame Name": "kraken_manipulator_link_1"
+                        "Frame Name": "kraken_manipulator_link_1",
+                        "Joint Name": "kraken_manipulator_joint_1"
                     }
                 },
                 "Component_[6610843948301279295]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 6610843948301279295
+                    "Id": 6610843948301279295,
+                    "PendingComponents": {
+                        "Component_[5405192070174247494]": {
+                            "$type": "EditorPrismaticJointComponent",
+                            "Id": 5405192070174247494,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[126378278173340]"
+                            },
+                            "Linear Limit": {
+                                "Lower Limit": -1.2000000476837158,
+                                "Upper Limit": 0.6700000166893005
+                            },
+                            "Motor": {
+                                "UseMotor": true,
+                                "ForceLimit": 3.0
+                            }
+                        }
+                    }
                 },
                 "Component_[7370586322450868306]": {
                     "$type": "EditorColliderComponent",
@@ -3079,6 +3266,39 @@
                         }
                     }
                 },
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 2112741762439829769,
+                    "ArticulationConfiguration": {
+                        "entityId": "",
+                        "Mass": 25.0,
+                        "Articulation Joint Type": 2,
+                        "Local Rotation": [
+                            0.0,
+                            -90.0,
+                            0.0
+                        ],
+                        "Linear Limit Lower": -1.2000000476837158,
+                        "Linear Limit Upper": 0.6700000166893005,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "ForceLimit": 10.0,
+                            "Stiffness": 21000.0,
+                            "Damping": 7000.0
+                        }
+                    }
+                },
+                "JointsArticulationControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 8809887007952064449,
+                    "m_template": {
+                        "$type": "JointsArticulationControllerComponent"
+                    }
+                },
+                "JointsManipulationEditorComponent": {
+                    "$type": "JointsManipulationEditorComponent",
+                    "Id": 10341313920500418599
+                },
                 "PidMotorControllerComponent": {
                     "$type": "GenericComponentWrapper",
                     "Id": 5701450725263707599,
@@ -3099,32 +3319,56 @@
             "Components": {
                 "Component_[10191360466381241353]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 10191360466381241353
+                    "Id": 10191360466381241353,
+                    "PendingComponents": {
+                        "Component_[17441467497490158176]": {
+                            "$type": "EditorHingeJointComponent",
+                            "Id": 17441467497490158176,
+                            "Configuration": {
+                                "Local Rotation": [
+                                    0.0,
+                                    -89.99999237060547,
+                                    0.0
+                                ],
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[126382573140636]"
+                            },
+                            "Motor": {
+                                "UseMotor": true,
+                                "ForceLimit": 50.0
+                            }
+                        }
+                    }
                 },
                 "Component_[1078824117725777239]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 1078824117725777239
+                    "Id": 1078824117725777239,
+                    "DisabledComponents": {
+                        "Component_[9973926403126530935]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 9973926403126530935,
+                            "Configuration": {
+                                "entityId": "",
+                                "Compute Mass": false,
+                                "Mass": 20.0,
+                                "Compute COM": false,
+                                "Centre of mass offset": [
+                                    0.0,
+                                    0.0,
+                                    -0.03999999910593033
+                                ],
+                                "Compute inertia": false
+                            },
+                            "PhysXSpecificConfiguration": {
+                                "SolverPositionIterations": 40,
+                                "SolverVelocityIterations": 15
+                            }
+                        }
+                    }
                 },
                 "Component_[11511820399975504955]": {
                     "$type": "EditorVisibilityComponent",
                     "Id": 11511820399975504955
-                },
-                "Component_[17441467497490158176]": {
-                    "$type": "EditorHingeJointComponent",
-                    "Id": 17441467497490158176,
-                    "Configuration": {
-                        "Local Rotation": [
-                            0.0,
-                            -89.99999237060547,
-                            0.0
-                        ],
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[126382573140636]"
-                    },
-                    "Motor": {
-                        "UseMotor": true,
-                        "ForceLimit": 50.0
-                    }
                 },
                 "Component_[18116517932786798066]": {
                     "$type": "EditorInspectorComponent",
@@ -3170,24 +3414,33 @@
                     "$type": "EditorEntityIconComponent",
                     "Id": 7455697704436504967
                 },
-                "Component_[9973926403126530935]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 9973926403126530935,
-                    "Configuration": {
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 15585036827225521379,
+                    "ArticulationConfiguration": {
                         "entityId": "",
-                        "Compute Mass": false,
                         "Mass": 20.0,
-                        "Compute COM": false,
                         "Centre of mass offset": [
                             0.0,
                             0.0,
                             -0.03999999910593033
                         ],
-                        "Compute inertia": false
-                    },
-                    "PhysXSpecificConfiguration": {
                         "SolverPositionIterations": 40,
-                        "SolverVelocityIterations": 15
+                        "SolverVelocityIterations": 10,
+                        "Articulation Joint Type": 1,
+                        "Local Rotation": [
+                            0.0,
+                            -89.99999237060547,
+                            0.0
+                        ],
+                        "Angular Limit Negative": -29.994340896606445,
+                        "Angular Limit Positive": 29.994340896606445,
+                        "Motor configuration": {
+                            "UseMotor": true,
+                            "ForceLimit": 50.0,
+                            "Stiffness": 900.0,
+                            "Damping": 300.0
+                        }
                     }
                 }
             }
@@ -4024,14 +4277,6 @@
             "Id": "Entity_[50844409631117]",
             "Name": "Rest",
             "Components": {
-                "Component_[11816699075836333974]": {
-                    "$type": "EditorFixedJointComponent",
-                    "Id": 11816699075836333974,
-                    "Configuration": {
-                        "Parent Entity": "Entity_[126373983206044]",
-                        "Child Entity": "Entity_[50844409631117]"
-                    }
-                },
                 "Component_[12697938191475283348]": {
                     "$type": "EditorInspectorComponent",
                     "Id": 12697938191475283348
@@ -4069,7 +4314,17 @@
                 },
                 "Component_[5225794773858524084]": {
                     "$type": "EditorPendingCompositionComponent",
-                    "Id": 5225794773858524084
+                    "Id": 5225794773858524084,
+                    "PendingComponents": {
+                        "Component_[11816699075836333974]": {
+                            "$type": "EditorFixedJointComponent",
+                            "Id": 11816699075836333974,
+                            "Configuration": {
+                                "Parent Entity": "Entity_[126373983206044]",
+                                "Child Entity": "Entity_[50844409631117]"
+                            }
+                        }
+                    }
                 },
                 "Component_[5289266319031448357]": {
                     "$type": "EditorColliderComponent",
@@ -4114,16 +4369,25 @@
                 },
                 "Component_[6946889498263467459]": {
                     "$type": "EditorDisabledCompositionComponent",
-                    "Id": 6946889498263467459
+                    "Id": 6946889498263467459,
+                    "DisabledComponents": {
+                        "Component_[9874618353393414101]": {
+                            "$type": "EditorRigidBodyComponent",
+                            "Id": 9874618353393414101,
+                            "Configuration": {
+                                "entityId": ""
+                            }
+                        }
+                    }
                 },
                 "Component_[8400454136611228951]": {
                     "$type": "EditorEntitySortComponent",
                     "Id": 8400454136611228951
                 },
-                "Component_[9874618353393414101]": {
-                    "$type": "EditorRigidBodyComponent",
-                    "Id": 9874618353393414101,
-                    "Configuration": {
+                "EditorArticulationLinkComponent": {
+                    "$type": "EditorArticulationLinkComponent",
+                    "Id": 8162142227964626314,
+                    "ArticulationConfiguration": {
                         "entityId": ""
                     }
                 }

@@ -42,6 +42,7 @@ namespace AppleKraken
                 ->Field("ManipulatorEntityX", &ManipulatorController::m_jointX)
                 ->Field("ManipulatorEntityY", &ManipulatorController::m_jointY)
                 ->Field("ManipulatorEntityZ", &ManipulatorController::m_jointZ)
+                ->Field("ManipulatorBase", &ManipulatorController::m_manipulatorBase)
                 ->Field("ManipulatorVecX", &ManipulatorController::m_vectorX)
                 ->Field("ManipulatorVecY", &ManipulatorController::m_vectorY)
                 ->Field("ManipulatorVecZ", &ManipulatorController::m_vectorZ)
@@ -59,6 +60,7 @@ namespace AppleKraken
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointX, "m_jointX", "m_jointX")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointY, "m_jointY", "m_jointY")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointZ, "m_joint_z1", "m_jointZ")
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_manipulatorBase, "Manipulator base", "Base of the manipulator, containing the joints manipulation component")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorX, "vx", "vx")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorY, "vy", "vy")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorZ, "vz", "vz")
@@ -108,12 +110,12 @@ namespace AppleKraken
         AZ::Outcome<float, AZStd::string> pos_x;
         AZ::Outcome<float, AZStd::string> pos_z;
 
-        ROS2::JointsManipulationRequestBus::Event(GetEntityId(), &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointX, m_setPointX);
-        ROS2::JointsManipulationRequestBus::EventResult(pos_x, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointX);
+        ROS2::JointsManipulationRequestBus::Event(m_manipulatorBase, &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointX, m_setPointX);
+        ROS2::JointsManipulationRequestBus::EventResult(pos_x, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointX);
         error_x = pos_x.GetValue() - m_setPointX;
 
-        ROS2::JointsManipulationRequestBus::Event(GetEntityId(), &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointZ, m_setPointZ);
-        ROS2::JointsManipulationRequestBus::EventResult(pos_z, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointZ);
+        ROS2::JointsManipulationRequestBus::Event(m_manipulatorBase, &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointZ, m_setPointZ);
+        ROS2::JointsManipulationRequestBus::EventResult(pos_z, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointZ);
         error_z = pos_z.GetValue() - m_setPointZ;
 
         // auto - disable nose retrieve only if we reached small error.
@@ -143,7 +145,7 @@ namespace AppleKraken
                 {
                     float error_y = std::numeric_limits<float>::max();
                     AZ::Outcome<float, AZStd::string> pos_y = 0.f;
-                    ROS2::JointsManipulationRequestBus::EventResult(pos_y, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointY);
+                    ROS2::JointsManipulationRequestBus::EventResult(pos_y, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointY);
                     error_y = pos_y.GetValue() - oldSetPointY;
                     if (error_y < max_errorY && error_y > -max_errorY)
                     {
@@ -156,7 +158,7 @@ namespace AppleKraken
             {
                 m_noseRetrievingSuccess = false;
             }
-            ROS2::JointsManipulationRequestBus::Event(GetEntityId(), &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointY, m_setPointY);
+            ROS2::JointsManipulationRequestBus::Event(m_manipulatorBase, &ROS2::JointsManipulationRequests::MoveJointToPosition, m_jointY, m_setPointY);
         }
     }
 
@@ -174,9 +176,9 @@ namespace AppleKraken
         AZ::Outcome<float, AZStd::string> x{0};
         AZ::Outcome<float, AZStd::string> y{0};
         AZ::Outcome<float, AZStd::string> z{0};
-        ROS2::JointsManipulationRequestBus::EventResult(x, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointX);
-        ROS2::JointsManipulationRequestBus::EventResult(y, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointY);
-        ROS2::JointsManipulationRequestBus::EventResult(z, GetEntityId(), &ROS2::JointsManipulationRequests::GetJointPosition, m_jointZ);
+        ROS2::JointsManipulationRequestBus::EventResult(x, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointX);
+        ROS2::JointsManipulationRequestBus::EventResult(y, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointY);
+        ROS2::JointsManipulationRequestBus::EventResult(z, m_manipulatorBase, &ROS2::JointsManipulationRequests::GetJointPosition, m_jointZ);
         return AZ::Vector3{x.GetValue(), y.GetValue(), z.GetValue()};
     };
 
