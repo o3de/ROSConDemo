@@ -27,7 +27,7 @@
                     "Translate": [
                         -64.3432846069336,
                         43.738372802734375,
-                        0.3443603515625
+                        0.37120699882507324
                     ],
                     "Rotate": [
                         0.0,
@@ -1120,7 +1120,7 @@
                         ],
                         "Is Limited": false,
                         "Motor configuration": {
-                            "Stiffness": 900.0,
+                            "Stiffness": 0.0,
                             "Damping": 300.0
                         }
                     }
@@ -2129,7 +2129,8 @@
                         "Is Limited": false,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "Stiffness": 900.0,
+                            "ForceLimit": 10.0,
+                            "Stiffness": 0.0,
                             "Damping": 300.0
                         }
                     }
@@ -2321,7 +2322,8 @@
                         "Is Limited": false,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "Stiffness": 900.0,
+                            "ForceLimit": 10.0,
+                            "Stiffness": 0.0,
                             "Damping": 300.0
                         }
                     }
@@ -2606,7 +2608,7 @@
                         ],
                         "Is Limited": false,
                         "Motor configuration": {
-                            "Stiffness": 900.0,
+                            "Stiffness": 0.0,
                             "Damping": 300.0
                         }
                     }
