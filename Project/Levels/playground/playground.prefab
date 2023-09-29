@@ -23,7 +23,7 @@
                     "Entity_[31517150650129]",
                     "Instance_[7126031376145]/ContainerEntity",
                     "Instance_[3619390402074]/ContainerEntity",
-                    "Instance_[5580017352606]/ContainerEntity"
+                    "Instance_[5473318180809]/ContainerEntity"
                 ]
             },
             "Component_[15230859088967841193]": {
@@ -934,102 +934,28 @@
                 }
             ]
         },
-        "Instance_[5580017352606]": {
-            "Source": "Assets/Importer/apple_kraken.prefab",
+        "Instance_[5473318180809]": {
+            "Source": "Assets/Kraken/apple_kraken_v1/apple_kraken_v1.prefab",
             "Patches": [
                 {
                     "op": "replace",
-                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Stiffness",
-                    "value": 1000.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[22981126918541]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Motor configuration/Damping",
-                    "value": 400.0
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[23049846395277]/Components/EditorArticulationLinkComponent/ArticulationConfiguration/Fixed Base",
-                    "value": true
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorDisabledCompositionComponent",
-                    "value": {
-                        "$type": "EditorDisabledCompositionComponent",
-                        "Id": 15968047316347643744,
-                        "DisabledComponents": []
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorEntityIconComponent",
-                    "value": {
-                        "$type": "EditorEntityIconComponent",
-                        "Id": 3537829379113050414,
-                        "EntityIconAssetId": {
-                            "guid": "{00000000-0000-0000-0000-000000000000}",
-                            "subId": 0
-                        }
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorEntitySortComponent",
-                    "value": {
-                        "$type": "EditorEntitySortComponent",
-                        "Id": 18435492243951211106,
-                        "Child Entity Order": [
-                            "Entity_[23049846395277]"
-                        ]
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorInspectorComponent",
-                    "value": {
-                        "$type": "EditorInspectorComponent",
-                        "Id": 10482711909646458568,
-                        "ComponentOrderEntryArray": []
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorOnlyEntityComponent",
-                    "value": {
-                        "$type": "EditorOnlyEntityComponent",
-                        "Id": 12818327880798346636,
-                        "IsEditorOnly": false
-                    }
-                },
-                {
-                    "op": "add",
-                    "path": "/ContainerEntity/Components/EditorPendingCompositionComponent",
-                    "value": {
-                        "$type": "EditorPendingCompositionComponent",
-                        "Id": 17759523880244840263,
-                        "PendingComponents": []
-                    }
-                },
-                {
-                    "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Parent Entity",
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Parent Entity",
                     "value": "../Entity_[1146574390643]"
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/0",
-                    "value": 3.7734313011169434
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/0",
+                    "value": 2.0186290740966797
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/1",
-                    "value": -2.5501718521118164
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/1",
+                    "value": 0.27888190746307373
                 },
                 {
                     "op": "replace",
-                    "path": "/ContainerEntity/Components/TransformComponent/Transform Data/Translate/2",
-                    "value": 0.11927628517150879
+                    "path": "/ContainerEntity/Components/Component_[16951455423041694634]/Transform Data/Translate/2",
+                    "value": 0.37120699882507324
                 }
             ]
         },
