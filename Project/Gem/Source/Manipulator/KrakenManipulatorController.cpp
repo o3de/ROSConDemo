@@ -93,8 +93,6 @@ namespace AppleKraken
 
     void ManipulatorController::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
-        AZ_TracePrintf("KrakenManipulator", "Positions X, Y, Z: %f, %f, %f", m_setPointX, m_setPointY, m_setPointZ);
-
         if (!m_initialized)
         {
             // get offset to effector

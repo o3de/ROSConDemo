@@ -1629,9 +1629,9 @@
                         "Linear Limit Upper": 1.2000000476837158,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "ForceLimit": 10.0,
-                            "Stiffness": 1800.0,
-                            "Damping": 600.0
+                            "ForceLimit": 5.0,
+                            "Stiffness": 3600.0,
+                            "Damping": 1200.0
                         }
                     }
                 }
@@ -2129,7 +2129,7 @@
                         "Is Limited": false,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "ForceLimit": 10.0,
+                            "ForceLimit": 100.0,
                             "Stiffness": 0.0,
                             "Damping": 300.0
                         }
@@ -2322,7 +2322,7 @@
                         "Is Limited": false,
                         "Motor configuration": {
                             "UseMotor": true,
-                            "ForceLimit": 10.0,
+                            "ForceLimit": 100.0,
                             "Stiffness": 0.0,
                             "Damping": 300.0
                         }
@@ -3285,8 +3285,8 @@
                         "Motor configuration": {
                             "UseMotor": true,
                             "ForceLimit": 10.0,
-                            "Stiffness": 21000.0,
-                            "Damping": 7000.0
+                            "Stiffness": 42000.0,
+                            "Damping": 14000.0
                         }
                     }
                 },
@@ -4213,6 +4213,7 @@
                 "Component_[1622581209164351781]": {
                     "$type": "EditorSphereShapeComponent",
                     "Id": 1622581209164351781,
+                    "GameView": true,
                     "SphereShape": {
                         "Configuration": {
                             "Radius": 0.05000000074505806
@@ -4305,6 +4306,7 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
+                    "GameView": true,
                     "ShapeColor": [
                         0.0,
                         0.0,

@@ -90,6 +90,7 @@ namespace AppleKraken
                         BeginTransitionIfAcceptable(EffectorState::RETRIEVING_STABILIZE);
                     }
                 }
+                AZ_TracePrintf("K eff", "Collided with something");
             });
     }
 
