@@ -82,6 +82,8 @@ namespace AppleKraken
                 }
                 if (m_restEntityId == collideToEntityId)
                 {
+                    // @TODO: This doesn't trigger for some reason.
+
                     AZ_TracePrintf("m_onTriggerHandleBeginHandler", "%s : m_onTriggerHandle to Rest!====================",
                                    GetEntity()->GetName().c_str());
                     if (m_effectorState == EffectorState::RETRIEVING || m_effectorState == EffectorState::RETRIEVING_NOSE )
@@ -90,7 +92,6 @@ namespace AppleKraken
                         BeginTransitionIfAcceptable(EffectorState::RETRIEVING_STABILIZE);
                     }
                 }
-                AZ_TracePrintf("K eff", "Collided with something");
             });
     }
 

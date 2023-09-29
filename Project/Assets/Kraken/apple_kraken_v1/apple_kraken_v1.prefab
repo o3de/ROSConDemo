@@ -4213,7 +4213,6 @@
                 "Component_[1622581209164351781]": {
                     "$type": "EditorSphereShapeComponent",
                     "Id": 1622581209164351781,
-                    "GameView": true,
                     "SphereShape": {
                         "Configuration": {
                             "Radius": 0.05000000074505806
@@ -4306,7 +4305,6 @@
                 "Component_[17927326201704032634]": {
                     "$type": "EditorBoxShapeComponent",
                     "Id": 17927326201704032634,
-                    "GameView": true,
                     "ShapeColor": [
                         0.0,
                         0.0,
