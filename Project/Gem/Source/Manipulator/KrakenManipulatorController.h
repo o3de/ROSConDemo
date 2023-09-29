@@ -35,7 +35,7 @@ namespace AppleKraken
         static void Reflect(AZ::ReflectContext* context);
 
     private:
-        bool initialized{ false };
+        bool m_initialized{ false };
         void OnTick(float deltaTime, AZ::ScriptTimePoint time) override;
         void OnImGuiUpdate() override;
         void PickApple(const AZ::Vector3 position) override;
@@ -59,6 +59,9 @@ namespace AppleKraken
         AZ::Vector3 m_vectorY{0, 1, 0 };
         AZ::Vector3 m_vectorZ{0, 0, 1 };
 
+        AZ::EntityId m_jointXId;
+        AZ::EntityId m_jointYId;
+        AZ::EntityId m_jointZId;
         AZStd::string m_jointX;
         AZStd::string m_jointY;
         AZStd::string m_jointZ;

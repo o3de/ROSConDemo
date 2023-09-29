@@ -9,21 +9,40 @@
 #include "KrakenManipulatorController.h"
 #include <ROS2/Manipulation/JointsManipulationRequests.h>
 #include <AzCore/Serialization/EditContext.h>
+#include <ROS2/Frame/ROS2FrameComponent.h>
 
 #include <AzFramework/Components/TransformComponent.h>
 #include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 #include <type_traits>
 
-#include <iostream>
 
 namespace AppleKraken
 {
+    namespace
+    {
+        AZStd::string GetJointName(AZ::EntityId entityId)
+        {
+            AZ::Entity* entity{ nullptr };
+            AZ::ComponentApplicationBus::BroadcastResult(entity, &AZ::ComponentApplicationRequests::FindEntity, entityId);
+            AZ_Assert(entity, "Entity %s not found.", entityId.ToString().c_str());
+            if (entity)
+            {
+                ROS2::ROS2FrameComponent* component = entity->FindComponent<ROS2::ROS2FrameComponent>();
+                if (component)
+                {
+                    return component->GetJointName().GetStringView();
+                }
+            }
+            return AZStd::string();
+        }
+    }
+
     void ManipulatorController::Activate()
     {
         ManipulatorRequestBus::Handler::BusConnect(GetEntityId());
         AZ::TickBus::Handler::BusConnect();
         ImGui::ImGuiUpdateListenerBus::Handler::BusConnect();
-        initialized = false;
+        m_initialized = false;
     }
 
     void ManipulatorController::Deactivate()
@@ -39,9 +58,9 @@ namespace AppleKraken
         {
             serialize->Class<ManipulatorController, AZ::Component>()
                 ->Version(2)
-                ->Field("ManipulatorEntityX", &ManipulatorController::m_jointX)
-                ->Field("ManipulatorEntityY", &ManipulatorController::m_jointY)
-                ->Field("ManipulatorEntityZ", &ManipulatorController::m_jointZ)
+                ->Field("ManipulatorEntityX", &ManipulatorController::m_jointXId)
+                ->Field("ManipulatorEntityY", &ManipulatorController::m_jointYId)
+                ->Field("ManipulatorEntityZ", &ManipulatorController::m_jointZId)
                 ->Field("ManipulatorBase", &ManipulatorController::m_manipulatorBase)
                 ->Field("ManipulatorVecX", &ManipulatorController::m_vectorX)
                 ->Field("ManipulatorVecY", &ManipulatorController::m_vectorY)
@@ -57,9 +76,9 @@ namespace AppleKraken
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "ManipulatorController")
                     ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("Game"))
                     ->Attribute(AZ::Edit::Attributes::Category, "AppleKraken")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointX, "m_jointX", "m_jointX")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointY, "m_jointY", "m_jointY")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointZ, "m_joint_z1", "m_jointZ")
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointXId, "m_jointX", "m_jointX")
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointYId, "m_jointY", "m_jointY")
+                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_jointZId, "m_jointZ", "m_jointZ")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_manipulatorBase, "Manipulator base", "Base of the manipulator, containing the joints manipulation component")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorX, "vx", "vx")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorY, "vy", "vy")
@@ -74,7 +93,9 @@ namespace AppleKraken
 
     void ManipulatorController::OnTick([[maybe_unused]] float deltaTime, [[maybe_unused]] AZ::ScriptTimePoint time)
     {
-        if (!initialized)
+        AZ_TracePrintf("KrakenManipulator", "Positions X, Y, Z: %f, %f, %f", m_setPointX, m_setPointY, m_setPointZ);
+
+        if (!m_initialized)
         {
             // get offset to effector
             AZ::Transform transformBaseLink;
@@ -83,7 +104,11 @@ namespace AppleKraken
             AZ::TransformBus::EventResult(transformEffector, m_effector, &AZ::TransformBus::Events::GetWorldTM);
             m_transform_base_link_to_effector = transformBaseLink.GetInverse() * transformEffector;
 
-            initialized = true;
+            m_jointX = GetJointName(m_jointXId);
+            m_jointY = GetJointName(m_jointYId);
+            m_jointZ = GetJointName(m_jointZId);
+
+            m_initialized = true;
             return;
         }
 
