@@ -70,6 +70,7 @@ namespace ROSConDemo
 
     void ROSConDemoSystemComponent::GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required)
     {
+        incompatible.push_back(AZ_CRC("ROS2Service"));
     }
 
     void ROSConDemoSystemComponent::GetDependentServices([[maybe_unused]] AZ::ComponentDescriptor::DependencyArrayType& dependent)
