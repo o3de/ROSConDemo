@@ -3,17 +3,6 @@
 	{
 		"SceneAPI":
 		{
-			"AssetImporter":
-			{
-				"SupportedFileTypeExtensions":
-				[
-					".dae",
-					".fbx",
-					".stl",
-					".gltf",
-					".glb"
-				]
-			},
 			"MaterialConverter": 
 			{
 				"Enable": true,
