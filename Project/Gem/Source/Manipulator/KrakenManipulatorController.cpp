@@ -11,7 +11,6 @@
 #include <AzCore/Serialization/EditContext.h>
 
 #include <AzFramework/Components/TransformComponent.h>
-#include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 
 namespace AppleKraken
 {
