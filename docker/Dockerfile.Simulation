@@ -11,8 +11,6 @@ FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
 ENV WORKSPACE=/data/workspace
 
-WORKDIR $WORKSPACE
-
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
 ARG O3DE_BRANCH=main
 ARG O3DE_COMMIT=HEAD
@@ -28,9 +26,16 @@ ARG ROSCON_DEMO_BRANCH=development
 ARG ROSCON_DEMO_COMMIT=HEAD
 ENV ROSCON_DEMO_ROOT=$WORKSPACE/ROSConDemo
 ENV ROSCON_DEMO_PROJECT=$ROSCON_DEMO_ROOT/Project
-ENV ROSCON_DEMO_NAV_ROOT=$ROSCON_DEMO_ROOT/kraken_nav
+ENV ROSCON_DEMO_NAV_ROOT=$WORKSPACE/kraken_nav
+ENV ROSCON_DEMO_SEEDLIST=$ROSCON_DEMO_ROOT/Project/AssetBundling/SeedLists/ROSCon2022.seed
+
+
+WORKDIR $WORKSPACE
 
 # Copy the current project contents to the docker container
+#COPY Project $WORKSPACE/Project
+#COPY kraken_nav $WORKSPACE/kraken_nav
+
 COPY docker/o3de_2.1.0.patch $WORKSPACE/
 
 ENV LANG=en_US.UTF-8
@@ -87,7 +92,6 @@ RUN apt-get update \
             && rm -rf /var/lib/apt/lists/* \
             && pip install python-statemachine
 
-ENV O3DE_PROJECT_PATH=$WORKSPACE/Project
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 #
@@ -122,42 +126,34 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && git -C $ROSCON_DEMO_ROOT lfs install \
     && git -C $ROSCON_DEMO_ROOT lfs pull \
     && git -C $ROSCON_DEMO_ROOT reset --hard $ROSCON_DEMO_COMMIT \
+    && cp -r $ROSCON_DEMO_ROOT/kraken_nav $ROSCON_DEMO_NAV_ROOT \
     \
     ############################################################### \
     # Get the O3DE python and register the gem paths and projects \
     ############################################################### \
-    && $O3DE_ROOT/python/get_python.sh \
-    && $O3DE_ROOT/scripts/o3de.sh register -ep $O3DE_ROOT \
-    && $O3DE_ROOT/scripts/o3de.sh register -gp $O3DE_EXTRAS_ROOT/Gems/ROS2 \
-    && $O3DE_ROOT/scripts/o3de.sh register -pp $ROSCON_DEMO_PROJECT \
+    && $WORKSPACE/o3de/python/get_python.sh \
+    && $WORKSPACE/o3de/scripts/o3de.sh register -ep $O3DE_ROOT \
+    && $WORKSPACE/o3de/scripts/o3de.sh register -gp $O3DE_EXTRAS_ROOT/Gems/ROS2 \
+    && $WORKSPACE/o3de/scripts/o3de.sh register -pp $ROSCON_DEMO_PROJECT \
     \
-    ############################################################### \
-    # Build the Editor, Tools, and clients
-    ############################################################### \
-    && cmake -B $ROSCON_DEMO_PROJECT/build/linux -G "Ninja Multi-Config" \
-                            -S $ROSCON_DEMO_PROJECT \
-                            -DLY_DISABLE_TEST_MODULES=ON \
-                            -DLY_STRIP_DEBUG_SYMBOLS=ON \
-                            -DAZ_USE_PHYSX5=ON \
-    && cmake --build $ROSCON_DEMO_PROJECT/build/linux --config profile \
+    # Run the project exporter to generate the ROSConDemo release package \
     \
-    ############################################################### \
-    # Build the Editor, Tools, and clients
-    ############################################################### \
-    && rm -rf ~/.o3de/3rdParty/ \
-    && rm -rf $O3DE_ROOT/.git \
-    && rm -rf $O3DE_ROOT/AutomatedTesting \
-    && rm -rf $O3DE_ROOT/python/downloaded_packages \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/Azcg/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMake \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMakeFiles/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/External/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/Testing/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/_deps/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/cmake \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/lib/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/o3de/ \
-    && rm -rf $ROSCON_DEMO_PROJECT/build/linux/packages/
+    && $O3DE_ROOT/scripts/o3de.sh export-project -es ExportScripts/export_source_built_project.py \
+                                    --project-path $ROSCON_DEMO_PROJECT \
+                                    --log-level INFO \
+                                    -assets \
+                                    --build-tools \
+                                    --config release \
+                                    --archive-output none \
+                                    --seedlist $ROSCON_DEMO_SEEDLIST \
+                                    -noserver \
+                                    -nounified \
+                                    -out $WORKSPACE \
+    && rm -rf $ROSCON_DEMO_ROOT \
+    && rm -rf $O3DE_EXTRAS_ROOT \
+    && rm -rf $WORKSPACE/o3de-extras \
+    && rm -rf /root/.o3de \
+    && rm -rf /root/O3DE
 
 # Build the navigation stack
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
