@@ -8,7 +8,7 @@ There are three Dockerfile scripts that are designed to provide environments to 
 This Dockerfile will build a docker container that will have the simulation launcher (`ROSConDemo.GameLauncher`), the `kraken_nav` code for the navigation stack, and the `Editor` which can be used to view the demo level and assets.
 
 ### Dockerfile.NavStack
-This Dockerfile will build a docker container will only have the `kraken_nav` code for the navigation stack.
+This Dockerfile will build a docker container that will only have the `kraken_nav` code for the navigation stack.
 
 ### Dockerfile.Simulation
 This Dockerfile will build a docker container that will have the simulation launcher (`ROSConDemo.GameLauncher`) and the `kraken_nav` code for the navigation stack.
