@@ -11,13 +11,14 @@ FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
 ENV WORKSPACE=/data/workspace
 
+WORKDIR $WORKSPACE
+
+# ROSConDemo Variables
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
 ARG ROSCON_DEMO_BRANCH=development
 ARG ROSCON_DEMO_COMMIT=HEAD
 ENV ROSCON_DEMO_ROOT=$WORKSPACE/ROSConDemo
 ENV ROSCON_DEMO_NAV_ROOT=$WORKSPACE/kraken_nav
-
-WORKDIR $WORKSPACE
 
 ENV LANG=en_US.UTF-8
 
@@ -61,8 +62,7 @@ RUN apt-get update \
 
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
-#
-#
+# Clone and build the navstack project
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     ############################################################### \
     # Clone the ROSConDemo \
@@ -73,7 +73,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && git -C $ROSCON_DEMO_ROOT reset --hard $ROSCON_DEMO_COMMIT \
     && mv $ROSCON_DEMO_ROOT/kraken_nav $ROSCON_DEMO_NAV_ROOT \
     && rm -rf $ROSCON_DEMO_ROOT
-
 
 # Build the navigation stack
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \

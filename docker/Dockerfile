@@ -13,16 +13,19 @@ ENV WORKSPACE=/data/workspace
 
 WORKDIR $WORKSPACE
 
+# O3DE Variables
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
 ARG O3DE_BRANCH=main
 ARG O3DE_COMMIT=HEAD
 ENV O3DE_ROOT=$WORKSPACE/o3de
 
+# O3DE Extras Variables
 ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
 ARG O3DE_EXTRAS_BRANCH=main
 ARG O3DE_EXTRAS_COMMIT=HEAD
 ENV O3DE_EXTRAS_ROOT=$WORKSPACE/o3de-extras
 
+# ROSConDemo Variables
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
 ARG ROSCON_DEMO_BRANCH=development
 ARG ROSCON_DEMO_COMMIT=HEAD
@@ -30,7 +33,7 @@ ENV ROSCON_DEMO_ROOT=$WORKSPACE/ROSConDemo
 ENV ROSCON_DEMO_PROJECT=$ROSCON_DEMO_ROOT/Project
 ENV ROSCON_DEMO_NAV_ROOT=$ROSCON_DEMO_ROOT/kraken_nav
 
-# Copy the current project contents to the docker container
+# Copy the release-patch in case its needed
 COPY docker/o3de_2.1.0.patch $WORKSPACE/
 
 ENV LANG=en_US.UTF-8
@@ -87,12 +90,9 @@ RUN apt-get update \
             && rm -rf /var/lib/apt/lists/* \
             && pip install python-statemachine
 
-ENV O3DE_PROJECT_PATH=$WORKSPACE/Project
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
-#
-# Setup o3de and o3de-extras and prepare the environment and build the project.
-#
+# Clone, register, and build the projects
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     \
     # Clone o3de \
