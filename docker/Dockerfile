@@ -140,6 +140,7 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
                             -DLY_STRIP_DEBUG_SYMBOLS=ON \
                             -DAZ_USE_PHYSX5=ON \
     && cmake --build $ROSCON_DEMO_PROJECT/build/linux --config profile \
+             --target ROSConDemo.GameLauncher Editor ROSConDemo.Assets \
     \
     ############################################################### \
     # Build the Editor, Tools, and clients
