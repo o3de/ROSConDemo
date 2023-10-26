@@ -79,7 +79,7 @@ Also included are custom Dockerscripts that will only build the components neces
 * Dockerfile.NavStack
   The Docker image created from this script will only havethe compiled `kraken_nav` code for the navigation stack.
 
-These images will be much smaller that the full `roscon_demo` docker image. 
+These images will be much smaller than the full `roscon_demo` docker image. 
 
 To build the `roscon_sim` Docker image, run the following build command from this `docker` subfolder of this project:
 
