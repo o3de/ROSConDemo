@@ -34,7 +34,7 @@ ENV ROSCON_DEMO_PROJECT=$ROSCON_DEMO_ROOT/Project
 ENV ROSCON_DEMO_NAV_ROOT=$ROSCON_DEMO_ROOT/kraken_nav
 
 # Copy the release-patch in case its needed
-COPY docker/o3de_2.1.0.patch $WORKSPACE/
+COPY o3de_2.1.0.patch $WORKSPACE/
 
 ENV LANG=en_US.UTF-8
 
