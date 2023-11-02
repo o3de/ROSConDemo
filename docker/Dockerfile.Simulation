@@ -35,7 +35,7 @@ ENV ROSCON_DEMO_NAV_ROOT=$WORKSPACE/kraken_nav
 ENV ROSCON_DEMO_SEEDLIST=$ROSCON_DEMO_ROOT/Project/AssetBundling/SeedLists/ROSCon2022.seed
 
 # Copy the release-patch in case its needed
-COPY docker/o3de_2.1.0.patch $WORKSPACE/
+COPY o3de_2.1.0.patch $WORKSPACE/
 
 ENV LANG=en_US.UTF-8
 
