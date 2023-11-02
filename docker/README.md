@@ -51,7 +51,7 @@ rocker --x11 --nvidia --network="bridge" roscon_demo
 **Note**
 The above command will log you into the docker terminal that has the `kraken_nav` code built, but will not activate the environment until you run the following command after logging in:
 ```
-source /data/workspace/kraken_nav/install/setup.bash
+source /data/workspace/ROSConDemo/kraken_nav/install/setup.bash
 ```
 
 To launch the O3DE editor for the ROSConDemo project, execute the following command within the docker terminal
