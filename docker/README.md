@@ -77,7 +77,7 @@ Also included are custom Dockerscripts that will only build the components neces
 * Dockerfile.Simulation
   The Docker image created from this script will have a release-build packaged version of the simulation as well as the compiled `kraken_nav` code for the navigation stack.
 * Dockerfile.NavStack
-  The Docker image created from this script will only havethe compiled `kraken_nav` code for the navigation stack.
+  The Docker image created from this script will only have the compiled `kraken_nav` code for the navigation stack.
 
 These images will be much smaller than the full `roscon_demo` docker image. 
 
