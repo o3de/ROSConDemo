@@ -170,10 +170,9 @@
             "Name": "Sensor",
             "Components": {
                 "Component_[1058300359310703890]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 1058300359310703890,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Namespace Configuration": {
                             "Namespace Strategy": 1
                         },
