@@ -1,0 +1,13 @@
+diff --git a/Gems/Atom/RPI/Code/Source/RPI.Public/RPISystem.cpp b/Gems/Atom/RPI/Code/Source/RPI.Public/RPISystem.cpp
+index 99d0301016..3182cd319d 100644
+--- a/Gems/Atom/RPI/Code/Source/RPI.Public/RPISystem.cpp
++++ b/Gems/Atom/RPI/Code/Source/RPI.Public/RPISystem.cpp
+@@ -297,7 +297,7 @@ namespace AZ
+             }
+ 
+             RHI::Ptr<RHI::XRDeviceDescriptor> xrDescriptor = m_rhiSystem.GetDevice()->BuildXRDescriptor();
+-            auto result = xrRender->CreateDevice(xrDescriptor.get());
++            [[maybe_unused]] auto result = xrRender->CreateDevice(xrDescriptor.get());
+             AZ_Error("RPISystem", result == RHI::ResultCode::Success, "Failed to initialize XR device");
+             AZ::RHI::XRSessionDescriptor sessionDescriptor;
+             result = xrRender->CreateSession(&sessionDescriptor);

@@ -10,7 +10,6 @@
 #include <AzCore/Serialization/EditContext.h>
 #include <AzCore/Serialization/EditContextConstants.inl>
 #include <AzCore/Serialization/SerializeContext.h>
-#include <AzToolsFramework/UI/PropertyEditor/PropertyEditorAPI.h>
 #include <LyShine/Bus/UiCanvasBus.h>
 #include <LyShine/Bus/UiTextBus.h>
 #include <LyShine/Bus/World/UiCanvasRefBus.h>

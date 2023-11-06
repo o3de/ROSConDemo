@@ -380,6 +380,26 @@
                         "Entity_[292446084420721]",
                         "Entity_[4575349763039]"
                     ]
+                },
+                "EditorHeightfieldColliderComponent": {
+                    "$type": "EditorHeightfieldColliderComponent",
+                    "Id": 12906038322501121030,
+                    "ColliderConfiguration": {
+                        "MaterialSlots": {
+                            "Slots": [
+                                {},
+                                {
+                                    "MaterialAsset": {
+                                        "assetId": {
+                                            "guid": "{6D044767-4E3B-5116-A1A7-9C65BCF586A0}",
+                                            "subId": 1
+                                        },
+                                        "assetHint": "physx/terrain_dirt.physicsmaterial"
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             }
         },
@@ -654,23 +674,8 @@
                 "Component_[13711420870643673468]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 13711420870643673468,
-                    "DisabledComponents": [
-                        {
-                            "$type": "AZ::Render::EditorMeshComponent",
-                            "Id": 5675108321710651991,
-                            "Controller": {
-                                "Configuration": {
-                                    "ModelAsset": {
-                                        "assetId": {
-                                            "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
-                                            "subId": 277889906
-                                        },
-                                        "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
-                                    }
-                                }
-                            }
-                        },
-                        {
+                    "DisabledComponents": {
+                        "Component_[5182430712893438093]": {
                             "$type": "EditorMaterialComponent",
                             "Id": 5182430712893438093,
                             "Controller": {
@@ -685,8 +690,23 @@
                                     ]
                                 }
                             }
+                        },
+                        "Component_[5675108321710651991]": {
+                            "$type": "AZ::Render::EditorMeshComponent",
+                            "Id": 5675108321710651991,
+                            "Controller": {
+                                "Configuration": {
+                                    "ModelAsset": {
+                                        "assetId": {
+                                            "guid": "{0CD745C0-6AA8-569A-A68A-73A3270986C4}",
+                                            "subId": 277889906
+                                        },
+                                        "assetHint": "objects/groudplane/groundplane_512x512m.azmodel"
+                                    }
+                                }
+                            }
                         }
-                    ]
+                    }
                 },
                 "Component_[138002849734991713]": {
                     "$type": "EditorOnlyEntityComponent",
@@ -780,8 +800,7 @@
                     "Id": 16880285896855930892,
                     "Controller": {
                         "Configuration": {
-                            "Field of View": 55.0,
-                            "EditorEntityId": 3659314624400262759
+                            "Field of View": 55.0
                         }
                     }
                 },
@@ -954,8 +973,8 @@
                 "Component_[14994774102579326069]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 14994774102579326069,
-                    "DisabledComponents": [
-                        {
+                    "DisabledComponents": {
+                        "Component_[13126383555450060198]": {
                             "$type": "AZ::Render::EditorPhysicalSkyComponent",
                             "Id": 13126383555450060198,
                             "Controller": {
@@ -973,7 +992,7 @@
                                 }
                             }
                         }
-                    ]
+                    }
                 },
                 "Component_[15417479889044493340]": {
                     "$type": "EditorPendingCompositionComponent",
@@ -1402,8 +1421,8 @@
                 "Component_[13792978816524169234]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 13792978816524169234,
-                    "PendingComponents": [
-                        {
+                    "PendingComponents": {
+                        "Component_[15045768458115272767]": {
                             "$type": "EditorMaterialComponent",
                             "Id": 15045768458115272767,
                             "Controller": {
@@ -1426,7 +1445,7 @@
                                 }
                             }
                         }
-                    ]
+                    }
                 },
                 "Component_[16045467262737659182]": {
                     "$type": "EditorEntityIconComponent",
@@ -1443,8 +1462,8 @@
                 "Component_[4111006409936537498]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 4111006409936537498,
-                    "DisabledComponents": [
-                        {
+                    "DisabledComponents": {
+                        "Component_[13042287448449165802]": {
                             "$type": "AZ::Render::EditorMeshComponent",
                             "Id": 13042287448449165802,
                             "Controller": {
@@ -1460,7 +1479,7 @@
                                 }
                             }
                         }
-                    ]
+                    }
                 },
                 "Component_[5287415047203296639]": {
                     "$type": "EditorEntitySortComponent",
@@ -5527,7 +5546,6 @@
                             "Name": "line2"
                         }
                     }
-
                 },
                 "Component_[2840753425454738983]": {
                     "$type": "EditorLockComponent",
@@ -9833,6 +9851,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 44.92060852050781
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9853,6 +9881,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 45.00574493408203
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9873,6 +9911,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 48.65117263793945
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9903,6 +9951,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[16733126560870675783]/Transform Data/Rotate/2",
                     "value": 21.698911666870117
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/crate_01.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/crate_01.fbx.pxmesh"
                 }
             ]
         },
@@ -9933,6 +9991,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[16733126560870675783]/Transform Data/Rotate/2",
                     "value": 32.39841842651367
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/crate_01.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/crate_01.fbx.pxmesh"
                 }
             ]
         },
@@ -9973,6 +10041,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5123579376316041771]/Transform Data/Rotate/2",
                     "value": 69.76118469238281
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327950099894397]/Components/Component_[9744507723268008838]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/props/wagonwheel_01.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[1327950099894397]/Components/Component_[9744507723268008838]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/props/wagonwheel_01.fbx.pxmesh"
                 }
             ]
         },
@@ -9998,6 +10076,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[15439992882160637816]/Transform Data/Rotate/2",
                     "value": 72.40711212158203
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[30058651448823]/Components/Component_[16842351070526488773]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/windmill_01/windmill_01.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[30058651448823]/Components/Component_[16842351070526488773]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/windmill_01/windmill_01.fbx.pxmesh"
                 }
             ]
         },
@@ -10028,6 +10116,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[1344051213416318901]/Transform Data/Rotate/2",
                     "value": 14.720419883728027
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[477018013220429]/Components/Component_[13912151555249104113]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/watertower_01/water_tower.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[477018013220429]/Components/Component_[13912151555249104113]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/watertower_01/water_tower.fbx.pxmesh"
                 }
             ]
         },
@@ -11328,6 +11426,16 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Transform Data/Rotate/2",
                     "value": -66.4480209350586
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[945674658144]/Components/Component_[15791848428761537412]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
+                    "value": "assets/barn/barn.fbx.pxmesh"
+                },
+                {
+                    "op": "replace",
+                    "path": "/Entities/Entity_[945674658144]/Components/Component_[15791848428761537412]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
+                    "value": "assets/barn/barn.fbx.pxmesh"
                 }
             ]
         },

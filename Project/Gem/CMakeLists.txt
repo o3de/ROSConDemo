@@ -47,7 +47,6 @@ ly_add_target(
             Gem::EMotionFX.Static
             Gem::LmbrCentral.API
             Gem::LyShine
-            Gem::AtomLyIntegration_CommonFeatures.Editor.Static
             Gem::Atom_AtomBridge.Static
             Gem::ImGui.Static
             Gem::PhysX.Static

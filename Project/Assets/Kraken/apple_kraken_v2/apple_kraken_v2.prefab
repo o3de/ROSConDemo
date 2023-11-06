@@ -4718,6 +4718,9 @@
                     "$type": "EditorColliderComponent",
                     "Id": 10590573249310138745,
                     "ColliderConfiguration": {
+                        "CollisionLayer": {
+                            "Index": 1
+                        },
                         "Trigger": true,
                         "MaterialSlots": {
                             "Slots": [

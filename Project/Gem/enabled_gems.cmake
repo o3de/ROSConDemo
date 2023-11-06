@@ -3,7 +3,6 @@ set(ENABLED_GEMS
     ROSConDemo
     Atom
     AudioSystem
-    AWSCore
     CameraFramework
     DebugDraw
     EditorPythonBindings

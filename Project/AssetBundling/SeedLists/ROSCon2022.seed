@@ -1,0 +1,36 @@
+{
+    "Type": "JsonSerialization",
+    "Version": 1,
+    "ClassName": "AZStd::vector<SeedInfo, allocator>",
+    "ClassData": [
+        {
+            "assetId": {
+                "guid": "{F556BF02-7065-505E-B81D-66BA396692A0}",
+                "subId": 3771340206
+            },
+            "platformFlags": 2,
+            "pathHint": "levels/main/main.spawnable"
+        },
+        {
+            "assetId": {
+                "guid": "{65878C59-19C8-507F-B361-C0D4B90C15F3}"
+            },
+            "platformFlags": 2,
+            "pathHint": "thirdpersoncamera.inputbindings"
+        },
+        {
+            "assetId": {
+                "guid": "{0E98ABD6-E619-5C16-9B27-D9096E4B159A}"
+            },
+            "platformFlags": 2,
+            "pathHint": "thirdpersonmovement.inputbindings"
+        },
+        {
+            "assetId": {
+                "guid": "{1CBEE567-0954-59BA-8205-93BE85D07D0B}"
+            },
+            "platformFlags": 2,
+            "pathHint": "autoexec.cfg"
+        }
+    ]
+}
