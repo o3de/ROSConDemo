@@ -97,7 +97,7 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
         BUILD_DEPENDENCIES
             PUBLIC
                 AZ::AzToolsFramework
-                Gem::AtomLyIntegration_CommonFeatures.Editor.Static
+                Gem::CommonFeaturesAtom.Editor.Static
                 Gem::LmbrCentral.API
                 Gem::ROS2.Editor.Static
                 Gem::ROSConDemo.Static
