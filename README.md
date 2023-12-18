@@ -249,12 +249,6 @@ Free pose:
 ```
 ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken', initial_pose: {position:{ x: 4, y: 4, z: 0.2}, orientation: {x: 0.0, y: 0.0, z: 0.0, w: 1.0}}}'
 ```
-
-## How to use my robot in O3DE?
-
-You can follow up on this [guide for re-creating the Apple Kraken prefab](docs/ImportingURDF/URDF_import_guide.md), starting with an URDF/SDFormat file.
-This can be very informative for a similar process with another robot.
-
 # Troubleshooting
 
 ## Check-list
