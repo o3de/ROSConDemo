@@ -190,7 +190,7 @@ You can try out the demo scenario as presented during ROSCon 2022. Take the foll
    1. `ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken_shiny', xml: 'line2'}' &&
 ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken_rusty', xml: 'line3'}' &&
 ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity '{name: 'apple_kraken_shiny', xml: 'line4'}'`
-   1. You can also navigate with them using the remaining `2D Goal` Pose` buttons and trigger gathering events. Follow the instructions in [this section](kraken_nav/README.md#running-nav-stack-for-multiple-vehicles) to launch the navigation stack for each Kraken.
+   1. You can also navigate with them using the remaining `2D Goal Pose` buttons and trigger gathering events. Follow the instructions in [this section](kraken_nav/README.md#running-nav-stack-for-multiple-vehicles) to launch the navigation stack for each Kraken.
 
 💡 ***Note:*** If you would like to start the scenario over, **remember to close all navigation stacks**. You can do this by pressing Ctrl-C in each console you started the `ros2 launch o3de_kraken_nav (..)` command.
 
