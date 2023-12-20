@@ -13,7 +13,7 @@ When creating a pull request to this repository, make sure that:
   - If you commit parts of code which are not yours, make sure you are allowed to do so (in terms of license) and respect all the requirements of the license, such as Attribution.
   - If you are not the author of the commit, indicate authorship with `--author` flag of `git commit` command.
   - Try to divide your work into commits done by a single author. If you decide to use a single commit for a multi-author work, use the [Co-authored-by syntax](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) in the commit message.
-- Your commits are signed, indicating complience with the DCO: use `git commit -s` to ensure that.
+- Your commits are signed, indicating compliance with the DCO: use `git commit -s` to ensure that.
 
 ### Additional information
 
