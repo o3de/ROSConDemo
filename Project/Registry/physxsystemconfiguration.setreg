@@ -3,13 +3,11 @@
         "Gems": {
             "PhysX": {
                 "PhysXSystemConfiguration": {
-                    "FixedTimeStep": 0.009999999776482582,
-                    "OverlapBufferSize": 256,
                     "CollisionConfig": {
                         "Layers": {
                             "LayerNames": [
                                 "Default",
-                                "Robot",
+                                {},
                                 {},
                                 {},
                                 {},
@@ -82,7 +80,7 @@
                                 },
                                 {
                                     "Id": {
-                                        "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
+                                        "GroupId": "{BE28E146-905B-44E2-BB05-2CA6CE7B4BE7}"
                                     },
                                     "Name": "None",
                                     "Group": {
