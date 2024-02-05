@@ -145,7 +145,7 @@ echo $ROS_DISTRO
 
 ```bash
 cd ${WORKDIR}/ROSConDemo/Project
-cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON
+cmake -B build/linux -G"Ninja Multi-Config" -DLY_DISABLE_TEST_MODULES=ON -DLY_STRIP_DEBUG_SYMBOLS=ON
 ```
 
 5. Execute build (this will take a while the first time):
