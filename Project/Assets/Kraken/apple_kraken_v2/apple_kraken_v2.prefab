@@ -3114,7 +3114,7 @@
                     "Id": 5918697870879483153,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
-                        "Namespace Configuration": {
+                                                "Namespace Configuration": {
                             "Namespace Strategy": 2
                         },
                         "Frame Name": "base_link"
@@ -3829,7 +3829,7 @@
                             "Index": 1
                         },
                         "CollisionGroupId": {
-                            "GroupId": "{EAE75F31-696E-4659-8792-7CBA45ABD41B}"
+                            "GroupId": "{BE28E146-905B-44E2-BB05-2CA6CE7B4BE7}"
                         },
                         "MaterialSlots": {
                             "Slots": [
@@ -4344,7 +4344,7 @@
                     "Id": 1058300359310703890,
                     "m_template": {
                         "$type": "ROS2FrameComponent",
-                        "Namespace Configuration": {
+                                                "Namespace Configuration": {
                             "Namespace Strategy": 1
                         },
                         "Frame Name": "lidar"
