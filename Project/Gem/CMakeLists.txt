@@ -132,10 +132,3 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
     ly_create_alias(NAME ROSConDemo.Tools    NAMESPACE Gem TARGETS Gem::ROSConDemo.Editor)
     ly_create_alias(NAME ROSConDemo.Builders NAMESPACE Gem TARGETS Gem::ROSConDemo.Editor)
 endif()
-
-################################################################################
-# Gem dependencies
-################################################################################
-
-# Enable the specified list of gems from GEM_FILE or GEMS list for this specific project:
-ly_enable_gems(PROJECT_NAME ROSConDemo GEM_FILE enabled_gems.cmake)

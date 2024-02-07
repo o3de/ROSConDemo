@@ -28,5 +28,4 @@ set(FILES
         Source/ROSConDemoModuleInterface.h
         Source/ROSConDemoSystemComponent.cpp
         Source/ROSConDemoSystemComponent.h
-        enabled_gems.cmake
         )

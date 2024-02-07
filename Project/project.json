@@ -18,7 +18,29 @@
     ],
     "restricted": "ROSConDemo",
     "gem_names": [
-        "ROS2"
+        "Atom",
+        "AudioSystem",
+        "CameraFramework",
+        "DebugDraw",
+        "EditorPythonBindings",
+        "EMotionFX",
+        "GameState",
+        "ImGui",
+        "LandscapeCanvas",
+        "LyShine",
+        "PhysX5",
+        "PrimitiveAssets",
+        "PrefabBuilder",
+        "ROS2>=3.1.0",
+        "SaveData",
+        "ScriptCanvasPhysics",
+        "ScriptEvents",
+        "StartingPointInput",
+        "TextureAtlas",
+        "WhiteBox",
+        "DiffuseProbeGrid",
+        "Terrain",
+        "Vegetation"
     ],
-    "engine_version": "4.0.0"
+    "engine_version": "4.1.0"
 }
