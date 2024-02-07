@@ -181,10 +181,9 @@
                     }
                 },
                 "Component_[15581930040980741279]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 15581930040980741279,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "link2"
                     }
                 },
@@ -284,10 +283,9 @@
                     "Id": 11253416261782360310
                 },
                 "Component_[13566261617107914927]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 13566261617107914927,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "link1"
                     }
                 },
@@ -488,10 +486,9 @@
                     "Id": 17871258124168575381
                 },
                 "Component_[3122846594690437805]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 3122846594690437805,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "base_wheel"
                     }
                 },
