@@ -24,3 +24,4 @@ cmake-build-*
 kraken_nav/build
 kraken_nav/install
 kraken_nav/log
+.command_settings

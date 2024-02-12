@@ -49,7 +49,7 @@ ly_add_target(
             Gem::LyShine
             Gem::Atom_AtomBridge.Static
             Gem::ImGui.Static
-            Gem::PhysX.Static
+            Gem::PhysX5.Static
 )
 
 target_depends_on_ros2_packages(ROSConDemo.Static std_srvs nav_msgs vision_msgs)
@@ -97,7 +97,7 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
         BUILD_DEPENDENCIES
             PUBLIC
                 AZ::AzToolsFramework
-                Gem::AtomLyIntegration_CommonFeatures.Editor.Static
+                Gem::CommonFeaturesAtom.Editor.Static
                 Gem::LmbrCentral.API
                 Gem::ROS2.Editor.Static
                 Gem::ROSConDemo.Static
@@ -132,10 +132,3 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
     ly_create_alias(NAME ROSConDemo.Tools    NAMESPACE Gem TARGETS Gem::ROSConDemo.Editor)
     ly_create_alias(NAME ROSConDemo.Builders NAMESPACE Gem TARGETS Gem::ROSConDemo.Editor)
 endif()
-
-################################################################################
-# Gem dependencies
-################################################################################
-
-# Enable the specified list of gems from GEM_FILE or GEMS list for this specific project:
-ly_enable_gems(PROJECT_NAME ROSConDemo GEM_FILE enabled_gems.cmake)
