@@ -180,7 +180,7 @@
                                     "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
                                     "subId": 2828817795
                                 },
-                                "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                                "assetHint": "assets/props/wagonwheel_01.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -189,7 +189,7 @@
                                         "subId": 2828817795
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                                    "assetHint": "assets/props/wagonwheel_01.fbx.pxmesh"
                                 }
                             }
                         }

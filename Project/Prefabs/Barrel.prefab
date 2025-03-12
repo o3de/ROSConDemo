@@ -117,7 +117,7 @@
                                     "guid": "{7E7F7F4C-717E-50C5-A5AD-A3FFE92093FF}",
                                     "subId": 1999831518
                                 },
-                                "assetHint": "assets/props/barrel.pxmesh"
+                                "assetHint": "assets/props/barrel.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -126,7 +126,7 @@
                                         "subId": 1999831518
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/props/barrel.pxmesh"
+                                    "assetHint": "assets/props/barrel.fbx.pxmesh"
                                 }
                             }
                         }

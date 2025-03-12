@@ -131,7 +131,7 @@
                                     "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
                                     "subId": 1366355562
                                 },
-                                "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                                "assetHint": "assets/windmill_01/windmill_01.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -140,7 +140,7 @@
                                         "subId": 1366355562
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                                    "assetHint": "assets/windmill_01/windmill_01.fbx.pxmesh"
                                 }
                             }
                         }

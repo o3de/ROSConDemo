@@ -87,7 +87,7 @@
                                     "guid": "{13234E8B-3BC1-517A-9446-D72D47ABB341}",
                                     "subId": 283403668
                                 },
-                                "assetHint": "assets/fence_tile/fencingtile.azmodel"
+                                "assetHint": "assets/fence_tile/fencingtile.fbx.azmodel"
                             },
                             "SortKey": 7,
                             "IsRayTracingEnabled": false

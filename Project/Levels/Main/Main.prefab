@@ -9851,16 +9851,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 44.92060852050781
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9881,16 +9871,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 45.00574493408203
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9911,16 +9891,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6372788350921479434]/Transform Data/Translate/1",
                     "value": 48.65117263793945
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327675221987453]/Components/Component_[14322969105034715544]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/barrel.fbx.pxmesh"
                 }
             ]
         },
@@ -9951,16 +9921,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[16733126560870675783]/Transform Data/Rotate/2",
                     "value": 21.698911666870117
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/crate_01.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/crate_01.fbx.pxmesh"
                 }
             ]
         },
@@ -9991,16 +9951,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[16733126560870675783]/Transform Data/Rotate/2",
                     "value": 32.39841842651367
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/crate_01.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1328345236885629]/Components/Component_[3012283993462436523]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/crate_01.fbx.pxmesh"
                 }
             ]
         },
@@ -10041,16 +9991,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[5123579376316041771]/Transform Data/Rotate/2",
                     "value": 69.76118469238281
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327950099894397]/Components/Component_[9744507723268008838]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/props/wagonwheel_01.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[1327950099894397]/Components/Component_[9744507723268008838]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/props/wagonwheel_01.fbx.pxmesh"
                 }
             ]
         },
@@ -10076,16 +10016,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[15439992882160637816]/Transform Data/Rotate/2",
                     "value": 72.40711212158203
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[30058651448823]/Components/Component_[16842351070526488773]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/windmill_01/windmill_01.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[30058651448823]/Components/Component_[16842351070526488773]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/windmill_01/windmill_01.fbx.pxmesh"
                 }
             ]
         },
@@ -10116,16 +10046,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[1344051213416318901]/Transform Data/Rotate/2",
                     "value": 14.720419883728027
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[477018013220429]/Components/Component_[13912151555249104113]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/watertower_01/water_tower.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[477018013220429]/Components/Component_[13912151555249104113]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/watertower_01/water_tower.fbx.pxmesh"
                 }
             ]
         },
@@ -11426,16 +11346,6 @@
                     "op": "replace",
                     "path": "/ContainerEntity/Components/Component_[6958903478055170698]/Transform Data/Rotate/2",
                     "value": -66.4480209350586
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[945674658144]/Components/Component_[15791848428761537412]/ShapeConfiguration/PhysicsAsset/Asset/assetHint",
-                    "value": "assets/barn/barn.fbx.pxmesh"
-                },
-                {
-                    "op": "replace",
-                    "path": "/Entities/Entity_[945674658144]/Components/Component_[15791848428761537412]/ShapeConfiguration/PhysicsAsset/Configuration/PhysicsAsset/assetHint",
-                    "value": "assets/barn/barn.fbx.pxmesh"
                 }
             ]
         },
