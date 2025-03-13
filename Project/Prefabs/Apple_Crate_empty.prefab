@@ -67,8 +67,8 @@
                 "Component_[16325347661556016829]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 16325347661556016829,
-                    "DisabledComponents": [
-                        {
+                    "DisabledComponents": {
+                        "Component_[6131507114438886105]": {
                             "$type": "EditorColliderComponent",
                             "Id": 6131507114438886105,
                             "ColliderConfiguration": {
@@ -102,7 +102,7 @@
                                 }
                             }
                         }
-                    ]
+                    }
                 },
                 "Component_[16860679445705058947]": {
                     "$type": "EditorVisibilityComponent",
@@ -153,7 +153,7 @@
                                     "guid": "{4B118B91-95F2-51D3-89FF-B3295ACF5544}",
                                     "subId": 270483317
                                 },
-                                "assetHint": "assets/apple_crate/apple_crate.azmodel"
+                                "assetHint": "assets/apple_crate/apple_crate.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }

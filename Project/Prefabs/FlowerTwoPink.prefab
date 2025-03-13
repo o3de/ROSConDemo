@@ -7,10 +7,6 @@
                 "$type": "EditorEntityIconComponent",
                 "Id": 10842569837668663958
             },
-            "Component_[10955354628331032817]": {
-                "$type": "SelectionComponent",
-                "Id": 10955354628331032817
-            },
             "Component_[13353090157834269241]": {
                 "$type": "EditorVisibilityComponent",
                 "Id": 13353090157834269241
@@ -114,10 +110,6 @@
                     "$type": "EditorLockComponent",
                     "Id": 13602896793874003565
                 },
-                "Component_[1581894914425564814]": {
-                    "$type": "SelectionComponent",
-                    "Id": 1581894914425564814
-                },
                 "Component_[1676576875366609442]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 1676576875366609442
@@ -132,7 +124,7 @@
                                     "guid": "{691E0E72-4080-543B-A933-0B51EF92662E}",
                                     "subId": 272030126
                                 },
-                                "assetHint": "assets/flower_tile_two_pink/flower_tile_two_pink.azmodel"
+                                "assetHint": "assets/flower_tile_two_pink/flower_tile_two_pink.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

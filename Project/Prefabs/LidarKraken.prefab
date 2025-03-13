@@ -64,7 +64,7 @@
                                     "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
                                     "subId": 268955557
                                 },
-                                "assetHint": "models/sensors/lidaros2/lidaros2.azmodel"
+                                "assetHint": "models/sensors/lidaros2/lidaros2.fbx.azmodel"
                             }
                         }
                     }
@@ -103,7 +103,7 @@
                                     "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
                                     "subId": 2574200790
                                 },
-                                "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                                "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -112,7 +112,7 @@
                                         "subId": 2574200790
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "models/sensors/lidaros2/lidaros2.pxmesh"
+                                    "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
                                 }
                             }
                         }

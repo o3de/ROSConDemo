@@ -165,8 +165,8 @@
                 "Component_[6717239618132726328]": {
                     "$type": "EditorDisabledCompositionComponent",
                     "Id": 6717239618132726328,
-                    "DisabledComponents": [
-                        {
+                    "DisabledComponents": {
+                        "Component_[7138985039715548058]": {
                             "$type": "EditorRigidBodyComponent",
                             "Id": 7138985039715548058,
                             "Configuration": {
@@ -175,7 +175,7 @@
                                 "Gravity Enabled": false
                             }
                         }
-                    ]
+                    }
                 },
                 "Component_[7230618248793844206]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -187,7 +187,7 @@
                                     "guid": "{55097FFC-EE11-5B2D-9E83-1ECE5FCA4341}",
                                     "subId": 271503440
                                 },
-                                "assetHint": "assets/apple_tree/apple.azmodel"
+                                "assetHint": "assets/apple_tree/apple.fbx.azmodel"
                             },
                             "SortKey": 2,
                             "IsRayTracingEnabled": false,

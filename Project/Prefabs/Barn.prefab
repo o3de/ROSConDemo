@@ -70,7 +70,7 @@
                                     "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
                                     "subId": 276633256
                                 },
-                                "assetHint": "assets/barn/barn.azmodel"
+                                "assetHint": "assets/barn/barn.fbx.azmodel"
                             },
                             "SortKey": 6,
                             "IsRayTracingEnabled": false

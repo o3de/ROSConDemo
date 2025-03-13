@@ -1473,7 +1473,7 @@
                                             "guid": "{53C8A44E-14CF-53CC-B0B4-6ECF2518CC7A}",
                                             "subId": 274422785
                                         },
-                                        "assetHint": "assets/grass_merged/grass_merged.azmodel"
+                                        "assetHint": "assets/grass_merged/grass_merged.fbx.azmodel"
                                     },
                                     "IsRayTracingEnabled": false
                                 }
@@ -1655,7 +1655,6 @@
                     "$type": "EditorSplineComponent",
                     "Id": 9993032344883988826,
                     "Configuration": {
-                        "Spline Type": 2612576363626472641,
                         "Spline": {
                             "$type": "BezierSpline",
                             "Vertices": {
@@ -3090,7 +3089,7 @@
                                     "guid": "{2EC2B7FE-B591-548B-B69D-A0971282E3EC}",
                                     "subId": 281234033
                                 },
-                                "assetHint": "assets/grass_merged/grass_merged_original.azmodel"
+                                "assetHint": "assets/grass_merged/grass_merged_original.fbx.azmodel"
                             },
                             "SortKey": 222
                         }
@@ -8435,7 +8434,7 @@
             ]
         },
         "Instance_[1457055483705710]": {
-            "Source": "Prefabs/Backhground_Mountains.prefab",
+            "Source": "Prefabs/Background_Mountains.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -8460,7 +8459,7 @@
             ]
         },
         "Instance_[1704071937800558]": {
-            "Source": "Prefabs/Backhground_Mountains.prefab",
+            "Source": "Prefabs/Background_Mountains.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -8490,7 +8489,7 @@
             ]
         },
         "Instance_[1807404555975022]": {
-            "Source": "Prefabs/Backhground_Mountains.prefab",
+            "Source": "Prefabs/Background_Mountains.prefab",
             "Patches": [
                 {
                     "op": "replace",
@@ -8515,7 +8514,7 @@
             ]
         },
         "Instance_[2153939697285486]": {
-            "Source": "Prefabs/Backhground_Mountains.prefab",
+            "Source": "Prefabs/Background_Mountains.prefab",
             "Patches": [
                 {
                     "op": "replace",

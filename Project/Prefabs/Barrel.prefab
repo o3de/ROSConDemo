@@ -183,7 +183,7 @@
                                     "guid": "{7E7F7F4C-717E-50C5-A5AD-A3FFE92093FF}",
                                     "subId": 274806711
                                 },
-                                "assetHint": "assets/props/barrel.azmodel"
+                                "assetHint": "assets/props/barrel.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }

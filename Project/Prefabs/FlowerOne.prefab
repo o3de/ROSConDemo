@@ -85,7 +85,7 @@
                                     "guid": "{55C57580-AEC3-5D53-9688-3A72496FB8AB}",
                                     "subId": 271182797
                                 },
-                                "assetHint": "assets/flower_tile_one/flower_tile_one.azmodel"
+                                "assetHint": "assets/flower_tile_one/flower_tile_one.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

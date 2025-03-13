@@ -129,7 +129,7 @@
                                     "guid": "{930ECAD4-7530-5943-84A6-D49B7D903797}",
                                     "subId": 277866330
                                 },
-                                "assetHint": "assets/flower_tile_two/flower_tile_two.azmodel"
+                                "assetHint": "assets/flower_tile_two/flower_tile_two.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false,
                             "LodType": 1,
