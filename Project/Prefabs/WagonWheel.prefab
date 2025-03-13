@@ -78,8 +78,7 @@
                 "Component_[13991554714683376679]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 13991554714683376679,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[15415082778917096339]": {
                     "$type": "EditorVisibilityComponent",

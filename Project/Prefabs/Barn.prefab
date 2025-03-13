@@ -57,8 +57,7 @@
                 "Component_[12525977908982875780]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 12525977908982875780,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[14274406287625550546]": {
                     "$type": "AZ::Render::EditorMeshComponent",
