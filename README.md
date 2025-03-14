@@ -1,12 +1,13 @@
-# O3DE Apple Kraken Demo Project
+# O3DE Apple Kraken Demo Project (2022)
 
 ### Video demo
 
 https://user-images.githubusercontent.com/82551958/229636734-2f67abeb-fe78-432c-8139-e4fc82f008ed.mp4
 
-
 This project demonstrates an example application of [O3DE](https://www.o3de.org/) working with ROS 2.
 The integration is realized through [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
+
+This project was implemented for [ROSCon 2022](https://roscon.ros.org/2022/) event.
 
 ## How does it look like
 
@@ -16,7 +17,7 @@ The integration is realized through [ROS 2 Gem](https://github.com/o3de/o3de-ext
 ## The project includes
 
 - **Apple Orchard**, a simulation scene with many rows of apple trees.
-- **Apple Kraken**, a robot tasked with apple picking. It is ready to use and also included as an URDF.
+- **Apple Kraken**, a robot tasked with apple picking.
     - Multiple Apple Krakens are supported
     - .. and you can spawn them using ROS 2 messages!
 - **Custom components** for picking apples, which benefit from direct integration with ROS 2.
@@ -44,7 +45,7 @@ The playground scene is much lighter and can be used to quickly prototype with K
 
 ## Platforms
 
-The project runs on Ubuntu 22.04 with ROS 2 Humble or ROS 2 Iron. If you wish to run this demo in _Docker environment_, please use the [instructions](docker/README.md) in the `Docker` folder.
+The project runs on Ubuntu 22.04 with ROS 2 Humble. If you wish to run this demo in _Docker environment_, please use the [instructions](docker/README.md) in the `Docker` folder.
 
 💡 ***Note:*** This demo is **not supported on Windows!**
 
@@ -52,10 +53,12 @@ The project runs on Ubuntu 22.04 with ROS 2 Humble or ROS 2 Iron. If you wish to
 
 Refer to the [O3DE System Requirements](https://www.o3de.org/docs/welcome-guide/requirements/) documentation to make sure that the system/hardware requirements are met.
 
+Please make sure to use the same version of `o3de` and `o3de-extras`. This demo was successfully tested with the `2409.2` release.
+
 The following commands should prepare O3DE (assuming `${WORKDIR}` is your working directory):
 ```bash
 cd ${WORKDIR}
-git clone --branch main --single-branch https://github.com/o3de/o3de.git
+git clone --branch 2409.2 --single-branch https://github.com/o3de/o3de.git
 cd o3de
 git lfs install
 git lfs pull
@@ -72,7 +75,7 @@ This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/devel
 The following commands should prepare `o3de-extras` into your `${WORKDIR}`:
 ```bash
 cd ${WORKDIR}
-git clone --branch main --single-branch https://github.com/o3de/o3de-extras
+git clone --branch 2409.2 --single-branch https://github.com/o3de/o3de-extras
 cd o3de-extras
 git lfs install
 git lfs pull
@@ -82,8 +85,6 @@ And register required Gem:
 cd ${WORKDIR}
 ./o3de/scripts/o3de.sh register --gem-path o3de-extras/Gems/ROS2
 ```
-
-Please make sure to use the same version of `o3de` and `o3de-extras`. This demo was successfully tested with the `2310.1` release.
 
 More information about installing ROS 2 Gem can be found in the installation guide in [ROS 2 Project Configuration](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/). Note that the Gem instructions include the installation of ROS 2 with some additional packages.
 
@@ -103,14 +104,12 @@ sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${
 
 Some commands and environmental variables are necessary for ROS 2 systems, including this demo, to function properly. It is best to add these commands and settings to either `~/.bashrc` or equivalent file. 
 
-ROS 2 distribution should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Iron installation, this would mean running the following for each console:
+ROS 2 distribution should always be sourced when building and running the demo and its command line interfaces. For a typical ROS 2 Humble installation, this would mean running the following for each console:
 
 ```
-source /opt/ros/iron/setup.bash
+source /opt/ros/humble/setup.bash
 ```
-💡 ***Note:*** ROS 2 Humble is also supported. In that case, the provided command would be `source /opt/ros/humble/setup.bash`
-
-Currently, we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble and ROS 2 Iron). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
+Currently, we are observing issues when running navigation with FastDDS (the default middleware for ROS 2 Humble). While the exact cause is yet to be investigated, there are no such issues when running with CycloneDDS. Thus, please set the following:
 
 ```
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
@@ -137,10 +136,8 @@ scripts/o3de.sh register -pp ${WORKDIR}/ROSConDemo/Project
 
 ```bash
 echo $ROS_DISTRO
-> iron
+> humble
 ```
-💡 ***Note:*** In the case ROS 2 Humble is sourced, the output is `humble`.
-
 4. Configure build:
 
 ```bash
