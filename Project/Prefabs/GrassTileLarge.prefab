@@ -24,10 +24,6 @@
                 "$type": "EditorPrefabComponent",
                 "Id": 1645101285825070103
             },
-            "Component_[17564612833837545372]": {
-                "$type": "SelectionComponent",
-                "Id": 17564612833837545372
-            },
             "Component_[2441005416349060026]": {
                 "$type": "EditorEntitySortComponent",
                 "Id": 2441005416349060026,
@@ -108,7 +104,7 @@
                                     "guid": "{1E287109-EB16-5B12-AAAD-ECA5C5259167}",
                                     "subId": 278851907
                                 },
-                                "assetHint": "assets/grass_tile_large/grass_tile_large.azmodel"
+                                "assetHint": "assets/grass_tile_large/grass_tile_large.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,
@@ -118,10 +114,6 @@
                             "MinimumScreenCoverage": 0.00009999999747378752
                         }
                     }
-                },
-                "Component_[15595928701280805325]": {
-                    "$type": "SelectionComponent",
-                    "Id": 15595928701280805325
                 },
                 "Component_[2018984769092515444]": {
                     "$type": "EditorVisibilityComponent",

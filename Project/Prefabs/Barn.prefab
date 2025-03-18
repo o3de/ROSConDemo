@@ -57,8 +57,7 @@
                 "Component_[12525977908982875780]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 12525977908982875780,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[14274406287625550546]": {
                     "$type": "AZ::Render::EditorMeshComponent",
@@ -70,7 +69,7 @@
                                     "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
                                     "subId": 276633256
                                 },
-                                "assetHint": "assets/barn/barn.azmodel"
+                                "assetHint": "assets/barn/barn.fbx.azmodel"
                             },
                             "SortKey": 6,
                             "IsRayTracingEnabled": false
@@ -114,7 +113,7 @@
                                     "guid": "{148FCF1B-E7A7-5387-B732-775453530FB4}",
                                     "subId": 4686939
                                 },
-                                "assetHint": "assets/barn/barn.pxmesh"
+                                "assetHint": "assets/barn/barn.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -123,7 +122,7 @@
                                         "subId": 4686939
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/barn/barn.pxmesh"
+                                    "assetHint": "assets/barn/barn.fbx.pxmesh"
                                 }
                             }
                         }

@@ -162,13 +162,7 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && if [ "${ROS_DISTRO}" = "iron" ]; then \
-         echo "ExecStart=/opt/ros/iron/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       elif [ "${ROS_DISTRO}" = "humble" ]; then \
-         echo "ExecStart=/opt/ros/humble/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       elif [ "${ROS_DISTRO}" = "galactic" ]; then \
-         echo "ExecStart=/opt/ros/galactic/setup.bash" >> /etc/systemd/system/setup_ros.service; \
-       fi \
+    && echo "ExecStart=/opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/systemd/system/setup_ros.service; \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \

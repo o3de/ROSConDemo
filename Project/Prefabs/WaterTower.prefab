@@ -64,7 +64,7 @@
                                     "guid": "{5B4B9DFE-3285-5C40-8C87-9BA9B97CF608}",
                                     "subId": 284724873
                                 },
-                                "assetHint": "assets/watertower_01/water_tower.azmodel"
+                                "assetHint": "assets/watertower_01/water_tower.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }
@@ -105,7 +105,7 @@
                                     "guid": "{5B4B9DFE-3285-5C40-8C87-9BA9B97CF608}",
                                     "subId": 1894854328
                                 },
-                                "assetHint": "assets/watertower_01/water_tower.pxmesh"
+                                "assetHint": "assets/watertower_01/water_tower.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -114,7 +114,7 @@
                                         "subId": 1894854328
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/watertower_01/water_tower.pxmesh"
+                                    "assetHint": "assets/watertower_01/water_tower.fbx.pxmesh"
                                 }
                             }
                         }

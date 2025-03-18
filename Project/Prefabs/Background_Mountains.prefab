@@ -1,7 +1,7 @@
 {
     "ContainerEntity": {
         "Id": "ContainerEntity",
-        "Name": "Backhground_Mountains",
+        "Name": "Background_Mountains",
         "Components": {
             "Component_[13039629271894709664]": {
                 "$type": "EditorLockComponent",
@@ -59,7 +59,7 @@
     "Entities": {
         "Entity_[1457064073640302]": {
             "Id": "Entity_[1457064073640302]",
-            "Name": "Backhground_Mountains",
+            "Name": "Background_Mountains",
             "Components": {
                 "Component_[10635178642265270643]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
@@ -117,7 +117,7 @@
                                     "guid": "{E2A69D44-C555-55A5-B4BB-7733A7B12132}",
                                     "subId": 279054652
                                 },
-                                "assetHint": "assets/background_mountains/mountain.azmodel"
+                                "assetHint": "assets/background_mountains/mountain.fbx.azmodel"
                             },
                             "SortKey": 8,
                             "IsRayTracingEnabled": false

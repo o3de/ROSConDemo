@@ -80,7 +80,7 @@
                                     "guid": "{D75C5700-9C4C-5B99-9467-A3476DCE5A7E}",
                                     "subId": 281770934
                                 },
-                                "assetHint": "assets/props/crate_01.azmodel"
+                                "assetHint": "assets/props/crate_01.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }
@@ -130,7 +130,7 @@
                                     "guid": "{D75C5700-9C4C-5B99-9467-A3476DCE5A7E}",
                                     "subId": 3806962326
                                 },
-                                "assetHint": "assets/props/crate_01.pxmesh"
+                                "assetHint": "assets/props/crate_01.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -139,7 +139,7 @@
                                         "subId": 3806962326
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/props/crate_01.pxmesh"
+                                    "assetHint": "assets/props/crate_01.fbx.pxmesh"
                                 }
                             }
                         }
