@@ -29,11 +29,8 @@ On top of dependencies for the [agricultural demo project](https://github.com/o3
     sudo apt install ros-${ROS_DISTRO}-slam-toolbox ros-${ROS_DISTRO}-navigation2 ros-${ROS_DISTRO}-nav2-bringup ros-${ROS_DISTRO}-pointcloud-to-laserscan ros-${ROS_DISTRO}-teleop-twist-keyboard ros-${ROS_DISTRO}-ackermann-msgs ros-${ROS_DISTRO}-topic-tools
     ```
 
-3.  Run the following command to install [colcon](https://colcon.readthedocs.io/en/released/user/installation.html) for building the workspace. 
+3.  Run the following command to install [colcon](https://colcon.readthedocs.io/en/released/user/installation.html) for building the workspace.
     ```bash
-    sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
-    curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-    sudo apt update
     sudo apt install python3-colcon-common-extensions
     ```
 
@@ -49,18 +46,16 @@ pip install python-statemachine
 
 ## Installation ##
 
-Build the workspace (assuming `${WORKDIR}` is your working directory in which `ROSConDemo` is cloned):
+Build the workspace (assuming `$DEMO_BASE` is your working directory in which `ROSConDemo` is cloned):
 
 ```bash
-cd ${WORKDIR}/ROSConDemo/kraken_nav
+cd $DEMO_BASE/ROSConDemo/kraken_nav
 colcon build --symlink-install
 ```
 
 ## Running the simulation
 
-1. Build and run the `ROSConDemo` as detailed in the [README file](../README.md).
-2. Load `Main` level.
-3. Start the simulation by hitting `CTRL+G`.
+1. Launch the simulation as detailed in the [README file](../README.md).
 
 ## Usage scenario
 
@@ -68,7 +63,7 @@ colcon build --symlink-install
 Make sure that you have Apple Kraken ROS 2 workspace sourced:
 
 ```bash
-cd ${WORKDIR}/ROSConDemo/
+cd $DEMO_BASE/ROSConDemo/
 source ./kraken_nav/install/setup.bash
 ```
 

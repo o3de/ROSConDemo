@@ -69,6 +69,8 @@ def generate_launch_description():
     nav_param_substitutions = {
         'default_nav_to_pose_bt_xml': bt_xml_file,
         'robot_base_frame': substitute_namespace(namespace, "base_link"),
+        'base_frame_id': substitute_namespace(namespace, "base_link"),
+        'odom_frame_id': substitute_namespace(namespace, "odom"),
         'local_costmap.local_costmap.ros__parameters.global_frame':
             substitute_namespace(namespace, "odom"),
         'global_costmap.global_costmap.ros__parameters.global_frame':
