@@ -1,0 +1,47 @@
+{
+    "values": [
+        {
+            "$type": "{5B03C8E6-8CEE-4DA0-A7FA-CD88689DD45B} MeshGroup",
+            "id": "{8B671FF3-450D-5007-AC79-F2E406301A08}",
+            "name": "LidarOS2",
+            "NodeSelectionList": {
+                "selectedNodes": [
+                    "RootNode.Collider"
+                ],
+                "unselectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.OS2"
+                ]
+            },
+            "MaterialSlots": [
+                "DefaultMaterial"
+            ],
+            "PhysicsMaterials": [
+                "<Default Physics Material>"
+            ]
+        },
+        {
+            "$type": "{07B356B7-3635-40B5-878A-FAC4EFD5AD86} MeshGroup",
+            "name": "LidarOS2",
+            "nodeSelectionList": {
+                "selectedNodes": [
+                    {},
+                    "RootNode",
+                    "RootNode.OS2"
+                ],
+                "unselectedNodes": [
+                    "RootNode.Collider"
+                ]
+            },
+            "rules": {
+                "rules": [
+                    {
+                        "$type": "MaterialRule"
+                    }
+                ]
+            },
+            "id": "{830ADBFF-66E2-505D-BEE1-EFBD789FDF62}"
+        }
+    ]
+}
