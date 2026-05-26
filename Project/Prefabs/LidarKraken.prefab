@@ -100,19 +100,19 @@
                         "PhysicsAsset": {
                             "Asset": {
                                 "assetId": {
-                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "guid": "{D8869B70-CBEA-561C-8437-D9A73A6C2552}",
                                     "subId": 2574200790
                                 },
-                                "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
+                                "assetHint": "assets/lidar/lidaros2.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
                                     "assetId": {
-                                        "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                        "guid": "{D8869B70-CBEA-561C-8437-D9A73A6C2552}",
                                         "subId": 2574200790
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
+                                    "assetHint": "assets/lidar/lidaros2.fbx.pxmesh"
                                 }
                             }
                         }
