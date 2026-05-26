@@ -557,6 +557,16 @@
                 "Component_[9315219505705754091]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9315219505705754091
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 10969073168454088504,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "PidPosition": {
+                            "P": 4.0
+                        }
+                    }
                 }
             }
         },
@@ -1687,6 +1697,17 @@
                     "Id": 9145617912145528580,
                     "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_2"
+                    }
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 11599073278917079284,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "PidPosition": {
+                            "P": 5.0,
+                            "D": 1.0
+                        }
                     }
                 }
             }
@@ -3302,6 +3323,17 @@
                                 0.1723790019750595,
                                 0.06773900240659714
                             ]
+                        }
+                    }
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 11076245229926425828,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "PidPosition": {
+                            "P": 5.0,
+                            "D": 1.0
                         }
                     }
                 }

@@ -459,6 +459,19 @@
                 "Component_[9315219505705754091]": {
                     "$type": "EditorPendingCompositionComponent",
                     "Id": 9315219505705754091
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 14237663910055121459,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "JointMotorControllerConfiguration": {
+                            "DebugMode": true
+                        },
+                        "PidPosition": {
+                            "P": 4.0
+                        }
+                    }
                 }
             }
         },
@@ -1518,6 +1531,20 @@
                     "Id": 9145617912145528580,
                     "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_2"
+                    }
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 14936381386396778998,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "JointMotorControllerConfiguration": {
+                            "DebugMode": true
+                        },
+                        "PidPosition": {
+                            "P": 5.0,
+                            "D": 1.0
+                        }
                     }
                 }
             }
@@ -3040,6 +3067,20 @@
                                 0.1723790019750595,
                                 0.06773900240659714
                             ]
+                        }
+                    }
+                },
+                "PidMotorControllerComponent": {
+                    "$type": "GenericComponentWrapper",
+                    "Id": 5701450725263707599,
+                    "m_template": {
+                        "$type": "PidMotorControllerComponent",
+                        "JointMotorControllerConfiguration": {
+                            "DebugMode": true
+                        },
+                        "PidPosition": {
+                            "P": 5.0,
+                            "D": 1.0
                         }
                     }
                 }
