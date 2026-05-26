@@ -12,7 +12,7 @@
         "ROSConDemo"
     ],
     "icon_path": "preview.png",
-    "engine": "o3de",
+    "engine": "o3de-sdk",
     "external_subdirectories": [
         "Gem"
     ],
@@ -28,11 +28,14 @@
         "GameState",
         "ImGui",
         "LandscapeCanvas",
+        "LevelGeoreferencing",
         "LyShine",
         "PhysX5",
         "PrefabBuilder",
         "PrimitiveAssets",
-        "ROS2>=3.1.0",
+        "ROS2>=4.0.0",
+        "ROS2Controllers",
+        "ROS2Sensors",
         "ROSConDemo",
         "SaveData",
         "ScriptCanvasPhysics",
@@ -43,5 +46,5 @@
         "Vegetation",
         "WhiteBox"
     ],
-    "engine_version": "4.1.0"
+    "engine_version": "2.6.0"
 }

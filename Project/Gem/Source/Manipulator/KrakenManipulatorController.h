@@ -13,7 +13,6 @@
 #include <AzFramework/AzFrameworkModule.h>
 #include <AzFramework/Spawnable/SpawnableEntitiesInterface.h>
 #include <ImGuiBus.h>
-#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -50,14 +49,14 @@ namespace AppleKraken
 
         void ResetTimer();
 
-        AZ::Vector3 m_desiredPosition{0, 0, 0 };
+        AZ::Vector3 m_desiredPosition{ 0, 0, 0 };
         AZStd::optional<AZ::Vector3> m_desiredApple;
         bool m_noseRetrieveRequest{ false };
         bool m_noseRetrievingSuccess{ false };
 
-        AZ::Vector3 m_vectorX{1, 0, 0 };
-        AZ::Vector3 m_vectorY{0, 1, 0 };
-        AZ::Vector3 m_vectorZ{0, 0, 1 };
+        AZ::Vector3 m_vectorX{ 1, 0, 0 };
+        AZ::Vector3 m_vectorY{ 0, 1, 0 };
+        AZ::Vector3 m_vectorZ{ 0, 0, 1 };
 
         AZ::EntityId m_entityX;
         AZ::EntityId m_entityY;
@@ -74,9 +73,8 @@ namespace AppleKraken
         float max_errorY{ 0.05 };
         float m_timeSetpointReach{ 0.2 };
 
-        float m_time_XZ_ok { 0.0 };
-        float m_time_Y_ok { 0.0 };
-        bool m_imguiManualControl{false};
-
+        float m_time_XZ_ok{ 0.0 };
+        float m_time_Y_ok{ 0.0 };
+        bool m_imguiManualControl{ false };
     };
 } // namespace AppleKraken

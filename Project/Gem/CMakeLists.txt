@@ -40,7 +40,9 @@ ly_add_target(
             Source
     BUILD_DEPENDENCIES
         PUBLIC
-            Gem::ROS2.Static
+            Gem::ROS2.API
+            Gem::ROS2Controllers.API
+            Gem::ImGui.Static
         PRIVATE
             AZ::AzGameFramework
             AZ::AzFramework
@@ -48,7 +50,6 @@ ly_add_target(
             Gem::LmbrCentral.API
             Gem::LyShine
             Gem::Atom_AtomBridge.Static
-            Gem::ImGui.Static
             Gem::PhysX5.Static
 )
 
@@ -99,7 +100,6 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
                 AZ::AzToolsFramework
                 Gem::CommonFeaturesAtom.Editor.Static
                 Gem::LmbrCentral.API
-                Gem::ROS2.Editor.Static
                 Gem::ROSConDemo.Static
             PRIVATE
     )
@@ -123,7 +123,7 @@ if(PAL_TRAIT_BUILD_HOST_TOOLS)
         BUILD_DEPENDENCIES
             PUBLIC
                 Gem::ROSConDemo.Editor.Static
-                Gem::Atom_Feature_Common.Static
+                Gem::Atom_Feature_Common.Public
     )
 
     # By default, we will specify that the above target ROSConDemo would be used by

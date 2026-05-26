@@ -8,9 +8,10 @@
 
 #include "AppleDetectionGroundTruth.h"
 #include "ROS2/Utilities/ROS2Conversions.h"
+#include <ROS2/Clock/ROS2ClockRequestBus.h>
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
-#include <ROS2/Utilities/ROS2Names.h>
+#include <ROS2/ROS2NamesBus.h>
 #include <rclcpp/qos.hpp>
 
 using namespace ROS2;
@@ -24,11 +25,15 @@ namespace AppleKraken
         auto ros2Node = ROS2Interface::Get()->GetNode();
 
         m_appleDetections3DMessage.header.frame_id = m_frameId.c_str();
-        AZStd::string full3DTopic = ROS2Names::GetNamespacedName(rosNamespace, "ground_truth_3D_detection");
+        AZStd::string full3DTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            full3DTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, rosNamespace, "ground_truth_3D_detection");
         m_detection3DPublisher = ros2Node->create_publisher<vision_msgs::msg::Detection3DArray>(full3DTopic.data(), defaultQoS);
 
         m_appleDetections2DMessage.header.frame_id = m_frameId.c_str();
-        AZStd::string full2DTopic = ROS2Names::GetNamespacedName(rosNamespace, "ground_truth_2D_detection");
+        AZStd::string full2DTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            full2DTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, rosNamespace, "ground_truth_2D_detection");
         m_detection2DPublisher = ros2Node->create_publisher<vision_msgs::msg::Detection2DArray>(full2DTopic.data(), defaultQoS);
     }
 
@@ -40,7 +45,7 @@ namespace AppleKraken
 
     void AppleDetectionGroundTruth::Publish()
     {
-        auto timestamp = ROS2Interface::Get()->GetROSTimestamp();
+        auto timestamp = ROS2::ROS2ClockInterface::Get()->GetROSTimestamp();
         m_appleDetections2DMessage.header.stamp = timestamp;
         for (auto& detection : m_appleDetections2DMessage.detections)
         {
