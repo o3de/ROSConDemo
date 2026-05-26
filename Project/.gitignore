@@ -4,3 +4,5 @@
 [Uu]ser_test*/
 _savebackup/
 CMakeUserPresets.json
+backtrace.log
+imgui.ini
