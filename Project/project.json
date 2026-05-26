@@ -41,6 +41,7 @@
         "ScriptCanvasPhysics",
         "ScriptEvents",
         "StartingPointInput",
+        "SkyAtmosphere",
         "Terrain",
         "TextureAtlas",
         "Vegetation",
