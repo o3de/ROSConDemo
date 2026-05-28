@@ -15,14 +15,12 @@ WORKDIR $WORKSPACE
 
 # O3DE Variables
 ARG O3DE_REPO=https://github.com/o3de/o3de.git
-ARG O3DE_BRANCH=main
-ARG O3DE_COMMIT=HEAD
+ARG O3DE_BRANCH=2409.2
 ENV O3DE_ROOT=$WORKSPACE/o3de
 
 # O3DE Extras Variables
 ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
-ARG O3DE_EXTRAS_BRANCH=main
-ARG O3DE_EXTRAS_COMMIT=HEAD
+ARG O3DE_EXTRAS_BRANCH=2409.2
 ENV O3DE_EXTRAS_ROOT=$WORKSPACE/o3de-extras
 
 # ROSConDemo Variables
@@ -32,9 +30,6 @@ ARG ROSCON_DEMO_COMMIT=HEAD
 ENV ROSCON_DEMO_ROOT=$WORKSPACE/ROSConDemo
 ENV ROSCON_DEMO_PROJECT=$ROSCON_DEMO_ROOT/Project
 ENV ROSCON_DEMO_NAV_ROOT=$ROSCON_DEMO_ROOT/kraken_nav
-
-# Copy the release-patch in case its needed
-COPY o3de_2.1.0.patch $WORKSPACE/
 
 ENV LANG=en_US.UTF-8
 
@@ -100,12 +95,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && git clone --single-branch -b $O3DE_BRANCH $O3DE_REPO $O3DE_ROOT \
     && git -C $O3DE_ROOT lfs install \
     && git -C $O3DE_ROOT lfs pull \
-    && git -C $O3DE_ROOT reset --hard $O3DE_COMMIT \
-    \
-    ############################################################### \
-    # Apply a patch to fix a release compile issue if needed \
-    ############################################################### \
-    && if [ "$(md5sum $O3DE_ROOT/Gems/Atom/RPI/Code/Source/RPI.Public/RPISystem.cpp | awk '{print $1}')" = "07389c00378a13f31f1d6faf097a026b" ];then git -C $O3DE_ROOT apply $WORKSPACE/o3de_2.1.0.patch; fi \
     \
     ############################################################### \
     # Clone o3de-extras   \
@@ -113,7 +102,6 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && git clone --single-branch -b $O3DE_EXTRAS_BRANCH $O3DE_EXTRAS_REPO $O3DE_EXTRAS_ROOT \
     && git -C $O3DE_EXTRAS_ROOT lfs install \
     && git -C $O3DE_EXTRAS_ROOT lfs pull \
-    && git -C $O3DE_EXTRAS_ROOT reset --hard $O3DE_EXTRAS_COMMIT \
     \
     ############################################################### \
     # Clone the ROSConDemo \
@@ -176,5 +164,5 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service
 
-ENV NVIDIA_VISIBLE_DEVICES all
-ENV NVIDIA_DRIVER_CAPABILITIES all
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=all

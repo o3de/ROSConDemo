@@ -5,7 +5,7 @@
 https://user-images.githubusercontent.com/82551958/229636734-2f67abeb-fe78-432c-8139-e4fc82f008ed.mp4
 
 This project demonstrates an example application of [O3DE](https://www.o3de.org/) working with ROS 2.
-The integration is realized through [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
+The integration is realized through [ROS2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2).
 
 This project was implemented for [ROSCon 2022](https://roscon.ros.org/2022/) event.
 
@@ -68,9 +68,9 @@ scripts/o3de.sh register --this-engine
 
 In case of any problems, please refer to the instructions to [set up O3DE from GitHub](https://o3de.org/docs/welcome-guide/setup/setup-from-github/).
 
-## ROS 2 Gem
+## ROS2 Gem
 
-This project uses the [ROS 2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2), which is included in the [O3DE extras bundle](https://github.com/o3de/o3de-extras). Please [install ROS 2](https://docs.ros.org/en/dashing/Installation/Ubuntu-Install-Binary.html) first. 
+This project uses the [ROS2 Gem](https://github.com/o3de/o3de-extras/blob/development/Gems/ROS2), which is included in the [O3DE extras bundle](https://github.com/o3de/o3de-extras). Please [install ROS 2](https://docs.ros.org/en/dashing/Installation/Ubuntu-Install-Binary.html) first. 
 
 The following commands should prepare `o3de-extras` into your `${WORKDIR}`:
 ```bash
@@ -86,7 +86,7 @@ cd ${WORKDIR}
 ./o3de/scripts/o3de.sh register --gem-path o3de-extras/Gems/ROS2
 ```
 
-More information about installing ROS 2 Gem can be found in the installation guide in [ROS 2 Project Configuration](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/). Note that the Gem instructions include the installation of ROS 2 with some additional packages.
+More information about installing ROS2 Gem can be found in the installation guide in [ROS 2 Project Configuration](https://www.o3de.org/docs/user-guide/interactivity/robotics/project-configuration/). Note that the Gem instructions include the installation of ROS 2 with some additional packages.
 
 To learn more about how the Gem works check out the [Robotics in O3DE](https://www.o3de.org/docs/user-guide/interactivity/robotics/). The Gem is open to your contributions!
 
@@ -98,7 +98,7 @@ The additional packages need to be installed. Use the following command:
 sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${ROS_DISTRO}-rmw-cyclonedds-cpp ros-${ROS_DISTRO}-cyclonedds
 ```
 
-💡 ***Note:*** This is a dependency besides all the packages already required by the ROS 2 Gem.
+💡 ***Note:*** This is a dependency besides all the packages already required by the ROS2 Gem.
 
 ### Required environment settings
 
