@@ -4,139 +4,121 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-ARG ROS_VERSION=humble
-ARG UBUNTU_VERSION=jammy
+ARG ROS_VERSION=jazzy
+ARG UBUNTU_VERSION=noble
 
 FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
-ENV WORKSPACE=/data/workspace
+ARG ROS_VERSION
+ARG UBUNTU_VERSION
 
-WORKDIR $WORKSPACE
-
-# O3DE Variables
-ARG O3DE_REPO=https://github.com/o3de/o3de.git
-ARG O3DE_BRANCH=2409.2
-ENV O3DE_ROOT=$WORKSPACE/o3de
-
-# O3DE Extras Variables
-ARG O3DE_EXTRAS_REPO=https://github.com/o3de/o3de-extras.git
-ARG O3DE_EXTRAS_BRANCH=2409.2
-ENV O3DE_EXTRAS_ROOT=$WORKSPACE/o3de-extras
+# O3DE SDK installer URL and install path
+ARG O3DE_DEB_URL=https://o3debinaries.org/main/Latest/Linux/o3de_2605_0.deb
+ARG O3DE_INSTALL_DIR=/opt/O3DE/26.05
 
 # ROSConDemo Variables
 ARG ROSCON_DEMO_REPO=https://github.com/o3de/ROSConDemo.git
 ARG ROSCON_DEMO_BRANCH=development
 ARG ROSCON_DEMO_COMMIT=HEAD
+
+ENV WORKSPACE=/data/workspace
 ENV ROSCON_DEMO_ROOT=$WORKSPACE/ROSConDemo
 ENV ROSCON_DEMO_PROJECT=$ROSCON_DEMO_ROOT/Project
 ENV ROSCON_DEMO_NAV_ROOT=$ROSCON_DEMO_ROOT/kraken_nav
-
 ENV LANG=en_US.UTF-8
 
-# Setup time zone and locale data (necessary for SSL and HTTPS packages)
+WORKDIR $WORKSPACE
+
+RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update \
-    && DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata locales keyboard-configuration curl \
-    && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-    && dpkg-reconfigure --frontend=noninteractive locales \
-    && update-locale LANG=en_US.UTF-8 \
-    && sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list' \
-    && curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - \
+    && apt-get install -y --no-install-recommends wget curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install the required ubuntu packages
+# Install build tools, O3DE system dependencies, and ROS 2 navigation packages
 RUN apt-get update \
-    && apt-get install -y \
-            binutils \
-            clang \
-            cmake \
-            git \
-            git-lfs \
-            libglu1-mesa-dev \
-            libxcb-xinerama0 \
-            libfontconfig1-dev \
-            libnvidia-gl-470 \
-            libxcb-xkb-dev \
-            libxkbcommon-x11-dev \
-            libxkbcommon-dev \
-            libxcb-xfixes0-dev \
-            libxcb-xinput-dev \
-            libxcb-xinput0 \
-            libpcre2-16-0 \
-            ninja-build \
-            python3-pip \
-            software-properties-common \
-            ros-${ROS_DISTRO}-ackermann-msgs \
-            ros-${ROS_DISTRO}-control-toolbox \
-            ros-${ROS_DISTRO}-gazebo-msgs \
-            ros-${ROS_DISTRO}-joy \
-            ros-${ROS_DISTRO}-navigation2 \
-            ros-${ROS_DISTRO}-rviz2 \
-            ros-${ROS_DISTRO}-tf2-ros \
-            ros-${ROS_DISTRO}-urdfdom \
-            ros-${ROS_DISTRO}-vision-msgs \
-            ros-${ROS_DISTRO}-cyclonedds \
-            ros-${ROS_DISTRO}-rmw-cyclonedds-cpp \
-            ros-${ROS_DISTRO}-slam-toolbox \
-            ros-${ROS_DISTRO}-nav2-bringup \
-            ros-${ROS_DISTRO}-pointcloud-to-laserscan \
-            ros-${ROS_DISTRO}-teleop-twist-keyboard \
-            ros-${ROS_DISTRO}-topic-tools \
-            python3-colcon-common-extensions \
-            && rm -rf /var/lib/apt/lists/* \
-            && pip install python-statemachine
+    && apt-get install -y --no-install-recommends \
+    binutils \
+    clang \
+    cmake \
+    git \
+    git-lfs \
+    libglu1-mesa-dev \
+    libxcb-xinerama0 \
+    libxcb-xinput0 \
+    libxcb-xinput-dev \
+    libxcb-xfixes0-dev \
+    libxcb-xkb-dev \
+    libxkbcommon-dev \
+    libxkbcommon-x11-dev \
+    libfontconfig1-dev \
+    libcurl4-openssl-dev \
+    libsdl2-dev \
+    zlib1g-dev \
+    mesa-common-dev \
+    libssl-dev \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-render-util0 \
+    libxcb-randr0 \
+    libpcre2-16-0 \
+    ninja-build \
+    python3-pip \
+    python3-colcon-common-extensions \
+    ros-${ROS_DISTRO}-desktop \
+    ros-${ROS_DISTRO}-ackermann-msgs \
+    ros-${ROS_DISTRO}-control-toolbox \
+    ros-${ROS_DISTRO}-gazebo-msgs \
+    ros-${ROS_DISTRO}-joy \
+    ros-${ROS_DISTRO}-navigation2 \
+    ros-${ROS_DISTRO}-slam-toolbox \
+    ros-${ROS_DISTRO}-nav2-bringup \
+    ros-${ROS_DISTRO}-pointcloud-to-laserscan \
+    ros-${ROS_DISTRO}-teleop-twist-keyboard \
+    ros-${ROS_DISTRO}-topic-tools \
+    ros-${ROS_DISTRO}-vision-msgs \
+    ros-${ROS_DISTRO}-nav-msgs \
+    ros-${ROS_DISTRO}-cyclonedds \
+    ros-${ROS_DISTRO}-rmw-cyclonedds-cpp \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --break-system-packages python-statemachine
 
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
-# Clone, register, and build the projects
+# Download and install the O3DE SDK
+RUN wget -q -O /tmp/o3de_latest.deb ${O3DE_DEB_URL} \
+    && apt-get install -y /tmp/o3de_latest.deb \
+    && rm /tmp/o3de_latest.deb \
+    && rm -rf /var/lib/apt/lists/*
+
+# Initialize O3DE Python environment, register the engine, and download required Gems
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
-    \
-    # Clone o3de \
-    \
-    && git clone --single-branch -b $O3DE_BRANCH $O3DE_REPO $O3DE_ROOT \
-    && git -C $O3DE_ROOT lfs install \
-    && git -C $O3DE_ROOT lfs pull \
-    \
-    ############################################################### \
-    # Clone o3de-extras   \
-    ############################################################### \
-    && git clone --single-branch -b $O3DE_EXTRAS_BRANCH $O3DE_EXTRAS_REPO $O3DE_EXTRAS_ROOT \
-    && git -C $O3DE_EXTRAS_ROOT lfs install \
-    && git -C $O3DE_EXTRAS_ROOT lfs pull \
-    \
-    ############################################################### \
-    # Clone the ROSConDemo \
-    ############################################################### \
-    && git clone --single-branch -b $ROSCON_DEMO_BRANCH $ROSCON_DEMO_REPO $ROSCON_DEMO_ROOT \
+    && ${O3DE_INSTALL_DIR}/python/get_python.sh \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh register --this-engine \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh register --repo-uri https://canonical.o3de.org \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh download --gem-name LevelGeoreferencing==1.0.0 \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh download --gem-name ROS2==4.2.0 \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh download --gem-name ROS2Controllers==1.1.0 \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh download --gem-name ROS2Sensors==1.0.1
+
+# Clone the ROSConDemo
+RUN git clone --single-branch -b $ROSCON_DEMO_BRANCH $ROSCON_DEMO_REPO $ROSCON_DEMO_ROOT \
     && git -C $ROSCON_DEMO_ROOT lfs install \
     && git -C $ROSCON_DEMO_ROOT lfs pull \
-    && git -C $ROSCON_DEMO_ROOT reset --hard $ROSCON_DEMO_COMMIT \
-    \
-    ############################################################### \
-    # Get the O3DE python and register the gem paths and projects \
-    ############################################################### \
-    && $O3DE_ROOT/python/get_python.sh \
-    && $O3DE_ROOT/scripts/o3de.sh register -ep $O3DE_ROOT \
-    && $O3DE_ROOT/scripts/o3de.sh register -gp $O3DE_EXTRAS_ROOT/Gems/ROS2 \
-    && $O3DE_ROOT/scripts/o3de.sh register -pp $ROSCON_DEMO_PROJECT \
-    \
-    ############################################################### \
-    # Build the Editor, Tools, and clients
-    ############################################################### \
-    && cmake -B $ROSCON_DEMO_PROJECT/build/linux -G "Ninja Multi-Config" \
-                            -S $ROSCON_DEMO_PROJECT \
-                            -DLY_DISABLE_TEST_MODULES=ON \
-                            -DLY_STRIP_DEBUG_SYMBOLS=ON \
-                            -DAZ_USE_PHYSX5=ON \
+    && git -C $ROSCON_DEMO_ROOT reset --hard $ROSCON_DEMO_COMMIT
+
+# Register the project and build the simulation
+RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
+    && ${O3DE_INSTALL_DIR}/scripts/o3de.sh register -pp $ROSCON_DEMO_PROJECT \
+    && cmake -B $ROSCON_DEMO_PROJECT/build/linux \
+    -S $ROSCON_DEMO_PROJECT \
+    -G "Ninja Multi-Config" \
+    -DLY_DISABLE_TEST_MODULES=ON \
+    -DLY_STRIP_DEBUG_SYMBOLS=TRUE \
     && cmake --build $ROSCON_DEMO_PROJECT/build/linux --config profile \
-             --target ROSConDemo.GameLauncher Editor ROSConDemo.Assets \
-    \
-    ############################################################### \
-    # Build the Editor, Tools, and clients
-    ############################################################### \
+    --target ROSConDemo ROSConDemo.GameLauncher ROSConDemo.Assets \
     && rm -rf ~/.o3de/3rdParty/ \
-    && rm -rf $O3DE_ROOT/.git \
-    && rm -rf $O3DE_ROOT/AutomatedTesting \
-    && rm -rf $O3DE_ROOT/python/downloaded_packages \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/Azcg/ \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMake \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMakeFiles/ \
@@ -152,17 +134,3 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && cd $ROSCON_DEMO_NAV_ROOT \
     && colcon build --symlink-install
-
-# Add the appropriate ros2 environment setup script to the system startup
-RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
-    && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
-    && echo "" >> /etc/systemd/system/setup_ros.service \
-    && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && echo "ExecStart=/opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/systemd/system/setup_ros.service \
-    && echo "" >> /etc/systemd/system/setup_ros.service \
-    && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
-    && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \
-    && echo "" >> /etc/systemd/system/setup_ros.service
-
-ENV NVIDIA_VISIBLE_DEVICES=all
-ENV NVIDIA_DRIVER_CAPABILITIES=all
