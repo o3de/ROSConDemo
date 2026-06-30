@@ -60,6 +60,7 @@ RUN apt-get update \
     libxcb-icccm4 \
     libxcb-image0 \
     libxcb-keysyms1 \
+    libxcb-keysyms1-dev \
     libxcb-render-util0 \
     libxcb-randr0 \
     libpcre2-16-0 \
@@ -112,13 +113,16 @@ RUN git clone --single-branch -b $ROSCON_DEMO_BRANCH $ROSCON_DEMO_REPO $ROSCON_D
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh \
     && ${O3DE_INSTALL_DIR}/scripts/o3de.sh register -pp $ROSCON_DEMO_PROJECT \
     && cmake -B $ROSCON_DEMO_PROJECT/build/linux \
-    -S $ROSCON_DEMO_PROJECT \
-    -G "Ninja Multi-Config" \
-    -DLY_DISABLE_TEST_MODULES=ON \
-    -DLY_STRIP_DEBUG_SYMBOLS=TRUE \
+             -S $ROSCON_DEMO_PROJECT \
+             -G "Ninja Multi-Config" \
+             -DLY_DISABLE_TEST_MODULES=ON \
+             -DLY_STRIP_DEBUG_SYMBOLS=TRUE \
     && cmake --build $ROSCON_DEMO_PROJECT/build/linux --config profile \
-    --target ROSConDemo ROSConDemo.GameLauncher ROSConDemo.Assets \
-    && rm -rf ~/.o3de/3rdParty/ \
+             --target ROSConDemo ROSConDemo.GameLauncher ROSConDemo.Assets
+
+# Clean up build artifacts and source control metadata to reduce image size
+RUN rm -rf ~/.o3de/3rdParty/ \
+    && rm -rf $ROSCON_DEMO_ROOT/.git \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/Azcg/ \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMake \
     && rm -rf $ROSCON_DEMO_PROJECT/build/linux/CMakeFiles/ \

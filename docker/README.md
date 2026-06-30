@@ -10,9 +10,6 @@ This Dockerfile will build a docker container that will have the simulation laun
 ### Dockerfile.NavStack
 This Dockerfile will build a docker container that will only have the `kraken_nav` code for the navigation stack.
 
-### Dockerfile.Simulation
-This Dockerfile will build a docker container that will have the simulation launcher (`ROSConDemo.GameLauncher`) and the `kraken_nav` code for the navigation stack.
-
 
 ## Prerequisites
 
@@ -85,41 +82,17 @@ To launch the O3DE simulation launcher for the ROSConDemo project, execute the f
 To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
 
 
-## Building the reduced Docker Images for the Simulation/Navigation
-Also included are custom Dockerscripts that will only build the components necessary to launch and run the RosConDemo simulation only:
+## Building the Navigation Stack Docker Image
 
-* Dockerfile.Simulation
-  The Docker image created from this script will have a release-build packaged version of the simulation as well as the compiled `kraken_nav` code for the navigation stack.
+Also included is a lightweight Dockerfile that builds only the `kraken_nav` navigation stack code, with no O3DE dependency:
+
 * Dockerfile.NavStack
   The Docker image created from this script will only have the compiled `kraken_nav` code for the navigation stack.
-
-These images will be much smaller than the full `roscon_demo` docker image.
-
-To build the `roscon_sim` Docker image, run the following build command from this `docker` subfolder of this project:
-
-```
-docker build -t roscon_sim -f Dockerfile.Simulation .
-```
 
 To build the `roscon_nav` Docker image, run the following build command from this `docker` subfolder of this project:
 
 ```
 docker build -t roscon_nav -f Dockerfile.NavStack .
-```
-
-## Running the Simulation Docker Image
-
-Similar to the steps to launch the `roscon_demo` image above, you can launch the simulation Docker image with the following command:
-
-```
-rocker --x11 --nvidia --network="bridge" roscon_sim
-```
-
-Once logged into the simulation docker terminal, you can launch the simulation with the following commands:
-
-```
-cd /data/workspace/ROSConDemoGamePackage
-./ROSConDemo.GameLauncher
 ```
 
 ## Running the Navigation Stack Docker Image
