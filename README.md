@@ -69,8 +69,8 @@ You also need [ROS 2](https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-
 ### 1. Install and register the engine
 
 ```shell
-wget https://o3debinaries.org/main/Latest/Linux/o3de_latest.deb
-sudo dpkg -i o3de_latest.deb
+wget https://o3debinaries.org/main/Latest/Linux/o3de_2605_0.deb
+sudo dpkg -i o3de_2605_0.deb
 /opt/O3DE/26.05/python/get_python.sh
 /opt/O3DE/26.05/scripts/o3de.sh register --this-engine
 ```
@@ -79,10 +79,10 @@ sudo dpkg -i o3de_latest.deb
 
 ```shell
 /opt/O3DE/26.05/scripts/o3de.sh register --repo-uri https://canonical.o3de.org
-/opt/O3DE/26.05/scripts/o3de.sh download --gem-name LevelGeoreferencing
-/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2
-/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2Controllers
-/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2Sensors
+/opt/O3DE/26.05/scripts/o3de.sh download --gem-name LevelGeoreferencing==1.0.0
+/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2==4.2.0
+/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2Controllers==1.1.0
+/opt/O3DE/26.05/scripts/o3de.sh download --gem-name ROS2Sensors==1.0.1
 ```
 
 ### 3. Additional ROS 2 packages
@@ -95,12 +95,14 @@ sudo apt install ros-${ROS_DISTRO}-vision-msgs ros-${ROS_DISTRO}-nav-msgs ros-${
 
 ### 4. Required environment settings
 
-Add the following to your `~/.bashrc` or equivalent:
+Configure the local environment. Do it in every terminal you use.
 
 ```shell
 source /opt/ros/jazzy/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
+
+You might want to add it to your `~/.bashrc` or equivalent file.
 
 > **Note:** We recommend CycloneDDS over FastDDS (the default for ROS 2) as we have observed navigation issues with FastDDS.
 
