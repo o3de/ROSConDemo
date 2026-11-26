@@ -22,7 +22,7 @@
 #include <Integration/SimpleMotionComponentBus.h>
 #include <ROS2/Frame/ROS2FrameComponent.h>
 #include <ROS2/ROS2Bus.h>
-#include <ROS2/Utilities/ROS2Names.h>
+#include <ROS2/ROS2NamesBus.h>
 
 using namespace ROS2;
 
@@ -156,9 +156,11 @@ namespace AppleKraken
         DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::OnApplePickerSpawned, GetEntityId());
 
         auto ros2Node = ROS2Interface::Get()->GetNode();
-        auto frame = Utils::GetGameOrEditorComponent<ROS2FrameComponent>(GetEntity());
+        auto* frame = GetEntity()->FindComponent<ROS2::ROS2FrameComponent>();
         auto robotNamespace = frame->GetNamespace();
-        auto triggerTopic = ROS2Names::GetNamespacedName(robotNamespace, m_triggerServiceTopic);
+        AZStd::string triggerTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            triggerTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, robotNamespace, m_triggerServiceTopic);
         m_triggerService = ros2Node->create_service<std_srvs::srv::Trigger>(
             triggerTopic.c_str(),
             [this](const TriggerRequestPtr request, TriggerResponsePtr response)
@@ -166,7 +168,9 @@ namespace AppleKraken
                 this->ProcessTriggerServiceCall(request, response);
             });
 
-        auto cancelTopic = ROS2Names::GetNamespacedName(robotNamespace, m_cancelServiceTopic);
+        AZStd::string cancelTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            cancelTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, robotNamespace, m_cancelServiceTopic);
         m_cancelService = ros2Node->create_service<std_srvs::srv::Trigger>(
             cancelTopic.c_str(),
             [this](const TriggerRequestPtr request, TriggerResponsePtr response)
@@ -174,20 +178,28 @@ namespace AppleKraken
                 this->ProcessCancelServiceCall(request, response);
             });
 
-        auto doneTopic = ROS2Names::GetNamespacedName(robotNamespace, m_doneServiceTopic);
+        AZStd::string doneTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            doneTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, robotNamespace, m_doneServiceTopic);
         m_doneServiceClient = ros2Node->create_client<std_srvs::srv::Empty>(doneTopic.c_str());
 
-        auto statusTopic = ROS2Names::GetNamespacedName(robotNamespace, m_progressTopic);
-        m_progressPublisher =  ros2Node->create_publisher<std_msgs::msg::Float32>(statusTopic.c_str(),10);
-        m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetFrameID());
+        AZStd::string progressTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            progressTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, robotNamespace, m_progressTopic);
+        m_progressPublisher = ros2Node->create_publisher<std_msgs::msg::Float32>(progressTopic.c_str(), 10);
+        m_appleGroundTruthDetector = AZStd::make_unique<AppleDetectionGroundTruth>(robotNamespace, frame->GetNamespacedFrameID());
 
-        auto orchestrationStatusTopic = ROS2Names::GetNamespacedName(robotNamespace, m_orchestratorStatusTopic);
-        m_orchestrationStatusSubscriber = ros2Node->create_subscription<std_msgs::msg::String>(orchestrationStatusTopic.c_str(),10,
-           [this](const std_msgs::msg::String::ConstSharedPtr msg)
-           {
-               AZStd::string label(msg->data.c_str(), msg->data.size());
-               DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), label);
-           });
+        AZStd::string orchestrationStatusTopic;
+        ROS2::ROS2NamesRequestBus::BroadcastResult(
+            orchestrationStatusTopic, &ROS2::ROS2NamesRequests::GetNamespacedName, robotNamespace, m_orchestratorStatusTopic);
+        m_orchestrationStatusSubscriber = ros2Node->create_subscription<std_msgs::msg::String>(
+            orchestrationStatusTopic.c_str(),
+            10,
+            [this](const std_msgs::msg::String::ConstSharedPtr msg)
+            {
+                AZStd::string label(msg->data.c_str(), msg->data.size());
+                DemoStatisticsNotificationBus::Broadcast(&DemoStatisticsNotifications::SetApplePickerStatus, GetEntityId(), label);
+            });
     }
 
     void ApplePickerComponent::Deactivate()
@@ -215,7 +227,6 @@ namespace AppleKraken
                 ->Field("AppleEntryAnimationEntity", &ApplePickerComponent::m_entryAnimationEntityId)
                 ->Field("OrchestratorStatusTopic", &ApplePickerComponent::m_orchestratorStatusTopic);
 
-
             if (AZ::EditContext* ec = serialize->GetEditContext())
             {
                 ec->Class<ApplePickerComponent>("Apple picking component", "A demo component for apple picking")
@@ -238,15 +249,15 @@ namespace AppleKraken
                         "OrchestratorStatus",
                         "ROS2 topic name with robot's status")
                     ->DataElement(
-                            AZ::Edit::UIHandlers::Default,
-                            &ApplePickerComponent::m_progressTopic,
-                            "Status",
-                            "ROS2 topic that reports progress of gathering")
+                        AZ::Edit::UIHandlers::Default,
+                        &ApplePickerComponent::m_progressTopic,
+                        "Status",
+                        "ROS2 topic that reports progress of gathering")
                     ->DataElement(
-                            AZ::Edit::UIHandlers::Default,
-                            &ApplePickerComponent::m_doneServiceTopic,
-                            "Done",
-                            "ROS2 service name send on finish gathering")
+                        AZ::Edit::UIHandlers::Default,
+                        &ApplePickerComponent::m_doneServiceTopic,
+                        "Done",
+                        "ROS2 service name send on finish gathering")
                     ->DataElement(
                         AZ::Edit::UIHandlers::EntityId,
                         &ApplePickerComponent::m_effectorEntityId,
@@ -347,7 +358,7 @@ namespace AppleKraken
 
     void ApplePickerComponent::PickNextApple()
     {
-        auto message = std_msgs::msg::Float32 ();
+        auto message = std_msgs::msg::Float32();
         message.data = this->ReportProgress();
         m_progressPublisher->publish(message);
         AZ_TracePrintf("ApplePicker", "Pick next apple");

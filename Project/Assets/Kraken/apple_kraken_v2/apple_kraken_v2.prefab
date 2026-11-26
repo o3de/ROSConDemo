@@ -1131,10 +1131,10 @@
                                     "Name": "Entire object",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6591FAEC-8F36-534D-9197-7F4DE940F58A}",
+                                            "guid": "{9B4B2ABC-7D6D-591A-ADA4-A39FB91E911D}",
                                             "subId": 1
                                         },
-                                        "assetHint": "materials/wheel_material.physicsmaterial"
+                                        "assetHint": "assets/wheel_material.physicsmaterial"
                                     }
                                 }
                             ]
@@ -2191,10 +2191,10 @@
                                     "Name": "Entire object",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6591FAEC-8F36-534D-9197-7F4DE940F58A}",
+                                            "guid": "{9B4B2ABC-7D6D-591A-ADA4-A39FB91E911D}",
                                             "subId": 1
                                         },
-                                        "assetHint": "materials/wheel_material.physicsmaterial"
+                                        "assetHint": "assets/wheel_material.physicsmaterial"
                                     }
                                 }
                             ]
@@ -2366,10 +2366,10 @@
                                     "Name": "Entire object",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6591FAEC-8F36-534D-9197-7F4DE940F58A}",
+                                            "guid": "{9B4B2ABC-7D6D-591A-ADA4-A39FB91E911D}",
                                             "subId": 1
                                         },
-                                        "assetHint": "materials/wheel_material.physicsmaterial"
+                                        "assetHint": "assets/wheel_material.physicsmaterial"
                                     }
                                 }
                             ]
@@ -2593,10 +2593,10 @@
                                     "Name": "Entire object",
                                     "MaterialAsset": {
                                         "assetId": {
-                                            "guid": "{6591FAEC-8F36-534D-9197-7F4DE940F58A}",
+                                            "guid": "{9B4B2ABC-7D6D-591A-ADA4-A39FB91E911D}",
                                             "subId": 1
                                         },
-                                        "assetHint": "materials/wheel_material.physicsmaterial"
+                                        "assetHint": "assets/wheel_material.physicsmaterial"
                                     }
                                 }
                             ]
@@ -4204,10 +4204,10 @@
                         "Configuration": {
                             "ModelAsset": {
                                 "assetId": {
-                                    "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                    "guid": "{D8869B70-CBEA-561C-8437-D9A73A6C2552}",
                                     "subId": 268955557
                                 },
-                                "assetHint": "models/sensors/lidaros2/lidaros2.fbx.azmodel"
+                                "assetHint": "assets/lidar/lidaros2.fbx.azmodel"
                             }
                         }
                     }
@@ -4238,19 +4238,19 @@
                                 "PhysicsAsset": {
                                     "Asset": {
                                         "assetId": {
-                                            "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                            "guid": "{D8869B70-CBEA-561C-8437-D9A73A6C2552}",
                                             "subId": 2574200790
                                         },
-                                        "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
+                                        "assetHint": "assets/lidar/lidaros2.fbx.pxmesh"
                                     },
                                     "Configuration": {
                                         "PhysicsAsset": {
                                             "assetId": {
-                                                "guid": "{99D850A3-8E59-5E78-93FE-AE8DB228684D}",
+                                                "guid": "{D8869B70-CBEA-561C-8437-D9A73A6C2552}",
                                                 "subId": 2574200790
                                             },
                                             "loadBehavior": "QueueLoad",
-                                            "assetHint": "models/sensors/lidaros2/lidaros2.fbx.pxmesh"
+                                            "assetHint": "assets/lidar/lidaros2.fbx.pxmesh"
                                         }
                                     }
                                 }
@@ -4320,6 +4320,28 @@
                     "Child Entity Order": [
                         "Entity_[31384819314500]"
                     ]
+                },
+                "EditorMaterialComponent": {
+                    "$type": "EditorMaterialComponent",
+                    "Id": 411903977307795359,
+                    "Controller": {
+                        "Configuration": {
+                            "materials": [
+                                {
+                                    "Key": {
+                                        "materialSlotStableId": 3498918361
+                                    },
+                                    "Value": {
+                                        "MaterialAsset": {
+                                            "assetId": {
+                                                "guid": "{7C88FC9D-2975-56DB-AC56-0BEAE750EF55}"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 }
             }
         },

@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0 OR MIT
 #
 
-ARG ROS_VERSION=humble
-ARG UBUNTU_VERSION=jammy
+ARG ROS_VERSION=jazzy
+ARG UBUNTU_VERSION=noble
 
 FROM ros:${ROS_VERSION}-ros-base-${UBUNTU_VERSION}
 
@@ -58,7 +58,7 @@ RUN apt-get update \
             ros-${ROS_DISTRO}-topic-tools \
             python3-colcon-common-extensions \
             && rm -rf /var/lib/apt/lists/* \
-            && pip install python-statemachine
+            && pip3 install --break-system-packages python-statemachine
 
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
@@ -84,7 +84,7 @@ RUN echo "[Unit]" > /etc/systemd/system/setup_ros.service \
     && echo "After=network.target" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Service]" >> /etc/systemd/system/setup_ros.service \
-    && echo "ExecStart=/opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/systemd/system/setup_ros.service; \
+    && echo "ExecStart=/opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/systemd/system/setup_ros.service \
     && echo "" >> /etc/systemd/system/setup_ros.service \
     && echo "[Install]" >> /etc/systemd/system/setup_ros.service \
     && echo "WantedBy=default.target" >> /etc/systemd/system/setup_ros.service \

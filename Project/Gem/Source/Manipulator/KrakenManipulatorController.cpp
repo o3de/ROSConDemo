@@ -7,10 +7,9 @@
  */
 
 #include "KrakenManipulatorController.h"
-#include <ROS2/Manipulation/MotorizedJoints/PidMotorControllerBus.h>
 #include <AzCore/Serialization/EditContext.h>
-
 #include <AzFramework/Components/TransformComponent.h>
+#include <ROS2Controllers/Manipulation/MotorizedJoints/PidMotorControllerBus.h>
 
 namespace AppleKraken
 {
@@ -60,8 +59,10 @@ namespace AppleKraken
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_vectorZ, "vz", "vz")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_effector, "Effector", "Effector")
                     ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::m_restEntity, "Rest entity", "Rest Entity")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorXZ, "max_errorXZ", "max error XZ to retract nose")
-                    ->DataElement(AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorY, "max_errorY", "max error Y to retract nose");
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorXZ, "max_errorXZ", "max error XZ to retract nose")
+                    ->DataElement(
+                        AZ::Edit::UIHandlers::EntityId, &ManipulatorController::max_errorY, "max_errorY", "max error Y to retract nose");
             }
         }
     }
@@ -102,11 +103,15 @@ namespace AppleKraken
         float error_x = std::numeric_limits<float>::max();
         float error_z = std::numeric_limits<float>::max();
 
-        ROS2::PidMotorControllerRequestBus::Event(m_entityX, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointX);
-        ROS2::PidMotorControllerRequestBus::EventResult(error_x, m_entityX, &ROS2::PidMotorControllerRequests::GetError);
+        ROS2Controllers::PidMotorControllerRequestBus::Event(
+            m_entityX, &ROS2Controllers::PidMotorControllerRequests::SetSetpoint, m_setPointX);
+        ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+            error_x, m_entityX, &ROS2Controllers::PidMotorControllerRequests::GetError);
 
-        ROS2::PidMotorControllerRequestBus::Event(m_entityZ, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointZ);
-        ROS2::PidMotorControllerRequestBus::EventResult(error_z, m_entityZ, &ROS2::PidMotorControllerRequests::GetError);
+        ROS2Controllers::PidMotorControllerRequestBus::Event(
+            m_entityZ, &ROS2Controllers::PidMotorControllerRequests::SetSetpoint, m_setPointZ);
+        ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+            error_z, m_entityZ, &ROS2Controllers::PidMotorControllerRequests::GetError);
 
         // auto - disable nose retrieve only if we reached small error.
         if (m_noseRetrieveRequest == true)
@@ -114,7 +119,7 @@ namespace AppleKraken
             m_time_XZ_ok += deltaTime;
             if (m_time_XZ_ok > m_timeSetpointReach)
             {
-                if (error_x < max_errorXZ  && error_x > -max_errorXZ && error_z < max_errorXZ && error_z > -max_errorXZ)
+                if (error_x < max_errorXZ && error_x > -max_errorXZ && error_z < max_errorXZ && error_z > -max_errorXZ)
                 {
                     AZ_Printf("ManipulatorController", "Nose is sliding out  \n");
                     m_noseRetrieveRequest = false;
@@ -132,7 +137,8 @@ namespace AppleKraken
                 if (m_time_Y_ok > m_timeSetpointReach)
                 {
                     float error_y = std::numeric_limits<float>::max();
-                    ROS2::PidMotorControllerRequestBus::EventResult(error_y, m_entityY, &ROS2::PidMotorControllerRequests::GetError);
+                    ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+                        error_y, m_entityY, &ROS2Controllers::PidMotorControllerRequests::GetError);
                     if (error_y < max_errorY && error_y > -max_errorY)
                     {
                         m_noseRetrievingSuccess = true;
@@ -144,9 +150,9 @@ namespace AppleKraken
             {
                 m_noseRetrievingSuccess = false;
             }
-            ROS2::PidMotorControllerRequestBus::Event(m_entityY, &ROS2::PidMotorControllerRequests::SetSetpoint, m_setPointY);
+            ROS2Controllers::PidMotorControllerRequestBus::Event(
+                m_entityY, &ROS2Controllers::PidMotorControllerRequests::SetSetpoint, m_setPointY);
         }
-
     }
 
     void ManipulatorController::PickApple(const AZ::Vector3 position)
@@ -160,13 +166,16 @@ namespace AppleKraken
 
     AZ::Vector3 ManipulatorController::GetPosition()
     {
-        float x{0};
-        float y{0};
-        float z{0};
-        ROS2::PidMotorControllerRequestBus::EventResult(x, m_entityX, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
-        ROS2::PidMotorControllerRequestBus::EventResult(y, m_entityY, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
-        ROS2::PidMotorControllerRequestBus::EventResult(z, m_entityZ, &ROS2::PidMotorControllerRequests::GetCurrentMeasurement);
-        return AZ::Vector3{x,y,z};
+        float x{ 0 };
+        float y{ 0 };
+        float z{ 0 };
+        ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+            x, m_entityX, &ROS2Controllers::PidMotorControllerRequests::GetCurrentMeasurement);
+        ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+            y, m_entityY, &ROS2Controllers::PidMotorControllerRequests::GetCurrentMeasurement);
+        ROS2Controllers::PidMotorControllerRequestBus::EventResult(
+            z, m_entityZ, &ROS2Controllers::PidMotorControllerRequests::GetCurrentMeasurement);
+        return AZ::Vector3{ x, y, z };
     };
 
     void ManipulatorController::Retrieve()
@@ -214,19 +223,21 @@ namespace AppleKraken
 
     void ManipulatorController::OnImGuiUpdate()
     {
-
         AZStd::string window_name = AZStd::string::format("ManipulatorController%s", GetEntityId().ToString().c_str());
         ImGui::Begin(window_name.c_str());
         auto pos = GetPosition();
-        if (m_desiredApple){
-            ImGui::Text("Desired Apple : %.1f %.1f %.1f", m_desiredApple->GetX(),m_desiredApple->GetY(),m_desiredApple->GetZ());
-        }else{
+        if (m_desiredApple)
+        {
+            ImGui::Text("Desired Apple : %.1f %.1f %.1f", m_desiredApple->GetX(), m_desiredApple->GetY(), m_desiredApple->GetZ());
+        }
+        else
+        {
             ImGui::Text("No Desired Apple");
         }
         if (ImGui::CollapsingHeader("Gantry"))
         {
-            ImGui::Text("Positions : %.1f %.1f", pos.GetX(), pos.GetZ() );
-            ImGui::Text("SetPoint  : %.1f %.1f", m_setPointX,  m_setPointZ );
+            ImGui::Text("Positions : %.1f %.1f", pos.GetX(), pos.GetZ());
+            ImGui::Text("SetPoint  : %.1f %.1f", m_setPointX, m_setPointZ);
         }
         if (ImGui::CollapsingHeader("Nose"))
         {
@@ -236,7 +247,6 @@ namespace AppleKraken
             ImGui::Checkbox("noseRetrievingSuccess", &m_noseRetrievingSuccess);
         }
         ImGui::End();
-
     }
 
 } // namespace AppleKraken

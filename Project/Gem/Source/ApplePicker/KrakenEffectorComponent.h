@@ -21,7 +21,6 @@
 #include <AzFramework/Physics/Shape.h>
 #include <AzFramework/Physics/SystemBus.h>
 #include <ImGuiBus.h>
-#include <ImGui/ImGuiPass.h>
 
 namespace AppleKraken
 {
@@ -30,7 +29,7 @@ namespace AppleKraken
         : public AZ::Component
         , protected ApplePickingRequestBus::Handler
         , protected AZ::TickBus::Handler
-        , protected  ImGui::ImGuiUpdateListenerBus::Handler
+        , protected ImGui::ImGuiUpdateListenerBus::Handler
     {
     public:
         AZ_COMPONENT(KrakenEffectorComponent, "{9206FC30-DF56-4246-8247-5D6B31603B53}");
@@ -87,6 +86,6 @@ namespace AppleKraken
         bool m_registeredCallback{ false };
         bool is_manipulator_locked = { false };
         AzPhysics::SimulatedBodyEvents::OnTriggerEnter::Handler m_onTriggerHandleBeginHandler;
-        std::array<float,3> m_debugApple;
+        std::array<float, 3> m_debugApple;
     };
 } // namespace AppleKraken
