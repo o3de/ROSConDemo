@@ -2,7 +2,7 @@
 
 The Dockerfile defined in this path will prepare the appropriate ROS 2 Jazzy distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
-There are three Dockerfile scripts that are designed to provide environments to both run the ROSCon demo project simulation, and to run the ROSCon editor to open and view the demo level and assets for closer inspection. (Note that the editor environment is meant for demonstrative purposes only and not intended for actual editing and authoring)
+There are two Dockerfile scripts: one provides the environment to run the ROSCon demo project simulation together with the navigation stack, and the other provides the navigation stack only.
 
 ### Dockerfile
 This Dockerfile will build a docker container that will have the simulation launcher (`ROSConDemo.GameLauncher`) and the `kraken_nav` code for the navigation stack.
@@ -97,7 +97,7 @@ docker build -t roscon_nav -f Dockerfile.NavStack .
 
 ## Running the Navigation Stack Docker Image
 
-Once the simulation is running, you can launch either the Navigation Stack Docker image, or launch another instance of the Simulation Docker image to control the simulation through ROS.
+Once the simulation is running, you can launch either the Navigation Stack Docker image, or launch another instance of the full Docker image (`roscon_demo`) to control the simulation through ROS.
 
 ```
 rocker --x11 --nvidia --network="bridge" roscon_nav
