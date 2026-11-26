@@ -60,7 +60,7 @@ To launch the O3DE editor for the ROSConDemo project, execute the following comm
 /data/workspace/ROSConDemo/Project/build/linux/bin/profile/Editor
 ```
 
-Further instructions and details can be found in the [main README file](https://github.com/o3de/ROSConDemo/blob/development/README.md#running-the-demo-scenario)
+Further instructions and details can be found in the [main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md#running-the-demo-scenario)
 
 To launch the O3DE simulation launcher for the ROSConDemo project, execute the following command within the docker terminal
 
@@ -68,7 +68,7 @@ To launch the O3DE simulation launcher for the ROSConDemo project, execute the f
 /data/workspace/ROSConDemo/Project/build/linux/bin/profile/./ROSConDemo.GameLauncher -LoadLevel=main
 ```
 
-To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
+To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/main/kraken_nav/README.md#running-simulation)
 
 
 ## Building the reduced Docker Images for the Simulation/Navigation
@@ -122,7 +122,7 @@ The above command will log you into the docker terminal that has the `kraken_nav
 source /data/workspace/kraken_nav/install/setup.bash
 ```
 
-From this docker terminal, you will be able to run the demo scenario described in the [main README file](https://github.com/o3de/ROSConDemo/blob/development/README.md#running-the-demo-scenario)
+From this docker terminal, you will be able to run the demo scenario described in the [main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md#running-the-demo-scenario)
 
 
 ## Advanced Options
@@ -153,4 +153,4 @@ In addition to the repositories, the following arguments target the branch, comm
 |-------------------------|----------------------------------|------------------------|
 | O3DE_BRANCH             | O3DE                             | 2409.2                 |
 | O3DE_EXTRAS_BRANCH      | O3DE Extras                      | 2409.2                 |
-| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | development            |
+| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | main                   |
