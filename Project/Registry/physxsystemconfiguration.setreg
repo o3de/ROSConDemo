@@ -1,10 +1,8 @@
 {
     "Amazon": {
         "Gems": {
-            "PhysX": {
+            "PhysX5": {
                 "PhysXSystemConfiguration": {
-                    "FixedTimeStep": 0.009999999776482582,
-                    "OverlapBufferSize": 256,
                     "CollisionConfig": {
                         "Layers": {
                             "LayerNames": [

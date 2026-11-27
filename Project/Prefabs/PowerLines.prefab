@@ -170,7 +170,7 @@
                                     "guid": "{0DF0B3FC-E644-5A79-9D6E-C839D784A948}",
                                     "subId": 281775889
                                 },
-                                "assetHint": "assets/barn/powerlines.azmodel"
+                                "assetHint": "assets/barn/powerlines.fbx.azmodel"
                             },
                             "SortKey": 9,
                             "IsRayTracingEnabled": false

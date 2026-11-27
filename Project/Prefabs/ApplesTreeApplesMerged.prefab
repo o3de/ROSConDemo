@@ -85,7 +85,7 @@
                                     "guid": "{6938817F-A68A-5861-B8D3-8D1FF3B12FAE}",
                                     "subId": 271211390
                                 },
-                                "assetHint": "assets/apple_tree/appletreeapples.azmodel"
+                                "assetHint": "assets/apple_tree/appletreeapples.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false,
                             "LodOverride": 2

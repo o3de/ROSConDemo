@@ -450,10 +450,9 @@
                     }
                 },
                 "Component_[839061643917149005]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 839061643917149005,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_4"
                     }
                 },
@@ -634,10 +633,9 @@
                     }
                 },
                 "Component_[3950558941332218098]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 3950558941332218098,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "steering_front_right_link"
                     }
                 },
@@ -945,10 +943,9 @@
                     "Id": 12574681316984350453
                 },
                 "Component_[12589217388276244759]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 12589217388276244759,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "wheel_front_left_link"
                     }
                 },
@@ -1190,10 +1187,9 @@
                     }
                 },
                 "Component_[17312067275736616703]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 17312067275736616703,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_0"
                     }
                 },
@@ -1531,10 +1527,9 @@
                     "Id": 8857359616044755216
                 },
                 "Component_[9145617912145528580]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 9145617912145528580,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_2"
                     }
                 },
@@ -1955,10 +1950,9 @@
                     }
                 },
                 "Component_[2169386371792618257]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 2169386371792618257,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "wheel_rear_left_link"
                     }
                 },
@@ -2130,10 +2124,9 @@
                     }
                 },
                 "Component_[2213009497670964234]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 2213009497670964234,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "wheel_rear_right_link"
                     }
                 },
@@ -2434,10 +2427,9 @@
                     "Id": 6853700600595112405
                 },
                 "Component_[8600248634478648640]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 8600248634478648640,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "wheel_front_right_link"
                     }
                 }
@@ -2866,10 +2858,9 @@
                     }
                 },
                 "Component_[5918697870879483153]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 5918697870879483153,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Namespace Configuration": {
                             "Namespace Strategy": 2
                         },
@@ -3029,10 +3020,9 @@
                     }
                 },
                 "Component_[6517663388098082332]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 6517663388098082332,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "kraken_manipulator_link_1"
                     }
                 },
@@ -3134,10 +3124,9 @@
                     "Id": 18116517932786798066
                 },
                 "Component_[2414989753236822341]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 2414989753236822341,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Frame Name": "steering_front_left_link"
                     }
                 },
@@ -3503,10 +3492,9 @@
                     "Id": 17075071070477116796
                 },
                 "Component_[18376511454985353613]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 18376511454985353613,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Namespace Configuration": {
                             "Namespace Strategy": 1
                         },
@@ -3572,10 +3560,9 @@
             "Name": "Sensor",
             "Components": {
                 "Component_[1058300359310703890]": {
-                    "$type": "GenericComponentWrapper",
+                    "$type": "ROS2FrameEditorComponent",
                     "Id": 1058300359310703890,
-                    "m_template": {
-                        "$type": "ROS2FrameComponent",
+                    "ROS2FrameConfiguration": {
                         "Namespace Configuration": {
                             "Namespace Strategy": 1
                         },

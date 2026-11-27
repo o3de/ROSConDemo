@@ -78,8 +78,7 @@
                 "Component_[13991554714683376679]": {
                     "$type": "{27F1E1A1-8D9D-4C3B-BD3A-AFB9762449C0} TransformComponent",
                     "Id": 13991554714683376679,
-                    "Parent Entity": "ContainerEntity",
-                    "IsStatic": true
+                    "Parent Entity": "ContainerEntity"
                 },
                 "Component_[15415082778917096339]": {
                     "$type": "EditorVisibilityComponent",
@@ -95,7 +94,7 @@
                                     "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
                                     "subId": 271716100
                                 },
-                                "assetHint": "assets/props/default_wagonwheel_01_95b5e7c8_4232_529c_95d3_7f7d7981eac0_.azmodel"
+                                "assetHint": "assets/props/default_wagonwheel_01_95b5e7c8_4232_529c_95d3_7f7d7981eac0_.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }
@@ -180,7 +179,7 @@
                                     "guid": "{1EEB3AFD-0707-5945-9E1C-66F58FF62C8F}",
                                     "subId": 2828817795
                                 },
-                                "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                                "assetHint": "assets/props/wagonwheel_01.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -189,7 +188,7 @@
                                         "subId": 2828817795
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/props/wagonwheel_01.pxmesh"
+                                    "assetHint": "assets/props/wagonwheel_01.fbx.pxmesh"
                                 }
                             }
                         }

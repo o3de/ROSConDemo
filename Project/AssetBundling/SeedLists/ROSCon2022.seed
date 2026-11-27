@@ -24,13 +24,6 @@
             },
             "platformFlags": 2,
             "pathHint": "thirdpersonmovement.inputbindings"
-        },
-        {
-            "assetId": {
-                "guid": "{1CBEE567-0954-59BA-8205-93BE85D07D0B}"
-            },
-            "platformFlags": 2,
-            "pathHint": "autoexec.cfg"
         }
     ]
 }

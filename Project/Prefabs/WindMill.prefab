@@ -71,7 +71,7 @@
                                     "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
                                     "subId": 280810325
                                 },
-                                "assetHint": "assets/windmill_01/windmill_01.azmodel"
+                                "assetHint": "assets/windmill_01/windmill_01.fbx.azmodel"
                             }
                         }
                     }
@@ -131,7 +131,7 @@
                                     "guid": "{EC65A495-73B9-51BB-9069-B9EF91AED97E}",
                                     "subId": 1366355562
                                 },
-                                "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                                "assetHint": "assets/windmill_01/windmill_01.fbx.pxmesh"
                             },
                             "Configuration": {
                                 "PhysicsAsset": {
@@ -140,7 +140,7 @@
                                         "subId": 1366355562
                                     },
                                     "loadBehavior": "QueueLoad",
-                                    "assetHint": "assets/windmill_01/windmill_01.pxmesh"
+                                    "assetHint": "assets/windmill_01/windmill_01.fbx.pxmesh"
                                 }
                             }
                         }
@@ -270,7 +270,7 @@
                                     "guid": "{5D6F0E3A-8537-5A3E-9D9A-F81AAE95F73B}",
                                     "subId": 279736998
                                 },
-                                "assetHint": "assets/windmill_01/windmillvanes_01.azmodel"
+                                "assetHint": "assets/windmill_01/windmillvanes_01.fbx.azmodel"
                             },
                             "IsRayTracingEnabled": false
                         }

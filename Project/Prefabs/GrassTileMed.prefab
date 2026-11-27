@@ -72,7 +72,7 @@
                                     "guid": "{2A394627-DAB3-5A5C-BE6E-56E6ADC04FA7}",
                                     "subId": 273018156
                                 },
-                                "assetHint": "assets/grass_tile_med/grass_tile_med.azmodel"
+                                "assetHint": "assets/grass_tile_med/grass_tile_med.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

@@ -1,7 +1,7 @@
 {
     "ContainerEntity": {
         "Id": "ContainerEntity",
-        "Name": "GrassTileLageDry",
+        "Name": "GrassTileLargeDry",
         "Components": {
             "Component_[1005441731890578162]": {
                 "$type": "EditorDisabledCompositionComponent",
@@ -52,7 +52,7 @@
     "Entities": {
         "Entity_[4721584906070]": {
             "Id": "Entity_[4721584906070]",
-            "Name": "GrassTileLageDry",
+            "Name": "GrassTileLargeDry",
             "Components": {
                 "Component_[12958977580153507975]": {
                     "$type": "EditorVisibilityComponent",
@@ -107,7 +107,7 @@
                                     "guid": "{AAE851D5-7DEE-5A76-8462-4F0881796013}",
                                     "subId": 270856628
                                 },
-                                "assetHint": "assets/grass_tile_large_dry/grass_tile_large_dry.azmodel"
+                                "assetHint": "assets/grass_tile_large_dry/grass_tile_large_dry.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

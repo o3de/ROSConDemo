@@ -91,7 +91,7 @@
                                     "guid": "{9C78F14E-7E84-5F44-9E58-35C4F9B378D0}",
                                     "subId": 277161338
                                 },
-                                "assetHint": "assets/grass_tile_med_dry/default_grass_tile_med_dry_5014d9cb_4115_513c_b660_040ad1cc3cf6_.azmodel"
+                                "assetHint": "assets/grass_tile_med_dry/default_grass_tile_med_dry_5014d9cb_4115_513c_b660_040ad1cc3cf6_.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

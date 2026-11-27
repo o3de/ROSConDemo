@@ -126,7 +126,7 @@
                                     "guid": "{32F85B30-2474-56F3-8208-62ADC38ADAB6}",
                                     "subId": 269712826
                                 },
-                                "assetHint": "assets/grass_tile_small_dry/grass_tile_small_dry.azmodel"
+                                "assetHint": "assets/grass_tile_small_dry/grass_tile_small_dry.fbx.azmodel"
                             },
                             "ExcludeFromReflectionCubeMaps": true,
                             "UseForwardPassIBLSpecular": true,

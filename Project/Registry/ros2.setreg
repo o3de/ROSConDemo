@@ -1,0 +1,20 @@
+{
+    "O3DE":
+    {
+        "InputSystem":
+        {
+            "Mouse":
+            {
+                "CaptureMouseCursor": false
+            }
+        },
+        "ROS2":
+        {
+            "ClockType": "ros2",
+            "Camera":
+            {
+                "AllowPipelineModification": false
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 # Dockerfiles for running the ROSConDemo
 
-The Dockerfile defined in this path will prepare the appropriate ROS2 Iron distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
+The Dockerfile defined in this path will prepare the appropriate ROS 2 Humble distribution based environment and build the components necessary to run the ROSCon demo project simulator through the O3DE engine.
 
 There are three Dockerfile scripts that are designed to provide environments to both run the ROSCon demo project simulation, and to run the ROSCon editor to open and view the demo level and assets for closer inspection. (Note that the editor environment is meant for demonstrative purposes only and not intended for actual editing and authoring)
 
@@ -26,7 +26,7 @@ This Dockerfile will build a docker container that will have the simulation laun
 
 ## Building the Full Docker Image
 
-The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS2 Humble distribution. The main `Dockerfile` will build a Docker image that will contain the Editor, RosConDemo launcher, and the kraken_nav navigation stack code. To build the full docker image into a container called `roscon_demo`, run the following build command from this `docker` subfolder of this project:
+The dockerfile supports defining which version of Ubuntu+ROS to base the docker container on, and by default will support Ubuntu 22.04 (jammy) with the ROS 2 Humble distribution. The main `Dockerfile` will build a Docker image that will contain the Editor, RosConDemo launcher, and the kraken_nav navigation stack code. To build the full docker image into a container called `roscon_demo`, run the following build command from this `docker` subfolder of this project:
 
 ```
 docker build -t roscon_demo -f Dockerfile .
@@ -60,7 +60,7 @@ To launch the O3DE editor for the ROSConDemo project, execute the following comm
 /data/workspace/ROSConDemo/Project/build/linux/bin/profile/Editor
 ```
 
-Further instructions and details can be found in the [main README file](https://github.com/o3de/ROSConDemo/blob/development/README.md#running-the-demo-scenario)
+Further instructions and details can be found in the [main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md#running-the-demo-scenario)
 
 To launch the O3DE simulation launcher for the ROSConDemo project, execute the following command within the docker terminal
 
@@ -68,7 +68,7 @@ To launch the O3DE simulation launcher for the ROSConDemo project, execute the f
 /data/workspace/ROSConDemo/Project/build/linux/bin/profile/./ROSConDemo.GameLauncher -LoadLevel=main
 ```
 
-To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/development/kraken_nav/README.md#running-simulation)
+To spawn or launch the rviz visualizer, follow the [kraken_nav README file](https://github.com/o3de/ROSConDemo/blob/main/kraken_nav/README.md#running-simulation)
 
 
 ## Building the reduced Docker Images for the Simulation/Navigation
@@ -122,19 +122,19 @@ The above command will log you into the docker terminal that has the `kraken_nav
 source /data/workspace/kraken_nav/install/setup.bash
 ```
 
-From this docker terminal, you will be able to run the demo scenario described in the [main README file](https://github.com/o3de/ROSConDemo/blob/development/README.md#running-the-demo-scenario)
+From this docker terminal, you will be able to run the demo scenario described in the [main README file](https://github.com/o3de/ROSConDemo/blob/main/README.md#running-the-demo-scenario)
 
 
 ## Advanced Options
 
-### Target ROS2 Distribution
-The Docker script defaults to building an image based on Ubuntu 22.04 (jammy) and the ROS2 Humble distribution. This can be overridden with a combination of the `ROS_VERSION` and `UBUNTU_VERSION` arguments.
+### Target ROS 2 Distribution
+The Docker script defaults to building an image based on Ubuntu 22.04 (jammy) and the ROS 2 Humble distribution. This can be overridden with a combination of the `ROS_VERSION` and `UBUNTU_VERSION` arguments.
 
-| Arguments                                 | ROS2 Distro   |
+| Arguments                                 | ROS 2 Distro  |
 |-------------------------------------------|---------------|
-| ROS_VERSION=galactic UBUNTU_VERSION=focal | galactic      |
 | ROS_VERSION=humble   UBUNTU_VERSION=jammy | humble        |
-| ROS_VERSION=iron     UBUNTU_VERSION=jammy | iron          |
+
+**Note:** Other versions of ROS 2 are not tested.
 
 ### Custom source repos and branches
 
@@ -144,13 +144,13 @@ The Dockerscripts use the following arguments to determine the repository to pul
 |-----------------------|----------------------------------|----------------------------------------------------|
 | O3DE_REPO             | O3DE                             | https://github.com/o3de/o3de.git                   |
 | O3DE_EXTRAS_REPO      | O3DE Extras                      | https://github.com/o3de/o3de-extras.git            |
-| ROSCON_DEMO_REPO      | ROSConDemo repository            | https://github.com/o3de/RobotVacuumSample          |
+| ROSCON_DEMO_REPO      | ROSConDemo repository            | https://github.com/o3de/ROSConDemo.git             |
 
 
 In addition to the repositories, the following arguments target the branch, commit, or tag to pull from their corresponding repository
 
 | Argument                | Repository                       | Default                |
 |-------------------------|----------------------------------|------------------------|
-| O3DE_BRANCH             | O3DE                             | main                   |
-| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | main                   |
-| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | development            |
+| O3DE_BRANCH             | O3DE                             | 2409.2                 |
+| O3DE_EXTRAS_BRANCH      | O3DE Extras                      | 2409.2                 |
+| ROSCON_DEMO_BRANCH      | ROSConDemo repository            | main                   |
